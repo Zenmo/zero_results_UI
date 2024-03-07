@@ -50,7 +50,17 @@
 		<ActiveObjectClass>
 			<Id>1704197366550</Id>
 			<Name><![CDATA[UI_Results]]></Name>
-			<Import><![CDATA[import org.uma.jmetal.util.pseudorandom.RandomGenerator;]]></Import>
+			<Import><![CDATA[//import org.uma.jmetal.util.pseudorandom.RandomGenerator;
+//import zero_bedrijventerrein_drechtsteden.OL_AreaType;
+
+// jFree plots
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.flow.FlowPlot;
+import org.jfree.data.flow.FlowDataset;
+import java.awt.geom.Rectangle2D;
+import org.jfree.data.flow.DefaultFlowDataset;
+import org.jfree.graphics2d.svg.SVGGraphics2D;
+import org.jfree.data.flow.NodeKey;]]></Import>
 			<StartupCode><![CDATA[//f_addAreaCollections();
 f_setCoordinatesUIElements();
 //rb_results.setValue(0, true);
@@ -58,7 +68,11 @@ f_setCoordinatesUIElements();
 //v_firstDayOfYear = getDayOfWeek();
 //v_area = pop_areaResults.get(0);
 
-//rb_results.setValue(0,true);]]></StartupCode>
+//rb_results.setValue(0,true);
+
+gr_resultsSummary.add(svgImgJfree); // Need to add ShapeSVG object to group on canvas for it to become visible!
+svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
+]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1704197366556</Id>
@@ -1356,6 +1370,96 @@ f_setCoordinatesUIElements();
 						<Type><![CDATA[AreaCollection]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1709803185884</Id>
+					<Name><![CDATA[flowDataset]]></Name>
+					<X>3240</X><Y>1556</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DefaultFlowDataset]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new DefaultFlowDataset()]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1709803185886</Id>
+					<Name><![CDATA[flowChart]]></Name>
+					<X>3240</X><Y>1636</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[JFreeChart]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new JFreeChart(flowPlot);]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1709803185888</Id>
+					<Name><![CDATA[flowPlot]]></Name>
+					<X>3240</X><Y>1576</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[FlowPlot]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new FlowPlot(flowDataset);]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1709803185890</Id>
+					<Name><![CDATA[svg2d]]></Name>
+					<X>3240</X><Y>1596</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[SVGGraphics2D]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new SVGGraphics2D(400, 200)]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1709803185893</Id>
+					<Name><![CDATA[svgImgJfree]]></Name>
+					<X>3240</X><Y>1616</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[ShapeSVG]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new ShapeSVG()]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1709803748301</Id>
+					<Name><![CDATA[b_addSankey]]></Name>
+					<X>3060</X><Y>1080</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705579272200</Id>
 					<Name><![CDATA[p_gebied]]></Name>
@@ -2613,7 +2717,7 @@ else {
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1704294572701</Id>
 					<Name><![CDATA[f_setCoordinatesUIElements]]></Name>
-					<X>1500</X><Y>-250</Y>
+					<X>1010</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2674,7 +2778,7 @@ energySupplyChartYear.setVisible(false);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1704358816078</Id>
 					<Name><![CDATA[f_setDetailGraphsVisible]]></Name>
-					<X>1500</X><Y>-230</Y>
+					<X>1010</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2692,7 +2796,7 @@ gr_netbelastingDuurkrommes.setVisible(isVisible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1704360510642</Id>
 					<Name><![CDATA[f_setGespreksleidraadGraphsVisible]]></Name>
-					<X>1500</X><Y>-210</Y>
+					<X>1010</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2725,6 +2829,13 @@ t_KPIBenuttingsgraad.setText(roundToInt(v_area.v_totalTimeOverloadedTransformers
 f_setEnergyBalanceChartFull(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
 					 v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 
 					 pl_consumptionStackSummary, pl_productionStackSummary, t_opwekText, t_gebruikText);
+
+if (b_addSankey) {
+	f_setSankey(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
+					 v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 0 );
+	gr_onbalansBarplot.setY(gr_resultsSummary.getY()-780);
+}
+
 /*
 
 // Energiebalansplots
@@ -4326,30 +4437,46 @@ tx_maxPowerPeakSupply.setText(roundToDecimal(v_area.v_maxPowerPeakSupply_kW/1000
 pl_belastingsduurkromme.removeAll();
 pl_belastingsduurkromme.addDataSet(area.data_gridCapacityDemand_kW,"Indicatieve capaciteit afname");
 pl_belastingsduurkromme.addDataSet(area.data_gridCapacitySupply_kW,"Indicatieve capaciteit levering");
-pl_belastingsduurkromme.setColor(0,gray);
-pl_belastingsduurkromme.setColor(1,gray);
+pl_belastingsduurkromme.setColor(0,black);
+pl_belastingsduurkromme.setColor(1,black);
 
 if (radioButtonTimePeriod == 0) { //Jaar
 	pl_belastingsduurkromme.addDataSet(area.v_dataNetbelastingDuurkrommeYear_kW,"Belasting jaar");
+	if (area.v_dataNetbelastingDuurkrommeYearVorige_kW != null) {
+		pl_belastingsduurkromme.addDataSet(area.v_dataNetbelastingDuurkrommeYearVorige_kW,"Vorige situatie");
+		pl_belastingsduurkromme.setColor(3,gray);
+	}
 	pl_belastingsduurkromme.setFixedHorizontalScale(0, 8760);
+	double scaleMin_kW = min(area.data_gridCapacitySupply_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
+	double scaleMax_kW = max(area.data_gridCapacityDemand_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+	pl_belastingsduurkromme.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 } else if (radioButtonTimePeriod == 1) { // summer/winter
 	pl_belastingsduurkromme.addDataSet(area.v_dataNetbelastingDuurkrommeSummer_kW,"Belasting zomer");
 	pl_belastingsduurkromme.addDataSet(area.v_dataNetbelastingDuurkrommeWinter_kW,"Belasting winter");
 	pl_belastingsduurkromme.setColor(2,blue);
 	pl_belastingsduurkromme.setColor(3,green);
 	pl_belastingsduurkromme.setFixedHorizontalScale(0, 24*7);	
+	double scaleMin_kW = min(area.data_gridCapacitySupply_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
+	double scaleMax_kW = max(area.data_gridCapacityDemand_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+	pl_belastingsduurkromme.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 } else if (radioButtonTimePeriod == 2) { // Day/night
 	pl_belastingsduurkromme.addDataSet(area.v_dataNetbelastingDuurkrommeDaytime_kW,"Belasting overdag");
 	pl_belastingsduurkromme.addDataSet(area.v_dataNetbelastingDuurkrommeNighttime_kW,"Belasting 's nachts");
 	pl_belastingsduurkromme.setColor(2,blue);
 	pl_belastingsduurkromme.setColor(3,green);
 	pl_belastingsduurkromme.setFixedHorizontalScale(0, 8760/2);	
+	double scaleMin_kW = min(area.data_gridCapacitySupply_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
+	double scaleMax_kW = max(area.data_gridCapacityDemand_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+	pl_belastingsduurkromme.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 } else if (radioButtonTimePeriod == 3) { // Weekday/weekend
 	pl_belastingsduurkromme.addDataSet(area.v_dataNetbelastingDuurkrommeWeekday_kW,"Belasting weekdagen");
 	pl_belastingsduurkromme.addDataSet(area.v_dataNetbelastingDuurkrommeWeekend_kW,"Belasting weekenddagen");
 	pl_belastingsduurkromme.setColor(2,blue);
 	pl_belastingsduurkromme.setColor(3,green);
 	pl_belastingsduurkromme.setFixedHorizontalScale(0, 24*5*52);	
+	double scaleMin_kW = min(area.data_gridCapacitySupply_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
+	double scaleMax_kW = max(area.data_gridCapacityDemand_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+	pl_belastingsduurkromme.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 }
 pl_belastingsduurkromme.setVisible(false);
 pl_belastingsduurkromme.setVisible(true);
@@ -5168,7 +5295,7 @@ pl_collectiveChart.setFixedScale(chartScale_MWh);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1709041141620</Id>
 					<Name><![CDATA[f_setScope]]></Name>
-					<X>2120</X><Y>-20</Y>
+					<X>2120</X><Y>-30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5194,6 +5321,101 @@ pl_collectiveChart.setFixedScale(chartScale_MWh);
 						<Type><![CDATA[int]]></Type>
 					</Parameter>
 					<Body><![CDATA[rb_results.setValue(resultsInt,true);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1709803185881</Id>
+					<Name><![CDATA[f_setSankey]]></Name>
+					<X>3080</X><Y>1636</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[selfConsumedEnergy_MWh]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[importE_MWh]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[importG_MWh]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[importF_MWh]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[importH_MWh]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[exportE_MWh]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[heatProduced_MWh]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[//gr_onbalansGraphs.setVisible(false);
+flowDataset = new DefaultFlowDataset();
+
+if (heatProduced_MWh > 0) {
+	flowDataset.setFlow(0, "opwek warmte", "verbruik", heatProduced_MWh);
+	NodeKey key1 = new NodeKey<>(0, "opwek warmte");
+	flowPlot.setNodeFillColor(key1, yellowGreen);
+	flowDataset.setFlow(0, "opwek stroom", "verbruik", (selfConsumedEnergy_MWh-heatProduced_MWh));
+	flowDataset.setFlow(0, "opwek stroom", "export stroom", exportE_MWh);
+	NodeKey key2 = new NodeKey<>(0, "opwek stroom");
+	flowPlot.setNodeFillColor(key2, yellowGreen);
+} else {
+	flowDataset.setFlow(0, "eigen opwek", "verbruik", (selfConsumedEnergy_MWh));
+	flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh);
+	NodeKey key2 = new NodeKey<>(0, "eigen opwek");
+	flowPlot.setNodeFillColor(key2, yellowGreen);
+}
+//flowDataset.setFlow(0, "import", "export", 0);
+
+if (importE_MWh > 0) {
+	flowDataset.setFlow(0, "import stroom", "verbruik", importE_MWh);
+	NodeKey key3 = new NodeKey<>(0, "import stroom");
+	flowPlot.setNodeFillColor(key3, red);
+}
+if (importG_MWh > 0 ) {
+	flowDataset.setFlow(0, "import gas", "verbruik", importG_MWh);	
+	NodeKey key4 = new NodeKey<>(0, "import gas");
+	flowPlot.setNodeFillColor(key4, darkRed);
+}	
+if (importF_MWh > 0 ) {
+	flowDataset.setFlow(0, "import brandstof", "verbruik", importF_MWh);
+	NodeKey key5 = new NodeKey<>(0, "import brandstof");
+	flowPlot.setNodeFillColor(key5, orange);
+}
+if (importH_MWh > 0 ) {
+	flowDataset.setFlow(0, "import waterstof", "verbruik", importH_MWh);
+	NodeKey key6 = new NodeKey<>(0, "import waterstof");
+	flowPlot.setNodeFillColor(key6, orange);
+}
+
+//traceln(flowDataset.getAllNodes());
+//traceln(flowDataset.getAllFlows());
+
+NodeKey exportKey = new NodeKey<>(1,"export stroom");
+flowPlot.setNodeFillColor(exportKey, darkBlue);
+//NodeKey key3 = new NodeKey<>(1, "export stroom");
+//JFreeChart flowChart = new JFreeChart(flowPlot);
+flowChart.setTitle("Energiestromen");
+flowChart.setAntiAlias(true);
+
+flowPlot.setDataset(flowDataset);	
+int widthOfSVG = 400;
+int heightOfSVG = 200;
+flowChart.draw(svg2d,new Rectangle2D.Double(0, 0, widthOfSVG, heightOfSVG));
+svgImgJfree.setSVG(svg2d.getSVGElement());
+svgImgJfree.setVisible(true);]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -7548,7 +7770,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Group>
 					<Id>1704197773623</Id>
 					<Name><![CDATA[gr_KPIzelfvoorzienendheid]]></Name>
-					<X>90</X><Y>240</Y>
+					<X>90</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7653,7 +7875,7 @@ lokaal opgewekt]]></Text>
 				<Group>
 					<Id>1704197773638</Id>
 					<Name><![CDATA[gr_KPInetcongestie]]></Name>
-					<X>-130</X><Y>240</Y>
+					<X>-130</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7757,7 +7979,7 @@ lokaal opgewekt]]></Text>
 				<Group>
 					<Id>1704352270468</Id>
 					<Name><![CDATA[gr_onbalansBarplot]]></Name>
-					<X>180</X><Y>-120</Y>
+					<X>180</X><Y>-110</Y>
 					<Label><X>10.122</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14958,7 +15180,7 @@ uur]]></Text>
 				<Variable Class="PlainVariable">
 					<Id>1707403366018</Id>
 					<Name><![CDATA[v_dataNetbelastingDuurkrommeSummer_kW]]></Name>
-					<X>1420</X><Y>520</Y>
+					<X>1420</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14970,7 +15192,7 @@ uur]]></Text>
 				<Variable Class="PlainVariable">
 					<Id>1707403375767</Id>
 					<Name><![CDATA[v_dataNetbelastingDuurkrommeWinter_kW]]></Name>
-					<X>1420</X><Y>540</Y>
+					<X>1420</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14982,7 +15204,7 @@ uur]]></Text>
 				<Variable Class="PlainVariable">
 					<Id>1707403386930</Id>
 					<Name><![CDATA[v_dataNetbelastingDuurkrommeDaytime_kW]]></Name>
-					<X>1420</X><Y>560</Y>
+					<X>1420</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14994,7 +15216,7 @@ uur]]></Text>
 				<Variable Class="PlainVariable">
 					<Id>1707403406522</Id>
 					<Name><![CDATA[v_dataNetbelastingDuurkrommeNighttime_kW]]></Name>
-					<X>1420</X><Y>580</Y>
+					<X>1420</X><Y>600</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15006,7 +15228,7 @@ uur]]></Text>
 				<Variable Class="PlainVariable">
 					<Id>1707403415730</Id>
 					<Name><![CDATA[v_dataNetbelastingDuurkrommeWeekend_kW]]></Name>
-					<X>1420</X><Y>620</Y>
+					<X>1420</X><Y>640</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15018,7 +15240,7 @@ uur]]></Text>
 				<Variable Class="PlainVariable">
 					<Id>1707403418266</Id>
 					<Name><![CDATA[v_dataNetbelastingDuurkrommeWeekday_kW]]></Name>
-					<X>1420</X><Y>600</Y>
+					<X>1420</X><Y>620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15109,6 +15331,18 @@ uur]]></Text>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1709801192905</Id>
+					<Name><![CDATA[v_dataNetbelastingDuurkrommeYearVorige_kW]]></Name>
+					<X>1420</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
@@ -17106,7 +17340,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706177958447</Id>
 					<Name><![CDATA[data_netLoadYear_MW]]></Name>
-					<X>1420</X><Y>650</Y>
+					<X>1420</X><Y>670</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17128,7 +17362,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706180307170</Id>
 					<Name><![CDATA[data_gridCapacitySupply_kW]]></Name>
-					<X>1420</X><Y>670</Y>
+					<X>1420</X><Y>690</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17150,7 +17384,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706180325051</Id>
 					<Name><![CDATA[data_gridCapacityDemand_kW]]></Name>
-					<X>1420</X><Y>690</Y>
+					<X>1420</X><Y>710</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17172,7 +17406,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706534895485</Id>
 					<Name><![CDATA[data_maxNetLoadPerDay_MW]]></Name>
-					<X>1420</X><Y>730</Y>
+					<X>1420</X><Y>750</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17194,7 +17428,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706534934434</Id>
 					<Name><![CDATA[data_minNetLoadPerDay_MW]]></Name>
-					<X>1420</X><Y>750</Y>
+					<X>1420</X><Y>770</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17216,7 +17450,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772166461</Id>
 					<Name><![CDATA[data_netLoadMaxDay_MW]]></Name>
-					<X>1420</X><Y>790</Y>
+					<X>1420</X><Y>810</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17238,7 +17472,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772166484</Id>
 					<Name><![CDATA[data_netLoadMinDay_MW]]></Name>
-					<X>1420</X><Y>810</Y>
+					<X>1420</X><Y>830</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17260,7 +17494,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772657343</Id>
 					<Name><![CDATA[data_gridCapacitySupplyMaxDay_MW]]></Name>
-					<X>1420</X><Y>830</Y>
+					<X>1420</X><Y>850</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17282,7 +17516,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772657359</Id>
 					<Name><![CDATA[data_gridCapacityDemandMaxDay_MW]]></Name>
-					<X>1420</X><Y>850</Y>
+					<X>1420</X><Y>870</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17304,7 +17538,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706773933317</Id>
 					<Name><![CDATA[data_gridCapacitySupplyMinDay_MW]]></Name>
-					<X>1420</X><Y>870</Y>
+					<X>1420</X><Y>890</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17326,7 +17560,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706773933345</Id>
 					<Name><![CDATA[data_gridCapacityDemandMinDay_MW]]></Name>
-					<X>1420</X><Y>890</Y>
+					<X>1420</X><Y>910</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17557,6 +17791,16 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
+		<Resource>
+			<Path><![CDATA[jfreesvg-3.4.3.jar]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+			<Location>FILE_SYSTEM</Location>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[jfreechart-1.5.4.jar]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+			<Location>FILE_SYSTEM</Location>
+		</Resource>
 	</ModelResources>
     <RequiredLibraryReference>
 		<LibraryName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></LibraryName>
@@ -17570,6 +17814,22 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 		<VersionMinor>0</VersionMinor>
 		<VersionBuild>0</VersionBuild>
     </RequiredLibraryReference>
+	<ClassPathEntry>
+		<ResourceReference>
+			<PackageName><![CDATA[digital_twin_results]]></PackageName>
+			<ClassName><![CDATA[jfreechart-1.5.4.jar]]></ClassName>
+		</ResourceReference>
+		<Imported>true</Imported>
+		<Folder>false</Folder>
+	</ClassPathEntry>
+	<ClassPathEntry>
+		<ResourceReference>
+			<PackageName><![CDATA[digital_twin_results]]></PackageName>
+			<ClassName><![CDATA[jfreesvg-3.4.3.jar]]></ClassName>
+		</ResourceReference>
+		<Imported>true</Imported>
+		<Folder>false</Folder>
+	</ClassPathEntry>
 	<CloudModelUuid><![CDATA[70a2f079-1aa7-4b60-b881-d636894f974d]]></CloudModelUuid>
 </Model>
 </AnyLogicWorkspace>
