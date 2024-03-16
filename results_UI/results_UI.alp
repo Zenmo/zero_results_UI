@@ -1197,6 +1197,18 @@
 						<Type><![CDATA[boolean]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1710495706067</Id>
+					<Name><![CDATA[v_selectionUpdate]]></Name>
+					<X>400</X><Y>530</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705579272200</Id>
 					<Name><![CDATA[p_gebied]]></Name>
@@ -1296,13 +1308,14 @@
 				<Variable Class="Parameter">
 					<Id>1708859341444</Id>
 					<Name><![CDATA[p_energyModel]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>100</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[Agent]]></Type>
+						<Type><![CDATA[Main]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<ParameterEditor>
@@ -2108,6 +2121,31 @@ else if (areaType.p_collection == HVMVTRANSFORMER){
 
 //Switch to detail graphs
 rb_results.setValue(3, true);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1710496770210</Id>
+					<Name><![CDATA[f_highlightSelection]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>400</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//p_energyModel.f_resetNeighborhoodColors(p_energyModel.v_selectedTrafo);
+p_energyModel.f_deselectTrafo(p_energyModel.v_selectedTrafo);
+
+if( v_graphString.contains("Buurt")){
+	p_energyModel.v_selectedNeighborhood.gisRegion.setFillColor( p_energyModel.v_clickedRegionColor  ); 
+}
+
+else if( v_graphString.contains("HS-MS station")){
+	p_energyModel.f_colorSelectedTrafo(p_energyModel.v_selectedTrafo);
+}
+
+
+]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -3520,7 +3558,9 @@ f_setGraphs();
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[f_setGraphs();]]></ActionCode>
+						<ActionCode><![CDATA[f_setGraphs();
+//v_selectionUpdate = true;
+//f_highlightSelection();]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Arial" Size="12" Style="0"/>
