@@ -12360,7 +12360,23 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[//DEMAND
+					<Body><![CDATA[//reset values
+v_annualDistrictHeatingHeatDemand_MWh = 0;
+v_annualHeatPumpHeatGeneration_MWh = 0;
+v_annualNaturalGasConsumption_MWh = 0;
+v_annualHeatDemand = 0;
+v_annualElectricityGenerationSelfConsumed_MWh = 0;
+v_annualElectricityImport_MWh = 0;
+v_annualElectricityDemand_MWh = 0;
+v_annualElectricityForTransportDemand_MWh = 0;
+v_annualHydrogenForTransportDemand_MWh = 0;
+v_annualPetroleumProductsDemand_MWh = 0;
+v_annualTransportEnergyDemand_MWh = 0;
+v_annualWindSupply_MWh = 0;
+v_annualPVSupply_MWh = 0;
+
+
+//DEMAND
 //Heat
 for(int i=0; i < v_dataDistrictHeatDemand_MW.size(); i++){
 	v_annualDistrictHeatingHeatDemand_MWh += v_dataDistrictHeatDemand_MW.getY(i);
@@ -12369,7 +12385,7 @@ for(int i=0; i < v_dataDistrictHeatDemand_MW.size(); i++){
 	v_annualHeatDemand = v_annualDistrictHeatingHeatDemand_MWh + v_annualHeatPumpHeatGeneration_MWh + v_annualNaturalGasConsumption_MWh;
 }
 DataItem d1 = new DataItem();
-d1.setValue(roundToInt(v_annualElectricityGenerationSelfConsumed_MWh / 1000));
+d1.setValue(roundToInt(v_annualDistrictHeatingHeatDemand_MWh / 1000));
 DataItem d2 = new DataItem();
 d2.setValue(roundToInt(v_annualHeatPumpHeatGeneration_MWh / 1000));
 DataItem d3 = new DataItem();
@@ -12456,7 +12472,6 @@ uI_Results.sc_windSupplyStack.addDataItem(d10, "Potentieel", gray);
 uI_Results.sc_PVSupplyStack.removeAll();
 uI_Results.sc_PVSupplyStack.addDataItem(d11, "Opwek", yellowGreen);
 uI_Results.sc_PVSupplyStack.addDataItem(d12, "Potentieel", gray);
-
 
 
 //Set max for scale
