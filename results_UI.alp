@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.6.202312140503" AlpVersion="8.8.3">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.6.202312140457" AlpVersion="8.8.3">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -1460,6 +1460,18 @@ svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1712585211623</Id>
+					<Name><![CDATA[v_trafo]]></Name>
+					<X>510</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[AreaCollection]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705579272200</Id>
 					<Name><![CDATA[p_gebied]]></Name>
@@ -2898,14 +2910,14 @@ f_setGraphString();
 AreaCollection area;
 if( v_graphString.contains("_Bedrijf")){
 	area = v_company;
-	traceln("Setting v_company as active area!");
+	//traceln("Setting v_company as active area!");
 } else if( v_graphString.contains("_Collectief")){
 	area = v_collective;
-	traceln("Setting v_collective as active area!");
+	//traceln("Setting v_collective as active area!");
 } else {
 	area = v_area;//findFirst(pop_areaCollections, x->x.p_collection.equals(v_area));
 }
-traceln("Current selected area: %s", area);
+//traceln("Current selected area: %s", area);
 
 if( v_graphString.contains("Profielen")){
 	f_setProfileGraphsFromString(v_graphString, area);
