@@ -2950,19 +2950,10 @@ if (chartScale_MWh<10) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[//traceln("f_setGraphs aangeroepen");
-//traceln("Results heeft value: " + rb_results.getValue());
-//traceln("Periode heeft value: " + rb_area_BusinessPark.getValue());
-
-if (rb_area_BusinessPark.getValue() == 3) {
-	rb_supplyDemand.setValue(0,false);
-	rb_supplyDemand.setEnabled(false);
-} else {
-	rb_supplyDemand.setEnabled(true);
-}
+					<Body><![CDATA[f_setRadioButtonVisibilities(rb_results.getValue(), rb_expertGraphs.getValue(), rb_area_RES.getValue(), rb_area_BusinessPark.getValue());
 
 f_setGraphString();
-//traceln("Graph string: " + v_graphString);
+
 AreaCollection area;
 if( v_graphString.contains("_Bedrijf")){
 	area = v_company;
@@ -2982,16 +2973,16 @@ else {
 
 if( v_graphString.contains("Profielen")){
 	f_setProfileGraphsFromString(v_graphString, area);
-	rb_energyCarrier.setEnabled(true);
+	//rb_energyCarrier.setEnabled(true);
 }
 else if( v_graphString.contains("Opwek en verbruik")){
 	f_setSupplyDemandGraphsFromString(v_graphString, area);
-	rb_energyCarrier.setEnabled(true);
+	//rb_energyCarrier.setEnabled(true);
 }
 else if( v_graphString.contains("Netbelasting")){
 	f_setGridLoadGraphsFromString(v_graphString, area);
 	rb_energyCarrier.setValue(1);
-	rb_energyCarrier.setEnabled(false);
+	//rb_energyCarrier.setEnabled(false);
 } else if( v_graphString.contains("Detail")){
 	//f_setLiveChart();
 }
@@ -3049,8 +3040,8 @@ else if( rb_results.getValue() == 3){
 	
 	//AREA
 	if( v_mainAreaType == AreaTypes.RESREGION ){
-		rb_area_RES.setVisible(true);
-		rb_area_BusinessPark.setVisible(false);
+		//rb_area_RES.setVisible(true);
+		//rb_area_BusinessPark.setVisible(false);
 		if (rb_area_RES.getValue() == 0){
 			v_graphString = v_graphString + "_Drechtsteden";
 			//v_mainAreaType = RESREGION;
@@ -3065,8 +3056,8 @@ else if( rb_results.getValue() == 3){
 		}
 	}
 	else if( v_mainAreaType == AreaTypes.BUSINESSPARK ){
-		rb_area_RES.setVisible(false);
-		rb_area_BusinessPark.setVisible(true);
+		//rb_area_RES.setVisible(false);
+		//rb_area_BusinessPark.setVisible(true);
 		if (rb_area_BusinessPark.getValue() == 0){
 			v_graphString = v_graphString + "_Bedrijventerrein";
 			//v_mainAreaType = BUSINESSPARK;
@@ -5091,11 +5082,12 @@ trafoTimePlot.removeAll();
 f_setDetailGraphsVisible(false);
 
 if (area == v_trafo) {
-	gr_resultsLiveTrafoPlot.setVisible(true);
-	
-	trafoTimePlot.addDataSet(v_trafo.v_dataElectricityCapacityDemand_kW, "Piek capaciteit");
-	trafoTimePlot.addDataSet(v_trafo.v_dataElectricityCapacitySupply_kW, "Piek capaciteit");
-	trafoTimePlot.addDataSet(v_trafo.v_dataBaseloadElectricityDemandLiveWeek_kW, v_electricityDemandText, v_electricityDemandColor, true, TimePlot.INTERPOLATION_LINEAR, 2, TimePlot.POINT_SQUARE);
+	if (v_trafo.v_dataBaseloadElectricityDemandLiveWeek_kW != null) {
+		gr_resultsLiveTrafoPlot.setVisible(true);
+		trafoTimePlot.addDataSet(v_trafo.v_dataElectricityCapacityDemand_kW, "Piek capaciteit");
+		trafoTimePlot.addDataSet(v_trafo.v_dataElectricityCapacitySupply_kW, "Piek capaciteit");
+		trafoTimePlot.addDataSet(v_trafo.v_dataBaseloadElectricityDemandLiveWeek_kW, v_electricityDemandText, v_electricityDemandColor, true, TimePlot.INTERPOLATION_LINEAR, 2, TimePlot.POINT_SQUARE);
+	}
 } 
 else {
 	gr_resultsSupplyDemandCharts.setVisible(true);
@@ -5505,6 +5497,94 @@ int heightOfSVG = 200;
 flowChart.draw(svg2d,new Rectangle2D.Double(0, 0, widthOfSVG, heightOfSVG));
 svgImgJfree.setSVG(svg2d.getSVGElement());
 svgImgJfree.setVisible(true);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1712739153994</Id>
+					<Name><![CDATA[f_setRadioButtonVisibilities]]></Name>
+					<X>1010</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[results]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[expertGraphs]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[area_RES]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[area_BusinessPark]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (results == 0) {
+	gr_detailedGraphsMenu.setVisible(false);
+	gr_rectangleAndLineLarge.setVisible(false);
+	rb_gespreksleidraad.setVisible(false);
+	gr_detailGraphs.setVisible(false);
+	rect_resultsMenuSmall.setVisible(true);
+} else if( results == 1) {
+	gr_detailedGraphsMenu.setVisible(false);
+	gr_rectangleAndLineLarge.setVisible(false);
+	rb_gespreksleidraad.setVisible(false);
+	gr_detailGraphs.setVisible(false);
+	rect_resultsMenuSmall.setVisible(true);
+} else if( results == 2) {
+	gr_detailedGraphsMenu.setVisible(false);
+	gr_rectangleAndLineLarge.setVisible(true);
+	rb_gespreksleidraad.setVisible(true);
+	gr_detailGraphs.setVisible(false);
+	rect_resultsMenuSmall.setVisible(false);
+} else {
+	gr_detailedGraphsMenu.setVisible(true);
+	gr_rectangleAndLineLarge.setVisible(true);
+	rb_gespreksleidraad.setVisible(false);
+	gr_detailGraphs.setVisible(true);
+	rect_resultsMenuSmall.setVisible(false);
+}
+
+if (expertGraphs == 0) { 
+	rb_onbalans.setVisible(false);
+	rb_supplyDemand.setVisible(true);
+} else if ( expertGraphs == 1) { 
+	rb_supplyDemand.setVisible(false);
+	rb_onbalans.setVisible(true);
+} else {
+	rb_supplyDemand.setVisible(false);
+	rb_onbalans.setVisible(true);
+}
+
+if (area_BusinessPark == 2) {
+	rb_supplyDemand.setValue(0,false);
+	rb_supplyDemand.setEnabled(false);
+	rb_energyCarrier.setValue(1,false);
+	rb_energyCarrier.setEnabled(false);
+	rb_expertGraphs.setValue(0,false);
+	rb_expertGraphs.setEnabled(false);
+} else if (area_BusinessPark == 3) {
+	rb_supplyDemand.setValue(0,false);
+	rb_supplyDemand.setEnabled(false);
+	rb_expertGraphs.setEnabled(true);	
+	rb_energyCarrier.setEnabled(true);
+} else {
+	rb_supplyDemand.setEnabled(true);
+	rb_expertGraphs.setEnabled(true);
+	rb_energyCarrier.setEnabled(true);
+}
+if (v_mainAreaType == AreaTypes.RESREGION ) {
+	rb_area_RES.setVisible(true);
+	rb_area_BusinessPark.setVisible(false);
+} else if ( v_mainAreaType == AreaTypes.BUSINESSPARK ) {
+	rb_area_RES.setVisible(false);
+	rb_area_BusinessPark.setVisible(true);
+}]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -6891,32 +6971,17 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 						<ActionCode><![CDATA[f_setGraphs();
 
 if( rb_results.getValue() == 0){
-	//Set visuals menu
-	gr_detailedGraphsMenu.setVisible(false);
-	gr_rectangleAndLineLarge.setVisible(false);
-	rb_gespreksleidraad.setVisible(false);
-	gr_detailGraphs.setVisible(false);
-	rect_resultsMenuSmall.setVisible(true);
-			
 	//Set results graphs and screens
 	gr_resultsSummary.setVisible(false);
 	f_setDetailGraphsVisible(false);
 	f_setGespreksleidraadGraphsVisible(false);
 	gr_resultsSupplyDemandCharts.setVisible(true);
-	
+		
 	//Set chart
 	f_setProfileGraphsFromString(v_graphString, v_area);
 
 }
-
 else if( rb_results.getValue() == 1){
-	//Set visuals menu
-	gr_detailedGraphsMenu.setVisible(false);
-	gr_rectangleAndLineLarge.setVisible(false);
-	rb_gespreksleidraad.setVisible(false);
-	gr_detailGraphs.setVisible(false);
-	rect_resultsMenuSmall.setVisible(true);
-		
 	//Set results graphs and screens
 	gr_resultsLiveSimulationCharts.setVisible(false);
 	gr_resultsSummary.setVisible(true);
@@ -6926,15 +6991,7 @@ else if( rb_results.getValue() == 1){
 	//Set chart
 	f_setSummaryCharts();
 }
-
 else if( rb_results.getValue() == 2){
-	//Set visuals menu
-	gr_detailedGraphsMenu.setVisible(false);
-	gr_rectangleAndLineLarge.setVisible(true);
-	rb_gespreksleidraad.setVisible(true);
-	gr_detailGraphs.setVisible(false);
-	rect_resultsMenuSmall.setVisible(false);
-		
 	//Set results graphs and screens
 	gr_resultsLiveSimulationCharts.setVisible(false);
 	gr_resultsSummary.setVisible(false);
@@ -6942,27 +6999,13 @@ else if( rb_results.getValue() == 2){
 	//Execute right graphs
 	rb_gespreksleidraad.setValue(rb_gespreksleidraad.getValue(), true);
 }
-
 else if( rb_results.getValue() == 3){
-	//Set visuals menu
-	gr_detailedGraphsMenu.setVisible(true);
-	gr_rectangleAndLineLarge.setVisible(true);
-	rb_gespreksleidraad.setVisible(false);
-	gr_detailGraphs.setVisible(true);
-	rect_resultsMenuSmall.setVisible(false);
-		
 	//Set results graphs and screens
 	gr_resultsLiveSimulationCharts.setVisible(false);
 	gr_resultsSummary.setVisible(false);
 	f_setGespreksleidraadGraphsVisible(false);
 	//Execute right graphs
 	rb_expertGraphs.setValue(rb_expertGraphs.getValue(),true);
-
-
-	//Set chart
-//	if (rb_supplyDemand.getValue() == 0) {
-//		f_setLiveChart();
-//	}
 }
 
 //f_setLoadScreen();
@@ -7031,37 +7074,29 @@ else if( rb_results.getValue() == 3){
 
 
 if (rb_expertGraphs.getValue() == 0) { 
-	// Display vraag/aanbod radio buttons and graphs
-	rb_onbalans.setVisible(false);
-	rb_supplyDemand.setVisible(true);
-	
 	//Set UI groups
-	gr_resultsSupplyDemandCharts.setVisible(true);
 	gr_onbalansGraphs.setVisible(false);
-	gr_netbelastingDuurkrommes.setVisible(false);	
+	gr_netbelastingDuurkrommes.setVisible(false);
+	if (rb_area_BusinessPark.getValue() == 2) {
+		gr_resultsLiveTrafoPlot.setVisible(true);
+	} else {
+		gr_resultsSupplyDemandCharts.setVisible(true);
+	}
 }
 else if (rb_expertGraphs.getValue() == 1){ 
-	// Display onbalans radio buttons and graphs
-	rb_supplyDemand.setVisible(false);
-	rb_onbalans.setVisible(true);
-	
 	//Set UI groups
 	gr_resultsSupplyDemandCharts.setVisible(false);
-	gr_onbalansGraphs.setVisible(true);
+	gr_resultsLiveTrafoPlot.setVisible(false);
 	gr_netbelastingDuurkrommes.setVisible(false);
+	gr_onbalansGraphs.setVisible(true);
+	
 } 
 else {
-	// Display onbalans radio buttons and graphs
-	rb_supplyDemand.setVisible(false);
-	rb_onbalans.setVisible(true);
 	//Set UI groups
 	gr_resultsSupplyDemandCharts.setVisible(false);
 	gr_onbalansGraphs.setVisible(false);
 	gr_netbelastingDuurkrommes.setVisible(true);
-}
-
-//f_setCharts();
-]]></ActionCode>
+}]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Arial" Size="12" Style="0"/>
