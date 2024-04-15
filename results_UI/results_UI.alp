@@ -3877,11 +3877,11 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<ExtendedProperties>
 						<Font Name="Arial" Size="12" Style="0"/>
 						<Orientation>VERTICAL</Orientation>
-						<Button><![CDATA[1. Hoeveel energie opwek en verbruik hebben wij per jaar?]]></Button>
-						<Button><![CDATA[2. Kunnen wij meer opwekken en duurzamer verbruiken?]]></Button>
-						<Button><![CDATA[3. Kunnnen wij verbruik en aanbod beter afstemmen?]]></Button>
+						<Button><![CDATA[1. Wat is het aandeel lokaal duurzaam opgewekt?]]></Button>
+						<Button><![CDATA[2. Kunnen wij meer lokaal opwekken?]]></Button>
+						<Button><![CDATA[3. Kunnnen wij meer energie zelf gebruiken?]]></Button>
 						<Button><![CDATA[4. Kunnen wij netcapaciteit beter benutten?]]></Button>
-						<Button><![CDATA[5. Kunnen wij pieken vermijden?]]></Button>
+						<Button><![CDATA[5. Overige grafieken en inzicht]]></Button>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
