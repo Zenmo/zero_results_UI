@@ -1456,7 +1456,7 @@ svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
+							<Code><![CDATA[true]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -2899,11 +2899,13 @@ gr_gespreksleidraad5.setVisible(isVisible);]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[// KPIs
+					<Body><![CDATA[gr_resultsSummary.setVisible(true);
+// KPIs
 //t_KPIhoursOverload_h.setText(roundToInt(v_totalTimeOverloadedTransformers_h) + "h");
 //double selfSufficiency_fr = v_area.v_selfConsumedEnergy_MWh/(v_area.v_selfConsumedEnergy_MWh + v_area.v_importedEnergy_MWh);
 t_KPIselfsufficiency_pct.setText(roundToInt(v_area.v_modelSelfSufficiency_fr*100) + "%");
 t_KPIBenuttingsgraad.setText(roundToInt(v_area.v_totalTimeOverloadedTransformers_h) + " u");
+
 f_setEnergyBalanceChartFull(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
 					 v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 
 					 pl_consumptionStackSummary, pl_productionStackSummary, t_opwekText, t_gebruikText);
@@ -3003,7 +3005,12 @@ else if( v_graphString.contains("Netbelasting")){
 	rb_energyCarrier.setValue(1);
 	//rb_energyCarrier.setEnabled(false);
 }
-
+else if ( v_graphString.contains("Sankey")) {
+	f_setSummaryCharts();
+	//f_setSankey(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
+	//	v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 0 );
+	//	gr_onbalansBarplot.setY(gr_resultsSummary.getY()-780);
+}
 if(v_graphString.contains("Live")){
 	runSimulation();
 }
@@ -3032,15 +3039,18 @@ else if( rb_results.getValue() == 1){
 
 	// GRAPH
 	if( rb_expertGraphs.getValue() == 0){
-		v_graphString = v_graphString + "_Profielen";
+		v_graphString += "_Profielen";
 	}
 	
 	else if( rb_expertGraphs.getValue() == 1){
-		v_graphString = v_graphString + "_Opwek en verbruik";
+		v_graphString += "_Opwek en verbruik";
 	}
 	
 	else if( rb_expertGraphs.getValue() == 2){
-		v_graphString = v_graphString + "_Netbelasting";
+		v_graphString += "_Netbelasting";
+	}
+	else if (rb_expertGraphs.getValue() == 3) {
+		v_graphString += "_Sankey";
 	}
 	// AREA
 	if (rb_area_BusinessPark.getValue() == 0){
@@ -5481,6 +5491,9 @@ pl_collectiveChart.setFixedScale(chartScale_MWh);
 						<Type><![CDATA[double]]></Type>
 					</Parameter>
 					<Body><![CDATA[//gr_onbalansGraphs.setVisible(false);
+
+traceln("sankey plot");
+
 flowDataset = new DefaultFlowDataset();
 
 if (heatProduced_MWh > 0) {
@@ -5520,8 +5533,8 @@ if (importH_MWh > 0 ) {
 	flowPlot.setNodeFillColor(key6, orange);
 }
 
-//traceln(flowDataset.getAllNodes());
-//traceln(flowDataset.getAllFlows());
+traceln(flowDataset.getAllNodes());
+traceln(flowDataset.getAllFlows());
 
 NodeKey exportKey = new NodeKey<>(1,"export stroom");
 flowPlot.setNodeFillColor(exportKey, darkBlue);
@@ -7079,7 +7092,8 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[f_setGraphs();]]></ActionCode>
+						<ActionCode><![CDATA[f_setGraphs();
+// fourth option will be Summary + Sankey when I fix that graph]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
@@ -7695,7 +7709,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<X>3240</X><Y>620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
