@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161156" AlpVersion="8.9.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161236" AlpVersion="8.9.0">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -71,6 +71,7 @@ f_setCoordinatesUIElements();
 //rb_results.setValue(0,true);
 
 gr_resultsSummary.add(svgImgJfree); // Need to add ShapeSVG object to group on canvas for it to become visible!
+gr_sankey.add(svgImgJfree);
 svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
 ]]></StartupCode>
 			<Generic>false</Generic>
@@ -1456,7 +1457,7 @@ svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[false]]></Code>
+							<Code><![CDATA[true]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -1499,6 +1500,21 @@ svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
 						<Type><![CDATA[String]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA["Elektriciteitsaanbod"]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1714378242039</Id>
+					<Name><![CDATA[v_electricityCapacityColor]]></Name>
+					<X>2080</X><Y>1560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Color]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[red]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -2800,6 +2816,9 @@ gr_resultsLiveSimulationCharts.setY(560);
 gr_resultsSummary.setX(1680);
 gr_resultsSummary.setY(620);
 
+gr_sankey.setX(1680);
+gr_sankey.setY(630);
+
 //rb_onbalans.setX(1613);
 //rb_onbalans.setY(280);
 rb_onbalans.setPos(rb_supplyDemand.getX(), rb_supplyDemand.getY());
@@ -2866,7 +2885,7 @@ gr_resultsLiveTrafoPlot.setVisible(isVisible);
 gr_onbalansGraphs.setVisible(isVisible);
 gr_netbelastingDuurkrommes.setVisible(isVisible);
 gr_resultsSummary.setVisible(isVisible);
-]]></Body>
+gr_sankey.setVisible(isVisible);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -2899,7 +2918,12 @@ gr_gespreksleidraad5.setVisible(isVisible);]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[// KPIs
+					<Parameter>
+						<Name><![CDATA[area]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[gr_resultsSummary.setVisible(true);
+// KPIs
 //t_KPIhoursOverload_h.setText(roundToInt(v_totalTimeOverloadedTransformers_h) + "h");
 //double selfSufficiency_fr = v_area.v_selfConsumedEnergy_MWh/(v_area.v_selfConsumedEnergy_MWh + v_area.v_importedEnergy_MWh);
 t_KPIselfsufficiency_pct.setText(roundToInt(v_area.v_modelSelfSufficiency_fr*100) + "%");
@@ -2974,7 +2998,9 @@ if (rb_expertGraphs.getValue() == 0 && rb_area_BusinessPark.getValue() != 0 ) {
 f_setGraphString();
 AreaCollection area;
 
+// Only show the relevant buttons to the user
 f_setRadioButtonVisibilitiesFromString(v_graphString);
+// First disable all the graphs, we will enable the selected one later when its function is called
 f_setDetailGraphsVisible(false);
 
 if( v_graphString.contains("_Bedrijf")){
@@ -3002,6 +3028,10 @@ else if( v_graphString.contains("Netbelasting")){
 	f_setGridLoadGraphsFromString(v_graphString, area);
 	rb_energyCarrier.setValue(1);
 	//rb_energyCarrier.setEnabled(false);
+} 
+else if (v_graphString.contains("Sankey")) {
+	f_setSankey(area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, area.v_annualNaturalGasDemand_MWh,
+					 area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualExportedEnergy_MWh, 0);
 }
 
 if(v_graphString.contains("Live")){
@@ -3041,6 +3071,9 @@ else if( rb_results.getValue() == 1){
 	
 	else if( rb_expertGraphs.getValue() == 2){
 		v_graphString = v_graphString + "_Netbelasting";
+	}
+	else if (rb_expertGraphs.getValue() == 3) {
+		v_graphString = v_graphString + "_Sankey";
 	}
 	// AREA
 	if (rb_area_BusinessPark.getValue() == 0){
@@ -3116,12 +3149,12 @@ else if( rb_results.getValue() == 1){
 		f_setGraphProfilesLiveEnergy(area);
 	}
 	else {
-		if (area == v_trafo) {
+//		if (area == v_trafo) {
 //		trafoTimePlot.setVisible(true);
-		} else {
+//		} else {
 //		energyDemandChart.setVisible(true);
 //		energySupplyChart.setVisible(true);
-		}
+//		}
 		f_setGraphProfilesLiveElectricity(area);
 	}
 }
@@ -5088,9 +5121,9 @@ trafoTimePlot.removeAll();
 if (area == v_trafo) {
 	if (v_trafo.v_dataBaseloadElectricityDemandLiveWeek_kW != null) {
 		gr_resultsLiveTrafoPlot.setVisible(true);
-		trafoTimePlot.addDataSet(area.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit");
-		trafoTimePlot.addDataSet(area.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit");
-		trafoTimePlot.addDataSet(area.v_dataBaseloadElectricityDemandLiveWeek_kW, v_electricityDemandText, v_electricityDemandColor, true, TimePlot.INTERPOLATION_LINEAR, 2, TimePlot.POINT_SQUARE);
+		trafoTimePlot.addDataSet(area.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit", v_electricityCapacityColor, true, TimePlot.INTERPOLATION_LINEAR, 1, TimePlot.POINT_SQUARE);
+		trafoTimePlot.addDataSet(area.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", v_electricityCapacityColor, true, TimePlot.INTERPOLATION_LINEAR, 1, TimePlot.POINT_SQUARE);
+		trafoTimePlot.addDataSet(area.v_dataBaseloadElectricityDemandLiveWeek_kW, v_electricityDemandText, v_electricityDemandColor, true, TimePlot.INTERPOLATION_LINEAR, 1, TimePlot.POINT_SQUARE);
 	}
 } 
 else {
@@ -5479,22 +5512,28 @@ pl_collectiveChart.setFixedScale(chartScale_MWh);
 						<Name><![CDATA[heatProduced_MWh]]></Name>
 						<Type><![CDATA[double]]></Type>
 					</Parameter>
-					<Body><![CDATA[//gr_onbalansGraphs.setVisible(false);
+					<Body><![CDATA[//gr_resultsSummary.setVisible(true);
+//gr_onbalansGraphs.setVisible(false);
+gr_sankey.setVisible(true);
 flowDataset = new DefaultFlowDataset();
 
 if (heatProduced_MWh > 0) {
 	flowDataset.setFlow(0, "opwek warmte", "verbruik", heatProduced_MWh);
 	NodeKey key1 = new NodeKey<>(0, "opwek warmte");
 	flowPlot.setNodeFillColor(key1, yellowGreen);
-	flowDataset.setFlow(0, "opwek stroom", "verbruik", (selfConsumedEnergy_MWh-heatProduced_MWh));
-	flowDataset.setFlow(0, "opwek stroom", "export stroom", exportE_MWh);
-	NodeKey key2 = new NodeKey<>(0, "opwek stroom");
-	flowPlot.setNodeFillColor(key2, yellowGreen);
+	if (selfConsumedEnergy_MWh-heatProduced_MWh > 0 || exportE_MWh > 0) {
+		flowDataset.setFlow(0, "opwek stroom", "verbruik", (selfConsumedEnergy_MWh-heatProduced_MWh));
+		flowDataset.setFlow(0, "opwek stroom", "export stroom", exportE_MWh);
+		NodeKey key2 = new NodeKey<>(0, "opwek stroom");
+		flowPlot.setNodeFillColor(key2, yellowGreen);
+	}
 } else {
-	flowDataset.setFlow(0, "eigen opwek", "verbruik", (selfConsumedEnergy_MWh));
-	flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh);
-	NodeKey key2 = new NodeKey<>(0, "eigen opwek");
-	flowPlot.setNodeFillColor(key2, yellowGreen);
+	if (selfConsumedEnergy_MWh > 0 || exportE_MWh > 0) {
+		flowDataset.setFlow(0, "eigen opwek", "verbruik", (selfConsumedEnergy_MWh));
+		flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh);
+		NodeKey key2 = new NodeKey<>(0, "eigen opwek");
+		flowPlot.setNodeFillColor(key2, yellowGreen);
+	}
 }
 //flowDataset.setFlow(0, "import", "export", 0);
 
@@ -5506,7 +5545,7 @@ if (importE_MWh > 0) {
 if (importG_MWh > 0 ) {
 	flowDataset.setFlow(0, "import gas", "verbruik", importG_MWh);	
 	NodeKey key4 = new NodeKey<>(0, "import gas");
-	flowPlot.setNodeFillColor(key4, darkRed);
+	flowPlot.setNodeFillColor(key4, new Color(200,150,0));
 }	
 if (importF_MWh > 0 ) {
 	flowDataset.setFlow(0, "import brandstof", "verbruik", importF_MWh);
@@ -5528,10 +5567,13 @@ flowPlot.setNodeFillColor(exportKey, darkBlue);
 //JFreeChart flowChart = new JFreeChart(flowPlot);
 flowChart.setTitle("Energiestromen");
 flowChart.setAntiAlias(true);
-
+// Increasing NodeMargin is a crude way to prevent overlapping text
+flowPlot.setNodeMargin(0.05);
+//flowPlot.setDefaultNodeLabelPaint(darkBlue);
 flowPlot.setDataset(flowDataset);	
 int widthOfSVG = 400;
 int heightOfSVG = 200;
+
 flowChart.draw(svg2d,new Rectangle2D.Double(0, 0, widthOfSVG, heightOfSVG));
 svgImgJfree.setSVG(svg2d.getSVGElement());
 svgImgJfree.setVisible(true);]]></Body>
@@ -5569,7 +5611,7 @@ if (graph.contains("Profielen")) {
 } else if (graph.contains("Opwek en verbruik")) { 
 	rb_onbalans.setVisible(true);
 	rb_supplyDemand.setVisible(false);
-} else {
+} else { // with sankey option there is a fourth here and we probably don't want to show sankey when trafos are selected
 	rb_onbalans.setVisible(true);
 	rb_supplyDemand.setVisible(false);
 }
@@ -7060,6 +7102,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 						<Button><![CDATA[Profielen]]></Button>
 						<Button><![CDATA[Opwek en verbruik]]></Button>
 						<Button><![CDATA[Netbelasting]]></Button>
+						<Button><![CDATA[Sankey]]></Button>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
@@ -7667,7 +7710,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<X>3240</X><Y>620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -12219,7 +12262,6 @@ uur]]></Text>
 					<Height>350</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-1</FillColor>
-					<FillColorCode><![CDATA[new Color(208, 208, 245)]]></FillColorCode>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
     			<TimePlot>
@@ -12301,6 +12343,21 @@ uur]]></Text>
 					<Alignment>LEFT</Alignment>
 				</Text>
 			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1714383203591</Id>
+					<Name><![CDATA[gr_sankey]]></Name>
+					<X>3180</X><Y>1860</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
 
 				</Group>
 			</Presentation>
