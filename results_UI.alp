@@ -2989,12 +2989,13 @@ if (chartScale_MWh<10) {
 					<Body><![CDATA[// Currently we do not have summer/winter/day/night data for each company/trafo
 if (rb_expertGraphs.getValue() == 0 && rb_area_BusinessPark.getValue() != 0 ) {
 	rb_supplyDemand.setValue(0,false);
-} else if (rb_expertGraphs.getValue() == 1 && rb_area_BusinessPark.getValue() != 0 ) {
+} else if (rb_expertGraphs.getValue() == 1 && rb_area_BusinessPark.getValue() != 0) {
 	rb_onbalans.setValue(0,false);
 } else if (rb_expertGraphs.getValue() == 2 && rb_area_BusinessPark.getValue() != 0) {
 	rb_onbalans.setValue(0,false);
+} else if (rb_expertGraphs.getValue() == 3 && rb_area_BusinessPark.getValue() == 1) {
+	rb_expertGraphs.setValue(0);
 }
-
 f_setGraphString();
 AreaCollection area;
 
