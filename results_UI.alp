@@ -2810,8 +2810,8 @@ rb_gespreksleidraad.setY(260);
 rb_gespreksleidraad.setVisible(false);
 */
 
-gr_resultsLiveSimulationCharts.setX(1680);
-gr_resultsLiveSimulationCharts.setY(560);
+//gr_resultsLiveSimulationCharts.setX(1680);
+//gr_resultsLiveSimulationCharts.setY(560);
 
 gr_resultsSummary.setX(1680);
 gr_resultsSummary.setY(620);
@@ -2976,7 +2976,7 @@ if (chartScale_MWh<10) {
 */
 	]]></Body>
 				</Function>
-				<Function AccessType="default" StaticFunction="false">
+				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1705578341838</Id>
@@ -3044,7 +3044,7 @@ else{
 
 ]]></Body>
 				</Function>
-				<Function AccessType="default" StaticFunction="false">
+				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1705578357893</Id>
@@ -5749,6 +5749,55 @@ if (chartScale_MWh<10) {
 }
 	]]></Body>
 				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1714659385489</Id>
+					<Name><![CDATA[f_setCoordinatesPreZero]]></Name>
+					<X>1010</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[gr_radioButtons.setX(-200);
+gr_radioButtons.setY(-500);
+
+//gr_resultsLiveSimulationCharts.setX(1680);
+//gr_resultsLiveSimulationCharts.setY(560);
+
+gr_resultsSummary.setX(-100);
+gr_resultsSummary.setY(-100);
+
+gr_sankey.setX(-500);
+gr_sankey.setY(-500);
+
+rb_onbalans.setPos(rb_supplyDemand.getX(), rb_supplyDemand.getY());
+rb_onbalans.setVisible(false);
+
+gr_resultsSupplyDemandCharts.setX(150);
+gr_resultsSupplyDemandCharts.setY(150);
+
+gr_resultsLiveTrafoPlot.setX(500);
+gr_resultsLiveTrafoPlot.setY(500);
+
+gr_onbalansGraphs.setX(200);
+gr_onbalansGraphs.setY(200);
+
+gr_netbelastingDuurkrommes.setX(-250);
+gr_netbelastingDuurkrommes.setY(-250);
+
+
+//rb_area_BusinessPark.setPos(-220,40);
+
+
+gr_simulateYearScreen.setPos(1670,355);
+gr_loadIcon.setPos(1670, 360);
+
+energyDemandChartYear.setPos(-230,-260);
+energySupplyChartYear.setPos(-230,50);
+energyDemandChartYear.setVisible(false);
+energySupplyChartYear.setVisible(false);]]></Body>
+				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
@@ -7393,6 +7442,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Group>
 					<Id>1704197996705</Id>
 					<Name><![CDATA[gr_resultsLiveSimulationCharts]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>2720</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -8188,7 +8238,7 @@ lokaal opgewekt]]></Text>
 					<X>3760</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
