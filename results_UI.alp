@@ -2843,7 +2843,7 @@ energySupplyChartYear.setPos(-230,50);
 energyDemandChartYear.setVisible(false);
 energySupplyChartYear.setVisible(false);]]></Body>
 				</Function>
-				<Function AccessType="default" StaticFunction="false">
+				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1704358816078</Id>
@@ -2954,7 +2954,7 @@ if (chartScale_MWh<10) {
 */
 	]]></Body>
 				</Function>
-				<Function AccessType="default" StaticFunction="false">
+				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1705578341838</Id>
@@ -5720,6 +5720,56 @@ if (chartScale_MWh<10) {
 }
 	]]></Body>
 				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1714654342033</Id>
+					<Name><![CDATA[f_setCoordinatesUIElements_CompanyUI]]></Name>
+					<X>985</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//cb_scope.setValueIndex(0, true);
+
+gr_resultsLiveSimulationCharts.setX(1500);
+gr_resultsLiveSimulationCharts.setY(1500);
+gr_resultsLiveSimulationCharts.setVisible(true);
+
+gr_resultsSummary.setX(700);
+gr_resultsSummary.setY(-200);
+
+//rb_onbalans.setX(1613);
+//rb_onbalans.setY(280);
+rb_onbalans.setPos(rb_supplyDemand.getX(), rb_supplyDemand.getY());
+rb_onbalans.setVisible(true);
+
+gr_resultsSupplyDemandCharts.setX(100);
+gr_resultsSupplyDemandCharts.setY(-200);
+gr_resultsSupplyDemandCharts.setVisible(true);
+
+gr_resultsLiveTrafoPlot.setX(100);
+gr_resultsLiveTrafoPlot.setY(-200);
+
+gr_onbalansGraphs.setX(1100);
+gr_onbalansGraphs.setY(-200);
+
+gr_netbelastingDuurkrommes.setX(100);
+gr_netbelastingDuurkrommes.setY(-200);
+
+
+gr_simulateYearScreen.setPos(500,500);
+gr_loadIcon.setPos(0, -500);
+
+energyDemandChartYear.setPos(1100,-200);
+energySupplyChartYear.setPos(1100,-200);
+energyDemandChartYear.setVisible(true);
+energySupplyChartYear.setVisible(true);
+
+
+//Set radio button location
+gr_radioButtons.setPos(1100,100);]]></Body>
+				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
@@ -6400,7 +6450,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<X>4370</X><Y>700</Y>
 					<Label><X>9.957</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -12346,6 +12396,27 @@ uur]]></Text>
 			</Presentation>
 
 				</Group>
+				<Text>
+					<Id>1714654446882</Id>
+					<Name><![CDATA[text16]]></Name>
+					<X>975</X><Y>555</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Results UI functions for Company UI]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
