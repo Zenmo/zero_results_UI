@@ -3036,9 +3036,9 @@ else if (v_graphString.contains("Sankey")) {
 					 area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualExportedEnergy_MWh, 0);
 }
 else if ( v_graphString.contains("Sankey")) {
-	f_setSummaryCharts();
-	//f_setSankey(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
-	//	v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 0 );
+	//f_setSummaryCharts();
+	f_setSankey(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
+		v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 0 );
 	//	gr_onbalansBarplot.setY(gr_resultsSummary.getY()-780);
 }
 if(v_graphString.contains("Live")){
@@ -5769,11 +5769,6 @@ if (chartScale_MWh<10) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[//cb_scope.setValueIndex(0, true);
-
-gr_resultsLiveSimulationCharts.setX(1500);
-gr_resultsLiveSimulationCharts.setY(1500);
-gr_resultsLiveSimulationCharts.setVisible(true);
-
 gr_resultsSummary.setX(700);
 gr_resultsSummary.setY(-200);
 
