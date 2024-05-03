@@ -71,6 +71,7 @@ f_setCoordinatesUIElements();
 //rb_results.setValue(0,true);
 
 gr_resultsSummary.add(svgImgJfree); // Need to add ShapeSVG object to group on canvas for it to become visible!
+gr_sankey.add(svgImgJfree);
 svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
 ]]></StartupCode>
 			<Generic>false</Generic>
@@ -1502,6 +1503,21 @@ svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1714378242039</Id>
+					<Name><![CDATA[v_electricityCapacityColor]]></Name>
+					<X>2080</X><Y>1560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Color]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[red]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705579272200</Id>
 					<Name><![CDATA[p_gebied]]></Name>
@@ -2794,11 +2810,14 @@ rb_gespreksleidraad.setY(260);
 rb_gespreksleidraad.setVisible(false);
 */
 
-gr_resultsLiveSimulationCharts.setX(1680);
-gr_resultsLiveSimulationCharts.setY(560);
+//gr_resultsLiveSimulationCharts.setX(1680);
+//gr_resultsLiveSimulationCharts.setY(560);
 
 gr_resultsSummary.setX(1680);
 gr_resultsSummary.setY(620);
+
+gr_sankey.setX(1680);
+gr_sankey.setY(630);
 
 //rb_onbalans.setX(1613);
 //rb_onbalans.setY(280);
@@ -2866,7 +2885,7 @@ gr_resultsLiveTrafoPlot.setVisible(isVisible);
 gr_onbalansGraphs.setVisible(isVisible);
 gr_netbelastingDuurkrommes.setVisible(isVisible);
 gr_resultsSummary.setVisible(isVisible);
-]]></Body>
+gr_sankey.setVisible(isVisible);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -2899,6 +2918,10 @@ gr_gespreksleidraad5.setVisible(isVisible);]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[area]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
 					<Body><![CDATA[gr_resultsSummary.setVisible(true);
 // KPIs
 //t_KPIhoursOverload_h.setText(roundToInt(v_totalTimeOverloadedTransformers_h) + "h");
@@ -2967,16 +2990,19 @@ if (chartScale_MWh<10) {
 					<Body><![CDATA[// Currently we do not have summer/winter/day/night data for each company/trafo
 if (rb_expertGraphs.getValue() == 0 && rb_area_BusinessPark.getValue() != 0 ) {
 	rb_supplyDemand.setValue(0,false);
-} else if (rb_expertGraphs.getValue() == 1 && rb_area_BusinessPark.getValue() != 0 ) {
+} else if (rb_expertGraphs.getValue() == 1 && rb_area_BusinessPark.getValue() != 0) {
 	rb_onbalans.setValue(0,false);
 } else if (rb_expertGraphs.getValue() == 2 && rb_area_BusinessPark.getValue() != 0) {
 	rb_onbalans.setValue(0,false);
+} else if (rb_expertGraphs.getValue() == 3 && rb_area_BusinessPark.getValue() == 1) {
+	rb_expertGraphs.setValue(0);
 }
-
 f_setGraphString();
 AreaCollection area;
 
+// Only show the relevant buttons to the user
 f_setRadioButtonVisibilitiesFromString(v_graphString);
+// First disable all the graphs, we will enable the selected one later when its function is called
 f_setDetailGraphsVisible(false);
 
 if( v_graphString.contains("_Bedrijf")){
@@ -3004,6 +3030,10 @@ else if( v_graphString.contains("Netbelasting")){
 	f_setGridLoadGraphsFromString(v_graphString, area);
 	rb_energyCarrier.setValue(1);
 	//rb_energyCarrier.setEnabled(false);
+} 
+else if (v_graphString.contains("Sankey")) {
+	f_setSankey(area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, area.v_annualNaturalGasDemand_MWh,
+					 area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualExportedEnergy_MWh, 0);
 }
 else if ( v_graphString.contains("Sankey")) {
 	f_setSummaryCharts();
@@ -3020,7 +3050,7 @@ else{
 
 ]]></Body>
 				</Function>
-				<Function AccessType="default" StaticFunction="false">
+				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1705578357893</Id>
@@ -3051,6 +3081,9 @@ else if( rb_results.getValue() == 1){
 	}
 	else if (rb_expertGraphs.getValue() == 3) {
 		v_graphString += "_Sankey";
+	}
+	else if (rb_expertGraphs.getValue() == 3) {
+		v_graphString = v_graphString + "_Sankey";
 	}
 	// AREA
 	if (rb_area_BusinessPark.getValue() == 0){
@@ -3126,12 +3159,12 @@ else if( rb_results.getValue() == 1){
 		f_setGraphProfilesLiveEnergy(area);
 	}
 	else {
-		if (area == v_trafo) {
+//		if (area == v_trafo) {
 //		trafoTimePlot.setVisible(true);
-		} else {
+//		} else {
 //		energyDemandChart.setVisible(true);
 //		energySupplyChart.setVisible(true);
-		}
+//		}
 		f_setGraphProfilesLiveElectricity(area);
 	}
 }
@@ -4507,7 +4540,6 @@ tx_maxPowerPeakSupply.setText(roundToDecimal(v_area.v_maxPowerPeakSupply_kW/1000
 gr_netbelastingDuurkrommes.setVisible(true);
 
 pl_belastingsduurkromme.removeAll();
-traceln("capaciteit: " + area.data_gridCapacityDemand_kW);
 pl_belastingsduurkromme.addDataSet(area.data_gridCapacityDemand_kW,"Indicatieve capaciteit afname");
 pl_belastingsduurkromme.addDataSet(area.data_gridCapacitySupply_kW,"Indicatieve capaciteit levering");
 pl_belastingsduurkromme.setColor(0,black);
@@ -5099,9 +5131,9 @@ trafoTimePlot.removeAll();
 if (area == v_trafo) {
 	if (v_trafo.v_dataBaseloadElectricityDemandLiveWeek_kW != null) {
 		gr_resultsLiveTrafoPlot.setVisible(true);
-		trafoTimePlot.addDataSet(area.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit");
-		trafoTimePlot.addDataSet(area.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit");
-		trafoTimePlot.addDataSet(area.v_dataBaseloadElectricityDemandLiveWeek_kW, v_electricityDemandText, v_electricityDemandColor, true, TimePlot.INTERPOLATION_LINEAR, 2, TimePlot.POINT_SQUARE);
+		trafoTimePlot.addDataSet(area.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit", v_electricityCapacityColor, true, TimePlot.INTERPOLATION_LINEAR, 1, TimePlot.POINT_SQUARE);
+		trafoTimePlot.addDataSet(area.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", v_electricityCapacityColor, true, TimePlot.INTERPOLATION_LINEAR, 1, TimePlot.POINT_SQUARE);
+		trafoTimePlot.addDataSet(area.v_dataBaseloadElectricityDemandLiveWeek_kW, v_electricityDemandText, v_electricityDemandColor, true, TimePlot.INTERPOLATION_LINEAR, 1, TimePlot.POINT_SQUARE);
 	}
 } 
 else {
@@ -5490,25 +5522,28 @@ pl_collectiveChart.setFixedScale(chartScale_MWh);
 						<Name><![CDATA[heatProduced_MWh]]></Name>
 						<Type><![CDATA[double]]></Type>
 					</Parameter>
-					<Body><![CDATA[//gr_onbalansGraphs.setVisible(false);
-
-traceln("sankey plot");
-
+					<Body><![CDATA[//gr_resultsSummary.setVisible(true);
+//gr_onbalansGraphs.setVisible(false);
+gr_sankey.setVisible(true);
 flowDataset = new DefaultFlowDataset();
 
 if (heatProduced_MWh > 0) {
 	flowDataset.setFlow(0, "opwek warmte", "verbruik", heatProduced_MWh);
 	NodeKey key1 = new NodeKey<>(0, "opwek warmte");
 	flowPlot.setNodeFillColor(key1, yellowGreen);
-	flowDataset.setFlow(0, "opwek stroom", "verbruik", (selfConsumedEnergy_MWh-heatProduced_MWh));
-	flowDataset.setFlow(0, "opwek stroom", "export stroom", exportE_MWh);
-	NodeKey key2 = new NodeKey<>(0, "opwek stroom");
-	flowPlot.setNodeFillColor(key2, yellowGreen);
+	if (selfConsumedEnergy_MWh-heatProduced_MWh > 0 || exportE_MWh > 0) {
+		flowDataset.setFlow(0, "opwek stroom", "verbruik", (selfConsumedEnergy_MWh-heatProduced_MWh));
+		flowDataset.setFlow(0, "opwek stroom", "export stroom", exportE_MWh);
+		NodeKey key2 = new NodeKey<>(0, "opwek stroom");
+		flowPlot.setNodeFillColor(key2, yellowGreen);
+	}
 } else {
-	flowDataset.setFlow(0, "eigen opwek", "verbruik", (selfConsumedEnergy_MWh));
-	flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh);
-	NodeKey key2 = new NodeKey<>(0, "eigen opwek");
-	flowPlot.setNodeFillColor(key2, yellowGreen);
+	if (selfConsumedEnergy_MWh > 0 || exportE_MWh > 0) {
+		flowDataset.setFlow(0, "eigen opwek", "verbruik", (selfConsumedEnergy_MWh));
+		flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh);
+		NodeKey key2 = new NodeKey<>(0, "eigen opwek");
+		flowPlot.setNodeFillColor(key2, yellowGreen);
+	}
 }
 //flowDataset.setFlow(0, "import", "export", 0);
 
@@ -5520,7 +5555,7 @@ if (importE_MWh > 0) {
 if (importG_MWh > 0 ) {
 	flowDataset.setFlow(0, "import gas", "verbruik", importG_MWh);	
 	NodeKey key4 = new NodeKey<>(0, "import gas");
-	flowPlot.setNodeFillColor(key4, darkRed);
+	flowPlot.setNodeFillColor(key4, new Color(200,150,0));
 }	
 if (importF_MWh > 0 ) {
 	flowDataset.setFlow(0, "import brandstof", "verbruik", importF_MWh);
@@ -5542,10 +5577,13 @@ flowPlot.setNodeFillColor(exportKey, darkBlue);
 //JFreeChart flowChart = new JFreeChart(flowPlot);
 flowChart.setTitle("Energiestromen");
 flowChart.setAntiAlias(true);
-
+// Increasing NodeMargin is a crude way to prevent overlapping text
+flowPlot.setNodeMargin(0.05);
+//flowPlot.setDefaultNodeLabelPaint(darkBlue);
 flowPlot.setDataset(flowDataset);	
 int widthOfSVG = 400;
 int heightOfSVG = 200;
+
 flowChart.draw(svg2d,new Rectangle2D.Double(0, 0, widthOfSVG, heightOfSVG));
 svgImgJfree.setSVG(svg2d.getSVGElement());
 svgImgJfree.setVisible(true);]]></Body>
@@ -5583,7 +5621,7 @@ if (graph.contains("Profielen")) {
 } else if (graph.contains("Opwek en verbruik")) { 
 	rb_onbalans.setVisible(true);
 	rb_supplyDemand.setVisible(false);
-} else {
+} else { // with sankey option there is a fourth here and we probably don't want to show sankey when trafos are selected
 	rb_onbalans.setVisible(true);
 	rb_supplyDemand.setVisible(false);
 }
@@ -5901,20 +5939,19 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
-					<LineColor/>
+					<LineColor>-1644806</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
-					<Height>590</Height>
+					<Height>580</Height>
 					<Rotation>0.0</Rotation>
-					<FillColor/>
-					<FillColorCode><![CDATA[new Color(208, 208, 245)]]></FillColorCode>
+					<FillColor>-1</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Text>
 					<Id>1704358463915</Id>
 					<Name><![CDATA[tx_topBarplotText2]]></Name>
-					<X>-170</X><Y>-215</Y>
+					<X>10</X><Y>-250</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5926,37 +5963,16 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Belastingduurkromme]]></Text>
 					<Font>
-						<Name>Arial</Name>
+						<Name>Calibri</Name>
 						<Size>18</Size>
 						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1704197773195</Id>
-					<Name><![CDATA[tx_topBarplotText9]]></Name>
-					<X>0</X><Y>-280</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Netbelasting]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>28</Size>
-						<Style>1</Style>
 					</Font>
 					<Alignment>CENTER</Alignment>
 				</Text>
     			<Plot>
 					<Id>1704197773198</Id>
 					<Name><![CDATA[pl_belastingsduurkromme]]></Name>
-					<X>-220</X><Y>-210</Y>
+					<X>-220</X><Y>-230</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5975,14 +5991,14 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 					</RecurrenceCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Width>420</Width>
-					<Height>239.286</Height>
+					<Height>270</Height>
 					<BackgroundColor/>
 					<BorderColor/>
 					<ChartArea>
 						<XOffset>50</XOffset>
 						<YOffset>30</YOffset>
 						<Width>340</Width>
-						<Height>130</Height>
+						<Height>160.714</Height>
 						<BackgroundColor/>
 						<BorderColor>-16777216</BorderColor>
 						<GridColor>-12566464</GridColor>
@@ -6011,7 +6027,7 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 				<Text>
 					<Id>1704197773200</Id>
 					<Name><![CDATA[t_duurkromme_xlabel]]></Name>
-					<X>-30</X><Y>-30</Y>
+					<X>-20</X><Y>-10</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6032,7 +6048,7 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 				<Text>
 					<Id>1704197773202</Id>
 					<Name><![CDATA[t_duurkromme_ylabel]]></Name>
-					<X>-210</X><Y>-160</Y>
+					<X>-210</X><Y>-170</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6053,7 +6069,7 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 				<Group>
 					<Id>1704197773204</Id>
 					<Name><![CDATA[gr_KPInetbelasting]]></Name>
-					<X>-120</X><Y>170</Y>
+					<X>-120</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6079,8 +6095,8 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Benuttingsgraad]]></Text>
 					<Font>
-						<Name>Calibri Light</Name>
-						<Size>24</Size>
+						<Name>Calibri</Name>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>CENTER</Alignment>
@@ -6098,14 +6114,13 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
-					<LineColor>-16777216</LineColor>
+					<LineColor/>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<RadiusX>45</RadiusX>
 					<RadiusY>40</RadiusY>
 					<Rotation>0.0</Rotation>
-					<FillColor>-2578</FillColor>
-					<FillColorCode><![CDATA[//setNetusageOvalColor(energyModel.v_avgNetLoad_fr)]]></FillColorCode>
+					<FillColor>-10185235</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Oval>
 				<Text>
@@ -6141,13 +6156,13 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
+					<Color>-1</Color>
 					<Text><![CDATA[20%]]></Text>
 					<TextCode><![CDATA[//roundToInt(energyModel.v_avgNetLoad_fr*100) + "%"]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>26</Size>
-						<Style>0</Style>
+						<Size>22</Size>
+						<Style>1</Style>
 					</Font>
 					<Alignment>CENTER</Alignment>
 				</Text>
@@ -6157,7 +6172,7 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 				<Text>
 					<Id>1706466224166</Id>
 					<Name><![CDATA[tx_topBarplotText52]]></Name>
-					<X>10</X><Y>120</Y>
+					<X>-20</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6167,11 +6182,10 @@ gr_radioButtons.setPos(1100,100);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Maximale
-afname]]></Text>
+					<Text><![CDATA[Maximale afname]]></Text>
 					<Font>
 						<Name>Arial</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -6179,7 +6193,7 @@ afname]]></Text>
 				<Text>
 					<Id>1706466224168</Id>
 					<Name><![CDATA[tx_maxDemand]]></Name>
-					<X>190</X><Y>130</Y>
+					<X>93</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6192,15 +6206,15 @@ afname]]></Text>
 					<Text><![CDATA[xx MW]]></Text>
 					<Font>
 						<Name>Arial</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>RIGHT</Alignment>
+					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
 					<Id>1706466224181</Id>
 					<Name><![CDATA[tx_maxSupply]]></Name>
-					<X>190</X><Y>180</Y>
+					<X>130</X><Y>180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6213,15 +6227,15 @@ afname]]></Text>
 					<Text><![CDATA[xx MW]]></Text>
 					<Font>
 						<Name>Arial</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>RIGHT</Alignment>
+					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
 					<Id>1706466224183</Id>
 					<Name><![CDATA[tx_topBarplotText55]]></Name>
-					<X>10</X><Y>170</Y>
+					<X>-20</X><Y>180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6231,11 +6245,10 @@ afname]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Maximale
-terugleveringen]]></Text>
+					<Text><![CDATA[Maximale teruglevering]]></Text>
 					<Font>
 						<Name>Arial</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -6471,14 +6484,13 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
-					<LineColor/>
+					<LineColor>-1644806</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
-					<Height>590</Height>
+					<Height>580</Height>
 					<Rotation>0.0</Rotation>
-					<FillColor/>
-					<FillColorCode><![CDATA[new Color(208, 208, 245)]]></FillColorCode>
+					<FillColor>-1</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
 				<Group>
@@ -6614,8 +6626,8 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Opwek]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
@@ -6635,8 +6647,8 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Gebruik]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
@@ -6644,7 +6656,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				<Text>
 					<Id>1704197773513</Id>
 					<Name><![CDATA[t_bottomBarplotText]]></Name>
-					<X>-350</X><Y>-140</Y>
+					<X>-140</X><Y>-140</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6656,11 +6668,11 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Winter]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
 			</Presentation>
 
@@ -6668,7 +6680,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				<Text>
 					<Id>1704197773515</Id>
 					<Name><![CDATA[tx_topBarplotText1]]></Name>
-					<X>-130</X><Y>-290</Y>
+					<X>-20</X><Y>-270</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6680,11 +6692,11 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Energiebalans]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>28</Size>
-						<Style>1</Style>
+						<Name>Calibri</Name>
+						<Size>18</Size>
+						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
 				<Group>
 					<Id>1704197773479</Id>
@@ -6819,8 +6831,8 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Opwek]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
@@ -6840,8 +6852,8 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Gebruik]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
@@ -6849,7 +6861,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				<Text>
 					<Id>1704197773495</Id>
 					<Name><![CDATA[t_topBarplotText]]></Name>
-					<X>-350</X><Y>-140</Y>
+					<X>-140</X><Y>-140</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6861,11 +6873,11 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Zomer]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
 			</Presentation>
 
@@ -7018,7 +7030,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
-					<Height>310</Height>
+					<Height>330</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-3092235</FillColor>
 					<FillMaterial>null</FillMaterial>
@@ -7048,7 +7060,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				<Text>
 					<Id>1713190291927</Id>
 					<Name><![CDATA[t_radioButtonsTitle]]></Name>
-					<X>-200</X><Y>-150</Y>
+					<X>-35</X><Y>-150</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7058,18 +7070,18 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Selecteer gebied en grafieken]]></Text>
+					<Text><![CDATA[Selecteer gewenste output]]></Text>
 					<Font>
 						<Name>Yu Gothic UI</Name>
 						<Size>22</Size>
 						<Style>1</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
 				<Text>
 					<Id>1713190294237</Id>
 					<Name><![CDATA[t_results]]></Name>
-					<X>-205</X><Y>-105</Y>
+					<X>-190</X><Y>-105</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7091,13 +7103,13 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1713190296272</Id>
 					<Name><![CDATA[rb_results]]></Name>
-					<X>-215</X><Y>-75</Y>
+					<X>-200</X><Y>-75</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="120" Height="100">
+					<BasicProperties Width="120" Height="75">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
@@ -7117,7 +7129,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				<Group>
 					<Id>1713190298458</Id>
 					<Name><![CDATA[gr_detailRadioButtons]]></Name>
-					<X>0</X><Y>-60</Y>
+					<X>-10</X><Y>-60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -7132,7 +7144,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1713190298462</Id>
 					<Name><![CDATA[rb_expertGraphs]]></Name>
-					<X>-70</X><Y>-20</Y>
+					<X>35</X><Y>-20</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7151,13 +7163,14 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 						<Button><![CDATA[Profielen]]></Button>
 						<Button><![CDATA[Opwek en verbruik]]></Button>
 						<Button><![CDATA[Netbelasting]]></Button>
+						<Button><![CDATA[Sankey]]></Button>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
 				<Line>
 					<Id>1713190298464</Id>
 					<Name><![CDATA[line10]]></Name>
-					<X>-85</X><Y>-40</Y>
+					<X>-20</X><Y>-40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7167,7 +7180,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
-					<LineColor>-7114536</LineColor>
+					<LineColor>-1</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<BeginArrowSize>1</BeginArrowSize>
@@ -7181,7 +7194,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				<Line>
 					<Id>1713190812223</Id>
 					<Name><![CDATA[line9]]></Name>
-					<X>-85</X><Y>80</Y>
+					<X>-20</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7191,7 +7204,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
-					<LineColor>-7114536</LineColor>
+					<LineColor>-1</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<BeginArrowSize>1</BeginArrowSize>
@@ -7199,14 +7212,14 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<EndArrowSize>1</EndArrowSize>
 					<EndArrowStyle>0</EndArrowStyle>
 					<Dx>0</Dx>
-					<Dy>110</Dy>
+					<Dy>120</Dy>
 					<Dz>0</Dz>
 				</Line>
 				<Control Type="RadioButtons">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1713190814349</Id>
 					<Name><![CDATA[rb_energyCarrier]]></Name>
-					<X>-215</X><Y>110</Y>
+					<X>-190</X><Y>110</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7231,7 +7244,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1713190816441</Id>
 					<Name><![CDATA[rb_supplyDemand]]></Name>
-					<X>-70</X><Y>100</Y>
+					<X>35</X><Y>100</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7246,17 +7259,17 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 					<ExtendedProperties>
 						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
 						<Orientation>VERTICAL</Orientation>
-						<Button><![CDATA[Live]]></Button>
+						<Button><![CDATA[Live simulatie]]></Button>
 						<Button><![CDATA[Zomerweek]]></Button>
 						<Button><![CDATA[Winterweek]]></Button>
-						<Button><![CDATA[Jaar]]></Button>
+						<Button><![CDATA[Jaaroverzicht]]></Button>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
 				<Text>
 					<Id>1713190818995</Id>
 					<Name><![CDATA[t_time]]></Name>
-					<X>-50</X><Y>75</Y>
+					<X>55</X><Y>75</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7277,7 +7290,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				<Text>
 					<Id>1713190820445</Id>
 					<Name><![CDATA[text248]]></Name>
-					<X>-205</X><Y>75</Y>
+					<X>-190</X><Y>75</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7299,7 +7312,7 @@ gr_netbelasting.setVisible(false);]]></OnClickCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1713190822497</Id>
 					<Name><![CDATA[rb_onbalans]]></Name>
-					<X>-240</X><Y>220</Y>
+					<X>-245</X><Y>240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7413,7 +7426,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Text>
 					<Id>1713190835374</Id>
 					<Name><![CDATA[t_time1]]></Name>
-					<X>-50</X><Y>-45</Y>
+					<X>55</X><Y>-45</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7440,6 +7453,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Group>
 					<Id>1704197996705</Id>
 					<Name><![CDATA[gr_resultsLiveSimulationCharts]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>2720</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -7454,7 +7468,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Rectangle>
 					<Id>1704298113025</Id>
 					<Name><![CDATA[rect_resultsLarge]]></Name>
-					<X>-240</X><Y>-300</Y>
+					<X>-240</X><Y>-240</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7464,20 +7478,19 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
-					<LineColor/>
+					<LineColor>-1644806</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
-					<Height>720</Height>
+					<Height>655</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor/>
-					<FillColorCode><![CDATA[new Color(208, 208, 245)]]></FillColorCode>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
     			<TimeStackChart>
 					<Id>1704357558563</Id>
 					<Name><![CDATA[liveSimulationEnergyDemandChart]]></Name>
-					<X>-240</X><Y>-220</Y>
+					<X>-240</X><Y>-205</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7500,9 +7513,9 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<BackgroundColor/>
 					<BorderColor/>
 					<ChartArea>
-						<XOffset>70</XOffset>
+						<XOffset>80</XOffset>
 						<YOffset>30</YOffset>
-						<Width>360</Width>
+						<Width>350</Width>
 						<Height>120</Height>
 						<BackgroundColor>-1</BackgroundColor>
 						<BorderColor>-16777216</BorderColor>
@@ -7530,7 +7543,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Text>
 					<Id>1704357558578</Id>
 					<Name><![CDATA[text196]]></Name>
-					<X>-200</X><Y>-230</Y>
+					<X>10</X><Y>-215</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7542,16 +7555,16 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<Color>-16777216</Color>
 					<Text><![CDATA[Elektriciteitsvraag]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>18</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
 				<Text>
 					<Id>1704357558593</Id>
 					<Name><![CDATA[text197]]></Name>
-					<X>-190</X><Y>80</Y>
+					<X>10</X><Y>80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7563,16 +7576,16 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<Color>-16777216</Color>
 					<Text><![CDATA[Elektriciteitsaanbod]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>18</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
 				<Text>
 					<Id>1704367932657</Id>
 					<Name><![CDATA[t_energyDemand_xlabel]]></Name>
-					<X>190</X><Y>-50</Y>
+					<X>190</X><Y>-30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7584,8 +7597,8 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<Color>-16777216</Color>
 					<Text><![CDATA[Datum [d/m]]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>12</Size>
+						<Name>Calibri</Name>
+						<Size>10</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
@@ -7593,7 +7606,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Text>
 					<Id>1704367932659</Id>
 					<Name><![CDATA[t_energyDemand_ylabel]]></Name>
-					<X>-220</X><Y>-170</Y>
+					<X>-230</X><Y>-85</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7601,12 +7614,12 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<Rotation>90.0</Rotation>
+					<Rotation>270.0</Rotation>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Vermogen [kW]]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>12</Size>
+						<Name>Calibri</Name>
+						<Size>10</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -7637,9 +7650,9 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<BackgroundColor/>
 					<BorderColor/>
 					<ChartArea>
-						<XOffset>70</XOffset>
+						<XOffset>80</XOffset>
 						<YOffset>30</YOffset>
-						<Width>360</Width>
+						<Width>350</Width>
 						<Height>120</Height>
 						<BackgroundColor>-1</BackgroundColor>
 						<BorderColor>-16777216</BorderColor>
@@ -7667,7 +7680,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Text>
 					<Id>1704368400033</Id>
 					<Name><![CDATA[t_energyDemand_xlabel1]]></Name>
-					<X>190</X><Y>260</Y>
+					<X>190</X><Y>265</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7679,8 +7692,8 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<Color>-16777216</Color>
 					<Text><![CDATA[Datum [d/m]]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>12</Size>
+						<Name>Calibri</Name>
+						<Size>10</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
@@ -7688,7 +7701,7 @@ else if( rb_gespreksleidraad.getValue() == 4){
 				<Text>
 					<Id>1704368400035</Id>
 					<Name><![CDATA[t_energyDemand_ylabel1]]></Name>
-					<X>-220</X><Y>140</Y>
+					<X>-230</X><Y>215</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7696,12 +7709,12 @@ else if( rb_gespreksleidraad.getValue() == 4){
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<Rotation>90.0</Rotation>
+					<Rotation>270.0</Rotation>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Vermogen [kW]]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>12</Size>
+						<Name>Calibri</Name>
+						<Size>10</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -8120,7 +8133,7 @@ lokaal opgewekt]]></Text>
 				<Text>
 					<Id>1704352270476</Id>
 					<Name><![CDATA[t_opwekText]]></Name>
-					<X>-374.012</X><Y>-131.212</Y>
+					<X>-320</X><Y>-130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8132,16 +8145,16 @@ lokaal opgewekt]]></Text>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Opwek]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
 					<Id>1704352270478</Id>
 					<Name><![CDATA[t_gebruikText]]></Name>
-					<X>-384.134</X><Y>-19.192</Y>
+					<X>-320</X><Y>-20</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8153,16 +8166,16 @@ lokaal opgewekt]]></Text>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Gebruik]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
 					<Id>1704352270480</Id>
 					<Name><![CDATA[tx_topBarplotText10]]></Name>
-					<X>-390</X><Y>-180</Y>
+					<X>-200</X><Y>-180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8174,11 +8187,11 @@ lokaal opgewekt]]></Text>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Jaarlijkse opwek en gebruik alle energiedragers]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
 			</Presentation>
 
@@ -8236,7 +8249,7 @@ lokaal opgewekt]]></Text>
 					<X>3760</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -8247,7 +8260,7 @@ lokaal opgewekt]]></Text>
 				<Rectangle>
 					<Id>1704357977795</Id>
 					<Name><![CDATA[rect_resultsSmall1]]></Name>
-					<X>-230</X><Y>-290</Y>
+					<X>-230</X><Y>-268</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8257,20 +8270,19 @@ lokaal opgewekt]]></Text>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
-					<LineColor/>
+					<LineColor>-1644806</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
-					<Height>590</Height>
+					<Height>558</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor/>
-					<FillColorCode><![CDATA[new Color(208, 208, 245)]]></FillColorCode>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
     			<TimeStackChart>
 					<Id>1704197996711</Id>
 					<Name><![CDATA[energyDemandChart]]></Name>
-					<X>-230</X><Y>-260</Y>
+					<X>-230</X><Y>-240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8323,7 +8335,7 @@ lokaal opgewekt]]></Text>
 				<Text>
 					<Id>1704197996713</Id>
 					<Name><![CDATA[t_energieVraag]]></Name>
-					<X>-190</X><Y>-270</Y>
+					<X>0</X><Y>-250</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8335,11 +8347,11 @@ lokaal opgewekt]]></Text>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Energievraag]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>18</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
     			<TimeStackChart>
 					<Id>1704197996708</Id>
@@ -8397,7 +8409,7 @@ lokaal opgewekt]]></Text>
 				<Text>
 					<Id>1704197996715</Id>
 					<Name><![CDATA[t_energieAanbod]]></Name>
-					<X>-180</X><Y>40</Y>
+					<X>0</X><Y>40</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8409,11 +8421,11 @@ lokaal opgewekt]]></Text>
 					<Color>-16777216</Color>
 					<Text><![CDATA[Energie-aanbod]]></Text>
 					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
+						<Name>Calibri</Name>
+						<Size>18</Size>
 						<Style>0</Style>
 					</Font>
-					<Alignment>LEFT</Alignment>
+					<Alignment>CENTER</Alignment>
 				</Text>
     			<TimeStackChart>
 					<Id>1705926646398</Id>
@@ -12281,7 +12293,7 @@ uur]]></Text>
 				<Group>
 					<Id>1712670575019</Id>
 					<Name><![CDATA[gr_resultsLiveTrafoPlot]]></Name>
-					<X>4290</X><Y>140</Y>
+					<X>4340</X><Y>120</Y>
 					<Label><X>10.383</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12312,7 +12324,6 @@ uur]]></Text>
 					<Height>350</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-1</FillColor>
-					<FillColorCode><![CDATA[new Color(208, 208, 245)]]></FillColorCode>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
     			<TimePlot>
@@ -12417,6 +12428,21 @@ uur]]></Text>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Group>
+					<Id>1714383203591</Id>
+					<Name><![CDATA[gr_sankey]]></Name>
+					<X>3180</X><Y>1860</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+
+				</Group>
 			</Presentation>
 
 				</Level>
