@@ -1140,7 +1140,7 @@ else{
 					<Body><![CDATA[chartProfielen_presentation.setVisible(false);
 chartBalans_presentation.setVisible(false);
 chartNetbelasting_presentation.setVisible(false);
-//chartSankey_presentation.setVisible(false);
+chartSankey_presentation.setVisible(false);
 
 switch (v_selectedChartType) {
 	case PROFIEL:
@@ -1156,7 +1156,8 @@ switch (v_selectedChartType) {
 		chartNetbelasting.f_setBelastingPlots();
 		break;
 	case SANKEY:
-	
+		chartSankey_presentation.setVisible(true);
+		chartSankey.f_setSankey();
 		break;
 }]]></Body>
 				</Function>
@@ -1581,7 +1582,6 @@ else{
 				<EmbeddedObject>
 					<Id>1714770587436</Id>
 					<Name><![CDATA[chartSankey]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>240</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2311,7 +2311,6 @@ f_showCorrectChart();]]></ActionCode>
 				<EmbeddedObjectPresentation>
 					<Id>1714770587438</Id>
 					<Name><![CDATA[chartSankey_presentation]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>1440</X><Y>330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3519,7 +3518,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604805432</Id>
 					<Name><![CDATA[v_selfConsumedEnergyWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>260</Y>
+					<X>1380</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3531,7 +3530,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604805434</Id>
 					<Name><![CDATA[v_importedEnergyWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>280</Y>
+					<X>1380</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3543,7 +3542,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604805436</Id>
 					<Name><![CDATA[v_exportedEnergyWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>300</Y>
+					<X>1380</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3555,7 +3554,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604805438</Id>
 					<Name><![CDATA[v_selfConsumedElectricityWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>380</Y>
+					<X>1380</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3567,7 +3566,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604805440</Id>
 					<Name><![CDATA[v_importedElectricityWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>400</Y>
+					<X>1380</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3579,7 +3578,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604805442</Id>
 					<Name><![CDATA[v_exportedElectricityWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>420</Y>
+					<X>1380</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3591,7 +3590,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604805444</Id>
 					<Name><![CDATA[v_naturalGasDemandWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>320</Y>
+					<X>1380</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3603,7 +3602,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604805446</Id>
 					<Name><![CDATA[v_petroleumProductsDemandWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>340</Y>
+					<X>1380</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3711,7 +3710,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604811765</Id>
 					<Name><![CDATA[v_selfConsumedEnergyNighttime_MWh]]></Name>
-					<X>740</X><Y>690</Y>
+					<X>740</X><Y>710</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3723,7 +3722,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604811767</Id>
 					<Name><![CDATA[v_importedEnergyNighttime_MWh]]></Name>
-					<X>740</X><Y>710</Y>
+					<X>740</X><Y>730</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3735,7 +3734,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604811769</Id>
 					<Name><![CDATA[v_exportedEnergyNighttime_MWh]]></Name>
-					<X>740</X><Y>730</Y>
+					<X>740</X><Y>750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3747,7 +3746,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604811771</Id>
 					<Name><![CDATA[v_selfConsumedElectricityNighttime_MWh]]></Name>
-					<X>740</X><Y>810</Y>
+					<X>740</X><Y>830</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3759,7 +3758,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604811773</Id>
 					<Name><![CDATA[v_importedElectricityNighttime_MWh]]></Name>
-					<X>740</X><Y>830</Y>
+					<X>740</X><Y>850</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3771,7 +3770,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604811775</Id>
 					<Name><![CDATA[v_exportedElectricityNighttime_MWh]]></Name>
-					<X>740</X><Y>850</Y>
+					<X>740</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3783,7 +3782,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604811777</Id>
 					<Name><![CDATA[v_naturalGasDemandNighttime_MWh]]></Name>
-					<X>740</X><Y>750</Y>
+					<X>740</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3795,7 +3794,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604811779</Id>
 					<Name><![CDATA[v_petroleumProductsDemandNighttime_MWh]]></Name>
-					<X>740</X><Y>770</Y>
+					<X>740</X><Y>790</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3903,7 +3902,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604917920</Id>
 					<Name><![CDATA[v_selfConsumedEnergyWeekend_MWh]]></Name>
-					<X>1080</X><Y>690</Y>
+					<X>1080</X><Y>710</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3915,7 +3914,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604917922</Id>
 					<Name><![CDATA[v_importedEnergyWeekend_MWh]]></Name>
-					<X>1080</X><Y>710</Y>
+					<X>1080</X><Y>730</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3927,7 +3926,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604917924</Id>
 					<Name><![CDATA[v_exportedEnergyWeekend_MWh]]></Name>
-					<X>1080</X><Y>730</Y>
+					<X>1080</X><Y>750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3939,7 +3938,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604917926</Id>
 					<Name><![CDATA[v_selfConsumedElectricityWeekend_MWh]]></Name>
-					<X>1080</X><Y>810</Y>
+					<X>1080</X><Y>830</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3951,7 +3950,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604917928</Id>
 					<Name><![CDATA[v_importedElectricityWeekend_MWh]]></Name>
-					<X>1080</X><Y>830</Y>
+					<X>1080</X><Y>850</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3963,7 +3962,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604917930</Id>
 					<Name><![CDATA[v_exportedElectricityWeekend_MWh]]></Name>
-					<X>1080</X><Y>850</Y>
+					<X>1080</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3975,7 +3974,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604917932</Id>
 					<Name><![CDATA[v_naturalGasDemandWeekend_MWh]]></Name>
-					<X>1080</X><Y>750</Y>
+					<X>1080</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3987,7 +3986,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1706604917934</Id>
 					<Name><![CDATA[v_petroleumProductsDemandWeekend_MWh]]></Name>
-					<X>1080</X><Y>770</Y>
+					<X>1080</X><Y>790</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5334,7 +5333,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1707408143964</Id>
 					<Name><![CDATA[v_hydrogenImportWinterWeek_MWh]]></Name>
-					<X>1380</X><Y>360</Y>
+					<X>1380</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5346,7 +5345,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1707408232740</Id>
 					<Name><![CDATA[v_hydrogenImportNighttime_MWh]]></Name>
-					<X>740</X><Y>790</Y>
+					<X>740</X><Y>810</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5370,7 +5369,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1707408266971</Id>
 					<Name><![CDATA[v_hydrogenImportWeekend_MWh]]></Name>
-					<X>1080</X><Y>790</Y>
+					<X>1080</X><Y>810</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5467,6 +5466,78 @@ f_showCorrectChart();]]></ActionCode>
 					<Id>1713276179566</Id>
 					<Name><![CDATA[v_annualSelfProducedElectricity_MWh]]></Name>
 					<X>420</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1715017434551</Id>
+					<Name><![CDATA[v_selfProducedElectricitySummerWeek_MWh]]></Name>
+					<X>1380</X><Y>240</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1715017457987</Id>
+					<Name><![CDATA[v_selfProducedElectricityWinterWeek_MWh]]></Name>
+					<X>1380</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1715067597350</Id>
+					<Name><![CDATA[v_selfProducedElectricityDaytime_MWh]]></Name>
+					<X>740</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1715067600374</Id>
+					<Name><![CDATA[v_selfProducedElectricityNighttime_MWh]]></Name>
+					<X>740</X><Y>890</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1715067603046</Id>
+					<Name><![CDATA[v_selfProducedElectricityWeekday_MWh]]></Name>
+					<X>1080</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1715067605671</Id>
+					<Name><![CDATA[v_selfProducedElectricityWeekend_MWh]]></Name>
+					<X>1080</X><Y>890</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8077,9 +8148,7 @@ if (dataObject.v_dataPetroleumProductsSupplyYear_MWh != null) {
 }
 if (dataObject.v_dataDistrictHeatSupplyYear_MWh != null) {
 	energySupplyChartYear.addDataSet(dataObject.v_dataDistrictHeatSupplyYear_MWh, "Warmtenet invoer", uI_Results.v_districtHeatHeatSupplyColor);
-}
-
-]]></Body>
+}]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -8098,20 +8167,34 @@ if (dataObject.v_dataDistrictHeatSupplyYear_MWh != null) {
 					<Body><![CDATA[group_year.setVisible(true);
 
 //Energy demand chart
-energyDemandChartYear.addDataSet(dataObject.v_dataElectricityBaseloadDemandYear_MWh, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
-energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHeatDemandYear_MWh,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
-energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_MWh, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
+if (dataObject.v_dataElectricityBaseloadDemandYear_MWh != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityBaseloadDemandYear_MWh, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
+}
+if (dataObject.v_dataElectricityForHeatDemandYear_MWh != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHeatDemandYear_MWh,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
+}
+if (dataObject.v_dataElectricityForTransportDemandYear_MWh != null) { 
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_MWh, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
+}
 if (dataObject.v_dataElectricityForHydrogenDemandYear_MWh != null) {
 	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_MWh,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 }
-energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_MWh, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-
+if (dataObject.v_dataElectricityForStorageDemandYear_MWh != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_MWh, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+}
 //Energy supply chart
+if (dataObject.v_dataElectricityWindSupplyYear_MWh != null) {
 energySupplyChartYear.addDataSet(dataObject.v_dataElectricityWindSupplyYear_MWh, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_MWh, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_MWh, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_MWh, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-]]></Body>
+}
+if (dataObject.v_dataElectricityPVSupplyYear_MWh != null) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_MWh, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
+}
+if (dataObject.v_dataElectricityStorageSupplyYear_MWh != null ) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_MWh, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
+}
+if (dataObject.v_dataElectricityV2GSupplyYear_MWh != null) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_MWh, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+}]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -8184,7 +8267,8 @@ else{
 	energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplyLiveWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-}]]></Body>
+}
+]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -8236,7 +8320,6 @@ if (dataObject.v_dataDistrictHeatSupplySummerWeek_kW != null) {
 					<Body><![CDATA[group_week.setVisible(true);
 
 //Energy demand chart
-energyDemandChart.removeAll();
 energyDemandChart.addDataSet(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
 energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandSummerWeek_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
 energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandSummerWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
@@ -8247,7 +8330,6 @@ energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandSum
 
 
 //Energy supply chart
-energySupplyChart.removeAll();
 energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplySummerWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
 energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplySummerWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
 energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplySummerWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
@@ -8324,7 +8406,6 @@ if (dataObject.v_dataDistrictHeatSupplyWinterWeek_kW != null) {
 					<Body><![CDATA[group_week.setVisible(true);
 
 //Energy demand chart
-energyDemandChart.removeAll();
 energyDemandChart.addDataSet(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
 energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandWinterWeek_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
 energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandWinterWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
@@ -8335,7 +8416,6 @@ energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandWin
 
 
 //Energy supply chart
-energySupplyChart.removeAll();
 energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplyWinterWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
 energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplyWinterWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
 energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyWinterWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
@@ -8363,21 +8443,30 @@ if( uI_Results.v_selectedPeriod == LIVE){
 	}
 }
 else if (uI_Results.v_selectedPeriod == JAAR){
-	f_addElectricityFlows_Year(dataObject);
-	if( radio_energyType.getValue() == 1){
-		f_addOtherEnergyFlows_Year(dataObject);
+	// Trafo's not fully implemented yet
+	if (uI_Results.v_selectedObjectType != TRAFO) {
+		f_addElectricityFlows_Year(dataObject);
+		if( radio_energyType.getValue() == 1){
+			f_addOtherEnergyFlows_Year(dataObject);
+		}
 	}
 }
 else if (uI_Results.v_selectedPeriod == ZOMER){
-	f_addElectricityFlows_SummerWeek(dataObject);
-	if( radio_energyType.getValue() == 1){
-		f_addOtherEnergyFlows_SummerWeek(dataObject);
+	// Trafo's not fully implemented yet
+	if (uI_Results.v_selectedObjectType != TRAFO) {
+		f_addElectricityFlows_SummerWeek(dataObject);
+		if( radio_energyType.getValue() == 1){
+			f_addOtherEnergyFlows_SummerWeek(dataObject);
+		}
 	}
 }
 else if (uI_Results.v_selectedPeriod == WINTER){
-	f_addElectricityFlows_WinterWeek(dataObject);
-	if( radio_energyType.getValue() == 1){
-		f_addOtherEnergyFlows_WinterWeek(dataObject);
+	// Trafo's not fully implemented yet
+	if (uI_Results.v_selectedObjectType != TRAFO) {
+		f_addElectricityFlows_WinterWeek(dataObject);
+		if( radio_energyType.getValue() == 1){
+			f_addOtherEnergyFlows_WinterWeek(dataObject);
+		}
 	}
 }]]></Body>
 				</Function>
@@ -8519,7 +8608,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
     			<TimeStackChart>
 					<Id>1714746021761</Id>
 					<Name><![CDATA[energyDemandChartYear]]></Name>
-					<X>-250</X><Y>130</Y>
+					<X>-250</X><Y>-150</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8572,7 +8661,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
     			<TimeStackChart>
 					<Id>1714746021764</Id>
 					<Name><![CDATA[energySupplyChartYear]]></Name>
-					<X>-250</X><Y>-150</Y>
+					<X>-250</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9989,7 +10078,7 @@ import org.jfree.data.flow.NodeKey;]]></Import>
 				<ClassName><![CDATA[ChartArea]]></ClassName>
 			</ExtendsReference>
 			<StartupCode><![CDATA[gr_sankey.add(svgImgJfree); // Need to add ShapeSVG object to group on canvas for it to become visible!
-svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
+svgImgJfree.setPos(svgImgJfree.getX()-200, svgImgJfree.getY()-40);
 ]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
@@ -10165,41 +10254,22 @@ svgImgJfree.setPos(svgImgJfree.getX()-210, svgImgJfree.getY()-40);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714746374796</Id>
 					<Name><![CDATA[f_setSankey]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>70</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[selfConsumedEnergy_MWh]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[importE_MWh]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[importG_MWh]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[importF_MWh]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[importH_MWh]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[exportE_MWh]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[heatProduced_MWh]]></Name>
-						<Type><![CDATA[double]]></Type>
-					</Parameter>
-					<Body><![CDATA[flowDataset = new DefaultFlowDataset();
+					<Body><![CDATA[AreaCollection area = f_getDataObject();
+
+double selfConsumedEnergy_MWh = area.v_annualSelfConsumedEnergy_MWh;
+double importE_MWh = area.v_annualElectricityImport_MWh;
+double importG_MWh = area.v_annualNaturalGasDemand_MWh;
+double importF_MWh = area.v_annualPetroleumProductsDemand_MWh;
+double importH_MWh = area.v_annualHydrogenDemand_MWh;
+double exportE_MWh = area.v_annualExportedEnergy_MWh;
+double heatProduced_MWh = 0;
+
+flowDataset = new DefaultFlowDataset();
 
 if (heatProduced_MWh > 0) {
 	flowDataset.setFlow(0, "opwek warmte", "verbruik", heatProduced_MWh);
@@ -10260,7 +10330,33 @@ int heightOfSVG = 200;
 
 flowChart.draw(svg2d,new Rectangle2D.Double(0, 0, widthOfSVG, heightOfSVG));
 svgImgJfree.setSVG(svg2d.getSVGElement());
-svgImgJfree.setVisible(true);]]></Body>
+svgImgJfree.setVisible(true);
+gr_sankey.setVisible(true);]]></Body>
+				</Function>
+				<Function AccessType="private" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[AreaCollection]]></ReturnType>
+					<Id>1715079996033</Id>
+					<Name><![CDATA[f_getDataObject]]></Name>
+					<X>70</X><Y>800</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[AreaCollection dataObject;
+SelectedObjectTypes selectedObjectType = uI_Results.v_selectedObjectType;
+
+if (selectedObjectType == SelectedObjectTypes.TRAFO) {
+	dataObject = uI_Results.v_trafo;
+} 
+else if (selectedObjectType == SelectedObjectTypes.BUILDING) {
+	dataObject = uI_Results.v_company;
+}
+else {
+	dataObject = uI_Results.v_area;
+}
+
+return dataObject;]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -10330,29 +10426,6 @@ svgImgJfree.setVisible(true);]]></Body>
 
 
 				</Group>
-				<Rectangle>
-					<Id>1714929500735</Id>
-					<Name><![CDATA[rectangle]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<Width>460</Width>
-					<Height>640</Height>
-					<Rotation>0.0</Rotation>
-					<FillColor>-16777216</FillColor>
-					<FillColorCode><![CDATA[white]]></FillColorCode>
-					<FillMaterial>null</FillMaterial>
-				</Rectangle>
 			</Presentation>
 
 				</Level>
@@ -10974,7 +11047,7 @@ if (chartScale_MWh<10) {
 					<Id>1714746556120</Id>
 					<Name><![CDATA[f_setEnergyBalanceChartTrafo]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>20</X><Y>820</Y>
+					<X>1020</X><Y>650</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11054,11 +11127,15 @@ if (chartScale_MWh<10) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[f_resetCharts();
+f_setVisiblity();
 AreaCollection area = f_getDataObject();
 
 if (uI_Results.v_selectedObjectType == SelectedObjectTypes.TRAFO) {
-	//f_addDataToPlots(area);
-}
+	f_setTrafoBalanceChartYear(area);
+	f_setTrafoBalanceChartSummerWinter(area);
+	f_setTrafoBalanceChartDayNight(area);
+	f_setTrafoBalanceChartWeekdayWeekend(area);
+	}
 else {
 	if( radio_energyType.getValue() == 0){
 	f_setElectricityBalanceChartYear(area);
@@ -11082,7 +11159,7 @@ else {
 					<ReturnType><![CDATA[AreaCollection]]></ReturnType>
 					<Id>1714988012236</Id>
 					<Name><![CDATA[f_getDataObject]]></Name>
-					<X>30</X><Y>890</Y>
+					<X>30</X><Y>910</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11137,14 +11214,14 @@ pl_productionChartYear.setFixedScale(chartScale_MWh);
 
 
 if (chartScale_MWh<10) {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
 } else {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -11336,27 +11413,27 @@ double summerProduction_MWh = area.v_selfConsumedElectricitySummerWeek_MWh + are
 double summerConsumption_MWh = area.v_selfConsumedElectricitySummerWeek_MWh + area.v_importedElectricitySummerWeek_MWh;
 double winterProduction_MWh = area.v_selfConsumedElectricityWinterWeek_MWh + area.v_exportedElectricityWinterWeek_MWh;
 double winterConsumption_MWh = area.v_selfConsumedElectricityWinterWeek_MWh + area.v_importedElectricityWinterWeek_MWh;
-double chartScale_MWh = max(max(summerProduction_MWh, winterProduction_MWh), max(summerConsumption_MWh ,winterConsumption_MWh));
+double chartScale_MWh = max(max(summerProduction_MWh, winterProduction_MWh), max(summerConsumption_MWh, winterConsumption_MWh));
 pl_productionChartSummer.setFixedScale(chartScale_MWh);
 pl_productionChartWinter.setFixedScale(chartScale_MWh);
 pl_consumptionChartSummer.setFixedScale(chartScale_MWh);
 pl_consumptionChartWinter.setFixedScale(chartScale_MWh);
 
 if (chartScale_MWh<10) {
-	t_opwekTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(summerProduction_MWh*1000) + " kWh");
-	t_gebruikTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(summerConsumption_MWh*1000) + " kWh");
-	t_opwekTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(winterProduction_MWh*1000) + " kWh");
-	t_gebruikTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(winterConsumption_MWh*1000) + " kWh");
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(summerProduction_MWh*1000) + " kWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(summerConsumption_MWh*1000) + " kWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(winterProduction_MWh*1000) + " kWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(winterConsumption_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_opwekTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(summerProduction_MWh) + " MWh");
-	t_gebruikTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(summerConsumption_MWh) + " MWh");
-	t_opwekTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(winterProduction_MWh) + " MWh");
-	t_gebruikTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(winterConsumption_MWh) + " MWh");
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(summerProduction_MWh) + " MWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(summerConsumption_MWh) + " MWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(winterProduction_MWh) + " MWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(winterConsumption_MWh) + " MWh");
 } else {
-	t_opwekTextSummer.setText("Opwek" + System.lineSeparator() + roundToDecimal(summerProduction_MWh/1000, 1) + " GWh");
-	t_gebruikTextSummer.setText("Gebruik" + System.lineSeparator() + roundToDecimal(summerConsumption_MWh/1000,1) + " GWh");
-	t_opwekTextWinter.setText("Opwek" + System.lineSeparator() + roundToDecimal(winterProduction_MWh/1000, 1) + " GWh");
-	t_gebruikTextWinter.setText("Gebruik" + System.lineSeparator() + roundToDecimal(winterConsumption_MWh/1000,1) + " GWh");
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToDecimal(summerProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToDecimal(summerConsumption_MWh/1000,1) + " GWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToDecimal(winterProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToDecimal(winterConsumption_MWh/1000,1) + " GWh");
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -11374,18 +11451,23 @@ if (chartScale_MWh<10) {
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[// Day
+
 DataItem daytimeSelfConsumed = new DataItem();
 daytimeSelfConsumed.setValue(area.v_selfConsumedElectricityDaytime_MWh);
 pl_productionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
+
+
 DataItem daytimeImport = new DataItem();
 daytimeImport.setValue(area.v_importedElectricityDaytime_MWh);
 pl_consumptionChartDay.addDataItem(daytimeImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
+
 DataItem daytimeExport = new DataItem();
 daytimeExport.setValue(area.v_exportedElectricityDaytime_MWh);
 pl_productionChartDay.addDataItem(daytimeExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
 
 // Night
 DataItem nighttimeSelfConsumed = new DataItem();
@@ -11403,27 +11485,32 @@ pl_productionChartNight.addDataItem(nighttimeExport, "Teruggeleverde elektricite
 
 
 
-
-double production_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityExport_MWh;
-double consumption_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityImport_MWh;
-double chartScale_MWh = max(production_MWh, consumption_MWh);
-pl_consumptionChartYear.setFixedScale(chartScale_MWh);
-pl_productionChartYear.setFixedScale(chartScale_MWh);
-
+double dayProduction_MWh = area.v_selfConsumedElectricityDaytime_MWh + area.v_exportedElectricityDaytime_MWh;
+double dayConsumption_MWh = area.v_selfConsumedElectricityDaytime_MWh + area.v_importedElectricityDaytime_MWh;
+double nightProduction_MWh = area.v_selfConsumedElectricityNighttime_MWh + area.v_exportedElectricityNighttime_MWh;
+double nightConsumption_MWh = area.v_selfConsumedElectricityNighttime_MWh + area.v_importedElectricityNighttime_MWh;
+double chartScale_MWh = max(max(dayProduction_MWh, nightProduction_MWh), max(dayConsumption_MWh, nightConsumption_MWh));
+pl_productionChartDay.setFixedScale(chartScale_MWh);
+pl_productionChartNight.setFixedScale(chartScale_MWh);
+pl_consumptionChartDay.setFixedScale(chartScale_MWh);
+pl_consumptionChartNight.setFixedScale(chartScale_MWh);
 
 if (chartScale_MWh<10) {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToInt(dayProduction_MWh*1000) + " kWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToInt(dayConsumption_MWh*1000) + " kWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToInt(nightProduction_MWh*1000) + " kWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToInt(nightConsumption_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToInt(dayProduction_MWh) + " MWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToInt(dayConsumption_MWh) + " MWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToInt(nightProduction_MWh) + " MWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToInt(nightConsumption_MWh) + " MWh");
 } else {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToDecimal(dayProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToDecimal(dayConsumption_MWh/1000,1) + " GWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToDecimal(nightProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToDecimal(nightConsumption_MWh/1000,1) + " GWh");
 }
-
-
-						
 ]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -11470,27 +11557,32 @@ pl_productionChartWeekend.addDataItem(weekendExport, "Teruggeleverde elektricite
 
 
 
-double production_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityExport_MWh;
-double consumption_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityImport_MWh;
-double chartScale_MWh = max(production_MWh, consumption_MWh);
-pl_consumptionChartYear.setFixedScale(chartScale_MWh);
-pl_productionChartYear.setFixedScale(chartScale_MWh);
-
+double weekdayProduction_MWh = area.v_selfConsumedElectricityWeekday_MWh + area.v_exportedElectricityWeekday_MWh;
+double weekdayConsumption_MWh = area.v_selfConsumedElectricityWeekday_MWh + area.v_importedElectricityWeekday_MWh;
+double weekendProduction_MWh = area.v_selfConsumedElectricityWeekend_MWh + area.v_exportedElectricityWeekend_MWh;
+double weekendConsumption_MWh = area.v_selfConsumedElectricityWeekend_MWh + area.v_importedElectricityWeekend_MWh;
+double chartScale_MWh = max(max(weekdayProduction_MWh, weekendProduction_MWh), max(weekdayConsumption_MWh, weekendConsumption_MWh));
+pl_productionChartWeekday.setFixedScale(chartScale_MWh);
+pl_productionChartWeekend.setFixedScale(chartScale_MWh);
+pl_consumptionChartWeekday.setFixedScale(chartScale_MWh);
+pl_consumptionChartWeekend.setFixedScale(chartScale_MWh);
 
 if (chartScale_MWh<10) {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToInt(weekdayProduction_MWh*1000) + " kWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToInt(weekdayConsumption_MWh*1000) + " kWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToInt(weekendProduction_MWh*1000) + " kWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToInt(weekendConsumption_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToInt(weekdayProduction_MWh) + " MWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToInt(weekdayConsumption_MWh) + " MWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToInt(weekendProduction_MWh) + " MWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToInt(weekendConsumption_MWh) + " MWh");
 } else {
-	t_opwekTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
-	t_gebruikTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
-}
-				
-
-					
-]]></Body>
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToDecimal(weekdayProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToDecimal(weekdayConsumption_MWh/1000,1) + " GWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToDecimal(weekendProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToDecimal(weekendConsumption_MWh/1000,1) + " GWh");
+}]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -11503,19 +11595,33 @@ if (chartScale_MWh<10) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[pl_productionChartYear.removeAll();
+t_productionTextYear.setText("Opwek");
 pl_consumptionChartYear.removeAll();
+t_consumptionTextYear.setText("Gebruik");
 pl_productionChartSummer.removeAll();
+t_productionTextSummer.setText("Opwek");
 pl_consumptionChartSummer.removeAll();
+t_consumptionTextSummer.setText("Gebruik");
 pl_productionChartWinter.removeAll();
+t_productionTextWinter.setText("Opwek");
 pl_consumptionChartWinter.removeAll();
+t_consumptionTextWinter.setText("Gebruik");
 pl_productionChartDay.removeAll();
+t_productionTextDay.setText("Opwek");
 pl_consumptionChartDay.removeAll();
+t_consumptionTextDay.setText("Gebruik");
 pl_productionChartNight.removeAll();
+t_productionTextNight.setText("Opwek");
 pl_consumptionChartNight.removeAll();
+t_consumptionTextNight.setText("Gebruik");
 pl_productionChartWeekday.removeAll();
+t_productionTextWeekday.setText("Opwek");
 pl_consumptionChartWeekday.removeAll();
+t_consumptionTextWeekday.setText("Gebruik");
 pl_productionChartWeekend.removeAll();
-pl_consumptionChartWeekend.removeAll();]]></Body>
+t_productionTextWeekend.setText("Opwek");
+pl_consumptionChartWeekend.removeAll();
+t_consumptionTextWeekend.setText("Gebruik");]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -11556,10 +11662,22 @@ DataItem annualHydrogenDemand = new DataItem();
 annualHydrogenDemand.setValue(area.v_annualHydrogenDemand_MWh);
 pl_consumptionChartYear.addDataItem(annualHydrogenDemand, "Waterstof [MWh]", uI_Results.v_hydrogenDemandColor);
 
+double production_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityExport_MWh;
+double consumption_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityImport_MWh + area.v_annualNaturalGasDemand_MWh + area.v_annualPetroleumProductsDemand_MWh + area.v_annualHydrogenDemand_MWh;
+double chartScale_MWh = max(production_MWh, consumption_MWh);
+pl_consumptionChartYear.setFixedScale(chartScale_MWh);
+pl_productionChartYear.setFixedScale(chartScale_MWh);
 
-
-
-]]></Body>
+if (chartScale_MWh<10) {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
+} else {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
+}]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -11576,7 +11694,6 @@ pl_consumptionChartYear.addDataItem(annualHydrogenDemand, "Waterstof [MWh]", uI_
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[// Summer
-
 DataItem summerSelfConsumed = new DataItem();
 summerSelfConsumed.setValue(area.v_selfConsumedEnergySummerWeek_MWh);
 pl_productionChartSummer.addDataItem(summerSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
@@ -11627,7 +11744,33 @@ pl_consumptionChartWinter.addDataItem(winterPetroleumDemand, "Benzine/diesel[MWh
 DataItem winterHydrogenDemand = new DataItem();
 winterHydrogenDemand.setValue(area.v_hydrogenImportWinterWeek_MWh);
 pl_consumptionChartWinter.addDataItem(winterHydrogenDemand, "Waterstof [MWh]", uI_Results.v_hydrogenDemandColor);
-]]></Body>
+
+double summerProduction_MWh = area.v_selfConsumedElectricitySummerWeek_MWh + area.v_exportedElectricitySummerWeek_MWh;
+double summerConsumption_MWh = area.v_selfConsumedElectricitySummerWeek_MWh + area.v_importedElectricitySummerWeek_MWh + area.v_naturalGasDemandSummerWeek_MWh + area.v_petroleumProductsDemandSummerWeek_MWh + area.v_hydrogenImportSummerWeek_MWh;
+double winterProduction_MWh = area.v_selfConsumedElectricityWinterWeek_MWh + area.v_exportedElectricityWinterWeek_MWh;
+double winterConsumption_MWh = area.v_selfConsumedElectricityWinterWeek_MWh + area.v_importedElectricityWinterWeek_MWh + area.v_naturalGasDemandWinterWeek_MWh + area.v_petroleumProductsDemandWinterWeek_MWh + area.v_hydrogenImportWinterWeek_MWh;
+double chartScale_MWh = max(max(summerProduction_MWh, winterProduction_MWh), max(summerConsumption_MWh, winterConsumption_MWh));
+pl_productionChartSummer.setFixedScale(chartScale_MWh);
+pl_productionChartWinter.setFixedScale(chartScale_MWh);
+pl_consumptionChartSummer.setFixedScale(chartScale_MWh);
+pl_consumptionChartWinter.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(summerProduction_MWh*1000) + " kWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(summerConsumption_MWh*1000) + " kWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(winterProduction_MWh*1000) + " kWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(winterConsumption_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(summerProduction_MWh) + " MWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(summerConsumption_MWh) + " MWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(winterProduction_MWh) + " MWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(winterConsumption_MWh) + " MWh");
+} else {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToDecimal(summerProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToDecimal(summerConsumption_MWh/1000,1) + " GWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToDecimal(winterProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToDecimal(winterConsumption_MWh/1000,1) + " GWh");
+}]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -11694,7 +11837,34 @@ pl_consumptionChartWeekend.addDataItem(weekendPetroleumDemand, "Benzine/diesel[M
 
 DataItem weekendHydrogenDemand = new DataItem();
 weekendHydrogenDemand.setValue(area.v_hydrogenImportWeekend_MWh);
-pl_consumptionChartWeekend.addDataItem(weekendHydrogenDemand, "Waterstof [MWh]", uI_Results.v_hydrogenDemandColor);					]]></Body>
+pl_consumptionChartWeekend.addDataItem(weekendHydrogenDemand, "Waterstof [MWh]", uI_Results.v_hydrogenDemandColor);					
+
+double weekdayProduction_MWh = area.v_selfConsumedElectricityWeekday_MWh + area.v_exportedElectricityWeekday_MWh;
+double weekdayConsumption_MWh = area.v_selfConsumedElectricityWeekday_MWh + area.v_importedElectricityWeekday_MWh + area.v_naturalGasDemandWeekday_MWh + area.v_petroleumProductsDemandWeekday_MWh + area.v_hydrogenImportWeekday_MWh;
+double weekendProduction_MWh = area.v_selfConsumedElectricityWeekend_MWh + area.v_exportedElectricityWeekend_MWh;
+double weekendConsumption_MWh = area.v_selfConsumedElectricityWeekend_MWh + area.v_importedElectricityWeekend_MWh + area.v_naturalGasDemandWeekend_MWh + area.v_petroleumProductsDemandWeekend_MWh + area.v_hydrogenImportWeekend_MWh;
+double chartScale_MWh = max(max(weekdayProduction_MWh, weekendProduction_MWh), max(weekdayConsumption_MWh, weekendConsumption_MWh));
+pl_productionChartWeekday.setFixedScale(chartScale_MWh);
+pl_productionChartWeekend.setFixedScale(chartScale_MWh);
+pl_consumptionChartWeekday.setFixedScale(chartScale_MWh);
+pl_consumptionChartWeekend.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToInt(weekdayProduction_MWh*1000) + " kWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToInt(weekdayConsumption_MWh*1000) + " kWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToInt(weekendProduction_MWh*1000) + " kWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToInt(weekendConsumption_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToInt(weekdayProduction_MWh) + " MWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToInt(weekdayConsumption_MWh) + " MWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToInt(weekendProduction_MWh) + " MWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToInt(weekendConsumption_MWh) + " MWh");
+} else {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToDecimal(weekdayProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToDecimal(weekdayConsumption_MWh/1000,1) + " GWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToDecimal(weekendProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToDecimal(weekendConsumption_MWh/1000,1) + " GWh");
+}]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -11761,7 +11931,321 @@ pl_consumptionChartNight.addDataItem(nighttimePetroleumDemand, "Benzine/diesel[M
 
 DataItem nighttimeHydrogenDemand = new DataItem();
 nighttimeHydrogenDemand.setValue(area.v_hydrogenImportNighttime_MWh);
-pl_consumptionChartNight.addDataItem(nighttimeHydrogenDemand, "Waterstof [MWh]", uI_Results.v_hydrogenDemandColor);					]]></Body>
+pl_consumptionChartNight.addDataItem(nighttimeHydrogenDemand, "Waterstof [MWh]", uI_Results.v_hydrogenDemandColor);					
+
+double dayProduction_MWh = area.v_selfConsumedElectricityDaytime_MWh + area.v_exportedElectricityDaytime_MWh;
+double dayConsumption_MWh = area.v_selfConsumedElectricityDaytime_MWh + area.v_importedElectricityDaytime_MWh + area.v_naturalGasDemandDaytime_MWh + area.v_petroleumProductsDemandDaytime_MWh + area.v_hydrogenImportDaytime_MWh;
+double nightProduction_MWh = area.v_selfConsumedElectricityNighttime_MWh + area.v_exportedElectricityNighttime_MWh;
+double nightConsumption_MWh = area.v_selfConsumedElectricityNighttime_MWh + area.v_importedElectricityNighttime_MWh + area.v_naturalGasDemandNighttime_MWh + area.v_petroleumProductsDemandNighttime_MWh + area.v_hydrogenImportNighttime_MWh;
+double chartScale_MWh = max(max(dayProduction_MWh, nightProduction_MWh), max(dayConsumption_MWh, nightConsumption_MWh));
+pl_productionChartDay.setFixedScale(chartScale_MWh);
+pl_productionChartNight.setFixedScale(chartScale_MWh);
+pl_consumptionChartDay.setFixedScale(chartScale_MWh);
+pl_consumptionChartNight.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToInt(dayProduction_MWh*1000) + " kWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToInt(dayConsumption_MWh*1000) + " kWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToInt(nightProduction_MWh*1000) + " kWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToInt(nightConsumption_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToInt(dayProduction_MWh) + " MWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToInt(dayConsumption_MWh) + " MWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToInt(nightProduction_MWh) + " MWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToInt(nightConsumption_MWh) + " MWh");
+} else {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToDecimal(dayProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToDecimal(dayConsumption_MWh/1000,1) + " GWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToDecimal(nightProduction_MWh/1000, 1) + " GWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToDecimal(nightConsumption_MWh/1000,1) + " GWh");
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715003482844</Id>
+					<Name><![CDATA[f_setVisiblity]]></Name>
+					<X>30</X><Y>890</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[gr_Year.setVisible(false);
+gr_SummerWinter.setVisible(false);
+gr_DayNight.setVisible(false);
+gr_WeekdayWeekend.setVisible(false);
+
+if (radio_period.getValue() == 0) {
+	gr_Year.setVisible(true);
+} else if (radio_period.getValue() == 1) {
+	gr_SummerWinter.setVisible(true);
+} else if (radio_period.getValue() == 2) {
+	gr_DayNight.setVisible(true);
+} else if (radio_period.getValue() == 3) {
+	gr_WeekdayWeekend.setVisible(true);
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715003709481</Id>
+					<Name><![CDATA[f_setTrafoBalanceChartYear]]></Name>
+					<X>1110</X><Y>710</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[area]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[DataItem annualSelfConsumed = new DataItem();
+annualSelfConsumed.setValue(area.v_annualSelfConsumedElectricity_MWh - area.v_annualElectricityExport_MWh);
+pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem annualSelfProduced = new DataItem();
+annualSelfProduced.setValue(area.v_annualSelfProducedElectricity_MWh - area.v_annualElectricityImport_MWh);
+pl_productionChartYear.addDataItem(annualSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem annualImport = new DataItem();
+annualImport.setValue(area.v_annualElectricityImport_MWh);
+pl_productionChartYear.addDataItem(annualImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+DataItem annualExport = new DataItem();
+annualExport.setValue(area.v_annualElectricityExport_MWh);
+pl_consumptionChartYear.addDataItem(annualExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+double chartScale_MWh = max(area.v_annualSelfConsumedElectricity_MWh, area.v_annualSelfProducedElectricity_MWh);
+pl_consumptionChartYear.setFixedScale(chartScale_MWh);
+pl_productionChartYear.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt((area.v_annualSelfProducedElectricity_MWh)*1000) + " kWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt((area.v_annualSelfConsumedElectricity_MWh)*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt((area.v_annualSelfProducedElectricity_MWh)) + " MWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt((area.v_annualSelfConsumedElectricity_MWh)) + " MWh");
+} else {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal((area.v_annualSelfProducedElectricity_MWh)/1000, 1) + " GWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal((area.v_annualSelfConsumedElectricity_MWh)/1000, 1) + " GWh");
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715003741494</Id>
+					<Name><![CDATA[f_setTrafoBalanceChartSummerWinter]]></Name>
+					<X>1110</X><Y>750</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[area]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[// Summer 
+DataItem summerSelfConsumed = new DataItem();
+summerSelfConsumed.setValue(area.v_selfConsumedElectricitySummerWeek_MWh - area.v_exportedElectricitySummerWeek_MWh);
+pl_consumptionChartSummer.addDataItem(summerSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem summerSelfProduced = new DataItem();
+summerSelfProduced.setValue(area.v_selfProducedElectricitySummerWeek_MWh - area.v_importedElectricitySummerWeek_MWh);
+pl_productionChartSummer.addDataItem(summerSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem summerImport = new DataItem();
+summerImport.setValue(area.v_importedElectricitySummerWeek_MWh);
+pl_productionChartSummer.addDataItem(summerImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+DataItem summerExport = new DataItem();
+summerExport.setValue(area.v_exportedElectricitySummerWeek_MWh);
+pl_consumptionChartSummer.addDataItem(summerExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Winter
+DataItem winterSelfConsumed = new DataItem();
+winterSelfConsumed.setValue(area.v_selfConsumedElectricityWinterWeek_MWh - area.v_exportedElectricityWinterWeek_MWh);
+pl_consumptionChartWinter.addDataItem(winterSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem winterSelfProduced = new DataItem();
+winterSelfProduced.setValue(area.v_selfProducedElectricityWinterWeek_MWh - area.v_importedElectricityWinterWeek_MWh);
+pl_productionChartWinter.addDataItem(winterSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem winterImport = new DataItem();
+winterImport.setValue(area.v_importedElectricityWinterWeek_MWh);
+pl_productionChartWinter.addDataItem(winterImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+DataItem winterExport = new DataItem();
+winterExport.setValue(area.v_exportedElectricityWinterWeek_MWh);
+pl_consumptionChartWinter.addDataItem(winterExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+
+double chartScale_MWh = max(max(area.v_selfConsumedElectricitySummerWeek_MWh, area.v_selfProducedElectricitySummerWeek_MWh), max(area.v_selfConsumedElectricityWinterWeek_MWh, area.v_selfProducedElectricityWinterWeek_MWh));
+pl_consumptionChartSummer.setFixedScale(chartScale_MWh);
+pl_productionChartSummer.setFixedScale(chartScale_MWh);
+pl_consumptionChartWinter.setFixedScale(chartScale_MWh);
+pl_productionChartWinter.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricitySummerWeek_MWh*1000) + " kWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricitySummerWeek_MWh*1000) + " kWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityWinterWeek_MWh*1000) + " kWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityWinterWeek_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricitySummerWeek_MWh) + " MWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricitySummerWeek_MWh) + " MWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityWinterWeek_MWh) + " MWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityWinterWeek_MWh) + " MWh");
+} else {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToDecimal(area.v_selfProducedElectricitySummerWeek_MWh/1000, 1) + " GWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToDecimal(area.v_selfConsumedElectricitySummerWeek_MWh/1000,1) + " GWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToDecimal(area.v_selfProducedElectricityWinterWeek_MWh/1000, 1) + " GWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToDecimal(area.v_selfConsumedElectricityWinterWeek_MWh/1000,1) + " GWh");
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715003742134</Id>
+					<Name><![CDATA[f_setTrafoBalanceChartDayNight]]></Name>
+					<X>1110</X><Y>790</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[area]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[// Day
+DataItem daytimeSelfConsumed = new DataItem();
+daytimeSelfConsumed.setValue(area.v_selfConsumedElectricityDaytime_MWh - area.v_exportedElectricityDaytime_MWh);
+pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem daytimeSelfProduced = new DataItem();
+daytimeSelfProduced.setValue(area.v_selfProducedElectricityDaytime_MWh - area.v_importedElectricityDaytime_MWh);
+pl_productionChartDay.addDataItem(daytimeSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem daytimeImport = new DataItem();
+daytimeImport.setValue(area.v_importedElectricityDaytime_MWh);
+pl_productionChartDay.addDataItem(daytimeImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+DataItem daytimeExport = new DataItem();
+daytimeExport.setValue(area.v_exportedElectricityDaytime_MWh);
+pl_consumptionChartDay.addDataItem(daytimeExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Night
+DataItem nighttimeSelfConsumed = new DataItem();
+nighttimeSelfConsumed.setValue(area.v_selfConsumedElectricityNighttime_MWh - area.v_exportedElectricityNighttime_MWh);
+pl_consumptionChartNight.addDataItem(nighttimeSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem nighttimeSelfProduced = new DataItem();
+nighttimeSelfProduced.setValue(area.v_selfProducedElectricityNighttime_MWh - area.v_importedElectricityNighttime_MWh);
+pl_productionChartNight.addDataItem(nighttimeSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem nighttimeImport = new DataItem();
+nighttimeImport.setValue(area.v_importedElectricityNighttime_MWh);
+pl_productionChartNight.addDataItem(nighttimeImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+DataItem nighttimeExport = new DataItem();
+nighttimeExport.setValue(area.v_exportedElectricityNighttime_MWh);
+pl_consumptionChartNight.addDataItem(nighttimeExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+
+double chartScale_MWh = max(max(area.v_selfConsumedElectricityDaytime_MWh, area.v_selfProducedElectricityDaytime_MWh), max(area.v_selfConsumedElectricityNighttime_MWh, area.v_selfProducedElectricityNighttime_MWh));
+pl_consumptionChartDay.setFixedScale(chartScale_MWh);
+pl_productionChartDay.setFixedScale(chartScale_MWh);
+pl_consumptionChartNight.setFixedScale(chartScale_MWh);
+pl_productionChartNight.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityDaytime_MWh*1000) + " kWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityDaytime_MWh*1000) + " kWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityNighttime_MWh*1000) + " kWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityNighttime_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityDaytime_MWh) + " MWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityDaytime_MWh) + " MWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityNighttime_MWh) + " MWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityNighttime_MWh) + " MWh");
+} else {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToDecimal(area.v_selfProducedElectricityDaytime_MWh/1000, 1) + " GWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToDecimal(area.v_selfConsumedElectricityDaytime_MWh/1000,1) + " GWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToDecimal(area.v_selfProducedElectricityNighttime_MWh/1000, 1) + " GWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToDecimal(area.v_selfConsumedElectricityNighttime_MWh/1000,1) + " GWh");
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715003742758</Id>
+					<Name><![CDATA[f_setTrafoBalanceChartWeekdayWeekend]]></Name>
+					<X>1110</X><Y>830</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[area]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[// Weekday
+DataItem weekdaySelfConsumed = new DataItem();
+weekdaySelfConsumed.setValue(area.v_selfConsumedElectricityWeekday_MWh - area.v_exportedElectricityWeekday_MWh);
+pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem weekdaySelfProduced = new DataItem();
+weekdaySelfProduced.setValue(area.v_selfProducedElectricityWeekday_MWh - area.v_importedElectricityWeekday_MWh);
+pl_productionChartWeekday.addDataItem(weekdaySelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem weekdayImport = new DataItem();
+weekdayImport.setValue(area.v_importedElectricityWeekday_MWh);
+pl_productionChartWeekday.addDataItem(weekdayImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+DataItem weekdayExport = new DataItem();
+weekdayExport.setValue(area.v_exportedElectricityWeekday_MWh);
+pl_consumptionChartWeekday.addDataItem(weekdayExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Weekend
+DataItem weekendSelfConsumed = new DataItem();
+weekendSelfConsumed.setValue(area.v_selfConsumedElectricityWeekend_MWh - area.v_exportedElectricityWeekend_MWh);
+pl_consumptionChartWeekend.addDataItem(weekendSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem weekendSelfProduced = new DataItem();
+weekendSelfProduced.setValue(area.v_selfProducedElectricityWeekend_MWh - area.v_importedElectricityWeekend_MWh);
+pl_productionChartWeekend.addDataItem(weekendSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem weekendImport = new DataItem();
+weekendImport.setValue(area.v_importedElectricityWeekend_MWh);
+pl_productionChartWeekend.addDataItem(weekendImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+DataItem weekendExport = new DataItem();
+weekendExport.setValue(area.v_exportedElectricityWeekend_MWh);
+pl_consumptionChartWeekend.addDataItem(weekendExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+
+double chartScale_MWh = max(max(area.v_selfConsumedElectricityWeekday_MWh, area.v_selfProducedElectricityWeekday_MWh), max(area.v_selfConsumedElectricityWeekend_MWh, area.v_selfProducedElectricityWeekend_MWh));
+pl_consumptionChartWeekday.setFixedScale(chartScale_MWh);
+pl_productionChartWeekday.setFixedScale(chartScale_MWh);
+pl_consumptionChartWeekend.setFixedScale(chartScale_MWh);
+pl_productionChartWeekend.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityWeekday_MWh*1000) + " kWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityWeekday_MWh*1000) + " kWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityWeekend_MWh*1000) + " kWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityWeekend_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityWeekday_MWh) + " MWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityWeekday_MWh) + " MWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToInt(area.v_selfProducedElectricityWeekend_MWh) + " MWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToInt(area.v_selfConsumedElectricityWeekend_MWh) + " MWh");
+} else {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToDecimal(area.v_selfProducedElectricityWeekday_MWh/1000, 1) + " GWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToDecimal(area.v_selfConsumedElectricityWeekday_MWh/1000,1) + " GWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToDecimal(area.v_selfProducedElectricityWeekend_MWh/1000, 1) + " GWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToDecimal(area.v_selfConsumedElectricityWeekend_MWh/1000,1) + " GWh");
+}]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -11852,29 +12336,7 @@ pl_consumptionChartNight.addDataItem(nighttimeHydrogenDemand, "Waterstof [MWh]",
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[f_setCharts();
-if (radio_period.getValue() == 0) {
-	gr_Year.setVisible(true);
-	gr_SummerWinter.setVisible(false);
-	gr_DayNight.setVisible(false);
-	gr_WeekdayWeekend.setVisible(false);
-} else if (radio_period.getValue() == 1) {
-	gr_Year.setVisible(false);
-	gr_SummerWinter.setVisible(true);
-	gr_DayNight.setVisible(false);
-	gr_WeekdayWeekend.setVisible(false);
-} else if (radio_period.getValue() == 2) {
-	gr_Year.setVisible(false);
-	gr_SummerWinter.setVisible(false);
-	gr_DayNight.setVisible(true);
-	gr_WeekdayWeekend.setVisible(false);
-} else if (radio_period.getValue() == 3) {
-	gr_Year.setVisible(false);
-	gr_SummerWinter.setVisible(false);
-	gr_DayNight.setVisible(false);
-	gr_WeekdayWeekend.setVisible(true);
-}
-]]></ActionCode>
+						<ActionCode><![CDATA[f_setCharts();]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
@@ -11889,46 +12351,24 @@ if (radio_period.getValue() == 0) {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1714932534594</Id>
 					<Name><![CDATA[radio_period]]></Name>
-					<X>30</X><Y>40</Y>
+					<X>20</X><Y>40</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="400" Height="40">
+					<BasicProperties Width="440" Height="40">
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[f_setCharts();
-if (radio_period.getValue() == 0) {
-	gr_Year.setVisible(true);
-	gr_SummerWinter.setVisible(false);
-	gr_DayNight.setVisible(false);
-	gr_WeekdayWeekend.setVisible(false);
-} else if (radio_period.getValue() == 1) {
-	gr_Year.setVisible(false);
-	gr_SummerWinter.setVisible(true);
-	gr_DayNight.setVisible(false);
-	gr_WeekdayWeekend.setVisible(false);
-} else if (radio_period.getValue() == 2) {
-	gr_Year.setVisible(false);
-	gr_SummerWinter.setVisible(false);
-	gr_DayNight.setVisible(true);
-	gr_WeekdayWeekend.setVisible(false);
-} else if (radio_period.getValue() == 3) {
-	gr_Year.setVisible(false);
-	gr_SummerWinter.setVisible(false);
-	gr_DayNight.setVisible(false);
-	gr_WeekdayWeekend.setVisible(true);
-}
-]]></ActionCode>
+						<ActionCode><![CDATA[f_setCharts();]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
 						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
 						<Orientation>HORIZONTAL</Orientation>
 						<Button><![CDATA[Jaar overzicht]]></Button>
-						<Button><![CDATA[Zomer / Winter]]></Button>
+						<Button><![CDATA[Zomer / Winter week]]></Button>
 						<Button><![CDATA[Dag / Nacht]]></Button>
 						<Button><![CDATA[Weekdag / Weekend]]></Button>
 						<LinkTo>false</LinkTo>
@@ -11951,7 +12391,7 @@ if (radio_period.getValue() == 0) {
     			<StackChart>
 					<Id>1714987905780</Id>
 					<Name><![CDATA[pl_productionChartYear]]></Name>
-					<X>-152.13299999999998</X><Y>-211.007</Y>
+					<X>-160</X><Y>-210</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12003,7 +12443,7 @@ if (radio_period.getValue() == 0) {
     			<StackChart>
 					<Id>1714987905783</Id>
 					<Name><![CDATA[pl_consumptionChartYear]]></Name>
-					<X>-153.04000000000002</X><Y>-100</Y>
+					<X>-160</X><Y>-60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12054,8 +12494,8 @@ if (radio_period.getValue() == 0) {
     			</StackChart>
 				<Text>
 					<Id>1714987905785</Id>
-					<Name><![CDATA[t_opwekTextYear]]></Name>
-					<X>-120</X><Y>-171.212</Y>
+					<Name><![CDATA[t_productionTextYear]]></Name>
+					<X>-120</X><Y>-170</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12075,8 +12515,8 @@ if (radio_period.getValue() == 0) {
 				</Text>
 				<Text>
 					<Id>1714987905787</Id>
-					<Name><![CDATA[t_gebruikTextYear]]></Name>
-					<X>-120</X><Y>-59.19200000000001</Y>
+					<Name><![CDATA[t_consumptionTextYear]]></Name>
+					<X>-120</X><Y>-20</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12093,27 +12533,6 @@ if (radio_period.getValue() == 0) {
 						<Style>0</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Text>
-					<Id>1714987905789</Id>
-					<Name><![CDATA[t_topBarplotText]]></Name>
-					<X>0</X><Y>-220</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Jaar]]></Text>
-					<Font>
-						<Name>Calibri</Name>
-						<Size>14</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
 				</Text>
 			</Presentation>
 
@@ -12136,7 +12555,7 @@ if (radio_period.getValue() == 0) {
     			<StackChart>
 					<Id>1714987913831</Id>
 					<Name><![CDATA[pl_productionChartSummer]]></Name>
-					<X>-152.13299999999998</X><Y>-211.007</Y>
+					<X>-160</X><Y>-280</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12188,7 +12607,7 @@ if (radio_period.getValue() == 0) {
     			<StackChart>
 					<Id>1714987913834</Id>
 					<Name><![CDATA[pl_consumptionChartSummer]]></Name>
-					<X>-153.04000000000002</X><Y>-100</Y>
+					<X>-160</X><Y>-180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12239,8 +12658,8 @@ if (radio_period.getValue() == 0) {
     			</StackChart>
 				<Text>
 					<Id>1714987913836</Id>
-					<Name><![CDATA[t_opwekTextSummer]]></Name>
-					<X>-120</X><Y>-171.212</Y>
+					<Name><![CDATA[t_productionTextSummer]]></Name>
+					<X>-120</X><Y>-240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12260,8 +12679,8 @@ if (radio_period.getValue() == 0) {
 				</Text>
 				<Text>
 					<Id>1714987913838</Id>
-					<Name><![CDATA[t_gebruikTextSummer]]></Name>
-					<X>-120</X><Y>-59.19200000000001</Y>
+					<Name><![CDATA[t_consumptionTextSummer]]></Name>
+					<X>-120</X><Y>-140</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12282,7 +12701,7 @@ if (radio_period.getValue() == 0) {
 				<Text>
 					<Id>1714987913840</Id>
 					<Name><![CDATA[t_topBarplotText1]]></Name>
-					<X>0</X><Y>-220</Y>
+					<X>-190</X><Y>-190</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12292,7 +12711,7 @@ if (radio_period.getValue() == 0) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Zomer]]></Text>
+					<Text><![CDATA[Zomer week]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>14</Size>
@@ -12303,7 +12722,7 @@ if (radio_period.getValue() == 0) {
     			<StackChart>
 					<Id>1714987913843</Id>
 					<Name><![CDATA[pl_productionChartWinter]]></Name>
-					<X>-154</X><Y>40</Y>
+					<X>-160</X><Y>-10</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12355,7 +12774,7 @@ if (radio_period.getValue() == 0) {
     			<StackChart>
 					<Id>1714987913846</Id>
 					<Name><![CDATA[pl_consumptionChartWinter]]></Name>
-					<X>-153.04000000000002</X><Y>130</Y>
+					<X>-160</X><Y>90</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12406,8 +12825,8 @@ if (radio_period.getValue() == 0) {
     			</StackChart>
 				<Text>
 					<Id>1714987913848</Id>
-					<Name><![CDATA[t_opwekTextWinter]]></Name>
-					<X>-120</X><Y>78.78800000000001</Y>
+					<Name><![CDATA[t_productionTextWinter]]></Name>
+					<X>-120</X><Y>30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12427,8 +12846,8 @@ if (radio_period.getValue() == 0) {
 				</Text>
 				<Text>
 					<Id>1714987913850</Id>
-					<Name><![CDATA[t_gebruikTextWinter]]></Name>
-					<X>-120</X><Y>190.808</Y>
+					<Name><![CDATA[t_consumptionTextWinter]]></Name>
+					<X>-120</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12449,7 +12868,7 @@ if (radio_period.getValue() == 0) {
 				<Text>
 					<Id>1714987913852</Id>
 					<Name><![CDATA[t_bottomBarplotText1]]></Name>
-					<X>0</X><Y>30</Y>
+					<X>-190</X><Y>80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12459,7 +12878,7 @@ if (radio_period.getValue() == 0) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Winter]]></Text>
+					<Text><![CDATA[Winter week]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>14</Size>
@@ -12471,9 +12890,9 @@ if (radio_period.getValue() == 0) {
 
 				</Group>
 				<Group>
-					<Id>1714988463564</Id>
+					<Id>1715002556479</Id>
 					<Name><![CDATA[gr_DayNight]]></Name>
-					<X>1100</X><Y>350</Y>
+					<X>1120</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -12486,9 +12905,9 @@ if (radio_period.getValue() == 0) {
 
 			<Presentation>
     			<StackChart>
-					<Id>1714988463567</Id>
+					<Id>1715002556482</Id>
 					<Name><![CDATA[pl_productionChartDay]]></Name>
-					<X>-152.13299999999998</X><Y>-211.007</Y>
+					<X>-160</X><Y>-280</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12538,9 +12957,9 @@ if (radio_period.getValue() == 0) {
 					</Bars>
     			</StackChart>
     			<StackChart>
-					<Id>1714988463570</Id>
+					<Id>1715002556485</Id>
 					<Name><![CDATA[pl_consumptionChartDay]]></Name>
-					<X>-153.04000000000002</X><Y>-100</Y>
+					<X>-160</X><Y>-180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12590,9 +13009,9 @@ if (radio_period.getValue() == 0) {
 					</Bars>
     			</StackChart>
 				<Text>
-					<Id>1714988463572</Id>
-					<Name><![CDATA[t_opwekTextDay]]></Name>
-					<X>-120</X><Y>-171.212</Y>
+					<Id>1715002556487</Id>
+					<Name><![CDATA[t_productionTextDay]]></Name>
+					<X>-120</X><Y>-240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12611,9 +13030,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1714988463574</Id>
-					<Name><![CDATA[t_gebruikTextDay]]></Name>
-					<X>-120</X><Y>-59.19200000000001</Y>
+					<Id>1715002556489</Id>
+					<Name><![CDATA[t_consumptionTextDay]]></Name>
+					<X>-120</X><Y>-140</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12632,9 +13051,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1714988463576</Id>
+					<Id>1715002556491</Id>
 					<Name><![CDATA[t_topBarplotText2]]></Name>
-					<X>0</X><Y>-220</Y>
+					<X>-200</X><Y>-190</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12644,7 +13063,8 @@ if (radio_period.getValue() == 0) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Dag]]></Text>
+					<Text><![CDATA[Dag
+]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>14</Size>
@@ -12653,9 +13073,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>CENTER</Alignment>
 				</Text>
     			<StackChart>
-					<Id>1714988463579</Id>
+					<Id>1715002556494</Id>
 					<Name><![CDATA[pl_productionChartNight]]></Name>
-					<X>-154</X><Y>40</Y>
+					<X>-160</X><Y>-10</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12705,9 +13125,9 @@ if (radio_period.getValue() == 0) {
 					</Bars>
     			</StackChart>
     			<StackChart>
-					<Id>1714988463582</Id>
+					<Id>1715002556497</Id>
 					<Name><![CDATA[pl_consumptionChartNight]]></Name>
-					<X>-153.04000000000002</X><Y>130</Y>
+					<X>-160</X><Y>90</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12757,9 +13177,9 @@ if (radio_period.getValue() == 0) {
 					</Bars>
     			</StackChart>
 				<Text>
-					<Id>1714988463584</Id>
-					<Name><![CDATA[t_opwekTextNight]]></Name>
-					<X>-120</X><Y>78.78800000000001</Y>
+					<Id>1715002556499</Id>
+					<Name><![CDATA[t_productionTextNight]]></Name>
+					<X>-120</X><Y>30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12778,9 +13198,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1714988463586</Id>
-					<Name><![CDATA[t_gebruikTextNight]]></Name>
-					<X>-120</X><Y>190.808</Y>
+					<Id>1715002556501</Id>
+					<Name><![CDATA[t_consumptionTextNight]]></Name>
+					<X>-120</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12799,9 +13219,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1714988463588</Id>
+					<Id>1715002556503</Id>
 					<Name><![CDATA[t_bottomBarplotText2]]></Name>
-					<X>0</X><Y>30</Y>
+					<X>-200</X><Y>80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12823,9 +13243,9 @@ if (radio_period.getValue() == 0) {
 
 				</Group>
 				<Group>
-					<Id>1714990679004</Id>
+					<Id>1715002718103</Id>
 					<Name><![CDATA[gr_WeekdayWeekend]]></Name>
-					<X>1460</X><Y>350</Y>
+					<X>1550</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -12838,9 +13258,9 @@ if (radio_period.getValue() == 0) {
 
 			<Presentation>
     			<StackChart>
-					<Id>1714990679007</Id>
+					<Id>1715002718106</Id>
 					<Name><![CDATA[pl_productionChartWeekday]]></Name>
-					<X>-152.13299999999998</X><Y>-211.007</Y>
+					<X>-160</X><Y>-280</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12890,9 +13310,9 @@ if (radio_period.getValue() == 0) {
 					</Bars>
     			</StackChart>
     			<StackChart>
-					<Id>1714990679010</Id>
+					<Id>1715002718109</Id>
 					<Name><![CDATA[pl_consumptionChartWeekday]]></Name>
-					<X>-153.04000000000002</X><Y>-100</Y>
+					<X>-160</X><Y>-180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12942,9 +13362,9 @@ if (radio_period.getValue() == 0) {
 					</Bars>
     			</StackChart>
 				<Text>
-					<Id>1714990679012</Id>
-					<Name><![CDATA[t_opwekTextWeekday]]></Name>
-					<X>-120</X><Y>-171.212</Y>
+					<Id>1715002718111</Id>
+					<Name><![CDATA[t_productionTextWeekday]]></Name>
+					<X>-120</X><Y>-240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12963,9 +13383,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1714990679014</Id>
-					<Name><![CDATA[t_gebruikTextWeekday]]></Name>
-					<X>-120</X><Y>-59.19200000000001</Y>
+					<Id>1715002718113</Id>
+					<Name><![CDATA[t_consumptionTextWeekday]]></Name>
+					<X>-120</X><Y>-140</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12984,9 +13404,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1714990679016</Id>
+					<Id>1715002718115</Id>
 					<Name><![CDATA[t_topBarplotText3]]></Name>
-					<X>0</X><Y>-220</Y>
+					<X>-190</X><Y>-190</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -12996,7 +13416,8 @@ if (radio_period.getValue() == 0) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Weekdag]]></Text>
+					<Text><![CDATA[Weekdagen
+]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>14</Size>
@@ -13005,9 +13426,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>CENTER</Alignment>
 				</Text>
     			<StackChart>
-					<Id>1714990679019</Id>
+					<Id>1715002718118</Id>
 					<Name><![CDATA[pl_productionChartWeekend]]></Name>
-					<X>-154</X><Y>40</Y>
+					<X>-160</X><Y>-10</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13057,9 +13478,9 @@ if (radio_period.getValue() == 0) {
 					</Bars>
     			</StackChart>
     			<StackChart>
-					<Id>1714990679022</Id>
+					<Id>1715002718121</Id>
 					<Name><![CDATA[pl_consumptionChartWeekend]]></Name>
-					<X>-153.04000000000002</X><Y>130</Y>
+					<X>-160</X><Y>90</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13109,9 +13530,9 @@ if (radio_period.getValue() == 0) {
 					</Bars>
     			</StackChart>
 				<Text>
-					<Id>1714990679024</Id>
-					<Name><![CDATA[t_opwekTextWeekend]]></Name>
-					<X>-120</X><Y>78.78800000000001</Y>
+					<Id>1715002718123</Id>
+					<Name><![CDATA[t_productionTextWeekend]]></Name>
+					<X>-120</X><Y>30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13130,9 +13551,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1714990679026</Id>
-					<Name><![CDATA[t_gebruikTextWeekend]]></Name>
-					<X>-120</X><Y>190.808</Y>
+					<Id>1715002718125</Id>
+					<Name><![CDATA[t_consumptionTextWeekend]]></Name>
+					<X>-120</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13151,9 +13572,9 @@ if (radio_period.getValue() == 0) {
 					<Alignment>RIGHT</Alignment>
 				</Text>
 				<Text>
-					<Id>1714990679028</Id>
+					<Id>1715002718127</Id>
 					<Name><![CDATA[t_bottomBarplotText3]]></Name>
-					<X>0</X><Y>30</Y>
+					<X>-190</X><Y>80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13163,7 +13584,7 @@ if (radio_period.getValue() == 0) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Weekend]]></Text>
+					<Text><![CDATA[Weekenden]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>14</Size>
