@@ -5546,6 +5546,18 @@ f_showCorrectChart();]]></ActionCode>
 						<Type><![CDATA[double]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1715168835716</Id>
+					<Name><![CDATA[v_dataBaseloadElectricityDemandYear_kW]]></Name>
+					<X>740</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705600400172</Id>
 					<Name><![CDATA[p_areaType]]></Name>
@@ -7559,7 +7571,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				</DataSet>
     			<DataSet>
 					<Id>1706180307170</Id>
-					<Name><![CDATA[data_gridCapacitySupply_kW]]></Name>
+					<Name><![CDATA[data_gridCapacitySupplyYear_kW]]></Name>
 					<X>1420</X><Y>690</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -7581,7 +7593,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				</DataSet>
     			<DataSet>
 					<Id>1706180325051</Id>
-					<Name><![CDATA[data_gridCapacityDemand_kW]]></Name>
+					<Name><![CDATA[data_gridCapacityDemandYear_kW]]></Name>
 					<X>1420</X><Y>710</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -7604,7 +7616,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706534895485</Id>
 					<Name><![CDATA[data_maxNetLoadPerDay_MW]]></Name>
-					<X>1420</X><Y>750</Y>
+					<X>1420</X><Y>830</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7626,7 +7638,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706534934434</Id>
 					<Name><![CDATA[data_minNetLoadPerDay_MW]]></Name>
-					<X>1420</X><Y>770</Y>
+					<X>1420</X><Y>850</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7648,7 +7660,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772166461</Id>
 					<Name><![CDATA[data_netLoadMaxDay_MW]]></Name>
-					<X>1420</X><Y>810</Y>
+					<X>1420</X><Y>870</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7670,7 +7682,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772166484</Id>
 					<Name><![CDATA[data_netLoadMinDay_MW]]></Name>
-					<X>1420</X><Y>830</Y>
+					<X>1420</X><Y>890</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7692,7 +7704,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772657343</Id>
 					<Name><![CDATA[data_gridCapacitySupplyMaxDay_MW]]></Name>
-					<X>1420</X><Y>850</Y>
+					<X>1420</X><Y>910</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7714,7 +7726,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772657359</Id>
 					<Name><![CDATA[data_gridCapacityDemandMaxDay_MW]]></Name>
-					<X>1420</X><Y>870</Y>
+					<X>1420</X><Y>930</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7736,7 +7748,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706773933317</Id>
 					<Name><![CDATA[data_gridCapacitySupplyMinDay_MW]]></Name>
-					<X>1420</X><Y>890</Y>
+					<X>1420</X><Y>950</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7758,7 +7770,95 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706773933345</Id>
 					<Name><![CDATA[data_gridCapacityDemandMinDay_MW]]></Name>
-					<X>1420</X><Y>910</Y>
+					<X>1420</X><Y>970</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706256000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<FreezeXAxis>false</FreezeXAxis>
+					<SamplesToKeep>2</SamplesToKeep>
+				</DataSet>
+    			<DataSet>
+					<Id>1715171573856</Id>
+					<Name><![CDATA[data_gridCapacitySupplySummerWeek_kW]]></Name>
+					<X>1420</X><Y>730</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706256000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<FreezeXAxis>false</FreezeXAxis>
+					<SamplesToKeep>2</SamplesToKeep>
+				</DataSet>
+    			<DataSet>
+					<Id>1715171573866</Id>
+					<Name><![CDATA[data_gridCapacityDemandSummerWeek_kW]]></Name>
+					<X>1420</X><Y>750</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706256000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<FreezeXAxis>false</FreezeXAxis>
+					<SamplesToKeep>2</SamplesToKeep>
+				</DataSet>
+    			<DataSet>
+					<Id>1715175159469</Id>
+					<Name><![CDATA[data_gridCapacitySupplyWinterWeek_kW]]></Name>
+					<X>1420</X><Y>770</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706256000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<FreezeXAxis>false</FreezeXAxis>
+					<SamplesToKeep>2</SamplesToKeep>
+				</DataSet>
+    			<DataSet>
+					<Id>1715175159480</Id>
+					<Name><![CDATA[data_gridCapacityDemandWinterWeek_kW]]></Name>
+					<X>1420</X><Y>790</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8240,34 +8340,21 @@ if (dataObject.v_dataDistrictHeatSupplyLiveWeek_kW != null) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Parameter>
-						<Name><![CDATA[selectedObjectType]]></Name>
-						<Type><![CDATA[SelectedObjectTypes]]></Type>
-					</Parameter>
-					<Parameter>
 						<Name><![CDATA[dataObject]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[if (selectedObjectType == TRAFO) {
-	group_trafo.setVisible(true);
-	plot_trafo_week.addDataSet(dataObject.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_trafo_week.addDataSet(dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_trafo_week.addDataSet(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
-	f_setTrafoPlotScale( dataObject);
-} 
-else{
-	group_week.setVisible(true);
-	energyDemandChart.addDataSet(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
-	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandLiveWeek_kW, "Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
-	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandLiveWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
-	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandLiveWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-	if (dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW != null) {
-		energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
-	}
-	energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplyLiveWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplyLiveWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
+					<Body><![CDATA[group_week.setVisible(true);
+energyDemandChart.addDataSet(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
+energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandLiveWeek_kW, "Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
+energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandLiveWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
+energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandLiveWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+if (dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW != null) {
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 }
+energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplyLiveWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplyLiveWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
 ]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
@@ -8347,10 +8434,12 @@ energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplySummerWeek_kW,
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[group_year.setVisible(false);
-group_week.setVisible(false);
-group_trafo.setVisible(false);
+					<Body><![CDATA[group_week.setVisible(false);
+group_year.setVisible(false);
+group_trafo_week.setVisible(false);
+group_trafo_year.setVisible(false);
 plot_trafo_week.removeAll();
+plot_trafo_year.removeAll();
 energyDemandChartYear.removeAll();
 energySupplyChartYear.removeAll();
 energyDemandChart.removeAll();
@@ -8436,33 +8525,40 @@ energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyWinterWeek_kW,
 					<Body><![CDATA[f_resetCharts();
 AreaCollection dataObject = f_getDataObject(uI_Results.v_selectedObjectType);
 
-if( uI_Results.v_selectedPeriod == LIVE){
-	f_addElectricityFlows_Live(uI_Results.v_selectedObjectType, dataObject);
-	if( radio_energyType.getValue() == 1){
-		f_addOtherEnergyCarriers_Live(dataObject);
+if( radio_period.getValue() == 3){
+	if (uI_Results.v_selectedObjectType == TRAFO) {
+		f_addElectricityFlowsTrafo_Live(dataObject);
+	} else {
+		f_addElectricityFlows_Live(dataObject);
+		if( radio_energyType.getValue() == 1){
+			f_addOtherEnergyCarriers_Live(dataObject);
+		}
 	}
 }
-else if (uI_Results.v_selectedPeriod == JAAR){
-	// Trafo's not fully implemented yet
-	if (uI_Results.v_selectedObjectType != TRAFO) {
+else if (radio_period.getValue() == 0){
+	if (uI_Results.v_selectedObjectType == TRAFO) {
+		f_addElectricityFlowsTrafo_Year(dataObject);
+	} else {
 		f_addElectricityFlows_Year(dataObject);
 		if( radio_energyType.getValue() == 1){
 			f_addOtherEnergyFlows_Year(dataObject);
 		}
 	}
 }
-else if (uI_Results.v_selectedPeriod == ZOMER){
-	// Trafo's not fully implemented yet
-	if (uI_Results.v_selectedObjectType != TRAFO) {
+else if (radio_period.getValue() == 1){
+	if (uI_Results.v_selectedObjectType == TRAFO) {
+		f_addElectricityFlowsTrafo_SummerWeek(dataObject);
+	} else {
 		f_addElectricityFlows_SummerWeek(dataObject);
 		if( radio_energyType.getValue() == 1){
 			f_addOtherEnergyFlows_SummerWeek(dataObject);
 		}
 	}
 }
-else if (uI_Results.v_selectedPeriod == WINTER){
-	// Trafo's not fully implemented yet
-	if (uI_Results.v_selectedObjectType != TRAFO) {
+else if (radio_period.getValue() == 2){
+	if (uI_Results.v_selectedObjectType == TRAFO) {
+		f_addElectricityFlowsTrafo_WinterWeek(dataObject);
+	} else {
 		f_addElectricityFlows_WinterWeek(dataObject);
 		if( radio_energyType.getValue() == 1){
 			f_addOtherEnergyFlows_WinterWeek(dataObject);
@@ -8503,7 +8599,7 @@ return dataObject;]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714908011118</Id>
 					<Name><![CDATA[f_setTrafoPlotScale]]></Name>
-					<X>270</X><Y>670</Y>
+					<X>470</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8515,6 +8611,102 @@ return dataObject;]]></Body>
 					<Body><![CDATA[int maxValue = roundToInt(max(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDemandCapacityLiveWeek_kW.getYMax()));
 int minValue = roundToInt(min(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW.getYMin(), -dataObject.v_dataElectricityDemandCapacityLiveWeek_kW.getYMin()));
 plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);]]></Body>
+				</Function>
+				<Function AccessType="private" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715169261226</Id>
+					<Name><![CDATA[f_addElectricityFlowsTrafo_Live]]></Name>
+					<X>460</X><Y>750</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[dataObject]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[group_trafo_week.setVisible(true);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+
+int maxValue = roundToInt(max(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDemandCapacityLiveWeek_kW.getYMax()));
+int minValue = roundToInt(min(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW.getYMin(), -dataObject.v_dataElectricityDemandCapacityLiveWeek_kW.getYMin()));
+plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
+]]></Body>
+				</Function>
+				<Function AccessType="private" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715169641896</Id>
+					<Name><![CDATA[f_addElectricityFlowsTrafo_Year]]></Name>
+					<X>460</X><Y>800</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[dataObject]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[group_trafo_year.setVisible(true);
+plot_trafo_year.addDataSet(dataObject.data_gridCapacityDemandYear_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_year.addDataSet(dataObject.data_gridCapacitySupplyYear_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_year.addDataSet(dataObject.v_dataBaseloadElectricityDemandYear_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 0.25, Chart.PointStyle.POINT_NONE);
+
+int maxValue = roundToInt(max(dataObject.v_dataBaseloadElectricityDemandYear_kW.getYMax(), dataObject.data_gridCapacityDemandYear_kW.getYMax()));
+int minValue = roundToInt(min(dataObject.v_dataBaseloadElectricityDemandYear_kW.getYMin(), -dataObject.data_gridCapacityDemandYear_kW.getYMin()));
+plot_trafo_year.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
+]]></Body>
+				</Function>
+				<Function AccessType="private" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715171161720</Id>
+					<Name><![CDATA[f_addElectricityFlowsTrafo_SummerWeek]]></Name>
+					<X>460</X><Y>850</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[dataObject]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[group_trafo_week.setVisible(true);
+plot_trafo_week.addDataSet(dataObject.data_gridCapacityDemandSummerWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.data_gridCapacitySupplySummerWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+
+int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW.getYMax(), dataObject.data_gridCapacityDemandSummerWeek_kW.getYMax()));
+int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW.getYMin(), -dataObject.data_gridCapacityDemandSummerWeek_kW.getYMin()));
+plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
+]]></Body>
+				</Function>
+				<Function AccessType="private" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1715171298729</Id>
+					<Name><![CDATA[f_addElectricityFlowsTrafo_WinterWeek]]></Name>
+					<X>460</X><Y>900</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[dataObject]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
+					<Body><![CDATA[group_trafo_week.setVisible(true);
+plot_trafo_week.addDataSet(dataObject.data_gridCapacityDemandWinterWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.data_gridCapacitySupplyWinterWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+
+int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW.getYMax(), dataObject.data_gridCapacityDemandWinterWeek_kW.getYMax()));
+int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW.getYMin(), -dataObject.data_gridCapacityDemandWinterWeek_kW.getYMin()));
+plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
+]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -8594,12 +8786,13 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 				<Group>
 					<Id>1714834211049</Id>
 					<Name><![CDATA[group_year]]></Name>
-					<X>250</X><Y>240</Y>
+					<X>750</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<XCode><![CDATA[250]]></XCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
@@ -8760,7 +8953,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1714855497484</Id>
 					<Name><![CDATA[radio_energyType]]></Name>
-					<X>110</X><Y>10</Y>
+					<X>110</X><Y>-5</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8948,13 +9141,14 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 				</Group>
 				<Group>
 					<Id>1714907241713</Id>
-					<Name><![CDATA[group_trafo]]></Name>
-					<X>230</X><Y>200</Y>
+					<Name><![CDATA[group_trafo_week]]></Name>
+					<X>1230</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<XCode><![CDATA[230]]></XCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
@@ -9012,7 +9206,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<VerScaleType>AUTO</VerScaleType>
 					<DrawLine>true</DrawLine>
 					<Interpolation>LINEAR</Interpolation>
-					<SamplesToKeep>168</SamplesToKeep>
+					<SamplesToKeep>672</SamplesToKeep>
 					<TimeWindowExpression><![CDATA[168]]></TimeWindowExpression>
 					<FillAreaUnderLine>false</FillAreaUnderLine>
 					<LabelFormat>dd_MM</LabelFormat>
@@ -9041,6 +9235,129 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 			</Presentation>
 
 				</Group>
+				<Group>
+					<Id>1715170000511</Id>
+					<Name><![CDATA[group_trafo_year]]></Name>
+					<X>1750</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<XCode><![CDATA[230]]></XCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+    			<TimePlot>
+					<Id>1715170000514</Id>
+					<Name><![CDATA[plot_trafo_year]]></Name>
+					<X>-230</X><Y>-110</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1714982400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>460</Width>
+					<Height>260</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>380</Width>
+						<Height>170</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>DAY</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<SamplesToKeep>8760</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[365]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>dd_MM</LabelFormat>
+    			</TimePlot>
+				<Text>
+					<Id>1715170000516</Id>
+					<Name><![CDATA[t_energieVraag3]]></Name>
+					<X>0</X><Y>-110</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Trafo belasting en capaciteit]]></Text>
+					<Font>
+						<Name>Calibri</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+			</Presentation>
+
+				</Group>
+				<Control Type="RadioButtons">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1715175655981</Id>
+					<Name><![CDATA[radio_period]]></Name>
+					<X>40</X><Y>20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="370" Height="40">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[f_setCharts();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<Button><![CDATA[Jaar overzicht]]></Button>
+						<Button><![CDATA[Zomer Week]]></Button>
+						<Button><![CDATA[Winter Week]]></Button>
+						<Button><![CDATA[Live Simulatie]]></Button>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
 			</Presentation>
 
 				</Level>
@@ -9247,23 +9564,23 @@ plot_seizoen.removeAll();]]></Body>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[//Add and color grid capacities
-plot_jaar.addDataSet(area.data_gridCapacityDemand_kW,"Capaciteit afname");
-plot_jaar.addDataSet(area.data_gridCapacitySupply_kW,"Capaciteit levering");
+plot_jaar.addDataSet(area.data_gridCapacityDemandYear_kW,"Capaciteit afname");
+plot_jaar.addDataSet(area.data_gridCapacitySupplyYear_kW,"Capaciteit levering");
 plot_jaar.setColor(1, v_capciteitKleurTrafo);
 plot_jaar.setColor(2, v_capciteitKleurTrafo);
 
-plot_week.addDataSet(area.data_gridCapacityDemand_kW,"Capaciteit afname");
-plot_week.addDataSet(area.data_gridCapacitySupply_kW,"Capaciteit levering");
+plot_week.addDataSet(area.data_gridCapacityDemandYear_kW,"Capaciteit afname");
+plot_week.addDataSet(area.data_gridCapacitySupplyYear_kW,"Capaciteit levering");
 plot_week.setColor(plot_week.getCount() - 2, v_capciteitKleurTrafo);
 plot_week.setColor(plot_week.getCount() - 1, v_capciteitKleurTrafo);
 
-plot_dagnacht.addDataSet(area.data_gridCapacityDemand_kW,"Capaciteit afname");
-plot_dagnacht.addDataSet(area.data_gridCapacitySupply_kW,"Capaciteit levering");
+plot_dagnacht.addDataSet(area.data_gridCapacityDemandYear_kW,"Capaciteit afname");
+plot_dagnacht.addDataSet(area.data_gridCapacitySupplyYear_kW,"Capaciteit levering");
 plot_dagnacht.setColor(plot_dagnacht.getCount() - 2, v_capciteitKleurTrafo);
 plot_dagnacht.setColor(plot_dagnacht.getCount() - 1, v_capciteitKleurTrafo);
 
-plot_seizoen.addDataSet(area.data_gridCapacityDemand_kW,"Capaciteit afname");
-plot_seizoen.addDataSet(area.data_gridCapacitySupply_kW,"Capaciteit levering");
+plot_seizoen.addDataSet(area.data_gridCapacityDemandYear_kW,"Capaciteit afname");
+plot_seizoen.addDataSet(area.data_gridCapacitySupplyYear_kW,"Capaciteit levering");
 plot_seizoen.setColor(plot_seizoen.getCount() - 2, v_capciteitKleurTrafo);
 plot_seizoen.setColor(plot_seizoen.getCount() - 1, v_capciteitKleurTrafo);]]></Body>
 				</Function>
@@ -9286,8 +9603,8 @@ double scaleMax_kW;
 
 //Jaar
 plot_jaar.addDataSet(area.v_dataNetbelastingDuurkrommeYear_kW,"Belasting jaar");
-scaleMin_kW = -1 + min(area.data_gridCapacitySupply_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
-scaleMax_kW = 1 + max(area.data_gridCapacityDemand_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+scaleMin_kW = -1 + min(area.data_gridCapacitySupplyYear_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
+scaleMax_kW = 1 + max(area.data_gridCapacityDemandYear_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
 plot_jaar.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 if (area.v_dataNetbelastingDuurkrommeYearVorige_kW != null) {
 	//plot_jaar.addDataSet(area.v_dataNetbelastingDuurkrommeYearVorige_kW,"Vorige situatie");
@@ -9300,8 +9617,8 @@ if( area.v_dataNetbelastingDuurkrommeSummer_kW != null){
 	plot_seizoen.addDataSet(area.v_dataNetbelastingDuurkrommeWinter_kW,"Belasting winterweek");
 	plot_seizoen.setColor(0,blue);
 	plot_seizoen.setColor(1,green);
-	scaleMin_kW = -1 + min(area.data_gridCapacitySupply_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
-	scaleMax_kW = 1 + max(area.data_gridCapacityDemand_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+	scaleMin_kW = -1 + min(area.data_gridCapacitySupplyYear_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
+	scaleMax_kW = 1 + max(area.data_gridCapacityDemandYear_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
 	plot_seizoen.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 }
 
@@ -9311,8 +9628,8 @@ if( area.v_dataNetbelastingDuurkrommeDaytime_kW != null){
 	plot_dagnacht.addDataSet(area.v_dataNetbelastingDuurkrommeNighttime_kW,"Belasting 's nachts");
 	plot_dagnacht.setColor(0,blue);
 	plot_dagnacht.setColor(1,green);	
-	scaleMin_kW = -1 + min(area.data_gridCapacitySupply_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
-	scaleMax_kW = 1 + max(area.data_gridCapacityDemand_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+	scaleMin_kW = -1 + min(area.data_gridCapacitySupplyYear_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
+	scaleMax_kW = 1 + max(area.data_gridCapacityDemandYear_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
 	plot_dagnacht.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 }
 
@@ -9322,8 +9639,8 @@ if( area.v_dataNetbelastingDuurkrommeWeekday_kW != null){
 	plot_week.addDataSet(area.v_dataNetbelastingDuurkrommeWeekend_kW,"Belasting weekenddagen");
 	plot_week.setColor(0,blue);
 	plot_week.setColor(1,green);
-	scaleMin_kW = -1 + min(area.data_gridCapacitySupply_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
-	scaleMax_kW = 1 + max(area.data_gridCapacityDemand_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+	scaleMin_kW = -1 + min(area.data_gridCapacitySupplyYear_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
+	scaleMax_kW = 1 + max(area.data_gridCapacityDemandYear_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
 	plot_week.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 }
 ]]></Body>
