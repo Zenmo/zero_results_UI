@@ -635,7 +635,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[String]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA["Warmte"]]></Code>
+							<Code><![CDATA["Warmtenet"]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -710,7 +710,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[String]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA["Elek. opslag"]]></Code>
+							<Code><![CDATA["Laden opslag"]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -815,7 +815,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[String]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA["Warmte"]]></Code>
+							<Code><![CDATA["Warmtebronnen"]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -3894,9 +3894,9 @@ else if( rb_gespreksleidraad.getValue() == 4){
 						<Orientation>VERTICAL</Orientation>
 						<Button><![CDATA[1. Wat is het aandeel lokaal duurzaam opgewekt?]]></Button>
 						<Button><![CDATA[2. Kunnen wij meer lokaal opwekken?]]></Button>
-						<Button><![CDATA[3. Kunnnen wij meer energie zelf gebruiken?]]></Button>
-						<Button><![CDATA[4. Kunnen wij netcapaciteit beter benutten?]]></Button>
-						<Button><![CDATA[5. Overige grafieken en inzicht]]></Button>
+						<Button><![CDATA[3. Kunnnen wij meer elektriciteit zelf gebruiken?]]></Button>
+						<Button><![CDATA[4. Kunnen wij netcapaciteit (elektriciteit) beter benutten?]]></Button>
+						<Button><![CDATA[5. Wat zijn de seizoenseffecten?]]></Button>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
@@ -8665,8 +8665,8 @@ uur]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Kan ik verbruik en opwek
-op elkaar afstemmen?]]></Text>
+					<Text><![CDATA[Kan ik verbruik en opwek van
+elektriciteit op elkaar afstemmen?]]></Text>
 					<Font>
 						<Name>Arial</Name>
 						<Size>28</Size>
