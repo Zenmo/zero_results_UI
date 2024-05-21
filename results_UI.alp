@@ -5649,6 +5649,174 @@ f_showCorrectChart();]]></ActionCode>
 						<Type><![CDATA[DataSet]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209327834</Id>
+					<Name><![CDATA[v_annualExcessImport_MWh]]></Name>
+					<X>1070</X><Y>380</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209440800</Id>
+					<Name><![CDATA[v_annualExcessExport_MWh]]></Name>
+					<X>1070</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209465640</Id>
+					<Name><![CDATA[v_summerWeekExcessImport_MWh]]></Name>
+					<X>1070</X><Y>420</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209471102</Id>
+					<Name><![CDATA[v_summerWeekExcessExport_MWh]]></Name>
+					<X>1070</X><Y>440</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209489154</Id>
+					<Name><![CDATA[v_daytimeExcessImport_MWh]]></Name>
+					<X>1070</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209494608</Id>
+					<Name><![CDATA[v_winterWeekExcessExport_MWh]]></Name>
+					<X>1070</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209496675</Id>
+					<Name><![CDATA[v_winterWeekExcessImport_MWh]]></Name>
+					<X>1070</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209516398</Id>
+					<Name><![CDATA[v_daytimeExcessExport_MWh]]></Name>
+					<X>1070</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209529457</Id>
+					<Name><![CDATA[v_nighttimeExcessExport_MWh]]></Name>
+					<X>1070</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209533730</Id>
+					<Name><![CDATA[v_nighttimeExcessImport_MWh]]></Name>
+					<X>1070</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209592672</Id>
+					<Name><![CDATA[v_weekdayExcessImport_MWh]]></Name>
+					<X>1070</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209592674</Id>
+					<Name><![CDATA[v_weekdayExcessExport_MWh]]></Name>
+					<X>1070</X><Y>600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209592676</Id>
+					<Name><![CDATA[v_weekendExcessExport_MWh]]></Name>
+					<X>1070</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1716209592678</Id>
+					<Name><![CDATA[v_weekendExcessImport_MWh]]></Name>
+					<X>1070</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705600400172</Id>
 					<Name><![CDATA[p_areaType]]></Name>
@@ -7641,7 +7809,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706177958447</Id>
 					<Name><![CDATA[data_netLoadYear_MW]]></Name>
-					<X>1070</X><Y>380</Y>
+					<X>1070</X><Y>680</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7663,7 +7831,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706180307170</Id>
 					<Name><![CDATA[data_gridCapacitySupplyYear_kW]]></Name>
-					<X>1070</X><Y>400</Y>
+					<X>1070</X><Y>700</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7685,7 +7853,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706180325051</Id>
 					<Name><![CDATA[data_gridCapacityDemandYear_kW]]></Name>
-					<X>1070</X><Y>420</Y>
+					<X>1070</X><Y>720</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7707,7 +7875,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706534895485</Id>
 					<Name><![CDATA[data_maxNetLoadPerDay_MW]]></Name>
-					<X>1070</X><Y>540</Y>
+					<X>1070</X><Y>830</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7729,7 +7897,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706534934434</Id>
 					<Name><![CDATA[data_minNetLoadPerDay_MW]]></Name>
-					<X>1070</X><Y>560</Y>
+					<X>1070</X><Y>850</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7751,7 +7919,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772166461</Id>
 					<Name><![CDATA[data_netLoadMaxDay_MW]]></Name>
-					<X>1070</X><Y>580</Y>
+					<X>1070</X><Y>870</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7773,7 +7941,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772166484</Id>
 					<Name><![CDATA[data_netLoadMinDay_MW]]></Name>
-					<X>1070</X><Y>600</Y>
+					<X>1070</X><Y>890</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7795,7 +7963,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772657343</Id>
 					<Name><![CDATA[data_gridCapacitySupplyMaxDay_MW]]></Name>
-					<X>1070</X><Y>620</Y>
+					<X>1070</X><Y>910</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7817,7 +7985,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706772657359</Id>
 					<Name><![CDATA[data_gridCapacityDemandMaxDay_MW]]></Name>
-					<X>1070</X><Y>640</Y>
+					<X>1070</X><Y>930</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7839,7 +8007,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706773933317</Id>
 					<Name><![CDATA[data_gridCapacitySupplyMinDay_MW]]></Name>
-					<X>1070</X><Y>660</Y>
+					<X>1070</X><Y>950</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7861,7 +8029,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1706773933345</Id>
 					<Name><![CDATA[data_gridCapacityDemandMinDay_MW]]></Name>
-					<X>1070</X><Y>680</Y>
+					<X>1070</X><Y>970</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7883,7 +8051,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1715171573856</Id>
 					<Name><![CDATA[data_gridCapacitySupplySummerWeek_kW]]></Name>
-					<X>1070</X><Y>440</Y>
+					<X>1070</X><Y>740</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7905,7 +8073,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1715171573866</Id>
 					<Name><![CDATA[data_gridCapacityDemandSummerWeek_kW]]></Name>
-					<X>1070</X><Y>460</Y>
+					<X>1070</X><Y>760</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7927,7 +8095,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1715175159469</Id>
 					<Name><![CDATA[data_gridCapacitySupplyWinterWeek_kW]]></Name>
-					<X>1070</X><Y>480</Y>
+					<X>1070</X><Y>780</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7949,7 +8117,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1715175159480</Id>
 					<Name><![CDATA[data_gridCapacityDemandWinterWeek_kW]]></Name>
-					<X>1070</X><Y>500</Y>
+					<X>1070</X><Y>800</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9726,7 +9894,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<DefaultValueCode><![CDATA[3]]></DefaultValueCode>
 						<Orientation>HORIZONTAL</Orientation>
 						<Button><![CDATA[Jaar overzicht]]></Button>
 						<Button><![CDATA[Zomer Week]]></Button>
@@ -12728,19 +12896,19 @@ if (radio_period.getValue() == 0) {
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(area.v_annualSelfConsumedElectricity_MWh - area.v_annualElectricityExport_MWh);
+annualSelfConsumed.setValue(area.v_annualSelfConsumedElectricity_MWh - area.v_annualExcessExport_MWh);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualSelfProduced = new DataItem();
-annualSelfProduced.setValue(area.v_annualSelfProducedElectricity_MWh - area.v_annualElectricityImport_MWh);
+annualSelfProduced.setValue(area.v_annualSelfProducedElectricity_MWh - area.v_annualExcessImport_MWh);
 pl_productionChartYear.addDataItem(annualSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualImport = new DataItem();
-annualImport.setValue(area.v_annualElectricityImport_MWh);
+annualImport.setValue(area.v_annualExcessImport_MWh);
 pl_productionChartYear.addDataItem(annualImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem annualExport = new DataItem();
-annualExport.setValue(area.v_annualElectricityExport_MWh);
+annualExport.setValue(area.v_annualExcessExport_MWh);
 pl_consumptionChartYear.addDataItem(annualExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 double chartScale_MWh = max(area.v_annualSelfConsumedElectricity_MWh, area.v_annualSelfProducedElectricity_MWh);
@@ -12774,36 +12942,36 @@ if (chartScale_MWh<10) {
 					</Parameter>
 					<Body><![CDATA[// Summer 
 DataItem summerSelfConsumed = new DataItem();
-summerSelfConsumed.setValue(area.v_selfConsumedElectricitySummerWeek_MWh - area.v_exportedElectricitySummerWeek_MWh);
+summerSelfConsumed.setValue(area.v_selfConsumedElectricitySummerWeek_MWh - area.v_summerWeekExcessExport_MWh);
 pl_consumptionChartSummer.addDataItem(summerSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem summerSelfProduced = new DataItem();
-summerSelfProduced.setValue(area.v_selfProducedElectricitySummerWeek_MWh - area.v_importedElectricitySummerWeek_MWh);
+summerSelfProduced.setValue(area.v_selfProducedElectricitySummerWeek_MWh - area.v_summerWeekExcessImport_MWh);
 pl_productionChartSummer.addDataItem(summerSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem summerImport = new DataItem();
-summerImport.setValue(area.v_importedElectricitySummerWeek_MWh);
+summerImport.setValue(area.v_summerWeekExcessImport_MWh);
 pl_productionChartSummer.addDataItem(summerImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem summerExport = new DataItem();
-summerExport.setValue(area.v_exportedElectricitySummerWeek_MWh);
+summerExport.setValue(area.v_summerWeekExcessExport_MWh);
 pl_consumptionChartSummer.addDataItem(summerExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Winter
 DataItem winterSelfConsumed = new DataItem();
-winterSelfConsumed.setValue(area.v_selfConsumedElectricityWinterWeek_MWh - area.v_exportedElectricityWinterWeek_MWh);
+winterSelfConsumed.setValue(area.v_selfConsumedElectricityWinterWeek_MWh - area.v_winterWeekExcessExport_MWh);
 pl_consumptionChartWinter.addDataItem(winterSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem winterSelfProduced = new DataItem();
-winterSelfProduced.setValue(area.v_selfProducedElectricityWinterWeek_MWh - area.v_importedElectricityWinterWeek_MWh);
+winterSelfProduced.setValue(area.v_selfProducedElectricityWinterWeek_MWh - area.v_winterWeekExcessImport_MWh);
 pl_productionChartWinter.addDataItem(winterSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem winterImport = new DataItem();
-winterImport.setValue(area.v_importedElectricityWinterWeek_MWh);
+winterImport.setValue(area.v_winterWeekExcessImport_MWh);
 pl_productionChartWinter.addDataItem(winterImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem winterExport = new DataItem();
-winterExport.setValue(area.v_exportedElectricityWinterWeek_MWh);
+winterExport.setValue(area.v_winterWeekExcessExport_MWh);
 pl_consumptionChartWinter.addDataItem(winterExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 
@@ -12846,36 +13014,36 @@ if (chartScale_MWh<10) {
 					</Parameter>
 					<Body><![CDATA[// Day
 DataItem daytimeSelfConsumed = new DataItem();
-daytimeSelfConsumed.setValue(area.v_selfConsumedElectricityDaytime_MWh - area.v_exportedElectricityDaytime_MWh);
+daytimeSelfConsumed.setValue(area.v_selfConsumedElectricityDaytime_MWh - area.v_daytimeExcessExport_MWh);
 pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem daytimeSelfProduced = new DataItem();
-daytimeSelfProduced.setValue(area.v_selfProducedElectricityDaytime_MWh - area.v_importedElectricityDaytime_MWh);
+daytimeSelfProduced.setValue(area.v_selfProducedElectricityDaytime_MWh - area.v_daytimeExcessImport_MWh);
 pl_productionChartDay.addDataItem(daytimeSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem daytimeImport = new DataItem();
-daytimeImport.setValue(area.v_importedElectricityDaytime_MWh);
+daytimeImport.setValue(area.v_daytimeExcessImport_MWh);
 pl_productionChartDay.addDataItem(daytimeImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem daytimeExport = new DataItem();
-daytimeExport.setValue(area.v_exportedElectricityDaytime_MWh);
+daytimeExport.setValue(area.v_daytimeExcessExport_MWh);
 pl_consumptionChartDay.addDataItem(daytimeExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Night
 DataItem nighttimeSelfConsumed = new DataItem();
-nighttimeSelfConsumed.setValue(area.v_selfConsumedElectricityNighttime_MWh - area.v_exportedElectricityNighttime_MWh);
+nighttimeSelfConsumed.setValue(area.v_selfConsumedElectricityNighttime_MWh - area.v_nighttimeExcessExport_MWh);
 pl_consumptionChartNight.addDataItem(nighttimeSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem nighttimeSelfProduced = new DataItem();
-nighttimeSelfProduced.setValue(area.v_selfProducedElectricityNighttime_MWh - area.v_importedElectricityNighttime_MWh);
+nighttimeSelfProduced.setValue(area.v_selfProducedElectricityNighttime_MWh - area.v_nighttimeExcessImport_MWh);
 pl_productionChartNight.addDataItem(nighttimeSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem nighttimeImport = new DataItem();
-nighttimeImport.setValue(area.v_importedElectricityNighttime_MWh);
+nighttimeImport.setValue(area.v_nighttimeExcessImport_MWh);
 pl_productionChartNight.addDataItem(nighttimeImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem nighttimeExport = new DataItem();
-nighttimeExport.setValue(area.v_exportedElectricityNighttime_MWh);
+nighttimeExport.setValue(area.v_nighttimeExcessExport_MWh);
 pl_consumptionChartNight.addDataItem(nighttimeExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 
@@ -12918,36 +13086,36 @@ if (chartScale_MWh<10) {
 					</Parameter>
 					<Body><![CDATA[// Weekday
 DataItem weekdaySelfConsumed = new DataItem();
-weekdaySelfConsumed.setValue(area.v_selfConsumedElectricityWeekday_MWh - area.v_exportedElectricityWeekday_MWh);
+weekdaySelfConsumed.setValue(area.v_selfConsumedElectricityWeekday_MWh - area.v_weekdayExcessExport_MWh);
 pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekdaySelfProduced = new DataItem();
-weekdaySelfProduced.setValue(area.v_selfProducedElectricityWeekday_MWh - area.v_importedElectricityWeekday_MWh);
+weekdaySelfProduced.setValue(area.v_selfProducedElectricityWeekday_MWh - area.v_weekdayExcessImport_MWh);
 pl_productionChartWeekday.addDataItem(weekdaySelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekdayImport = new DataItem();
-weekdayImport.setValue(area.v_importedElectricityWeekday_MWh);
+weekdayImport.setValue(area.v_weekdayExcessImport_MWh);
 pl_productionChartWeekday.addDataItem(weekdayImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem weekdayExport = new DataItem();
-weekdayExport.setValue(area.v_exportedElectricityWeekday_MWh);
+weekdayExport.setValue(area.v_weekdayExcessExport_MWh);
 pl_consumptionChartWeekday.addDataItem(weekdayExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Weekend
 DataItem weekendSelfConsumed = new DataItem();
-weekendSelfConsumed.setValue(area.v_selfConsumedElectricityWeekend_MWh - area.v_exportedElectricityWeekend_MWh);
+weekendSelfConsumed.setValue(area.v_selfConsumedElectricityWeekend_MWh - area.v_weekendExcessExport_MWh);
 pl_consumptionChartWeekend.addDataItem(weekendSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekendSelfProduced = new DataItem();
-weekendSelfProduced.setValue(area.v_selfProducedElectricityWeekend_MWh - area.v_importedElectricityWeekend_MWh);
+weekendSelfProduced.setValue(area.v_selfProducedElectricityWeekend_MWh - area.v_weekendExcessImport_MWh);
 pl_productionChartWeekend.addDataItem(weekendSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekendImport = new DataItem();
-weekendImport.setValue(area.v_importedElectricityWeekend_MWh);
+weekendImport.setValue(area.v_weekendExcessImport_MWh);
 pl_productionChartWeekend.addDataItem(weekendImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem weekendExport = new DataItem();
-weekendExport.setValue(area.v_exportedElectricityWeekend_MWh);
+weekendExport.setValue(area.v_weekendExcessExport_MWh);
 pl_consumptionChartWeekend.addDataItem(weekendExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 
