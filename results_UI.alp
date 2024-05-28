@@ -717,7 +717,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[cornflowerBlue]]></Code>
+							<Code><![CDATA[dodgerBlue]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -904,7 +904,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[lightGreen]]></Code>
+							<Code><![CDATA[dodgerBlue]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
