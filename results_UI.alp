@@ -9057,7 +9057,7 @@ energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyWinterWeek_kW,
 
 ]]></Body>
 				</Function>
-				<Function AccessType="default" StaticFunction="false">
+				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714899014782</Id>
