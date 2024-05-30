@@ -5785,7 +5785,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Warmte voor warmtenet]]></Text>
+					<Text><![CDATA[Warmte uit warmtenet]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -5873,7 +5873,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Warmte uit warmtenet]]></Text>
+					<Text><![CDATA[Warmte voor warmtenet]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -13901,13 +13901,13 @@ d6.setValue(roundToInt(exportTop_MWh / 1000));
 
 uI_Results.pl_consumptionChartGespreksleidraad1.addDataItem(d1,"Lokale opwek elek. [GWh]",uI_Results.v_selfConsumedElectricityColor);
 uI_Results.pl_consumptionChartGespreksleidraad1.addDataItem(d2,"Invoer elekriciteit [GWh]",uI_Results.v_importedElectricityColor);
-uI_Results.pl_consumptionChartGespreksleidraad1.addDataItem(d3,"Warmte voor warmtenet [GWh]",uI_Results.v_districtHeatDemandColor);
+uI_Results.pl_consumptionChartGespreksleidraad1.addDataItem(d3,"Warmte uit warmtenet [GWh]",uI_Results.v_districtHeatDemandColor);
 uI_Results.pl_consumptionChartGespreksleidraad1.addDataItem(d4,"Invoer aardgas [GWh]",uI_Results.v_naturalGasDemandColor);
 uI_Results.pl_consumptionChartGespreksleidraad1.addDataItem(d5,"Invoer benzine/diesel [GWh]",uI_Results.v_petroleumProductsDemandColor);
 //uI_Results.pl_consumptionChartGespreksleidraad1.addDataItem(d4,"Overbelasting [MWh]",red);
 uI_Results.pl_productionChartGespreksleidraad1.addDataItem(d1,"Zelfconsumptie elek. [GWh]",uI_Results.v_selfConsumedElectricityColor);
 uI_Results.pl_productionChartGespreksleidraad1.addDataItem(d6,"Uitvoer elektriciteit [GWh]",uI_Results.v_exportedElectricityColor);
-uI_Results.pl_productionChartGespreksleidraad1.addDataItem(d3,"Warmte uit warmtenet [GWh]",uI_Results.v_districtHeatDemandColor);
+uI_Results.pl_productionChartGespreksleidraad1.addDataItem(d3,"Warmte voor warmtenet [GWh]",uI_Results.v_districtHeatDemandColor);
 
 
 //pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
@@ -14912,13 +14912,13 @@ d6.setValue(roundToInt(exportTop_MWh / 1000));
 
 uI_Results.pl_consumptionChartSamenvatting.addDataItem(d1,"Lokale opwek elek. [GWh]",uI_Results.v_selfConsumedElectricityColor);
 uI_Results.pl_consumptionChartSamenvatting.addDataItem(d2,"Invoer elekriciteit [GWh]",uI_Results.v_importedElectricityColor);
-uI_Results.pl_consumptionChartSamenvatting.addDataItem(d3,"Warmte voor warmtenet [GWh]",uI_Results.v_districtHeatDemandColor);
+uI_Results.pl_consumptionChartSamenvatting.addDataItem(d3,"Warmte uit warmtenet [GWh]",uI_Results.v_districtHeatDemandColor);
 uI_Results.pl_consumptionChartSamenvatting.addDataItem(d4,"Invoer aardgas [GWh]",uI_Results.v_naturalGasDemandColor);
 uI_Results.pl_consumptionChartSamenvatting.addDataItem(d5,"Invoer benzine/diesel [GWh]",uI_Results.v_petroleumProductsDemandColor);
 //uI_Results.pl_consumptionChartGespreksleidraad1.addDataItem(d4,"Overbelasting [MWh]",red);
 uI_Results.pl_productionChartSamenvatting.addDataItem(d1,"Zelfconsumptie elek. [GWh]",uI_Results.v_selfConsumedElectricityColor);
 uI_Results.pl_productionChartSamenvatting.addDataItem(d6,"Uitvoer elektriciteit [GWh]",uI_Results.v_exportedElectricityColor);
-uI_Results.pl_productionChartSamenvatting.addDataItem(d3,"Warmte uit warmtenet [GWh]",uI_Results.v_districtHeatDemandColor);
+uI_Results.pl_productionChartSamenvatting.addDataItem(d3,"Warmte voor warmtenet [GWh]",uI_Results.v_districtHeatDemandColor);
 
 
 //pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
