@@ -2254,6 +2254,119 @@ t_importPerRegion.setText("Uitvoer (" + roundToInt(d3.getValue()) + " GWh)");
 }*/
 	]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1716924225574</Id>
+					<Name><![CDATA[f_setChartDescriptionText]]></Name>
+					<X>100</X><Y>760</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[infoName]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[infoTextVisible]]></Name>
+						<Type><![CDATA[boolean]]></Type>
+					</Parameter>
+					<Body><![CDATA[gr_infoButtonText.setVisible(infoTextVisible);
+String legendInfo = "";
+
+if(infoName.equals("i_samenvattingSupplyDemand")){
+	legendInfo = "Deze grafieken laten zien wat er gebeurt met de totaal jaarlijkse energieopwek, en van welke bronnen het gebruik komt. In en uitvoer worden daarbij per uur bijgehouden, je kunt dus zowel invoer (op momenten van tekort) als uitvoer (op momenten van overschot) hebben in één jaar.";
+}
+else if(infoName.equals("i_samenvattingAnnual")){
+	legendInfo = "In deze grafiek zie je de opwek per dag per energiebron. Daarovereen staat als lijn de totale vraag per dag. In het huidige systeem zal je zien dat de opwek nog in het niet valt bij de totale vraag.";
+}
+else if(infoName.equals("i_gespreksleidraad1")){
+	legendInfo = "Deze grafieken laten zien wat er gebeurt met de totaal jaarlijkse energieopwek, en van welke bronnen het gebruik komt. In en uitvoer worden daarbij per uur bijgehouden, je kunt dus zowel invoer (op momenten van tekort) als uitvoer (op momenten van overschot) hebben in één jaar.";
+}
+else if(infoName.equals("i_gespreksleidraad2")){
+	legendInfo = "In de bovenste grafieken zie je het totale energiegebruik per jaar uitgesplits naar sector. In een scenario met veel warmtepompen en elektrisch vervoer zul je een hoog elektriciteitsverbruik zien in deze sectoren, welke vervolgens ook wordt meegenomen in de elektriciteitsvraag. De onderste grafieken laten de opwek zien naar de totale potentie. De potentie van wind is nog onbekend, de potentie van zon is hierbij afgestemd op geschikt dakoppervlak voor zon op dak.";
+}
+else if(infoName.equals("i_gespreksleidraad3")){
+	legendInfo = "Deze grafieken zijn belangrijk om te zien of buurten lokaal afhankelijk zijn, of dat ze juist gezamenlijk veel potentie tot uitwisseling hebben. Bij een laag aandeel gebruik eigen opwek in de buurt en een hoog aandeel gebruik eigen opwek in de regio betekent het dat buurten onderling goed kunnen uitwisselen. Bij gebruik eigen opwek betekent hetzelfde dat er veel potentie is tussen uitwisseling tussen regio's.";
+}
+else if(infoName.equals("i_gespreksleidraad4")){
+	legendInfo = "De belastingduurkromme rangschikt de netbelasting voor ieder uur van het jaar op volgorde van hoogste levering tot hoogste teruglevering. Hieraan kun je zien of er enkele pieken zijn of langdurige overbelasting, en of dit plaats vindt op afname of op opwek. De netbelasting is indicatief aangezien de netbeheerder hier berekeningen met meer detail en betere data over kan uitvoeren";
+}
+else if(infoName.equals("i_gespreksleidraad5")){
+	legendInfo = "Deze grafiek laat zien wat de effect is over de seizoenen, voor zowel de elektriciteitsvraag als de energievraag. Als het aandeel invoer geminimaliseerd kan worden zal de regio minder afhankelijk van het net worden en meer eigen opwek zelf kunnen gebruiken.";
+}
+
+
+String formattedText = formatText(legendInfo, 42);
+t_infoButtonText.setText(formattedText);
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[String]]></ReturnType>
+					<Id>1716924378876</Id>
+					<Name><![CDATA[formatText]]></Name>
+					<X>100</X><Y>780</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[originalText]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[maxCharacterCount]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[/*
+// Find the last space within the character limit
+int lastSpaceIndex = -1;
+
+//if( text.length() >  )
+for (int i = 0; i < maxCharacterCount && i < text.length(); i++) {
+    if (Character.isWhitespace(text.charAt(i))) {
+        lastSpaceIndex = i;
+    }
+}
+
+// Insert a line break at the last space if found
+if (lastSpaceIndex != -1) {
+    StringBuilder limitedTextBuilder = new StringBuilder(text);
+    limitedTextBuilder.setCharAt(lastSpaceIndex, '\n'); // replace last space with a line break
+
+    // Set the limited text to the text field
+    String newText = limitedTextBuilder.toString();
+    
+     // Set the limited text to the text field
+    t_scenarioDescription.setText(limitedTextBuilder.toString());
+    
+    //return newText;
+}
+*/
+
+     
+StringBuilder formattedText = new StringBuilder();
+StringBuilder currentLine = new StringBuilder();
+
+for (String word : originalText.split("\\s+")) {
+	if (currentLine.length() + word.length() <= maxCharacterCount) {
+		currentLine.append(word).append(" ");
+	} else {
+		formattedText.append(currentLine.toString().trim()).append("\n");
+		currentLine.setLength(0); // reset current line
+		currentLine.append(word).append(" ");
+	}
+}
+
+// Append the last line
+formattedText.append(currentLine.toString().trim());
+
+return formattedText.toString();
+
+]]></Body>
+				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
@@ -3468,6 +3581,7 @@ else if( rb_results.getValue() == 1){
 	
 	//Set chart
 	f_setSummaryCharts();
+	f_setChartDescriptionText("i_samenvattingSupplyDemand", false);
 }
 
 else if( rb_results.getValue() == 2){
@@ -3958,27 +4072,32 @@ if( rb_gespreksleidraad.getValue() == 0){
 	f_setGespreksleidraadGraphsVisible(false);
 	gr_gespreksleidraad1.setVisible(true);
 	area.f_setChartsGespreksleidraad1();
+	f_setChartDescriptionText("i_gespreksleidraad1", false);
 }
 else if( rb_gespreksleidraad.getValue() == 1){
 	f_setGespreksleidraadGraphsVisible(false);
 	gr_gespreksleidraad2.setVisible(true);
 	area.f_setGespreksleidraad2();
 	area.f_setChartsGespreksleidraad2();
+	f_setChartDescriptionText("i_gespreksleidraad2", false);
 }
 else if( rb_gespreksleidraad.getValue() == 2){
 	f_setGespreksleidraadGraphsVisible(false);
 	gr_gespreksleidraad3.setVisible(true);
 	f_setChartsGespreksleidraad3(area);
+	f_setChartDescriptionText("i_gespreksleidraad3", false);
 }
 else if( rb_gespreksleidraad.getValue() == 3){
 	f_setGespreksleidraadGraphsVisible(false);
 	gr_gespreksleidraad4.setVisible(true);
 	area.f_setChartsGespreksleidraad4();
+	f_setChartDescriptionText("i_gespreksleidraad4", false);
 }
 else if( rb_gespreksleidraad.getValue() == 4){
 	f_setGespreksleidraadGraphsVisible(false);
 	gr_gespreksleidraad5.setVisible(true);
 	area.f_setChartsGespreksleidraad5();
+	f_setChartDescriptionText("i_gespreksleidraad5", false);
 }]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
@@ -4758,6 +4877,52 @@ de totale vraag als lijn daaroverheen geplot]]></Text>
 					<Dy>0</Dy>
 					<Dz>0</Dz>
 				</Line>
+				<Image>
+					<Id>1716923679829</Id>
+					<Name><![CDATA[i_samenvattingSupplyDemand]]></Name>
+					<X>190</X><Y>-330</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[f_setChartDescriptionText(i_samenvattingSupplyDemand.getName(), true);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>20</Width>
+					<Height>20</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[digital_twin_results]]></PackageName>
+							<ClassName><![CDATA[icon_i.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+				<Image>
+					<Id>1716923709337</Id>
+					<Name><![CDATA[i_samenvattingAnnual]]></Name>
+					<X>190</X><Y>80</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[f_setChartDescriptionText(i_samenvattingAnnual.getName(), true);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>20</Width>
+					<Height>20</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[digital_twin_results]]></PackageName>
+							<ClassName><![CDATA[icon_i.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 			</Presentation>
 
 				</Group>
@@ -5781,6 +5946,29 @@ vandaan per jaar en naar energiedrager]]></Text>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Image>
+					<Id>1716923819001</Id>
+					<Name><![CDATA[i_gespreksleidraad1]]></Name>
+					<X>170</X><Y>-290</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[f_setChartDescriptionText(i_gespreksleidraad1.getName(), true);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>20</Width>
+					<Height>20</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[digital_twin_results]]></PackageName>
+							<ClassName><![CDATA[icon_i.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 			</Presentation>
 
 				</Group>
@@ -6822,6 +7010,29 @@ warmtepompen]]></Text>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Image>
+					<Id>1716923884031</Id>
+					<Name><![CDATA[i_gespreksleidraad2]]></Name>
+					<X>170</X><Y>-290</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[f_setChartDescriptionText(i_gespreksleidraad2.getName(), true);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>20</Width>
+					<Height>20</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[digital_twin_results]]></PackageName>
+							<ClassName><![CDATA[icon_i.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 			</Presentation>
 
 				</Group>
@@ -7738,6 +7949,29 @@ terugleveringen]]></Text>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Image>
+					<Id>1716923999450</Id>
+					<Name><![CDATA[i_gespreksleidraad4]]></Name>
+					<X>200</X><Y>-280</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[f_setChartDescriptionText(i_gespreksleidraad4.getName(), true);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>20</Width>
+					<Height>20</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[digital_twin_results]]></PackageName>
+							<ClassName><![CDATA[icon_i.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 			</Presentation>
 
 				</Group>
@@ -7941,6 +8175,29 @@ area.f_setChartsGespreksleidraad5();]]></ActionCode>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
+				<Image>
+					<Id>1716924011542</Id>
+					<Name><![CDATA[i_gespreksleidraad5]]></Name>
+					<X>200</X><Y>-230</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[f_setChartDescriptionText(i_gespreksleidraad5.getName(), true);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>20</Width>
+					<Height>20</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[digital_twin_results]]></PackageName>
+							<ClassName><![CDATA[icon_i.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 			</Presentation>
 
 				</Group>
@@ -9276,6 +9533,29 @@ else{
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
+				<Image>
+					<Id>1716923907701</Id>
+					<Name><![CDATA[i_gespreksleidraad3]]></Name>
+					<X>170</X><Y>-290</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[f_setChartDescriptionText(i_gespreksleidraad3.getName(), true);]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>20</Width>
+					<Height>20</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[digital_twin_results]]></PackageName>
+							<ClassName><![CDATA[icon_i.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
 			</Presentation>
 
 				</Group>
@@ -10295,6 +10575,186 @@ lokaal opgewekt]]></Text>
 					<Font>
 						<Name>Arial</Name>
 						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1716924133721</Id>
+					<Name><![CDATA[gr_infoButtonText]]></Name>
+					<X>1230</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Rectangle>
+					<Id>1716924133723</Id>
+					<Name><![CDATA[rectangle73]]></Name>
+					<X>-220</X><Y>-220</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-1644806</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>DOTTED</LineStyle>
+					<Width>420</Width>
+					<Height>450</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-385875969</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Group>
+					<Id>1716924133725</Id>
+					<Name><![CDATA[gr_closeWindow5]]></Name>
+					<X>175</X><Y>-195</Y>
+					<Label><X>5.17</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<OnClickCode><![CDATA[gr_infoButtonText.setVisible(false);
+]]></OnClickCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Oval>
+					<Id>1716924133727</Id>
+					<Name><![CDATA[oval17]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<RadiusX>12</RadiusX>
+					<RadiusY>40</RadiusY>
+					<Rotation>0.0</Rotation>
+					<FillColor>-12566464</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Oval>
+				<Line>
+					<Id>1716924133729</Id>
+					<Name><![CDATA[line23]]></Name>
+					<X>-6</X><Y>6</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>3</LineWidth>
+					<LineColor>-1</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>12</Dx>
+					<Dy>-12</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1716924133731</Id>
+					<Name><![CDATA[line24]]></Name>
+					<X>6</X><Y>6</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>3</LineWidth>
+					<LineColor>-1</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>-12</Dx>
+					<Dy>-12</Dy>
+					<Dz>0</Dz>
+				</Line>
+			</Presentation>
+
+				</Group>
+				<Text>
+					<Id>1716924133733</Id>
+					<Name><![CDATA[t_scenarioName1]]></Name>
+					<X>-170</X><Y>-180</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Beschrijving]]></Text>
+					<Font>
+						<Name>Calibri</Name>
+						<Size>20</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1716924133735</Id>
+					<Name><![CDATA[t_infoButtonText]]></Name>
+					<X>-170</X><Y>-130</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Warmtenet worden ook aangelegd op enkele 
+bedrijventerreinen waar een deel van de 
+bedrijven wordt aangesloten. Wij nemen aan 
+dat zo'n 20% van de bedrijven aangelsoten 
+worden op het warmtenet. Bedrijven moeten 
+restwarmte zelf terugwinnen in hun eigen 
+bedrijfsprocessen dan valt het onder energie-
+besparen. In uitzonderlijke gevallen waar dit 
+niet mogelijk is kan een warmtenet toch uit-
+komst bieden.
+]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>16</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
