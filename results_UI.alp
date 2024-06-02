@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161236" AlpVersion="8.9.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161156" AlpVersion="8.9.0">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -1857,32 +1857,11 @@ else{
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
-					<Height>225</Height>
+					<Height>145</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-3092235</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
-				<Text>
-					<Id>1713190291927</Id>
-					<Name><![CDATA[t_radioButtonsTitle]]></Name>
-					<X>-35</X><Y>-150</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Selecteer gewenste output]]></Text>
-					<Font>
-						<Name>Yu Gothic UI</Name>
-						<Size>22</Size>
-						<Style>1</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
 				<Control Type="RadioButtons">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1714842507101</Id>
@@ -1927,7 +1906,7 @@ f_showCorrectChart();]]></ActionCode>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1713190298462</Id>
 					<Name><![CDATA[rb_chartType]]></Name>
-					<X>-120</X><Y>-65</Y>
+					<X>-5</X><Y>-145</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2037,7 +2016,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Text>
 					<Id>1713190835374</Id>
 					<Name><![CDATA[t_time1]]></Name>
-					<X>-35</X><Y>-100</Y>
+					<X>-145</X><Y>-110</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2050,7 +2029,7 @@ f_showCorrectChart();]]></ActionCode>
 					<Text><![CDATA[Wat wil je bekijken?]]></Text>
 					<Font>
 						<Name>Yu Gothic UI</Name>
-						<Size>16</Size>
+						<Size>22</Size>
 						<Style>1</Style>
 					</Font>
 					<Alignment>CENTER</Alignment>
@@ -2288,7 +2267,7 @@ f_showCorrectChart();]]></ActionCode>
 				<EmbeddedObjectPresentation>
 					<Id>1714769685821</Id>
 					<Name><![CDATA[chartProfielen_presentation]]></Name>
-					<X>1440</X><Y>330</Y>
+					<X>1440</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2307,7 +2286,7 @@ f_showCorrectChart();]]></ActionCode>
 				<EmbeddedObjectPresentation>
 					<Id>1714770450271</Id>
 					<Name><![CDATA[chartNetbelasting_presentation]]></Name>
-					<X>1440</X><Y>330</Y>
+					<X>1440</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -2326,7 +2305,7 @@ f_showCorrectChart();]]></ActionCode>
 				<EmbeddedObjectPresentation>
 					<Id>1714770566606</Id>
 					<Name><![CDATA[chartBalans_presentation]]></Name>
-					<X>1440</X><Y>330</Y>
+					<X>1440</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -2345,7 +2324,7 @@ f_showCorrectChart();]]></ActionCode>
 				<EmbeddedObjectPresentation>
 					<Id>1714770587438</Id>
 					<Name><![CDATA[chartSankey_presentation]]></Name>
-					<X>1440</X><Y>330</Y>
+					<X>1440</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -8622,7 +8601,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
-					<Height>640</Height>
+					<Height>740</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor/>
 					<FillMaterial>null</FillMaterial>
@@ -13500,7 +13479,7 @@ if (chartScale_MWh<10) {
 						<Button><![CDATA[Jaar overzicht]]></Button>
 						<Button><![CDATA[Zomer / Winter week]]></Button>
 						<Button><![CDATA[Dag / Nacht]]></Button>
-						<Button><![CDATA[Weekdag / Weekend]]></Button>
+						<Button><![CDATA[Week/ Weekend]]></Button>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
@@ -13737,7 +13716,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1714987913834</Id>
 					<Name><![CDATA[pl_consumptionChartSummer]]></Name>
-					<X>-160</X><Y>-180</Y>
+					<X>-160</X><Y>-160</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13810,7 +13789,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1714987913838</Id>
 					<Name><![CDATA[t_consumptionTextSummer]]></Name>
-					<X>-120</X><Y>-140</Y>
+					<X>-120</X><Y>-120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13831,7 +13810,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1714987913840</Id>
 					<Name><![CDATA[t_topBarplotText1]]></Name>
-					<X>-190</X><Y>-190</Y>
+					<X>-190</X><Y>-180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13852,7 +13831,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1714987913843</Id>
 					<Name><![CDATA[pl_productionChartWinter]]></Name>
-					<X>-160</X><Y>-10</Y>
+					<X>-160</X><Y>30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13904,7 +13883,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1714987913846</Id>
 					<Name><![CDATA[pl_consumptionChartWinter]]></Name>
-					<X>-160</X><Y>90</Y>
+					<X>-160</X><Y>160</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13956,7 +13935,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1714987913848</Id>
 					<Name><![CDATA[t_productionTextWinter]]></Name>
-					<X>-120</X><Y>30</Y>
+					<X>-120</X><Y>70</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13977,7 +13956,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1714987913850</Id>
 					<Name><![CDATA[t_consumptionTextWinter]]></Name>
-					<X>-120</X><Y>130</Y>
+					<X>-120</X><Y>200</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13998,7 +13977,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1714987913852</Id>
 					<Name><![CDATA[t_bottomBarplotText1]]></Name>
-					<X>-190</X><Y>80</Y>
+					<X>-190</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14089,7 +14068,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1715002556485</Id>
 					<Name><![CDATA[pl_consumptionChartDay]]></Name>
-					<X>-160</X><Y>-180</Y>
+					<X>-160</X><Y>-160</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14162,7 +14141,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002556489</Id>
 					<Name><![CDATA[t_consumptionTextDay]]></Name>
-					<X>-120</X><Y>-140</Y>
+					<X>-120</X><Y>-120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14183,7 +14162,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002556491</Id>
 					<Name><![CDATA[t_topBarplotText2]]></Name>
-					<X>-200</X><Y>-190</Y>
+					<X>-200</X><Y>-180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14205,7 +14184,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1715002556494</Id>
 					<Name><![CDATA[pl_productionChartNight]]></Name>
-					<X>-160</X><Y>-10</Y>
+					<X>-160</X><Y>30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14257,7 +14236,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1715002556497</Id>
 					<Name><![CDATA[pl_consumptionChartNight]]></Name>
-					<X>-160</X><Y>90</Y>
+					<X>-160</X><Y>160</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14309,7 +14288,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002556499</Id>
 					<Name><![CDATA[t_productionTextNight]]></Name>
-					<X>-120</X><Y>30</Y>
+					<X>-120</X><Y>70</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14330,7 +14309,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002556501</Id>
 					<Name><![CDATA[t_consumptionTextNight]]></Name>
-					<X>-120</X><Y>130</Y>
+					<X>-120</X><Y>200</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14351,7 +14330,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002556503</Id>
 					<Name><![CDATA[t_bottomBarplotText2]]></Name>
-					<X>-200</X><Y>80</Y>
+					<X>-200</X><Y>140</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14442,7 +14421,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1715002718109</Id>
 					<Name><![CDATA[pl_consumptionChartWeekday]]></Name>
-					<X>-160</X><Y>-180</Y>
+					<X>-160</X><Y>-160</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14515,7 +14494,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002718113</Id>
 					<Name><![CDATA[t_consumptionTextWeekday]]></Name>
-					<X>-120</X><Y>-140</Y>
+					<X>-120</X><Y>-120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14558,7 +14537,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1715002718118</Id>
 					<Name><![CDATA[pl_productionChartWeekend]]></Name>
-					<X>-160</X><Y>-10</Y>
+					<X>-160</X><Y>30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14610,7 +14589,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1715002718121</Id>
 					<Name><![CDATA[pl_consumptionChartWeekend]]></Name>
-					<X>-160</X><Y>90</Y>
+					<X>-160</X><Y>160</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14662,7 +14641,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002718123</Id>
 					<Name><![CDATA[t_productionTextWeekend]]></Name>
-					<X>-120</X><Y>30</Y>
+					<X>-120</X><Y>70</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14683,7 +14662,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002718125</Id>
 					<Name><![CDATA[t_consumptionTextWeekend]]></Name>
-					<X>-120</X><Y>130</Y>
+					<X>-120</X><Y>200</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -14704,7 +14683,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1715002718127</Id>
 					<Name><![CDATA[t_bottomBarplotText3]]></Name>
-					<X>-190</X><Y>80</Y>
+					<X>-190</X><Y>140</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
