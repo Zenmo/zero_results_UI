@@ -9049,23 +9049,13 @@ energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyWinterWeek_kW,
 					<Body><![CDATA[f_resetCharts();
 AreaCollection dataObject = f_getDataObject(uI_Results.v_selectedObjectType);
 
-if( radio_period.getValue() == 3){
+if( radio_period.getValue() == 0){
 	if (uI_Results.v_selectedObjectType == TRAFO) {
 		f_addElectricityFlowsTrafo_Live(dataObject);
 	} else {
 		f_addElectricityFlows_Live(dataObject);
 		if( radio_energyType.getValue() == 1){
 			f_addOtherEnergyCarriers_Live(dataObject);
-		}
-	}
-}
-else if (radio_period.getValue() == 0){
-	if (uI_Results.v_selectedObjectType == TRAFO) {
-		f_addElectricityFlowsTrafo_Year(dataObject);
-	} else {
-		f_addElectricityFlows_Year(dataObject);
-		if( radio_energyType.getValue() == 1){
-			f_addOtherEnergyFlows_Year(dataObject);
 		}
 	}
 }
@@ -9080,6 +9070,7 @@ else if (radio_period.getValue() == 1){
 	}
 }
 else if (radio_period.getValue() == 2){
+
 	if (uI_Results.v_selectedObjectType == TRAFO) {
 		f_addElectricityFlowsTrafo_WinterWeek(dataObject);
 	} else {
@@ -9088,7 +9079,19 @@ else if (radio_period.getValue() == 2){
 			f_addOtherEnergyFlows_WinterWeek(dataObject);
 		}
 	}
-}]]></Body>
+}
+else if (radio_period.getValue() == 3){
+
+	if (uI_Results.v_selectedObjectType == TRAFO) {
+		f_addElectricityFlowsTrafo_Year(dataObject);
+	} else {
+		f_addElectricityFlows_Year(dataObject);
+		if( radio_energyType.getValue() == 1){
+			f_addOtherEnergyFlows_Year(dataObject);
+		}
+	}
+}
+]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -9999,12 +10002,12 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<DefaultValueCode><![CDATA[3]]></DefaultValueCode>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
 						<Orientation>HORIZONTAL</Orientation>
-						<Button><![CDATA[Jaar overzicht]]></Button>
+						<Button><![CDATA[Live Simulatie]]></Button>
 						<Button><![CDATA[Zomer Week]]></Button>
 						<Button><![CDATA[Winter Week]]></Button>
-						<Button><![CDATA[Live Simulatie]]></Button>
+						<Button><![CDATA[Jaar Overzicht]]></Button>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
