@@ -9284,7 +9284,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
-					<Height>60</Height>
+					<Height>80</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-657931</FillColor>
 					<FillMaterial>null</FillMaterial>
@@ -9501,7 +9501,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1714855497484</Id>
 					<Name><![CDATA[radio_energyType]]></Name>
-					<X>110</X><Y>-5</Y>
+					<X>110</X><Y>6</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9967,7 +9967,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1715175655981</Id>
 					<Name><![CDATA[radio_period]]></Name>
-					<X>40</X><Y>20</Y>
+					<X>40</X><Y>34</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10099,7 +10099,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 				<Variable Class="PlainVariable">
 					<Id>1714923166117</Id>
 					<Name><![CDATA[v_capciteitKleurTrafo]]></Name>
-					<X>80</X><Y>830</Y>
+					<X>60</X><Y>910</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10118,7 +10118,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714746143909</Id>
 					<Name><![CDATA[f_setBelastingPlots]]></Name>
-					<X>70</X><Y>690</Y>
+					<X>50</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10149,7 +10149,7 @@ f_setNetAverageLoad(area);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714746143911</Id>
 					<Name><![CDATA[f_setNetAverageLoad]]></Name>
-					<X>80</X><Y>790</Y>
+					<X>60</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10171,7 +10171,7 @@ t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714922345475</Id>
 					<Name><![CDATA[f_resetPlots]]></Name>
-					<X>80</X><Y>710</Y>
+					<X>60</X><Y>790</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10186,7 +10186,7 @@ plot_seizoen.removeAll();]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714923068484</Id>
 					<Name><![CDATA[f_addTrafoLimits]]></Name>
-					<X>80</X><Y>750</Y>
+					<X>60</X><Y>830</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10221,7 +10221,7 @@ plot_seizoen.setColor(plot_seizoen.getCount() - 1, v_capciteitKleurTrafo);]]></B
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714923776978</Id>
 					<Name><![CDATA[f_addDataToPlots]]></Name>
-					<X>80</X><Y>730</Y>
+					<X>60</X><Y>810</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10282,7 +10282,7 @@ if( area.v_dataNetbelastingDuurkrommeWeekday_kW != null){
 					<ReturnType><![CDATA[AreaCollection]]></ReturnType>
 					<Id>1714925021661</Id>
 					<Name><![CDATA[f_getDataObject]]></Name>
-					<X>80</X><Y>770</Y>
+					<X>60</X><Y>850</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10395,7 +10395,7 @@ return dataObject;]]></Body>
     			<Plot>
 					<Id>1714922355895</Id>
 					<Name><![CDATA[plot_seizoen]]></Name>
-					<X>-210</X><Y>-310</Y>
+					<X>-210</X><Y>-290</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10450,7 +10450,7 @@ return dataObject;]]></Body>
     			<Plot>
 					<Id>1714922363732</Id>
 					<Name><![CDATA[plot_dagnacht]]></Name>
-					<X>-210</X><Y>-140</Y>
+					<X>-210</X><Y>-80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10505,7 +10505,7 @@ return dataObject;]]></Body>
     			<Plot>
 					<Id>1714922366523</Id>
 					<Name><![CDATA[plot_week]]></Name>
-					<X>-210</X><Y>40</Y>
+					<X>-210</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10560,7 +10560,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714922416376</Id>
 					<Name><![CDATA[tx_topBarplotText3]]></Name>
-					<X>-10</X><Y>-300</Y>
+					<X>-10</X><Y>-280</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10582,7 +10582,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714922426589</Id>
 					<Name><![CDATA[tx_topBarplotText4]]></Name>
-					<X>10</X><Y>-130</Y>
+					<X>10</X><Y>-70</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10603,7 +10603,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714922458393</Id>
 					<Name><![CDATA[tx_topBarplotText5]]></Name>
-					<X>10</X><Y>50</Y>
+					<X>10</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10624,7 +10624,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1716385492892</Id>
 					<Name><![CDATA[t_duurkromme_ylabel1]]></Name>
-					<X>-200</X><Y>-265</Y>
+					<X>-200</X><Y>-245</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10645,7 +10645,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1716385492894</Id>
 					<Name><![CDATA[t_duurkromme_ylabel2]]></Name>
-					<X>-200</X><Y>-95</Y>
+					<X>-200</X><Y>-35</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10666,7 +10666,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1716385492896</Id>
 					<Name><![CDATA[t_duurkromme_ylabel3]]></Name>
-					<X>-200</X><Y>85</Y>
+					<X>-200</X><Y>165</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10687,7 +10687,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1716385492898</Id>
 					<Name><![CDATA[t_duurkromme_xlabel1]]></Name>
-					<X>-25</X><Y>-155</Y>
+					<X>-25</X><Y>-132</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10708,7 +10708,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1716385492900</Id>
 					<Name><![CDATA[t_duurkromme_xlabel2]]></Name>
-					<X>-25</X><Y>20</Y>
+					<X>-25</X><Y>80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10729,7 +10729,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1716385492902</Id>
 					<Name><![CDATA[t_duurkromme_xlabel3]]></Name>
-					<X>-25</X><Y>195</Y>
+					<X>-25</X><Y>275</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10767,7 +10767,7 @@ return dataObject;]]></Body>
 				<Oval>
 					<Id>1714926452654</Id>
 					<Name><![CDATA[ovalNetbelasting2]]></Name>
-					<X>40</X><Y>210</Y>
+					<X>40</X><Y>250</Y>
 					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10789,7 +10789,7 @@ return dataObject;]]></Body>
 				<Oval>
 					<Id>1714926519243</Id>
 					<Name><![CDATA[ovalNetbelasting3]]></Name>
-					<X>160</X><Y>210</Y>
+					<X>160</X><Y>250</Y>
 					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10811,7 +10811,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143882</Id>
 					<Name><![CDATA[tx_topBarplotText2]]></Name>
-					<X>10</X><Y>-230</Y>
+					<X>10</X><Y>-190</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10832,7 +10832,7 @@ return dataObject;]]></Body>
     			<Plot>
 					<Id>1714746143885</Id>
 					<Name><![CDATA[plot_jaar]]></Name>
-					<X>-210</X><Y>-220</Y>
+					<X>-210</X><Y>-180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10887,7 +10887,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143887</Id>
 					<Name><![CDATA[t_duurkromme_xlabel]]></Name>
-					<X>-15</X><Y>-5</Y>
+					<X>-15</X><Y>35</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10908,7 +10908,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143889</Id>
 					<Name><![CDATA[t_duurkromme_ylabel]]></Name>
-					<X>-205</X><Y>-145</Y>
+					<X>-205</X><Y>-105</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10929,7 +10929,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143901</Id>
 					<Name><![CDATA[tx_topBarplotText52]]></Name>
-					<X>40</X><Y>160</Y>
+					<X>40</X><Y>200</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10950,7 +10950,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143903</Id>
 					<Name><![CDATA[tx_maxDemand]]></Name>
-					<X>38</X><Y>200</Y>
+					<X>38</X><Y>240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10971,7 +10971,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143905</Id>
 					<Name><![CDATA[tx_maxSupply]]></Name>
-					<X>159</X><Y>200</Y>
+					<X>159</X><Y>240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10992,7 +10992,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143907</Id>
 					<Name><![CDATA[tx_topBarplotText55]]></Name>
-					<X>155</X><Y>160</Y>
+					<X>155</X><Y>200</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11013,7 +11013,7 @@ return dataObject;]]></Body>
 				<Oval>
 					<Id>1714746143895</Id>
 					<Name><![CDATA[ovalNetbelasting1]]></Name>
-					<X>-125</X><Y>192</Y>
+					<X>-125</X><Y>232</Y>
 					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11035,7 +11035,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143899</Id>
 					<Name><![CDATA[t_KPIBenuttingsgraad]]></Name>
-					<X>-125</X><Y>175</Y>
+					<X>-125</X><Y>215</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11057,7 +11057,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143897</Id>
 					<Name><![CDATA[text1123]]></Name>
-					<X>-120</X><Y>247</Y>
+					<X>-120</X><Y>287</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11078,7 +11078,7 @@ return dataObject;]]></Body>
 				<Text>
 					<Id>1714746143893</Id>
 					<Name><![CDATA[text593]]></Name>
-					<X>-120</X><Y>110</Y>
+					<X>-120</X><Y>150</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13435,7 +13435,7 @@ if (chartScale_MWh<10) {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1714932495122</Id>
 					<Name><![CDATA[radio_energyType]]></Name>
-					<X>110</X><Y>10</Y>
+					<X>110</X><Y>5</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13460,7 +13460,7 @@ if (chartScale_MWh<10) {
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1714932534594</Id>
 					<Name><![CDATA[radio_period]]></Name>
-					<X>20</X><Y>40</Y>
+					<X>20</X><Y>35</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
