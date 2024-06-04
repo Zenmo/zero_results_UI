@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161156" AlpVersion="8.9.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161236" AlpVersion="8.9.0">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -5775,6 +5775,18 @@ f_showCorrectChart();]]></ActionCode>
 						<Type><![CDATA[double]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717417011016</Id>
+					<Name><![CDATA[v_dataHydrogenDemandLiveWeek_kW]]></Name>
+					<X>610</X><Y>-60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705600400172</Id>
 					<Name><![CDATA[p_areaType]]></Name>
@@ -11148,7 +11160,8 @@ import org.jfree.data.flow.FlowDataset;
 import java.awt.geom.Rectangle2D;
 import org.jfree.data.flow.DefaultFlowDataset;
 import org.jfree.graphics2d.svg.SVGGraphics2D;
-import org.jfree.data.flow.NodeKey;]]></Import>
+import org.jfree.data.flow.NodeKey;
+import org.jfree.graphics2d.svg.SVGUnits;]]></Import>
 			<ExtendsReference>
 				<PackageName><![CDATA[digital_twin_results]]></PackageName>
 				<ClassName><![CDATA[ChartArea]]></ClassName>
@@ -11304,7 +11317,7 @@ svgImgJfree.setPos(svgImgJfree.getX()-200, svgImgJfree.getY()-40);
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[SVGGraphics2D]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[new SVGGraphics2D(400, 200)]]></Code>
+							<Code><![CDATA[new SVGGraphics2D(400, 600)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -11342,67 +11355,86 @@ double importE_MWh = area.v_annualElectricityImport_MWh;
 double importG_MWh = area.v_annualNaturalGasDemand_MWh;
 double importF_MWh = area.v_annualPetroleumProductsDemand_MWh;
 double importH_MWh = area.v_annualHydrogenDemand_MWh;
-double exportE_MWh = area.v_annualExportedEnergy_MWh;
+double exportH_MWh = area.v_annualHydrogenSupply_MWh;
+double exportE_MWh = area.v_annualExportedEnergy_MWh - exportH_MWh;
 double heatProduced_MWh = 0;
 
 flowDataset = new DefaultFlowDataset();
 
-if (heatProduced_MWh > 0) {
+if (heatProduced_MWh > 0.001) {
 	flowDataset.setFlow(0, "opwek warmte", "verbruik", heatProduced_MWh);
 	NodeKey key1 = new NodeKey<>(0, "opwek warmte");
 	flowPlot.setNodeFillColor(key1, yellowGreen);
-	if (selfConsumedEnergy_MWh-heatProduced_MWh > 0 || exportE_MWh > 0) {
+	if (selfConsumedEnergy_MWh-heatProduced_MWh > 0.001) {
 		flowDataset.setFlow(0, "opwek stroom", "verbruik", (selfConsumedEnergy_MWh-heatProduced_MWh));
+	}
+	if (exportE_MWh > 0.001) {
 		flowDataset.setFlow(0, "opwek stroom", "export stroom", exportE_MWh);
+	}
+	if (selfConsumedEnergy_MWh-heatProduced_MWh > 0.001 || exportE_MWh > 0.001) {
 		NodeKey key2 = new NodeKey<>(0, "opwek stroom");
 		flowPlot.setNodeFillColor(key2, yellowGreen);
 	}
 } else {
-	if (selfConsumedEnergy_MWh > 0 || exportE_MWh > 0) {
+	if (selfConsumedEnergy_MWh > 0.001) {
 		flowDataset.setFlow(0, "eigen opwek", "verbruik", (selfConsumedEnergy_MWh));
+	}
+	if ( exportE_MWh > 0.001) {
+		NodeKey exportKey = new NodeKey<>(1,"export stroom");
+		flowPlot.setNodeFillColor(exportKey, darkBlue);
 		flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh);
+	}
+	if (selfConsumedEnergy_MWh > 0.001 ||  exportE_MWh > 0.001) {
 		NodeKey key2 = new NodeKey<>(0, "eigen opwek");
 		flowPlot.setNodeFillColor(key2, yellowGreen);
 	}
 }
 //flowDataset.setFlow(0, "import", "export", 0);
 
-if (importE_MWh > 0) {
+if (importE_MWh > 0.001) {
 	flowDataset.setFlow(0, "import stroom", "verbruik", importE_MWh);
 	NodeKey key3 = new NodeKey<>(0, "import stroom");
 	flowPlot.setNodeFillColor(key3, red);
 }
-if (importG_MWh > 0 ) {
+if (importG_MWh > 0.001 ) {
 	flowDataset.setFlow(0, "import gas", "verbruik", importG_MWh);	
 	NodeKey key4 = new NodeKey<>(0, "import gas");
 	flowPlot.setNodeFillColor(key4, new Color(200,150,0));
 }	
-if (importF_MWh > 0 ) {
+if (importF_MWh > 0.001 ) {
 	flowDataset.setFlow(0, "import brandstof", "verbruik", importF_MWh);
 	NodeKey key5 = new NodeKey<>(0, "import brandstof");
 	flowPlot.setNodeFillColor(key5, orange);
 }
-if (importH_MWh > 0 ) {
+if (importH_MWh > 0.001 ) {
 	flowDataset.setFlow(0, "import waterstof", "verbruik", importH_MWh);
 	NodeKey key6 = new NodeKey<>(0, "import waterstof");
-	flowPlot.setNodeFillColor(key6, orange);
+	flowPlot.setNodeFillColor(key6, dodgerBlue);
+}
+if (exportH_MWh > 0.001 ) {
+	flowDataset.setFlow(0, "eigen opwek", "export waterstof", exportH_MWh);
+	NodeKey key7 = new NodeKey<>(1, "export waterstof");
+	flowPlot.setNodeFillColor(key7, dodgerBlue);
 }
 
-traceln(flowDataset.getAllNodes());
-traceln(flowDataset.getAllFlows());
+//traceln(flowDataset.getAllNodes());
+//traceln(flowDataset.getAllFlows());
 
-NodeKey exportKey = new NodeKey<>(1,"export stroom");
-flowPlot.setNodeFillColor(exportKey, darkBlue);
-//NodeKey key3 = new NodeKey<>(1, "export stroom");
+
+
+//NodeKey hydrogenExportKey = new NodeKey<>(1, "export waterstof");
+//flowPlot.setNodeFillColor(hydrogenExportKey, dodgerBlue);
+
 //JFreeChart flowChart = new JFreeChart(flowPlot);
 flowChart.setTitle("Energiestromen");
 flowChart.setAntiAlias(true);
 // Increasing NodeMargin is a crude way to prevent overlapping text
 flowPlot.setNodeMargin(0.05);
+flowPlot.setDefaultNodeLabelFont(new Font("SansSerif", Font.BOLD, 18));
 //flowPlot.setDefaultNodeLabelPaint(darkBlue);
 flowPlot.setDataset(flowDataset);	
 int widthOfSVG = 400;
-int heightOfSVG = 200;
+int heightOfSVG = 600;
 
 flowChart.draw(svg2d,new Rectangle2D.Double(0, 0, widthOfSVG, heightOfSVG));
 svgImgJfree.setSVG(svg2d.getSVGElement());
@@ -11490,7 +11522,7 @@ return dataObject;]]></Body>
 				<Group>
 					<Id>1714768480160</Id>
 					<Name><![CDATA[gr_sankey]]></Name>
-					<X>230</X><Y>290</Y>
+					<X>230</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
