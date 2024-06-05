@@ -4564,7 +4564,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215091931</Id>
-					<Name><![CDATA[v_dataElectricityBaseloadDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityBaseloadDemandYear_kW]]></Name>
 					<X>60</X><Y>510</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4576,7 +4576,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215114916</Id>
-					<Name><![CDATA[v_dataElectricityForHeatDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityForHeatDemandYear_kW]]></Name>
 					<X>60</X><Y>530</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4588,7 +4588,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215128356</Id>
-					<Name><![CDATA[v_dataElectricityForTransportDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityForTransportDemandYear_kW]]></Name>
 					<X>60</X><Y>550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4600,7 +4600,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215152453</Id>
-					<Name><![CDATA[v_dataElectricityForStorageDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityForStorageDemandYear_kW]]></Name>
 					<X>60</X><Y>590</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4612,7 +4612,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215175092</Id>
-					<Name><![CDATA[v_dataElectricityWindSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityWindSupplyYear_kW]]></Name>
 					<X>60</X><Y>660</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4637,7 +4637,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215254116</Id>
-					<Name><![CDATA[v_dataElectricityPVSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityPVSupplyYear_kW]]></Name>
 					<X>60</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4649,7 +4649,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215263772</Id>
-					<Name><![CDATA[v_dataElectricityStorageSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityStorageSupplyYear_kW]]></Name>
 					<X>60</X><Y>700</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4661,7 +4661,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215274736</Id>
-					<Name><![CDATA[v_dataElectricityV2GSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityV2GSupplyYear_kW]]></Name>
 					<X>60</X><Y>720</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4673,7 +4673,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215308988</Id>
-					<Name><![CDATA[v_dataElectricityDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityDemandYear_kW]]></Name>
 					<X>60</X><Y>770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4685,7 +4685,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215319896</Id>
-					<Name><![CDATA[v_dataElectricitySupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricitySupplyYear_kW]]></Name>
 					<X>60</X><Y>790</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4709,7 +4709,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707222998674</Id>
-					<Name><![CDATA[v_dataDistrictHeatSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataDistrictHeatSupplyYear_kW]]></Name>
 					<X>60</X><Y>640</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4721,7 +4721,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223036406</Id>
-					<Name><![CDATA[v_dataDistrictHeatDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataDistrictHeatDemandYear_kW]]></Name>
 					<X>60</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4733,7 +4733,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223053877</Id>
-					<Name><![CDATA[v_dataNaturalGasDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataNaturalGasDemandYear_kW]]></Name>
 					<X>60</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4745,7 +4745,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223071434</Id>
-					<Name><![CDATA[v_dataPetroleumProductsDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataPetroleumProductsDemandYear_kW]]></Name>
 					<X>60</X><Y>450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4757,7 +4757,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223092566</Id>
-					<Name><![CDATA[v_dataElectricityForHydrogenDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityForHydrogenDemandYear_kW]]></Name>
 					<X>60</X><Y>570</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -4769,7 +4769,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223179126</Id>
-					<Name><![CDATA[v_dataPetroleumProductsSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataPetroleumProductsSupplyYear_kW]]></Name>
 					<X>60</X><Y>620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5573,7 +5573,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1715675971088</Id>
-					<Name><![CDATA[v_dataHydrogenSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataHydrogenSupplyYear_kW]]></Name>
 					<X>60</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -8738,24 +8738,24 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 						<Name><![CDATA[dataObject]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[if (dataObject.v_dataPetroleumProductsDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataPetroleumProductsDemandYear_MWh, "Diesel consumptie", uI_Results.v_petroleumProductsDemandColor);
+					<Body><![CDATA[if (dataObject.v_dataPetroleumProductsDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataPetroleumProductsDemandYear_kW, "Diesel consumptie", uI_Results.v_petroleumProductsDemandColor);
 }
-if (dataObject.v_dataNaturalGasDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataNaturalGasDemandYear_MWh, "Gas consumptie", uI_Results.v_naturalGasDemandColor);
+if (dataObject.v_dataNaturalGasDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataNaturalGasDemandYear_kW, "Gas consumptie", uI_Results.v_naturalGasDemandColor);
 }
-if (dataObject.v_dataDistrictHeatDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataDistrictHeatDemandYear_MWh, "Warmte net afname", uI_Results.v_districtHeatDemandColor);
+if (dataObject.v_dataDistrictHeatDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataDistrictHeatDemandYear_kW, "Warmte net afname", uI_Results.v_districtHeatDemandColor);
 }
 
-if (dataObject.v_dataPetroleumProductsSupplyYear_MWh != null) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataPetroleumProductsSupplyYear_MWh, "Productie brandstof", uI_Results.v_petroleumProductsSupplyColor);
+if (dataObject.v_dataPetroleumProductsSupplyYear_kW != null) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataPetroleumProductsSupplyYear_kW, "Productie brandstof", uI_Results.v_petroleumProductsSupplyColor);
 }
-if (dataObject.v_dataDistrictHeatSupplyYear_MWh != null) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataDistrictHeatSupplyYear_MWh, "Warmtenet invoer", uI_Results.v_districtHeatHeatSupplyColor);
+if (dataObject.v_dataDistrictHeatSupplyYear_kW != null) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataDistrictHeatSupplyYear_kW, "Warmtenet invoer", uI_Results.v_districtHeatHeatSupplyColor);
 }
-if (dataObject.v_dataHydrogenSupplyYear_MWh != null) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataHydrogenSupplyYear_MWh, "Opwek Waterstof", uI_Results.v_hydrogenSupplyColor);
+if (dataObject.v_dataHydrogenSupplyYear_kW != null) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataHydrogenSupplyYear_kW, "Opwek Waterstof", uI_Results.v_hydrogenSupplyColor);
 }]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
@@ -8775,33 +8775,33 @@ if (dataObject.v_dataHydrogenSupplyYear_MWh != null) {
 					<Body><![CDATA[group_year.setVisible(true);
 
 //Energy demand chart
-if (dataObject.v_dataElectricityBaseloadDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityBaseloadDemandYear_MWh, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
+if (dataObject.v_dataElectricityBaseloadDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityBaseloadDemandYear_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
 }
-if (dataObject.v_dataElectricityForHeatDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHeatDemandYear_MWh,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
+if (dataObject.v_dataElectricityForHeatDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHeatDemandYear_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
 }
-if (dataObject.v_dataElectricityForTransportDemandYear_MWh != null) { 
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_MWh, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
+if (dataObject.v_dataElectricityForTransportDemandYear_kW != null) { 
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
 }
-if (dataObject.v_dataElectricityForHydrogenDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_MWh,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+if (dataObject.v_dataElectricityForHydrogenDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 }
-if (dataObject.v_dataElectricityForStorageDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_MWh, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+if (dataObject.v_dataElectricityForStorageDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
 }
 //Energy supply chart
-if (dataObject.v_dataElectricityWindSupplyYear_MWh != null) {
-energySupplyChartYear.addDataSet(dataObject.v_dataElectricityWindSupplyYear_MWh, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
+if (dataObject.v_dataElectricityWindSupplyYear_kW != null) {
+energySupplyChartYear.addDataSet(dataObject.v_dataElectricityWindSupplyYear_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
 }
-if (dataObject.v_dataElectricityPVSupplyYear_MWh != null) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_MWh, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
+if (dataObject.v_dataElectricityPVSupplyYear_kW != null) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
 }
-if (dataObject.v_dataElectricityStorageSupplyYear_MWh != null ) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_MWh, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
+if (dataObject.v_dataElectricityStorageSupplyYear_kW != null ) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
 }
-if (dataObject.v_dataElectricityV2GSupplyYear_MWh != null) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_MWh, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+if (dataObject.v_dataElectricityV2GSupplyYear_kW != null) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
 }]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
@@ -9477,7 +9477,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Z>0</Z>
 					<Rotation>90.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Vermogen [MW]]]></Text>
+					<Text><![CDATA[Vermogen [kW]]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>12</Size>
@@ -9498,7 +9498,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Z>0</Z>
 					<Rotation>90.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Vermogen [MW]]]></Text>
+					<Text><![CDATA[Vermogen [kW]]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>12</Size>
@@ -10172,8 +10172,8 @@ f_setNetAverageLoad(area);]]></Body>
 					</Parameter>
 					<Body><![CDATA[double benuttingsgraad = 0;
 double totalAbsoluteLoad_kW = 0;
-for(int i=0; i< area.v_dataNetLoadYear_kW.length; i++){
-	totalAbsoluteLoad_kW += abs(area.v_dataNetLoadYear_kW[i])* uI_Results.energyModel.p_timeStep_h;
+for(int i=0; i< area.v_dataNetbelastingDuurkrommeYear_kW.size(); i++){
+	totalAbsoluteLoad_kW += abs(area.v_dataNetbelastingDuurkrommeYear_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
 }
 benuttingsgraad = totalAbsoluteLoad_kW / (area.v_gridCapacityDemand_kW * 8760) * 100;
 t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");]]></Body>
