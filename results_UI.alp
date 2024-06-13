@@ -8628,6 +8628,19 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 		<ActiveObjectClass>
 			<Id>1714743515616</Id>
 			<Name><![CDATA[ChartProfielen]]></Name>
+			<AdditionalClassCode><![CDATA[public ShapeRadioButtonGroup getPeriodRadioButton() {
+	return this.radio_period;
+}
+
+public ShapeRadioButtonGroup getEnergyTypeRadioButton() {
+	return this.radio_energyType;
+}
+
+public ShapeGroup getChartGroup() {
+	return this.group_week;
+}
+]]></AdditionalClassCode>
+			<Import><![CDATA[import com.querydsl.core.group.Group;]]></Import>
 			<ExtendsReference>
 				<PackageName><![CDATA[digital_twin_results]]></PackageName>
 				<ClassName><![CDATA[ChartArea]]></ClassName>
@@ -9596,7 +9609,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
 					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 					<TimeWindowExpression><![CDATA[168]]></TimeWindowExpression>
-					<SamplesToKeep>168</SamplesToKeep>
+					<SamplesToKeep>672</SamplesToKeep>
 					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
 					<VerScaleType>AUTO</VerScaleType>
 					<LabelFormat>dd_MM</LabelFormat>
@@ -9649,7 +9662,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
 					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 					<TimeWindowExpression><![CDATA[168]]></TimeWindowExpression>
-					<SamplesToKeep>168</SamplesToKeep>
+					<SamplesToKeep>672</SamplesToKeep>
 					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
 					<VerScaleType>AUTO</VerScaleType>
 					<LabelFormat>dd_MM</LabelFormat>
