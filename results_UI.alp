@@ -4035,18 +4035,18 @@ if (chartScale_MWh<10) {
 //f_setDemandAndSupplyGespreksleidraad1();
 //Electricity demand chart
 energyDemandChartYearGespreksleidraad1.removeAll();
-energyDemandChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityDemandYear_MWh, v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+energyDemandChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityDemandYear_kW, v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
 
 //Electricity supply chart
 energySupplyChartYearGespreksleidraad1.removeAll();
 //energySupplyChartYearGespreksleidraad1.addDataSet(v_area.data_petroleumProductsSupplyYear_MWh, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
 //energySupplyChartYearGespreksleidraad1.addDataSet(v_area.data_districtHeatHeatSupplyYear_MWh, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
-energySupplyChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityWindSupplyYear_MWh, v_windElectricitySupplyText, v_windElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityPVSupplyYear_MWh, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityStorageSupplyYear_MWh, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityV2GSupplyYear_MWh, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityWindSupplyYear_kW, v_windElectricitySupplyText, v_windElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityPVSupplyYear_kW, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityStorageSupplyYear_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad1.addDataSet(v_area.v_dataElectricityV2GSupplyYear_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
 
-double maxScale = max(v_area.v_dataElectricityDemandYear_MWh.getYMax(),v_area.v_dataElectricitySupplyYear_MWh.getYMax());
+double maxScale = max(v_area.v_dataElectricityDemandYear_kW.getYMax(),v_area.v_dataElectricitySupplyYear_kW.getYMax());
 //double maxScale = max(uI_Results.energySupplyChartYearGespreksleidraad1.getScaleY(), uI_Results.energyDemandChartYearGespreksleidraad1.getScaleY());
 energyDemandChartYearGespreksleidraad1.setFixedVerticalScale(0, maxScale);
 energySupplyChartYearGespreksleidraad1.setFixedVerticalScale(maxScale);
@@ -4111,12 +4111,12 @@ energySupplyChartYearGespreksleidraad1.setVisible(true);]]></Body>
 double ElectricityDemandForTransport_MWh = 0;
 v_area.v_annualWindSupply_MWh = 0;
 v_area.v_annualPVSupply_MWh = 0;
-for(int i=0; i < v_area.v_dataElectricityForHeatDemandYear_MWh.size(); i++){
+for(int i=0; i < v_area.v_dataElectricityForHeatDemandYear_kW.size(); i++){
 	//v_annualDistrictHeatingHeatDemand_MWh += v_dataDistrictHeatDemand_kW.getY(i);
-	ElectricityDemandForHeatYear_MWh += v_area.v_dataElectricityForHeatDemandYear_MWh.getY(i);
-	ElectricityDemandForTransport_MWh += v_area.v_dataElectricityForTransportDemandYear_MWh.getY(i);
-	v_area.v_annualWindSupply_MWh += v_area.v_dataElectricityWindSupplyYear_MWh.getY(i);
-	v_area.v_annualPVSupply_MWh += v_area.v_dataElectricityPVSupplyYear_MWh.getY(i);
+	ElectricityDemandForHeatYear_MWh += v_area.v_dataElectricityForHeatDemandYear_kW.getY(i);
+	ElectricityDemandForTransport_MWh += v_area.v_dataElectricityForTransportDemandYear_kW.getY(i);
+	v_area.v_annualWindSupply_MWh += v_area.v_dataElectricityWindSupplyYear_kW.getY(i);
+	v_area.v_annualPVSupply_MWh += v_area.v_dataElectricityPVSupplyYear_kW.getY(i);
 	//v_annualNaturalGasConsumption_MWh += v_dataNaturalGasDemand_kW.getY(i);
 	//v_annualHeatDemand_MWh = v_annualDistrictHeatingHeatDemand_MWh + v_annualHeatPumpHeatGeneration_MWh + v_annualNaturalGasConsumption_MWh;
 }
@@ -4873,35 +4873,35 @@ t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");
 					</Parameter>
 					<Body><![CDATA[//Energy demand chart
 energyDemandChartYear.removeAll();
-if (area.v_dataPetroleumProductsDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(area.v_dataPetroleumProductsDemandYear_MWh, v_petroleumProductsDemandText, v_petroleumProductsDemandColor);
+if (area.v_dataPetroleumProductsDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(area.v_dataPetroleumProductsDemandYear_kW, v_petroleumProductsDemandText, v_petroleumProductsDemandColor);
 }
-if (area.v_dataNaturalGasDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(area.v_dataNaturalGasDemandYear_MWh, v_naturalGasDemandText, v_naturalGasDemandColor);
+if (area.v_dataNaturalGasDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(area.v_dataNaturalGasDemandYear_kW, v_naturalGasDemandText, v_naturalGasDemandColor);
 }
-if (area.v_dataDistrictHeatDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(area.v_dataDistrictHeatDemandYear_MWh, v_districtHeatDemandText, v_districtHeatDemandColor);
+if (area.v_dataDistrictHeatDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(area.v_dataDistrictHeatDemandYear_kW, v_districtHeatDemandText, v_districtHeatDemandColor);
 }
-energyDemandChartYear.addDataSet(area.v_dataElectricityBaseloadDemandYear_MWh, v_electricityBaseloadDemandText, v_electricityBaseloadDemandColor);
-energyDemandChartYear.addDataSet(area.v_dataElectricityForHeatDemandYear_MWh, v_electricityForHeatDemandText, v_electricityForHeatDemandColor);
-energyDemandChartYear.addDataSet(area.v_dataElectricityForTransportDemandYear_MWh, v_electricityForTransportDemandText, v_electricityForTransportDemandColor);
-if (area.v_dataElectricityForHydrogenDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(area.v_dataElectricityForHydrogenDemandYear_MWh, v_electricityForHydrogenDemandText, v_electricityForHydrogenDemandColor);
+energyDemandChartYear.addDataSet(area.v_dataElectricityBaseloadDemandYear_kW, v_electricityBaseloadDemandText, v_electricityBaseloadDemandColor);
+energyDemandChartYear.addDataSet(area.v_dataElectricityForHeatDemandYear_kW, v_electricityForHeatDemandText, v_electricityForHeatDemandColor);
+energyDemandChartYear.addDataSet(area.v_dataElectricityForTransportDemandYear_kW, v_electricityForTransportDemandText, v_electricityForTransportDemandColor);
+if (area.v_dataElectricityForHydrogenDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(area.v_dataElectricityForHydrogenDemandYear_kW, v_electricityForHydrogenDemandText, v_electricityForHydrogenDemandColor);
 }
-energyDemandChartYear.addDataSet(area.v_dataElectricityForStorageDemandYear_MWh, v_electricityForStorageDemandText, v_electricityForStorageDemandColor);
+energyDemandChartYear.addDataSet(area.v_dataElectricityForStorageDemandYear_kW, v_electricityForStorageDemandText, v_electricityForStorageDemandColor);
 
 //Energy supply chart
 energySupplyChartYear.removeAll();
-if (area.v_dataPetroleumProductsSupplyYear_MWh != null) {
-	energySupplyChartYear.addDataSet(area.v_dataPetroleumProductsSupplyYear_MWh, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
+if (area.v_dataPetroleumProductsSupplyYear_kW != null) {
+	energySupplyChartYear.addDataSet(area.v_dataPetroleumProductsSupplyYear_kW, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
 }
-if (area.v_dataDistrictHeatSupplyYear_MWh != null) {
-	energySupplyChartYear.addDataSet(area.v_dataDistrictHeatSupplyYear_MWh, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
+if (area.v_dataDistrictHeatSupplyYear_kW != null) {
+	energySupplyChartYear.addDataSet(area.v_dataDistrictHeatSupplyYear_kW, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
 }
-energySupplyChartYear.addDataSet(area.v_dataElectricityWindSupplyYear_MWh, v_windElectricitySupplyText, v_windElectricitySupplyColor);
-energySupplyChartYear.addDataSet(area.v_dataElectricityPVSupplyYear_MWh, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
-energySupplyChartYear.addDataSet(area.v_dataElectricityStorageSupplyYear_MWh, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
-energySupplyChartYear.addDataSet(area.v_dataElectricityV2GSupplyYear_MWh, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+energySupplyChartYear.addDataSet(area.v_dataElectricityWindSupplyYear_kW, v_windElectricitySupplyText, v_windElectricitySupplyColor);
+energySupplyChartYear.addDataSet(area.v_dataElectricityPVSupplyYear_kW, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
+energySupplyChartYear.addDataSet(area.v_dataElectricityStorageSupplyYear_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
+energySupplyChartYear.addDataSet(area.v_dataElectricityV2GSupplyYear_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
 
 t_energieVraag.setText("Energievraag");
 t_energieAanbod.setText("Energie-aanbod");]]></Body>
@@ -4923,20 +4923,20 @@ t_energieAanbod.setText("Energie-aanbod");]]></Body>
 					<Body><![CDATA[
 //Energy demand chart
 energyDemandChartYear.removeAll();
-energyDemandChartYear.addDataSet(area.v_dataElectricityBaseloadDemandYear_MWh, v_electricityBaseloadDemandText, v_electricityBaseloadDemandColor);
-energyDemandChartYear.addDataSet(area.v_dataElectricityForHeatDemandYear_MWh, v_electricityForHeatDemandText, v_electricityForHeatDemandColor);
-energyDemandChartYear.addDataSet(area.v_dataElectricityForTransportDemandYear_MWh, v_electricityForTransportDemandText, v_electricityForTransportDemandColor);
-if (area.v_dataElectricityForHydrogenDemandYear_MWh != null) {
-	energyDemandChartYear.addDataSet(area.v_dataElectricityForHydrogenDemandYear_MWh, v_electricityForHydrogenDemandText, v_electricityForHydrogenDemandColor);
+energyDemandChartYear.addDataSet(area.v_dataElectricityBaseloadDemandYear_kW, v_electricityBaseloadDemandText, v_electricityBaseloadDemandColor);
+energyDemandChartYear.addDataSet(area.v_dataElectricityForHeatDemandYear_kW, v_electricityForHeatDemandText, v_electricityForHeatDemandColor);
+energyDemandChartYear.addDataSet(area.v_dataElectricityForTransportDemandYear_kW, v_electricityForTransportDemandText, v_electricityForTransportDemandColor);
+if (area.v_dataElectricityForHydrogenDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(area.v_dataElectricityForHydrogenDemandYear_kW, v_electricityForHydrogenDemandText, v_electricityForHydrogenDemandColor);
 }
-energyDemandChartYear.addDataSet(area.v_dataElectricityForStorageDemandYear_MWh, v_electricityForStorageDemandText, v_electricityForStorageDemandColor);
+energyDemandChartYear.addDataSet(area.v_dataElectricityForStorageDemandYear_kW, v_electricityForStorageDemandText, v_electricityForStorageDemandColor);
 
 //Energy supply chart
 energySupplyChartYear.removeAll();
-energySupplyChartYear.addDataSet(area.v_dataElectricityWindSupplyYear_MWh, v_windElectricitySupplyText, v_windElectricitySupplyColor);
-energySupplyChartYear.addDataSet(area.v_dataElectricityPVSupplyYear_MWh, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
-energySupplyChartYear.addDataSet(area.v_dataElectricityStorageSupplyYear_MWh, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
-energySupplyChartYear.addDataSet(area.v_dataElectricityV2GSupplyYear_MWh, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+energySupplyChartYear.addDataSet(area.v_dataElectricityWindSupplyYear_kW, v_windElectricitySupplyText, v_windElectricitySupplyColor);
+energySupplyChartYear.addDataSet(area.v_dataElectricityPVSupplyYear_kW, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
+energySupplyChartYear.addDataSet(area.v_dataElectricityStorageSupplyYear_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
+energySupplyChartYear.addDataSet(area.v_dataElectricityV2GSupplyYear_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
 
 t_energieVraag.setText("Elektriciteitsvraag");
 t_energieAanbod.setText("Elektriciteitsaanbod");
@@ -8506,6 +8506,48 @@ lokaal opgewekt]]></Text>
 					<VerScaleType>AUTO</VerScaleType>
 					<LabelFormat>MM</LabelFormat>
     			</TimeStackChart>
+				<Text>
+					<Id>1718277429227</Id>
+					<Name><![CDATA[t_duurkromme_ylabel4]]></Name>
+					<X>-214</X><Y>100</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Vermogen [kW]]]></Text>
+					<Font>
+						<Name>Arial</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1718277465997</Id>
+					<Name><![CDATA[t_duurkromme_ylabel5]]></Name>
+					<X>-214</X><Y>-214</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>90.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Vermogen [kW]]]></Text>
+					<Font>
+						<Name>Arial</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Group>
@@ -8930,7 +8972,7 @@ en opwek heb ik?]]></Text>
 				<Text>
 					<Id>1706262147639</Id>
 					<Name><![CDATA[t_duurkromme_ylabel1]]></Name>
-					<X>-250</X><Y>30</Y>
+					<X>-241</X><Y>40</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8938,9 +8980,9 @@ en opwek heb ik?]]></Text>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>
+					<Rotation>90.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Energie per dag [MWh]]]></Text>
+					<Text><![CDATA[Gemiddeld vermogen per dag [kW]]]></Text>
 					<Font>
 						<Name>Arial</Name>
 						<Size>12</Size>
@@ -14490,7 +14532,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215091931</Id>
-					<Name><![CDATA[v_dataElectricityBaseloadDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityBaseloadDemandYear_kW]]></Name>
 					<X>60</X><Y>460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14502,7 +14544,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215114916</Id>
-					<Name><![CDATA[v_dataElectricityForHeatDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityForHeatDemandYear_kW]]></Name>
 					<X>60</X><Y>480</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14514,7 +14556,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215128356</Id>
-					<Name><![CDATA[v_dataElectricityForTransportDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityForTransportDemandYear_kW]]></Name>
 					<X>60</X><Y>500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14526,7 +14568,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215152453</Id>
-					<Name><![CDATA[v_dataElectricityForStorageDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityForStorageDemandYear_kW]]></Name>
 					<X>60</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14538,7 +14580,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215175092</Id>
-					<Name><![CDATA[v_dataElectricityWindSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityWindSupplyYear_kW]]></Name>
 					<X>60</X><Y>610</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14563,7 +14605,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215254116</Id>
-					<Name><![CDATA[v_dataElectricityPVSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityPVSupplyYear_kW]]></Name>
 					<X>60</X><Y>630</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14575,7 +14617,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215263772</Id>
-					<Name><![CDATA[v_dataElectricityStorageSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityStorageSupplyYear_kW]]></Name>
 					<X>60</X><Y>650</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14587,7 +14629,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215274736</Id>
-					<Name><![CDATA[v_dataElectricityV2GSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityV2GSupplyYear_kW]]></Name>
 					<X>60</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14599,7 +14641,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215308988</Id>
-					<Name><![CDATA[v_dataElectricityDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityDemandYear_kW]]></Name>
 					<X>60</X><Y>700</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14611,7 +14653,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707215319896</Id>
-					<Name><![CDATA[v_dataElectricitySupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricitySupplyYear_kW]]></Name>
 					<X>60</X><Y>720</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14635,7 +14677,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707222998674</Id>
-					<Name><![CDATA[v_dataDistrictHeatSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataDistrictHeatSupplyYear_kW]]></Name>
 					<X>60</X><Y>590</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14647,7 +14689,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223036406</Id>
-					<Name><![CDATA[v_dataDistrictHeatDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataDistrictHeatDemandYear_kW]]></Name>
 					<X>60</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14659,7 +14701,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223053877</Id>
-					<Name><![CDATA[v_dataNaturalGasDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataNaturalGasDemandYear_kW]]></Name>
 					<X>60</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14671,7 +14713,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223071434</Id>
-					<Name><![CDATA[v_dataPetroleumProductsDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataPetroleumProductsDemandYear_kW]]></Name>
 					<X>60</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14683,7 +14725,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223092566</Id>
-					<Name><![CDATA[v_dataElectricityForHydrogenDemandYear_MWh]]></Name>
+					<Name><![CDATA[v_dataElectricityForHydrogenDemandYear_kW]]></Name>
 					<X>60</X><Y>520</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -14695,7 +14737,7 @@ uur]]></Text>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707223179126</Id>
-					<Name><![CDATA[v_dataPetroleumProductsSupplyYear_MWh]]></Name>
+					<Name><![CDATA[v_dataPetroleumProductsSupplyYear_kW]]></Name>
 					<X>60</X><Y>570</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
