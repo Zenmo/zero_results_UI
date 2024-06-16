@@ -100,6 +100,10 @@
 				<Id>1714814360914</Id>
 				<Name><![CDATA[BUILDING]]></Name>
 			</Option>
+			<Option>
+				<Id>1718552575272</Id>
+				<Name><![CDATA[CHARGER]]></Name>
+			</Option>
 		</OptionList>
 	</OptionLists>
 	<ActiveObjectClasses>
@@ -723,7 +727,7 @@
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1708448119976</Id>
-					<Name><![CDATA[v_company]]></Name>
+					<Name><![CDATA[v_gridConnection]]></Name>
 					<X>80</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -9116,8 +9120,8 @@ else if (radio_period.getValue() == 3){
 if (selectedObjectType == SelectedObjectTypes.TRAFO) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == SelectedObjectTypes.BUILDING) {
-	dataObject = uI_Results.v_company;
+else if (selectedObjectType == SelectedObjectTypes.BUILDING || selectedObjectType == SelectedObjectTypes.CHARGER) {
+	dataObject = uI_Results.v_gridConnection;
 }
 else {
 	dataObject = uI_Results.v_area;
@@ -10318,8 +10322,8 @@ SelectedObjectTypes selectedObjectType = uI_Results.v_selectedObjectType;
 if (selectedObjectType == SelectedObjectTypes.TRAFO) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == SelectedObjectTypes.BUILDING) {
-	dataObject = uI_Results.v_company;
+else if (selectedObjectType == SelectedObjectTypes.BUILDING || selectedObjectType == SelectedObjectTypes.CHARGER) {
+	dataObject = uI_Results.v_gridConnection;
 }
 else {
 	dataObject = uI_Results.v_area;
@@ -11470,8 +11474,8 @@ SelectedObjectTypes selectedObjectType = uI_Results.v_selectedObjectType;
 if (selectedObjectType == SelectedObjectTypes.TRAFO) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == SelectedObjectTypes.BUILDING) {
-	dataObject = uI_Results.v_company;
+else if (selectedObjectType == SelectedObjectTypes.BUILDING || selectedObjectType == SelectedObjectTypes.CHARGER) {
+	dataObject = uI_Results.v_gridConnection;
 }
 else {
 	dataObject = uI_Results.v_area;
@@ -12259,16 +12263,16 @@ if (uI_Results.v_selectedObjectType == SelectedObjectTypes.TRAFO) {
 	}
 else {
 	if( radio_energyType.getValue() == 0){
-	f_setElectricityBalanceChartYear(area);
-	f_setElectricityBalanceChartSummerWinter(area);
-	f_setElectricityBalanceChartDayNight(area);
-	f_setElectricityBalanceChartWeekdayWeekend(area);
+		f_setElectricityBalanceChartYear(area);
+		f_setElectricityBalanceChartSummerWinter(area);
+		f_setElectricityBalanceChartDayNight(area);
+		f_setElectricityBalanceChartWeekdayWeekend(area);
 	}
 	else if( radio_energyType.getValue() == 1){
-	f_setEnergyBalanceChartYear(area);
-	f_setEnergyBalanceChartSummerWinter(area);
-	f_setEnergyBalanceChartDayNight(area);
-	f_setEnergyBalanceChartWeekdayWeekend(area);
+		f_setEnergyBalanceChartYear(area);
+		f_setEnergyBalanceChartSummerWinter(area);
+		f_setEnergyBalanceChartDayNight(area);
+		f_setEnergyBalanceChartWeekdayWeekend(area);
 	}
 }
 
@@ -12291,8 +12295,8 @@ SelectedObjectTypes selectedObjectType = uI_Results.v_selectedObjectType;
 if (selectedObjectType == SelectedObjectTypes.TRAFO) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == SelectedObjectTypes.BUILDING) {
-	dataObject = uI_Results.v_company;
+else if (selectedObjectType == SelectedObjectTypes.BUILDING || selectedObjectType == SelectedObjectTypes.CHARGER) {
+	dataObject = uI_Results.v_gridConnection;
 }
 else {
 	dataObject = uI_Results.v_area;
