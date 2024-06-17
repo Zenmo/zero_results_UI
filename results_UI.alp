@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161156" AlpVersion="8.9.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161236" AlpVersion="8.9.0">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -8640,10 +8640,13 @@ public ShapeRadioButtonGroup getEnergyTypeRadioButton() {
 	return this.radio_energyType;
 }
 
-public ShapeGroup getChartGroup() {
+public ShapeGroup getChartGroupWeek() {
 	return this.group_week;
 }
-]]></AdditionalClassCode>
+
+public ShapeGroup getChartGroupYear() {
+	return this.group_year;
+}]]></AdditionalClassCode>
 			<Import><![CDATA[import com.querydsl.core.group.Group;]]></Import>
 			<ExtendsReference>
 				<PackageName><![CDATA[digital_twin_results]]></PackageName>
