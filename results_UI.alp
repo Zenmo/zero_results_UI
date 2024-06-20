@@ -8946,7 +8946,7 @@ energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandSumme
 if (dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 }
-energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandSummerWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandSummerWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
 
 
 //Energy supply chart
@@ -9036,7 +9036,7 @@ energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandWinte
 if (dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 }
-energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandWinterWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandWinterWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
 
 
 //Energy supply chart
