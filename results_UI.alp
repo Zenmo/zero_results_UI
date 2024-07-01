@@ -12794,8 +12794,8 @@ DataItem annualHydrogenSupply = new DataItem();
 annualHydrogenSupply.setValue(area.v_annualHydrogenSupply_MWh);
 pl_productionChartYear.addDataItem(annualHydrogenSupply, "Waterstof geproduceerd [MWh]", uI_Results.v_hydrogenSupplyColor);
 
-double production_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityExport_MWh + area.v_annualHydrogenSupply_MWh;
-double consumption_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityImport_MWh + area.v_annualNaturalGasDemand_MWh + area.v_annualPetroleumProductsDemand_MWh + area.v_annualHydrogenDemand_MWh;
+double production_MWh = area.v_annualSelfConsumedEnergy_MWh + area.v_annualElectricityExport_MWh + area.v_annualHydrogenSupply_MWh;
+double consumption_MWh = area.v_annualSelfConsumedEnergy_MWh + area.v_annualElectricityImport_MWh + area.v_annualNaturalGasDemand_MWh + area.v_annualPetroleumProductsDemand_MWh + area.v_annualHydrogenDemand_MWh;
 double chartScale_MWh = max(production_MWh, consumption_MWh);
 pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
@@ -12887,10 +12887,10 @@ winterHydrogenSupply.setValue(area.v_hydrogenExportWinterWeek_MWh);
 pl_productionChartWinter.addDataItem(winterHydrogenSupply, "Waterstof geproduceerd [MWh]", uI_Results.v_hydrogenSupplyColor);
 
 
-double summerProduction_MWh = area.v_selfConsumedElectricitySummerWeek_MWh + area.v_exportedElectricitySummerWeek_MWh + area.v_hydrogenExportSummerWeek_MWh;
-double summerConsumption_MWh = area.v_selfConsumedElectricitySummerWeek_MWh + area.v_importedElectricitySummerWeek_MWh + area.v_naturalGasDemandSummerWeek_MWh + area.v_petroleumProductsDemandSummerWeek_MWh + area.v_hydrogenImportSummerWeek_MWh;
-double winterProduction_MWh = area.v_selfConsumedElectricityWinterWeek_MWh + area.v_exportedElectricityWinterWeek_MWh + area.v_hydrogenExportWinterWeek_MWh;
-double winterConsumption_MWh = area.v_selfConsumedElectricityWinterWeek_MWh + area.v_importedElectricityWinterWeek_MWh + area.v_naturalGasDemandWinterWeek_MWh + area.v_petroleumProductsDemandWinterWeek_MWh + area.v_hydrogenImportWinterWeek_MWh;
+double summerProduction_MWh = area.v_selfConsumedEnergySummerWeek_MWh + area.v_exportedElectricitySummerWeek_MWh + area.v_hydrogenExportSummerWeek_MWh;
+double summerConsumption_MWh = area.v_selfConsumedEnergySummerWeek_MWh + area.v_importedElectricitySummerWeek_MWh + area.v_naturalGasDemandSummerWeek_MWh + area.v_petroleumProductsDemandSummerWeek_MWh + area.v_hydrogenImportSummerWeek_MWh;
+double winterProduction_MWh = area.v_selfConsumedEnergyWinterWeek_MWh + area.v_exportedElectricityWinterWeek_MWh + area.v_hydrogenExportWinterWeek_MWh;
+double winterConsumption_MWh = area.v_selfConsumedEnergyWinterWeek_MWh + area.v_importedElectricityWinterWeek_MWh + area.v_naturalGasDemandWinterWeek_MWh + area.v_petroleumProductsDemandWinterWeek_MWh + area.v_hydrogenImportWinterWeek_MWh;
 double chartScale_MWh = max(max(summerProduction_MWh, winterProduction_MWh), max(summerConsumption_MWh, winterConsumption_MWh));
 pl_productionChartSummer.setFixedScale(chartScale_MWh);
 pl_productionChartWinter.setFixedScale(chartScale_MWh);
@@ -12990,10 +12990,10 @@ DataItem weekendHydrogenSupply = new DataItem();
 weekendHydrogenSupply.setValue(area.v_hydrogenExportWeekend_MWh);
 pl_productionChartWeekend.addDataItem(weekendHydrogenSupply, "Waterstof geproduceerd [MWh]", uI_Results.v_hydrogenSupplyColor);
 
-double weekdayProduction_MWh = area.v_selfConsumedElectricityWeekday_MWh + area.v_exportedElectricityWeekday_MWh + area.v_hydrogenExportWeekday_MWh;
-double weekdayConsumption_MWh = area.v_selfConsumedElectricityWeekday_MWh + area.v_importedElectricityWeekday_MWh + area.v_naturalGasDemandWeekday_MWh + area.v_petroleumProductsDemandWeekday_MWh + area.v_hydrogenImportWeekday_MWh;
-double weekendProduction_MWh = area.v_selfConsumedElectricityWeekend_MWh + area.v_exportedElectricityWeekend_MWh + area.v_hydrogenExportWeekend_MWh;
-double weekendConsumption_MWh = area.v_selfConsumedElectricityWeekend_MWh + area.v_importedElectricityWeekend_MWh + area.v_naturalGasDemandWeekend_MWh + area.v_petroleumProductsDemandWeekend_MWh + area.v_hydrogenImportWeekend_MWh;
+double weekdayProduction_MWh = area.v_selfConsumedEnergyWeekday_MWh + area.v_exportedElectricityWeekday_MWh + area.v_hydrogenExportWeekday_MWh;
+double weekdayConsumption_MWh = area.v_selfConsumedEnergyWeekday_MWh + area.v_importedElectricityWeekday_MWh + area.v_naturalGasDemandWeekday_MWh + area.v_petroleumProductsDemandWeekday_MWh + area.v_hydrogenImportWeekday_MWh;
+double weekendProduction_MWh = area.v_selfConsumedEnergyWeekend_MWh + area.v_exportedElectricityWeekend_MWh + area.v_hydrogenExportWeekend_MWh;
+double weekendConsumption_MWh = area.v_selfConsumedEnergyWeekend_MWh + area.v_importedElectricityWeekend_MWh + area.v_naturalGasDemandWeekend_MWh + area.v_petroleumProductsDemandWeekend_MWh + area.v_hydrogenImportWeekend_MWh;
 double chartScale_MWh = max(max(weekdayProduction_MWh, weekendProduction_MWh), max(weekdayConsumption_MWh, weekendConsumption_MWh));
 pl_productionChartWeekday.setFixedScale(chartScale_MWh);
 pl_productionChartWeekend.setFixedScale(chartScale_MWh);
@@ -13094,10 +13094,10 @@ DataItem nighttimeHydrogenSupply = new DataItem();
 nighttimeHydrogenSupply.setValue(area.v_hydrogenExportNighttime_MWh);
 pl_productionChartNight.addDataItem(nighttimeHydrogenSupply, "Waterstof geproduceerd [MWh]", uI_Results.v_hydrogenSupplyColor);					
 
-double dayProduction_MWh = area.v_selfConsumedElectricityDaytime_MWh + area.v_exportedElectricityDaytime_MWh + area.v_hydrogenExportDaytime_MWh;
-double dayConsumption_MWh = area.v_selfConsumedElectricityDaytime_MWh + area.v_importedElectricityDaytime_MWh + area.v_naturalGasDemandDaytime_MWh + area.v_petroleumProductsDemandDaytime_MWh + area.v_hydrogenImportDaytime_MWh;
-double nightProduction_MWh = area.v_selfConsumedElectricityNighttime_MWh + area.v_exportedElectricityNighttime_MWh + area.v_hydrogenExportNighttime_MWh;
-double nightConsumption_MWh = area.v_selfConsumedElectricityNighttime_MWh + area.v_importedElectricityNighttime_MWh + area.v_naturalGasDemandNighttime_MWh + area.v_petroleumProductsDemandNighttime_MWh + area.v_hydrogenImportNighttime_MWh;
+double dayProduction_MWh = area.v_selfConsumedEnergyDaytime_MWh + area.v_exportedElectricityDaytime_MWh + area.v_hydrogenExportDaytime_MWh;
+double dayConsumption_MWh = area.v_selfConsumedEnergyDaytime_MWh + area.v_importedElectricityDaytime_MWh + area.v_naturalGasDemandDaytime_MWh + area.v_petroleumProductsDemandDaytime_MWh + area.v_hydrogenImportDaytime_MWh;
+double nightProduction_MWh = area.v_selfConsumedEnergyNighttime_MWh + area.v_exportedElectricityNighttime_MWh + area.v_hydrogenExportNighttime_MWh;
+double nightConsumption_MWh = area.v_selfConsumedEnergyNighttime_MWh + area.v_importedElectricityNighttime_MWh + area.v_naturalGasDemandNighttime_MWh + area.v_petroleumProductsDemandNighttime_MWh + area.v_hydrogenImportNighttime_MWh;
 double chartScale_MWh = max(max(dayProduction_MWh, nightProduction_MWh), max(dayConsumption_MWh, nightConsumption_MWh));
 pl_productionChartDay.setFixedScale(chartScale_MWh);
 pl_productionChartNight.setFixedScale(chartScale_MWh);
