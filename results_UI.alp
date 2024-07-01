@@ -9476,7 +9476,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Vraag]]></Text>
+					<Text><![CDATA[Consumptie]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>18</Size>
@@ -9708,7 +9708,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Vraag]]></Text>
+					<Text><![CDATA[Consumptie]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>18</Size>
