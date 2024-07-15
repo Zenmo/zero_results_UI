@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161236" AlpVersion="8.9.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161156" AlpVersion="8.9.0">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -5025,7 +5025,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707401188621</Id>
-					<Name><![CDATA[v_dataWindElectricitySupplySummerWeek_kW]]></Name>
+					<Name><![CDATA[v_dataElectricityWindSupplySummerWeek_kW]]></Name>
 					<X>60</X><Y>1060</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5037,7 +5037,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707401188623</Id>
-					<Name><![CDATA[v_dataPVElectricitySupplySummerWeek_kW]]></Name>
+					<Name><![CDATA[v_dataElectricityPVSupplySummerWeek_kW]]></Name>
 					<X>60</X><Y>1080</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5049,7 +5049,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707401188625</Id>
-					<Name><![CDATA[v_dataStorageElectricitySupplySummerWeek_kW]]></Name>
+					<Name><![CDATA[v_dataElectricityStorageSupplySummerWeek_kW]]></Name>
 					<X>60</X><Y>1100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5061,7 +5061,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707401188627</Id>
-					<Name><![CDATA[v_dataV2GElectricitySupplySummerWeek_kW]]></Name>
+					<Name><![CDATA[v_dataElectricityV2GSupplySummerWeek_kW]]></Name>
 					<X>60</X><Y>1120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5097,7 +5097,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707401299006</Id>
-					<Name><![CDATA[v_dataWindElectricitySupplyWinterWeek_kW]]></Name>
+					<Name><![CDATA[v_dataElectricityWindSupplyWinterWeek_kW]]></Name>
 					<X>60</X><Y>1390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5109,7 +5109,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707401299008</Id>
-					<Name><![CDATA[v_dataPVElectricitySupplyWinterWeek_kW]]></Name>
+					<Name><![CDATA[v_dataElectricityPVSupplyWinterWeek_kW]]></Name>
 					<X>60</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5121,7 +5121,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707401299010</Id>
-					<Name><![CDATA[v_dataStorageElectricitySupplyWinterWeek_kW]]></Name>
+					<Name><![CDATA[v_dataElectricityStorageSupplyWinterWeek_kW]]></Name>
 					<X>60</X><Y>1430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -5133,7 +5133,7 @@ f_showCorrectChart();]]></ActionCode>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1707401299012</Id>
-					<Name><![CDATA[v_dataV2GElectricitySupplyWinterWeek_kW]]></Name>
+					<Name><![CDATA[v_dataElectricityV2GSupplyWinterWeek_kW]]></Name>
 					<X>60</X><Y>1450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -8950,10 +8950,10 @@ energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandSummerW
 
 
 //Energy supply chart
-energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplySummerWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplySummerWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplySummerWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplySummerWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplySummerWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplySummerWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageSupplySummerWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GSupplySummerWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
 
 ]]></Body>
 				</Function>
@@ -9040,10 +9040,10 @@ energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandWinterW
 
 
 //Energy supply chart
-energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplyWinterWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplyWinterWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyWinterWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyWinterWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplyWinterWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplyWinterWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageSupplyWinterWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
+energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GSupplyWinterWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
 
 ]]></Body>
 				</Function>
