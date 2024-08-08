@@ -2887,12 +2887,12 @@ if (chartScale_MWh<10) {
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[if (rb_area_BusinessPark.getValue() == 3) {
+					<Body><![CDATA[/*if (rb_area_BusinessPark.getValue() == 3) {
 	rb_supplyDemand.setValue(0,false);
 	rb_supplyDemand.setEnabled(false);
 } else {
 	rb_supplyDemand.setEnabled(true);
-}
+}*/
 
 f_setGraphString();
 AreaCollection area;
@@ -4854,7 +4854,11 @@ for(int i=0; i<area.v_dataNetLoadYear_kW.length; i++){
 	
 }
 benuttingsgraad = totalAbsoluteLoad_kWh / (area.v_gridCapacityDemand_kW * 8760) * 100;
-t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");
+if ( area.p_areaType == AreaTypes.COLLECTIVE) {
+	t_KPIBenuttingsgraad.setText("-");
+} else {
+	t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");
+}
 //t_KPIBenuttingsgraad1.setText(roundToInt(benuttingsgraad) + "%");]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
