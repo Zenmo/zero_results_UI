@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 *************************************************
-	         AnyLogic Project File 
-*************************************************	         
+	         AnyLogic Project File
+*************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161238" AlpVersion="8.9.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021032" AlpVersion="8.9.1">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -45,6 +45,10 @@
 			</Option>
 		</OptionList>
 	</OptionLists>
+	
+	<Folders>
+		
+	</Folders>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
@@ -2893,6 +2897,12 @@ if (chartScale_MWh<10) {
 } else {
 	rb_supplyDemand.setEnabled(true);
 }*/
+if (rb_area_BusinessPark.getValue() == 2) {
+	rb_energyCarrier.setValue(1,false);
+	rb_energyCarrier.setEnabled(false);
+} else {
+	rb_energyCarrier.setEnabled(true);
+}
 
 f_setGraphString();
 AreaCollection area;
@@ -2909,11 +2919,11 @@ traceln("Current selected area: %s", area);
 
 if( v_graphString.contains("Profielen")){
 	f_setProfileGraphsFromString(v_graphString, area);
-	rb_energyCarrier.setEnabled(true);
+	//rb_energyCarrier.setEnabled(true);
 }
 else if( v_graphString.contains("Opwek en verbruik")){
 	f_setSupplyDemandGraphsFromString(v_graphString, area);
-	rb_energyCarrier.setEnabled(true);
+	//rb_energyCarrier.setEnabled(true);
 }
 else if( v_graphString.contains("Netbelasting")){
 	f_setGridLoadGraphsFromString(v_graphString, area);
@@ -3084,7 +3094,7 @@ if( graph.contains( "Live")){
 }
 else if( graph.contains( "Zomerweek")){	
 	if( graph.contains( "Energie")){	
-		f_setGraphProfilesSummerWeekEnergy();
+		f_setGraphProfilesSummerWeekEnergy(area);
 	}
 	else if( graph.contains( "Elektriciteit")){	
 		f_setGraphProfilesSummerWeekElectricity(area);
@@ -5056,37 +5066,41 @@ energySupplyChart.setFixedVerticalScale(chartScale);*/]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[area]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
 					<Body><![CDATA[//Energy demand chart
 energyDemandChart.removeAll();
-if (v_area.v_dataPetroleumProductsDemandSummerWeek_kW != null) {
-	energyDemandChart.addDataSet(v_area.v_dataPetroleumProductsDemandSummerWeek_kW, v_petroleumProductsDemandText, v_petroleumProductsDemandColor);
+if (area.v_dataPetroleumProductsDemandSummerWeek_kW != null) {
+	energyDemandChart.addDataSet(area.v_dataPetroleumProductsDemandSummerWeek_kW, v_petroleumProductsDemandText, v_petroleumProductsDemandColor);
 }
-if (v_area.v_dataNaturalGasDemandSummerWeek_kW != null) {
-	energyDemandChart.addDataSet(v_area.v_dataNaturalGasDemandSummerWeek_kW, v_naturalGasDemandText, v_naturalGasDemandColor);
+if (area.v_dataNaturalGasDemandSummerWeek_kW != null) {
+	energyDemandChart.addDataSet(area.v_dataNaturalGasDemandSummerWeek_kW, v_naturalGasDemandText, v_naturalGasDemandColor);
 }
-if (v_area.v_dataDistrictHeatDemandSummerWeek_kW != null) {
-	energyDemandChart.addDataSet(v_area.v_dataDistrictHeatDemandSummerWeek_kW, v_districtHeatDemandText, v_districtHeatDemandColor);
+if (area.v_dataDistrictHeatDemandSummerWeek_kW != null) {
+	energyDemandChart.addDataSet(area.v_dataDistrictHeatDemandSummerWeek_kW, v_districtHeatDemandText, v_districtHeatDemandColor);
 }
-energyDemandChart.addDataSet(v_area.v_dataElectricityBaseloadDemandSummerWeek_kW, v_electricityBaseloadDemandText, v_electricityBaseloadDemandColor);
-energyDemandChart.addDataSet(v_area.v_dataElectricityForHeatDemandSummerWeek_kW, v_electricityForHeatDemandText, v_electricityForHeatDemandColor);
-energyDemandChart.addDataSet(v_area.v_dataElectricityForTransportDemandSummerWeek_kW, v_electricityForTransportDemandText, v_electricityForTransportDemandColor);
-if (v_area.v_dataElectricityForHydrogenDemandSummerWeek_kW != null) {
-	energyDemandChart.addDataSet(v_area.v_dataElectricityForHydrogenDemandSummerWeek_kW, v_electricityForHydrogenDemandText, v_electricityForHydrogenDemandColor);
+energyDemandChart.addDataSet(area.v_dataElectricityBaseloadDemandSummerWeek_kW, v_electricityBaseloadDemandText, v_electricityBaseloadDemandColor);
+energyDemandChart.addDataSet(area.v_dataElectricityForHeatDemandSummerWeek_kW, v_electricityForHeatDemandText, v_electricityForHeatDemandColor);
+energyDemandChart.addDataSet(area.v_dataElectricityForTransportDemandSummerWeek_kW, v_electricityForTransportDemandText, v_electricityForTransportDemandColor);
+if (area.v_dataElectricityForHydrogenDemandSummerWeek_kW != null) {
+	energyDemandChart.addDataSet(area.v_dataElectricityForHydrogenDemandSummerWeek_kW, v_electricityForHydrogenDemandText, v_electricityForHydrogenDemandColor);
 }
-energyDemandChart.addDataSet(v_area.v_dataElectricityForStorageDemandSummerWeek_kW, v_electricityForStorageDemandText, v_electricityForStorageDemandColor);
+energyDemandChart.addDataSet(area.v_dataElectricityForStorageDemandSummerWeek_kW, v_electricityForStorageDemandText, v_electricityForStorageDemandColor);
 
 //Energy supply chart
 energySupplyChart.removeAll();
-if (v_area.v_dataPetroleumProductsSupplySummerWeek_kW != null) {
-	energySupplyChart.addDataSet(v_area.v_dataPetroleumProductsSupplySummerWeek_kW, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
+if (area.v_dataPetroleumProductsSupplySummerWeek_kW != null) {
+	energySupplyChart.addDataSet(area.v_dataPetroleumProductsSupplySummerWeek_kW, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
 }
-if (v_area.v_dataDistrictHeatSupplySummerWeek_kW != null) {
-	energySupplyChart.addDataSet(v_area.v_dataDistrictHeatSupplySummerWeek_kW, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
+if (area.v_dataDistrictHeatSupplySummerWeek_kW != null) {
+	energySupplyChart.addDataSet(area.v_dataDistrictHeatSupplySummerWeek_kW, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
 }
-energySupplyChart.addDataSet(v_area.v_dataWindElectricitySupplySummerWeek_kW, v_windElectricitySupplyText, v_windElectricitySupplyColor);
-energySupplyChart.addDataSet(v_area.v_dataPVElectricitySupplySummerWeek_kW, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
-energySupplyChart.addDataSet(v_area.v_dataStorageElectricitySupplySummerWeek_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
-energySupplyChart.addDataSet(v_area.v_dataV2GElectricitySupplySummerWeek_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+energySupplyChart.addDataSet(area.v_dataWindElectricitySupplySummerWeek_kW, v_windElectricitySupplyText, v_windElectricitySupplyColor);
+energySupplyChart.addDataSet(area.v_dataPVElectricitySupplySummerWeek_kW, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
+energySupplyChart.addDataSet(area.v_dataStorageElectricitySupplySummerWeek_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
+energySupplyChart.addDataSet(area.v_dataV2GElectricitySupplySummerWeek_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
 
 
 t_energieVraag.setText("Energievraag");
@@ -17713,7 +17727,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 			</Presentation>
 
 		</ActiveObjectClass>
-	</ActiveObjectClasses>	
+	</ActiveObjectClasses>
 	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
 	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
 	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
@@ -17734,7 +17748,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 		<ExportSettings>
 		</ExportSettings>
 	</Database>
-	
+
 	<RunConfiguration ActiveObjectClassId="1704197366550">
 		<Id>1704197366562</Id>
 		<Name><![CDATA[RunConfiguration]]></Name>
