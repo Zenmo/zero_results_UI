@@ -9286,7 +9286,12 @@ else { // Stack Chart
 if (selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == OL_GISObjectType.BUILDING || selectedObjectType == OL_GISObjectType.CHARGER) {
+else if (selectedObjectType == OL_GISObjectType.BUILDING ||
+		 selectedObjectType == OL_GISObjectType.CHARGER ||
+		 selectedObjectType == OL_GISObjectType.WINDFARM ||
+		 selectedObjectType == OL_GISObjectType.SOLARFARM ||
+		 selectedObjectType == OL_GISObjectType.ELECTROLYSER ||
+		 selectedObjectType == OL_GISObjectType.BATTERY ) {
 	dataObject = uI_Results.v_gridConnection;
 }
 else {
@@ -10820,7 +10825,12 @@ OL_GISObjectType selectedObjectType = uI_Results.v_selectedObjectType;
 if (selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == OL_GISObjectType.BUILDING || selectedObjectType == OL_GISObjectType.CHARGER) {
+else if (selectedObjectType == OL_GISObjectType.BUILDING ||
+		 selectedObjectType == OL_GISObjectType.CHARGER ||
+		 selectedObjectType == OL_GISObjectType.WINDFARM ||
+		 selectedObjectType == OL_GISObjectType.SOLARFARM ||
+		 selectedObjectType == OL_GISObjectType.ELECTROLYSER ||
+		 selectedObjectType == OL_GISObjectType.BATTERY ) {
 	dataObject = uI_Results.v_gridConnection;
 }
 else {
@@ -11972,7 +11982,12 @@ OL_GISObjectType selectedObjectType = uI_Results.v_selectedObjectType;
 if (selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == OL_GISObjectType.BUILDING || selectedObjectType == OL_GISObjectType.CHARGER) {
+else if (selectedObjectType == OL_GISObjectType.BUILDING ||
+		 selectedObjectType == OL_GISObjectType.CHARGER ||
+		 selectedObjectType == OL_GISObjectType.WINDFARM ||
+		 selectedObjectType == OL_GISObjectType.SOLARFARM ||
+		 selectedObjectType == OL_GISObjectType.ELECTROLYSER ||
+		 selectedObjectType == OL_GISObjectType.BATTERY ) {
 	dataObject = uI_Results.v_gridConnection;
 }
 else {
@@ -12793,7 +12808,12 @@ OL_GISObjectType selectedObjectType = uI_Results.v_selectedObjectType;
 if (selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == OL_GISObjectType.BUILDING || selectedObjectType == OL_GISObjectType.CHARGER) {
+else if (selectedObjectType == OL_GISObjectType.BUILDING ||
+		 selectedObjectType == OL_GISObjectType.CHARGER ||
+		 selectedObjectType == OL_GISObjectType.WINDFARM ||
+		 selectedObjectType == OL_GISObjectType.SOLARFARM ||
+		 selectedObjectType == OL_GISObjectType.ELECTROLYSER ||
+		 selectedObjectType == OL_GISObjectType.BATTERY ) {
 	dataObject = uI_Results.v_gridConnection;
 }
 else {
