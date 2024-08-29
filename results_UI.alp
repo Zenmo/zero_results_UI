@@ -47,7 +47,7 @@
 		</OptionList>
 		<OptionList>
 			<Id>1714740441860</Id>
-			<Name><![CDATA[ChartTypes]]></Name>
+			<Name><![CDATA[OL_ChartTypes]]></Name>
 			<Option>
 				<Id>1714740441861</Id>
 				<Name><![CDATA[PROFIEL]]></Name>
@@ -67,7 +67,7 @@
 		</OptionList>
 		<OptionList>
 			<Id>1714740453599</Id>
-			<Name><![CDATA[ChartPeriod]]></Name>
+			<Name><![CDATA[OL_ChartPeriod]]></Name>
 			<Option>
 				<Id>1714740453655</Id>
 				<Name><![CDATA[LIVE]]></Name>
@@ -83,26 +83,6 @@
 			<Option>
 				<Id>1714740463945</Id>
 				<Name><![CDATA[JAAR]]></Name>
-			</Option>
-		</OptionList>
-		<OptionList>
-			<Id>1714814360911</Id>
-			<Name><![CDATA[SelectedObjectTypes]]></Name>
-			<Option>
-				<Id>1714814360912</Id>
-				<Name><![CDATA[TRAFO]]></Name>
-			</Option>
-			<Option>
-				<Id>1714814360913</Id>
-				<Name><![CDATA[REGION]]></Name>
-			</Option>
-			<Option>
-				<Id>1714814360914</Id>
-				<Name><![CDATA[BUILDING]]></Name>
-			</Option>
-			<Option>
-				<Id>1718552575272</Id>
-				<Name><![CDATA[CHARGER]]></Name>
 			</Option>
 		</OptionList>
 	</OptionLists>
@@ -804,9 +784,9 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[SelectedObjectTypes]]></Type>        
+						<Type><![CDATA[OL_GISObjectType]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[REGION]]></Code>
+							<Code><![CDATA[OL_GISObjectType.REGION]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -819,7 +799,7 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[ChartTypes]]></Type>        
+						<Type><![CDATA[OL_ChartTypes]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[PROFIEL]]></Code>
 						</InitialValue>
@@ -5840,7 +5820,7 @@ f_showCorrectChart();]]></ActionCode>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[SelectedObjectTypes]]></Type>
+						<Type><![CDATA[OL_GISObjectType]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<ParameterEditor>
@@ -9195,7 +9175,7 @@ AreaCollection dataObject = f_getDataObject(uI_Results.v_selectedObjectType);
 if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 	switch (radio_period.getValue()) {
 		case 0: // Live
-			if (uI_Results.v_selectedObjectType == TRAFO) {
+			if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Live(dataObject);
 			}
 			else {
@@ -9204,7 +9184,7 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 			break;
 		
 		case 1: // Summer
-			if (uI_Results.v_selectedObjectType == TRAFO) {
+			if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 				f_addElectricityFlowsTrafo_SummerWeek(dataObject);
 			}
 			else {
@@ -9213,7 +9193,7 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 			break;
 		
 		case 2: // Winter
-			if (uI_Results.v_selectedObjectType == TRAFO) {
+			if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 				f_addElectricityFlowsTrafo_WinterWeek(dataObject);
 			}
 			else {
@@ -9222,7 +9202,7 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 			break;
 		
 		case 3: // Year
-			if (uI_Results.v_selectedObjectType == TRAFO) {
+			if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Year(dataObject);
 			}
 			else {
@@ -9237,7 +9217,7 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 else { // Stack Chart
 	switch (radio_period.getValue()) {
 		case 0: // Live
-			if (uI_Results.v_selectedObjectType == TRAFO) {
+			if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Live(dataObject);
 			}
 			else {
@@ -9249,7 +9229,7 @@ else { // Stack Chart
 			break;
 		
 		case 1: // Summer
-			if (uI_Results.v_selectedObjectType == TRAFO) {
+			if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 				f_addElectricityFlowsTrafo_SummerWeek(dataObject);
 			}
 			else {
@@ -9261,7 +9241,7 @@ else { // Stack Chart
 			break;
 			
 		case 2: // Winter
-			if (uI_Results.v_selectedObjectType == TRAFO) {
+			if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 				f_addElectricityFlowsTrafo_WinterWeek(dataObject);
 			} else {
 				f_addElectricityFlows_WinterWeek(dataObject);
@@ -9272,7 +9252,7 @@ else { // Stack Chart
 			break;
 			
 		case 3: // Year
-			if (uI_Results.v_selectedObjectType == TRAFO) {
+			if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Year(dataObject);
 			} else {
 				f_addElectricityFlows_Year(dataObject);
@@ -9299,14 +9279,14 @@ else { // Stack Chart
 					<ShowLabel>true</ShowLabel>
 					<Parameter>
 						<Name><![CDATA[selectedObjectType]]></Name>
-						<Type><![CDATA[SelectedObjectTypes]]></Type>
+						<Type><![CDATA[OL_GISObjectType]]></Type>
 					</Parameter>
 					<Body><![CDATA[AreaCollection dataObject;
 
-if (selectedObjectType == SelectedObjectTypes.TRAFO) {
+if (selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == SelectedObjectTypes.BUILDING || selectedObjectType == SelectedObjectTypes.CHARGER) {
+else if (selectedObjectType == OL_GISObjectType.BUILDING || selectedObjectType == OL_GISObjectType.CHARGER) {
 	dataObject = uI_Results.v_gridConnection;
 }
 else {
@@ -10835,12 +10815,12 @@ if( area.v_dataNetbelastingDuurkrommeWeekday_kW != null){
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[AreaCollection dataObject;
-SelectedObjectTypes selectedObjectType = uI_Results.v_selectedObjectType;
+OL_GISObjectType selectedObjectType = uI_Results.v_selectedObjectType;
 
-if (selectedObjectType == SelectedObjectTypes.TRAFO) {
+if (selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == SelectedObjectTypes.BUILDING || selectedObjectType == SelectedObjectTypes.CHARGER) {
+else if (selectedObjectType == OL_GISObjectType.BUILDING || selectedObjectType == OL_GISObjectType.CHARGER) {
 	dataObject = uI_Results.v_gridConnection;
 }
 else {
@@ -11987,12 +11967,12 @@ gr_sankey.setVisible(true);]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[AreaCollection dataObject;
-SelectedObjectTypes selectedObjectType = uI_Results.v_selectedObjectType;
+OL_GISObjectType selectedObjectType = uI_Results.v_selectedObjectType;
 
-if (selectedObjectType == SelectedObjectTypes.TRAFO) {
+if (selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == SelectedObjectTypes.BUILDING || selectedObjectType == SelectedObjectTypes.CHARGER) {
+else if (selectedObjectType == OL_GISObjectType.BUILDING || selectedObjectType == OL_GISObjectType.CHARGER) {
 	dataObject = uI_Results.v_gridConnection;
 }
 else {
@@ -12773,7 +12753,7 @@ if (chartScale_MWh<10) {
 f_setVisiblity();
 AreaCollection area = f_getDataObject();
 
-if (uI_Results.v_selectedObjectType == SelectedObjectTypes.TRAFO) {
+if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	f_setTrafoBalanceChartYear(area);
 	f_setTrafoBalanceChartSummerWinter(area);
 	f_setTrafoBalanceChartDayNight(area);
@@ -12808,12 +12788,12 @@ else {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[AreaCollection dataObject;
-SelectedObjectTypes selectedObjectType = uI_Results.v_selectedObjectType;
+OL_GISObjectType selectedObjectType = uI_Results.v_selectedObjectType;
 
-if (selectedObjectType == SelectedObjectTypes.TRAFO) {
+if (selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = uI_Results.v_trafo;
 } 
-else if (selectedObjectType == SelectedObjectTypes.BUILDING || selectedObjectType == SelectedObjectTypes.CHARGER) {
+else if (selectedObjectType == OL_GISObjectType.BUILDING || selectedObjectType == OL_GISObjectType.CHARGER) {
 	dataObject = uI_Results.v_gridConnection;
 }
 else {
