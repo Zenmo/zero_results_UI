@@ -640,7 +640,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1705603337539</Id>
 					<Name><![CDATA[v_area]]></Name>
-					<X>80</X><Y>180</Y>
+					<X>540</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -712,7 +712,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1708448119976</Id>
 					<Name><![CDATA[v_gridConnection]]></Name>
-					<X>80</X><Y>200</Y>
+					<X>540</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -724,7 +724,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1708448128397</Id>
 					<Name><![CDATA[v_collective]]></Name>
-					<X>80</X><Y>220</Y>
+					<X>540</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -736,7 +736,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1712585211623</Id>
 					<Name><![CDATA[v_trafo]]></Name>
-					<X>80</X><Y>240</Y>
+					<X>540</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -778,7 +778,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714855681842</Id>
 					<Name><![CDATA[v_selectedObjectType]]></Name>
-					<X>80</X><Y>280</Y>
+					<X>540</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -793,7 +793,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714895695214</Id>
 					<Name><![CDATA[v_selectedChartType]]></Name>
-					<X>80</X><Y>300</Y>
+					<X>540</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -809,7 +809,7 @@
 					<Id>1714895704962</Id>
 					<Name><![CDATA[v_selectedPeriod]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>80</X><Y>320</Y>
+					<X>540</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -899,7 +899,7 @@
 				<Variable Class="Parameter">
 					<Id>1715851154621</Id>
 					<Name><![CDATA[energyModel]]></Name>
-					<X>80</X><Y>140</Y>
+					<X>540</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -925,7 +925,7 @@
 					<Id>1705578341838</Id>
 					<Name><![CDATA[f_setGraphs]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>200</X><Y>-150</Y>
+					<X>-640</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -991,7 +991,7 @@ else{
 					<Id>1705596201338</Id>
 					<Name><![CDATA[f_setSupplyDemandGraphsFromString]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>210</X><Y>-130</Y>
+					<X>-640</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1132,7 +1132,7 @@ else{
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714835206522</Id>
 					<Name><![CDATA[f_initialize]]></Name>
-					<X>80</X><Y>360</Y>
+					<X>540</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1144,7 +1144,7 @@ else{
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714902615653</Id>
 					<Name><![CDATA[f_showCorrectChart]]></Name>
-					<X>1260</X><Y>120</Y>
+					<X>940</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1179,7 +1179,7 @@ switch (v_selectedChartType) {
 					<Id>1714930489525</Id>
 					<Name><![CDATA[f_setDiagrams]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1260</X><Y>160</Y>
+					<X>-640</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1323,7 +1323,7 @@ else{
 					<Id>1715684810759</Id>
 					<Name><![CDATA[f_setChartType]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1260</X><Y>80</Y>
+					<X>-640</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1346,6 +1346,272 @@ else{
 		rb_chartType.setValue(3);
 		break;
 }
+]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725370602118</Id>
+					<Name><![CDATA[f_setRadioButtons]]></Name>
+					<X>540</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[location_x]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[location_y]]></Name>
+						<Type><![CDATA[Double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[visible]]></Name>
+						<Type><![CDATA[boolean]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Set the location and visibility of the radiobuttons
+
+//Set x axis
+if(location_x != null){
+gr_radioButtons.setX(location_x);
+}
+
+//Set y axis
+if(location_x != null){
+gr_radioButtons.setY(location_y);
+}
+
+//Set visibility
+gr_radioButtons.setVisible(visible);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725371353897</Id>
+					<Name><![CDATA[f_setChartSankey_Presentation]]></Name>
+					<X>540</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[location_x]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[location_y]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[visible]]></Name>
+						<Type><![CDATA[boolean]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Set the location and visibility of the sankey charts presentation
+
+//Set x axis
+if(location_x != null){
+chartSankey_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_x != null){
+chartSankey_presentation.setY(location_y);
+}
+
+//Set visibility
+chartSankey_presentation.setVisible(visible);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725371355774</Id>
+					<Name><![CDATA[f_setChartGridLoad_Presentation]]></Name>
+					<X>540</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[location_x]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[location_y]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[visible]]></Name>
+						<Type><![CDATA[boolean]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Set the location and visibility of the gridload charts presentation
+
+//Set x axis
+if(location_x != null){
+chartNetbelasting_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_x != null){
+chartNetbelasting_presentation.setY(location_y);
+}
+
+//Set visibility
+chartNetbelasting_presentation.setVisible(visible);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725371358501</Id>
+					<Name><![CDATA[f_setChartBalance_Presentation]]></Name>
+					<X>540</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[location_x]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[location_y]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[visible]]></Name>
+						<Type><![CDATA[boolean]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Set the location and visibility of the balance charts presentation
+
+//Set x axis
+if(location_x != null){
+chartBalans_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_x != null){
+chartBalans_presentation.setY(location_y);
+}
+
+//Set visibility
+chartBalans_presentation.setVisible(visible);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725371361557</Id>
+					<Name><![CDATA[f_setChartProfiles_Presentation]]></Name>
+					<X>540</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[location_x]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[location_y]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[visible]]></Name>
+						<Type><![CDATA[boolean]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Set the location and visibility of the profiles charts presentation
+
+//Set x axis
+if(location_x != null){
+chartProfielen_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_x != null){
+chartProfielen_presentation.setY(location_y);
+}
+
+//Set visibility
+chartProfielen_presentation.setVisible(visible);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725373315876</Id>
+					<Name><![CDATA[f_setAllCharts]]></Name>
+					<X>940</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[//Function to set all charts, without changing visibilities
+chartProfielen.f_setCharts();
+chartBalans.f_setCharts();
+chartNetbelasting.f_setBelastingPlots();
+chartSankey.f_setSankey();]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725374888930</Id>
+					<Name><![CDATA[f_styleAllCharts]]></Name>
+					<X>540</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[backgroundColor]]></Name>
+						<Type><![CDATA[Color]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineColor]]></Name>
+						<Type><![CDATA[Color]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineWidth]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineStyle]]></Name>
+						<Type><![CDATA[LineStyle]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Function to style all chart (backgrounds)
+chartProfielen.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartBalans.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartNetbelasting.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartSankey.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725375062400</Id>
+					<Name><![CDATA[f_styleRadioButtons]]></Name>
+					<X>700</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[backgroundColor]]></Name>
+						<Type><![CDATA[Color]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineColor]]></Name>
+						<Type><![CDATA[Color]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineWidth]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineStyle]]></Name>
+						<Type><![CDATA[LineStyle]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Function to style all chart (backgrounds)
+rect_resultsMenuLarge.setFillColor(backgroundColor);
+rect_resultsMenuLarge.setLineColor(lineColor);
+rect_resultsMenuLarge.setLineWidth(lineWidth);
+rect_resultsMenuLarge.setLineStyle(lineStyle);
 ]]></Body>
 				</Function>
 			</Functions>
@@ -1375,7 +1641,7 @@ else{
 				<EmbeddedObject>
 					<Id>1705600400170</Id>
 					<Name><![CDATA[pop_areaResults]]></Name>
-					<X>80</X><Y>120</Y>
+					<X>540</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1439,12 +1705,12 @@ else{
 				<EmbeddedObject>
 					<Id>1714769685819</Id>
 					<Name><![CDATA[chartProfielen]]></Name>
-					<X>240</X><Y>120</Y>
+					<X>740</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<PresentationId>1714769685821</PresentationId>
+					<PresentationId>1725361644334</PresentationId>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[digital_twin_results]]></PackageName>
 						<ClassName><![CDATA[ChartProfielen]]></ClassName>
@@ -1501,12 +1767,12 @@ else{
 				<EmbeddedObject>
 					<Id>1714770450269</Id>
 					<Name><![CDATA[chartNetbelasting]]></Name>
-					<X>240</X><Y>140</Y>
+					<X>740</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<PresentationId>1714770450271</PresentationId>
+					<PresentationId>1725361945731</PresentationId>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[digital_twin_results]]></PackageName>
 						<ClassName><![CDATA[ChartNetbelasting]]></ClassName>
@@ -1563,12 +1829,12 @@ else{
 				<EmbeddedObject>
 					<Id>1714770566604</Id>
 					<Name><![CDATA[chartBalans]]></Name>
-					<X>240</X><Y>160</Y>
+					<X>740</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<PresentationId>1714770566606</PresentationId>
+					<PresentationId>1725361939965</PresentationId>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[digital_twin_results]]></PackageName>
 						<ClassName><![CDATA[ChartBalans]]></ClassName>
@@ -1625,12 +1891,12 @@ else{
 				<EmbeddedObject>
 					<Id>1714770587436</Id>
 					<Name><![CDATA[chartSankey]]></Name>
-					<X>240</X><Y>180</Y>
+					<X>740</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<PresentationId>1714770587438</PresentationId>
+					<PresentationId>1725361948805</PresentationId>
 					<ActiveObjectClass>
 						<PackageName><![CDATA[digital_twin_results]]></PackageName>
 						<ClassName><![CDATA[ChartSankey]]></ClassName>
@@ -1701,123 +1967,32 @@ else{
 
 			<Presentation>
 				<Rectangle>
-					<Id>1704198093266</Id>
-					<Name><![CDATA[menuViewOpen3]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1700</X><Y>-80</Y>
+					<Id>1725360256244</Id>
+					<Name><![CDATA[rect_old]]></Name>
+					<X>-700</X><Y>0</Y>
 					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<Width>240</Width>
-					<Height>160</Height>
-					<Rotation>0.0</Rotation>
-					<FillColor>682673374</FillColor>
-					<FillColorCode><![CDATA[new Color (226,0,37,20)]]></FillColorCode>
-					<FillMaterial>null</FillMaterial>
-				</Rectangle>
-				<Rectangle>
-					<Id>1704198093268</Id>
-					<Name><![CDATA[menuViewOpen]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-180</X><Y>-80</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<Width>1620</Width>
-					<Height>160</Height>
-					<Rotation>0.0</Rotation>
-					<FillColor>682673374</FillColor>
-					<FillMaterial>null</FillMaterial>
-				</Rectangle>
-				<Rectangle>
-					<Id>1704198093270</Id>
-					<Name><![CDATA[menuViewOpen4]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1440</X><Y>-80</Y>
-					<Label><X>10</X><Y>10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor/>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<Width>260</Width>
-					<Height>160</Height>
-					<Rotation>0.0</Rotation>
-					<FillColor>682673374</FillColor>
-					<FillColorCode><![CDATA[new Color (226,0,37,255)]]></FillColorCode>
-					<FillMaterial>null</FillMaterial>
-				</Rectangle>
-				<Image>
-					<Id>1704198185753</Id>
-					<Name><![CDATA[image47]]></Name>
-					<X>1209</X><Y>25</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<Width>20</Width>
-					<Height>20</Height>
+					<ZHeight>10</ZHeight>
+					<LineWidth>3</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>400</Width>
+					<Height>340</Height>
 					<Rotation>0.0</Rotation>
-					<ImageFiles>
-						<ImageResourceReference>
-							<PackageName><![CDATA[digital_twin_results]]></PackageName>
-							<ClassName><![CDATA[icon_i.png]]></ClassName>
-						</ImageResourceReference>
-					</ImageFiles>
-					<OriginalSize>false</OriginalSize>
-				</Image>
-				<Control Type="Button">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1704198185779</Id>
-					<Name><![CDATA[button2]]></Name>
-					<X>1020</X><Y>20</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="180" Height="30">
-                        <EmbeddedIcon>false</EmbeddedIcon>	
-						<TextColor/>
-						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[getExperimentHost().openWebSite("https://digital-twin-brabant-docs.readthedocs.io/en/latest/");]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<Font Name="Arial" Size="11" Style="0"/>
-						<LabelText><![CDATA[Ga naar info en documentatie]]></LabelText>
-					</ExtendedProperties>
-				</Control>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
 				<Group>
 					<Id>1704296286211</Id>
 					<Name><![CDATA[gr_radioButtons]]></Name>
-					<X>1700</X><Y>250</Y>
+					<X>260</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1850,46 +2025,6 @@ else{
 					<FillColor>-3092235</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
-				<Control Type="RadioButtons">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1714842507101</Id>
-					<Name><![CDATA[rb_chartPeriod_exclLive]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>410</X><Y>-60</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="105" Height="100">
-                        <EmbeddedIcon>false</EmbeddedIcon>	
-						<TextColor/>
-						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[int nb = rb_chartPeriod_exclLive.getValue();
-if( nb == 0){
-	v_selectedPeriod = JAAR;
-	rb_chartPeriod.setValue(0, false);
-}
-else if( nb == 1 ){
-	v_selectedPeriod = ZOMER;
-	rb_chartPeriod.setValue(1, false);
-}
-else if( nb == 2){
-	v_selectedPeriod = WINTER;
-	rb_chartPeriod.setValue(2, false);
-}
-f_showCorrectChart();]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
-						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
-						<Orientation>VERTICAL</Orientation>
-						<Button><![CDATA[Jaaroverzicht]]></Button>
-						<Button><![CDATA[Zomerweek]]></Button>
-						<Button><![CDATA[Winterweek]]></Button>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
 				<Control Type="RadioButtons">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1713190298462</Id>
@@ -1935,72 +2070,6 @@ f_showCorrectChart();]]></ActionCode>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
-				<Control Type="RadioButtons">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1713190816441</Id>
-					<Name><![CDATA[rb_chartPeriod]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>290</X><Y>-60</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="105" Height="100">
-                        <EmbeddedIcon>false</EmbeddedIcon>	
-						<TextColor/>
-						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[int nb = rb_chartPeriod.getValue();
-if( nb == 0){
-	v_selectedPeriod = JAAR;
-	rb_chartPeriod_exclLive.setValue(0, false);
-}
-else if( nb == 1 ){
-	v_selectedPeriod = ZOMER;
-	rb_chartPeriod_exclLive.setValue(1, false);
-}
-else if( nb == 2){
-	v_selectedPeriod = WINTER;
-	rb_chartPeriod_exclLive.setValue(2, false);
-}
-else if( nb == 3){
-	v_selectedPeriod = LIVE;
-}
-f_showCorrectChart();]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
-						<DefaultValueCode><![CDATA[3]]></DefaultValueCode>
-						<Orientation>VERTICAL</Orientation>
-						<Button><![CDATA[Jaaroverzicht]]></Button>
-						<Button><![CDATA[Zomerweek]]></Button>
-						<Button><![CDATA[Winterweek]]></Button>
-						<Button><![CDATA[Live simulatie]]></Button>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Text>
-					<Id>1713190818995</Id>
-					<Name><![CDATA[t_time]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>380</X><Y>-100</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Over welke periode?]]></Text>
-					<Font>
-						<Name>Yu Gothic UI</Name>
-						<Size>16</Size>
-						<Style>1</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
 				<Text>
 					<Id>1713190835374</Id>
 					<Name><![CDATA[t_time1]]></Name>
@@ -2025,31 +2094,10 @@ f_showCorrectChart();]]></ActionCode>
 			</Presentation>
 
 				</Group>
-				<Text>
-					<Id>1704365431628</Id>
-					<Name><![CDATA[text55]]></Name>
-					<X>80</X><Y>1000</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Legenda Colors]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>18</Size>
-						<Style>1</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
 				<Group>
 					<Id>1705661340955</Id>
 					<Name><![CDATA[gr_simulateYearScreen]]></Name>
-					<X>660</X><Y>1120</Y>
+					<X>720</X><Y>1120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -2151,7 +2199,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Group>
 					<Id>1705664555109</Id>
 					<Name><![CDATA[gr_loadIcon]]></Name>
-					<X>660</X><Y>1880</Y>
+					<X>720</X><Y>1880</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>false</PresentationFlag>
@@ -2249,13 +2297,67 @@ f_showCorrectChart();]]></ActionCode>
 			</Presentation>
 
 				</Group>
-			</Presentation>
-
-				</Level>
 				<EmbeddedObjectPresentation>
-					<Id>1714769685821</Id>
+					<Id>1725361939965</Id>
+					<Name><![CDATA[chartBalans_presentation]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>POSITION_WITH_OFFSET</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
+				<EmbeddedObjectPresentation>
+					<Id>1725361945731</Id>
+					<Name><![CDATA[chartNetbelasting_presentation]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>POSITION_WITH_OFFSET</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
+				<EmbeddedObjectPresentation>
+					<Id>1725361948805</Id>
+					<Name><![CDATA[chartSankey_presentation]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>POSITION_WITH_OFFSET</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
+				<EmbeddedObjectPresentation>
+					<Id>1725361644334</Id>
 					<Name><![CDATA[chartProfielen_presentation]]></Name>
-					<X>1440</X><Y>230</Y>
+					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2264,70 +2366,302 @@ f_showCorrectChart();]]></ActionCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
-					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+					<DrawingMode>POSITION_WITH_OFFSET</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
 					<Latitude>0.0</Latitude>
 					<Longitude>0.0</Longitude>
 				</EmbeddedObjectPresentation>
-				<EmbeddedObjectPresentation>
-					<Id>1714770450271</Id>
-					<Name><![CDATA[chartNetbelasting_presentation]]></Name>
-					<X>1440</X><Y>230</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+				<Rectangle>
+					<Id>1725359812943</Id>
+					<Name><![CDATA[rect_canvas]]></Name>
+					<X>460</X><Y>0</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>0</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>1460</Width>
+					<Height>980</Height>
 					<Rotation>0.0</Rotation>
-					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
-					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
-					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
-					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
-					<Latitude>0.0</Latitude>
-					<Longitude>0.0</Longitude>
-				</EmbeddedObjectPresentation>
-				<EmbeddedObjectPresentation>
-					<Id>1714770566606</Id>
-					<Name><![CDATA[chartBalans_presentation]]></Name>
-					<X>1440</X><Y>230</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Rectangle>
+					<Id>1725359826141</Id>
+					<Name><![CDATA[rect_canvas2]]></Name>
+					<X>0</X><Y>740</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>0</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>460</Width>
+					<Height>240</Height>
 					<Rotation>0.0</Rotation>
-					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
-					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
-					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
-					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
-					<Latitude>0.0</Latitude>
-					<Longitude>0.0</Longitude>
-				</EmbeddedObjectPresentation>
-				<EmbeddedObjectPresentation>
-					<Id>1714770587438</Id>
-					<Name><![CDATA[chartSankey_presentation]]></Name>
-					<X>1440</X><Y>230</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1713190818995</Id>
+					<Name><![CDATA[t_time]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>-570</X><Y>60</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
-					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
-					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
-					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
-					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
-					<Latitude>0.0</Latitude>
-					<Longitude>0.0</Longitude>
-				</EmbeddedObjectPresentation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Over welke periode?]]></Text>
+					<Font>
+						<Name>Yu Gothic UI</Name>
+						<Size>16</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>CENTER</Alignment>
+				</Text>
+				<Control Type="RadioButtons">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1713190816441</Id>
+					<Name><![CDATA[rb_chartPeriod]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>-660</X><Y>100</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="105" Height="100">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[int nb = rb_chartPeriod.getValue();
+if( nb == 0){
+	v_selectedPeriod = JAAR;
+	rb_chartPeriod_exclLive.setValue(0, false);
+}
+else if( nb == 1 ){
+	v_selectedPeriod = ZOMER;
+	rb_chartPeriod_exclLive.setValue(1, false);
+}
+else if( nb == 2){
+	v_selectedPeriod = WINTER;
+	rb_chartPeriod_exclLive.setValue(2, false);
+}
+else if( nb == 3){
+	v_selectedPeriod = LIVE;
+}
+f_showCorrectChart();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
+						<DefaultValueCode><![CDATA[3]]></DefaultValueCode>
+						<Orientation>VERTICAL</Orientation>
+						<Button><![CDATA[Jaaroverzicht]]></Button>
+						<Button><![CDATA[Zomerweek]]></Button>
+						<Button><![CDATA[Winterweek]]></Button>
+						<Button><![CDATA[Live simulatie]]></Button>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="RadioButtons">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1714842507101</Id>
+					<Name><![CDATA[rb_chartPeriod_exclLive]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>-540</X><Y>100</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="105" Height="100">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[int nb = rb_chartPeriod_exclLive.getValue();
+if( nb == 0){
+	v_selectedPeriod = JAAR;
+	rb_chartPeriod.setValue(0, false);
+}
+else if( nb == 1 ){
+	v_selectedPeriod = ZOMER;
+	rb_chartPeriod.setValue(1, false);
+}
+else if( nb == 2){
+	v_selectedPeriod = WINTER;
+	rb_chartPeriod.setValue(2, false);
+}
+f_showCorrectChart();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
+						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
+						<Orientation>VERTICAL</Orientation>
+						<Button><![CDATA[Jaaroverzicht]]></Button>
+						<Button><![CDATA[Zomerweek]]></Button>
+						<Button><![CDATA[Winterweek]]></Button>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1725360277747</Id>
+					<Name><![CDATA[txt_oldCode]]></Name>
+					<X>-660</X><Y>20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Old Code]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>16</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Rectangle>
+					<Id>1725359835396</Id>
+					<Name><![CDATA[rect_legendaColors]]></Name>
+					<X>0</X><Y>980</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>460</Width>
+					<Height>1020</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1704365431628</Id>
+					<Name><![CDATA[text55]]></Name>
+					<X>80</X><Y>1000</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Legenda Colors]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Rectangle>
+					<Id>1725361385851</Id>
+					<Name><![CDATA[rect_ResultsUICode]]></Name>
+					<X>500</X><Y>0</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>3</LineWidth>
+					<LineColor>-65536</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>700</Width>
+					<Height>480</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Rectangle>
+					<Id>1725361775577</Id>
+					<Name><![CDATA[rect_resultsUICodetxt]]></Name>
+					<X>500</X><Y>0</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>3</LineWidth>
+					<LineColor>-65536</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>160</Width>
+					<Height>60</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1725361721608</Id>
+					<Name><![CDATA[txt_resultsUICode]]></Name>
+					<X>520</X><Y>20</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[ResultsUI code]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+				</Level>
 			</Presentation>
 			<Areas>
 				<Area>
@@ -8669,6 +9003,106 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 			</ScaleRuler>
 			<CurrentLevel>1714743376219</CurrentLevel>
 			<ConnectionsId>1714743376213</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1725374150100</Id>
+					<Name><![CDATA[v_backgroundColor]]></Name>
+					<X>-250</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Color]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[null]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1725374163726</Id>
+					<Name><![CDATA[v_lineColor]]></Name>
+					<X>-250</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Color]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[lavender]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1725374174837</Id>
+					<Name><![CDATA[v_lineWidth]]></Name>
+					<X>-250</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1725374455136</Id>
+					<Name><![CDATA[v_lineStyle]]></Name>
+					<X>-250</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[LineStyle]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[LINE_STYLE_SOLID]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1725374312657</Id>
+					<Name><![CDATA[f_styleBackground]]></Name>
+					<X>-270</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[backgroundColor]]></Name>
+						<Type><![CDATA[Color]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineColor]]></Name>
+						<Type><![CDATA[Color]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineWidth]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[lineStyle]]></Name>
+						<Type><![CDATA[LineStyle]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Function used to style the background of the graphs
+
+v_backgroundColor = backgroundColor;
+
+v_lineColor = lineColor;
+
+v_lineWidth = lineWidth;
+
+v_lineStyle = lineStyle;]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1714743376213</Id>
@@ -8719,17 +9153,61 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>2</LineWidth>
-					<LineWidthCode><![CDATA[1]]></LineWidthCode>
+					<LineWidthCode><![CDATA[v_lineWidth]]></LineWidthCode>
 					<LineColor>-65536</LineColor>
-					<LineColorCode><![CDATA[lavender]]></LineColorCode>
+					<LineColorCode><![CDATA[v_lineColor]]></LineColorCode>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
 					<Height>740</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor/>
+					<FillColorCode><![CDATA[v_backgroundColor]]></FillColorCode>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
+				<Rectangle>
+					<Id>1725374727702</Id>
+					<Name><![CDATA[rect_backgroundStyling]]></Name>
+					<X>-310</X><Y>20</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>3</LineWidth>
+					<LineColor>-65536</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>240</Width>
+					<Height>140</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1725374488093</Id>
+					<Name><![CDATA[txt_backgroundStyling]]></Name>
+					<X>-280</X><Y>30</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Background styling]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -9577,7 +10055,9 @@ plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + m
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
+					<LineWidthCode><![CDATA[v_lineWidth]]></LineWidthCode>
 					<LineColor>-1644806</LineColor>
+					<LineColorCode><![CDATA[v_lineColor]]></LineColorCode>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
@@ -9586,6 +10066,21 @@ plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + m
 					<FillColor>-657931</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
+				<Group>
+					<Id>1725355105369</Id>
+					<Name><![CDATA[chartProfilesAgent]]></Name>
+					<X>1360</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+
+				</Group>
 				<Group>
 					<Id>1714834211049</Id>
 					<Name><![CDATA[group_year]]></Name>
@@ -10905,7 +11400,9 @@ return dataObject;]]></Body>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
+					<LineWidthCode><![CDATA[v_lineWidth]]></LineWidthCode>
 					<LineColor>-1644806</LineColor>
+					<LineColorCode><![CDATA[v_lineColor]]></LineColorCode>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
@@ -13989,7 +14486,9 @@ if (chartScale_MWh<10) {
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
 					<LineWidth>1</LineWidth>
+					<LineWidthCode><![CDATA[v_lineWidth]]></LineWidthCode>
 					<LineColor>-1644806</LineColor>
+					<LineColorCode><![CDATA[v_lineColor]]></LineColorCode>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
 					<Width>460</Width>
@@ -16230,11 +16729,6 @@ lokaal opgewekt]]></Text>
 		</Resource>
 		<Resource>
 			<Path><![CDATA[icon_loading.gif]]></Path>
-			<ReferencedFromUserCode>false</ReferencedFromUserCode>
-			<Location>FILE_SYSTEM</Location>
-		</Resource>
-		<Resource>
-			<Path><![CDATA[icon_i.png]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
