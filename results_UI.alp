@@ -896,21 +896,6 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1725368802847</Id>
-					<Name><![CDATA[v_individualGridConnections]]></Name>
-					<X>100</X><Y>360</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[ArrayList<AreaCollection>]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[new ArrayList<AreaCollection>();]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
 				<Variable Class="Parameter">
 					<Id>1715851154621</Id>
 					<Name><![CDATA[energyModel]]></Name>
@@ -931,6 +916,21 @@
 							<DelimeterType>NO_DELIMETER</DelimeterType>
 						</ParameterEditor>
 					</Properties>                 
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1725452042532</Id>
+					<Name><![CDATA[c_individualGridConnections]]></Name>
+					<X>100</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[AreaCollection]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
 				</Variable>
 			</Variables>
 			<Functions>
@@ -9094,34 +9094,45 @@ if (dataObject.v_dataHydrogenSupplyYear_kW != null) {
 					</Parameter>
 					<Body><![CDATA[group_year.setVisible(true);
 
-//Energy demand chart
-if (dataObject.v_dataElectricityBaseloadDemandYear_kW != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityBaseloadDemandYear_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
+if (uI_Results.c_individualGridConnections.size() == 0) {	
+	//Energy demand chart
+	if (dataObject.v_dataElectricityBaseloadDemandYear_kW != null) {
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityBaseloadDemandYear_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
+	}
+	if (dataObject.v_dataElectricityForHeatDemandYear_kW != null) {
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHeatDemandYear_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
+	}
+	if (dataObject.v_dataElectricityForTransportDemandYear_kW != null) { 
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
+	}
+	if (dataObject.v_dataElectricityForHydrogenDemandYear_kW != null) {
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+	}
+	if (dataObject.v_dataElectricityForStorageDemandYear_kW != null) {
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+	}
+	//Energy supply chart
+	if (dataObject.v_dataElectricityWindSupplyYear_kW != null) {
+	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityWindSupplyYear_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
+	}
+	if (dataObject.v_dataElectricityPVSupplyYear_kW != null) {
+		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
+	}
+	if (dataObject.v_dataElectricityStorageSupplyYear_kW != null ) {
+		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
+	}
+	if (dataObject.v_dataElectricityV2GSupplyYear_kW != null) {
+		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+	}
 }
-if (dataObject.v_dataElectricityForHeatDemandYear_kW != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHeatDemandYear_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
-}
-if (dataObject.v_dataElectricityForTransportDemandYear_kW != null) { 
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
-}
-if (dataObject.v_dataElectricityForHydrogenDemandYear_kW != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
-}
-if (dataObject.v_dataElectricityForStorageDemandYear_kW != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-}
-//Energy supply chart
-if (dataObject.v_dataElectricityWindSupplyYear_kW != null) {
-energySupplyChartYear.addDataSet(dataObject.v_dataElectricityWindSupplyYear_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-}
-if (dataObject.v_dataElectricityPVSupplyYear_kW != null) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-}
-if (dataObject.v_dataElectricityStorageSupplyYear_kW != null ) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-}
-if (dataObject.v_dataElectricityV2GSupplyYear_kW != null) {
-	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+else {
+	List<Color> colorSpectrum = new ArrayList<>();
+	for (int k = 0; k < uI_Results.c_individualGridConnections.size(); k++) {
+	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, uI_Results.c_individualGridConnections.size()));
+		AreaCollection AC = uI_Results.c_individualGridConnections.get(k);
+		energyDemandChartYear.addDataSet(AC.v_dataTotalElectricityDemandYear_kW, AC.p_name, colorSpectrum.get(k));
+		energySupplyChartYear.addDataSet(AC.v_dataTotalElectricitySupplyYear_kW, AC.p_name, colorSpectrum.get(k));	
+	}
 }]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
@@ -9174,7 +9185,8 @@ if (dataObject.v_dataHydrogenSupplyLiveWeek_kW != null) {
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[group_week.setVisible(true);
-if (uI_Results.v_individualGridConnections.size() == 0) {
+
+if (uI_Results.c_individualGridConnections.size() == 0) {
 	energyDemandChart.addDataSet(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandLiveWeek_kW, "Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandLiveWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
@@ -9188,9 +9200,12 @@ if (uI_Results.v_individualGridConnections.size() == 0) {
 	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
 }
 else {
-	for (AreaCollection AC : uI_Results.v_individualGridConnections) {			
-		energyDemandChart.addDataSet(AC.v_dataTotalElectricityDemandLiveWeek_kW, AC.p_name, lightBlue);
-		energySupplyChart.addDataSet(AC.v_dataTotalElectricitySupplyLiveWeek_kW, AC.p_name, uI_Results.v_PVElectricitySupplyColor);	
+	List<Color> colorSpectrum = new ArrayList<>();
+	for (int k = 0; k < uI_Results.c_individualGridConnections.size(); k++) {
+	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, uI_Results.c_individualGridConnections.size()));
+		AreaCollection AC = uI_Results.c_individualGridConnections.get(k);
+		energyDemandChart.addDataSet(AC.v_dataTotalElectricityDemandLiveWeek_kW, AC.p_name, colorSpectrum.get(k));
+		energySupplyChart.addDataSet(AC.v_dataTotalElectricitySupplyLiveWeek_kW, AC.p_name, colorSpectrum.get(k));	
 	}
 }]]></Body>
 				</Function>
@@ -9246,23 +9261,32 @@ if (dataObject.v_dataHydrogenSupplySummerWeek_kW != null) {
 					</Parameter>
 					<Body><![CDATA[group_week.setVisible(true);
 
-//Energy demand chart
-energyDemandChart.addDataSet(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
-energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandSummerWeek_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
-energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandSummerWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
-if (dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW != null) {
-	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+if (uI_Results.c_individualGridConnections.size() == 0) {	
+	//Energy demand chart
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandSummerWeek_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandSummerWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
+	if (dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW != null) {
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+	}
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandSummerWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+	
+	
+	//Energy supply chart
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplySummerWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplySummerWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageSupplySummerWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GSupplySummerWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
 }
-energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandSummerWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-
-
-//Energy supply chart
-energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplySummerWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplySummerWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageSupplySummerWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GSupplySummerWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-
-]]></Body>
+else {
+	List<Color> colorSpectrum = new ArrayList<>();
+	for (int k = 0; k < uI_Results.c_individualGridConnections.size(); k++) {
+	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, uI_Results.c_individualGridConnections.size()));
+		AreaCollection AC = uI_Results.c_individualGridConnections.get(k);
+		energyDemandChart.addDataSet(AC.v_dataTotalElectricityDemandSummerWeek_kW, AC.p_name, colorSpectrum.get(k));
+		energySupplyChart.addDataSet(AC.v_dataTotalElectricitySupplySummerWeek_kW, AC.p_name, colorSpectrum.get(k));	
+	}
+}]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -9340,23 +9364,32 @@ if (dataObject.v_dataHydrogenSupplyWinterWeek_kW != null) {
 					</Parameter>
 					<Body><![CDATA[group_week.setVisible(true);
 
-//Energy demand chart
-energyDemandChart.addDataSet(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
-energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandWinterWeek_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
-energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandWinterWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
-if (dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW != null) {
-	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+if (uI_Results.c_individualGridConnections.size() == 0) {	
+	//Energy demand chart
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandWinterWeek_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandWinterWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
+	if (dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW != null) {
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW,  "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+	}
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandWinterWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+	
+	
+	//Energy supply chart
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplyWinterWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplyWinterWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageSupplyWinterWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GSupplyWinterWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
 }
-energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandWinterWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-
-
-//Energy supply chart
-energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplyWinterWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplyWinterWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageSupplyWinterWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GSupplyWinterWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-
-]]></Body>
+else {
+	List<Color> colorSpectrum = new ArrayList<>();
+	for (int k = 0; k < uI_Results.c_individualGridConnections.size(); k++) {
+	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, uI_Results.c_individualGridConnections.size()));
+		AreaCollection AC = uI_Results.c_individualGridConnections.get(k);
+		energyDemandChart.addDataSet(AC.v_dataTotalElectricityDemandWinterWeek_kW, AC.p_name, colorSpectrum.get(k));
+		energySupplyChart.addDataSet(AC.v_dataTotalElectricitySupplyWinterWeek_kW, AC.p_name, colorSpectrum.get(k));	
+	}
+}]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -9632,7 +9665,7 @@ plot_netload_week.addDataSet(dataObject.v_dataElectricityDemandCapacityLiveWeek_
 plot_netload_week.addDataSet(dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.v_dataNetLoadLiveWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
 
-for (AreaCollection AC : uI_Results.v_individualGridConnections) {
+for (AreaCollection AC : uI_Results.c_individualGridConnections) {
 	plot_netload_week.addDataSet(AC.v_dataNetLoadLiveWeek_kW, AC.p_name, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 }
 
@@ -9685,7 +9718,7 @@ plot_netload_week.addDataSet(dataObject.v_dataElectricityDemandCapacitySummerWee
 plot_netload_week.addDataSet(dataObject.v_dataElectricitySupplyCapacitySummerWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.v_dataNetLoadSummerWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
 
-for (AreaCollection AC : uI_Results.v_individualGridConnections) {
+for (AreaCollection AC : uI_Results.c_individualGridConnections) {
 	plot_netload_week.addDataSet(AC.v_dataNetLoadSummerWeek_kW, AC.p_name, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 }
 
@@ -9713,7 +9746,7 @@ plot_netload_week.addDataSet(dataObject.v_dataElectricityDemandCapacityWinterWee
 plot_netload_week.addDataSet(dataObject.v_dataElectricitySupplyCapacityWinterWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.v_dataNetLoadWinterWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
 
-for (AreaCollection AC : uI_Results.v_individualGridConnections) {
+for (AreaCollection AC : uI_Results.c_individualGridConnections) {
 	plot_netload_week.addDataSet(AC.v_dataNetLoadWinterWeek_kW, AC.p_name, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 }
 
