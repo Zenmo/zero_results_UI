@@ -14,36 +14,8 @@
 	<OptionLists>
 		<OptionList>
 			<Id>1705652538235</Id>
-			<Name><![CDATA[AreaTypes]]></Name>
+			<Name><![CDATA[OL_UNUSED1]]></Name>
 			<ExcludeFromBuild>true</ExcludeFromBuild>
-			<Option>
-				<Id>1705652538236</Id>
-				<Name><![CDATA[RESREGION]]></Name>
-			</Option>
-			<Option>
-				<Id>1705652538237</Id>
-				<Name><![CDATA[NEIGHBORHOOD]]></Name>
-			</Option>
-			<Option>
-				<Id>1705652538238</Id>
-				<Name><![CDATA[HVMVTRANSFORMER]]></Name>
-			</Option>
-			<Option>
-				<Id>1705652538239</Id>
-				<Name><![CDATA[BUSINESSPARK]]></Name>
-			</Option>
-			<Option>
-				<Id>1705652538240</Id>
-				<Name><![CDATA[COLLECTIVE]]></Name>
-			</Option>
-			<Option>
-				<Id>1705652538241</Id>
-				<Name><![CDATA[TRANSFORMER]]></Name>
-			</Option>
-			<Option>
-				<Id>1705652538242</Id>
-				<Name><![CDATA[COMPANY]]></Name>
-			</Option>
 		</OptionList>
 		<OptionList>
 			<Id>1714740441860</Id>
