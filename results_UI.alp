@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021042" AlpVersion="8.9.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021040" AlpVersion="8.9.1">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -198,14 +198,14 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[silver]]></Code>
+							<Code><![CDATA[new Color(212, 186, 157)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1704365431636</Id>
 					<Name><![CDATA[v_ElektrischeWPColor]]></Name>
-					<X>80</X><Y>1520</Y>
+					<X>80</X><Y>1540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -220,7 +220,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431638</Id>
 					<Name><![CDATA[v_HybrideWPColor]]></Name>
-					<X>81</X><Y>1540</Y>
+					<X>81</X><Y>1560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -235,7 +235,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431640</Id>
 					<Name><![CDATA[v_MTDistrictHeatingColor]]></Name>
-					<X>80</X><Y>1580</Y>
+					<X>80</X><Y>1600</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -250,7 +250,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431642</Id>
 					<Name><![CDATA[v_LTDistrictHeatingColor]]></Name>
-					<X>80.5</X><Y>1599</Y>
+					<X>80.5</X><Y>1619</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -265,7 +265,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431644</Id>
 					<Name><![CDATA[v_GreenGasBoilerColor]]></Name>
-					<X>81.5</X><Y>1619</Y>
+					<X>81.5</X><Y>1639</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -280,7 +280,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431646</Id>
 					<Name><![CDATA[v_uitgeslotenColor]]></Name>
-					<X>81.5</X><Y>1639</Y>
+					<X>81.5</X><Y>1659</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -295,7 +295,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431648</Id>
 					<Name><![CDATA[v_energieLabelAColor]]></Name>
-					<X>81.5</X><Y>1665.5</Y>
+					<X>81.5</X><Y>1685.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -310,7 +310,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431650</Id>
 					<Name><![CDATA[v_energieLabelBColor]]></Name>
-					<X>81.5</X><Y>1685.5</Y>
+					<X>81.5</X><Y>1705.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -325,7 +325,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431652</Id>
 					<Name><![CDATA[v_energieLabelCColor]]></Name>
-					<X>82.5</X><Y>1705.5</Y>
+					<X>82.5</X><Y>1725.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -340,7 +340,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431654</Id>
 					<Name><![CDATA[v_energieLabelDColor]]></Name>
-					<X>82.5</X><Y>1725.5</Y>
+					<X>82.5</X><Y>1745.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -355,7 +355,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431656</Id>
 					<Name><![CDATA[v_energieLabelEColor]]></Name>
-					<X>82</X><Y>1744.5</Y>
+					<X>82</X><Y>1764.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -370,7 +370,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431658</Id>
 					<Name><![CDATA[v_energieLabelFColor]]></Name>
-					<X>83</X><Y>1764.5</Y>
+					<X>83</X><Y>1784.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -385,7 +385,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431660</Id>
 					<Name><![CDATA[v_energieLabelOnbekendColor]]></Name>
-					<X>83</X><Y>1816.5</Y>
+					<X>83</X><Y>1836.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -400,7 +400,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431662</Id>
 					<Name><![CDATA[v_energieLabelGColor]]></Name>
-					<X>83</X><Y>1785</Y>
+					<X>83</X><Y>1805</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -430,7 +430,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431666</Id>
 					<Name><![CDATA[v_highlightParticipantsColor]]></Name>
-					<X>83</X><Y>1840</Y>
+					<X>83</X><Y>1860</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -468,7 +468,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[indigo]]></Code>
+							<Code><![CDATA[new Color(127, 127, 230)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -498,7 +498,7 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[violetRed]]></Code>
+							<Code><![CDATA[new Color(194, 65, 194)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -520,7 +520,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431678</Id>
 					<Name><![CDATA[v_PVElectricitySupplyColor]]></Name>
-					<X>80</X><Y>1290</Y>
+					<X>80</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -535,7 +535,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431680</Id>
 					<Name><![CDATA[v_windElectricitySupplyColor]]></Name>
-					<X>80</X><Y>1270</Y>
+					<X>80</X><Y>1290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -550,7 +550,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431682</Id>
 					<Name><![CDATA[v_storageElectricitySupplyColor]]></Name>
-					<X>80</X><Y>1310</Y>
+					<X>80</X><Y>1330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -565,7 +565,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704365431684</Id>
 					<Name><![CDATA[v_V2GElectricitySupplyColor]]></Name>
-					<X>80</X><Y>1330</Y>
+					<X>80</X><Y>1350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -588,14 +588,14 @@
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
-							<Code><![CDATA[darkGray]]></Code>
+							<Code><![CDATA[new Color(132, 132, 132)]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1704366186425</Id>
 					<Name><![CDATA[v_naturalGasSupplyColor]]></Name>
-					<X>80</X><Y>1230</Y>
+					<X>80</X><Y>1250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -610,7 +610,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704366186427</Id>
 					<Name><![CDATA[v_petroleumProductsSupplyColor]]></Name>
-					<X>80</X><Y>1210</Y>
+					<X>80</X><Y>1230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -625,7 +625,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1704366198509</Id>
 					<Name><![CDATA[v_districtHeatHeatSupplyColor]]></Name>
-					<X>80</X><Y>1250</Y>
+					<X>80</X><Y>1270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -640,7 +640,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1705603337539</Id>
 					<Name><![CDATA[v_area]]></Name>
-					<X>540</X><Y>140</Y>
+					<X>540</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -652,7 +652,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1706006311653</Id>
 					<Name><![CDATA[v_energyDemandColor]]></Name>
-					<X>80</X><Y>1360</Y>
+					<X>80</X><Y>1380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -667,7 +667,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1706294259689</Id>
 					<Name><![CDATA[v_heatPumpHeatSupplyColor]]></Name>
-					<X>80</X><Y>1460</Y>
+					<X>80</X><Y>1480</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -682,7 +682,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1706294446635</Id>
 					<Name><![CDATA[v_electricityDemandColor]]></Name>
-					<X>80</X><Y>1380</Y>
+					<X>80</X><Y>1400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -697,7 +697,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1706294463694</Id>
 					<Name><![CDATA[v_hydrogenDemandColor]]></Name>
-					<X>80</X><Y>1420</Y>
+					<X>80</X><Y>1440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -712,7 +712,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1708448119976</Id>
 					<Name><![CDATA[v_gridConnection]]></Name>
-					<X>540</X><Y>160</Y>
+					<X>540</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -724,7 +724,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1708448128397</Id>
 					<Name><![CDATA[v_collective]]></Name>
-					<X>540</X><Y>180</Y>
+					<X>540</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -736,7 +736,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1712585211623</Id>
 					<Name><![CDATA[v_trafo]]></Name>
-					<X>540</X><Y>200</Y>
+					<X>540</X><Y>220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -748,7 +748,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1712656923734</Id>
 					<Name><![CDATA[v_electricitySupplyColor]]></Name>
-					<X>80</X><Y>1400</Y>
+					<X>80</X><Y>1420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -763,7 +763,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714378242039</Id>
 					<Name><![CDATA[v_electricityCapacityColor]]></Name>
-					<X>80</X><Y>1490</Y>
+					<X>80</X><Y>1510</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -778,7 +778,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714855681842</Id>
 					<Name><![CDATA[v_selectedObjectType]]></Name>
-					<X>540</X><Y>240</Y>
+					<X>540</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -793,7 +793,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714895695214</Id>
 					<Name><![CDATA[v_selectedChartType]]></Name>
-					<X>540</X><Y>260</Y>
+					<X>540</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -809,7 +809,7 @@
 					<Id>1714895704962</Id>
 					<Name><![CDATA[v_selectedPeriod]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>280</Y>
+					<X>540</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -824,7 +824,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714990064174</Id>
 					<Name><![CDATA[v_selfConsumedElectricityColor]]></Name>
-					<X>83</X><Y>1920</Y>
+					<X>83</X><Y>1940</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -839,7 +839,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714990067397</Id>
 					<Name><![CDATA[v_importedEnergyColor]]></Name>
-					<X>83</X><Y>1960</Y>
+					<X>83</X><Y>1980</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -854,7 +854,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714990072472</Id>
 					<Name><![CDATA[v_exportedEnergyColor]]></Name>
-					<X>83</X><Y>1980</Y>
+					<X>83</X><Y>2000</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -869,7 +869,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714992076893</Id>
 					<Name><![CDATA[v_selfConsumedEnergyColor]]></Name>
-					<X>83</X><Y>1940</Y>
+					<X>83</X><Y>1960</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -884,7 +884,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1715676160870</Id>
 					<Name><![CDATA[v_hydrogenSupplyColor]]></Name>
-					<X>80</X><Y>1440</Y>
+					<X>80</X><Y>1460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -893,6 +893,21 @@
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[dodgerBlue]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1726239559196</Id>
+					<Name><![CDATA[v_electricityForCookingDemandColor]]></Name>
+					<X>80</X><Y>1200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[Color]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[peachPuff]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -910,6 +925,27 @@
 						<SdArray>false</SdArray>
 						<ParameterEditor>
 							<Id>1715851154619</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1726252887036</Id>
+					<Name><![CDATA[p_legendsScope]]></Name>
+					<X>540</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1726252887034</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -1147,7 +1183,7 @@ else{
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714835206522</Id>
 					<Name><![CDATA[f_initialize]]></Name>
-					<X>540</X><Y>320</Y>
+					<X>920</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1368,7 +1404,7 @@ else{
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725370602118</Id>
 					<Name><![CDATA[f_setRadioButtons]]></Name>
-					<X>540</X><Y>430</Y>
+					<X>920</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1405,7 +1441,7 @@ gr_radioButtons.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725371353897</Id>
 					<Name><![CDATA[f_setChartSankey_Presentation]]></Name>
-					<X>540</X><Y>410</Y>
+					<X>920</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1442,7 +1478,7 @@ chartSankey_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725371355774</Id>
 					<Name><![CDATA[f_setChartGridLoad_Presentation]]></Name>
-					<X>540</X><Y>390</Y>
+					<X>920</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1479,7 +1515,7 @@ chartNetbelasting_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725371358501</Id>
 					<Name><![CDATA[f_setChartBalance_Presentation]]></Name>
-					<X>540</X><Y>370</Y>
+					<X>920</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1516,7 +1552,7 @@ chartBalans_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725371361557</Id>
 					<Name><![CDATA[f_setChartProfiles_Presentation]]></Name>
-					<X>540</X><Y>350</Y>
+					<X>920</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1569,7 +1605,7 @@ chartSankey.f_setSankey();]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725374888930</Id>
 					<Name><![CDATA[f_styleAllCharts]]></Name>
-					<X>540</X><Y>460</Y>
+					<X>920</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1601,7 +1637,7 @@ chartSankey.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725375062400</Id>
 					<Name><![CDATA[f_styleRadioButtons]]></Name>
-					<X>700</X><Y>460</Y>
+					<X>1080</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2681,6 +2717,28 @@ f_showCorrectChart();]]></ActionCode>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Rectangle>
+					<Id>1726338589371</Id>
+					<Name><![CDATA[rectangle]]></Name>
+					<X>350</X><Y>1020</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>80</Width>
+					<Height>60</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-65281</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
 			</Presentation>
 
 				</Level>
@@ -6167,6 +6225,18 @@ f_showCorrectChart();]]></ActionCode>
 						<Type><![CDATA[DataSet]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1726224122123</Id>
+					<Name><![CDATA[v_dataElectricityForCookingDemandLiveWeek_kW]]></Name>
+					<X>-270</X><Y>60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705600400172</Id>
 					<Name><![CDATA[p_areaType]]></Name>
@@ -9453,7 +9523,8 @@ public ShapeGroup getChartGroupWeek() {
 public ShapeGroup getChartGroupYear() {
 	return this.group_year;
 }]]></AdditionalClassCode>
-			<Import><![CDATA[import com.querydsl.core.group.Group;]]></Import>
+			<Import><![CDATA[import com.querydsl.core.group.Group;
+]]></Import>
 			<ExtendsReference>
 				<PackageName><![CDATA[digital_twin_results]]></PackageName>
 				<ClassName><![CDATA[ChartArea]]></ClassName>
@@ -9661,20 +9732,28 @@ else {
 if (dataObject.v_dataNaturalGasDemandLiveWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataNaturalGasDemandLiveWeek_kW, "Gas concumptie", uI_Results.v_naturalGasDemandColor);
 }
-if (dataObject.v_dataDistrictHeatDemandLiveWeek_kW != null) {
-	energyDemandChart.addDataSet(dataObject.v_dataDistrictHeatDemandLiveWeek_kW, "Warmte net afname", uI_Results.v_districtHeatDemandColor);
-}
+
 
 if (dataObject.v_dataPetroleumProductsSupplyLiveWeek_kW != null) {
 	energySupplyChart.addDataSet(dataObject.v_dataPetroleumProductsSupplyLiveWeek_kW, "Productie brandstof", uI_Results.v_petroleumProductsSupplyColor);
 }
-if (dataObject.v_dataDistrictHeatSupplyLiveWeek_kW != null) {
-	energySupplyChart.addDataSet(dataObject.v_dataDistrictHeatSupplyLiveWeek_kW, "Warmtenet invoer", uI_Results.v_districtHeatHeatSupplyColor);
+
+
+if ( uI_Results.p_legendsScope == 0){
+	if (dataObject.v_dataDistrictHeatSupplyLiveWeek_kW != null && dataObject.v_dataDistrictHeatSupplyLiveWeek_kW.getYMean() != 0  ) {
+		energySupplyChart.addDataSet(dataObject.v_dataDistrictHeatSupplyLiveWeek_kW, "Warmtenet invoer", uI_Results.v_districtHeatHeatSupplyColor);
+	}
+	if (dataObject.v_dataDistrictHeatDemandLiveWeek_kW != null && dataObject.v_dataDistrictHeatDemandLiveWeek_kW.getYMean() != 0 ) {
+		energyDemandChart.addDataSet(dataObject.v_dataDistrictHeatDemandLiveWeek_kW, "Warmte net afname", uI_Results.v_districtHeatDemandColor);
+	}
+}
+else if (uI_Results.p_legendsScope == 1){
+	if (dataObject.v_dataHydrogenSupplyLiveWeek_kW != null) {
+		energySupplyChart.addDataSet(dataObject.v_dataHydrogenSupplyLiveWeek_kW, "Opwek Waterstof", uI_Results.v_hydrogenSupplyColor);
+	}
 }
 
-if (dataObject.v_dataHydrogenSupplyLiveWeek_kW != null) {
-	energySupplyChart.addDataSet(dataObject.v_dataHydrogenSupplyLiveWeek_kW, "Opwek Waterstof", uI_Results.v_hydrogenSupplyColor);
-}]]></Body>
+]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -9697,12 +9776,18 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandLiveWeek_kW, "Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandLiveWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandLiveWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-	if (dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW != null) {
-		energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
-	}
 	energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplyLiveWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplyLiveWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+	
+	if ( uI_Results.p_legendsScope == 0){
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandLiveWeek_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
+		energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+	}
+	else if ( uI_Results.p_legendsScope == 1){
+		if (dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW != null) {
+			energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+		}
+	}
 	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
 }
 else {
