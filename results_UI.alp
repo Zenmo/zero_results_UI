@@ -11376,12 +11376,16 @@ svgImgJfree.setPos(svgImgJfree.getX()-200, svgImgJfree.getY()-40);
 
 double selfConsumedEnergy_MWh = area.v_annualSelfConsumedEnergy_MWh;
 double importE_MWh = area.v_annualElectricityImport_MWh;
+double importEExcess_MWh = area.v_annualExcessImport_MWh;
 double importG_MWh = area.v_annualNaturalGasDemand_MWh;
 double importF_MWh = area.v_annualPetroleumProductsDemand_MWh;
 double importH_MWh = area.v_annualHydrogenDemand_MWh;
 double exportH_MWh = area.v_annualHydrogenSupply_MWh;
 double exportE_MWh = area.v_annualExportedEnergy_MWh - exportH_MWh;
+double exportEExcess_MWh = area.v_annualExcessExport_MWh;
 double heatProduced_MWh = 0;
+
+traceln("importEExcess_MWh: " + importEExcess_MWh);
 
 flowDataset = new DefaultFlowDataset();
 
@@ -11403,10 +11407,15 @@ if (heatProduced_MWh > 0.001) {
 	if (selfConsumedEnergy_MWh > 0.001) {
 		flowDataset.setFlow(0, "eigen opwek", "verbruik", (selfConsumedEnergy_MWh));
 	}
-	if ( exportE_MWh > 0.001) {
+	if ( exportE_MWh - exportEExcess_MWh > 0.001) {
 		NodeKey exportKey = new NodeKey<>(1,"export stroom");
 		flowPlot.setNodeFillColor(exportKey, darkBlue);
-		flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh);
+		flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh - exportEExcess_MWh);
+	}
+	if ( exportEExcess_MWh > 0.001) {
+		NodeKey excessExportKey = new NodeKey<>(1,"export stroom buiten capaciteit");
+		flowPlot.setNodeFillColor(excessExportKey, purple);
+		flowDataset.setFlow(0, "eigen opwek", "export stroom buiten capaciteit", exportEExcess_MWh);
 	}
 	if (selfConsumedEnergy_MWh > 0.001 ||  exportE_MWh > 0.001) {
 		NodeKey key2 = new NodeKey<>(0, "eigen opwek");
@@ -11415,10 +11424,15 @@ if (heatProduced_MWh > 0.001) {
 }
 //flowDataset.setFlow(0, "import", "export", 0);
 
-if (importE_MWh > 0.001) {
-	flowDataset.setFlow(0, "import stroom", "verbruik", importE_MWh);
+if (importE_MWh - importEExcess_MWh > 0.001) {
+	flowDataset.setFlow(0, "import stroom", "verbruik", importE_MWh - importEExcess_MWh);
 	NodeKey key3 = new NodeKey<>(0, "import stroom");
 	flowPlot.setNodeFillColor(key3, red);
+}
+if (importEExcess_MWh > 0.001) {
+	flowDataset.setFlow(0, "import stroom buiten capaciteit", "verbruik", importEExcess_MWh);
+	NodeKey key8 = new NodeKey<>(0, "import stroom buiten capaciteit");
+	flowPlot.setNodeFillColor(key8, purple);
 }
 if (importG_MWh > 0.001 ) {
 	flowDataset.setFlow(0, "import gas", "verbruik", importG_MWh);	
