@@ -18030,7 +18030,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[Aandeel waterstof]]></Text>
 					<Font>
 						<Name>Calibri</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18051,7 +18051,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[10.0 %]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18316,7 +18316,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[10.0 %]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18337,7 +18337,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[Aandeel gas:]]></Text>
 					<Font>
 						<Name>Calibri</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18481,7 +18481,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[10.0 %]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18563,7 +18563,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[Aandeel elektriciteit]]></Text>
 					<Font>
 						<Name>Calibri</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18707,7 +18707,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[10.0 %]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18728,7 +18728,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[Aandeel brandstof:]]></Text>
 					<Font>
 						<Name>Calibri</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18933,7 +18933,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[Totale opwek:]]></Text>
 					<Font>
 						<Name>Calibri</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18954,7 +18954,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[1000 MWh]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>24</Size>
+						<Size>20</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
