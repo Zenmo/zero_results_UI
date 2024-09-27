@@ -9491,7 +9491,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 				<Text>
 					<Id>1716386068349</Id>
 					<Name><![CDATA[t_yearProfile_ylabel]]></Name>
-					<X>-235</X><Y>-100</Y>
+					<X>-235</X><Y>-145</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9501,7 +9501,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Z>0</Z>
 					<Rotation>90.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Vermogen [kW]]]></Text>
+					<Text><![CDATA[Gemiddeld Vermogen per dag [kW]]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>12</Size>
@@ -9512,7 +9512,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 				<Text>
 					<Id>1716386068351</Id>
 					<Name><![CDATA[t_yearProfile_ylabel1]]></Name>
-					<X>-235</X><Y>180</Y>
+					<X>-235</X><Y>135</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9522,7 +9522,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Z>0</Z>
 					<Rotation>90.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Vermogen [kW]]]></Text>
+					<Text><![CDATA[Gemiddeld Vermogen per dag [kW]]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>12</Size>
@@ -11412,7 +11412,7 @@ if (heatProduced_MWh > 0.001) {
 		flowPlot.setNodeFillColor(exportKey, darkBlue);
 		flowDataset.setFlow(0, "eigen opwek", "export stroom", exportE_MWh - exportEExcess_MWh);
 	}
-	if ( exportEExcess_MWh > 0.001) {
+	if ( exportEExcess_MWh > 0.01) {
 		NodeKey excessExportKey = new NodeKey<>(1,"export stroom buiten capaciteit");
 		flowPlot.setNodeFillColor(excessExportKey, purple);
 		flowDataset.setFlow(0, "eigen opwek", "export stroom buiten capaciteit", exportEExcess_MWh);
@@ -11429,7 +11429,7 @@ if (importE_MWh - importEExcess_MWh > 0.001) {
 	NodeKey key3 = new NodeKey<>(0, "import stroom");
 	flowPlot.setNodeFillColor(key3, red);
 }
-if (importEExcess_MWh > 0.001) {
+if (importEExcess_MWh > 0.01) {
 	flowDataset.setFlow(0, "import stroom buiten capaciteit", "verbruik", importEExcess_MWh);
 	NodeKey key8 = new NodeKey<>(0, "import stroom buiten capaciteit");
 	flowPlot.setNodeFillColor(key8, purple);
