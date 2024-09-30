@@ -78,6 +78,9 @@
 		<ActiveObjectClass>
 			<Id>1704197366550</Id>
 			<Name><![CDATA[UI_Results]]></Name>
+			<AdditionalClassCode><![CDATA[public ShapeCheckBox getCheckbox_KPISummary(){
+	return checkbox_KPISummary;
+}]]></AdditionalClassCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1704197366556</Id>
@@ -154,7 +157,7 @@
 			<ScaleRuler>
 				<Id>1704197366553</Id>
 				<Name><![CDATA[scale]]></Name>
-				<X>0</X><Y>-150</Y>
+				<X>0</X><Y>-220</Y>
 				<PublicFlag>false</PublicFlag>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
@@ -776,7 +779,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714895695214</Id>
 					<Name><![CDATA[v_selectedChartType]]></Name>
-					<X>540</X><Y>280</Y>
+					<X>540</X><Y>310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -792,7 +795,7 @@
 					<Id>1714895704962</Id>
 					<Name><![CDATA[v_selectedPeriod]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>300</Y>
+					<X>-470</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -891,6 +894,21 @@
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[peachPuff]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1727706137865</Id>
+					<Name><![CDATA[b_showKPISummary]]></Name>
+					<X>920</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -1227,6 +1245,12 @@ f_initializePreviousTotals();]]></Body>
 chartBalans_presentation.setVisible(false);
 chartNetbelasting_presentation.setVisible(false);
 chartSankey_presentation.setVisible(false);
+chartKPISummary_presentation.setVisible(false);
+
+if(b_showKPISummary){
+	chartKPISummary_presentation.setVisible(true);
+	chartKPISummary.f_setKPISummaryChart();
+}
 
 switch (v_selectedChartType) {
 	case PROFIEL:
@@ -1621,7 +1645,11 @@ chartProfielen_presentation.setVisible(visible);]]></Body>
 chartProfielen.f_setCharts();
 chartBalans.f_setCharts();
 chartNetbelasting.f_setBelastingPlots();
-chartSankey.f_setSankey();]]></Body>
+chartSankey.f_setSankey();
+
+if(b_showKPISummary){
+	chartKPISummary.f_setKPISummaryChart();
+}]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -1694,7 +1722,7 @@ rect_resultsMenuLarge.setLineStyle(lineStyle);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1726828282517</Id>
 					<Name><![CDATA[f_setChartKPISummary]]></Name>
-					<X>540</X><Y>480</Y>
+					<X>920</X><Y>430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1731,7 +1759,7 @@ chartKPISummary_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[AreaCollection]]></ReturnType>
 					<Id>1727083916594</Id>
 					<Name><![CDATA[f_getDataObject]]></Name>
-					<X>540</X><Y>320</Y>
+					<X>540</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1760,7 +1788,7 @@ return dataObject;]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1727103171052</Id>
 					<Name><![CDATA[f_initializePreviousTotals]]></Name>
-					<X>550</X><Y>370</Y>
+					<X>540</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1780,12 +1808,41 @@ for(GridConnection GC : energyModel.f_getPausedGridConnections()){
 	c_previousTotals_GC.put(GC, previousTotals);
 }]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1727708702065</Id>
+					<Name><![CDATA[f_setSelectedChartType]]></Name>
+					<X>540</X><Y>290</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[SelectedChartTypeValue]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[switch(SelectedChartTypeValue){
+	case 0:
+		v_selectedChartType = PROFIEL;
+		break;
+	case 1:
+		v_selectedChartType = DIAGRAM;
+		break;
+	case 2:
+		v_selectedChartType = BELASTING;
+		break;
+	case 3:
+		v_selectedChartType = SANKEY;
+		break;
+}]]></Body>
+				</Function>
 			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1704197366551</Id>
 					<Name><![CDATA[connections]]></Name>
-					<X>50</X><Y>-50</Y>
+					<X>20</X><Y>-170</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2270,26 +2327,16 @@ for(GridConnection GC : energyModel.f_getPausedGridConnections()){
                         <EmbeddedIcon>false</EmbeddedIcon>	
 						<TextColor/>
 						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[//Hide the 'live simulatie' optie from the radio button in case it is not applicable
-if (rb_chartType.getValue() == 0){
-	//rb_chartPeriod.setVisible(true);
-	//rb_chartPeriod_exclLive.setVisible(false);
-	v_selectedChartType = PROFIEL;
-}
-else{
-	//rb_chartPeriod.setVisible(false);
-	//rb_chartPeriod_exclLive.setVisible(true);
-	if( rb_chartType.getValue() == 1){
-		v_selectedChartType = DIAGRAM;
-	}
-	else if( rb_chartType.getValue() == 2){
-		v_selectedChartType = BELASTING;
-	}
-	else if( rb_chartType.getValue() == 3){
-		v_selectedChartType = SANKEY;
-	}
-}
-f_showCorrectChart();]]></ActionCode>
+						<ActionCode><![CDATA[//Determine selected chart type
+f_setSelectedChartType(rb_chartType.getValue());
+
+//Set selected chart
+f_showCorrectChart();
+
+//Set KPI invisible after using these buttons
+if(b_showKPISummary){
+	checkbox_KPISummary.setSelected(false, true);
+}]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
@@ -2937,6 +2984,33 @@ f_showCorrectChart();]]></ActionCode>
 					<FillColor>-65281</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
+				<Control Type="CheckBox">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1727707192290</Id>
+					<Name><![CDATA[checkbox_KPISummary]]></Name>
+					<X>10</X><Y>-30</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="120" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>true</Enabled>
+						<ActionCode><![CDATA[if(b_showKPISummary){
+	chartKPISummary.f_setKPISummaryChart();
+}
+f_setChartKPISummary(null, null, b_showKPISummary);
+]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[Toon samenvatting]]></LabelText>
+						<LinkTo>true</LinkTo>
+						<Link>b_showKPISummary</Link>
+	 				</ExtendedProperties>
+				</Control>
 			</Presentation>
 
 				</Level>
@@ -17782,7 +17856,7 @@ line_gridload.setVisible(false);]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<OnClickCode><![CDATA[uI_Results.f_setChartKPISummary(null, null, false);]]></OnClickCode>
+					<OnClickCode><![CDATA[uI_Results.checkbox_KPISummary.setSelected(false, true);]]></OnClickCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
