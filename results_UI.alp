@@ -11468,7 +11468,7 @@ flowChart.setTitle("Energiestromen");
 flowChart.setAntiAlias(true);
 // Increasing NodeMargin is a crude way to prevent overlapping text
 flowPlot.setNodeMargin(0.05);
-flowPlot.setDefaultNodeLabelFont(new Font("SansSerif", Font.BOLD, 18));
+flowPlot.setDefaultNodeLabelFont(new Font("SansSerif", Font.BOLD, 16));
 //flowPlot.setDefaultNodeLabelPaint(darkBlue);
 flowPlot.setDataset(flowDataset);	
 int widthOfSVG = 400;
