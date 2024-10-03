@@ -17280,6 +17280,7 @@ lokaal opgewekt]]></Text>
 public void f_styleBackground(Color backgroundColor, Color lineColor, Double lineWidth, LineStyle lineStyle) {
     f_styleBackground_override(backgroundColor, lineColor, lineWidth, lineStyle);
 }]]></AdditionalClassCode>
+			<Import><![CDATA[import java.text.DecimalFormat;]]></Import>
 			<ExtendsReference>
 				<PackageName><![CDATA[digital_twin_results]]></PackageName>
 				<ClassName><![CDATA[ChartArea]]></ClassName>
@@ -17502,18 +17503,36 @@ else{
 
 
 //Set new values text
-t_totalconsumption_MWh.setText(roundToInt(totalEnergyConsumption_MWh));
-t_totalImport_MWh.setText(roundToInt(totalImport_MWh));
-t_totalExport_MWh.setText(roundToInt(totalExport_MWh) + " MWh");
+DecimalFormat df = new DecimalFormat("0.0");
 
-t_elecConsumption_MWh.setText(roundToInt(elecConsumption_pct) + " %");
-t_gasconsumption_MWh.setText(roundToInt(gasConsumption_pct) + " %");
-t_FFconsumption_MWh.setText(roundToInt(FFconsumption_pct) + " %");
-t_h2consumption_MWh.setText(roundToInt(h2consumption_pct) + " %");
-t_production_MWh.setText(roundToInt(production_MWh) + " MWh");
+if(roundToInt(totalEnergyConsumption_MWh) >= 1000){
+	t_totalconsumption_MWh.setText(df.format(totalEnergyConsumption_MWh/1000));
+	t_totalImport_MWh.setText(df.format(totalImport_MWh/1000));
+	t_totalExport_MWh.setText(df.format(totalExport_MWh/1000));
+	t_totals.setText("Jaar totalen energie (GWh)");
+}
+else{
+	t_totalconsumption_MWh.setText(df.format(totalEnergyConsumption_MWh));
+	t_totalImport_MWh.setText(df.format(totalImport_MWh));
+	t_totalExport_MWh.setText(df.format(totalExport_MWh));
+	t_totals.setText("Jaar totalen energie (MWh)");
+}
 
-t_KPIselfsufficiency_pct.setText(roundToInt(KPIselfsufficiency_pct) + "%");
-t_KPIOverloadHours_pct.setText(roundToInt(KPIOverloadHours_pct) + "%");
+t_elecConsumption_MWh.setText(df.format(elecConsumption_pct) + " %");
+t_gasconsumption_MWh.setText(df.format(gasConsumption_pct) + " %");
+t_FFconsumption_MWh.setText(df.format(FFconsumption_pct) + " %");
+t_h2consumption_MWh.setText(df.format(h2consumption_pct) + " %");
+
+//Convert to GWh when over 1000 MWh
+if(roundToInt(production_MWh) >= 1000){
+	t_production_MWh.setText(df.format(production_MWh/1000) + " GWh");
+}
+else{
+	t_production_MWh.setText(df.format(production_MWh) + " MWh");
+}
+
+t_KPIselfsufficiency_pct.setText(df.format(KPIselfsufficiency_pct) + "%");
+t_KPIOverloadHours_pct.setText(df.format(KPIOverloadHours_pct) + "%");
 
 
 //Calculate and set previous values (if they exist) + arrows and styling
@@ -17541,19 +17560,33 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	previousKPIOverloadHours_pct = (area.v_previousTotals.getPreviousOverloadDurationDelivery_hr() + area.v_previousTotals.getPreviousOverloadDurationFeedin_hr())/ 8760.0 * 100;
 	}
 	
-	//Set previous values text
-	t_previousTotalconsumption_MWh.setText(roundToInt(previousTotalEnergyConsumption_MWh));
-	t_previousTotalImport_MWh.setText(roundToInt(previousTotalImport_MWh));
-	t_previousTotalExport_MWh.setText(roundToInt(previousTotalExport_MWh) + " MWh");
+	//Set previous values text (convert to same unit as totalEnergyConsumption text, so same if statement)
+	if(roundToInt(totalEnergyConsumption_MWh) >= 1000){
+		t_previousTotalconsumption_MWh.setText(df.format(previousTotalEnergyConsumption_MWh/1000));
+		t_previousTotalImport_MWh.setText(df.format(previousTotalImport_MWh/1000));
+		t_previousTotalExport_MWh.setText(df.format(previousTotalExport_MWh/1000));
+	}
+	else{
+		t_previousTotalconsumption_MWh.setText(df.format(previousTotalEnergyConsumption_MWh));
+		t_previousTotalImport_MWh.setText(df.format(previousTotalImport_MWh));
+		t_previousTotalExport_MWh.setText(df.format(previousTotalExport_MWh));
+	}
+
+	t_previousElectricityConsumption_MWh.setText(df.format(previousElectricityConsumption_pct) + " %");
+	t_previousGasConsumption_MWh.setText(df.format(previousGasConsumption_pct) + " %");
+	t_previousFFConsumption_MWh.setText(df.format(previousFFConsumption_pct) + " %");
+	t_previousH2Consumption_MWh.setText(df.format(previousH2Consumption_pct) + " %");
 	
-	t_previousElectricityConsumption_MWh.setText(roundToInt(previousElectricityConsumption_pct) + " %");
-	t_previousGasConsumption_MWh.setText(roundToInt(previousGasConsumption_pct) + " %");
-	t_previousFFConsumption_MWh.setText(roundToInt(previousFFConsumption_pct) + " %");
-	t_previousH2Consumption_MWh.setText(roundToInt(previousH2Consumption_pct) + " %");
-	t_previousProduction_MWh.setText(roundToInt(previousProduction_MWh) + " MWh");
-	
-	t_previousKPIselfsufficiency_pct.setText(roundToInt(previousKPIselfsufficiency_pct) + " %");
-	t_previousKPIOverloadHours_pct.setText(roundToInt(previousKPIOverloadHours_pct) + " %");
+	//Convert to GWh when over 1000
+	if(roundToInt(previousProduction_MWh) >= 1000){
+		t_previousProduction_MWh.setText(df.format(previousProduction_MWh/1000) + " GWh");
+	}
+	else{
+		t_previousProduction_MWh.setText(df.format(previousProduction_MWh) + " MWh");
+	}
+
+	t_previousKPIselfsufficiency_pct.setText(df.format(previousKPIselfsufficiency_pct) + " %");
+	t_previousKPIOverloadHours_pct.setText(df.format(previousKPIOverloadHours_pct) + " %");
 	
 	////Set correct arrow and colors
 	//Total consumption
@@ -17941,7 +17974,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Group>
 				<Text>
 					<Id>1726830241670</Id>
-					<Name><![CDATA[txt_totals]]></Name>
+					<Name><![CDATA[t_totals]]></Name>
 					<X>230</X><Y>85</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -17952,7 +17985,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Jaar totalen]]></Text>
+					<Text><![CDATA[Jaar totalen energie (MWh)]]></Text>
 					<Font>
 						<Name>Arial</Name>
 						<Size>24</Size>
@@ -17963,7 +17996,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726837135945</Id>
 					<Name><![CDATA[gr_totals]]></Name>
-					<X>170</X><Y>170</Y>
+					<X>130</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17991,7 +18024,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726836045104</Id>
 					<Name><![CDATA[txt_totalSubGroups]]></Name>
-					<X>-135</X><Y>-45</Y>
+					<X>-155</X><Y>-45</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18001,7 +18034,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[verbruik   /   Import    /  Export]]></Text>
+					<Text><![CDATA[Verbruik      /      Import       /     Export]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>24</Size>
@@ -18012,7 +18045,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726836045106</Id>
 					<Name><![CDATA[t_totalExport_MWh]]></Name>
-					<X>90</X><Y>-25</Y>
+					<X>150</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18022,7 +18055,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[1000 MWh]]></Text>
+					<Text><![CDATA[100.1]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>24</Size>
@@ -18033,7 +18066,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726836045108</Id>
 					<Name><![CDATA[t_previousTotalExport_MWh]]></Name>
-					<X>95</X><Y>0</Y>
+					<X>155</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18046,7 +18079,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[-]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18057,7 +18090,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726836119936</Id>
 					<Name><![CDATA[t_totalImport_MWh]]></Name>
-					<X>60</X><Y>-20</Y>
+					<X>85</X><Y>-20</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18067,7 +18100,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[1000]]></Text>
+					<Text><![CDATA[100.1]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>24</Size>
@@ -18078,7 +18111,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726836207371</Id>
 					<Name><![CDATA[t_previousTotalImport_MWh]]></Name>
-					<X>65</X><Y>5</Y>
+					<X>90</X><Y>5</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18091,7 +18124,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[-]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18099,7 +18132,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726836615693</Id>
 					<Name><![CDATA[t_totalconsumption_MWh]]></Name>
-					<X>-45</X><Y>-20</Y>
+					<X>-55</X><Y>-20</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18109,7 +18142,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[1000]]></Text>
+					<Text><![CDATA[100.1]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>24</Size>
@@ -18120,7 +18153,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726836620191</Id>
 					<Name><![CDATA[t_previousTotalconsumption_MWh]]></Name>
-					<X>-40</X><Y>5</Y>
+					<X>-50</X><Y>5</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18133,28 +18166,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[-]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>16</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1726836645808</Id>
-					<Name><![CDATA[txt_total]]></Name>
-					<X>-155</X><Y>-20</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Totaal:]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>24</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18165,7 +18177,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726837161070</Id>
 					<Name><![CDATA[gr_totalsSeperate]]></Name>
-					<X>130</X><Y>390</Y>
+					<X>150</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18214,7 +18226,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726821129369</Id>
 					<Name><![CDATA[t_h2consumption_MWh]]></Name>
-					<X>100</X><Y>-25</Y>
+					<X>90</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18235,7 +18247,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726821129371</Id>
 					<Name><![CDATA[t_previousH2Consumption_MWh]]></Name>
-					<X>105</X><Y>0</Y>
+					<X>95</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18248,7 +18260,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[-]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18286,7 +18298,7 @@ line_gridload.setVisible(false);]]></Body>
 					<RadiusX>20</RadiusX>
 					<RadiusY>40</RadiusY>
 					<Rotation>0.0</Rotation>
-					<FillColor>-7876870</FillColor>
+					<FillColor>-14774017</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Oval>
 				<Text>
@@ -18316,7 +18328,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726825004466</Id>
 					<Name><![CDATA[arrows_h2]]></Name>
-					<X>86</X><Y>-11</Y>
+					<X>76</X><Y>-11</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18448,7 +18460,7 @@ line_gridload.setVisible(false);]]></Body>
 					<RadiusX>20</RadiusX>
 					<RadiusY>40</RadiusY>
 					<Rotation>0.0</Rotation>
-					<FillColor>-2968436</FillColor>
+					<FillColor>-3308225</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Oval>
 				<Image>
@@ -18479,7 +18491,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726820691528</Id>
 					<Name><![CDATA[t_gasconsumption_MWh]]></Name>
-					<X>100</X><Y>-25</Y>
+					<X>90</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18521,7 +18533,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726821078211</Id>
 					<Name><![CDATA[t_previousGasConsumption_MWh]]></Name>
-					<X>105</X><Y>0</Y>
+					<X>95</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18534,7 +18546,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[-]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18542,7 +18554,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726824997024</Id>
 					<Name><![CDATA[arrows_gas]]></Name>
-					<X>86</X><Y>-11</Y>
+					<X>76</X><Y>-11</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18644,7 +18656,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726820525928</Id>
 					<Name><![CDATA[t_elecConsumption_MWh]]></Name>
-					<X>100</X><Y>-25</Y>
+					<X>90</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18695,7 +18707,7 @@ line_gridload.setVisible(false);]]></Body>
 					<RadiusX>20</RadiusX>
 					<RadiusY>40</RadiusY>
 					<Rotation>0.0</Rotation>
-					<FillColor>-32</FillColor>
+					<FillColor>-256</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Oval>
 				<Image>
@@ -18747,7 +18759,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726820949515</Id>
 					<Name><![CDATA[t_previousElectricityConsumption_MWh]]></Name>
-					<X>105</X><Y>0</Y>
+					<X>95</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18760,7 +18772,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[-]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18768,7 +18780,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726824976582</Id>
 					<Name><![CDATA[arrows_electricity]]></Name>
-					<X>86</X><Y>-11</Y>
+					<X>76</X><Y>-11</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18870,7 +18882,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726824447349</Id>
 					<Name><![CDATA[t_FFconsumption_MWh]]></Name>
-					<X>99</X><Y>-25</Y>
+					<X>89</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18912,7 +18924,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726824447353</Id>
 					<Name><![CDATA[t_previousFFConsumption_MWh]]></Name>
-					<X>104</X><Y>0</Y>
+					<X>94</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18925,7 +18937,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[-]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -18994,7 +19006,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726825008028</Id>
 					<Name><![CDATA[arrows_FF]]></Name>
-					<X>86</X><Y>-11</Y>
+					<X>76</X><Y>-11</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -19117,7 +19129,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726829361658</Id>
 					<Name><![CDATA[t_production_MWh]]></Name>
-					<X>100</X><Y>-25</Y>
+					<X>90</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -19127,7 +19139,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[1000 MWh]]></Text>
+					<Text><![CDATA[100.1 MWh]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>20</Size>
@@ -19138,7 +19150,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Text>
 					<Id>1726829361660</Id>
 					<Name><![CDATA[t_previousProduction_MWh]]></Name>
-					<X>105</X><Y>0</Y>
+					<X>95</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -19151,7 +19163,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Text><![CDATA[-]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
-						<Size>16</Size>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -19198,7 +19210,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726829361668</Id>
 					<Name><![CDATA[arrows_production]]></Name>
-					<X>86</X><Y>-11</Y>
+					<X>76</X><Y>-11</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -19311,7 +19323,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726839051175</Id>
 					<Name><![CDATA[arrows_totalconsumption]]></Name>
-					<X>111</X><Y>168</Y>
+					<X>61</X><Y>168</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -19396,7 +19408,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726839084436</Id>
 					<Name><![CDATA[arrows_import]]></Name>
-					<X>216</X><Y>168</Y>
+					<X>201</X><Y>168</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -19481,7 +19493,7 @@ line_gridload.setVisible(false);]]></Body>
 				<Group>
 					<Id>1726839116842</Id>
 					<Name><![CDATA[arrows_export]]></Name>
-					<X>316</X><Y>168</Y>
+					<X>336</X><Y>168</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -19624,7 +19636,7 @@ line_gridload.setVisible(false);]]></Body>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
+					<LineWidth>0</LineWidth>
 					<LineColor>-16777216</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
@@ -19669,7 +19681,7 @@ lokaal opgewekt]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[20%]]></Text>
+					<Text><![CDATA[20.1%]]></Text>
 					<Font>
 						<Name>Arial</Name>
 						<Size>20</Size>
@@ -19850,7 +19862,7 @@ lokaal opgewekt]]></Text>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
+					<LineWidth>0</LineWidth>
 					<LineColor>-16777216</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
@@ -19884,7 +19896,7 @@ lokaal opgewekt]]></Text>
 				<Text>
 					<Id>1726827568319</Id>
 					<Name><![CDATA[t_KPIOverloadHours_pct]]></Name>
-					<X>-9</X><Y>-11</Y>
+					<X>-19</X><Y>-11</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -19894,7 +19906,7 @@ lokaal opgewekt]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[20%]]></Text>
+					<Text><![CDATA[20.1%]]></Text>
 					<Font>
 						<Name>Arial</Name>
 						<Size>20</Size>
@@ -19908,7 +19920,7 @@ lokaal opgewekt]]></Text>
 				<Group>
 					<Id>1726834022249</Id>
 					<Name><![CDATA[arrows_gridload]]></Name>
-					<X>-15</X><Y>-10</Y>
+					<X>-25</X><Y>-10</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -20014,6 +20026,54 @@ lokaal opgewekt]]></Text>
 			</Presentation>
 
 				</Group>
+				<Line>
+					<Id>1727856926839</Id>
+					<Name><![CDATA[line]]></Name>
+					<X>80</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>2</LineWidth>
+					<LineColor>-657931</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>300</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1727856991521</Id>
+					<Name><![CDATA[line1]]></Name>
+					<X>100</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>2</LineWidth>
+					<LineColor>-657931</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>300</Dx>
+					<Dy>0</Dy>
+					<Dz>0</Dz>
+				</Line>
 			</Presentation>
 
 				</Level>
