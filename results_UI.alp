@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021032" AlpVersion="8.9.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021042" AlpVersion="8.9.1">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -1764,8 +1764,7 @@ chartSummary_presentation.setY(location_y);
 //Set visibility
 chartSummary_presentation.setVisible(visible);]]></Body>
 				</Function>
-
-<Function AccessType="public" StaticFunction="false">
+				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1726828282517</Id>
@@ -2257,7 +2256,6 @@ for(GridConnection GC : energyModel.f_getPausedGridConnections()){
 					<QuantityColumn>
 					</QuantityColumn>
 				</EmbeddedObject>
-			
 				<EmbeddedObject>
 					<Id>1726828320023</Id>
 					<Name><![CDATA[chartKPISummary]]></Name>
@@ -2321,6 +2319,7 @@ for(GridConnection GC : energyModel.f_getPausedGridConnections()){
 					</QuantityColumn>
 				</EmbeddedObject>
 			</EmbeddedObjects>
+
 			<Presentation>
 				<Level>
 					<Id>1704197366557</Id>
