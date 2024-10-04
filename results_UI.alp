@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021042" AlpVersion="8.9.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021040" AlpVersion="8.9.1">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -12343,6 +12343,17 @@ return dataObject;]]></Body>
 annualSelfConsumed.setValue(area.v_annualSelfConsumedElectricity_MWh);
 pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+
+DataItem annualZonSelfConsumed = new DataItem();
+annualZonSelfConsumed.setValue(area.v_annualPVSupply_MWh);
+pl_productionChartYear.addDataItem(annualZonSelfConsumed, "Zon zelfconsumptie [MWh]", new Color(201, 188, 235));
+pl_consumptionChartYear.addDataItem(annualZonSelfConsumed, "Zon zelfconsumptie [MWh]", new Color(201, 188, 235));
+
+DataItem annualWindSelfConsumed = new DataItem();
+annualWindSelfConsumed.setValue(area.v_annualWindSupply_MWh);
+pl_productionChartYear.addDataItem(annualWindSelfConsumed, "Wind zelfconsumptie [MWh]", new Color(201, 188, 235).brighter());
+pl_consumptionChartYear.addDataItem(annualWindSelfConsumed, "Wind zelfconsumptie [MWh]", new Color(201, 188, 235).brighter());
 
 DataItem annualImport = new DataItem();
 annualImport.setValue(area.v_annualElectricityImport_MWh);
