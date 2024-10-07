@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021040" AlpVersion="8.9.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.1.202408021042" AlpVersion="8.9.1">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -17518,21 +17518,21 @@ else{
 	t_totals.setText("Jaar totalen energie (MWh)");
 }
 
-t_elecConsumption_MWh.setText(df.format(elecConsumption_pct) + " %");
-t_gasconsumption_MWh.setText(df.format(gasConsumption_pct) + " %");
-t_FFconsumption_MWh.setText(df.format(FFconsumption_pct) + " %");
-t_h2consumption_MWh.setText(df.format(h2consumption_pct) + " %");
+t_elecConsumption_pct.setText(df.format(elecConsumption_pct) + " %");
+t_gasconsumption_pct.setText(df.format(gasConsumption_pct) + " %");
+t_FFconsumption_pct.setText(df.format(FFconsumption_pct) + " %");
+t_h2consumption_pct.setText(df.format(h2consumption_pct) + " %");
 
 //Convert to GWh when over 1000 MWh
 if(roundToInt(production_MWh) >= 1000){
-	t_production_MWh.setText(df.format(production_MWh/1000) + " GWh");
+	t_production_pct.setText(df.format(production_MWh/1000) + " GWh");
 }
 else{
-	t_production_MWh.setText(df.format(production_MWh) + " MWh");
+	t_production_pct.setText(df.format(production_MWh) + " MWh");
 }
 
-t_KPIselfsufficiency_pct.setText(df.format(KPIselfsufficiency_pct) + "%");
-t_KPIOverloadHours_pct.setText(df.format(KPIOverloadHours_pct) + "%");
+t_KPIselfsufficiency_pct.setText(df.format(KPIselfsufficiency_pct) + " %");
+t_KPIOverloadHours_pct.setText(df.format(KPIOverloadHours_pct) + " %");
 
 
 //Calculate and set previous values (if they exist) + arrows and styling
@@ -17572,17 +17572,17 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 		t_previousTotalExport_MWh.setText(df.format(previousTotalExport_MWh));
 	}
 
-	t_previousElectricityConsumption_MWh.setText(df.format(previousElectricityConsumption_pct) + " %");
-	t_previousGasConsumption_MWh.setText(df.format(previousGasConsumption_pct) + " %");
-	t_previousFFConsumption_MWh.setText(df.format(previousFFConsumption_pct) + " %");
-	t_previousH2Consumption_MWh.setText(df.format(previousH2Consumption_pct) + " %");
+	t_previousElectricityConsumption_pct.setText(df.format(previousElectricityConsumption_pct) + " %");
+	t_previousGasConsumption_pct.setText(df.format(previousGasConsumption_pct) + " %");
+	t_previousFFConsumption_pct.setText(df.format(previousFFConsumption_pct) + " %");
+	t_previousH2Consumption_pct.setText(df.format(previousH2Consumption_pct) + " %");
 	
 	//Convert to GWh when over 1000
 	if(roundToInt(previousProduction_MWh) >= 1000){
-		t_previousProduction_MWh.setText(df.format(previousProduction_MWh/1000) + " GWh");
+		t_previousProduction_pct.setText(df.format(previousProduction_MWh/1000) + " GWh");
 	}
 	else{
-		t_previousProduction_MWh.setText(df.format(previousProduction_MWh) + " MWh");
+		t_previousProduction_pct.setText(df.format(previousProduction_MWh) + " MWh");
 	}
 
 	t_previousKPIselfsufficiency_pct.setText(df.format(previousKPIselfsufficiency_pct) + " %");
@@ -17590,7 +17590,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	
 	////Set correct arrow and colors
 	//Total consumption
-	if(totalEnergyConsumption_MWh == previousTotalEnergyConsumption_MWh){
+	if(t_totalconsumption_MWh.getText().equals(t_previousTotalconsumption_MWh.getText())){
 		line_total.setVisible(true);
 	} else if(totalEnergyConsumption_MWh > previousTotalEnergyConsumption_MWh){
 		arrow_up_red_totalconsumption.setVisible(true);
@@ -17599,7 +17599,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//Import
-	if(totalImport_MWh == previousTotalImport_MWh){
+	if(t_totalImport_MWh.getText().equals(t_previousTotalImport_MWh.getText())){
 		line_import.setVisible(true);
 	} else if(totalImport_MWh > previousTotalImport_MWh){
 		arrow_up_red_import.setVisible(true);
@@ -17608,7 +17608,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//Export
-	if(totalExport_MWh == previousTotalExport_MWh){
+	if(t_totalExport_MWh.getText().equals(t_previousTotalExport_MWh.getText())){
 		line_export.setVisible(true);
 	} else if(totalExport_MWh > previousTotalExport_MWh){
 		arrow_up_red_export.setVisible(true);
@@ -17617,7 +17617,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//Electricity
-	if(elecConsumption_pct == previousElectricityConsumption_pct){
+	if(t_elecConsumption_pct.getText().equals(t_previousElectricityConsumption_pct.getText())){
 		line_electricity.setVisible(true);
 	} else if(elecConsumption_pct > previousElectricityConsumption_pct){
 		arrow_up_green_electricity.setVisible(true);
@@ -17626,7 +17626,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//Gas
-	if(gasConsumption_pct == previousGasConsumption_pct){
+	if(t_gasconsumption_pct.getText().equals(t_previousGasConsumption_pct.getText())){
 		line_gas.setVisible(true);
 	} else if(gasConsumption_pct > previousGasConsumption_pct){
 		arrow_up_red_gas.setVisible(true);
@@ -17635,7 +17635,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//FF
-	if(FFconsumption_pct == previousFFConsumption_pct){
+	if(t_FFconsumption_pct.getText().equals(t_previousFFConsumption_pct.getText())){
 		line_FF.setVisible(true);
 	} else if(FFconsumption_pct > previousFFConsumption_pct){
 		arrow_up_red_FF.setVisible(true);
@@ -17644,7 +17644,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//H2
-	if(h2consumption_pct == previousH2Consumption_pct){
+	if(t_h2consumption_pct.getText().equals(t_previousH2Consumption_pct.getText())){
 		line_h2.setVisible(true);
 	} else if(h2consumption_pct > previousH2Consumption_pct){
 		arrow_up_green_h2.setVisible(true);
@@ -17653,7 +17653,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//Production
-	if(production_MWh == previousProduction_MWh){
+	if(t_production_pct.getText().equals(t_previousProduction_pct.getText())){
 		line_production.setVisible(true);
 	} else if(production_MWh > previousProduction_MWh){
 		arrow_up_green_production.setVisible(true);
@@ -17662,7 +17662,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//Self sufficiency
-	if(KPIselfsufficiency_pct == previousKPIselfsufficiency_pct){
+	if(t_KPIselfsufficiency_pct.getText().equals(t_previousKPIselfsufficiency_pct.getText())){
 		line_selfsufficiency.setVisible(true);
 	} else if(KPIselfsufficiency_pct > previousKPIselfsufficiency_pct){
 		arrow_up_green_selfsufficiency.setVisible(true);
@@ -17671,7 +17671,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
 	}
 	
 	//Gridload
-	if(KPIOverloadHours_pct == previousKPIOverloadHours_pct){
+	if(t_KPIOverloadHours_pct.getText().equals(t_previousKPIOverloadHours_pct.getText())){
 		line_gridload.setVisible(true);
 	} else if(KPIOverloadHours_pct > previousKPIOverloadHours_pct){
 		arrow_up_red_gridload.setVisible(true);
@@ -17739,11 +17739,11 @@ t_previousTotalconsumption_MWh.setText("");
 t_previousTotalImport_MWh.setText("");
 t_previousTotalExport_MWh.setText("");
 
-t_previousElectricityConsumption_MWh.setText("");
-t_previousGasConsumption_MWh.setText("");
-t_previousFFConsumption_MWh.setText("");
-t_previousH2Consumption_MWh.setText("");
-t_previousProduction_MWh.setText("");
+t_previousElectricityConsumption_pct.setText("");
+t_previousGasConsumption_pct.setText("");
+t_previousFFConsumption_pct.setText("");
+t_previousH2Consumption_pct.setText("");
+t_previousProduction_pct.setText("");
 
 t_previousKPIselfsufficiency_pct.setText("");
 t_previousKPIOverloadHours_pct.setText("");
@@ -18085,7 +18085,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Text>
 				<Text>
 					<Id>1726821129369</Id>
-					<Name><![CDATA[t_h2consumption_MWh]]></Name>
+					<Name><![CDATA[t_h2consumption_pct]]></Name>
 					<X>90</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -18106,7 +18106,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Text>
 				<Text>
 					<Id>1726821129371</Id>
-					<Name><![CDATA[t_previousH2Consumption_MWh]]></Name>
+					<Name><![CDATA[t_previousH2Consumption_pct]]></Name>
 					<X>95</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -18350,7 +18350,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Group>
 				<Text>
 					<Id>1726820691528</Id>
-					<Name><![CDATA[t_gasconsumption_MWh]]></Name>
+					<Name><![CDATA[t_gasconsumption_pct]]></Name>
 					<X>90</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -18392,7 +18392,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Text>
 				<Text>
 					<Id>1726821078211</Id>
-					<Name><![CDATA[t_previousGasConsumption_MWh]]></Name>
+					<Name><![CDATA[t_previousGasConsumption_pct]]></Name>
 					<X>95</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -18515,7 +18515,7 @@ line_gridload.setVisible(false);]]></Body>
 			<Presentation>
 				<Text>
 					<Id>1726820525928</Id>
-					<Name><![CDATA[t_elecConsumption_MWh]]></Name>
+					<Name><![CDATA[t_elecConsumption_pct]]></Name>
 					<X>90</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -18618,7 +18618,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Text>
 				<Text>
 					<Id>1726820949515</Id>
-					<Name><![CDATA[t_previousElectricityConsumption_MWh]]></Name>
+					<Name><![CDATA[t_previousElectricityConsumption_pct]]></Name>
 					<X>95</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -18741,7 +18741,7 @@ line_gridload.setVisible(false);]]></Body>
 			<Presentation>
 				<Text>
 					<Id>1726824447349</Id>
-					<Name><![CDATA[t_FFconsumption_MWh]]></Name>
+					<Name><![CDATA[t_FFconsumption_pct]]></Name>
 					<X>89</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -18783,7 +18783,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Text>
 				<Text>
 					<Id>1726824447353</Id>
-					<Name><![CDATA[t_previousFFConsumption_MWh]]></Name>
+					<Name><![CDATA[t_previousFFConsumption_pct]]></Name>
 					<X>94</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -18988,7 +18988,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Text>
 				<Text>
 					<Id>1726829361658</Id>
-					<Name><![CDATA[t_production_MWh]]></Name>
+					<Name><![CDATA[t_production_pct]]></Name>
 					<X>90</X><Y>-25</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -19009,7 +19009,7 @@ line_gridload.setVisible(false);]]></Body>
 				</Text>
 				<Text>
 					<Id>1726829361660</Id>
-					<Name><![CDATA[t_previousProduction_MWh]]></Name>
+					<Name><![CDATA[t_previousProduction_pct]]></Name>
 					<X>95</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
