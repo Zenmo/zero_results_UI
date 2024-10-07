@@ -12281,6 +12281,7 @@ if (uI_Results.v_selectedObjectType == SelectedObjectTypes.TRAFO) {
 	f_setTrafoBalanceChartSummerWinter(area);
 	f_setTrafoBalanceChartDayNight(area);
 	f_setTrafoBalanceChartWeekdayWeekend(area);
+
 	}
 else {
 	if( radio_energyType.getValue() == 0){
@@ -12288,12 +12289,18 @@ else {
 		f_setElectricityBalanceChartSummerWinter(area);
 		f_setElectricityBalanceChartDayNight(area);
 		f_setElectricityBalanceChartWeekdayWeekend(area);
+		t_textProduction2.setVisible(true);
+		dimensie2.setVisible(true);
+		pl_productionChartYear2.setVisible(true);
 	}
 	else if( radio_energyType.getValue() == 1){
 		f_setEnergyBalanceChartYear(area);
 		f_setEnergyBalanceChartSummerWinter(area);
 		f_setEnergyBalanceChartDayNight(area);
 		f_setEnergyBalanceChartWeekdayWeekend(area);
+		t_textProduction2.setVisible(false);
+		dimensie2.setVisible(false);
+		pl_productionChartYear2.setVisible(false);
 	}
 }
 
@@ -12340,27 +12347,16 @@ return dataObject;]]></Body>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(area.v_annualSelfConsumedElectricity_MWh);
+annualSelfConsumed.setValue( roundToInt(area.v_annualSelfConsumedElectricity_MWh));
 pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
-
-DataItem annualZonSelfConsumed = new DataItem();
-annualZonSelfConsumed.setValue(area.v_annualPVSupply_MWh);
-pl_productionChartYear.addDataItem(annualZonSelfConsumed, "Zon zelfconsumptie [MWh]", new Color(201, 188, 235));
-pl_consumptionChartYear.addDataItem(annualZonSelfConsumed, "Zon zelfconsumptie [MWh]", new Color(201, 188, 235));
-
-DataItem annualWindSelfConsumed = new DataItem();
-annualWindSelfConsumed.setValue(area.v_annualWindSupply_MWh);
-pl_productionChartYear.addDataItem(annualWindSelfConsumed, "Wind zelfconsumptie [MWh]", new Color(201, 188, 235).brighter());
-pl_consumptionChartYear.addDataItem(annualWindSelfConsumed, "Wind zelfconsumptie [MWh]", new Color(201, 188, 235).brighter());
-
 DataItem annualImport = new DataItem();
-annualImport.setValue(area.v_annualElectricityImport_MWh);
+annualImport.setValue(roundToInt(area.v_annualElectricityImport_MWh));
 pl_consumptionChartYear.addDataItem(annualImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem annualExport = new DataItem();
-annualExport.setValue(area.v_annualElectricityExport_MWh);
+annualExport.setValue(roundToInt(area.v_annualElectricityExport_MWh));
 pl_productionChartYear.addDataItem(annualExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 double production_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityExport_MWh;
@@ -12368,17 +12364,33 @@ double consumption_MWh = area.v_annualSelfConsumedElectricity_MWh + area.v_annua
 double chartScale_MWh = max(production_MWh, consumption_MWh);
 pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
+pl_productionChartYear2.setFixedScale(chartScale_MWh);
 
+
+DataItem annualZonProduced = new DataItem();
+annualZonProduced.setValue(roundToInt(area.v_annualPVSupply_MWh));
+pl_productionChartYear2.addDataItem(annualZonProduced, "Zon opwek [MWh]", gold);
+
+DataItem annualWindProduced = new DataItem();
+annualWindProduced.setValue(roundToInt(area.v_annualWindSupply_MWh));
+pl_productionChartYear2.addDataItem(annualWindProduced, "Wind opwek [MWh]", blue);
+
+DataItem annualOverigProduced = new DataItem();
+annualOverigProduced.setValue( roundToInt(annualSelfConsumed.getValue() + annualExport.getValue() - annualWindProduced.getValue() - annualZonProduced.getValue()));
+pl_productionChartYear2.addDataItem(annualOverigProduced, "Overige opwek [MWh]", peru);
 
 if (chartScale_MWh<10) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
+	dimensie1.setText( roundToInt(production_MWh*1000) + " kWh");
+	dimensie2.setText( roundToInt(production_MWh*1000) + " kWh");
+	dimensie3.setText( roundToInt(consumption_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
+	dimensie1.setText( roundToInt(production_MWh) + " MWh");
+	dimensie2.setText(roundToInt(production_MWh) + " MWh");
+	dimensie3.setText(roundToInt(consumption_MWh) + " MWh");
 } else {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
+	dimensie1.setText( roundToDecimal(production_MWh/1000, 1) + " GWh");
+	dimensie2.setText( roundToDecimal(production_MWh/1000,1) + " GWh");
+	dimensie3.setText( roundToDecimal(consumption_MWh/1000,1) + " GWh");
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -12752,9 +12764,10 @@ if (chartScale_MWh<10) {
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[pl_productionChartYear.removeAll();
-t_productionTextYear.setText("Opwek");
+//t_productionTextYear.setText("Opwek");
 pl_consumptionChartYear.removeAll();
-t_consumptionTextYear.setText("Gebruik");
+//t_consumptionTextYear.setText("Gebruik");
+pl_productionChartYear2.removeAll();
 pl_productionChartSummer.removeAll();
 t_productionTextSummer.setText("Opwek");
 pl_consumptionChartSummer.removeAll();
@@ -12830,14 +12843,14 @@ pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
 
 if (chartScale_MWh<10) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
+	dimensie1.setText( roundToInt(production_MWh*1000) + " kWh");
+	dimensie3.setText( roundToInt(consumption_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
+	dimensie1.setText(roundToInt(production_MWh) + " MWh");
+	dimensie3.setText( roundToInt(consumption_MWh) + " MWh");
 } else {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
+	dimensie1.setText( roundToDecimal(production_MWh/1000, 1) + " GWh");
+	dimensie3.setText( roundToDecimal(consumption_MWh/1000,1) + " GWh");
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -13211,14 +13224,14 @@ pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
 
 if (chartScale_MWh<10) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt((area.v_annualSelfProducedElectricity_MWh)*1000) + " kWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt((area.v_annualSelfConsumedElectricity_MWh)*1000) + " kWh");
+	dimensie1.setText(roundToInt((area.v_annualSelfProducedElectricity_MWh)*1000) + " kWh");
+	dimensie3.setText( roundToInt((area.v_annualSelfConsumedElectricity_MWh)*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt((area.v_annualSelfProducedElectricity_MWh)) + " MWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt((area.v_annualSelfConsumedElectricity_MWh)) + " MWh");
+	dimensie1.setText( roundToInt((area.v_annualSelfProducedElectricity_MWh)) + " MWh");
+	dimensie3.setText( roundToInt((area.v_annualSelfConsumedElectricity_MWh)) + " MWh");
 } else {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal((area.v_annualSelfProducedElectricity_MWh)/1000, 1) + " GWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal((area.v_annualSelfConsumedElectricity_MWh)/1000, 1) + " GWh");
+	dimensie1.setText(roundToDecimal((area.v_annualSelfProducedElectricity_MWh)/1000, 1) + " GWh");
+	dimensie3.setText(roundToDecimal((area.v_annualSelfConsumedElectricity_MWh)/1000, 1) + " GWh");
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -13567,7 +13580,7 @@ if (chartScale_MWh<10) {
 				<Group>
 					<Id>1714987807051</Id>
 					<Name><![CDATA[gr_Year]]></Name>
-					<X>230</X><Y>350</Y>
+					<X>260</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13633,7 +13646,7 @@ if (chartScale_MWh<10) {
     			<StackChart>
 					<Id>1714987905783</Id>
 					<Name><![CDATA[pl_consumptionChartYear]]></Name>
-					<X>-160</X><Y>-60</Y>
+					<X>-160</X><Y>60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13695,7 +13708,7 @@ if (chartScale_MWh<10) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Opwek]]></Text>
+					<Text><![CDATA[Opwek per bestemming]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>14</Size>
@@ -13706,7 +13719,7 @@ if (chartScale_MWh<10) {
 				<Text>
 					<Id>1714987905787</Id>
 					<Name><![CDATA[t_consumptionTextYear]]></Name>
-					<X>-120</X><Y>-20</Y>
+					<X>-120</X><Y>90</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13716,10 +13729,146 @@ if (chartScale_MWh<10) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Gebruik]]></Text>
+					<Text><![CDATA[Gebruik per bron]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+    			<StackChart>
+					<Id>1728330009093</Id>
+					<Name><![CDATA[pl_productionChartYear2]]></Name>
+					<X>-160</X><Y>-85</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1728374400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>325</Width>
+					<Height>132</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>245</Width>
+						<Height>42</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor/>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
+					<ScaleType>AUTO</ScaleType>
+					<Bars>
+						<Direction>RIGHT</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+    			</StackChart>
+				<Text>
+					<Id>1728329938615</Id>
+					<Name><![CDATA[t_textProduction2]]></Name>
+					<X>-120</X><Y>-45</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Opwerk per bron]]></Text>
+					<Font>
+						<Name>Calibri</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1728329907100</Id>
+					<Name><![CDATA[dimensie1]]></Name>
+					<X>-120</X><Y>-150</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1728329922123</Id>
+					<Name><![CDATA[dimensie2]]></Name>
+					<X>-120</X><Y>-30</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>RIGHT</Alignment>
+				</Text>
+				<Text>
+					<Id>1728329924306</Id>
+					<Name><![CDATA[dimensie3]]></Name>
+					<X>-120</X><Y>110</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[text]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
