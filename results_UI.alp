@@ -19342,7 +19342,7 @@ t_KPIOverloadHours_pct.setText(df.format(KPIOverloadHours_pct) + "%");
 
 
 //Calculate and set previous values (if they exist) + arrows and styling
-if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null){
+if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null && area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != 0){
 
 	double previousTotalEnergyConsumption_MWh = area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh();
 	double previousTotalImport_MWh = area.v_previousTotals.getPreviousImportedEnergy_MWh();
