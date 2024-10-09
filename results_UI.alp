@@ -10474,7 +10474,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Body><![CDATA[group_trafo_week.setVisible(true);
 plot_trafo_week.addDataSet(dataObject.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
 int maxValue = roundToInt(max(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDemandCapacityLiveWeek_kW.getYMax()));
 int minValue = roundToInt(min(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW.getYMin(), dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW.getYMin()));
@@ -10498,7 +10498,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Body><![CDATA[group_trafo_year.setVisible(true);
 plot_trafo_year.addDataSet(dataObject.data_gridCapacityDemandYear_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_year.addDataSet(dataObject.data_gridCapacitySupplyYear_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_year.addDataSet(dataObject.v_dataBaseloadElectricityDemandYear_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 0.25, Chart.PointStyle.POINT_NONE);
+plot_trafo_year.addDataSet(dataObject.v_dataBaseloadElectricityDemandYear_kW, "Netto vermogen", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 0.25, Chart.PointStyle.POINT_NONE);
 
 int maxValue = roundToInt(max(dataObject.v_dataBaseloadElectricityDemandYear_kW.getYMax(), dataObject.data_gridCapacityDemandYear_kW.getYMax()));
 int minValue = roundToInt(min(dataObject.v_dataBaseloadElectricityDemandYear_kW.getYMin(), dataObject.data_gridCapacitySupplyYear_kW.getYMin()));
@@ -10522,7 +10522,7 @@ plot_trafo_year.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Body><![CDATA[group_trafo_week.setVisible(true);
 plot_trafo_week.addDataSet(dataObject.data_gridCapacityDemandSummerWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(dataObject.data_gridCapacitySupplySummerWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
 int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW.getYMax(), dataObject.data_gridCapacityDemandSummerWeek_kW.getYMax()));
 int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadDemandSummerWeek_kW.getYMin(), dataObject.data_gridCapacitySupplySummerWeek_kW.getYMin()));
@@ -10546,7 +10546,7 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 					<Body><![CDATA[group_trafo_week.setVisible(true);
 plot_trafo_week.addDataSet(dataObject.data_gridCapacityDemandWinterWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(dataObject.data_gridCapacitySupplyWinterWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
 int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW.getYMax(), dataObject.data_gridCapacityDemandWinterWeek_kW.getYMax()));
 int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadDemandWinterWeek_kW.getYMin(), dataObject.data_gridCapacitySupplyWinterWeek_kW.getYMin()));
@@ -10930,7 +10930,7 @@ plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + m
 					<Z>0</Z>
 					<Rotation>90.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Vermogen [kW]]]></Text>
+					<Text><![CDATA[Dag gemiddelde [kW]]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>12</Size>
@@ -10951,7 +10951,7 @@ plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + m
 					<Z>0</Z>
 					<Rotation>90.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Vermogen [kW]]]></Text>
+					<Text><![CDATA[Dag gemiddelde [kW]]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>12</Size>
@@ -13918,8 +13918,8 @@ else {
 					</Parameter>
 					<Body><![CDATA[DataItem annualSelfConsumed = new DataItem();
 annualSelfConsumed.setValue(area.v_annualSelfConsumedElectricity_MWh);
-pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
-pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualImport = new DataItem();
 annualImport.setValue(area.v_annualElectricityImport_MWh);
@@ -14106,8 +14106,8 @@ else{
 					<Body><![CDATA[// Summer
 DataItem summerSelfConsumed = new DataItem();
 summerSelfConsumed.setValue(area.v_selfConsumedElectricitySummerWeek_MWh);
-pl_productionChartSummer.addDataItem(summerSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
-pl_consumptionChartSummer.addDataItem(summerSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_productionChartSummer.addDataItem(summerSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_consumptionChartSummer.addDataItem(summerSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem summerImport = new DataItem();
 summerImport.setValue(area.v_importedElectricitySummerWeek_MWh);
@@ -14177,8 +14177,8 @@ if (chartScale_MWh<10) {
 
 DataItem daytimeSelfConsumed = new DataItem();
 daytimeSelfConsumed.setValue(area.v_selfConsumedElectricityDaytime_MWh);
-pl_productionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
-pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_productionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 
 
@@ -14253,8 +14253,8 @@ if (chartScale_MWh<10) {
 					<Body><![CDATA[// Weekday
 DataItem weekdaySelfConsumed = new DataItem();
 weekdaySelfConsumed.setValue(area.v_selfConsumedElectricityWeekday_MWh);
-pl_productionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
-pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_productionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekdayimeImport = new DataItem();
 weekdayimeImport.setValue(area.v_importedElectricityWeekday_MWh);
@@ -14362,8 +14362,8 @@ t_consumptionTextWeekend.setText("Gebruik");]]></Body>
 					</Parameter>
 					<Body><![CDATA[DataItem annualSelfConsumed = new DataItem();
 annualSelfConsumed.setValue(area.v_annualSelfConsumedEnergy_MWh);
-pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedEnergyColor);
-pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedEnergyColor);
 
 DataItem annualImport = new DataItem();
 annualImport.setValue(area.v_annualElectricityImport_MWh);
@@ -14423,8 +14423,8 @@ if (chartScale_MWh<10) {
 					<Body><![CDATA[// Summer
 DataItem summerSelfConsumed = new DataItem();
 summerSelfConsumed.setValue(area.v_selfConsumedEnergySummerWeek_MWh);
-pl_productionChartSummer.addDataItem(summerSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
-pl_consumptionChartSummer.addDataItem(summerSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_productionChartSummer.addDataItem(summerSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_consumptionChartSummer.addDataItem(summerSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem summerImport = new DataItem();
 summerImport.setValue(area.v_importedElectricitySummerWeek_MWh);
@@ -14526,8 +14526,8 @@ if (chartScale_MWh<10) {
 					<Body><![CDATA[// Weekday
 DataItem weekdaySelfConsumed = new DataItem();
 weekdaySelfConsumed.setValue(area.v_selfConsumedEnergyWeekday_MWh);
-pl_productionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
-pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_productionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekdayimeImport = new DataItem();
 weekdayimeImport.setValue(area.v_importedElectricityWeekday_MWh);
@@ -14630,8 +14630,8 @@ if (chartScale_MWh<10) {
 
 DataItem daytimeSelfConsumed = new DataItem();
 daytimeSelfConsumed.setValue(area.v_selfConsumedEnergyDaytime_MWh);
-pl_productionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
-pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_productionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem daytimeImport = new DataItem();
 daytimeImport.setValue(area.v_importedElectricityDaytime_MWh);
@@ -19791,7 +19791,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Netbelasting]]></Text>
+					<Text><![CDATA[Overbelasting]]></Text>
 					<Font>
 						<Name>Arial</Name>
 						<Size>20</Size>
