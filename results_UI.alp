@@ -19812,7 +19812,8 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Uren overbelasting]]></Text>
+					<Text><![CDATA[Uren overbelasting
+]]></Text>
 					<Font>
 						<Name>Arial</Name>
 						<Size>14</Size>
@@ -19981,7 +19982,7 @@ line_gridload.setVisible(false);]]></Body>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[aandeel energieverbruik 
+					<Text><![CDATA[Aandeel energieverbruik 
 lokaal opgewekt]]></Text>
 					<Font>
 						<Name>Arial</Name>
