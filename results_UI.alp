@@ -904,7 +904,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1727706137865</Id>
 					<Name><![CDATA[b_showKPISummary]]></Name>
-					<X>920</X><Y>450</Y>
+					<X>920</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1460,7 +1460,7 @@ else{
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725370602118</Id>
 					<Name><![CDATA[f_setRadioButtons]]></Name>
-					<X>920</X><Y>360</Y>
+					<X>920</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1666,7 +1666,7 @@ if(b_showKPISummary){
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725374888930</Id>
 					<Name><![CDATA[f_styleAllCharts]]></Name>
-					<X>920</X><Y>390</Y>
+					<X>920</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1699,7 +1699,7 @@ chartKPISummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineSty
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725375062400</Id>
 					<Name><![CDATA[f_styleRadioButtons]]></Name>
-					<X>1080</X><Y>390</Y>
+					<X>920</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1732,7 +1732,7 @@ rect_resultsMenuLarge.setLineStyle(lineStyle);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1727084763017</Id>
 					<Name><![CDATA[f_setChartSummary_Presentation]]></Name>
-					<X>540</X><Y>420</Y>
+					<X>920</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1768,8 +1768,8 @@ chartSummary_presentation.setVisible(visible);]]></Body>
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1726828282517</Id>
-					<Name><![CDATA[f_setChartKPISummary]]></Name>
-					<X>920</X><Y>430</Y>
+					<Name><![CDATA[f_setChartKPISummary_Presentation]]></Name>
+					<X>920</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1816,7 +1816,8 @@ chartKPISummary_presentation.setVisible(visible);]]></Body>
 if (v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
 	dataObject = v_trafo;
 } 
-else if (v_selectedObjectType == OL_GISObjectType.BUILDING ||
+else if (v_selectedObjectType == OL_GISObjectType.NEIGHBOURHOOD ||
+		 v_selectedObjectType == OL_GISObjectType.BUILDING ||
 		 v_selectedObjectType == OL_GISObjectType.CHARGER ||
 		 v_selectedObjectType == OL_GISObjectType.WINDFARM ||
 		 v_selectedObjectType == OL_GISObjectType.SOLARFARM ||
@@ -1854,6 +1855,36 @@ for(GridConnection GC : energyModel.f_getPausedGridConnections()){
 	J_previousTotals previousTotals = new J_previousTotals();
 	c_previousTotals_GC.put(GC, previousTotals);
 }]]></Body>
+				</Function>
+				<Function AccessType="public" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1729004655678</Id>
+					<Name><![CDATA[f_setAllChart_Presentations]]></Name>
+					<X>920</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[location_x]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[location_y]]></Name>
+						<Type><![CDATA[Integer]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[visible]]></Name>
+						<Type><![CDATA[boolean]]></Type>
+					</Parameter>
+					<Body><![CDATA[//Function used to set all charts at the same place
+f_setChartProfiles_Presentation(location_x, location_y, visible);
+f_setChartBalance_Presentation(location_x, location_y, visible);
+f_setChartGridLoad_Presentation(location_x, location_y, visible);
+f_setChartSankey_Presentation(location_x, location_y, visible);
+f_setChartSummary_Presentation(location_x, location_y, visible);
+f_setChartKPISummary_Presentation(location_x, location_y, visible);]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -2259,7 +2290,7 @@ for(GridConnection GC : energyModel.f_getPausedGridConnections()){
 				<EmbeddedObject>
 					<Id>1726828320023</Id>
 					<Name><![CDATA[chartKPISummary]]></Name>
-					<X>740</X><Y>160</Y>
+					<X>740</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2672,6 +2703,26 @@ f_showCorrectChart();]]></ActionCode>
 
 				</Group>
 				<EmbeddedObjectPresentation>
+					<Id>1727084829449</Id>
+					<Name><![CDATA[chartSummary_presentation]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<DrawingMode>POSITION_WITH_OFFSET</DrawingMode>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>0.0</Latitude>
+					<Longitude>0.0</Longitude>
+				</EmbeddedObjectPresentation>
+				<EmbeddedObjectPresentation>
 					<Id>1725361939965</Id>
 					<Name><![CDATA[chartBalans_presentation]]></Name>
 					<X>0</X><Y>0</Y>
@@ -2763,7 +2814,7 @@ f_showCorrectChart();]]></ActionCode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
-					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
+					<DrawingMode>POSITION_WITH_OFFSET</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -3056,25 +3107,6 @@ f_showCorrectChart();]]></ActionCode>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
-				<EmbeddedObjectPresentation>
-					<Id>1727084829449</Id>
-					<Name><![CDATA[chartSummary_presentation]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
-					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
-					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
-					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
-					<Latitude>0.0</Latitude>
-					<Longitude>0.0</Longitude>
-				</EmbeddedObjectPresentation>
 				<Rectangle>
 					<Id>1726338589371</Id>
 					<Name><![CDATA[rectangle]]></Name>
@@ -3114,7 +3146,7 @@ f_showCorrectChart();]]></ActionCode>
 						<ActionCode><![CDATA[if(b_showKPISummary){
 	chartKPISummary.f_setKPISummaryChart();
 }
-f_setChartKPISummary(null, null, b_showKPISummary);
+f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 ]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
