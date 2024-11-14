@@ -4228,7 +4228,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604801218</Id>
 					<Name><![CDATA[v_selfConsumedEnergySummerWeek_MWh]]></Name>
-					<X>540</X><Y>680</Y>
+					<X>540</X><Y>720</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4240,7 +4240,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604801220</Id>
 					<Name><![CDATA[v_importedEnergySummerWeek_MWh]]></Name>
-					<X>540</X><Y>700</Y>
+					<X>540</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4252,7 +4252,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604801222</Id>
 					<Name><![CDATA[v_exportedEnergySummerWeek_MWh]]></Name>
-					<X>540</X><Y>720</Y>
+					<X>540</X><Y>760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4264,7 +4264,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604801224</Id>
 					<Name><![CDATA[v_selfConsumedElectricitySummerWeek_MWh]]></Name>
-					<X>540</X><Y>820</Y>
+					<X>540</X><Y>860</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4276,7 +4276,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604801226</Id>
 					<Name><![CDATA[v_importedElectricitySummerWeek_MWh]]></Name>
-					<X>540</X><Y>840</Y>
+					<X>540</X><Y>880</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4288,7 +4288,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604801228</Id>
 					<Name><![CDATA[v_exportedElectricitySummerWeek_MWh]]></Name>
-					<X>540</X><Y>860</Y>
+					<X>540</X><Y>900</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4300,7 +4300,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604801230</Id>
 					<Name><![CDATA[v_naturalGasDemandSummerWeek_MWh]]></Name>
-					<X>540</X><Y>740</Y>
+					<X>540</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4312,7 +4312,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604801232</Id>
 					<Name><![CDATA[v_petroleumProductsDemandSummerWeek_MWh]]></Name>
-					<X>540</X><Y>760</Y>
+					<X>540</X><Y>800</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4324,7 +4324,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604805432</Id>
 					<Name><![CDATA[v_selfConsumedEnergyWinterWeek_MWh]]></Name>
-					<X>540</X><Y>920</Y>
+					<X>540</X><Y>960</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4336,7 +4336,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604805434</Id>
 					<Name><![CDATA[v_importedEnergyWinterWeek_MWh]]></Name>
-					<X>540</X><Y>940</Y>
+					<X>540</X><Y>980</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4348,7 +4348,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604805436</Id>
 					<Name><![CDATA[v_exportedEnergyWinterWeek_MWh]]></Name>
-					<X>540</X><Y>960</Y>
+					<X>540</X><Y>1000</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4360,7 +4360,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604805438</Id>
 					<Name><![CDATA[v_selfConsumedElectricityWinterWeek_MWh]]></Name>
-					<X>540</X><Y>1060</Y>
+					<X>540</X><Y>1100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4372,7 +4372,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604805440</Id>
 					<Name><![CDATA[v_importedElectricityWinterWeek_MWh]]></Name>
-					<X>540</X><Y>1080</Y>
+					<X>540</X><Y>1120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4384,7 +4384,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604805442</Id>
 					<Name><![CDATA[v_exportedElectricityWinterWeek_MWh]]></Name>
-					<X>540</X><Y>1100</Y>
+					<X>540</X><Y>1140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4396,7 +4396,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604805444</Id>
 					<Name><![CDATA[v_naturalGasDemandWinterWeek_MWh]]></Name>
-					<X>540</X><Y>980</Y>
+					<X>540</X><Y>1020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4408,7 +4408,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604805446</Id>
 					<Name><![CDATA[v_petroleumProductsDemandWinterWeek_MWh]]></Name>
-					<X>540</X><Y>1000</Y>
+					<X>540</X><Y>1040</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4420,7 +4420,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604807923</Id>
 					<Name><![CDATA[v_selfConsumedEnergyDaytime_MWh]]></Name>
-					<X>540</X><Y>1190</Y>
+					<X>540</X><Y>1230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4432,7 +4432,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604807925</Id>
 					<Name><![CDATA[v_importedEnergyDaytime_MWh]]></Name>
-					<X>540</X><Y>1210</Y>
+					<X>540</X><Y>1250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4444,7 +4444,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604807927</Id>
 					<Name><![CDATA[v_exportedEnergyDaytime_MWh]]></Name>
-					<X>540</X><Y>1230</Y>
+					<X>540</X><Y>1270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4456,7 +4456,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604807940</Id>
 					<Name><![CDATA[v_selfConsumedElectricityDaytime_MWh]]></Name>
-					<X>540</X><Y>1330</Y>
+					<X>540</X><Y>1370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4468,7 +4468,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604807942</Id>
 					<Name><![CDATA[v_importedElectricityDaytime_MWh]]></Name>
-					<X>540</X><Y>1350</Y>
+					<X>540</X><Y>1390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4480,7 +4480,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604807944</Id>
 					<Name><![CDATA[v_exportedElectricityDaytime_MWh]]></Name>
-					<X>540</X><Y>1370</Y>
+					<X>540</X><Y>1410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4492,7 +4492,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604807946</Id>
 					<Name><![CDATA[v_naturalGasDemandDaytime_MWh]]></Name>
-					<X>540</X><Y>1250</Y>
+					<X>540</X><Y>1290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4504,7 +4504,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604807948</Id>
 					<Name><![CDATA[v_petroleumProductsDemandDaytime_MWh]]></Name>
-					<X>540</X><Y>1270</Y>
+					<X>540</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4516,7 +4516,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604811765</Id>
 					<Name><![CDATA[v_selfConsumedEnergyNighttime_MWh]]></Name>
-					<X>540</X><Y>1420</Y>
+					<X>540</X><Y>1460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4528,7 +4528,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604811767</Id>
 					<Name><![CDATA[v_importedEnergyNighttime_MWh]]></Name>
-					<X>540</X><Y>1440</Y>
+					<X>540</X><Y>1480</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4540,7 +4540,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604811769</Id>
 					<Name><![CDATA[v_exportedEnergyNighttime_MWh]]></Name>
-					<X>540</X><Y>1460</Y>
+					<X>540</X><Y>1500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4552,7 +4552,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604811771</Id>
 					<Name><![CDATA[v_selfConsumedElectricityNighttime_MWh]]></Name>
-					<X>540</X><Y>1560</Y>
+					<X>540</X><Y>1600</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4564,7 +4564,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604811773</Id>
 					<Name><![CDATA[v_importedElectricityNighttime_MWh]]></Name>
-					<X>540</X><Y>1580</Y>
+					<X>540</X><Y>1620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4576,7 +4576,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604811775</Id>
 					<Name><![CDATA[v_exportedElectricityNighttime_MWh]]></Name>
-					<X>540</X><Y>1600</Y>
+					<X>540</X><Y>1640</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4588,7 +4588,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604811777</Id>
 					<Name><![CDATA[v_naturalGasDemandNighttime_MWh]]></Name>
-					<X>540</X><Y>1480</Y>
+					<X>540</X><Y>1520</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4600,7 +4600,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604811779</Id>
 					<Name><![CDATA[v_petroleumProductsDemandNighttime_MWh]]></Name>
-					<X>540</X><Y>1500</Y>
+					<X>540</X><Y>1540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4612,7 +4612,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604816683</Id>
 					<Name><![CDATA[v_selfConsumedEnergyWeekday_MWh]]></Name>
-					<X>540</X><Y>1670</Y>
+					<X>540</X><Y>1710</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4624,7 +4624,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604816699</Id>
 					<Name><![CDATA[v_importedEnergyWeekday_MWh]]></Name>
-					<X>540</X><Y>1690</Y>
+					<X>540</X><Y>1730</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4636,7 +4636,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604816701</Id>
 					<Name><![CDATA[v_exportedEnergyWeekday_MWh]]></Name>
-					<X>540</X><Y>1710</Y>
+					<X>540</X><Y>1750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4648,7 +4648,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604816703</Id>
 					<Name><![CDATA[v_selfConsumedElectricityWeekday_MWh]]></Name>
-					<X>540</X><Y>1810</Y>
+					<X>540</X><Y>1850</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4660,7 +4660,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604816705</Id>
 					<Name><![CDATA[v_importedElectricityWeekday_MWh]]></Name>
-					<X>540</X><Y>1830</Y>
+					<X>540</X><Y>1870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4672,7 +4672,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604816707</Id>
 					<Name><![CDATA[v_exportedElectricityWeekday_MWh]]></Name>
-					<X>540</X><Y>1850</Y>
+					<X>540</X><Y>1890</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4684,7 +4684,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604816709</Id>
 					<Name><![CDATA[v_naturalGasDemandWeekday_MWh]]></Name>
-					<X>540</X><Y>1730</Y>
+					<X>540</X><Y>1770</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4696,7 +4696,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604816711</Id>
 					<Name><![CDATA[v_petroleumProductsDemandWeekday_MWh]]></Name>
-					<X>540</X><Y>1750</Y>
+					<X>540</X><Y>1790</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4708,7 +4708,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604917920</Id>
 					<Name><![CDATA[v_selfConsumedEnergyWeekend_MWh]]></Name>
-					<X>540</X><Y>1900</Y>
+					<X>540</X><Y>1940</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4720,7 +4720,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604917922</Id>
 					<Name><![CDATA[v_importedEnergyWeekend_MWh]]></Name>
-					<X>540</X><Y>1920</Y>
+					<X>540</X><Y>1960</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4732,7 +4732,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604917924</Id>
 					<Name><![CDATA[v_exportedEnergyWeekend_MWh]]></Name>
-					<X>540</X><Y>1940</Y>
+					<X>540</X><Y>1980</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4744,7 +4744,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604917926</Id>
 					<Name><![CDATA[v_selfConsumedElectricityWeekend_MWh]]></Name>
-					<X>540</X><Y>2040</Y>
+					<X>540</X><Y>2080</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4756,7 +4756,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604917928</Id>
 					<Name><![CDATA[v_importedElectricityWeekend_MWh]]></Name>
-					<X>540</X><Y>2060</Y>
+					<X>540</X><Y>2100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4768,7 +4768,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604917930</Id>
 					<Name><![CDATA[v_exportedElectricityWeekend_MWh]]></Name>
-					<X>540</X><Y>2080</Y>
+					<X>540</X><Y>2120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4780,7 +4780,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604917932</Id>
 					<Name><![CDATA[v_naturalGasDemandWeekend_MWh]]></Name>
-					<X>540</X><Y>1960</Y>
+					<X>540</X><Y>2000</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4792,7 +4792,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706604917934</Id>
 					<Name><![CDATA[v_petroleumProductsDemandWeekend_MWh]]></Name>
-					<X>540</X><Y>1980</Y>
+					<X>540</X><Y>2020</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4948,7 +4948,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965197</Id>
 					<Name><![CDATA[v_annualHeatPumpHeatGeneration_MWh]]></Name>
-					<X>540</X><Y>180</Y>
+					<X>540</X><Y>220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4960,7 +4960,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965199</Id>
 					<Name><![CDATA[v_annualNaturalGasDemand_MWh]]></Name>
-					<X>540</X><Y>200</Y>
+					<X>540</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4972,7 +4972,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965201</Id>
 					<Name><![CDATA[v_annualHeatDemand_MWh]]></Name>
-					<X>540</X><Y>280</Y>
+					<X>540</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4984,7 +4984,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965203</Id>
 					<Name><![CDATA[v_annualSelfConsumedElectricity_MWh]]></Name>
-					<X>540</X><Y>300</Y>
+					<X>540</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4996,7 +4996,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965205</Id>
 					<Name><![CDATA[v_annualElectricityImport_MWh]]></Name>
-					<X>540</X><Y>340</Y>
+					<X>540</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5008,7 +5008,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965207</Id>
 					<Name><![CDATA[v_annualElectricityConsumed_MWh]]></Name>
-					<X>540</X><Y>380</Y>
+					<X>540</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5020,7 +5020,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965209</Id>
 					<Name><![CDATA[v_annualElectricityForTransportDemand_MWh]]></Name>
-					<X>540</X><Y>400</Y>
+					<X>540</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5032,7 +5032,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965211</Id>
 					<Name><![CDATA[v_annualHydrogenForTransportDemand_MWh]]></Name>
-					<X>540</X><Y>420</Y>
+					<X>540</X><Y>460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5044,7 +5044,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965213</Id>
 					<Name><![CDATA[v_annualPetroleumProductsDemand_MWh]]></Name>
-					<X>540</X><Y>220</Y>
+					<X>540</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5056,7 +5056,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965215</Id>
 					<Name><![CDATA[v_annualTransportEnergyDemand_MWh]]></Name>
-					<X>540</X><Y>440</Y>
+					<X>540</X><Y>480</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5068,7 +5068,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965217</Id>
 					<Name><![CDATA[v_annualWindSupply_MWh]]></Name>
-					<X>540</X><Y>460</Y>
+					<X>540</X><Y>500</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5080,7 +5080,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965219</Id>
 					<Name><![CDATA[v_annualWindSupplyRemainingPotential_MWh]]></Name>
-					<X>540</X><Y>480</Y>
+					<X>540</X><Y>520</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5092,7 +5092,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965221</Id>
 					<Name><![CDATA[v_annualPVSupply_MWh]]></Name>
-					<X>540</X><Y>500</Y>
+					<X>540</X><Y>540</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5104,7 +5104,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965223</Id>
 					<Name><![CDATA[v_annualPVSupplyRemainingPotential_MWh]]></Name>
-					<X>540</X><Y>520</Y>
+					<X>540</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5116,7 +5116,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965225</Id>
 					<Name><![CDATA[v_annualHeatSupply_MWh]]></Name>
-					<X>540</X><Y>540</Y>
+					<X>540</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5128,7 +5128,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965227</Id>
 					<Name><![CDATA[v_annualHeatSupplyRemainingPotential_MWh]]></Name>
-					<X>540</X><Y>560</Y>
+					<X>540</X><Y>600</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5575,7 +5575,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707227043472</Id>
 					<Name><![CDATA[v_annualHydrogenDemand_MWh]]></Name>
-					<X>540</X><Y>240</Y>
+					<X>540</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5587,7 +5587,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707227277427</Id>
 					<Name><![CDATA[v_annualElectricityExport_MWh]]></Name>
-					<X>540</X><Y>360</Y>
+					<X>540</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6031,7 +6031,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707408085727</Id>
 					<Name><![CDATA[v_hydrogenImportSummerWeek_MWh]]></Name>
-					<X>540</X><Y>780</Y>
+					<X>540</X><Y>820</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6043,7 +6043,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707408143964</Id>
 					<Name><![CDATA[v_hydrogenImportWinterWeek_MWh]]></Name>
-					<X>540</X><Y>1020</Y>
+					<X>540</X><Y>1060</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6055,7 +6055,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707408232740</Id>
 					<Name><![CDATA[v_hydrogenImportNighttime_MWh]]></Name>
-					<X>540</X><Y>1520</Y>
+					<X>540</X><Y>1560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6067,7 +6067,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707408250339</Id>
 					<Name><![CDATA[v_hydrogenImportDaytime_MWh]]></Name>
-					<X>540</X><Y>1290</Y>
+					<X>540</X><Y>1330</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6079,7 +6079,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707408266971</Id>
 					<Name><![CDATA[v_hydrogenImportWeekend_MWh]]></Name>
-					<X>540</X><Y>2000</Y>
+					<X>540</X><Y>2040</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6091,7 +6091,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707408283223</Id>
 					<Name><![CDATA[v_hydrogenImportWeekday_MWh]]></Name>
-					<X>540</X><Y>1770</Y>
+					<X>540</X><Y>1810</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6175,7 +6175,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1713276179566</Id>
 					<Name><![CDATA[v_annualSelfProducedElectricity_MWh]]></Name>
-					<X>540</X><Y>320</Y>
+					<X>540</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6187,7 +6187,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715017434551</Id>
 					<Name><![CDATA[v_selfProducedElectricitySummerWeek_MWh]]></Name>
-					<X>540</X><Y>880</Y>
+					<X>540</X><Y>920</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6199,7 +6199,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715017457987</Id>
 					<Name><![CDATA[v_selfProducedElectricityWinterWeek_MWh]]></Name>
-					<X>540</X><Y>1120</Y>
+					<X>540</X><Y>1160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6211,7 +6211,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715067597350</Id>
 					<Name><![CDATA[v_selfProducedElectricityDaytime_MWh]]></Name>
-					<X>540</X><Y>1390</Y>
+					<X>540</X><Y>1430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6223,7 +6223,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715067600374</Id>
 					<Name><![CDATA[v_selfProducedElectricityNighttime_MWh]]></Name>
-					<X>540</X><Y>1620</Y>
+					<X>540</X><Y>1660</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6235,7 +6235,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715067603046</Id>
 					<Name><![CDATA[v_selfProducedElectricityWeekday_MWh]]></Name>
-					<X>540</X><Y>1870</Y>
+					<X>540</X><Y>1910</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6247,7 +6247,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715067605671</Id>
 					<Name><![CDATA[v_selfProducedElectricityWeekend_MWh]]></Name>
-					<X>540</X><Y>2100</Y>
+					<X>540</X><Y>2140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6271,7 +6271,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715673065816</Id>
 					<Name><![CDATA[v_annualHydrogenSupply_MWh]]></Name>
-					<X>540</X><Y>260</Y>
+					<X>540</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6283,7 +6283,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715673157574</Id>
 					<Name><![CDATA[v_hydrogenExportSummerWeek_MWh]]></Name>
-					<X>540</X><Y>800</Y>
+					<X>540</X><Y>840</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6295,7 +6295,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715673176598</Id>
 					<Name><![CDATA[v_hydrogenExportWinterWeek_MWh]]></Name>
-					<X>540</X><Y>1040</Y>
+					<X>540</X><Y>1080</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6307,7 +6307,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715673208072</Id>
 					<Name><![CDATA[v_hydrogenExportDaytime_MWh]]></Name>
-					<X>540</X><Y>1310</Y>
+					<X>540</X><Y>1350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6319,7 +6319,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715673226950</Id>
 					<Name><![CDATA[v_hydrogenExportNighttime_MWh]]></Name>
-					<X>540</X><Y>1540</Y>
+					<X>540</X><Y>1580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6331,7 +6331,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715673240649</Id>
 					<Name><![CDATA[v_hydrogenExportWeekday_MWh]]></Name>
-					<X>540</X><Y>1790</Y>
+					<X>540</X><Y>1830</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6343,7 +6343,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1715673249719</Id>
 					<Name><![CDATA[v_hydrogenExportWeekend_MWh]]></Name>
-					<X>540</X><Y>2020</Y>
+					<X>540</X><Y>2060</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6619,7 +6619,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1727085553248</Id>
 					<Name><![CDATA[v_previousTotals]]></Name>
-					<X>540</X><Y>630</Y>
+					<X>540</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6655,7 +6655,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1727101216330</Id>
 					<Name><![CDATA[v_annualOverloadDurationDelivery_hr]]></Name>
-					<X>540</X><Y>585</Y>
+					<X>540</X><Y>625</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6667,7 +6667,31 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1727101224231</Id>
 					<Name><![CDATA[v_annualOverloadDurationFeedin_hr]]></Name>
-					<X>540</X><Y>605</Y>
+					<X>540</X><Y>645</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1731586830861</Id>
+					<Name><![CDATA[v_totalEnergyConsumptionForDistrictHeating_MWh]]></Name>
+					<X>540</X><Y>180</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1731592957076</Id>
+					<Name><![CDATA[v_totalElectricityConsumptionHeatpumps_MWh]]></Name>
+					<X>540</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9528,7 +9552,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				<Text>
 					<Id>1715245405222</Id>
 					<Name><![CDATA[t_summerWinter]]></Name>
-					<X>460</X><Y>650</Y>
+					<X>460</X><Y>710</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9549,7 +9573,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				<Text>
 					<Id>1715245459264</Id>
 					<Name><![CDATA[t_dayNight]]></Name>
-					<X>490</X><Y>1160</Y>
+					<X>490</X><Y>1200</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9570,7 +9594,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				<Text>
 					<Id>1715245495566</Id>
 					<Name><![CDATA[t_weekdayWeekend]]></Name>
-					<X>470</X><Y>1640</Y>
+					<X>470</X><Y>1700</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17586,7 +17610,7 @@ switch(rb_gespreksleidraad.getValue()+1){
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1727090219811</Id>
 					<Name><![CDATA[f_setChartsGespreksleidraad1]]></Name>
-					<X>-380</X><Y>380</Y>
+					<X>-380</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17595,7 +17619,7 @@ switch(rb_gespreksleidraad.getValue()+1){
 						<Name><![CDATA[area]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[f_setEnergyBalanceChartFull(area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, area.v_annualNaturalGasDemand_MWh,
+					<Body><![CDATA[f_setEnergyBalanceChartFull(area, area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, area.v_annualNaturalGasDemand_MWh,
 					 area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualExportedEnergy_MWh, 
 					 pl_consumptionChartGespreksleidraad1, pl_productionChartGespreksleidraad1, t_opwekTextGespreksleidraad1, t_gebruikTextGespreksleidraad1);]]></Body>
 				</Function>
@@ -17604,11 +17628,15 @@ switch(rb_gespreksleidraad.getValue()+1){
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1727090423379</Id>
 					<Name><![CDATA[f_setEnergyBalanceChartFull]]></Name>
-					<X>-380</X><Y>750</Y>
+					<X>-350</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[area]]></Name>
+						<Type><![CDATA[AreaCollection]]></Type>
+					</Parameter>
 					<Parameter>
 						<Name><![CDATA[selfConsumedEnergy_MWh]]></Name>
 						<Type><![CDATA[double]]></Type>
@@ -17656,47 +17684,47 @@ pl_consumptionChart.removeAll();
 
 DataItem d1 = new DataItem();
 d1.setValue(selfConsumedEnergy_MWh);
-DataItem d3 = new DataItem();
-d3.setValue(exportE_MWh);
+DataItem d2 = new DataItem();
+d2.setValue(exportE_MWh);
 
-/*pl_productionChart.addDataItem(d1,"Zelfconsumptie gebied [MWh]",yellowGreen);
-pl_productionChart.addDataItem(d3,"Teruggeleverde Electriciteit [MWh]",navy);
-//pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
-pl_consumptionChart.addDataItem(d1,"Zelfconsumptie gebied [MWh]",yellowGreen);*/
 
 pl_consumptionChart.addDataItem(d1,"Lokaal opgewekt [MWh]",v_selfConsumedEnergyColor);
 //pl_consumptionChart.addDataItem(d2,"Externe bronnen [MWh]",brown);
 //pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
 pl_productionChart.addDataItem(d1,"Lokaal gebruik gebied [MWh]",v_selfConsumedEnergyColor);
-pl_productionChart.addDataItem(d3,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
+pl_productionChart.addDataItem(d2,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
 
 
 if (importE_MWh > 0) {
-	DataItem d2 = new DataItem();
-	d2.setValue(importE_MWh);
-	pl_consumptionChart.addDataItem(d2,"Electriciteit uit het net [MWh]",v_importedElectricityColor);
+	DataItem d3 = new DataItem();
+	d3.setValue(importE_MWh/1000);
+	pl_consumptionChart.addDataItem(d3,"Electriciteit uit het net [MWh]",v_importedElectricityColor);
 }
 if (importG_MWh > 0 ) {
 	DataItem d4 = new DataItem();
-	d4.setValue(importG_MWh); //
+	d4.setValue(importG_MWh - area.v_totalEnergyConsumptionForDistrictHeating_MWh); //Fix for now, cause fed by gas
 	pl_consumptionChart.addDataItem(d4,"Aardgas [MWh]",v_naturalGasDemandColor);
 }	
 if (importF_MWh > 0 ) {
 	DataItem d5 = new DataItem();
-	d5.setValue(importF_MWh); // fuel
+	d5.setValue(importF_MWh/1000); // fuel
 	pl_consumptionChart.addDataItem(d5,"Benzine/diesel[MWh]",v_petroleumProductsDemandColor);
 }
 if (importH_MWh > 0 ) {
 	DataItem d6 = new DataItem();
-	d6.setValue(importH_MWh); // Hydrogen
+	d6.setValue(importH_MWh/1000); // Hydrogen
 	pl_consumptionChart.addDataItem(d6,"Waterstof [MWh]",v_hydrogenDemandColor);
 }
-
+if (area.v_totalEnergyConsumptionForDistrictHeating_MWh > 0){
+	DataItem d8 = new DataItem();
+	d8.setValue(area.v_totalEnergyConsumptionForDistrictHeating_MWh/1000); // Warmtenet
+	pl_consumptionChart.addDataItem(d8,"Warmte uit warmtenet [MWh]",v_districtHeatHeatSupplyColor);
+}
 
 //pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
 double chartScale_MWh = max(selfConsumedEnergy_MWh+exportE_MWh, selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh);
-pl_consumptionChart.setFixedScale(chartScale_MWh);
-pl_productionChart.setFixedScale(chartScale_MWh);
+pl_consumptionChart.setFixedScale(chartScale_MWh/1000);
+pl_productionChart.setFixedScale(chartScale_MWh/1000);
 
 //t_OpwekText.setText("Lokale" + System.lineSeparator() + "opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)/1000) + " GWh");
 //t_GebruikText.setText("Lokaal" + System.lineSeparator() + "verbruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh)/1000) + " GWh");
@@ -17909,7 +17937,7 @@ gr_infoButtonText.setVisible(isVisible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1730391982666</Id>
 					<Name><![CDATA[f_setChartDescriptionText]]></Name>
-					<X>-380</X><Y>690</Y>
+					<X>-380</X><Y>650</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17957,7 +17985,7 @@ t_infoButtonText.setText(formattedText);
 					<ReturnType><![CDATA[String]]></ReturnType>
 					<Id>1730391982677</Id>
 					<Name><![CDATA[formatText]]></Name>
-					<X>-380</X><Y>710</Y>
+					<X>-380</X><Y>670</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18016,19 +18044,45 @@ DataItem annualImport = new DataItem();
 annualImport.setValue(area.v_annualElectricityImport_MWh/1000);
 sc_electricityDemandStack.addDataItem(annualImport, "Invoer", uI_Results.v_importedEnergyColor);
 
+
 //Heat consumption
 sc_heatDemandStack.removeAll();
+
+DataItem totalEnergyConsumptionForDistrictHeating_MWh = new DataItem();
+totalEnergyConsumptionForDistrictHeating_MWh.setValue(area.v_totalEnergyConsumptionForDistrictHeating_MWh/1000);
+sc_heatDemandStack.addDataItem(totalEnergyConsumptionForDistrictHeating_MWh, "Energie voor warmtenet", v_districtHeatDemandColor);
+
+DataItem totalElectricityConsumptionHeatpumps_MWh = new DataItem();
+totalElectricityConsumptionHeatpumps_MWh.setValue(area.v_totalElectricityConsumptionHeatpumps_MWh/1000);
+sc_heatDemandStack.addDataItem(totalElectricityConsumptionHeatpumps_MWh, "Elek. voor warmtepompen", v_heatPumpHeatSupplyColor);
+
+DataItem totalNaturalGasDemand_MWh = new DataItem();
+totalNaturalGasDemand_MWh.setValue((area.v_annualNaturalGasDemand_MWh - area.v_totalEnergyConsumptionForDistrictHeating_MWh)/1000);
+sc_heatDemandStack.addDataItem(totalNaturalGasDemand_MWh, "Gas", v_naturalGasSupplyColor);
+
 
 // Transport consumption
 sc_transportDemandStack.removeAll();
 
+
+
+//Set scales
+double chartScale_MWh = max(area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityImport_MWh, area.v_totalEnergyConsumptionForDistrictHeating_MWh + area.v_totalElectricityConsumptionHeatpumps_MWh + area.v_annualNaturalGasDemand_MWh - area.v_totalEnergyConsumptionForDistrictHeating_MWh);
+sc_electricityDemandStack.setFixedScale(chartScale_MWh/1000);
+sc_heatDemandStack.setFixedScale(chartScale_MWh/1000);
+sc_transportDemandStack.setFixedScale(chartScale_MWh/1000);
 
 //Production (Wind)
 sc_windSupplyStack.removeAll();
 
 
 //Production (Solar)			
-sc_PVSupplyStack.removeAll();			]]></Body>
+sc_PVSupplyStack.removeAll();
+
+
+
+
+			]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -18051,7 +18105,7 @@ sc_PVSupplyStack.removeAll();			]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1730392915853</Id>
 					<Name><![CDATA[f_setChartsGespreksleidraad5]]></Name>
-					<X>-380</X><Y>630</Y>
+					<X>-380</X><Y>610</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18089,7 +18143,7 @@ energySupplyChartGespreksleidraad5.setVisible(true);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1730392916575</Id>
 					<Name><![CDATA[f_setChartsGespreksleidraad6]]></Name>
-					<X>-380</X><Y>650</Y>
+					<X>-380</X><Y>630</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -18927,7 +18981,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Lokale opwek elek.]]></Text>
+					<Text><![CDATA[Lokale opwek]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -19006,7 +19060,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 					<X>10</X><Y>190</Y>
 					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -19029,14 +19083,14 @@ vandaan per jaar en naar energiedrager]]></Text>
 					<X>26</X><Y>183</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Warmte uit warmtenet]]></Text>
+					<Text><![CDATA[Energie voor warmtenet]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -19114,6 +19168,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Text>
 					<Id>1730392680644</Id>
 					<Name><![CDATA[t_gespreksleidraadLegend16]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>-200</X><Y>142.5</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -19135,6 +19190,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Oval>
 					<Id>1730392680646</Id>
 					<Name><![CDATA[oval33]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>-215</X><Y>150</Y>
 					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
