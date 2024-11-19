@@ -1281,13 +1281,13 @@ f_initializePreviousTotals();]]></Body>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[chartProfielen_presentation.setVisible(false);
-chartBalans_presentation.setVisible(false);
-chartNetbelasting_presentation.setVisible(false);
-chartSankey_presentation.setVisible(false);
-chartSummary_presentation.setVisible(false);
-chartGespreksLeidraad_presentation.setVisible(false);
-chartKPISummary_presentation.setVisible(false);
+					<Body><![CDATA[gr_chartProfielen_presentation.setVisible(false);
+gr_chartBalans_presentation.setVisible(false);
+gr_chartNetbelasting_presentation.setVisible(false);
+gr_chartSankey_presentation.setVisible(false);
+gr_chartSummary_presentation.setVisible(false);
+gr_chartGespreksLeidraad_presentation.setVisible(false);
+gr_chartKPISummary_presentation.setVisible(false);
 
 if(b_showKPISummary){
 	chartKPISummary_presentation.setVisible(true);
@@ -1296,27 +1296,27 @@ if(b_showKPISummary){
 
 switch (v_selectedChartType) {
 	case PROFIEL:
-		chartProfielen_presentation.setVisible(true);
+		gr_chartProfielen_presentation.setVisible(true);
 		chartProfielen.f_setCharts();
 		break;
 	case DIAGRAM:
-		chartBalans_presentation.setVisible(true);
+		gr_chartBalans_presentation.setVisible(true);
 		chartBalans.f_setCharts();
 		break;
 	case BELASTING:
-		chartNetbelasting_presentation.setVisible(true);
+		gr_chartNetbelasting_presentation.setVisible(true);
 		chartNetbelasting.f_setBelastingPlots();
 		break;
 	case SANKEY:
-		chartSankey_presentation.setVisible(true);
+		gr_chartSankey_presentation.setVisible(true);
 		chartSankey.f_setSankey();
 		break;
 	case GESPREKSLEIDRAAD_SAMENVATTING:
-		chartSummary_presentation.setVisible(true);
+		gr_chartSummary_presentation.setVisible(true);
 		chartSummary.f_setSummaryCharts();
 		break;
 	case GESPREKSLEIDRAAD:
-		chartGespreksLeidraad_presentation.setVisible(true);
+		gr_chartGespreksLeidraad_presentation.setVisible(true);
 		chartGespreksLeidraad.f_selectGespreksleidraadCharts();
 		break;
 }]]></Body>
@@ -1522,12 +1522,12 @@ else{
 
 //Set x axis
 if(location_x != null){
-gr_resultsUIHeader.setX(location_x);
+	gr_resultsUIHeader.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-gr_resultsUIHeader.setY(location_y);
+	gr_resultsUIHeader.setY(location_y);
 }
 
 //Set visibility
@@ -1559,12 +1559,12 @@ gr_resultsUIHeader.setVisible(visible);]]></Body>
 
 //Set x axis
 if(location_x != null){
-chartSankey_presentation.setX(location_x);
+	gr_chartSankey_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-chartSankey_presentation.setY(location_y);
+	gr_chartSankey_presentation.setY(location_y);
 }
 
 //Set visibility
@@ -1596,16 +1596,16 @@ chartSankey_presentation.setVisible(visible);]]></Body>
 
 //Set x axis
 if(location_x != null){
-chartNetbelasting_presentation.setX(location_x);
+	gr_chartNetbelasting_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-chartNetbelasting_presentation.setY(location_y);
+	gr_chartNetbelasting_presentation.setY(location_y);
 }
 
 //Set visibility
-chartNetbelasting_presentation.setVisible(visible);]]></Body>
+gr_chartNetbelasting_presentation.setVisible(visible);]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -1633,16 +1633,16 @@ chartNetbelasting_presentation.setVisible(visible);]]></Body>
 
 //Set x axis
 if(location_x != null){
-chartBalans_presentation.setX(location_x);
+	gr_chartBalans_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-chartBalans_presentation.setY(location_y);
+	gr_chartBalans_presentation.setY(location_y);
 }
 
 //Set visibility
-chartBalans_presentation.setVisible(visible);]]></Body>
+gr_chartBalans_presentation.setVisible(visible);]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -1670,16 +1670,16 @@ chartBalans_presentation.setVisible(visible);]]></Body>
 
 //Set x axis
 if(location_x != null){
-chartProfielen_presentation.setX(location_x);
+	gr_chartProfielen_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-chartProfielen_presentation.setY(location_y);
+	gr_chartProfielen_presentation.setY(location_y);
 }
 
 //Set visibility
-chartProfielen_presentation.setVisible(visible);]]></Body>
+gr_chartProfielen_presentation.setVisible(visible);]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -1798,16 +1798,16 @@ rect_resultsMenuLarge.setLineStyle(lineStyle);
 
 //Set x axis
 if(location_x != null){
-chartSummary_presentation.setX(location_x);
+	gr_chartSummary_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-chartSummary_presentation.setY(location_y);
+	gr_chartSummary_presentation.setY(location_y);
 }
 
 //Set visibility
-chartSummary_presentation.setVisible(visible);]]></Body>
+gr_chartSummary_presentation.setVisible(visible);]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -1835,16 +1835,16 @@ chartSummary_presentation.setVisible(visible);]]></Body>
 
 //Set x axis
 if(location_x != null){
-chartKPISummary_presentation.setX(location_x);
+	gr_chartKPISummary_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-chartKPISummary_presentation.setY(location_y);
+	gr_chartKPISummary_presentation.setY(location_y);
 }
 
 //Set visibility
-chartKPISummary_presentation.setVisible(visible);]]></Body>
+gr_chartKPISummary_presentation.setVisible(visible);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -1958,16 +1958,16 @@ f_setChartKPISummary_Presentation(location_x, location_y, visible);]]></Body>
 
 //Set x axis
 if(location_x != null){
-chartGespreksLeidraad_presentation.setX(location_x);
+	gr_chartGespreksLeidraad_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-chartGespreksLeidraad_presentation.setY(location_y);
+	gr_chartGespreksLeidraad_presentation.setY(location_y);
 }
 
 //Set visibility
-chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
+gr_chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -2962,7 +2962,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -2977,7 +2977,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -2999,7 +2999,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3014,7 +3014,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3036,7 +3036,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3051,7 +3051,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3073,7 +3073,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3088,7 +3088,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3147,7 +3147,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>1800</X><Y>940</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3162,7 +3162,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>-1800</X><Y>-940</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3184,7 +3184,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
@@ -3199,7 +3199,7 @@ f_showCorrectChart();]]></ActionCode>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
