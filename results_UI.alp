@@ -45,7 +45,7 @@
 			</Option>
 			<Option>
 				<Id>1727084692169</Id>
-				<Name><![CDATA[SAMENVATTING]]></Name>
+				<Name><![CDATA[GESPREKSLEIDRAAD_SAMENVATTING]]></Name>
 			</Option>
 			<Option>
 				<Id>1727109293058</Id>
@@ -74,6 +74,22 @@
 			<Option>
 				<Id>1714740463945</Id>
 				<Name><![CDATA[JAAR]]></Name>
+			</Option>
+		</OptionList>
+		<OptionList>
+			<Id>1732010748986</Id>
+			<Name><![CDATA[OL_RadioButtonSetup]]></Name>
+			<Option>
+				<Id>1732010749203</Id>
+				<Name><![CDATA[DEFAULT]]></Name>
+			</Option>
+			<Option>
+				<Id>1732010785855</Id>
+				<Name><![CDATA[DEFAULT_AND_GESPREKSLEIDRAADSUMMARY]]></Name>
+			</Option>
+			<Option>
+				<Id>1732010755456</Id>
+				<Name><![CDATA[DEFAULT_AND_GESPREKSLEIDRAAD]]></Name>
 			</Option>
 		</OptionList>
 	</OptionLists>
@@ -704,7 +720,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1708448119976</Id>
 					<Name><![CDATA[v_gridConnection]]></Name>
-					<X>540</X><Y>180</Y>
+					<X>540</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -716,7 +732,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1708448128397</Id>
 					<Name><![CDATA[v_collective]]></Name>
-					<X>540</X><Y>200</Y>
+					<X>540</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -728,7 +744,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1712585211623</Id>
 					<Name><![CDATA[v_trafo]]></Name>
-					<X>540</X><Y>220</Y>
+					<X>540</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -770,7 +786,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1714855681842</Id>
 					<Name><![CDATA[v_selectedObjectType]]></Name>
-					<X>540</X><Y>260</Y>
+					<X>540</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -906,7 +922,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1727706137865</Id>
 					<Name><![CDATA[b_showKPISummary]]></Name>
-					<X>920</X><Y>560</Y>
+					<X>1290</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -915,6 +931,21 @@
 						<Type><![CDATA[boolean]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[false]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732014980028</Id>
+					<Name><![CDATA[v_selectedRadioButton]]></Name>
+					<X>1260</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[OL_RadioButtonSetup]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[DEFAULT]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -963,7 +994,7 @@
 				<Variable Class="Parameter">
 					<Id>1727085344073</Id>
 					<Name><![CDATA[p_previousTotals_Region]]></Name>
-					<X>540</X><Y>580</Y>
+					<X>540</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -984,7 +1015,7 @@
 				<Variable Class="CollectionVariable">
 					<Id>1725452042532</Id>
 					<Name><![CDATA[c_individualGridConnections]]></Name>
-					<X>540</X><Y>240</Y>
+					<X>540</X><Y>270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -999,7 +1030,7 @@
 				<Variable Class="CollectionVariable">
 					<Id>1727085020565</Id>
 					<Name><![CDATA[c_previousTotals_GC]]></Name>
-					<X>540</X><Y>600</Y>
+					<X>540</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1226,12 +1257,15 @@ else{
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714835206522</Id>
 					<Name><![CDATA[f_initialize]]></Name>
-					<X>920</X><Y>250</Y>
+					<X>1240</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[//Initialize profiles graph (starting chart)
+					<Body><![CDATA[//Set the selected radiobutton setup
+f_setSelectedRadioButton();
+
+//Initialize profiles graph (starting chart)
 chartProfielen.f_setCharts();
 
 //Initialize previous totals
@@ -1242,7 +1276,7 @@ f_initializePreviousTotals();]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714902615653</Id>
 					<Name><![CDATA[f_showCorrectChart]]></Name>
-					<X>940</X><Y>80</Y>
+					<X>1030</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1277,7 +1311,7 @@ switch (v_selectedChartType) {
 		chartSankey_presentation.setVisible(true);
 		chartSankey.f_setSankey();
 		break;
-	case SAMENVATTING:
+	case GESPREKSLEIDRAAD_SAMENVATTING:
 		chartSummary_presentation.setVisible(true);
 		chartSummary.f_setSummaryCharts();
 		break;
@@ -1466,8 +1500,8 @@ else{
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725370602118</Id>
-					<Name><![CDATA[f_setRadioButtons]]></Name>
-					<X>920</X><Y>460</Y>
+					<Name><![CDATA[f_setResultsUIHeader]]></Name>
+					<X>1240</X><Y>220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1488,23 +1522,23 @@ else{
 
 //Set x axis
 if(location_x != null){
-gr_radioButtons.setX(location_x);
+gr_resultsUIHeader.setX(location_x);
 }
 
 //Set y axis
 if(location_x != null){
-gr_radioButtons.setY(location_y);
+gr_resultsUIHeader.setY(location_y);
 }
 
 //Set visibility
-gr_radioButtons.setVisible(visible);]]></Body>
+gr_resultsUIHeader.setVisible(visible);]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725371353897</Id>
 					<Name><![CDATA[f_setChartSankey_Presentation]]></Name>
-					<X>920</X><Y>340</Y>
+					<X>1260</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1541,7 +1575,7 @@ chartSankey_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725371355774</Id>
 					<Name><![CDATA[f_setChartGridLoad_Presentation]]></Name>
-					<X>920</X><Y>320</Y>
+					<X>1260</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1578,7 +1612,7 @@ chartNetbelasting_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725371358501</Id>
 					<Name><![CDATA[f_setChartBalance_Presentation]]></Name>
-					<X>920</X><Y>300</Y>
+					<X>1260</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1615,7 +1649,7 @@ chartBalans_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725371361557</Id>
 					<Name><![CDATA[f_setChartProfiles_Presentation]]></Name>
-					<X>920</X><Y>280</Y>
+					<X>1260</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1652,7 +1686,7 @@ chartProfielen_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725373315876</Id>
 					<Name><![CDATA[f_setAllCharts]]></Name>
-					<X>940</X><Y>100</Y>
+					<X>1030</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1673,7 +1707,7 @@ if(b_showKPISummary){
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725374888930</Id>
 					<Name><![CDATA[f_styleAllCharts]]></Name>
-					<X>920</X><Y>490</Y>
+					<X>1250</X><Y>460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1699,14 +1733,18 @@ chartProfielen.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyl
 chartBalans.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartNetbelasting.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartSankey.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
-chartKPISummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);]]></Body>
+chartKPISummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartGespreksLeidraad.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartSummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+
+]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1725375062400</Id>
-					<Name><![CDATA[f_styleRadioButtons]]></Name>
-					<X>920</X><Y>510</Y>
+					<Name><![CDATA[f_styleResultsUIHeader]]></Name>
+					<X>1250</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1739,7 +1777,7 @@ rect_resultsMenuLarge.setLineStyle(lineStyle);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1727084763017</Id>
 					<Name><![CDATA[f_setChartSummary_Presentation]]></Name>
-					<X>920</X><Y>360</Y>
+					<X>1260</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1776,7 +1814,7 @@ chartSummary_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1726828282517</Id>
 					<Name><![CDATA[f_setChartKPISummary_Presentation]]></Name>
-					<X>920</X><Y>400</Y>
+					<X>1260</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1813,7 +1851,7 @@ chartKPISummary_presentation.setVisible(visible);]]></Body>
 					<ReturnType><![CDATA[AreaCollection]]></ReturnType>
 					<Id>1727083916594</Id>
 					<Name><![CDATA[f_getDataObject]]></Name>
-					<X>540</X><Y>340</Y>
+					<X>540</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1843,7 +1881,7 @@ return dataObject;]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1727103171052</Id>
 					<Name><![CDATA[f_initializePreviousTotals]]></Name>
-					<X>540</X><Y>360</Y>
+					<X>1240</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1868,7 +1906,7 @@ for(GridConnection GC : energyModel.f_getPausedGridConnections()){
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1729004655678</Id>
 					<Name><![CDATA[f_setAllChart_Presentations]]></Name>
-					<X>920</X><Y>420</Y>
+					<X>1240</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1899,7 +1937,7 @@ f_setChartKPISummary_Presentation(location_x, location_y, visible);]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1730396435330</Id>
 					<Name><![CDATA[f_setChartGSLD_Presentation]]></Name>
-					<X>920</X><Y>380</Y>
+					<X>1260</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1930,6 +1968,36 @@ chartGespreksLeidraad_presentation.setY(location_y);
 
 //Set visibility
 chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1732015499114</Id>
+					<Name><![CDATA[f_setSelectedRadioButton]]></Name>
+					<X>1240</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[rb_DEFAULT.setVisible(false);
+rb_DEFAULT_AND_GESPREKSLEIDRAAD.setVisible(false);
+rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setVisible(false);
+
+switch(v_selectedRadioButton){
+
+case DEFAULT:
+	rb_DEFAULT.setVisible(true);
+	rb_DEFAULT.setEnabled(true);
+	break;
+case DEFAULT_AND_GESPREKSLEIDRAAD:
+	rb_DEFAULT_AND_GESPREKSLEIDRAAD.setVisible(true);
+	rb_DEFAULT_AND_GESPREKSLEIDRAAD.setEnabled(true);
+	break;
+case DEFAULT_AND_GESPREKSLEIDRAADSUMMARY:
+	rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setVisible(true);
+	rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setEnabled(true);
+	break;
+}	]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -2019,7 +2087,7 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				<EmbeddedObject>
 					<Id>1714769685819</Id>
 					<Name><![CDATA[chartProfielen]]></Name>
-					<X>740</X><Y>80</Y>
+					<X>820</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2075,7 +2143,7 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				<EmbeddedObject>
 					<Id>1714770450269</Id>
 					<Name><![CDATA[chartNetbelasting]]></Name>
-					<X>740</X><Y>100</Y>
+					<X>820</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2131,7 +2199,7 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				<EmbeddedObject>
 					<Id>1714770566604</Id>
 					<Name><![CDATA[chartBalans]]></Name>
-					<X>740</X><Y>120</Y>
+					<X>820</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2187,7 +2255,7 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				<EmbeddedObject>
 					<Id>1714770587436</Id>
 					<Name><![CDATA[chartSankey]]></Name>
-					<X>740</X><Y>140</Y>
+					<X>820</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2243,7 +2311,7 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				<EmbeddedObject>
 					<Id>1726828320023</Id>
 					<Name><![CDATA[chartKPISummary]]></Name>
-					<X>740</X><Y>200</Y>
+					<X>820</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2299,7 +2367,7 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				<EmbeddedObject>
 					<Id>1730395151413</Id>
 					<Name><![CDATA[chartGespreksLeidraad]]></Name>
-					<X>740</X><Y>180</Y>
+					<X>820</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2346,7 +2414,7 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				<EmbeddedObject>
 					<Id>1730395817716</Id>
 					<Name><![CDATA[chartSummary]]></Name>
-					<X>740</X><Y>160</Y>
+					<X>820</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2407,6 +2475,29 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 
 			<Presentation>
 				<Rectangle>
+					<Id>1732012016390</Id>
+					<Name><![CDATA[rect_radioButtons]]></Name>
+					<X>0</X><Y>-1000</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>3</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>500</Width>
+					<Height>400</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Rectangle>
 					<Id>1725360256244</Id>
 					<Name><![CDATA[rect_old]]></Name>
 					<X>-700</X><Y>0</Y>
@@ -2431,7 +2522,7 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 				</Rectangle>
 				<Group>
 					<Id>1704296286211</Id>
-					<Name><![CDATA[gr_radioButtons]]></Name>
+					<Name><![CDATA[gr_resultsUIHeader]]></Name>
 					<X>250</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -2465,55 +2556,6 @@ chartGespreksLeidraad_presentation.setVisible(visible);]]></Body>
 					<FillColor>-3092235</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
-				<Control Type="RadioButtons">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1713190298462</Id>
-					<Name><![CDATA[rb_chartType]]></Name>
-					<X>-5</X><Y>-160</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="180" Height="140">
-                        <EmbeddedIcon>false</EmbeddedIcon>	
-						<TextColor/>
-						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[//Hide the 'live simulatie' optie from the radio button in case it is not applicable
-if (rb_chartType.getValue() == 0){
-	//rb_chartPeriod.setVisible(true);
-	//rb_chartPeriod_exclLive.setVisible(false);
-	v_selectedChartType = PROFIEL;
-}
-else{
-	//rb_chartPeriod.setVisible(false);
-	//rb_chartPeriod_exclLive.setVisible(true);
-	if( rb_chartType.getValue() == 1){
-		v_selectedChartType = DIAGRAM;
-	}
-	else if( rb_chartType.getValue() == 2){
-		v_selectedChartType = BELASTING;
-	}
-	else if( rb_chartType.getValue() == 3){
-		v_selectedChartType = SANKEY;
-	}
-	else if( rb_chartType.getValue() == 4){
-		v_selectedChartType = GESPREKSLEIDRAAD;//SAMENVATTING;
-	}
-}
-f_showCorrectChart();]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
-						<Orientation>VERTICAL</Orientation>
-						<Button><![CDATA[Profielen]]></Button>
-						<Button><![CDATA[Opwek/verbruik diagram]]></Button>
-						<Button><![CDATA[Netbelasting]]></Button>
-						<Button><![CDATA[Energiestromen]]></Button>
-						<Button><![CDATA[Gespreksleidraad]]></Button>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
 				<Text>
 					<Id>1713190835374</Id>
 					<Name><![CDATA[t_time1]]></Name>
@@ -2535,6 +2577,164 @@ f_showCorrectChart();]]></ActionCode>
 					</Font>
 					<Alignment>CENTER</Alignment>
 				</Text>
+				<Group>
+					<Id>1732012080093</Id>
+					<Name><![CDATA[gr_mainRadioButtons]]></Name>
+					<X>90</X><Y>-80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Control Type="RadioButtons">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1732012080095</Id>
+					<Name><![CDATA[rb_DEFAULT_AND_GESPREKSLEIDRAAD]]></Name>
+					<X>-330</X><Y>-860</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="180" Height="140">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<XCode><![CDATA[-60]]></XCode>
+						<YCode><![CDATA[-70]]></YCode>
+						<Enabled>false</Enabled>
+						<ActionCode><![CDATA[//Set correct chart
+switch(rb_DEFAULT_AND_GESPREKSLEIDRAAD.getValue()){
+
+case 0:
+	v_selectedChartType = PROFIEL;
+	break;
+case 1:
+	v_selectedChartType = DIAGRAM;
+	break;
+case 2:
+	v_selectedChartType = BELASTING;
+	break;
+case 3:
+	v_selectedChartType = SANKEY;
+	break;
+case 4:
+	v_selectedChartType = GESPREKSLEIDRAAD;
+	break;
+}
+	
+f_showCorrectChart();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
+						<Orientation>VERTICAL</Orientation>
+						<Button><![CDATA[Profielen]]></Button>
+						<Button><![CDATA[Opwek/verbruik diagram]]></Button>
+						<Button><![CDATA[Netbelasting]]></Button>
+						<Button><![CDATA[Energiestromen]]></Button>
+						<Button><![CDATA[Gespreksleidraad]]></Button>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="RadioButtons">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1732012080097</Id>
+					<Name><![CDATA[rb_DEFAULT]]></Name>
+					<X>-60</X><Y>-60</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="150" Height="100">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<Enabled>false</Enabled>
+						<ActionCode><![CDATA[//Set correct chart
+switch(rb_DEFAULT.getValue()){
+
+case 0:
+	v_selectedChartType = PROFIEL;
+	break;
+case 1:
+	v_selectedChartType = DIAGRAM;
+	break;
+case 2:
+	v_selectedChartType = BELASTING;
+	break;
+case 3:
+	v_selectedChartType = SANKEY;
+	break;
+}
+	
+f_showCorrectChart();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<Orientation>VERTICAL</Orientation>
+						<Button><![CDATA[Profielen]]></Button>
+						<Button><![CDATA[Opwek/verbruik diagram]]></Button>
+						<Button><![CDATA[Netbelasting]]></Button>
+						<Button><![CDATA[Energiestromen]]></Button>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="RadioButtons">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1732012080099</Id>
+					<Name><![CDATA[rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY]]></Name>
+					<X>-320</X><Y>-700</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="210" Height="130">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor/>
+						<XCode><![CDATA[-80]]></XCode>
+						<YCode><![CDATA[-70]]></YCode>
+						<Enabled>false</Enabled>
+						<ActionCode><![CDATA[//Set correct chart
+switch(rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.getValue()){
+
+case 0:
+	v_selectedChartType = PROFIEL;
+	break;
+case 1:
+	v_selectedChartType = DIAGRAM;
+	break;
+case 2:
+	v_selectedChartType = BELASTING;
+	break;
+case 3:
+	v_selectedChartType = SANKEY;
+	break;
+case 4:
+	v_selectedChartType = GESPREKSLEIDRAAD_SAMENVATTING;
+	break;
+}
+	
+f_showCorrectChart();]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="12" Style="0"/>
+						<Orientation>VERTICAL</Orientation>
+						<Button><![CDATA[Profielen]]></Button>
+						<Button><![CDATA[Opwek/verbruik diagram]]></Button>
+						<Button><![CDATA[Netbelasting]]></Button>
+						<Button><![CDATA[Energiestromen]]></Button>
+						<Button><![CDATA[Gespreksleidraad samenvatting]]></Button>
+						<LinkTo>false</LinkTo>
+					</ExtendedProperties>
+				</Control>
+			</Presentation>
+
+				</Group>
 			</Presentation>
 
 				</Group>
@@ -3032,8 +3232,8 @@ f_showCorrectChart();]]></ActionCode>
 					<LineColor>-65536</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
-					<Width>700</Width>
-					<Height>690</Height>
+					<Width>1420</Width>
+					<Height>980</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-1</FillColor>
 					<FillMaterial>null</FillMaterial>
@@ -3086,7 +3286,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Rectangle>
 					<Id>1726338589371</Id>
 					<Name><![CDATA[rectangle]]></Name>
-					<X>350</X><Y>1020</Y>
+					<X>360</X><Y>1440</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3132,6 +3332,115 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 						<Link>b_showKPISummary</Link>
 	 				</ExtendedProperties>
 				</Control>
+				<Text>
+					<Id>1732014717581</Id>
+					<Name><![CDATA[txt_radiobuttontypes]]></Name>
+					<X>20</X><Y>-980</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Radio button types]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1732014768874</Id>
+					<Name><![CDATA[txt_rbGespreksleidraad]]></Name>
+					<X>10</X><Y>-940</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Default + Gespreksleidraad]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1732014802839</Id>
+					<Name><![CDATA[txt_rbGespreksleidraadSamenvatting]]></Name>
+					<X>10</X><Y>-780</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Default + GespreksleidraadSamenvatting]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Rectangle>
+					<Id>1732015096373</Id>
+					<Name><![CDATA[rect_initializationCode]]></Name>
+					<X>1210</X><Y>70</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>3</LineWidth>
+					<LineColor>-65536</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>350</Width>
+					<Height>410</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1732015137573</Id>
+					<Name><![CDATA[txt_resultsUIinitializationCode]]></Name>
+					<X>1230</X><Y>80</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Initialization]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>16</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
