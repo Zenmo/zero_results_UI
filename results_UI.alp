@@ -814,22 +814,6 @@
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1714895704962</Id>
-					<Name><![CDATA[v_selectedPeriod]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-470</X><Y>40</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[ChartPeriod]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[LIVE]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1714990064174</Id>
 					<Name><![CDATA[v_selfConsumedElectricityColor]]></Name>
 					<X>83</X><Y>1940</Y>
@@ -1047,214 +1031,6 @@
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1705578341838</Id>
-					<Name><![CDATA[f_setGraphs]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-640</X><Y>280</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[// Currently we do not have summer/winter/day/night data for each company/trafo
-if (rb_expertGraphs.getValue() == 0 && rb_area_BusinessPark.getValue() != 0 ) {
-	rb_supplyDemand.setValue(0,false);
-} else if (rb_expertGraphs.getValue() == 1 && rb_area_BusinessPark.getValue() != 0) {
-	rb_onbalans.setValue(0,false);
-} else if (rb_expertGraphs.getValue() == 2 && rb_area_BusinessPark.getValue() != 0) {
-	rb_onbalans.setValue(0,false);
-} else if (rb_expertGraphs.getValue() == 3 && rb_area_BusinessPark.getValue() == 1) {
-	rb_expertGraphs.setValue(0);
-}
-f_setGraphString();
-AreaCollection area;
-
-// Only show the relevant buttons to the user
-f_setRadioButtonVisibilitiesFromString(v_graphString);
-// First disable all the graphs, we will enable the selected one later when its function is called
-f_setDetailGraphsVisible(false);
-
-if( v_graphString.contains("_Bedrijf")){
-	area = v_company;
-} else if (v_graphString.contains("_Transformator")){
-	area = v_trafo;
-} else {
-	area = v_area;//findFirst(pop_areaCollections, x->x.p_collection.equals(v_area));
-}
-
-if( v_graphString.contains("Live") || v_graphString.contains("Profielen")){
-	f_setProfileGraphsFromString(v_graphString, area);
-}
-else if( v_graphString.contains("Opwek en verbruik")){
-	f_setSupplyDemandGraphsFromString(v_graphString, area);
-}
-else if( v_graphString.contains("Netbelasting")){
-	f_setGridLoadGraphsFromString(v_graphString, area);
-	rb_energyCarrier.setValue(1);
-} 
-else if (v_graphString.contains("Sankey")) {
-	f_setSankey(area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, area.v_annualNaturalGasDemand_MWh,
-					 area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualExportedEnergy_MWh, 0);
-}
-else if ( v_graphString.contains("Sankey")) {
-	//f_setSummaryCharts();
-	f_setSankey(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
-		v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 0 );
-}
-
-if(v_graphString.contains("Live")){
-	runSimulation();
-}
-else{
-	pauseSimulation();
-}
-
-]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1705596201338</Id>
-					<Name><![CDATA[f_setSupplyDemandGraphsFromString]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-640</X><Y>300</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[graph]]></Name>
-						<Type><![CDATA[String]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[area]]></Name>
-						<Type><![CDATA[AreaCollection]]></Type>
-					</Parameter>
-					<Body><![CDATA[gr_onbalansGraphs.setVisible(true);
-//SupplyDemand
-if( graph.contains( "Jaar")){	
-	if( graph.contains( "Energie")){
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFull(area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, 
-							area.v_annualNaturalGasDemand_MWh, area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualElectricityExport_MWh, 
-							pl_consumptionChartTop, pl_productionChartTop,
-							t_opwekTextTop, t_gebruikTextTop);
-	}
-	else if( graph.contains( "Elektriciteit")){	
-		tx_topBarplotText1.setText("Elektriciteitsbalans");
-		if (area == v_trafo) {
-			f_setEnergyBalanceChartTrafo(area.v_annualSelfConsumedElectricity_MWh, area.v_annualSelfProducedElectricity_MWh, area.v_annualElectricityImport_MWh, area.v_annualElectricityExport_MWh, 
-						pl_consumptionChartTop, pl_productionChartTop,
-						t_opwekTextTop, t_gebruikTextTop);
-		}
-		else {
-			f_setEnergyBalanceChartSimple(area.v_annualSelfConsumedElectricity_MWh, area.v_annualElectricityImport_MWh, area.v_annualElectricityExport_MWh, 
-						pl_consumptionChartTop, pl_productionChartTop,
-						t_opwekTextTop, t_gebruikTextTop);
-		}
-		t_topBarplotText.setText("Jaaroverzicht");
-	}
-	
-}
-else if( graph.contains( "Zomer/winterweek")){	
-	if( graph.contains( "Energie")){			
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricitySummerWeek_MWh, area.v_importedElectricitySummerWeek_MWh, 
-									area.v_naturalGasDemandSummerWeek_MWh, area.v_petroleumProductsDemandSummerWeek_MWh, area.v_hydrogenImportSummerWeek_MWh,
-									area.v_exportedElectricitySummerWeek_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyWinterWeek_MWh, area.v_importedElectricityWinterWeek_MWh, 
-									area.v_naturalGasDemandWinterWeek_MWh, area.v_petroleumProductsDemandWinterWeek_MWh, area.v_hydrogenImportWinterWeek_MWh,
-									area.v_exportedElectricityWinterWeek_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-		
-	}
-	else if( graph.contains( "Elektriciteit")){	
-		tx_topBarplotText1.setText("Elektriciteitsbalans");	
-		f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricitySummerWeek_MWh, area.v_importedElectricitySummerWeek_MWh, 
-									area.v_exportedElectricitySummerWeek_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityWinterWeek_MWh, area.v_importedElectricityWinterWeek_MWh,								
-									area.v_exportedElectricityWinterWeek_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Zomerweek");
-	t_bottomBarplotText.setText("Winterweek");
-}
-else if( graph.contains( "Dag/nacht")){	
-	if( graph.contains( "Energie")){	
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricityDaytime_MWh, area.v_importedElectricityDaytime_MWh, 
-									area.v_naturalGasDemandDaytime_MWh, area.v_petroleumProductsDemandDaytime_MWh, area.v_hydrogenImportDaytime_MWh,
-									area.v_exportedElectricityDaytime_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyNighttime_MWh, area.v_importedElectricityNighttime_MWh, 
-									area.v_naturalGasDemandNighttime_MWh, area.v_petroleumProductsDemandNighttime_MWh, area.v_hydrogenImportNighttime_MWh,
-									area.v_exportedElectricityNighttime_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	else if( graph.contains( "Elektriciteit")){
-				tx_topBarplotText1.setText("Elektriciteitsbalans");
-				f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricityDaytime_MWh, area.v_importedElectricityDaytime_MWh, 
-									area.v_exportedElectricityDaytime_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityNighttime_MWh, area.v_importedElectricityNighttime_MWh,								
-									area.v_exportedElectricityNighttime_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Totaal overdag");
-	t_bottomBarplotText.setText("Totaal 's nachts");
-}
-else if( graph.contains( "Week/weekend")){	
-	if( graph.contains( "Energie")){	
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricityWeekday_MWh, area.v_importedElectricityWeekday_MWh, 
-									area.v_naturalGasDemandWeekday_MWh, area.v_petroleumProductsDemandWeekday_MWh, area.v_hydrogenImportWeekday_MWh,
-									area.v_exportedElectricityWeekday_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyWeekend_MWh, area.v_importedElectricityWeekend_MWh, 
-									area.v_naturalGasDemandWeekend_MWh, area.v_petroleumProductsDemandWeekend_MWh, area.v_hydrogenImportWeekend_MWh,
-									area.v_exportedElectricityWeekend_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	else if( graph.contains( "Elektriciteit")){	
-				tx_topBarplotText1.setText("Elektriciteitsbalans");
-				f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricityWeekday_MWh, area.v_importedElectricityWeekday_MWh, 
-									area.v_exportedElectricityWeekday_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityWeekend_MWh, area.v_importedElectricityWeekend_MWh,								
-									area.v_exportedElectricityWeekend_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Weekdagen");
-	t_bottomBarplotText.setText("Weekend");
-}
-
-
-if(v_graphString.contains( "Jaar")){
-	gr_onbalansBarplot2.setVisible(false);
-}
-else{
-	gr_onbalansBarplot2.setVisible(true);
-	
-}
-
-]]></Body>
-				</Function>
-				<Function AccessType="public" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1714835206522</Id>
 					<Name><![CDATA[f_initialize]]></Name>
 					<X>1240</X><Y>120</Y>
@@ -1290,7 +1066,7 @@ gr_chartGespreksLeidraad_presentation.setVisible(false);
 gr_chartKPISummary_presentation.setVisible(false);
 
 if(b_showKPISummary){
-	chartKPISummary_presentation.setVisible(true);
+	gr_chartKPISummary_presentation.setVisible(true);
 	chartKPISummary.f_setKPISummaryChart();
 }
 
@@ -1320,181 +1096,6 @@ switch (v_selectedChartType) {
 		chartGespreksLeidraad.f_selectGespreksleidraadCharts();
 		break;
 }]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1714930489525</Id>
-					<Name><![CDATA[f_setDiagrams]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-640</X><Y>260</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Body><![CDATA[AreaCollection area;
-if (v_selectedObjectType == SelectedObjectTypes.TRAFO) {
-	area = uI_Results.v_trafo;
-} 
-else if (v_selectedObjectType == SelectedObjectTypes.BUILDING) {
-	area = uI_Results.v_company;
-}
-else {
-	area = uI_Results.v_area;
-}
-
-//SupplyDemand
-if( v_selectedPeriod == JAAR){	
-	if( graph.contains( "Energie")){
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFull(area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, 
-							area.v_annualNaturalGasDemand_MWh, area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualElectricityExport_MWh, 
-							pl_consumptionChartTop, pl_productionChartTop,
-							t_opwekTextTop, t_gebruikTextTop);
-	}
-	else if( graph.contains( "Elektriciteit")){	
-		tx_topBarplotText1.setText("Elektriciteitsbalans");
-		if (area == v_trafo) {
-			f_setEnergyBalanceChartTrafo(area.v_annualSelfConsumedElectricity_MWh, area.v_annualSelfProducedElectricity_MWh, area.v_annualElectricityImport_MWh, area.v_annualElectricityExport_MWh, 
-						pl_consumptionChartTop, pl_productionChartTop,
-						t_opwekTextTop, t_gebruikTextTop);
-		}
-		else {
-			f_setEnergyBalanceChartSimple(area.v_annualSelfConsumedElectricity_MWh, area.v_annualElectricityImport_MWh, area.v_annualElectricityExport_MWh, 
-						pl_consumptionChartTop, pl_productionChartTop,
-						t_opwekTextTop, t_gebruikTextTop);
-		}
-		t_topBarplotText.setText("Jaaroverzicht");
-	}
-	
-}
-else if( graph.contains( "Zomer/winterweek")){	
-	if( graph.contains( "Energie")){			
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricitySummerWeek_MWh, area.v_importedElectricitySummerWeek_MWh, 
-									area.v_naturalGasDemandSummerWeek_MWh, area.v_petroleumProductsDemandSummerWeek_MWh, area.v_hydrogenImportSummerWeek_MWh,
-									area.v_exportedElectricitySummerWeek_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyWinterWeek_MWh, area.v_importedElectricityWinterWeek_MWh, 
-									area.v_naturalGasDemandWinterWeek_MWh, area.v_petroleumProductsDemandWinterWeek_MWh, area.v_hydrogenImportWinterWeek_MWh,
-									area.v_exportedElectricityWinterWeek_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-		
-	}
-	else if( graph.contains( "Elektriciteit")){	
-		tx_topBarplotText1.setText("Elektriciteitsbalans");	
-		f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricitySummerWeek_MWh, area.v_importedElectricitySummerWeek_MWh, 
-									area.v_exportedElectricitySummerWeek_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityWinterWeek_MWh, area.v_importedElectricityWinterWeek_MWh,								
-									area.v_exportedElectricityWinterWeek_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Zomerweek");
-	t_bottomBarplotText.setText("Winterweek");
-}
-else if( graph.contains( "Dag/nacht")){	
-	if( graph.contains( "Energie")){	
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricityDaytime_MWh, area.v_importedElectricityDaytime_MWh, 
-									area.v_naturalGasDemandDaytime_MWh, area.v_petroleumProductsDemandDaytime_MWh, area.v_hydrogenImportDaytime_MWh,
-									area.v_exportedElectricityDaytime_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyNighttime_MWh, area.v_importedElectricityNighttime_MWh, 
-									area.v_naturalGasDemandNighttime_MWh, area.v_petroleumProductsDemandNighttime_MWh, area.v_hydrogenImportNighttime_MWh,
-									area.v_exportedElectricityNighttime_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	else if( graph.contains( "Elektriciteit")){
-				tx_topBarplotText1.setText("Elektriciteitsbalans");
-				f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricityDaytime_MWh, area.v_importedElectricityDaytime_MWh, 
-									area.v_exportedElectricityDaytime_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityNighttime_MWh, area.v_importedElectricityNighttime_MWh,								
-									area.v_exportedElectricityNighttime_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Totaal overdag");
-	t_bottomBarplotText.setText("Totaal 's nachts");
-}
-else if( graph.contains( "Week/weekend")){	
-	if( graph.contains( "Energie")){	
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricityWeekday_MWh, area.v_importedElectricityWeekday_MWh, 
-									area.v_naturalGasDemandWeekday_MWh, area.v_petroleumProductsDemandWeekday_MWh, area.v_hydrogenImportWeekday_MWh,
-									area.v_exportedElectricityWeekday_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyWeekend_MWh, area.v_importedElectricityWeekend_MWh, 
-									area.v_naturalGasDemandWeekend_MWh, area.v_petroleumProductsDemandWeekend_MWh, area.v_hydrogenImportWeekend_MWh,
-									area.v_exportedElectricityWeekend_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	else if( graph.contains( "Elektriciteit")){	
-				tx_topBarplotText1.setText("Elektriciteitsbalans");
-				f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricityWeekday_MWh, area.v_importedElectricityWeekday_MWh, 
-									area.v_exportedElectricityWeekday_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityWeekend_MWh, area.v_importedElectricityWeekend_MWh,								
-									area.v_exportedElectricityWeekend_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Weekdagen");
-	t_bottomBarplotText.setText("Weekend");
-}
-
-
-if(v_graphString.contains( "Jaar")){
-	gr_onbalansBarplot2.setVisible(false);
-}
-else{
-	gr_onbalansBarplot2.setVisible(true);
-	
-}
-
-]]></Body>
-				</Function>
-				<Function AccessType="public" StaticFunction="false">
-					<ReturnModificator>VOID</ReturnModificator>
-					<ReturnType><![CDATA[double]]></ReturnType>
-					<Id>1715684810759</Id>
-					<Name><![CDATA[f_setChartType]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-640</X><Y>240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[selectedChartType]]></Name>
-						<Type><![CDATA[ChartTypes]]></Type>
-					</Parameter>
-					<Body><![CDATA[switch (selectedChartType) {
-	case PROFIEL:
-		rb_chartType.setValue(0, true);
-		break;
-	case DIAGRAM:
-		rb_chartType.setValue(1);
-		break;
-	case BELASTING:
-		rb_chartType.setValue(2);
-		break;
-	case SANKEY:
-		rb_chartType.setValue(3);
-		break;
-}
-]]></Body>
 				</Function>
 				<Function AccessType="public" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
@@ -2626,7 +2227,11 @@ case 4:
 	v_selectedChartType = GESPREKSLEIDRAAD;
 	break;
 }
-	
+
+if(b_showKPISummary){
+	checkbox_KPISummary.setSelected(false, true);
+}
+
 f_showCorrectChart();]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
@@ -2670,7 +2275,11 @@ case 3:
 	v_selectedChartType = SANKEY;
 	break;
 }
-	
+
+if(b_showKPISummary){
+	checkbox_KPISummary.setSelected(false, true);
+}
+
 f_showCorrectChart();]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
@@ -2717,6 +2326,10 @@ case 3:
 case 4:
 	v_selectedChartType = GESPREKSLEIDRAAD_SAMENVATTING;
 	break;
+}
+
+if(b_showKPISummary){
+	checkbox_KPISummary.setSelected(false, true);
 }
 	
 f_showCorrectChart();]]></ActionCode>
@@ -2784,112 +2397,6 @@ f_showCorrectChart();]]></ActionCode>
 					<FillColor>-1</FillColor>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
-				<Text>
-					<Id>1713190818995</Id>
-					<Name><![CDATA[t_time]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-570</X><Y>60</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Over welke periode?]]></Text>
-					<Font>
-						<Name>Yu Gothic UI</Name>
-						<Size>16</Size>
-						<Style>1</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-				<Control Type="RadioButtons">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1713190816441</Id>
-					<Name><![CDATA[rb_chartPeriod]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-660</X><Y>100</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="105" Height="100">
-                        <EmbeddedIcon>false</EmbeddedIcon>	
-						<TextColor/>
-						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[int nb = rb_chartPeriod.getValue();
-if( nb == 0){
-	v_selectedPeriod = JAAR;
-	rb_chartPeriod_exclLive.setValue(0, false);
-}
-else if( nb == 1 ){
-	v_selectedPeriod = ZOMER;
-	rb_chartPeriod_exclLive.setValue(1, false);
-}
-else if( nb == 2){
-	v_selectedPeriod = WINTER;
-	rb_chartPeriod_exclLive.setValue(2, false);
-}
-else if( nb == 3){
-	v_selectedPeriod = LIVE;
-}
-f_showCorrectChart();]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
-						<DefaultValueCode><![CDATA[3]]></DefaultValueCode>
-						<Orientation>VERTICAL</Orientation>
-						<Button><![CDATA[Jaaroverzicht]]></Button>
-						<Button><![CDATA[Zomerweek]]></Button>
-						<Button><![CDATA[Winterweek]]></Button>
-						<Button><![CDATA[Live simulatie]]></Button>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="RadioButtons">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1714842507101</Id>
-					<Name><![CDATA[rb_chartPeriod_exclLive]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-540</X><Y>100</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<BasicProperties Width="105" Height="100">
-                        <EmbeddedIcon>false</EmbeddedIcon>	
-						<TextColor/>
-						<Enabled>true</Enabled>
-						<ActionCode><![CDATA[int nb = rb_chartPeriod_exclLive.getValue();
-if( nb == 0){
-	v_selectedPeriod = JAAR;
-	rb_chartPeriod.setValue(0, false);
-}
-else if( nb == 1 ){
-	v_selectedPeriod = ZOMER;
-	rb_chartPeriod.setValue(1, false);
-}
-else if( nb == 2){
-	v_selectedPeriod = WINTER;
-	rb_chartPeriod.setValue(2, false);
-}
-f_showCorrectChart();]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<Font Name="Yu Gothic UI" Size="12" Style="0"/>
-						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
-						<Orientation>VERTICAL</Orientation>
-						<Button><![CDATA[Jaaroverzicht]]></Button>
-						<Button><![CDATA[Zomerweek]]></Button>
-						<Button><![CDATA[Winterweek]]></Button>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
 				<Text>
 					<Id>1725360277747</Id>
 					<Name><![CDATA[txt_oldCode]]></Name>
@@ -27211,71 +26718,6 @@ lokaal opgewekt]]></Text>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1730395813847</Id>
-					<Name><![CDATA[v_selfConsumedEnergy_MWh]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>940</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1730395813849</Id>
-					<Name><![CDATA[v_importedEnergy_MWh]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>960</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1730395813851</Id>
-					<Name><![CDATA[v_exportedEnergy_MWh]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>980</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1730395813853</Id>
-					<Name><![CDATA[v_totalTimeOverloadedTransformers_h]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>880</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1730395813855</Id>
-					<Name><![CDATA[v_modelSelfConsumption_fr]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>900</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1730395813857</Id>
 					<Name><![CDATA[v_selfConsumedElectricityColor]]></Name>
 					<X>60</X><Y>1200</Y>
@@ -27317,35 +26759,6 @@ lokaal opgewekt]]></Text>
 						<Type><![CDATA[Color]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[navy]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1730395813863</Id>
-					<Name><![CDATA[v_selfSufficiency_fr]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>920</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1730395813865</Id>
-					<Name><![CDATA[b_addSankey]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>860</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[boolean]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[true]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -27889,76 +27302,22 @@ lokaal opgewekt]]></Text>
 					<Body><![CDATA[if (rb_chartType.getValue()==0) {
 	gr_gespreksleidraad1.setVisible(true);
 	gr_gespreksleidraad3.setVisible(false);
-	f_setChartsGespreksleidraad1(uI_Results.v_area);
+	f_setChartsSummary1(uI_Results.v_area);
 } else if (rb_chartType.getValue()==1) {
 	gr_gespreksleidraad1.setVisible(false);
 	gr_gespreksleidraad3.setPos(gr_gespreksleidraad1.getX(), gr_gespreksleidraad1.getY());
 	gr_gespreksleidraad3.setVisible(true);
-	f_setChartsGespreksleidraad3(uI_Results.v_area);
+	f_setChartsSummary2(uI_Results.v_area);
 }
 
-/*
-gr_resultsSummary.setVisible(true);
-// KPIs
-//t_KPIhoursOverload_h.setText(roundToInt(v_totalTimeOverloadedTransformers_h) + "h");
-//double selfSufficiency_fr = v_area.v_selfConsumedEnergy_MWh/(v_area.v_selfConsumedEnergy_MWh + v_area.v_importedEnergy_MWh);
-t_KPIselfsufficiency_pct.setText(roundToInt(v_area.v_modelSelfSufficiency_fr*100) + "%");
-t_KPIBenuttingsgraad.setText(roundToInt(v_area.v_totalTimeOverloadedTransformers_h) + " u");
-
-f_setEnergyBalanceChartFull(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
-					 v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 
-					 pl_consumptionStackSummary, pl_productionStackSummary, t_opwekText, t_gebruikText);
-
-if (b_addSankey) {
-	f_setSankey(v_area.v_annualSelfConsumedEnergy_MWh, v_area.v_annualElectricityImport_MWh, v_area.v_annualNaturalGasDemand_MWh,
-					 v_area.v_annualPetroleumProductsDemand_MWh, v_area.v_annualHydrogenDemand_MWh, v_area.v_annualExportedEnergy_MWh, 0 );
-	gr_onbalansBarplot.setY(gr_resultsSummary.getY()-780);
-}
-
-
-
-// Energiebalansplots
-DataItem d1 = new DataItem();
-d1.setValue(v_area.v_annualSelfConsumedEnergy_MWh);
-DataItem d2 = new DataItem();
-d2.setValue(v_area.v_annualImportedEnergy_MWh);
-DataItem d3 = new DataItem();
-d3.setValue(v_area.v_annualExportedEnergy_MWh);
-
-pl_consumptionStackSummary.removeAll();
-pl_consumptionStackSummary.addDataItem(d1, v_selfConsumedEnergyText ,v_selfConsumedEnergyColor);
-pl_consumptionStackSummary.addDataItem(d2, v_importedEnergyText , v_importedEnergyColor);
-//pl_consumptionStackSummary.addDataItem(d4,"Overbelasting [MWh]",red);
-
-pl_productionStackSummary.removeAll();
-pl_productionStackSummary.addDataItem(d1, v_selfConsumedEnergyText ,v_selfConsumedEnergyColor);
-pl_productionStackSummary.addDataItem(d3, v_exportedEnergyText , v_exportedEnergyColor);
-//pl_productionStackSummary.addDataItem(d5,"Overbelasting [MWh]",red);
-
-//Set chart scale
-double chartScale_MWh = max(v_area.v_annualSelfConsumedEnergy_MWh + v_area.v_annualExportedEnergy_MWh, v_area.v_annualSelfConsumedEnergy_MWh + v_area.v_annualImportedEnergy_MWh);
-pl_consumptionStackSummary.setFixedScale(chartScale_MWh);
-pl_productionStackSummary.setFixedScale(chartScale_MWh);
-
-if (chartScale_MWh<10) {
-	t_opwekText.setText("Opwek" + System.lineSeparator() + roundToInt((v_area.v_annualSelfConsumedEnergy_MWh + v_area.v_annualExportedEnergy_MWh)*1000) + " kWh");
-	t_gebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((v_area.v_annualSelfConsumedEnergy_MWh + v_area.v_annualImportedEnergy_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<10000) {
-	t_opwekText.setText("Opwek" + System.lineSeparator() + roundToInt((v_area.v_annualSelfConsumedEnergy_MWh + v_area.v_annualExportedEnergy_MWh)) + " MWh");
-	t_gebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((v_area.v_annualSelfConsumedEnergy_MWh + v_area.v_annualImportedEnergy_MWh)) + " MWh");
-} else {
-	t_opwekText.setText("Opwek" + System.lineSeparator() + roundToInt((v_area.v_annualSelfConsumedEnergy_MWh + v_area.v_annualExportedEnergy_MWh)/1000) + " GWh");
-	t_gebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((v_area.v_annualSelfConsumedEnergy_MWh + v_area.v_annualImportedEnergy_MWh)/1000) + " GWh");
-}
-*/
-	]]></Body>
+]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1730395813827</Id>
-					<Name><![CDATA[f_setChartsGespreksleidraad1]]></Name>
-					<X>660</X><Y>710</Y>
+					<Name><![CDATA[f_setChartsSummary1]]></Name>
+					<X>60</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -28002,7 +27361,7 @@ energySupplyChartYearGespreksleidraad1.setVisible(true);
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1730395813829</Id>
 					<Name><![CDATA[f_setEnergyBalanceChartFull]]></Name>
-					<X>680</X><Y>726</Y>
+					<X>80</X><Y>886</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -28114,8 +27473,8 @@ if (chartScale_MWh<10) {
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1730395813831</Id>
-					<Name><![CDATA[f_setChartsGespreksleidraad3]]></Name>
-					<X>965.333</X><Y>700</Y>
+					<Name><![CDATA[f_setChartsSummary2]]></Name>
+					<X>60</X><Y>910</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -28137,14 +27496,14 @@ if (! (area.v_individualSelfconsumption_fr > 0) ) {
 }
 
 f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, area.v_annualSelfConsumedElectricity_MWh, area.v_annualElectricityExport_MWh,
-					pl_productionChartIndividual, pl_productionChartCollective, t_opwekTextGespreksleidraad3, t_OpwekTextGespreksleidraad3_1);]]></Body>
+					pl_productionChartIndividual, pl_productionChartCollective);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>VOID</ReturnModificator>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1730395813833</Id>
 					<Name><![CDATA[f_setSelfConsumptionChart]]></Name>
-					<X>980</X><Y>720</Y>
+					<X>74.667</X><Y>930</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -28169,14 +27528,6 @@ f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, area.v_an
 						<Name><![CDATA[pl_collectiveChart]]></Name>
 						<Type><![CDATA[StackChart]]></Type>
 					</Parameter>
-					<Parameter>
-						<Name><![CDATA[t_individualText]]></Name>
-						<Type><![CDATA[ShapeText]]></Type>
-					</Parameter>
-					<Parameter>
-						<Name><![CDATA[t_collectiveText]]></Name>
-						<Type><![CDATA[ShapeText]]></Type>
-					</Parameter>
 					<Body><![CDATA[//gr_onbalansGraphs.setVisible(false);
 
 DataItem d1 = new DataItem();
@@ -28199,17 +27550,7 @@ double chartScale_MWh = selfConsumedEnergyCollective_MWh+export_MWh;
 pl_individualChart.setFixedScale(chartScale_MWh);
 pl_collectiveChart.setFixedScale(chartScale_MWh);
 
-/*if (chartScale_MWh<10) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)*1000) + " kWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<1000) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)) + " MWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)) + " MWh");
-} else {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)/1000) + " GWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)/1000) + " GWh");
-}*/
-	]]></Body>
+]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -28302,399 +27643,6 @@ pl_collectiveChart.setFixedScale(chartScale_MWh);
 					<FillColorCode><![CDATA[new Color(208, 208, 245)]]></FillColorCode>
 					<FillMaterial>null</FillMaterial>
 				</Rectangle>
-				<Group>
-					<Id>1730395813943</Id>
-					<Name><![CDATA[gr_KPIzelfvoorzienendheid]]></Name>
-					<X>90</X><Y>110</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-
-			<Presentation>
-				<Text>
-					<Id>1730395813945</Id>
-					<Name><![CDATA[text591]]></Name>
-					<X>0</X><Y>-80</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Zelfvoorzienendheid]]></Text>
-					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-				<Oval>
-					<Id>1730395813947</Id>
-					<Name><![CDATA[ovalZelfvoorzienendheid]]></Name>
-					<X>0</X><Y>2</Y>
-					<Label><X>0</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-16777216</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<RadiusX>45</RadiusX>
-					<RadiusY>40</RadiusY>
-					<Rotation>0.0</Rotation>
-					<FillColor>-2578</FillColor>
-					<FillColorCode><![CDATA[//setSelfSufficiencyOvalColor(energyModel.v_modelSelfSufficiency_fr*100)]]></FillColorCode>
-					<FillMaterial>null</FillMaterial>
-				</Oval>
-				<Text>
-					<Id>1730395813949</Id>
-					<Name><![CDATA[text1121]]></Name>
-					<X>0</X><Y>57</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[aandeel energieverbruik 
-lokaal opgewekt]]></Text>
-					<Font>
-						<Name>Arial</Name>
-						<Size>14</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-				<Text>
-					<Id>1730395813951</Id>
-					<Name><![CDATA[t_KPIselfsufficiency_pct]]></Name>
-					<X>0</X><Y>-10</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[20%]]></Text>
-					<TextCode><![CDATA[//roundToInt(energyModel.v_modelSelfSufficiency_fr*100) + "%"]]></TextCode>
-					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-			</Presentation>
-
-				</Group>
-				<Group>
-					<Id>1730395813953</Id>
-					<Name><![CDATA[gr_KPInetcongestie]]></Name>
-					<X>-130</X><Y>110</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-
-			<Presentation>
-				<Text>
-					<Id>1730395813955</Id>
-					<Name><![CDATA[text592]]></Name>
-					<X>0</X><Y>-80</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Netbelasting]]></Text>
-					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-				<Oval>
-					<Id>1730395813957</Id>
-					<Name><![CDATA[ovalNetbelasting]]></Name>
-					<X>0</X><Y>2</Y>
-					<Label><X>0</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<ZHeight>10</ZHeight>
-					<LineWidth>1</LineWidth>
-					<LineColor>-16777216</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineStyle>SOLID</LineStyle>
-					<RadiusX>45</RadiusX>
-					<RadiusY>40</RadiusY>
-					<Rotation>0.0</Rotation>
-					<FillColor>-2578</FillColor>
-					<FillColorCode><![CDATA[//setNetoverloadOvalColor(energyModel.v_netOverloadDuration_h)]]></FillColorCode>
-					<FillMaterial>null</FillMaterial>
-				</Oval>
-				<Text>
-					<Id>1730395813959</Id>
-					<Name><![CDATA[text1122]]></Name>
-					<X>0</X><Y>57</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Uren overbelasting]]></Text>
-					<Font>
-						<Name>Arial</Name>
-						<Size>14</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-				<Text>
-					<Id>1730395813961</Id>
-					<Name><![CDATA[t_KPIBenuttingsgraad]]></Name>
-					<X>0</X><Y>-10</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[20%]]></Text>
-					<TextCode><![CDATA[//roundToInt(energyModel.c_gridNodesHSMS.get(0).v_totalTimeOverloaded_h) + "u"]]></TextCode>
-					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-			</Presentation>
-
-				</Group>
-				<Group>
-					<Id>1730395813963</Id>
-					<Name><![CDATA[gr_onbalansBarplot]]></Name>
-					<X>180</X><Y>-110</Y>
-					<Label><X>10.122</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-
-			<Presentation>
-    			<StackChart>
-					<Id>1730395813966</Id>
-					<Name><![CDATA[pl_productionStackSummary]]></Name>
-					<X>-332.133</X><Y>-171.007</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<AutoUpdate>false</AutoUpdate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1700640000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-					</RecurrenceCode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Width>322.133</Width>
-					<Height>121.007</Height>
-					<BackgroundColor/>
-					<BorderColor/>
-					<ChartArea>
-						<XOffset>50</XOffset>
-						<YOffset>30</YOffset>
-						<Width>242.133</Width>
-						<Height>41.007000000000005</Height>
-						<BackgroundColor/>
-						<BorderColor>-16777216</BorderColor>
-						<GridColor>-12566464</GridColor>
-					</ChartArea>
-					<Legend>
-						<Place>SOUTH</Place>
-						<TextColor>-16777216</TextColor>
-						<Size>36</Size>
-					</Legend>
-					<Labels>
-						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
-						<TextColor/>
-					</Labels>
-					<ShowLegend>true</ShowLegend>
-					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
-					<ScaleType>AUTO</ScaleType>
-					<Bars>
-						<Direction>RIGHT</Direction>
-						<RelativeWidth>0.8</RelativeWidth>
-					</Bars>
-    			</StackChart>
-    			<StackChart>
-					<Id>1730395813969</Id>
-					<Name><![CDATA[pl_consumptionStackSummary]]></Name>
-					<X>-333.04</X><Y>-60</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<AutoUpdate>false</AutoUpdate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1700640000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-					</RecurrenceCode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Width>323.04</Width>
-					<Height>120</Height>
-					<BackgroundColor/>
-					<BorderColor/>
-					<ChartArea>
-						<XOffset>50</XOffset>
-						<YOffset>30</YOffset>
-						<Width>243.04000000000002</Width>
-						<Height>40</Height>
-						<BackgroundColor/>
-						<BorderColor>-16777216</BorderColor>
-						<GridColor>-12566464</GridColor>
-					</ChartArea>
-					<Legend>
-						<Place>SOUTH</Place>
-						<TextColor>-16777216</TextColor>
-						<Size>36</Size>
-					</Legend>
-					<Labels>
-						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
-						<TextColor/>
-					</Labels>
-					<ShowLegend>true</ShowLegend>
-					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
-					<ScaleType>AUTO</ScaleType>
-					<Bars>
-						<Direction>RIGHT</Direction>
-						<RelativeWidth>0.8</RelativeWidth>
-					</Bars>
-    			</StackChart>
-				<Text>
-					<Id>1730395813971</Id>
-					<Name><![CDATA[t_opwekText]]></Name>
-					<X>-320</X><Y>-130</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Opwek]]></Text>
-					<Font>
-						<Name>Calibri</Name>
-						<Size>14</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Text>
-					<Id>1730395813973</Id>
-					<Name><![CDATA[t_gebruikText]]></Name>
-					<X>-320</X><Y>-20</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Gebruik]]></Text>
-					<Font>
-						<Name>Calibri</Name>
-						<Size>14</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Text>
-					<Id>1730395813975</Id>
-					<Name><![CDATA[tx_topBarplotText10]]></Name>
-					<X>-200</X><Y>-180</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Jaarlijkse opwek en gebruik alle energiedragers]]></Text>
-					<Font>
-						<Name>Calibri</Name>
-						<Size>14</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>CENTER</Alignment>
-				</Text>
-			</Presentation>
-
-				</Group>
 			</Presentation>
 
 				</Group>
@@ -29096,27 +28044,6 @@ en opwek heb ik?]]></Text>
 			</Presentation>
 
 				</Group>
-				<Text>
-					<Id>1730395814007</Id>
-					<Name><![CDATA[text_opwekenvraag2]]></Name>
-					<X>650</X><Y>670</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Gespreksleidraad]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>20</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
 				<Rectangle>
 					<Id>1730395814009</Id>
 					<Name><![CDATA[rectangle]]></Name>
@@ -29241,10 +28168,10 @@ zelfconsumptie]]></Text>
 				<Oval>
 					<Id>1730395814021</Id>
 					<Name><![CDATA[ovalZelfvoorzienendheid1]]></Name>
-					<X>-20</X><Y>620</Y>
+					<X>24.667</X><Y>335.333</Y>
 					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -29264,10 +28191,10 @@ zelfconsumptie]]></Text>
 				<Text>
 					<Id>1730395814023</Id>
 					<Name><![CDATA[text1124]]></Name>
-					<X>0</X><Y>200</Y>
+					<X>14.667</X><Y>235.333</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -29286,10 +28213,10 @@ zelf gebruikt]]></Text>
 				<Text>
 					<Id>1730395814025</Id>
 					<Name><![CDATA[t_KPIselfsufficiencyIndividual_pct]]></Name>
-					<X>-20</X><Y>608</Y>
+					<X>24.667</X><Y>323.333</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -29347,10 +28274,10 @@ zelfconsumptie]]></Text>
 				<Oval>
 					<Id>1730395814031</Id>
 					<Name><![CDATA[ovalZelfvoorzienendheid2]]></Name>
-					<X>-40</X><Y>620</Y>
+					<X>0</X><Y>340</Y>
 					<Label><X>0</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -29370,10 +28297,10 @@ zelfconsumptie]]></Text>
 				<Text>
 					<Id>1730395814033</Id>
 					<Name><![CDATA[text1125]]></Name>
-					<X>0</X><Y>201</Y>
+					<X>0</X><Y>231</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -29392,10 +28319,10 @@ lokaal gebruikt]]></Text>
 				<Text>
 					<Id>1730395814035</Id>
 					<Name><![CDATA[t_KPIselfsufficiencyCollective_pct]]></Name>
-					<X>-40</X><Y>608</Y>
+					<X>0</X><Y>328</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
+					<PresentationFlag>false</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -29414,32 +28341,6 @@ lokaal gebruikt]]></Text>
 			</Presentation>
 
 				</Group>
-				<Text>
-					<Id>1730395814037</Id>
-					<Name><![CDATA[text3]]></Name>
-					<X>-220</X><Y>140</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Kijk ook naar de detail grafieken van:
-
-1. Profielen van individuele bedrijven
-2. Opwek en gebruik van individuele bedrijven
-3. Profilenen van collectief
-4. Opwek en verbruik van collectief]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>14</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
 				<Group>
 					<Id>1730395814039</Id>
 					<Name><![CDATA[gr_zelfconsumptieBarplots]]></Name>
@@ -29558,48 +28459,6 @@ lokaal gebruikt]]></Text>
 						<RelativeWidth>0.8</RelativeWidth>
 					</Bars>
     			</StackChart>
-				<Text>
-					<Id>1730395814047</Id>
-					<Name><![CDATA[t_opwekTextGespreksleidraad3]]></Name>
-					<X>-190</X><Y>340</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Opwek]]></Text>
-					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
-				<Text>
-					<Id>1730395814049</Id>
-					<Name><![CDATA[t_OpwekTextGespreksleidraad3_1]]></Name>
-					<X>0</X><Y>340</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[Opwek]]></Text>
-					<Font>
-						<Name>Arial</Name>
-						<Size>20</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>RIGHT</Alignment>
-				</Text>
 			</Presentation>
 
 				</Group>
