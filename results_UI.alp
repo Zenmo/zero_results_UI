@@ -5958,6 +5958,9 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[J_previousTotals]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new J_previousTotals()]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
