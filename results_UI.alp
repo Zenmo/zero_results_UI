@@ -935,7 +935,7 @@ cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
 				<Variable Class="PlainVariable">
 					<Id>1731527216758</Id>
 					<Name><![CDATA[cm_productionColors]]></Name>
-					<X>-220</X><Y>1040</Y>
+					<X>550</X><Y>710</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -950,7 +950,7 @@ cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
 				<Variable Class="PlainVariable">
 					<Id>1731527232596</Id>
 					<Name><![CDATA[cm_consumptionColors]]></Name>
-					<X>-220</X><Y>1020</Y>
+					<X>550</X><Y>690</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -959,6 +959,21 @@ cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
 						<Type><![CDATA[J_ColorMap]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[new J_ColorMap()]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732100762586</Id>
+					<Name><![CDATA[v_selectedRadioButton]]></Name>
+					<X>1260</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[OL_RadioButtonSetup]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[DEFAULT]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -1028,7 +1043,7 @@ cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
 				<Variable Class="Parameter">
 					<Id>1731570940858</Id>
 					<Name><![CDATA[p_cutOff_MWh]]></Name>
-					<X>-220</X><Y>990</Y>
+					<X>550</X><Y>660</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1658,7 +1673,7 @@ case DEFAULT_AND_GESPREKSLEIDRAADSUMMARY:
 					<ReturnType><![CDATA[String]]></ReturnType>
 					<Id>1731578318216</Id>
 					<Name><![CDATA[f_getName]]></Name>
-					<X>-220</X><Y>950</Y>
+					<X>550</X><Y>640</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4315,7 +4330,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965195</Id>
 					<Name><![CDATA[v_annualDistrictHeatingHeatDemand_MWh]]></Name>
-					<X>540</X><Y>160</Y>
+					<X>540</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4327,7 +4342,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965197</Id>
 					<Name><![CDATA[v_annualHeatPumpHeatGeneration_MWh]]></Name>
-					<X>540</X><Y>220</Y>
+					<X>540</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4340,7 +4355,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965199</Id>
 					<Name><![CDATA[v_annualNaturalGasDemand_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>200</Y>
+					<X>540</X><Y>220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4378,7 +4393,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965205</Id>
 					<Name><![CDATA[v_annualElectricityImport_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>340</Y>
+					<X>540</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4402,7 +4417,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965209</Id>
 					<Name><![CDATA[v_annualElectricityForTransportDemand_MWh]]></Name>
-					<X>540</X><Y>440</Y>
+					<X>540</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4414,7 +4429,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965211</Id>
 					<Name><![CDATA[v_annualHydrogenForTransportDemand_MWh]]></Name>
-					<X>540</X><Y>460</Y>
+					<X>540</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4427,7 +4442,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965213</Id>
 					<Name><![CDATA[v_annualPetroleumProductsDemand_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>220</Y>
+					<X>540</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4439,7 +4454,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706733965215</Id>
 					<Name><![CDATA[v_annualTransportEnergyDemand_MWh]]></Name>
-					<X>540</X><Y>480</Y>
+					<X>540</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4452,7 +4467,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965217</Id>
 					<Name><![CDATA[v_annualWindSupply_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>460</Y>
+					<X>540</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4465,7 +4480,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965219</Id>
 					<Name><![CDATA[v_annualWindSupplyRemainingPotential_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>480</Y>
+					<X>540</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4478,7 +4493,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965221</Id>
 					<Name><![CDATA[v_annualPVSupply_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>500</Y>
+					<X>540</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4491,7 +4506,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965223</Id>
 					<Name><![CDATA[v_annualPVSupplyRemainingPotential_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>520</Y>
+					<X>540</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4504,7 +4519,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965225</Id>
 					<Name><![CDATA[v_annualHeatSupply_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>540</Y>
+					<X>540</X><Y>440</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4517,7 +4532,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1706733965227</Id>
 					<Name><![CDATA[v_annualHeatSupplyRemainingPotential_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>560</Y>
+					<X>540</X><Y>460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4734,7 +4749,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707215048039</Id>
 					<Name><![CDATA[v_dataEnergyDemandYear_kW]]></Name>
-					<X>-400</X><Y>800</Y>
+					<X>-360</X><Y>800</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4807,7 +4822,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707215222760</Id>
 					<Name><![CDATA[v_dataEnergySupplyYear_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>-400</X><Y>820</Y>
+					<X>-360</X><Y>820</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4982,7 +4997,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707227277427</Id>
 					<Name><![CDATA[v_annualElectricityExport_MWh]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>540</X><Y>360</Y>
+					<X>540</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5506,7 +5521,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Name><![CDATA[v_annualSelfProducedElectricity_MWh]]></Name>
 					<Description><![CDATA[get rid of this and add electricity produced total !!!]]></Description>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>510</X><Y>320</Y>
+					<X>540</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5810,7 +5825,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1727085553248</Id>
 					<Name><![CDATA[v_previousTotals]]></Name>
-					<X>540</X><Y>670</Y>
+					<X>540</X><Y>530</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5846,7 +5861,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1727101216330</Id>
 					<Name><![CDATA[v_annualOverloadDurationDelivery_hr]]></Name>
-					<X>540</X><Y>625</Y>
+					<X>540</X><Y>485</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5858,7 +5873,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1727101224231</Id>
 					<Name><![CDATA[v_annualOverloadDurationFeedin_hr]]></Name>
-					<X>540</X><Y>645</Y>
+					<X>540</X><Y>505</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5870,7 +5885,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1731586830861</Id>
 					<Name><![CDATA[v_totalEnergyConsumptionForDistrictHeating_MWh]]></Name>
-					<X>540</X><Y>180</Y>
+					<X>540</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5882,7 +5897,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1731592957076</Id>
 					<Name><![CDATA[v_totalElectricityConsumptionHeatpumps_MWh]]></Name>
-					<X>540</X><Y>200</Y>
+					<X>540</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6770,7 +6785,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1731574312113</Id>
 					<Name><![CDATA[dsm_liveDemand_kW]]></Name>
-					<X>-350</X><Y>320</Y>
+					<X>-330</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6785,7 +6800,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1731574312115</Id>
 					<Name><![CDATA[dsm_liveSupply_kW]]></Name>
-					<X>-350</X><Y>340</Y>
+					<X>-330</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9605,7 +9620,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				<Text>
 					<Id>1715245227030</Id>
 					<Name><![CDATA[t_summer]]></Name>
-					<X>-30</X><Y>950</Y>
+					<X>0</X><Y>950</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9627,7 +9642,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				<Text>
 					<Id>1715245277723</Id>
 					<Name><![CDATA[t_winter]]></Name>
-					<X>-40</X><Y>1390</Y>
+					<X>0</X><Y>1380</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9670,7 +9685,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				<Text>
 					<Id>1715245405222</Id>
 					<Name><![CDATA[t_summerWinter]]></Name>
-					<X>460</X><Y>710</Y>
+					<X>470</X><Y>560</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -17906,8 +17921,8 @@ switch(rb_gespreksleidraad.getValue()+1){
 						<Name><![CDATA[area]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[f_setEnergyBalanceChartFull(area, area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, area.v_annualNaturalGasDemand_MWh,
-					 area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualExportedEnergy_MWh, 
+					<Body><![CDATA[f_setEnergyBalanceChartFull(area, area.v_totalEnergySelfConsumed_MWh, area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY), area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE),
+					 area.fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL), area.fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN), area.v_totalEnergyExport_MWh, 
 					 pl_consumptionChartGespreksleidraad1, pl_productionChartGespreksleidraad1, t_opwekTextGespreksleidraad1, t_gebruikTextGespreksleidraad1);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -18047,10 +18062,10 @@ if (! (area.v_individualSelfconsumption_fr > 0) ) {
 	annualSelfConsumedElectricityIndividual_MWh = 0.0;
 	traceln("NaN detected!");
 } else {
-	annualSelfConsumedElectricityIndividual_MWh = (area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityExport_MWh) * area.v_individualSelfconsumption_fr;
+	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumption_fr;
 }
 
-f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, area.v_annualSelfConsumedElectricity_MWh, area.v_annualElectricityExport_MWh,
+f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, area.v_totalElectricitySelfConsumed_MWh, area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY),
 					pl_productionChartIndividual, pl_productionChartCollective);
 					
 	]]></Body>
@@ -18324,11 +18339,11 @@ return formattedText.toString();
 sc_electricityDemandStack.removeAll();
 
 DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(area.v_annualSelfConsumedElectricity_MWh/1000);
+annualSelfConsumed.setValue(area.v_totalElectricitySelfConsumed_MWh/1000);
 sc_electricityDemandStack.addDataItem(annualSelfConsumed, "Lokaal opgewekt", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualImport = new DataItem();
-annualImport.setValue(area.v_annualElectricityImport_MWh/1000);
+annualImport.setValue(area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY)/1000);
 sc_electricityDemandStack.addDataItem(annualImport, "Invoer", uI_Results.v_importedEnergyColor);
 
 
@@ -18344,7 +18359,7 @@ totalElectricityConsumptionHeatpumps_MWh.setValue(area.v_totalElectricityConsump
 sc_heatDemandStack.addDataItem(totalElectricityConsumptionHeatpumps_MWh, "Elek. voor warmtepompen", v_heatPumpHeatSupplyColor);
 
 DataItem totalNaturalGasDemand_MWh = new DataItem();
-totalNaturalGasDemand_MWh.setValue((area.v_annualNaturalGasDemand_MWh - area.v_totalEnergyConsumptionForDistrictHeating_MWh)/1000);
+totalNaturalGasDemand_MWh.setValue((area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE) - area.v_totalEnergyConsumptionForDistrictHeating_MWh)/1000);
 sc_heatDemandStack.addDataItem(totalNaturalGasDemand_MWh, "Gas", v_naturalGasSupplyColor);
 
 
@@ -18354,7 +18369,7 @@ sc_transportDemandStack.removeAll();
 
 
 //Set scales
-double chartScale_MWh = max(area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityImport_MWh, area.v_totalEnergyConsumptionForDistrictHeating_MWh + area.v_totalElectricityConsumptionHeatpumps_MWh + area.v_annualNaturalGasDemand_MWh - area.v_totalEnergyConsumptionForDistrictHeating_MWh);
+double chartScale_MWh = max(area.v_totalElectricitySelfConsumed_MWh + area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY), area.v_totalEnergyConsumptionForDistrictHeating_MWh + area.v_totalElectricityConsumptionHeatpumps_MWh + area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE) - area.v_totalEnergyConsumptionForDistrictHeating_MWh);
 sc_electricityDemandStack.setFixedScale(chartScale_MWh/1000);
 sc_heatDemandStack.setFixedScale(chartScale_MWh/1000);
 sc_transportDemandStack.setFixedScale(chartScale_MWh/1000);
@@ -18404,7 +18419,7 @@ sc_PVSupplyStack.removeAll();
 					<Body><![CDATA[//Electricity demand chart
 energyDemandChartYearGespreksleidraad5.removeAll();
 if(rb_gespreksleidraad5.getValue() == 0){ // Electricity
-	energyDemandChartYearGespreksleidraad5.addDataSet(area.v_dataElectricityDemandYear_kW, v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+	energyDemandChartYearGespreksleidraad5.addDataSet(area.dsm_dailyAverageDemandDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY), v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
 }
 else if(rb_gespreksleidraad5.getValue() == 1){ // Energy
 	energyDemandChartYearGespreksleidraad5.addDataSet(area.v_dataEnergyDemandYear_kW, v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
@@ -18421,7 +18436,7 @@ energySupplyChartYearGespreksleidraad5.addDataSet(area.v_dataElectricityV2GSuppl
 //energySupplyChartYearGespreksleidraad1.addDataSet(area.data_petroleumProductsSupplyYear_MWh, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
 //energySupplyChartYearGespreksleidraad1.addDataSet(area.data_districtHeatHeatSupplyYear_MWh, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
 
-double maxScale = max(area.v_dataElectricityDemandYear_kW.getYMax(),area.v_dataElectricitySupplyYear_kW.getYMax());
+double maxScale = max(area.dsm_dailyAverageDemandDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax(),area.dsm_dailyAverageSupplyDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax());
 //double maxScale = max(uI_Results.energySupplyChartYearGespreksleidraad1.getScaleY(), uI_Results.energyDemandChartYearGespreksleidraad1.getScaleY());
 energyDemandChartYearGespreksleidraad5.setFixedVerticalScale(0, maxScale);
 energySupplyChartYearGespreksleidraad5.setFixedVerticalScale(maxScale);
@@ -24528,10 +24543,10 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null && area.v_
 	double previousTotalExport_MWh = area.v_previousTotals.getPreviousExportedEnergy_MWh();
 	
 	
-	double previousElectricityConsumption_pct = area.v_previousTotals.getPreviousElectricityConsumed_MWh() / previousTotalEnergyConsumption_MWh * 100;
-	double previousGasConsumption_pct = area.v_previousTotals.getPreviousNaturalGasDemand_MWh() / previousTotalEnergyConsumption_MWh * 100;
-	double previousFFConsumption_pct = area.v_previousTotals.getPreviousPetroleumProductsDemand_MWh() / previousTotalEnergyConsumption_MWh * 100;
-	double previousH2Consumption_pct = area.v_previousTotals.getPreviousHydrogenDemand_MWh() / previousTotalEnergyConsumption_MWh * 100; 
+	double previousElectricityConsumption_pct = area.v_previousTotals.getPreviousTotalImports_MWh().get(OL_EnergyCarriers.ELECTRICITY) / previousTotalEnergyConsumption_MWh * 100;
+	double previousGasConsumption_pct = area.v_previousTotals.getPreviousTotalImports_MWh().get(OL_EnergyCarriers.METHANE) / previousTotalEnergyConsumption_MWh * 100;
+	double previousFFConsumption_pct = area.v_previousTotals.getPreviousTotalImports_MWh().get(OL_EnergyCarriers.DIESEL) / previousTotalEnergyConsumption_MWh * 100;
+	double previousH2Consumption_pct = area.v_previousTotals.getPreviousTotalImports_MWh().get(OL_EnergyCarriers.HYDROGEN) / previousTotalEnergyConsumption_MWh * 100; 
 	double previousProduction_MWh = area.v_previousTotals.getPreviousTotalProducedEnergy_MWh();  
 	
 	double previousKPIselfsufficiency_pct = area.v_previousTotals.getPreviousSelfConsumedEnergy_MWh() / previousTotalEnergyConsumption_MWh * 100; 
@@ -27799,14 +27814,14 @@ lokaal opgewekt]]></Text>
 						<Name><![CDATA[area]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[f_setEnergyBalanceChartFull(area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, area.v_annualNaturalGasDemand_MWh,
-					 area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualExportedEnergy_MWh, 
+					<Body><![CDATA[f_setEnergyBalanceChartFull(area.v_totalEnergySelfConsumed_MWh, area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY), area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE),
+					 area.fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL), area.fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN), area.v_totalEnergyExport_MWh, 
 					 pl_consumptionChartGespreksleidraad1, pl_productionChartGespreksleidraad1, t_opwekTextGespreksleidraad1, t_gebruikTextGespreksleidraad1);
 
 //f_setDemandAndSupplyGespreksleidraad1();
 //Electricity demand chart
 energyDemandChartYearGespreksleidraad1.removeAll();
-energyDemandChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityDemandYear_kW, v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+energyDemandChartYearGespreksleidraad1.addDataSet(area.dsm_dailyAverageDemandDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY), v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
 
 //Electricity supply chart
 energySupplyChartYearGespreksleidraad1.removeAll();
@@ -27817,7 +27832,7 @@ energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityPVSupply
 energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityStorageSupplyYear_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
 energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityV2GSupplyYear_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
 
-double maxScale = max(area.v_dataElectricityDemandYear_kW.getYMax(),area.v_dataElectricitySupplyYear_kW.getYMax());
+double maxScale = max(area.dsm_dailyAverageDemandDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax(),area.dsm_dailyAverageSupplyDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax());
 //double maxScale = max(uI_Results.energySupplyChartYearGespreksleidraad1.getScaleY(), uI_Results.energyDemandChartYearGespreksleidraad1.getScaleY());
 energyDemandChartYearGespreksleidraad1.setFixedVerticalScale(0, maxScale);
 energySupplyChartYearGespreksleidraad1.setFixedVerticalScale(maxScale);
@@ -27965,10 +27980,10 @@ if (! (area.v_individualSelfconsumption_fr > 0) ) {
 	annualSelfConsumedElectricityIndividual_MWh = 0.0;
 	traceln("NaN detected!");
 } else {
-	annualSelfConsumedElectricityIndividual_MWh = (area.v_annualSelfConsumedElectricity_MWh + area.v_annualElectricityExport_MWh) * area.v_individualSelfconsumption_fr;
+	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumption_fr;
 }
 
-f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, area.v_annualSelfConsumedElectricity_MWh, area.v_annualElectricityExport_MWh,
+f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, area.v_totalElectricitySelfConsumed_MWh, area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY),
 					pl_productionChartIndividual, pl_productionChartCollective);]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -29011,25 +29026,10 @@ public class J_previousTotals {
 	private	Double previousExportedEnergy_MWh;
 	private	Double previousDistrictHeatingHeatDemand_MWh;
 	private	Double previousHeatPumpHeatGeneration_MWh;
-	private	Double previousNaturalGasDemand_MWh;
-	private	Double previousPetroleumProductsDemand_MWh;
-	private	Double previousHydrogenDemand_MWh;
-	private	Double previousHydrogenSupply_MWh;
-	private	Double previousHeatDemand_MWh;
 	private	Double previousSelfConsumedElectricity_MWh;
 	private	Double previousSelfProducedElectricity_MWh;
-	private	Double previousElectricityImport_MWh;
-	private	Double previousElectricityExport_MWh;
 	private	Double previousElectricityConsumed_MWh;
 	private	Double previousElectricityForTransportDemand_MWh;
-	private	Double previousHydrogenForTransportDemand_MWh;
-	private	Double previousTransportEnergyDemand_MWh;
-	private	Double previousWindSupply_MWh;
-	private	Double previousWindSupplyRemainingPotential_MWh;
-	private	Double previousPVSupply_MWh;
-	private	Double previousPVSupplyRemainingPotential_MWh;
-	private	Double previousHeatSupply_MWh;
-	private	Double previousHeatSupplyRemainingPotential_MWh;
 	private Double previousOverloadDurationDelivery_hr;
 	private Double previousOverloadDurationFeedin_hr;
 	private Double previousTotalTimeOverloadedTransformers_hr;
@@ -29077,26 +29077,6 @@ public class J_previousTotals {
         this.previousHeatPumpHeatGeneration_MWh = previousHeatPumpHeatGeneration_MWh;
 	}
 	
-	public void setPreviousNaturalGasDemand_MWh(Double previousNaturalGasDemand_MWh){
-        this.previousNaturalGasDemand_MWh = previousNaturalGasDemand_MWh;
-	}
-	
-	public void setPreviousPetroleumProductsDemand_MWh(Double previousPetroleumProductsDemand_MWh){
-        this.previousPetroleumProductsDemand_MWh = previousPetroleumProductsDemand_MWh;
-	}
-	
-	public void setPreviousHydrogenDemand_MWh(Double previousHydrogenDemand_MWh){
-        this.previousHydrogenDemand_MWh = previousHydrogenDemand_MWh;
-	}
-	
-	public void setPreviousHydrogenSupply_MWh(Double previousHydrogenSupply_MWh){
-        this.previousHydrogenSupply_MWh = previousHydrogenSupply_MWh;
-	}
-	
-	public void setPreviousHeatDemand_MWh(Double previousHeatDemand_MWh){
-        this.previousHeatDemand_MWh = previousHeatDemand_MWh;
-	}
-	
 	public void setPreviousSelfConsumedElectricity_MWh(Double previousSelfConsumedElectricity_MWh){
         this.previousSelfConsumedElectricity_MWh = previousSelfConsumedElectricity_MWh;
 	}
@@ -29105,52 +29085,12 @@ public class J_previousTotals {
         this.previousSelfProducedElectricity_MWh = previousSelfProducedElectricity_MWh;
 	}
 	
-	public void setPreviousElectricityImport_MWh(Double previousElectricityImport_MWh){
-        this.previousElectricityImport_MWh = previousElectricityImport_MWh;
-	}
-	
-	public void setPreviousElectricityExport_MWh(Double previousElectricityExport_MWh){
-        this.previousElectricityExport_MWh = previousElectricityExport_MWh;
-	}
-	
 	public void setPreviousElectricityConsumed_MWh(Double previousElectricityConsumed_MWh){
         this.previousElectricityConsumed_MWh = previousElectricityConsumed_MWh;
 	}
 	
 	public void setPreviousElectricityForTransportDemand_MWh(Double previousElectricityForTransportDemand_MWh){
         this.previousElectricityForTransportDemand_MWh = previousElectricityForTransportDemand_MWh;
-	}
-	
-	public void setPreviousHydrogenForTransportDemand_MWh(Double previousHydrogenForTransportDemand_MWh){
-        this.previousHydrogenForTransportDemand_MWh = previousHydrogenForTransportDemand_MWh;
-	}
-	
-	public void setPreviousTransportEnergyDemand_MWh(Double previousTransportEnergyDemand_MWh){
-        this.previousTransportEnergyDemand_MWh = previousTransportEnergyDemand_MWh;
-	}
-	
-	public void setPreviousWindSupply_MWh(Double previousWindSupply_MWh){
-        this.previousWindSupply_MWh = previousWindSupply_MWh;
-	}
-	
-	public void setPreviousWindSupplyRemainingPotential_MWh(Double previousWindSupplyRemainingPotential_MWh){
-        this.previousWindSupplyRemainingPotential_MWh = previousWindSupplyRemainingPotential_MWh;
-	}
-	
-	public void setPreviousPVSupply_MWh(Double previousPVSupply_MWh){
-        this.previousPVSupply_MWh = previousPVSupply_MWh;
-	}
-	
-	public void setPreviousPVSupplyRemainingPotential_MWh(Double previousPVSupplyRemainingPotential_MWh){
-        this.previousPVSupplyRemainingPotential_MWh = previousPVSupplyRemainingPotential_MWh;
-	}
-	
-	public void setPreviousHeatSupply_MWh(Double previousHeatSupply_MWh){
-        this.previousHeatSupply_MWh = previousHeatSupply_MWh;
-	}
-	
-	public void setPreviousHeatSupplyRemainingPotential_MWh(Double previousHeatSupplyRemainingPotential_MWh){
-        this.previousHeatSupplyRemainingPotential_MWh = previousHeatSupplyRemainingPotential_MWh;
 	}
 	    
 	public void setPreviousOverloadDurationDelivery_hr(Double previousOverloadDurationDelivery_hr){
@@ -29203,26 +29143,6 @@ public class J_previousTotals {
         return this.previousHeatPumpHeatGeneration_MWh;
 	}
 	
-	public Double getPreviousNaturalGasDemand_MWh(){
-        return this.previousNaturalGasDemand_MWh;
-	}
-	
-	public Double getPreviousPetroleumProductsDemand_MWh(){
-        return this.previousPetroleumProductsDemand_MWh;
-	}
-	
-	public Double getPreviousHydrogenDemand_MWh(){
-        return this.previousHydrogenDemand_MWh;
-	}
-	
-	public Double getPreviousHydrogenSupply_MWh(){
-        return this.previousHydrogenSupply_MWh;
-	}
-	
-	public Double getPreviousHeatDemand_MWh(){
-        return this.previousHeatDemand_MWh;
-	}
-	
 	public Double getPreviousSelfConsumedElectricity_MWh(){
         return this.previousSelfConsumedElectricity_MWh;
 	}
@@ -29231,52 +29151,12 @@ public class J_previousTotals {
         return this.previousSelfProducedElectricity_MWh;
 	}
 	
-	public Double getPreviousElectricityImport_MWh(){
-        return this.previousElectricityImport_MWh;
-	}
-	
-	public Double getPreviousElectricityExport_MWh(){
-        return this.previousElectricityExport_MWh;
-	}
-	
 	public Double getPreviousElectricityConsumed_MWh(){
         return this.previousElectricityConsumed_MWh;
 	}
 	
 	public Double getPreviousElectricityForTransportDemand_MWh(){
         return this.previousElectricityForTransportDemand_MWh;
-	}
-	
-	public Double getPreviousHydrogenForTransportDemand_MWh(){
-        return this.previousHydrogenForTransportDemand_MWh;
-	}
-	
-	public Double getPreviousTransportEnergyDemand_MWh(){
-        return this.previousTransportEnergyDemand_MWh;
-	}
-	
-	public Double getPreviousWindSupply_MWh(){
-        return this.previousWindSupply_MWh;
-	}
-	
-	public Double getPreviousWindSupplyRemainingPotential_MWh(){
-        return this.previousWindSupplyRemainingPotential_MWh;
-	}
-	
-	public Double getPreviousPVSupply_MWh(){
-        return this.previousPVSupply_MWh;
-	}
-	
-	public Double getPreviousPVSupplyRemainingPotential_MWh(){
-        return this.previousPVSupplyRemainingPotential_MWh;
-	}
-	
-	public Double getPreviousHeatSupply_MWh(){
-        return this.previousHeatSupply_MWh;
-	}
-	
-	public Double getPreviousHeatSupplyRemainingPotential_MWh(){
-        return this.previousHeatSupplyRemainingPotential_MWh;
 	}
     
 	public Double getPreviousOverloadDurationDelivery_hr(){
