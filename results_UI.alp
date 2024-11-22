@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172110" AlpVersion="8.9.2">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172112" AlpVersion="8.9.2">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -115,12 +115,14 @@ cm_productionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatHeatSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenSupplyColor);
+cm_productionColors.put(OL_EnergyCarriers.IRON_POWDER, paleGoldenRod);
 
 cm_consumptionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricityDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
+cm_consumptionColors.put(OL_EnergyCarriers.IRON_POWDER, paleGoldenRod);
 
 ]]></StartupCode>
 			<Generic>false</Generic>
@@ -1699,6 +1701,8 @@ case OFF:
 		return "Diesel";
 	case HYDROGEN:
 		return "Waterstof";
+	case IRON_POWDER:
+		return "IJzer Poeder";
 	default:
 		throw new RuntimeException("Onbekende energiedrager, kan niet vertaald worden.");
 }
@@ -4935,7 +4939,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707215175092</Id>
 					<Name><![CDATA[v_dataElectricityWindSupplyYear_kW]]></Name>
-					<X>60</X><Y>750</Y>
+					<X>60</X><Y>760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4960,7 +4964,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707215254116</Id>
 					<Name><![CDATA[v_dataElectricityPVSupplyYear_kW]]></Name>
-					<X>60</X><Y>770</Y>
+					<X>60</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4972,7 +4976,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707215263772</Id>
 					<Name><![CDATA[v_dataElectricityStorageSupplyYear_kW]]></Name>
-					<X>60</X><Y>790</Y>
+					<X>60</X><Y>800</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4984,7 +4988,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707215274736</Id>
 					<Name><![CDATA[v_dataElectricityV2GSupplyYear_kW]]></Name>
-					<X>60</X><Y>810</Y>
+					<X>60</X><Y>820</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4997,7 +5001,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707215308988</Id>
 					<Name><![CDATA[v_dataElectricityDemandYear_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>860</Y>
+					<X>60</X><Y>870</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5010,7 +5014,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707215319896</Id>
 					<Name><![CDATA[v_dataElectricitySupplyYear_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>880</Y>
+					<X>60</X><Y>890</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5034,7 +5038,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707222998674</Id>
 					<Name><![CDATA[v_dataDistrictHeatSupplyYear_kW]]></Name>
-					<X>60</X><Y>730</Y>
+					<X>60</X><Y>740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5097,7 +5101,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707223179126</Id>
 					<Name><![CDATA[v_dataPetroleumProductsSupplyYear_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>710</Y>
+					<X>60</X><Y>720</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5246,7 +5250,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707401091309</Id>
 					<Name><![CDATA[v_dataNaturalGasDemandWinterWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>1430</Y>
+					<X>60</X><Y>1450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5258,7 +5262,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401091311</Id>
 					<Name><![CDATA[v_dataElectricityBaseloadDemandWinterWeek_kW]]></Name>
-					<X>60</X><Y>1470</Y>
+					<X>60</X><Y>1490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5270,7 +5274,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401091313</Id>
 					<Name><![CDATA[v_dataElectricityForHeatDemandWinterWeek_kW]]></Name>
-					<X>60</X><Y>1490</Y>
+					<X>60</X><Y>1510</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5282,7 +5286,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401091315</Id>
 					<Name><![CDATA[v_dataElectricityForTransportDemandWinterWeek_kW]]></Name>
-					<X>60</X><Y>1510</Y>
+					<X>60</X><Y>1530</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5294,7 +5298,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401091317</Id>
 					<Name><![CDATA[v_dataElectricityForStorageDemandWinterWeek_kW]]></Name>
-					<X>60</X><Y>1550</Y>
+					<X>60</X><Y>1570</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5306,7 +5310,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401091319</Id>
 					<Name><![CDATA[v_dataDistrictHeatDemandWinterWeek_kW]]></Name>
-					<X>60</X><Y>1450</Y>
+					<X>60</X><Y>1470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5319,7 +5323,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707401091321</Id>
 					<Name><![CDATA[v_dataPetroleumProductsDemandWinterWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>1410</Y>
+					<X>60</X><Y>1430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5331,7 +5335,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401091323</Id>
 					<Name><![CDATA[v_dataElectricityForHydrogenDemandWinterWeek_kW]]></Name>
-					<X>60</X><Y>1530</Y>
+					<X>60</X><Y>1550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5344,7 +5348,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707401188617</Id>
 					<Name><![CDATA[v_dataPetroleumProductsSupplySummerWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>1150</Y>
+					<X>60</X><Y>1170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5356,7 +5360,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401188621</Id>
 					<Name><![CDATA[v_dataElectricityWindSupplySummerWeek_kW]]></Name>
-					<X>60</X><Y>1190</Y>
+					<X>60</X><Y>1210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5368,7 +5372,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401188623</Id>
 					<Name><![CDATA[v_dataElectricityPVSupplySummerWeek_kW]]></Name>
-					<X>60</X><Y>1210</Y>
+					<X>60</X><Y>1230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5380,7 +5384,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401188625</Id>
 					<Name><![CDATA[v_dataElectricityStorageSupplySummerWeek_kW]]></Name>
-					<X>60</X><Y>1230</Y>
+					<X>60</X><Y>1250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5392,7 +5396,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401188627</Id>
 					<Name><![CDATA[v_dataElectricityV2GSupplySummerWeek_kW]]></Name>
-					<X>60</X><Y>1250</Y>
+					<X>60</X><Y>1270</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5404,7 +5408,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401188629</Id>
 					<Name><![CDATA[v_dataDistrictHeatSupplySummerWeek_kW]]></Name>
-					<X>60</X><Y>1170</Y>
+					<X>60</X><Y>1190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5417,7 +5421,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1707401299004</Id>
 					<Name><![CDATA[v_dataPetroleumProductsSupplyWinterWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>1580</Y>
+					<X>60</X><Y>1620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5429,7 +5433,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401299006</Id>
 					<Name><![CDATA[v_dataElectricityWindSupplyWinterWeek_kW]]></Name>
-					<X>60</X><Y>1620</Y>
+					<X>60</X><Y>1660</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5441,7 +5445,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401299008</Id>
 					<Name><![CDATA[v_dataElectricityPVSupplyWinterWeek_kW]]></Name>
-					<X>60</X><Y>1640</Y>
+					<X>60</X><Y>1680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5453,7 +5457,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401299010</Id>
 					<Name><![CDATA[v_dataElectricityStorageSupplyWinterWeek_kW]]></Name>
-					<X>60</X><Y>1660</Y>
+					<X>60</X><Y>1700</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5465,7 +5469,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401299012</Id>
 					<Name><![CDATA[v_dataElectricityV2GSupplyWinterWeek_kW]]></Name>
-					<X>60</X><Y>1680</Y>
+					<X>60</X><Y>1720</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5477,7 +5481,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707401299014</Id>
 					<Name><![CDATA[v_dataDistrictHeatSupplyWinterWeek_kW]]></Name>
-					<X>60</X><Y>1600</Y>
+					<X>60</X><Y>1640</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5697,7 +5701,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1715675971088</Id>
 					<Name><![CDATA[v_dataHydrogenSupplyYear_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>830</Y>
+					<X>60</X><Y>840</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5710,7 +5714,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1715676019225</Id>
 					<Name><![CDATA[v_dataHydrogenSupplySummerWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>1270</Y>
+					<X>60</X><Y>1290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5723,7 +5727,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1715676033683</Id>
 					<Name><![CDATA[v_dataHydrogenSupplyWinterWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>1700</Y>
+					<X>60</X><Y>1740</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5927,7 +5931,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1721122196998</Id>
 					<Name><![CDATA[v_dataNetLoadSummerWeek_kW]]></Name>
-					<X>60</X><Y>1290</Y>
+					<X>60</X><Y>1310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5939,7 +5943,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1721122208553</Id>
 					<Name><![CDATA[v_dataNetLoadWinterWeek_kW]]></Name>
-					<X>60</X><Y>1720</Y>
+					<X>60</X><Y>1760</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6954,6 +6958,54 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[EnumSet.of(OL_EnergyCarriers.ELECTRICITY);]]></Code>
 						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732271346337</Id>
+					<Name><![CDATA[v_dataElectricityForCookingDemandLiveWeek_kW]]></Name>
+					<X>60</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732272495047</Id>
+					<Name><![CDATA[v_dataElectricityForCookingDemandYear_kW]]></Name>
+					<X>60</X><Y>700</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732272523383</Id>
+					<Name><![CDATA[v_dataElectricityForCookingDemandSummerWeek_kW]]></Name>
+					<X>60</X><Y>1140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732272551708</Id>
+					<Name><![CDATA[v_dataElectricityForCookingDemandWinterWeek_kW]]></Name>
+					<X>60</X><Y>1590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
@@ -9299,7 +9351,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1721134851751</Id>
 					<Name><![CDATA[v_dataElectricityDemandCapacityWinterWeek_kW]]></Name>
-					<X>60</X><Y>1740</Y>
+					<X>60</X><Y>1780</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9321,7 +9373,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1721134898480</Id>
 					<Name><![CDATA[v_dataElectricitySupplyCapacityWinterWeek_kW]]></Name>
-					<X>60</X><Y>1760</Y>
+					<X>60</X><Y>1800</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9343,7 +9395,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1721134911105</Id>
 					<Name><![CDATA[v_dataElectricityDemandCapacitySummerWeek_kW]]></Name>
-					<X>55</X><Y>1310</Y>
+					<X>55</X><Y>1330</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9365,7 +9417,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
     			<DataSet>
 					<Id>1721134911115</Id>
 					<Name><![CDATA[v_dataElectricitySupplyCapacitySummerWeek_kW]]></Name>
-					<X>55</X><Y>1330</Y>
+					<X>55</X><Y>1350</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9432,7 +9484,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<Id>1725442590512</Id>
 					<Name><![CDATA[v_dataTotalElectricityDemandYear_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>905</Y>
+					<X>60</X><Y>915</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9455,7 +9507,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<Id>1725442590523</Id>
 					<Name><![CDATA[v_dataTotalElectricitySupplyYear_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>925</Y>
+					<X>60</X><Y>935</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9478,7 +9530,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<Id>1725442646846</Id>
 					<Name><![CDATA[v_dataTotalElectricityDemandSummerWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>55</X><Y>1350</Y>
+					<X>55</X><Y>1370</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9501,7 +9553,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<Id>1725442646867</Id>
 					<Name><![CDATA[v_dataTotalElectricitySupplySummerWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>55</X><Y>1370</Y>
+					<X>55</X><Y>1390</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9524,7 +9576,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<Id>1725442651367</Id>
 					<Name><![CDATA[v_dataTotalElectricityDemandWinterWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>1780</Y>
+					<X>60</X><Y>1820</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9547,7 +9599,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<Id>1725442651380</Id>
 					<Name><![CDATA[v_dataTotalElectricitySupplyWinterWeek_kW]]></Name>
 					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>60</X><Y>1800</Y>
+					<X>60</X><Y>1840</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9555,28 +9607,6 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1725523200000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-					</RecurrenceCode>
-					<FreezeXAxis>false</FreezeXAxis>
-					<SamplesToKeep>672</SamplesToKeep>
-				</DataSet>
-    			<DataSet>
-					<Id>1727354060478</Id>
-					<Name><![CDATA[v_dataElectricityForCookingDemandLiveWeek_kW]]></Name>
-					<X>60</X><Y>465</Y>
-					<Label><X>15</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<AutoUpdate>false</AutoUpdate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1727424000000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -9771,7 +9801,7 @@ v_exportedElectricityWeekday_MWh = 0;]]></Body>
 				<Text>
 					<Id>1715245277723</Id>
 					<Name><![CDATA[t_winter]]></Name>
-					<X>0</X><Y>1380</Y>
+					<X>0</X><Y>1400</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10406,6 +10436,9 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	if (dataObject.v_dataElectricityForStorageDemandYear_kW != null) {
 		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
 	}
+	if ( uI_Results.p_legendsScope == RESIDENTIAL){
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForCookingDemandYear_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
+	}
 	if ( uI_Results.p_legendsScope == BUSINESSPARK){
 		if (dataObject.v_dataElectricityForHydrogenDemandYear_kW != null) {
 			energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
@@ -10514,7 +10547,7 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	
 	if ( uI_Results.p_legendsScope == RESIDENTIAL){
 		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandLiveWeek_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
-		energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+		//energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
 	}
 	else if ( uI_Results.p_legendsScope == BUSINESSPARK){
 		if (dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW != null) {
@@ -10604,6 +10637,9 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandSummerWeek_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandSummerWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandSummerWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+	if ( uI_Results.p_legendsScope == RESIDENTIAL){
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandSummerWeek_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
+	}
 	if ( uI_Results.p_legendsScope == BUSINESSPARK){
 		if (dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW != null) {
 			energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
@@ -10722,6 +10758,9 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandWinterWeek_kW,"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandWinterWeek_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandWinterWeek_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
+	if ( uI_Results.p_legendsScope == RESIDENTIAL){
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandWinterWeek_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
+	}
 	if ( uI_Results.p_legendsScope == BUSINESSPARK){
 		if (dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW != null) {
 			energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
