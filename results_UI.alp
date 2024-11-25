@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172112" AlpVersion="8.9.2">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172110" AlpVersion="8.9.2">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -30803,16 +30803,16 @@ else {
 					</Parameter>
 					<Body><![CDATA[DataItem annualSelfConsumed = new DataItem();
 annualSelfConsumed.setValue(area.v_totalElectricitySelfConsumed_MWh);
-pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
+pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal geleverd [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualImport = new DataItem();
 annualImport.setValue(area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
-pl_consumptionChartYear.addDataItem(annualImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
+pl_consumptionChartYear.addDataItem(annualImport, "Tekorten ingekocht [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem annualExport = new DataItem();
 annualExport.setValue(area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
-pl_productionChartYear.addDataItem(annualExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
+pl_productionChartYear.addDataItem(annualExport, "Overschotten verkocht [MWh]", uI_Results.v_exportedEnergyColor);
 
 double production_MWh = area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
 double consumption_MWh = area.v_totalElectricitySelfConsumed_MWh + area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
@@ -30823,13 +30823,13 @@ pl_productionChartYear.setFixedScale(chartScale_MWh);
 
 if (chartScale_MWh<10) {
 	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
+	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
 	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
+	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
 } else {
 	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
+	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
 }]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
@@ -32121,7 +32121,7 @@ if (chartScale_MWh<10) {
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Gebruik]]></Text>
+					<Text><![CDATA[Levering]]></Text>
 					<Font>
 						<Name>Calibri</Name>
 						<Size>36</Size>
