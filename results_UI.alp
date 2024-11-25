@@ -18162,8 +18162,8 @@ if (area.v_totalEnergyConsumptionForDistrictHeating_MWh > 0){
 
 
 double chartScale_MWh = max(selfConsumedEnergy_MWh+exportE_MWh, selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh);
-//pl_consumptionChart.setFixedScale(chartScale_MWh/1000);
-//pl_productionChart.setFixedScale(chartScale_MWh/1000);
+pl_consumptionChart.setFixedScale(chartScale_MWh/1000);
+pl_productionChart.setFixedScale(chartScale_MWh/1000);
 
 if (chartScale_MWh<10) {
 	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)*1000) + " kWh");
@@ -22861,7 +22861,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);]]></OnClic
 					<ExtendedProperties>
 						<Font Name="Arial" Size="11" Style="0"/>
 						<Orientation>VERTICAL</Orientation>
-						<Button><![CDATA[1. Wat is het aandeel lokaal duurzaam opgewekt?]]></Button>
+						<Button><![CDATA[1. Hoeveel energie wordt er opgewekt en verbruikt?]]></Button>
 						<Button><![CDATA[2. Meer lokaal opwekken?]]></Button>
 						<Button><![CDATA[3. Lokaal opwek en verbruik afstemmen?]]></Button>
 						<Button><![CDATA[4. Netcapaciteit beter benutten?]]></Button>
