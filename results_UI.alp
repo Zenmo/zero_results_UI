@@ -14856,8 +14856,14 @@ pl_productionChartYear.addDataItem(annualHydrogenSupply, "Waterstof geproduceerd
 */
 
 double production_MWh = area.v_totalEnergyProduced_MWh;
+// Quick fix for GCDistrictHeating: 
+production_MWh = max(production_MWh, area.v_totalEnergyExport_MWh);
 double consumption_MWh = area.v_totalEnergyConsumed_MWh;
+// Quick fix for GCDistrictHeating: 
+consumption_MWh = max(consumption_MWh, area.v_totalEnergyImport_MWh);
+
 double chartScale_MWh = max(production_MWh, consumption_MWh);
+
 pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
 
@@ -14987,6 +14993,17 @@ double summerProduction_MWh = area.v_summerWeekEnergyProduced_MWh;
 double summerConsumption_MWh = area.v_summerWeekEnergyConsumed_MWh;
 double winterProduction_MWh = area.v_winterWeekEnergyProduced_MWh;
 double winterConsumption_MWh = area.v_winterWeekEnergyConsumed_MWh;
+
+// Quick fix for GCDistrictHeating: 
+summerProduction_MWh = max(summerProduction_MWh, area.v_summerWeekEnergyExport_MWh);
+// Quick fix for GCDistrictHeating: 
+summerConsumption_MWh = max(summerConsumption_MWh, area.v_summerWeekEnergyImport_MWh);
+// Quick fix for GCDistrictHeating: 
+winterProduction_MWh = max(winterProduction_MWh, area.v_winterWeekEnergyExport_MWh);
+// Quick fix for GCDistrictHeating: 
+winterConsumption_MWh = max(winterConsumption_MWh, area.v_winterWeekEnergyImport_MWh);
+
+
 double chartScale_MWh = max(max(summerProduction_MWh, winterProduction_MWh), max(summerConsumption_MWh, winterConsumption_MWh));
 pl_productionChartSummer.setFixedScale(chartScale_MWh);
 pl_productionChartWinter.setFixedScale(chartScale_MWh);
@@ -15125,6 +15142,17 @@ double weekdayProduction_MWh = area.v_weekdayEnergyProduced_MWh;
 double weekdayConsumption_MWh = area.v_weekdayEnergyConsumed_MWh;
 double weekendProduction_MWh = area.v_weekendEnergyProduced_MWh;
 double weekendConsumption_MWh = area.v_weekendEnergyConsumed_MWh;
+
+// Quick fix for GCDistrictHeating: 
+weekdayProduction_MWh = max(weekdayProduction_MWh, area.v_weekdayEnergyExport_MWh);
+// Quick fix for GCDistrictHeating: 
+weekdayConsumption_MWh = max(weekdayConsumption_MWh, area.v_weekdayEnergyImport_MWh);
+// Quick fix for GCDistrictHeating: 
+weekendProduction_MWh = max(weekendProduction_MWh, area.v_weekendEnergyExport_MWh);
+// Quick fix for GCDistrictHeating: 
+weekendConsumption_MWh = max(weekendConsumption_MWh, area.v_weekendEnergyImport_MWh);
+
+
 double chartScale_MWh = max(max(weekdayProduction_MWh, weekendProduction_MWh), max(weekdayConsumption_MWh, weekendConsumption_MWh));
 pl_productionChartWeekday.setFixedScale(chartScale_MWh);
 pl_productionChartWeekend.setFixedScale(chartScale_MWh);
@@ -15263,6 +15291,16 @@ double dayProduction_MWh = area.v_daytimeEnergyProduced_MWh;
 double dayConsumption_MWh = area.v_daytimeEnergyConsumed_MWh;
 double nightProduction_MWh = area.v_nighttimeEnergyProduced_MWh;
 double nightConsumption_MWh = area.v_nighttimeEnergyConsumed_MWh;
+
+// Quick fix for GCDistrictHeating: 
+dayProduction_MWh = max(dayProduction_MWh, area.v_daytimeEnergyExport_MWh);
+// Quick fix for GCDistrictHeating: 
+dayConsumption_MWh = max(dayConsumption_MWh, area.v_daytimeEnergyImport_MWh);
+// Quick fix for GCDistrictHeating: 
+nightProduction_MWh = max(nightProduction_MWh, area.v_nighttimeEnergyExport_MWh);
+// Quick fix for GCDistrictHeating: 
+nightConsumption_MWh = max(nightConsumption_MWh, area.v_nighttimeEnergyImport_MWh);
+
 double chartScale_MWh = max(max(dayProduction_MWh, nightProduction_MWh), max(dayConsumption_MWh, nightConsumption_MWh));
 pl_productionChartDay.setFixedScale(chartScale_MWh);
 pl_productionChartNight.setFixedScale(chartScale_MWh);
