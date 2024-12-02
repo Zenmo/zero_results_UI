@@ -108,6 +108,9 @@
 			<Name><![CDATA[UI_Results]]></Name>
 			<AdditionalClassCode><![CDATA[public ShapeCheckBox getCheckbox_KPISummary(){
 	return checkbox_KPISummary;
+}
+public ShapeRadioButtonGroup getRadioButtons() {
+	return this.rb_DEFAULT;
 }]]></AdditionalClassCode>
 			<StartupCode><![CDATA[// TODO: Fill cm_consumptionColors and cm_productionColors here?
 cm_productionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricitySupplyColor);
