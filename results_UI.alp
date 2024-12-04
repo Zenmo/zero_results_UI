@@ -8457,11 +8457,11 @@ plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + max
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[group_netload_week.setVisible(true);
-plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW, "Capaciteit afname", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW, "Capaciteit teruglevering", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 
 if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityLiveWeek_kW, "Leveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityLiveWeek_kW, "Afnamecapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_netload_week.addDataSet(uI_Results.v_dataEHubFeedInCapacityLiveWeek_kW, "Terugleveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 }
 
@@ -8516,11 +8516,11 @@ plot_netload_year.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + m
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[group_netload_week.setVisible(true);
-plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW, "Capaciteit afname", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW, "Capaciteit teruglevering", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 
 if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacitySummerWeek_kW, "Leveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacitySummerWeek_kW, "Afnamecapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_netload_week.addDataSet(uI_Results.v_dataEHubFeedInCapacitySummerWeek_kW, "Terugleveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 }
 
@@ -8550,11 +8550,11 @@ plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + m
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
 					<Body><![CDATA[group_netload_week.setVisible(true);
-plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW, "Capaciteit afname", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW, "Capaciteit teruglevering", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 
 if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityWinterWeek_kW, "Leveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityWinterWeek_kW, "Afnamecapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_netload_week.addDataSet(uI_Results.v_dataEHubFeedInCapacityWinterWeek_kW, "Terugleveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 }
 
@@ -9802,34 +9802,34 @@ plot_seizoen.removeAll();]]></Body>
 					</Parameter>
 					<Body><![CDATA[//Add and color grid capacities
 plot_jaar.addDataSet(area.data_gridCapacityDeliveryYear_kW,"Capaciteit afname");
-plot_jaar.addDataSet(area.data_gridCapacityFeedInYear_kW,"Capaciteit levering");
+plot_jaar.addDataSet(area.data_gridCapacityFeedInYear_kW,"Capaciteit teruglevering");
 plot_jaar.setColor(1, v_capciteitKleurTrafo);
 plot_jaar.setColor(2, v_capciteitKleurTrafo);
 
 plot_week.addDataSet(area.data_gridCapacityDeliveryYear_kW,"Capaciteit afname");
-plot_week.addDataSet(area.data_gridCapacityFeedInYear_kW,"Capaciteit levering");
+plot_week.addDataSet(area.data_gridCapacityFeedInYear_kW,"Capaciteit teruglevering");
 plot_week.setColor(plot_week.getCount() - 2, v_capciteitKleurTrafo);
 plot_week.setColor(plot_week.getCount() - 1, v_capciteitKleurTrafo);
 
 plot_dagnacht.addDataSet(area.data_gridCapacityDeliveryYear_kW,"Capaciteit afname");
-plot_dagnacht.addDataSet(area.data_gridCapacityFeedInYear_kW,"Capaciteit levering");
+plot_dagnacht.addDataSet(area.data_gridCapacityFeedInYear_kW,"Capaciteit teruglevering");
 plot_dagnacht.setColor(plot_dagnacht.getCount() - 2, v_capciteitKleurTrafo);
 plot_dagnacht.setColor(plot_dagnacht.getCount() - 1, v_capciteitKleurTrafo);
 
 plot_seizoen.addDataSet(area.data_gridCapacityDeliveryYear_kW,"Capaciteit afname");
-plot_seizoen.addDataSet(area.data_gridCapacityFeedInYear_kW,"Capaciteit levering");
+plot_seizoen.addDataSet(area.data_gridCapacityFeedInYear_kW,"Capaciteit teruglevering");
 plot_seizoen.setColor(plot_seizoen.getCount() - 2, v_capciteitKleurTrafo);
 plot_seizoen.setColor(plot_seizoen.getCount() - 1, v_capciteitKleurTrafo);
 
 
 if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
-	plot_jaar.addDataSet(uI_Results.v_dataEHubDeliveryCapacityYear_kW, "Leveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_jaar.addDataSet(uI_Results.v_dataEHubDeliveryCapacityYear_kW, "Afnamecapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_jaar.addDataSet(uI_Results.v_dataEHubFeedInCapacityYear_kW, "Terugleveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-	plot_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityYear_kW, "Leveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityYear_kW, "Afnamecapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_week.addDataSet(uI_Results.v_dataEHubFeedInCapacityYear_kW, "Terugleveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-	plot_dagnacht.addDataSet(uI_Results.v_dataEHubDeliveryCapacityYear_kW, "Leveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_dagnacht.addDataSet(uI_Results.v_dataEHubDeliveryCapacityYear_kW, "Afnamecapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_dagnacht.addDataSet(uI_Results.v_dataEHubFeedInCapacityYear_kW, "Terugleveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-	plot_seizoen.addDataSet(uI_Results.v_dataEHubDeliveryCapacityYear_kW, "Leveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_seizoen.addDataSet(uI_Results.v_dataEHubDeliveryCapacityYear_kW, "Afnamecapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_seizoen.addDataSet(uI_Results.v_dataEHubFeedInCapacityYear_kW, "Terugleveringscapaciteit voor groepscontract", red, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 
 }
