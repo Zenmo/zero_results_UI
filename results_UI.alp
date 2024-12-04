@@ -7853,8 +7853,12 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energySupplyChart.addDataSet(dataObject.v_dataPVElectricityProductionLiveWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
 	
 	if ( uI_Results.p_legendsScope == RESIDENTIAL){
-		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingConsumptionLiveWeek_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
-		energySupplyChart.addDataSet(dataObject.v_dataV2GElectricityProductionLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+		if (dataObject.v_dataElectricityForCookingConsumptionLiveWeek_kW != null) {
+			energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingConsumptionLiveWeek_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
+		}
+		if (dataObject.v_dataV2GElectricityProductionLiveWeek_kW != null) {
+			energySupplyChart.addDataSet(dataObject.v_dataV2GElectricityProductionLiveWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+		}
 	}
 	else if ( uI_Results.p_legendsScope == BUSINESSPARK){
 		if (dataObject.v_dataElectricityForHydrogenConsumptionLiveWeek_kW != null) {
