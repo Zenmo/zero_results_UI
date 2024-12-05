@@ -3336,7 +3336,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1705603182419</Id>
 					<Name><![CDATA[v_totalTimeOverloadedTransformers_h]]></Name>
-					<X>1590</X><Y>880</Y>
+					<X>1620</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3348,7 +3348,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1705603182421</Id>
 					<Name><![CDATA[v_modelSelfSufficiency_fr]]></Name>
-					<X>1590</X><Y>790</Y>
+					<X>1620</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3360,7 +3360,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706182758385</Id>
 					<Name><![CDATA[v_gridCapacityFeedIn_kW]]></Name>
-					<X>1590</X><Y>900</Y>
+					<X>1620</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3372,7 +3372,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706182768315</Id>
 					<Name><![CDATA[v_gridCapacityDelivery_kW]]></Name>
-					<X>1590</X><Y>920</Y>
+					<X>1620</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3562,169 +3562,15 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1706606389031</Id>
-					<Name><![CDATA[v_dataSelfConsumptionEnergy_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>680</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706606395781</Id>
-					<Name><![CDATA[v_dataImportedEnergy_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>700</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706606400332</Id>
-					<Name><![CDATA[v_dataExportedEnergy_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>720</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706606404823</Id>
-					<Name><![CDATA[v_dataSelfConsumptionElectricity_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>550</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706606411896</Id>
-					<Name><![CDATA[v_dataImportedElectricity_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>570</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706606417114</Id>
-					<Name><![CDATA[v_dataExportedElectricity_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>590</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1706614562064</Id>
 					<Name><![CDATA[v_dataNetLoadYear_kW]]></Name>
-					<X>1590</X><Y>650</Y>
+					<X>1060</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double[]]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706622565021</Id>
-					<Name><![CDATA[v_dataEnergyDemand_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>740</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706622575085</Id>
-					<Name><![CDATA[v_dataEnergySupply_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>760</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706622584128</Id>
-					<Name><![CDATA[v_dataElectricityDemand_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>610</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706622599441</Id>
-					<Name><![CDATA[v_dataElectricitySupply_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>630</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706733965195</Id>
-					<Name><![CDATA[v_annualDistrictHeatingHeatDemand_MWh]]></Name>
-					<X>540</X><Y>480</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706733965197</Id>
-					<Name><![CDATA[v_annualHeatPumpHeatGeneration_MWh]]></Name>
-					<X>540</X><Y>540</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
@@ -3752,45 +3598,9 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1706733965209</Id>
-					<Name><![CDATA[v_annualElectricityForTransportDemand_MWh]]></Name>
-					<X>540</X><Y>560</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706733965211</Id>
-					<Name><![CDATA[v_annualHydrogenForTransportDemand_MWh]]></Name>
-					<X>540</X><Y>580</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706733965215</Id>
-					<Name><![CDATA[v_annualTransportEnergyDemand_MWh]]></Name>
-					<X>540</X><Y>600</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1706734883584</Id>
 					<Name><![CDATA[v_PVPotential_kW]]></Name>
-					<X>1590</X><Y>490</Y>
+					<X>1620</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3802,189 +3612,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1706734894619</Id>
 					<Name><![CDATA[v_windPotential_kW]]></Name>
-					<X>1590</X><Y>470</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776563595</Id>
-					<Name><![CDATA[v_numberOfPeaksDemand]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>90</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776569359</Id>
-					<Name><![CDATA[v_numberOfPeaksSupply]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>110</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776575001</Id>
-					<Name><![CDATA[v_averageTimePeakDemand_h]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>130</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776578870</Id>
-					<Name><![CDATA[v_averageTimePeakSupply_h]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>150</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776585443</Id>
-					<Name><![CDATA[v_averageEnergyPeakDemand_kWh]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>170</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776592099</Id>
-					<Name><![CDATA[v_averageEnergyPeakSupply_kWh]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>190</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776597064</Id>
-					<Name><![CDATA[v_averagePowerPeakDemand_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>210</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776604257</Id>
-					<Name><![CDATA[v_averagePowerPeakSupply_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>230</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776611716</Id>
-					<Name><![CDATA[v_maxTimePeakDemand_h]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>270</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776611718</Id>
-					<Name><![CDATA[v_maxTimePeakSupply_h]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>290</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776611720</Id>
-					<Name><![CDATA[v_maxEnergyPeakDemand_kWh]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>310</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776611722</Id>
-					<Name><![CDATA[v_maxEnergyPeakSupply_kWh]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>330</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776611724</Id>
-					<Name><![CDATA[v_maxPowerPeakDemand_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>350</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1706776611726</Id>
-					<Name><![CDATA[v_maxPowerPeakSupply_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>370</Y>
+					<X>1620</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4104,7 +3732,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707215943412</Id>
 					<Name><![CDATA[v_modelSelfConsumption_fr]]></Name>
-					<X>1590</X><Y>810</Y>
+					<X>1620</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4152,7 +3780,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1707233006956</Id>
 					<Name><![CDATA[v_individualSelfSufficiency_fr]]></Name>
-					<X>1590</X><Y>830</Y>
+					<X>1620</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4512,7 +4140,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1708953779594</Id>
 					<Name><![CDATA[v_individualSelfconsumption_fr]]></Name>
-					<X>1590</X><Y>850</Y>
+					<X>1620</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4525,32 +4153,6 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 					<Id>1709801192905</Id>
 					<Name><![CDATA[v_dataNetbelastingDuurkrommeYearVorige_kW]]></Name>
 					<X>1060</X><Y>90</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1712674071628</Id>
-					<Name><![CDATA[v_dataElectricityCapacitySupply_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>960</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[DataSet]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1712674076037</Id>
-					<Name><![CDATA[v_dataElectricityCapacityDemand_kW]]></Name>
-					<ExcludeFromBuild>true</ExcludeFromBuild>
-					<X>1590</X><Y>940</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4853,7 +4455,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1731586830861</Id>
 					<Name><![CDATA[v_totalEnergyConsumptionForDistrictHeating_MWh]]></Name>
-					<X>540</X><Y>500</Y>
+					<X>540</X><Y>470</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4865,7 +4467,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1731592957076</Id>
 					<Name><![CDATA[v_totalElectricityConsumptionHeatpumps_MWh]]></Name>
-					<X>540</X><Y>520</Y>
+					<X>540</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5798,7 +5400,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1732289646317</Id>
 					<Name><![CDATA[v_totalEnergyCurtailed_MWh]]></Name>
-					<X>1590</X><Y>450</Y>
+					<X>1620</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5810,7 +5412,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1732293722351</Id>
 					<Name><![CDATA[v_totalWindGeneration_MWh]]></Name>
-					<X>1590</X><Y>430</Y>
+					<X>1620</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5822,7 +5424,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Variable Class="PlainVariable">
 					<Id>1732293729167</Id>
 					<Name><![CDATA[v_totalPVGeneration_MWh]]></Name>
-					<X>1590</X><Y>410</Y>
+					<X>1620</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -15753,12 +15355,32 @@ sc_transportDemandStack.setFixedScale(chartScale_MWh/1000);
 
 
 ////Production charts
+
+//Calcualte total full load hours production assets for potential energy production
+
+//Full load hours Wind
+double totalFullLoadHoursWind_hr = 0;
+for (double value : uI_Results.energyModel.tf_p_wind_e_normalized.getValues()) {
+    totalFullLoadHoursWind_hr += value;
+}
+
+//Full load hours Solar
+double totalFullLoadHoursSolar_hr = 0;
+for (double value : uI_Results.energyModel.tf_p_solar_e_normalized.getValues()) {
+    totalFullLoadHoursSolar_hr += value;
+}
+
+
 //Production (Wind)
 sc_windSupplyStack.removeAll();
 
 DataItem totalWindProduction_GWh = new DataItem();
 totalWindProduction_GWh.setValue(area.v_totalWindGeneration_MWh/1000);
 sc_windSupplyStack.addDataItem(totalWindProduction_GWh, "Opwek wind", v_windElectricitySupplyColor);
+
+DataItem remainingWindPotential_GWh = new DataItem();
+remainingWindPotential_GWh.setValue(max(0,(area.v_windPotential_kW*totalFullLoadHoursWind_hr/1000000) - (area.v_totalWindGeneration_MWh/1000)));
+sc_windSupplyStack.addDataItem(remainingWindPotential_GWh, "Resterende potentie wind energie", v_potentialColor);
 
 //Production (Solar)			
 sc_PVSupplyStack.removeAll();
@@ -15767,8 +15389,9 @@ DataItem totalSolarProduction_GWh = new DataItem();
 totalSolarProduction_GWh.setValue(area.v_totalPVGeneration_MWh/1000);
 sc_PVSupplyStack.addDataItem(totalSolarProduction_GWh, "Opwek zon", v_PVElectricitySupplyColor);
 
+
 DataItem remainingRoofSolarPotential_GWh = new DataItem();
-remainingRoofSolarPotential_GWh.setValue(max(0,(area.v_PVPotential_kW/1000000) - (area.v_totalPVGeneration_MWh/1000)));
+remainingRoofSolarPotential_GWh.setValue(max(0,(area.v_PVPotential_kW*totalFullLoadHoursSolar_hr/1000000) - (area.v_totalPVGeneration_MWh/1000)));
 sc_PVSupplyStack.addDataItem(remainingRoofSolarPotential_GWh, "Resterende potentie zon op dak", v_potentialColor);
 
 //Curtailment
@@ -15779,7 +15402,7 @@ totalCurtailedEnergy_GWh.setValue(area.v_totalEnergyCurtailed_MWh/1000);
 sc_CurtailmentSupplyStack.addDataItem(totalCurtailedEnergy_GWh, "Opwek zon", v_curtailedColor);
 
 //Set production charts scaling
-double chartScaleSupply_MWh = max(area.v_totalEnergyCurtailed_MWh, max(area.v_totalPVGeneration_MWh + max(0,(area.v_PVPotential_kW/1000) - area.v_totalPVGeneration_MWh), area.v_totalWindGeneration_MWh));
+double chartScaleSupply_MWh = max(area.v_totalEnergyCurtailed_MWh, max(area.v_totalPVGeneration_MWh + max(0,(area.v_PVPotential_kW*totalFullLoadHoursSolar_hr/1000) - area.v_totalPVGeneration_MWh), area.v_totalWindGeneration_MWh + max(0,(area.v_windPotential_kW*totalFullLoadHoursWind_hr/1000) - area.v_totalWindGeneration_MWh)));
 sc_windSupplyStack.setFixedScale(chartScaleSupply_MWh/1000);
 sc_PVSupplyStack.setFixedScale(chartScaleSupply_MWh/1000);
 sc_CurtailmentSupplyStack.setFixedScale(chartScaleSupply_MWh/1000);
@@ -22549,6 +22172,50 @@ komst bieden.
 			</Presentation>
 
 				</Group>
+				<Rectangle>
+					<Id>1733406888609</Id>
+					<Name><![CDATA[rectangle18]]></Name>
+					<X>580</X><Y>705</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>12</Width>
+					<Height>6</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-6632142</FillColor>
+					<FillColorCode><![CDATA[v_potentialColor]]></FillColorCode>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Text>
+					<Id>1733406888611</Id>
+					<Name><![CDATA[text26]]></Name>
+					<X>600</X><Y>700</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Potentieel]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Presentation>
 
 				</Level>
@@ -30579,8 +30246,6 @@ public class J_previousTotals {
 	private	Double previousSelfConsumedEnergy_MWh;
 	private	Double previousImportedEnergy_MWh;
 	private	Double previousExportedEnergy_MWh;
-	private	Double previousDistrictHeatingHeatDemand_MWh;
-	private	Double previousHeatPumpHeatGeneration_MWh;
 	private	Double previousSelfConsumedElectricity_MWh;
 	private	Double previousSelfProducedElectricity_MWh;
 	private	Double previousElectricityConsumed_MWh;
@@ -30622,14 +30287,6 @@ public class J_previousTotals {
 	
 	public void setPreviousExportedEnergy_MWh(Double previousExportedEnergy_MWh){
         this.previousExportedEnergy_MWh = previousExportedEnergy_MWh;
-	}
-	
-	public void setPreviousDistrictHeatingHeatDemand_MWh(Double previousDistrictHeatingHeatDemand_MWh){
-        this.previousDistrictHeatingHeatDemand_MWh = previousDistrictHeatingHeatDemand_MWh;
-	}
-	
-	public void setPreviousHeatPumpHeatGeneration_MWh(Double previousHeatPumpHeatGeneration_MWh){
-        this.previousHeatPumpHeatGeneration_MWh = previousHeatPumpHeatGeneration_MWh;
 	}
 	
 	public void setPreviousSelfConsumedElectricity_MWh(Double previousSelfConsumedElectricity_MWh){
@@ -30688,14 +30345,6 @@ public class J_previousTotals {
 	
 	public Double getPreviousExportedEnergy_MWh(){
         return this.previousExportedEnergy_MWh;
-	}
-	
-	public Double getPreviousDistrictHeatingHeatDemand_MWh(){
-        return this.previousDistrictHeatingHeatDemand_MWh;
-	}
-	
-	public Double getPreviousHeatPumpHeatGeneration_MWh(){
-        return this.previousHeatPumpHeatGeneration_MWh;
 	}
 	
 	public Double getPreviousSelfConsumedElectricity_MWh(){
