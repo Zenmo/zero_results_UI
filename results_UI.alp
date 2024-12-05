@@ -15379,7 +15379,7 @@ totalWindProduction_GWh.setValue(area.v_totalWindGeneration_MWh/1000);
 sc_windSupplyStack.addDataItem(totalWindProduction_GWh, "Opwek wind", v_windElectricitySupplyColor);
 
 DataItem remainingWindPotential_GWh = new DataItem();
-remainingWindPotential_GWh.setValue(max(0,(area.v_windPotential_kW*totalFullLoadHoursWind_hr/1000000) - (area.v_totalPVGeneration_MWh/1000)));
+remainingWindPotential_GWh.setValue(max(0,(area.v_windPotential_kW*totalFullLoadHoursWind_hr/1000000) - (area.v_totalWindGeneration_MWh/1000)));
 sc_windSupplyStack.addDataItem(remainingWindPotential_GWh, "Resterende potentie wind energie", v_potentialColor);
 
 //Production (Solar)			
