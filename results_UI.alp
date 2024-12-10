@@ -9397,7 +9397,7 @@ double totalAbsoluteLoad_kW = 0;
 for(int i=0; i< area.v_dataNetbelastingDuurkrommeYear_kW.size(); i++){
 	totalAbsoluteLoad_kW += abs(area.v_dataNetbelastingDuurkrommeYear_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
 }
-benuttingsgraad = totalAbsoluteLoad_kW / (area.v_gridCapacityDelivery_kW * 8760) * 100;
+benuttingsgraad = totalAbsoluteLoad_kW / ((area.v_gridCapacityDelivery_kW+area.v_gridCapacityFeedIn_kW) * 8760) * 100;
 traceln("benuttingsgraad : " + benuttingsgraad);
 t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");]]></Body>
 				</Function>
@@ -15715,7 +15715,7 @@ double totalAbsoluteLoad_kW = 0;
 for(int i=0; i< area.v_dataNetbelastingDuurkrommeYear_kW.size(); i++){
 	totalAbsoluteLoad_kW += abs(area.v_dataNetbelastingDuurkrommeYear_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
 }
-benuttingsgraad = totalAbsoluteLoad_kW / (area.v_gridCapacityDelivery_kW * 8760) * 100;
+benuttingsgraad = totalAbsoluteLoad_kW / ((area.v_gridCapacityDelivery_kW+area.v_gridCapacityFeedIn_kW) * 8760) * 100;
 t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
