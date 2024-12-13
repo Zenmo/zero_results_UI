@@ -7511,10 +7511,10 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageProductionYear_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
 	}
 	if (dataObject.v_dataElectricityV2GProductionYear_kW != null) {
-		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GProductionYear_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+		//energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GProductionYear_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
 	}
 	if (dataObject.v_dataElectricityCHPProductionYear_kW != null) {
-		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityCHPProductionYear_kW, "Elektr. Opwek WKK", uI_Results.v_CHPElectricitySupplyColor);
+		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityCHPProductionYear_kW, "Huidige Elektr. Opwek", uI_Results.v_CHPElectricitySupplyColor);
 	}
 }
 else {
@@ -7626,7 +7626,7 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 		}
 	}
 	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricityProductionLiveWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataCHPElectricityProductionLiveWeek_kW, "Elektr. opwek WKK", uI_Results.v_CHPElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataCHPElectricityProductionLiveWeek_kW, "Huidige Elektr. opwek", uI_Results.v_CHPElectricitySupplyColor);
 	
 
 }
@@ -7727,8 +7727,8 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityWindProductionSummerWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityPVProductionSummerWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageProductionSummerWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GProductionSummerWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataElectricityCHPProductionSummerWeek_kW, "Elektr. Opwek WKK", uI_Results.v_CHPElectricitySupplyColor);
+	//energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GProductionSummerWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityCHPProductionSummerWeek_kW, "Huidige Elektr. Opwek", uI_Results.v_CHPElectricitySupplyColor);
 }
 else {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -7852,8 +7852,8 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityWindProductionWinterWeek_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityPVProductionWinterWeek_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageProductionWinterWeek_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GProductionWinterWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataElectricityCHPProductionWinterWeek_kW, "Elektr. Opwek WKK", uI_Results.v_CHPElectricitySupplyColor);
+	//energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GProductionWinterWeek_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityCHPProductionWinterWeek_kW, "Huidige Elektr. Opwek", uI_Results.v_CHPElectricitySupplyColor);
 }
 else {
 	List<Color> colorSpectrum = new ArrayList<>();
