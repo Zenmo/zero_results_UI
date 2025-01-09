@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AnyLogicWorkspace splitVersion="1"
                    WorkspaceVersion="1.9"
-                   AnyLogicVersion="8.9.2.202410172110"
+                   AnyLogicVersion="8.9.2.202410172112"
                    AlpVersion="8.9.2">
 	<Model>
 		<Id>1704197366547</Id>
@@ -10,18 +10,6 @@
 		<JavaPackageName><![CDATA[digital_twin_results]]></JavaPackageName>
 		<ModelTimeUnit>Hour</ModelTimeUnit>
 		<OptionLists>
-			<OptionList>
-				<Id>1705652538235</Id>
-				<Name><![CDATA[OL_LegendsScope]]></Name>
-				<Option>
-					<Id>1727355475213</Id>
-					<Name><![CDATA[BUSINESSPARK]]></Name>
-				</Option>
-				<Option>
-					<Id>1727355485745</Id>
-					<Name><![CDATA[RESIDENTIAL]]></Name>
-				</Option>
-			</OptionList>
 			<OptionList>
 				<Id>1714740441860</Id>
 				<Name><![CDATA[OL_ChartTypes]]></Name>
