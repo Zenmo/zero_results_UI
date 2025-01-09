@@ -664,7 +664,7 @@
 		<Id>1705603337539</Id>
 		<Name><![CDATA[v_area]]></Name>
 		<X>540</X>
-		<Y>160</Y>
+		<Y>190</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -873,7 +873,7 @@
 		<Id>1714855681842</Id>
 		<Name><![CDATA[v_selectedObjectType]]></Name>
 		<X>540</X>
-		<Y>290</Y>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -895,7 +895,7 @@
 		<Id>1714895695214</Id>
 		<Name><![CDATA[v_selectedChartType]]></Name>
 		<X>540</X>
-		<Y>310</Y>
+		<Y>320</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1451,31 +1451,6 @@
 			<SdArray>false</SdArray>
 			<ParameterEditor>
 				<Id>1715851154619</Id>
-				<EditorContolType>TEXT_BOX</EditorContolType>
-				<MinSliderValue>0</MinSliderValue>
-				<MaxSliderValue>100</MaxSliderValue>
-				<DelimeterType>NO_DELIMETER</DelimeterType>
-			</ParameterEditor>
-		</Properties>
-	</Variable>
-	<Variable Class="Parameter">
-		<Id>1726252887036</Id>
-		<Name><![CDATA[p_legendsScope]]></Name>
-		<X>540</X>
-		<Y>120</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-			<Type><![CDATA[OL_LegendsScope]]></Type>
-			<UnitType>NONE</UnitType>
-			<SdArray>false</SdArray>
-			<ParameterEditor>
-				<Id>1726252887034</Id>
 				<EditorContolType>TEXT_BOX</EditorContolType>
 				<MinSliderValue>0</MinSliderValue>
 				<MaxSliderValue>100</MaxSliderValue>
