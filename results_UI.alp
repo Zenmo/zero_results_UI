@@ -4,7 +4,7 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172123" AlpVersion="8.9.2">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172112" AlpVersion="8.9.2">
 <Model>
 	<Id>1704197366547</Id>
 	<Name><![CDATA[results_UI]]></Name>
@@ -9718,14 +9718,14 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	if (dataObject.v_dataElectricityWindSupplyYear_kW != null) {
 	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityWindSupplyYear_kW, "Wind", uI_Results.v_windElectricitySupplyColor);
 	}
-	if (dataObject.v_dataElectricityPVSupplyYear_kW != null) {
-		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_kW, "Solar PV", uI_Results.v_PVElectricitySupplyColor);
-	}
 	if (dataObject.v_dataElectricityStorageSupplyYear_kW != null ) {
 		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_kW, "Batteries feed-in", uI_Results.v_storageElectricitySupplyColor);
 	}
 	if (dataObject.v_dataElectricityV2GSupplyYear_kW != null) {
 		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_kW, "V2G feed-in", uI_Results.v_V2GElectricitySupplyColor);
+	}
+	if (dataObject.v_dataElectricityPVSupplyYear_kW != null) {
+		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_kW, "Solar PV", uI_Results.v_PVElectricitySupplyColor);
 	}
 }
 else {
@@ -9803,8 +9803,8 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandLiveWeek_kW, "Electr. demand transport", uI_Results.v_electricityForTransportDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandLiveWeek_kW, "Electr. demand batteries", uI_Results.v_electricityForStorageDemandColor);
 	energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplyLiveWeek_kW, "Wind", uI_Results.v_windElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplyLiveWeek_kW, "Solar PV", uI_Results.v_PVElectricitySupplyColor);
-	
+	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Batteries", uI_Results.v_storageElectricitySupplyColor);
+		
 	if ( uI_Results.p_legendsScope == 0){
 		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandLiveWeek_kW, "Electr. cooking", uI_Results.v_electricityForCookingDemandColor);
 		energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "V2G", uI_Results.v_V2GElectricitySupplyColor);
@@ -9814,7 +9814,8 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 			energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandLiveWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 		}
 	}
-	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Batteries", uI_Results.v_storageElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataPVElectricitySupplyLiveWeek_kW, "Solar PV", uI_Results.v_PVElectricitySupplyColor);
+	
 }
 else {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -9891,9 +9892,9 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	
 	//Energy supply chart
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplySummerWeek_kW, "Production wind", uI_Results.v_windElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplySummerWeek_kW, "Production solar", uI_Results.v_PVElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageSupplySummerWeek_kW, "Feed-in batteries", uI_Results.v_storageElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GSupplySummerWeek_kW, "Feed-in V2G", uI_Results.v_V2GElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplySummerWeek_kW, "Production solar", uI_Results.v_PVElectricitySupplyColor);
 }
 else {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -9994,9 +9995,10 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	
 	//Energy supply chart
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplyWinterWeek_kW, "Production wind", uI_Results.v_windElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplyWinterWeek_kW, "Production solar", uI_Results.v_PVElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityStorageSupplyWinterWeek_kW, "Feed-in batteries", uI_Results.v_storageElectricitySupplyColor);
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityV2GSupplyWinterWeek_kW, "Feed-in V2G", uI_Results.v_V2GElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataElectricityPVSupplyWinterWeek_kW, "Production solar", uI_Results.v_PVElectricitySupplyColor);
+
 }
 else {
 	List<Color> colorSpectrum = new ArrayList<>();
