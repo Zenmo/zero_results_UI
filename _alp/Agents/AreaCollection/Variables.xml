@@ -61,7 +61,7 @@
 		<Id>1705603182419</Id>
 		<Name><![CDATA[v_totalTimeOverloadedTransformers_h]]></Name>
 		<X>1620</X>
-		<Y>280</Y>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -80,7 +80,7 @@
 		<Id>1705603182421</Id>
 		<Name><![CDATA[v_modelSelfSufficiency_fr]]></Name>
 		<X>1620</X>
-		<Y>190</Y>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -478,9 +478,9 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1706734883584</Id>
-		<Name><![CDATA[v_PVPotential_kW]]></Name>
+		<Name><![CDATA[v_rooftopPVPotential_kW]]></Name>
 		<X>1620</X>
-		<Y>160</Y>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -499,7 +499,7 @@
 		<Id>1706734894619</Id>
 		<Name><![CDATA[v_windPotential_kW]]></Name>
 		<X>1620</X>
-		<Y>140</Y>
+		<Y>250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -689,7 +689,7 @@
 		<Id>1707215943412</Id>
 		<Name><![CDATA[v_modelSelfConsumption_fr]]></Name>
 		<X>1620</X>
-		<Y>210</Y>
+		<Y>320</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -765,7 +765,7 @@
 		<Id>1707233006956</Id>
 		<Name><![CDATA[v_individualSelfSufficiency_fr]]></Name>
 		<X>1620</X>
-		<Y>230</Y>
+		<Y>340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1335,7 +1335,7 @@
 		<Id>1708953779594</Id>
 		<Name><![CDATA[v_individualSelfconsumption_fr]]></Name>
 		<X>1620</X>
-		<Y>250</Y>
+		<Y>360</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3245,7 +3245,7 @@
 		<Id>1732289646317</Id>
 		<Name><![CDATA[v_totalEnergyCurtailed_MWh]]></Name>
 		<X>1620</X>
-		<Y>120</Y>
+		<Y>170</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3264,7 +3264,7 @@
 		<Id>1732293722351</Id>
 		<Name><![CDATA[v_totalWindGeneration_MWh]]></Name>
 		<X>1620</X>
-		<Y>100</Y>
+		<Y>90</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3283,7 +3283,7 @@
 		<Id>1732293729167</Id>
 		<Name><![CDATA[v_totalPVGeneration_MWh]]></Name>
 		<X>1620</X>
-		<Y>80</Y>
+		<Y>70</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3542,7 +3542,7 @@
 		<Id>1733851365900</Id>
 		<Name><![CDATA[b_hasHeatGridConnection]]></Name>
 		<X>1620</X>
-		<Y>510</Y>
+		<Y>560</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3640,7 +3640,7 @@
 		<Id>1734358500128</Id>
 		<Name><![CDATA[b_hasElectrolyser]]></Name>
 		<X>1620</X>
-		<Y>530</Y>
+		<Y>580</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3662,7 +3662,7 @@
 		<Id>1734358511150</Id>
 		<Name><![CDATA[b_hasCHP]]></Name>
 		<X>1620</X>
-		<Y>550</Y>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3684,7 +3684,7 @@
 		<Id>1734359658781</Id>
 		<Name><![CDATA[b_hasPV]]></Name>
 		<X>1620</X>
-		<Y>450</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3706,7 +3706,7 @@
 		<Id>1734359658783</Id>
 		<Name><![CDATA[b_hasWindturbine]]></Name>
 		<X>1620</X>
-		<Y>470</Y>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3728,7 +3728,7 @@
 		<Id>1734359658785</Id>
 		<Name><![CDATA[b_hasV2G]]></Name>
 		<X>1620</X>
-		<Y>570</Y>
+		<Y>620</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3750,7 +3750,7 @@
 		<Id>1734359708747</Id>
 		<Name><![CDATA[b_hasBattery]]></Name>
 		<X>1620</X>
-		<Y>490</Y>
+		<Y>540</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3772,7 +3772,7 @@
 		<Id>1734359858091</Id>
 		<Name><![CDATA[b_hasElectricHeating]]></Name>
 		<X>1620</X>
-		<Y>410</Y>
+		<Y>460</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3794,7 +3794,7 @@
 		<Id>1734359867557</Id>
 		<Name><![CDATA[b_hasElectricTransport]]></Name>
 		<X>1620</X>
-		<Y>430</Y>
+		<Y>480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3816,7 +3816,7 @@
 		<Id>1734360597771</Id>
 		<Name><![CDATA[b_hasElectricCooking]]></Name>
 		<X>1620</X>
-		<Y>590</Y>
+		<Y>640</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3832,6 +3832,82 @@
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[false]]></Code>
 			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1736951618712</Id>
+		<Name><![CDATA[v_totalWindEnergyCurtailed_MWh]]></Name>
+		<X>1620</X>
+		<Y>150</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1736951624590</Id>
+		<Name><![CDATA[v_totalPVEnergyCurtailed_MWh]]></Name>
+		<X>1620</X>
+		<Y>130</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1736954582537</Id>
+		<Name><![CDATA[v_rooftopPVInstalled_kW]]></Name>
+		<X>1620</X>
+		<Y>220</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1736954596219</Id>
+		<Name><![CDATA[v_windInstalled_kW]]></Name>
+		<X>1620</X>
+		<Y>270</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
 		</Properties>
 	</Variable>
 	<Variable Class="Parameter">

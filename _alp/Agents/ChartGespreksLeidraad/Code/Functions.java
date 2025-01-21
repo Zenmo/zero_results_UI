@@ -310,7 +310,6 @@ for (double value : uI_Results.energyModel.tf_p_solar_e_normalized.getValues()) 
     totalFullLoadHoursSolar_hr += value;
 }
 
-
 //Production (Wind)
 sc_windSupplyStack.removeAll();
 
@@ -318,8 +317,12 @@ DataItem totalWindProduction_GWh = new DataItem();
 totalWindProduction_GWh.setValue(area.v_totalWindGeneration_MWh/1000);
 sc_windSupplyStack.addDataItem(totalWindProduction_GWh, "Opwek wind", v_windElectricitySupplyColor);
 
+DataItem totalCurtailedWindEnergy_GWh = new DataItem();
+totalCurtailedWindEnergy_GWh.setValue(area.v_totalWindEnergyCurtailed_MWh/1000);
+sc_windSupplyStack.addDataItem(totalCurtailedWindEnergy_GWh, "Totaal gecurtailde wind energy", v_curtailedColor);
+
 DataItem remainingWindPotential_GWh = new DataItem();
-remainingWindPotential_GWh.setValue(max(0,(area.v_windPotential_kW*totalFullLoadHoursWind_hr/1000000) - (area.v_totalWindGeneration_MWh/1000)));
+remainingWindPotential_GWh.setValue(max(0,((area.v_windPotential_kW - area.v_windInstalled_kW)*totalFullLoadHoursWind_hr/1000000)));
 sc_windSupplyStack.addDataItem(remainingWindPotential_GWh, "Resterende potentie wind energie", v_potentialColor);
 
 //Production (Solar)			
@@ -329,23 +332,19 @@ DataItem totalSolarProduction_GWh = new DataItem();
 totalSolarProduction_GWh.setValue(area.v_totalPVGeneration_MWh/1000);
 sc_PVSupplyStack.addDataItem(totalSolarProduction_GWh, "Opwek zon", v_PVElectricitySupplyColor);
 
+DataItem totalCurtailedPVEnergy_GWh = new DataItem();
+totalCurtailedPVEnergy_GWh.setValue(area.v_totalPVEnergyCurtailed_MWh/1000);
+sc_PVSupplyStack.addDataItem(totalCurtailedPVEnergy_GWh, "Totaal gecurtailde zonne energy", v_curtailedColor);
 
 DataItem remainingRoofSolarPotential_GWh = new DataItem();
-remainingRoofSolarPotential_GWh.setValue(max(0,(area.v_PVPotential_kW*totalFullLoadHoursSolar_hr/1000000) - (area.v_totalPVGeneration_MWh/1000)));
+remainingRoofSolarPotential_GWh.setValue(max(0,((area.v_rooftopPVPotential_kW - area.v_rooftopPVInstalled_kW)*totalFullLoadHoursSolar_hr/1000000)));
 sc_PVSupplyStack.addDataItem(remainingRoofSolarPotential_GWh, "Resterende potentie zon op dak", v_potentialColor);
 
-//Curtailment
-sc_CurtailmentSupplyStack.removeAll();
-
-DataItem totalCurtailedEnergy_GWh = new DataItem();
-totalCurtailedEnergy_GWh.setValue(area.v_totalEnergyCurtailed_MWh/1000);
-sc_CurtailmentSupplyStack.addDataItem(totalCurtailedEnergy_GWh, "Opwek zon", v_curtailedColor);
-
 //Set production charts scaling
-double chartScaleSupply_MWh = max(area.v_totalEnergyCurtailed_MWh, max(area.v_totalPVGeneration_MWh + max(0,(area.v_PVPotential_kW*totalFullLoadHoursSolar_hr/1000) - area.v_totalPVGeneration_MWh), area.v_totalWindGeneration_MWh + max(0,(area.v_windPotential_kW*totalFullLoadHoursWind_hr/1000) - area.v_totalWindGeneration_MWh)));
-sc_windSupplyStack.setFixedScale(chartScaleSupply_MWh/1000);
-sc_PVSupplyStack.setFixedScale(chartScaleSupply_MWh/1000);
-sc_CurtailmentSupplyStack.setFixedScale(chartScaleSupply_MWh/1000);
+double chartScaleSupply_GWh = max(totalWindProduction_GWh.getValue() + totalCurtailedWindEnergy_GWh.getValue() + remainingWindPotential_GWh.getValue(), 
+								  totalSolarProduction_GWh.getValue() + totalCurtailedPVEnergy_GWh.getValue() + remainingRoofSolarPotential_GWh.getValue());
+sc_windSupplyStack.setFixedScale(chartScaleSupply_GWh);
+sc_PVSupplyStack.setFixedScale(chartScaleSupply_GWh);
 
 /*ALCODEEND*/}
 
@@ -406,14 +405,14 @@ double maxDemand_kW = max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax())
 double maxSupply_kW = abs(min(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin()));
 double maxDemandSupply_kW = max(maxDemand_kW, maxSupply_kW);
 if (maxDemandSupply_kW < 1 * pow(10,3)) {
-	tx_maxDemand.setText(roundToInt(maxDemand_kW) + " kW");
-	tx_maxSupply.setText(roundToInt(maxSupply_kW) + " kW");
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
+	tx_maxSupply.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
 } else if (maxDemandSupply_kW<1 * pow(10,6)) {
-	tx_maxDemand.setText(roundToInt(maxDemand_kW / pow(10,3)) + " MW");
-	tx_maxSupply.setText(roundToInt(maxSupply_kW / pow(10,3)) + " MW");
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
+	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
 } else {
-	tx_maxDemand.setText(roundToInt(maxDemand_kW / pow(10,6)) + " GW");
-	tx_maxSupply.setText(roundToInt(maxSupply_kW / pow(10,6)) + " GW");
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
+	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
 } 
 
 f_setNetAverageLoad(area);
@@ -427,7 +426,7 @@ for(int i=0; i< area.v_dataNetbelastingDuurkrommeYear_kW.size(); i++){
 	totalAbsoluteLoad_kW += abs(area.v_dataNetbelastingDuurkrommeYear_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
 }
 benuttingsgraad = totalAbsoluteLoad_kW / ((area.v_gridCapacityDelivery_kW+area.v_gridCapacityFeedIn_kW) * 8760) * 100;
-t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");
+t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
 /*ALCODEEND*/}
 
 double f_resetPlots()

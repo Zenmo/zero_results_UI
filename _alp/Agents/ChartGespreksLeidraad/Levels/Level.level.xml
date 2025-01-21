@@ -1139,7 +1139,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<StackChart>
 				<Id>1730385072794</Id>
 				<Name><![CDATA[sc_windSupplyStack]]></Name>
-				<X>-220</X>
+				<X>-190</X>
 				<Y>30</Y>
 				<Label>
 					<X>0</X>
@@ -1166,9 +1166,9 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>45</XOffset>
 					<YOffset>30</YOffset>
-					<Width>100</Width>
+					<Width>130</Width>
 					<Height>120</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor>-16777216</BorderColor>
@@ -1195,7 +1195,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385072796</Id>
 				<Name><![CDATA[txt_GSLD2_wind]]></Name>
-				<X>-150</X>
+				<X>-100</X>
 				<Y>190</Y>
 				<Label>
 					<X>0</X>
@@ -1220,7 +1220,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385072798</Id>
 				<Name><![CDATA[txt_gsld2_solar]]></Name>
-				<X>-40</X>
+				<X>35</X>
 				<Y>190</Y>
 				<Label>
 					<X>0</X>
@@ -1346,7 +1346,7 @@ en vervoer]]></Text>
 			<StackChart>
 				<Id>1730385072809</Id>
 				<Name><![CDATA[sc_PVSupplyStack]]></Name>
-				<X>-120</X>
+				<X>-45</X>
 				<Y>30</Y>
 				<Label>
 					<X>0</X>
@@ -1373,9 +1373,9 @@ en vervoer]]></Text>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>30</XOffset>
 					<YOffset>30</YOffset>
-					<Width>100</Width>
+					<Width>130</Width>
 					<Height>120</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor>-16777216</BorderColor>
@@ -1987,8 +1987,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072852</Id>
 				<Name><![CDATA[rectangle8]]></Name>
-				<X>-170</X>
-				<Y>225</Y>
+				<X>-130</X>
+				<Y>215</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -2014,8 +2014,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072854</Id>
 				<Name><![CDATA[text16]]></Name>
-				<X>-150</X>
-				<Y>221</Y>
+				<X>-110</X>
+				<Y>211</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2039,8 +2039,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072856</Id>
 				<Name><![CDATA[rectangle9]]></Name>
-				<X>-60</X>
-				<Y>245</Y>
+				<X>5</X>
+				<Y>255</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -2066,8 +2066,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072858</Id>
 				<Name><![CDATA[text17]]></Name>
-				<X>-40</X>
-				<Y>240</Y>
+				<X>25</X>
+				<Y>250</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2080,7 +2080,7 @@ warmtepompen]]></Text>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Potentieel]]></Text>
+				<Text><![CDATA[Rest potentieel zon op dak]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>12</Size>
@@ -2116,7 +2116,7 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072862</Id>
 				<Name><![CDATA[t_energyDemand_ylabel3]]></Name>
-				<X>-250</X>
+				<X>-210</X>
 				<Y>60</Y>
 				<Label>
 					<X>0</X>
@@ -2141,8 +2141,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072864</Id>
 				<Name><![CDATA[rectangle14]]></Name>
-				<X>-60</X>
-				<Y>225</Y>
+				<X>5</X>
+				<Y>215</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -2168,8 +2168,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072866</Id>
 				<Name><![CDATA[text24]]></Name>
-				<X>-40</X>
-				<Y>221</Y>
+				<X>25</X>
+				<Y>211</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2193,8 +2193,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072868</Id>
 				<Name><![CDATA[rectangle15]]></Name>
-				<X>40</X>
-				<Y>225</Y>
+				<X>5</X>
+				<Y>235</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -2220,8 +2220,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072870</Id>
 				<Name><![CDATA[text25]]></Name>
-				<X>65</X>
-				<Y>220</Y>
+				<X>25</X>
+				<Y>230</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2234,7 +2234,7 @@ warmtepompen]]></Text>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Curtailment]]></Text>
+				<Text><![CDATA[Gecurtailde energie]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>12</Size>
@@ -2274,67 +2274,38 @@ f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCo
 				</ImageFiles>
 				<OriginalSize>false</OriginalSize>
 			</Image>
-			<StackChart>
-				<Id>1732294773668</Id>
-				<Name><![CDATA[sc_CurtailmentSupplyStack]]></Name>
-				<X>-20</X>
-				<Y>30</Y>
+			<Rectangle>
+				<Id>1733406888609</Id>
+				<Name><![CDATA[rectangle18]]></Name>
+				<X>-130</X>
+				<Y>255</Y>
 				<Label>
-					<X>0</X>
-					<Y>-10</Y>
+					<X>10</X>
+					<Y>10</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1706083200000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>200</Width>
-				<Height>190</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>100</Width>
-					<Height>120</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor>-16777216</BorderColor>
-					<GridColor>-16777216</GridColor>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>40</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.5</RelativeWidth>
-				</Bars>
-			</StackChart>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>12</Width>
+				<Height>6</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-6632142</FillColor>
+				<FillColorCode>v_potentialColor</FillColorCode>
+				<FillMaterial>null</FillMaterial>
+			</Rectangle>
 			<Text>
-				<Id>1732294773673</Id>
-				<Name><![CDATA[txt_GSLD2_curtailment]]></Name>
-				<X>35</X>
-				<Y>190</Y>
+				<Id>1733406888611</Id>
+				<Name><![CDATA[text26]]></Name>
+				<X>-110</X>
+				<Y>250</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2347,10 +2318,10 @@ f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCo
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Curtailment]]></Text>
+				<Text><![CDATA[Rest Potentieel]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>18</Size>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>LEFT</Alignment>
@@ -4783,7 +4754,7 @@ beter benutten?]]></Text>
 						<Id>1731581365672</Id>
 						<Name><![CDATA[tx_topBarplotText2]]></Name>
 						<X>0</X>
-						<Y>-50</Y>
+						<Y>-60</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4808,7 +4779,7 @@ beter benutten?]]></Text>
 						<Id>1731581365675</Id>
 						<Name><![CDATA[plot_jaar]]></Name>
 						<X>-200</X>
-						<Y>-30</Y>
+						<Y>-40</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4867,7 +4838,7 @@ beter benutten?]]></Text>
 						<Id>1731581365677</Id>
 						<Name><![CDATA[t_duurkromme_xlabel]]></Name>
 						<X>-5</X>
-						<Y>185</Y>
+						<Y>175</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4892,7 +4863,7 @@ beter benutten?]]></Text>
 						<Id>1731581365679</Id>
 						<Name><![CDATA[t_duurkromme_ylabel]]></Name>
 						<X>-205</X>
-						<Y>35</Y>
+						<Y>25</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5093,8 +5064,8 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731581365695</Id>
 						<Name><![CDATA[text593]]></Name>
-						<X>-130</X>
-						<Y>250</Y>
+						<X>-140</X>
+						<Y>260</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -7012,6 +6983,7 @@ vraag]]></Text>
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>double do_nothing = 0;</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
@@ -7235,38 +7207,11 @@ komst bieden.
 			</Text>
 		</Presentation>
 	</Group>
-	<Rectangle>
-		<Id>1733406888609</Id>
-		<Name><![CDATA[rectangle18]]></Name>
-		<X>580</X>
-		<Y>705</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>12</Width>
-		<Height>6</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-6632142</FillColor>
-		<FillColorCode>v_potentialColor</FillColorCode>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
 	<Text>
-		<Id>1733406888611</Id>
-		<Name><![CDATA[text26]]></Name>
-		<X>600</X>
-		<Y>700</Y>
+		<Id>1737030561110</Id>
+		<Name><![CDATA[text]]></Name>
+		<X>640</X>
+		<Y>695</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -7279,10 +7224,10 @@ komst bieden.
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Potentieel]]></Text>
+		<Text><![CDATA[text]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>12</Size>
+			<Size>10</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>

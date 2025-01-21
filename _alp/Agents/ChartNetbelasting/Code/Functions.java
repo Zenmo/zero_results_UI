@@ -9,14 +9,14 @@ double maxDemand_kW = max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax())
 double maxSupply_kW = abs(min(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin()));
 double maxDemandSupply_kW = max(maxDemand_kW, maxSupply_kW);
 if (maxDemandSupply_kW < 1 * pow(10,3)) {
-	tx_maxDemand.setText(roundToInt(maxDemand_kW) + " kW");
-	tx_maxSupply.setText(roundToInt(maxSupply_kW) + " kW");
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
+	tx_maxSupply.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
 } else if (maxDemandSupply_kW<1 * pow(10,6)) {
-	tx_maxDemand.setText(roundToInt(maxDemand_kW / pow(10,3)) + " MW");
-	tx_maxSupply.setText(roundToInt(maxSupply_kW / pow(10,3)) + " MW");
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
+	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
 } else {
-	tx_maxDemand.setText(roundToInt(maxDemand_kW / pow(10,6)) + " GW");
-	tx_maxSupply.setText(roundToInt(maxSupply_kW / pow(10,6)) + " GW");
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
+	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
 } 
 
 f_setNetAverageLoad(area);
@@ -30,7 +30,7 @@ for(int i=0; i< area.v_dataNetbelastingDuurkrommeYear_kW.size(); i++){
 	totalAbsoluteLoad_kW += abs(area.v_dataNetbelastingDuurkrommeYear_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
 }
 benuttingsgraad = totalAbsoluteLoad_kW / ((area.v_gridCapacityDelivery_kW+area.v_gridCapacityFeedIn_kW) * 8760) * 100;
-t_KPIBenuttingsgraad.setText(roundToInt(benuttingsgraad) + "%");
+t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
 /*ALCODEEND*/}
 
 double f_resetPlots()
