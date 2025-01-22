@@ -391,3 +391,8 @@ if(location_y != null){
 gr_chartBatteries_presentation.setVisible(visible);
 /*ALCODEEND*/}
 
+double f_setChartsBatteries()
+{/*ALCODESTART::1737563326718*/
+chartBatteries.f_setChartsBatteries();
+/*ALCODEEND*/}
+
