@@ -19,6 +19,7 @@ gr_chartSankey_presentation.setVisible(false);
 gr_chartSummary_presentation.setVisible(false);
 gr_chartGespreksLeidraad_presentation.setVisible(false);
 gr_chartKPISummary_presentation.setVisible(false);
+gr_chartBatteries_presentation.setVisible(false);
 
 if(b_showKPISummary){
 	gr_chartKPISummary_presentation.setVisible(true);
@@ -49,6 +50,10 @@ switch (v_selectedChartType) {
 	case GESPREKSLEIDRAAD:
 		gr_chartGespreksLeidraad_presentation.setVisible(true);
 		chartGespreksLeidraad.f_selectGespreksleidraadCharts();
+		break;
+	case BATTERY:
+		gr_chartBatteries_presentation.setVisible(true);
+		chartBatteries.f_setChartsBatteries();
 		break;
 }
 /*ALCODEEND*/}
@@ -167,6 +172,7 @@ chartSankey.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartKPISummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGespreksLeidraad.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartSummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartBatteries.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 
 
 /*ALCODEEND*/}
@@ -183,7 +189,7 @@ rect_resultsMenuLarge.setLineStyle(lineStyle);
 
 double f_setChartSummary_Presentation(Integer location_x,Integer location_y,boolean visible)
 {/*ALCODESTART::1727084763017*/
-//Set the location and visibility of the sankey charts presentation
+//Set the location and visibility of the GSLD Summary charts presentation
 
 //Set x axis
 if(location_x != null){
@@ -201,7 +207,7 @@ gr_chartSummary_presentation.setVisible(visible);
 
 double f_setChartKPISummary_Presentation(Integer location_x,Integer location_y,boolean visible)
 {/*ALCODESTART::1726828282517*/
-//Set the location and visibility of the sankey charts presentation
+//Set the location and visibility of the KPI summary charts presentation
 
 //Set x axis
 if(location_x != null){
@@ -268,11 +274,12 @@ f_setChartSankey_Presentation(location_x, location_y, visible);
 f_setChartSummary_Presentation(location_x, location_y, visible);
 f_setChartGSLD_Presentation(location_x, location_y, visible);
 f_setChartKPISummary_Presentation(location_x, location_y, visible);
+f_setChartBatteries_presentation(location_x, location_y, visible);
 /*ALCODEEND*/}
 
 double f_setChartGSLD_Presentation(Integer location_x,Integer location_y,boolean visible)
 {/*ALCODESTART::1730396435330*/
-//Set the location and visibility of the sankey charts presentation
+//Set the location and visibility of the GSLD charts presentation
 
 //Set x axis
 if(location_x != null){
@@ -293,6 +300,11 @@ double f_setSelectedRadioButton()
 rb_DEFAULT.setVisible(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAAD.setVisible(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setVisible(false);
+rb_DEFAULT_AND_BATTERY.setVisible(false);
+rb_DEFAULT.setEnabled(false);
+rb_DEFAULT_AND_GESPREKSLEIDRAAD.setEnabled(false);
+rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setEnabled(false);
+rb_DEFAULT_AND_BATTERY.setEnabled(false);
 
 switch(v_selectedRadioButton){
 
@@ -307,6 +319,10 @@ case DEFAULT_AND_GESPREKSLEIDRAAD:
 case DEFAULT_AND_GESPREKSLEIDRAADSUMMARY:
 	rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setVisible(true);
 	rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setEnabled(true);
+	break;
+case DEFAULT_AND_BATTERY:
+	rb_DEFAULT_AND_BATTERY.setVisible(true);
+	rb_DEFAULT_AND_BATTERY.setEnabled(true);
 	break;
 case OFF:
 	f_setResultsUIHeader(null, null, false);
@@ -355,5 +371,23 @@ if(location_y != null){
 
 //Set visibility
 gr_chartGelijktijdigheid_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setChartBatteries_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1737545003506*/
+//Set the location and visibility of the Batteries charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartBatteries_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartBatteries_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartBatteries_presentation.setVisible(visible);
 /*ALCODEEND*/}
 
