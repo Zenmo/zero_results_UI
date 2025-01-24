@@ -9,12 +9,14 @@ cm_productionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatHeatSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenSupplyColor);
+cm_productionColors.put(OL_EnergyCarriers.IRON_POWDER, paleGoldenRod);
 
 cm_consumptionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricityDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
+cm_consumptionColors.put(OL_EnergyCarriers.IRON_POWDER, paleGoldenRod);
 
 ]]></StartupCode>
 	<Generic>false</Generic>

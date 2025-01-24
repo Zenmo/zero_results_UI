@@ -326,6 +326,8 @@ switch (energyCarrier) {
 		return "Diesel";
 	case HYDROGEN:
 		return "Waterstof";
+	case IRON_POWDER:
+		return "IJzerpoeder";
 	default:
 		throw new RuntimeException("Onbekende energiedrager, kan niet vertaald worden.");
 }

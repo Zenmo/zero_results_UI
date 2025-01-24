@@ -39,6 +39,10 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	if (dataObject.v_dataElectricityForHydrogenConsumptionYear_kW != null && dataObject.b_hasElectrolyser) {
 		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenConsumptionYear_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 	}
+	if(dataObject.b_hasElectricCooking) {
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForCookingConsumptionYear_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);		
+	}
+	
 	
 	//Energy supply chart
 	if (dataObject.v_dataElectricityWindProductionYear_kW != null && dataObject.b_hasWindturbine) {
@@ -83,7 +87,9 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		energyDemandChart.addDataSet( dataObject.dsm_liveConsumption_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 	else if(dataObject.b_hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChart.addDataSet( dataObject.v_dataDistrictHeatConsumptionLiveWeek_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		if (dataObject.v_dataDistrictHeatConsumptionLiveWeek_kW != null) {
+			energyDemandChart.addDataSet( dataObject.v_dataDistrictHeatConsumptionLiveWeek_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption));
+		}
 	}
 }
 
@@ -186,6 +192,9 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	if(dataObject.b_hasElectrolyser){
 		energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenConsumptionSummerWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 	}
+	if(dataObject.b_hasElectricCooking) {
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingConsumptionSummerWeek_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);		
+	}	
 	
 	//Energy supply chart
 	if(dataObject.b_hasWindturbine){
@@ -274,6 +283,9 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	if (dataObject.v_dataElectricityForHydrogenConsumptionWinterWeek_kW != null && dataObject.b_hasElectrolyser) {
 		energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenConsumptionWinterWeek_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 	}
+	if(dataObject.b_hasElectricCooking) {
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingConsumptionWinterWeek_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);		
+	}	
 	
 	//Energy supply chart
 	if(dataObject.b_hasWindturbine){
