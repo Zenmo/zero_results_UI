@@ -37,7 +37,7 @@ double KPIselfsufficiency_pct = area.v_totalEnergySelfConsumed_MWh / totalEnergy
 //Overload of GC for GC and overload of all gridnodes combined for Region (GN is not supported and shows same KPIs as whole region)
 double KPIOverloadHours_pct;
 if(uI_Results.v_selectedObjectType == OL_GISObjectType.REGION){
-	KPIOverloadHours_pct = area.v_totalTimeOverloadedTransformers_h/8760*100;
+	KPIOverloadHours_pct = area.v_totalTimeOverloaded_h/8760*100;
 }
 else{
 	KPIOverloadHours_pct = (area.v_annualOverloadDurationDelivery_hr + area.v_annualOverloadDurationFeedin_hr)/8760 * 100;

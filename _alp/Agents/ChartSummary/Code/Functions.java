@@ -1,14 +1,21 @@
 double f_setSummaryCharts()
 {/*ALCODESTART::1730395813825*/
+
+AreaCollection visualizedAreaCollection = uI_Results.v_area;
+
+if(uI_Results.f_getDataObject().v_numberOfGridconnections > 1){
+	visualizedAreaCollection = uI_Results.f_getDataObject();
+}
+
 if (rb_chartType.getValue()==0) {
 	gr_gespreksleidraad1.setVisible(true);
 	gr_gespreksleidraad3.setVisible(false);
-	f_setChartsSummary1(uI_Results.v_area);
+	f_setChartsSummary1(visualizedAreaCollection);
 } else if (rb_chartType.getValue()==1) {
 	gr_gespreksleidraad1.setVisible(false);
 	gr_gespreksleidraad3.setPos(gr_gespreksleidraad1.getX(), gr_gespreksleidraad1.getY());
 	gr_gespreksleidraad3.setVisible(true);
-	f_setChartsSummary2(uI_Results.v_area);
+	f_setChartsSummary2(visualizedAreaCollection);
 }
 
 
@@ -16,39 +23,27 @@ if (rb_chartType.getValue()==0) {
 
 double f_setChartsSummary1(AreaCollection area)
 {/*ALCODESTART::1730395813827*/
-f_setEnergyBalanceChartFull(area.v_totalEnergySelfConsumed_MWh, area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY), area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE),
-					 area.fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL), area.fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN), area.v_totalEnergyExport_MWh, 
-					 pl_consumptionChartGespreksleidraad1, pl_productionChartGespreksleidraad1, t_opwekTextGespreksleidraad1, t_gebruikTextGespreksleidraad1);
+f_setEnergyBalanceChartFull(area);
 
-//f_setDemandAndSupplyGespreksleidraad1();
-//Electricity demand chart
-energyDemandChartYearGespreksleidraad1.removeAll();
-energyDemandChartYearGespreksleidraad1.addDataSet(area.dsm_dailyAverageConsumptionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY), v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+f_setDemandAndSupplyGespreksleidraad1(area);
 
-//Electricity supply chart
-energySupplyChartYearGespreksleidraad1.removeAll();
-//energySupplyChartYearGespreksleidraad1.addDataSet(area.data_petroleumProductsSupplyYear_MWh, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
-//energySupplyChartYearGespreksleidraad1.addDataSet(area.data_districtHeatHeatSupplyYear_MWh, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
-energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityWindProductionYear_kW, v_windElectricitySupplyText, v_windElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityPVProductionYear_kW, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityStorageProductionYear_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityV2GProductionYear_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
-
-double maxScale = max(area.dsm_dailyAverageConsumptionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax(),area.dsm_dailyAverageProductionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax());
-//double maxScale = max(uI_Results.energySupplyChartYearGespreksleidraad1.getScaleY(), uI_Results.energyDemandChartYearGespreksleidraad1.getScaleY());
-energyDemandChartYearGespreksleidraad1.setFixedVerticalScale(0, maxScale);
-energySupplyChartYearGespreksleidraad1.setFixedVerticalScale(maxScale);
-
-energyDemandChartYearGespreksleidraad1.setVisible(false);
-energySupplyChartYearGespreksleidraad1.setVisible(false);
-energyDemandChartYearGespreksleidraad1.setVisible(true);
-energySupplyChartYearGespreksleidraad1.setVisible(true);
 
 
 /*ALCODEEND*/}
 
-double f_setEnergyBalanceChartFull(double selfConsumedEnergy_MWh,double importE_MWh,double importG_MWh,double importF_MWh,double importH_MWh,double exportE_MWh,StackChart pl_consumptionChart,StackChart pl_productionChart,ShapeText t_OpwekText,ShapeText t_GebruikText)
+double f_setEnergyBalanceChartFull(AreaCollection area)
 {/*ALCODESTART::1730395813829*/
+double selfConsumedEnergy_MWh = area.v_totalEnergySelfConsumed_MWh; 	
+double importE_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);	
+double importG_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE);
+double importF_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL); 
+double importH_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN); 
+double exportE_MWh = area.v_totalEnergyExport_MWh; 
+StackChart pl_consumptionChart = pl_consumptionChartGespreksleidraad1; 
+StackChart pl_productionChart = pl_productionChartGespreksleidraad1; 
+ShapeText t_OpwekText = 	t_opwekTextGespreksleidraad1; 
+ShapeText t_GebruikText =  t_gebruikTextGespreksleidraad1;
+
 //gr_onbalansGraphs.setVisible(false);
 pl_productionChart.removeAll();
 pl_consumptionChart.removeAll();
@@ -67,7 +62,13 @@ pl_consumptionChart.addDataItem(d1,"Zelfconsumptie gebied [MWh]",yellowGreen);*/
 pl_consumptionChart.addDataItem(d1,"Lokaal opgewekt [MWh]",v_selfConsumedEnergyColor);
 //pl_consumptionChart.addDataItem(d2,"Externe bronnen [MWh]",brown);
 //pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
-pl_productionChart.addDataItem(d1,"Lokaal gebruik gebied [MWh]",v_selfConsumedEnergyColor);
+
+if(area.v_numberOfGridconnections > 1){
+	pl_productionChart.addDataItem(d1,"Lokaal gebruik groep [MWh]",v_selfConsumedEnergyColor);
+}
+else{
+	pl_productionChart.addDataItem(d1,"Lokaal gebruik gebied [MWh]",v_selfConsumedEnergyColor);
+}
 pl_productionChart.addDataItem(d3,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
 
 
@@ -115,16 +116,20 @@ if (chartScale_MWh<10) {
 
 double f_setChartsSummary2(AreaCollection area)
 {/*ALCODESTART::1730395813831*/
-t_KPIselfsufficiencyCollective_pct.setText(roundToInt(area.v_modelSelfSufficiency_fr*100) + "%");
-t_KPIselfsufficiencyIndividual_pct.setText(roundToInt(area.v_individualSelfSufficiency_fr*100) + "%");
+double totalCollectiveSelfSufficiencyElectricity_fr = area.v_totalElectricitySelfConsumed_MWh/area.v_totalElectricityConsumed_MWh;
+
+
+t_KPIselfsufficiencyCollective_pct.setText(roundToInt(totalCollectiveSelfSufficiencyElectricity_fr*100) + "%");
+t_KPIselfsufficiencyIndividual_pct.setText(roundToInt(area.v_individualSelfSufficiencyElectricity_fr*100) + "%");
+
 
 double annualSelfConsumedElectricityIndividual_MWh;
 
-if (! (area.v_individualSelfconsumption_fr > 0) ) {
+if (! (area.v_individualSelfconsumptionElectricity_fr > 0) ) {
 	annualSelfConsumedElectricityIndividual_MWh = 0.0;
 	traceln("NaN detected!");
 } else {
-	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumption_fr;
+	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumptionElectricity_fr;
 }
 
 f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, area.v_totalElectricitySelfConsumed_MWh, area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY),
@@ -156,5 +161,32 @@ pl_individualChart.setFixedScale(chartScale_MWh);
 pl_collectiveChart.setFixedScale(chartScale_MWh);
 
 
+/*ALCODEEND*/}
+
+double f_setDemandAndSupplyGespreksleidraad1(AreaCollection area)
+{/*ALCODESTART::1737988539936*/
+//Electricity demand chart
+energyDemandChartYearGespreksleidraad1.removeAll();
+energyDemandChartYearGespreksleidraad1.addDataSet(area.dsm_dailyAverageConsumptionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY), v_electricityDemandText, v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+
+//Electricity supply chart
+energySupplyChartYearGespreksleidraad1.removeAll();
+//energySupplyChartYearGespreksleidraad1.addDataSet(area.data_petroleumProductsSupplyYear_MWh, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
+//energySupplyChartYearGespreksleidraad1.addDataSet(area.data_districtHeatHeatSupplyYear_MWh, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
+energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityWindProductionYear_kW, v_windElectricitySupplyText, v_windElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityPVProductionYear_kW, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityStorageProductionYear_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityV2GProductionYear_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+
+double maxScale = max(area.dsm_dailyAverageConsumptionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax(),area.dsm_dailyAverageProductionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax());
+//double maxScale = max(uI_Results.energySupplyChartYearGespreksleidraad1.getScaleY(), uI_Results.energyDemandChartYearGespreksleidraad1.getScaleY());
+energyDemandChartYearGespreksleidraad1.setFixedVerticalScale(0, maxScale);
+energySupplyChartYearGespreksleidraad1.setFixedVerticalScale(maxScale);
+
+//Reset view
+energyDemandChartYearGespreksleidraad1.setVisible(false);
+energySupplyChartYearGespreksleidraad1.setVisible(false);
+energyDemandChartYearGespreksleidraad1.setVisible(true);
+energySupplyChartYearGespreksleidraad1.setVisible(true);
 /*ALCODEEND*/}
 

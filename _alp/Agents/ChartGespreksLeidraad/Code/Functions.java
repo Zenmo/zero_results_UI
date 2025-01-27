@@ -125,11 +125,11 @@ double f_setChartsGespreksleidraad3(AreaCollection area)
 {/*ALCODESTART::1727091662396*/
 double annualSelfConsumedElectricityIndividual_MWh;
 
-if (! (area.v_individualSelfconsumption_fr > 0) ) {
+if (! (area.v_individualSelfconsumptionElectricity_fr > 0) ) {
 	annualSelfConsumedElectricityIndividual_MWh = 0.0;
 	traceln("NaN detected!");
 } else {
-	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumption_fr;
+	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumptionElectricity_fr;
 }
 
 f_setSelfConsumptionChartGSLD3(annualSelfConsumedElectricityIndividual_MWh, area.v_totalElectricitySelfConsumed_MWh, area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY),
@@ -604,11 +604,11 @@ pl_consumptionChart3v2_pie.setPos(-20, -50);
 
 double annualSelfConsumedElectricityIndividual_MWh;
 
-if (! (area.v_individualSelfconsumption_fr > 0) ) {
+if (! (area.v_individualSelfconsumptionElectricity_fr > 0) ) {
 	annualSelfConsumedElectricityIndividual_MWh = 0.0;
 	traceln("NaN detected!");
 } else {
-	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumption_fr;
+	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumptionElectricity_fr;
 }
 					
 double selfConsumedElectricityIndividual_MWh = annualSelfConsumedElectricityIndividual_MWh;
