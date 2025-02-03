@@ -8,16 +8,33 @@ f_addTrafoLimits(area);
 double maxDemand_kW = max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
 double maxSupply_kW = abs(min(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin()));
 double maxDemandSupply_kW = max(maxDemand_kW, maxSupply_kW);
+/*
 if (maxDemandSupply_kW < 1 * pow(10,3)) {
 	tx_maxDemand.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
-	tx_maxSupply.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
+	tx_maxSupply.setText(roundToDecimal(maxSupply_kW, 0) + " kW");
 } else if (maxDemandSupply_kW<1 * pow(10,6)) {
 	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
 	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
 } else {
 	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
 	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
+} */
+
+if (maxDemandSupply_kW < 1 * pow(10,3)) {
+	tx_maxDemand.setText(String.format("%.0f", maxDemand_kW) + " kW");
+	tx_maxSupply.setText(String.format("%.0f", maxSupply_kW) + " kW");
+} else if (maxDemandSupply_kW<1 * pow(10,6)) {
+	tx_maxDemand.setText(String.format("%.2f", maxDemand_kW / pow(10,3)) + " MW");
+	tx_maxSupply.setText(String.format("%.2f", maxSupply_kW / pow(10,3)) + " MW");
+	//tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
+	//tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
+} else {
+	tx_maxDemand.setText(String.format("%.2f", maxDemand_kW / pow(10,6)) + " GW");
+	tx_maxSupply.setText(String.format("%.2f", maxSupply_kW / pow(10,6)) + " GW");
+	//tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
+	//tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
 } 
+
 
 f_setNetAverageLoad(area);
 /*ALCODEEND*/}
