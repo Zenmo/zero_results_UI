@@ -471,8 +471,8 @@
 			<Oval>
 				<Id>1714926452654</Id>
 				<Name><![CDATA[ovalNetbelasting2]]></Name>
-				<X>40</X>
-				<Y>250</Y>
+				<X>28</X>
+				<Y>230</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -488,7 +488,7 @@
 				<LineColor/>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<RadiusX>30</RadiusX>
+				<RadiusX>40</RadiusX>
 				<RadiusY>40</RadiusY>
 				<Rotation>0.0</Rotation>
 				<FillColor>-2180985</FillColor>
@@ -497,8 +497,8 @@
 			<Oval>
 				<Id>1714926519243</Id>
 				<Name><![CDATA[ovalNetbelasting3]]></Name>
-				<X>160</X>
-				<Y>250</Y>
+				<X>150</X>
+				<Y>230</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -514,7 +514,7 @@
 				<LineColor/>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<RadiusX>30</RadiusX>
+				<RadiusX>40</RadiusX>
 				<RadiusY>40</RadiusY>
 				<Rotation>0.0</Rotation>
 				<FillColor>-12799119</FillColor>
@@ -658,7 +658,7 @@
 				<Id>1714746143901</Id>
 				<Name><![CDATA[tx_topBarplotText52]]></Name>
 				<X>40</X>
-				<Y>200</Y>
+				<Y>170</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -682,8 +682,8 @@
 			<Text>
 				<Id>1714746143903</Id>
 				<Name><![CDATA[tx_maxDemand]]></Name>
-				<X>38</X>
-				<Y>240</Y>
+				<X>28</X>
+				<Y>220</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -707,8 +707,8 @@
 			<Text>
 				<Id>1714746143905</Id>
 				<Name><![CDATA[tx_maxSupply]]></Name>
-				<X>159</X>
-				<Y>240</Y>
+				<X>149</X>
+				<Y>220</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -733,7 +733,7 @@
 				<Id>1714746143907</Id>
 				<Name><![CDATA[tx_topBarplotText55]]></Name>
 				<X>155</X>
-				<Y>200</Y>
+				<Y>170</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>

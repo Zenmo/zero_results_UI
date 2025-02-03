@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AnyLogicWorkspace splitVersion="1"
                    WorkspaceVersion="1.9"
-                   AnyLogicVersion="8.9.2.202410172112"
+                   AnyLogicVersion="8.9.2.202410172110"
                    AlpVersion="8.9.2">
 	<Model>
 		<Id>1704197366547</Id>
@@ -41,6 +41,10 @@
 					<Id>1730391831996</Id>
 					<Name><![CDATA[GESPREKSLEIDRAAD]]></Name>
 				</Option>
+				<Option>
+					<Id>1737554802421</Id>
+					<Name><![CDATA[BATTERY]]></Name>
+				</Option>
 			</OptionList>
 			<OptionList>
 				<Id>1714740453599</Id>
@@ -79,6 +83,10 @@
 				</Option>
 				<Option>
 					<Id>1732117923439</Id>
+					<Name><![CDATA[DEFAULT_AND_BATTERY]]></Name>
+				</Option>
+				<Option>
+					<Id>1737555330328</Id>
 					<Name><![CDATA[OFF]]></Name>
 				</Option>
 			</OptionList>

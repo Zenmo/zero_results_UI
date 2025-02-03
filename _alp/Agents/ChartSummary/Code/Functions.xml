@@ -51,44 +51,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[selfConsumedEnergy_MWh]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[importE_MWh]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[importG_MWh]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[importF_MWh]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[importH_MWh]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[exportE_MWh]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[pl_consumptionChart]]></Name>
-			<Type><![CDATA[StackChart]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[pl_productionChart]]></Name>
-			<Type><![CDATA[StackChart]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[t_OpwekText]]></Name>
-			<Type><![CDATA[ShapeText]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[t_GebruikText]]></Name>
-			<Type><![CDATA[ShapeText]]></Type>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -98,7 +62,7 @@
 		<Id>1730395813831</Id>
 		<Name><![CDATA[f_setChartsSummary2]]></Name>
 		<X>60</X>
-		<Y>910</Y>
+		<Y>940</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -118,7 +82,7 @@
 		<Id>1730395813833</Id>
 		<Name><![CDATA[f_setSelfConsumptionChart]]></Name>
 		<X>74.667</X>
-		<Y>930</Y>
+		<Y>960</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -145,6 +109,26 @@
 		<Parameter>
 			<Name><![CDATA[pl_collectiveChart]]></Name>
 			<Type><![CDATA[StackChart]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1737988539936</Id>
+		<Name><![CDATA[f_setDemandAndSupplyGespreksleidraad1]]></Name>
+		<X>80</X>
+		<Y>905</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
