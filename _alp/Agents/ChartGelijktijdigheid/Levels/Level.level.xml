@@ -222,8 +222,8 @@
 			<Text>
 				<Id>1732117759464</Id>
 				<Name><![CDATA[t_productionTextYear]]></Name>
-				<X>90.72</X>
-				<Y>-267.296</Y>
+				<X>0</X>
+				<Y>-270</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -236,19 +236,19 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Opwek]]></Text>
+				<Text><![CDATA[Opwek + teruglevering klanten]]></Text>
 				<Font>
 					<Name><![CDATA[Calibri]]></Name>
 					<Size>36</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>RIGHT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
 				<Id>1732117759466</Id>
 				<Name><![CDATA[t_consumptionTextYear]]></Name>
-				<X>113.4</X>
-				<Y>35.328</Y>
+				<X>10</X>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -267,7 +267,7 @@
 					<Size>36</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>RIGHT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 		</Presentation>
 	</Group>

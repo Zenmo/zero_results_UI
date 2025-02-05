@@ -179,7 +179,8 @@ energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityStorageP
 energySupplyChartYearGespreksleidraad1.addDataSet(area.v_dataElectricityV2GProductionYear_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
 
 double maxScale = max(area.dsm_dailyAverageConsumptionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax(),area.dsm_dailyAverageProductionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax());
-//double maxScale = max(uI_Results.energySupplyChartYearGespreksleidraad1.getScaleY(), uI_Results.energyDemandChartYearGespreksleidraad1.getScaleY());
+//double maxScale = max(energySupplyChartYearGespreksleidraad1.getScaleY(), energyDemandChartYearGespreksleidraad1.getScaleY());
+traceln("maxScale: %s", maxScale);
 energyDemandChartYearGespreksleidraad1.setFixedVerticalScale(0, maxScale);
 energySupplyChartYearGespreksleidraad1.setFixedVerticalScale(maxScale);
 

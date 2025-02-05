@@ -501,13 +501,13 @@ pl_productionChartYear.setFixedScale(chartScale_MWh);
 
 
 if (chartScale_MWh<10) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
+	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
 	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
+	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
 	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
 } else {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
+	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
 	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
 }
 /*ALCODEEND*/}
