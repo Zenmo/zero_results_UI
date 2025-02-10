@@ -6,6 +6,7 @@ double selfConsumedEnergy_MWh = area.v_totalEnergySelfConsumed_MWh;
 double importE_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);;
 double importG_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE);;
 double importF_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL);;
+double importHeat_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.HEAT);
 double importH_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN);
 double exportH_MWh = area.fm_totalExports_MWh.get(OL_EnergyCarriers.HYDROGEN);
 double exportE_MWh = area.v_totalEnergyExport_MWh - exportH_MWh;
@@ -56,6 +57,11 @@ if (importG_MWh > 0.001 ) {
 if (importF_MWh > 0.001 ) {
 	flowDataset.setFlow(0, "import brandstof", "verbruik", importF_MWh);
 	NodeKey key5 = new NodeKey<>(0, "import brandstof");
+	flowPlot.setNodeFillColor(key5, gray);
+}
+if(importHeat_MWh > 0.001 ) {
+	flowDataset.setFlow(0, "import warmtenet", "verbruik", importHeat_MWh);
+	NodeKey key5 = new NodeKey<>(0, "import warmtenet");
 	flowPlot.setNodeFillColor(key5, orange);
 }
 if (importH_MWh > 0.001 ) {

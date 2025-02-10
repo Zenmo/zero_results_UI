@@ -1148,32 +1148,6 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
-	<Control Type="Button">
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Id>1737545139680</Id>
-		<Name><![CDATA[button]]></Name>
-		<X>960</X>
-		<Y>460</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="100" Height="30">
-			<EmbeddedIcon>false</EmbeddedIcon>
-			<TextColor/>
-			<Enabled>true</Enabled>
-			<ActionCode>chartBatteries.f_setChartsBatteries();
-f_setChartBatteries_presentation(null, null, true);</ActionCode>
-		</BasicProperties>
-		<ExtendedProperties>
-			<Font Name="Dialog" Size="11" Style="0"/>
-			<LabelText>button</LabelText>
-		</ExtendedProperties>
-	</Control>
 	<Text>
 		<Id>1737554748040</Id>
 		<Name><![CDATA[txt_DEFAULT_AND_BATTERY]]></Name>
