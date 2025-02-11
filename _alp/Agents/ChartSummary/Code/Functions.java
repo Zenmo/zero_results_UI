@@ -1,6 +1,9 @@
 double f_setSummaryCharts()
 {/*ALCODESTART::1730395813825*/
-
+gr_gespreksleidraad1.setVisible(false);
+gr_GSLDSummary2.setVisible(false);
+gr_GSLDSummary3.setVisible(false);
+	
 AreaCollection visualizedAreaCollection = uI_Results.v_area;
 
 if(uI_Results.f_getDataObject().v_numberOfGridconnections > 1){
@@ -9,15 +12,14 @@ if(uI_Results.f_getDataObject().v_numberOfGridconnections > 1){
 
 if (rb_chartType.getValue()==0) {
 	gr_gespreksleidraad1.setVisible(true);
-	gr_gespreksleidraad3.setVisible(false);
 	f_setChartsSummary1(visualizedAreaCollection);
 } else if (rb_chartType.getValue()==1) {
-	gr_gespreksleidraad1.setVisible(false);
-	gr_gespreksleidraad3.setPos(gr_gespreksleidraad1.getX(), gr_gespreksleidraad1.getY());
-	gr_gespreksleidraad3.setVisible(true);
+	gr_GSLDSummary2.setVisible(true);
 	f_setChartsSummary2(visualizedAreaCollection);
+} else if (rb_chartType.getValue()==2) {
+	gr_GSLDSummary3.setVisible(true);
+	f_setChartsSummary3(visualizedAreaCollection);
 }
-
 
 /*ALCODEEND*/}
 
@@ -189,5 +191,32 @@ energyDemandChartYearGespreksleidraad1.setVisible(false);
 energySupplyChartYearGespreksleidraad1.setVisible(false);
 energyDemandChartYearGespreksleidraad1.setVisible(true);
 energySupplyChartYearGespreksleidraad1.setVisible(true);
+/*ALCODEEND*/}
+
+double f_setChartsSummary3(AreaCollection area)
+{/*ALCODESTART::1739206434585*/
+DataItem totalGTV_kW = new DataItem();
+DataItem peakIndividual_kW = new DataItem();
+DataItem peakCollective_kW = new DataItem();
+
+if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
+	DataItem totalGTV_delivery_kW = new DataItem();
+	totalGTV_delivery_kW.setValue(area.v_gridCapacityDelivery_kW);
+	
+	DataItem peakIndividual_delivery_kW = new DataItem();
+	peakIndividual_delivery_kW.setValue(area.v_individualPeakDelivery_kW);
+	DataItem peakCollective_delivery_kW = new DataItem();
+	peakCollective_delivery_kW.setValue(max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax()));
+}
+else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Feedin
+	DataItem totalGTV_feedin_kW = new DataItem();
+	totalGTV_feedin_kW.setValue(area.v_gridCapacityFeedIn_kW);
+	
+	DataItem peakIndividual_feedin_kW = new DataItem();
+	peakIndividual_feedin_kW.setValue(area.v_individualPeakFeedin_kW);
+	DataItem peakCollective_feedin_kW = new DataItem();
+	peakCollective_feedin_kW.setValue(max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax()));
+}
+
 /*ALCODEEND*/}
 
