@@ -6267,6 +6267,42 @@ f_showCorrectChart();]]></ActionCode>
 						<Type><![CDATA[DataSet]]></Type>        
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1739105667826</Id>
+					<Name><![CDATA[v_dataElectricityForCookingDemandYear_kW]]></Name>
+					<X>-270</X><Y>90</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1739105681145</Id>
+					<Name><![CDATA[v_dataElectricityForCookingDemandWinter_kW]]></Name>
+					<X>-270</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1739105692506</Id>
+					<Name><![CDATA[v_dataElectricityForCookingDemandSummer_kW]]></Name>
+					<X>-270</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[DataSet]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1705600400172</Id>
 					<Name><![CDATA[p_areaType]]></Name>
@@ -9661,12 +9697,13 @@ public ShapeGroup getChartGroupYear() {
 						<Name><![CDATA[dataObject]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[if (dataObject.v_dataPetroleumProductsDemandYear_kW != null) {
-	energyDemandChartYear.addDataSet(dataObject.v_dataPetroleumProductsDemandYear_kW, "Fuel", uI_Results.v_petroleumProductsDemandColor);
-}
-if (dataObject.v_dataNaturalGasDemandYear_kW != null) {
+					<Body><![CDATA[if (dataObject.v_dataNaturalGasDemandYear_kW != null) {
 	energyDemandChartYear.addDataSet(dataObject.v_dataNaturalGasDemandYear_kW, "Gas", uI_Results.v_naturalGasDemandColor);
 }
+if (dataObject.v_dataPetroleumProductsDemandYear_kW != null) {
+	energyDemandChartYear.addDataSet(dataObject.v_dataPetroleumProductsDemandYear_kW, "Fuel", uI_Results.v_petroleumProductsDemandColor);
+}
+
 if (dataObject.v_dataDistrictHeatDemandYear_kW != null) {
 	energyDemandChartYear.addDataSet(dataObject.v_dataDistrictHeatDemandYear_kW, "District heat", uI_Results.v_districtHeatDemandColor);
 }
@@ -9708,8 +9745,11 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	if (dataObject.v_dataElectricityForTransportDemandYear_kW != null) { 
 		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_kW, "Electr. demand transport", uI_Results.v_electricityForTransportDemandColor);
 	}
+	if (dataObject.v_dataElectricityForCookingDemandYear_kW != null) { 
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandYear_kW, "Electr. cooking", uI_Results.v_electricityForCookingDemandColor);
+	}
 	if (dataObject.v_dataElectricityForHydrogenDemandYear_kW != null) {
-		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_kW,  "Electr. demand elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+		//energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_kW,  "Electr. demand elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 	}
 	if (dataObject.v_dataElectricityForStorageDemandYear_kW != null) {
 		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_kW, "Electr. demand batteries", uI_Results.v_electricityForStorageDemandColor);
@@ -9752,12 +9792,13 @@ else {
 						<Name><![CDATA[dataObject]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[if (dataObject.v_dataPetroleumProductsDemandLiveWeek_kW != null) {
-	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandLiveWeek_kW, "Fuel", uI_Results.v_petroleumProductsDemandColor);
-}
-if (dataObject.v_dataNaturalGasDemandLiveWeek_kW != null) {
+					<Body><![CDATA[if (dataObject.v_dataNaturalGasDemandLiveWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataNaturalGasDemandLiveWeek_kW, "Gas", uI_Results.v_naturalGasDemandColor);
 }
+if (dataObject.v_dataPetroleumProductsDemandLiveWeek_kW != null) {
+	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandLiveWeek_kW, "Fuel", uI_Results.v_petroleumProductsDemandColor);
+}
+
 
 
 if (dataObject.v_dataPetroleumProductsSupplyLiveWeek_kW != null) {
@@ -9806,7 +9847,9 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Batteries", uI_Results.v_storageElectricitySupplyColor);
 		
 	if ( uI_Results.p_legendsScope == 0){
-		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandLiveWeek_kW, "Electr. cooking", uI_Results.v_electricityForCookingDemandColor);
+		if( dataObject.v_dataElectricityForCookingDemandLiveWeek_kW.getYMax() > 0){
+			energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandLiveWeek_kW, "Electr. cooking", uI_Results.v_electricityForCookingDemandColor);
+		}
 		energySupplyChart.addDataSet(dataObject.v_dataV2GElectricitySupplyLiveWeek_kW, "V2G", uI_Results.v_V2GElectricitySupplyColor);
 	}
 	else if ( uI_Results.p_legendsScope == 1){
@@ -9841,12 +9884,13 @@ else {
 						<Name><![CDATA[dataObject]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[if (dataObject.v_dataPetroleumProductsDemandSummerWeek_kW != null) {
-	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandSummerWeek_kW, "Fue consumption", uI_Results.v_petroleumProductsDemandColor);
-}
-if (dataObject.v_dataNaturalGasDemandSummerWeek_kW != null) {
+					<Body><![CDATA[if (dataObject.v_dataNaturalGasDemandSummerWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataNaturalGasDemandSummerWeek_kW, "Gas comsuption", uI_Results.v_naturalGasDemandColor);
 }
+if (dataObject.v_dataPetroleumProductsDemandSummerWeek_kW != null) {
+	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandSummerWeek_kW, "Fue consumption", uI_Results.v_petroleumProductsDemandColor);
+}
+
 if (dataObject.v_dataDistrictHeatDemandSummerWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataDistrictHeatDemandSummerWeek_kW, "District heat delivery", uI_Results.v_districtHeatDemandColor);
 }
@@ -9885,10 +9929,12 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandSummerWeek_kW,"Electr. demand heat", uI_Results.v_electricityForHeatDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandSummerWeek_kW, "Electr. demand transport", uI_Results.v_electricityForTransportDemandColor);
 	if (dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW != null) {
-		energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW,  "Electr. demand electrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+		//energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandSummerWeek_kW,  "Electr. demand electrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 	}
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandSummerWeek_kW, "Electr. demand batteries", uI_Results.v_electricityForStorageDemandColor);
-	
+	if (dataObject.v_dataElectricityForCookingDemandSummer_kW != null) { 
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandSummer_kW, "Electr. cooking", uI_Results.v_electricityForCookingDemandColor);
+	}
 	
 	//Energy supply chart
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplySummerWeek_kW, "Production wind", uI_Results.v_windElectricitySupplyColor);
@@ -9945,12 +9991,13 @@ energySupplyChart.removeAll();]]></Body>
 						<Name><![CDATA[dataObject]]></Name>
 						<Type><![CDATA[AreaCollection]]></Type>
 					</Parameter>
-					<Body><![CDATA[if (dataObject.v_dataPetroleumProductsDemandWinterWeek_kW != null) {
-	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandWinterWeek_kW, "Fuel consumption", uI_Results.v_petroleumProductsDemandColor);
-}
-if (dataObject.v_dataNaturalGasDemandWinterWeek_kW != null) {
+					<Body><![CDATA[if (dataObject.v_dataNaturalGasDemandWinterWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataNaturalGasDemandWinterWeek_kW, "Gas consumption", uI_Results.v_naturalGasDemandColor);
 }
+if (dataObject.v_dataPetroleumProductsDemandWinterWeek_kW != null) {
+	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandWinterWeek_kW, "Fuel consumption", uI_Results.v_petroleumProductsDemandColor);
+}
+
 if (dataObject.v_dataDistrictHeatDemandWinterWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataDistrictHeatDemandWinterWeek_kW, "District heat delivery", uI_Results.v_districtHeatDemandColor);
 }
@@ -9988,10 +10035,12 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandWinterWeek_kW,"Electr. demand heat", uI_Results.v_electricityForHeatDemandColor);
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandWinterWeek_kW, "Electr. demand transport", uI_Results.v_electricityForTransportDemandColor);
 	if (dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW != null) {
-		energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW,  "Electr. demand electrolysers", uI_Results.v_electricityForHydrogenDemandColor);
+		//energyDemandChart.addDataSet(dataObject.v_dataElectricityForHydrogenDemandWinterWeek_kW,  "Electr. demand electrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 	}
 	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandWinterWeek_kW, "Electr. demand batteries", uI_Results.v_electricityForStorageDemandColor);
-	
+	if (dataObject.v_dataElectricityForCookingDemandWinter_kW != null) { 
+		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandWinter_kW, "Electr. cooking", uI_Results.v_electricityForCookingDemandColor);
+	}
 	
 	//Energy supply chart
 	energySupplyChart.addDataSet(dataObject.v_dataElectricityWindSupplyWinterWeek_kW, "Production wind", uI_Results.v_windElectricitySupplyColor);
@@ -10678,7 +10727,7 @@ plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + m
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1714855497484</Id>
 					<Name><![CDATA[radio_energyType]]></Name>
-					<X>60</X><Y>6</Y>
+					<X>90</X><Y>90</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11145,7 +11194,7 @@ plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + m
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1715175655981</Id>
 					<Name><![CDATA[radio_period]]></Name>
-					<X>40</X><Y>34</Y>
+					<X>50</X><Y>34</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
