@@ -1,6 +1,6 @@
 double f_setSummaryCharts()
 {/*ALCODESTART::1730395813825*/
-gr_gespreksleidraad1.setVisible(false);
+gr_GSLDSummary1.setVisible(false);
 gr_GSLDSummary2.setVisible(false);
 gr_GSLDSummary3.setVisible(false);
 	
@@ -11,7 +11,7 @@ if(uI_Results.f_getDataObject().v_numberOfGridconnections > 1){
 }
 
 if (rb_chartType.getValue()==0) {
-	gr_gespreksleidraad1.setVisible(true);
+	gr_GSLDSummary1.setVisible(true);
 	f_setChartsSummary1(visualizedAreaCollection);
 } else if (rb_chartType.getValue()==1) {
 	gr_GSLDSummary2.setVisible(true);
@@ -195,28 +195,30 @@ energySupplyChartYearGespreksleidraad1.setVisible(true);
 
 double f_setChartsSummary3(AreaCollection area)
 {/*ALCODESTART::1739206434585*/
+chart_barChartGSLDSummary3.removeAll();
+
+
 DataItem totalGTV_kW = new DataItem();
 DataItem peakIndividual_kW = new DataItem();
 DataItem peakCollective_kW = new DataItem();
-
+String text_peakType = "";
 if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
-	DataItem totalGTV_delivery_kW = new DataItem();
-	totalGTV_delivery_kW.setValue(area.v_gridCapacityDelivery_kW);
-	
-	DataItem peakIndividual_delivery_kW = new DataItem();
-	peakIndividual_delivery_kW.setValue(area.v_individualPeakDelivery_kW);
-	DataItem peakCollective_delivery_kW = new DataItem();
-	peakCollective_delivery_kW.setValue(max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax()));
+	totalGTV_kW.setValue(area.v_gridCapacityDelivery_kW);
+	peakIndividual_kW.setValue(area.v_individualPeakDelivery_kW);
+	peakCollective_kW.setValue(max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax()));
+	text_peakType = "levering";
 }
-else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Feedin
-	DataItem totalGTV_feedin_kW = new DataItem();
-	totalGTV_feedin_kW.setValue(area.v_gridCapacityFeedIn_kW);
-	
-	DataItem peakIndividual_feedin_kW = new DataItem();
-	peakIndividual_feedin_kW.setValue(area.v_individualPeakFeedin_kW);
-	DataItem peakCollective_feedin_kW = new DataItem();
-	peakCollective_feedin_kW.setValue(max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax()));
+else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
+	totalGTV_kW.setValue(area.v_gridCapacityFeedIn_kW);
+	peakIndividual_kW.setValue(area.v_individualPeakFeedin_kW);
+	peakCollective_kW.setValue(-1*min(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin()));
+	text_peakType = "teruglevering";
 }
+
+
+chart_barChartGSLDSummary3.addDataItem(totalGTV_kW,"Totaal GTV " + text_peakType,darkMagenta);
+chart_barChartGSLDSummary3.addDataItem(peakIndividual_kW,"Piek " + text_peakType + " individueel",orange);
+chart_barChartGSLDSummary3.addDataItem(peakCollective_kW,"Piek " + text_peakType + " collectief",green);
 
 /*ALCODEEND*/}
 

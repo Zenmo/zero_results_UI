@@ -49,7 +49,7 @@
 	</Group>
 	<Group>
 		<Id>1730395813977</Id>
-		<Name><![CDATA[gr_gespreksleidraad1]]></Name>
+		<Name><![CDATA[gr_GSLDSummary1]]></Name>
 		<X>260</X>
 		<Y>440</Y>
 		<Label>
@@ -554,8 +554,8 @@ en opwek heb ik?]]></Text>
 	<Group>
 		<Id>1730395814013</Id>
 		<Name><![CDATA[gr_GSLDSummary2]]></Name>
-		<X>765.333</X>
-		<Y>434.667</Y>
+		<X>750</X>
+		<Y>435</Y>
 		<Label>
 			<X>9.957</X>
 			<Y>0</Y>
@@ -564,6 +564,8 @@ en opwek heb ik?]]></Text>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>265</XCode>
+		<YCode>435</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -845,7 +847,7 @@ lokaal gebruikt]]></Text>
 			<Group>
 				<Id>1730395814039</Id>
 				<Name><![CDATA[gr_zelfconsumptieBarplots]]></Name>
-				<X>70</X>
+				<X>100</X>
 				<Y>-20</Y>
 				<Label>
 					<X>10.122</X>
@@ -1005,14 +1007,14 @@ lokaal gebruikt]]></Text>
 	<Group>
 		<Id>1739207315482</Id>
 		<Name><![CDATA[gr_GSLDSummary3]]></Name>
-		<X>1240</X>
+		<X>1210</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<XCode>240</XCode>
@@ -1076,7 +1078,7 @@ het collectief?]]></Text>
 			</Text>
 			<BarChart>
 				<Id>1739206746434</Id>
-				<Name><![CDATA[chart]]></Name>
+				<Name><![CDATA[chart_barChartGSLDSummary3]]></Name>
 				<X>-190</X>
 				<Y>-130</Y>
 				<Label>
@@ -1152,7 +1154,7 @@ het collectief?]]></Text>
 			<Text>
 				<Id>1739206867221</Id>
 				<Name><![CDATA[t_duurkromme_ylabel2]]></Name>
-				<X>-180</X>
+				<X>-200</X>
 				<Y>0</Y>
 				<Label>
 					<X>0</X>
@@ -1174,33 +1176,34 @@ het collectief?]]></Text>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
+			<Control Type="RadioButtons">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1739207750702</Id>
+				<Name><![CDATA[rb_GSLDSummary3_delivery_or_feedin]]></Name>
+				<X>-110</X>
+				<Y>-320</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="170" Height="60">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor/>
+					<Enabled>true</Enabled>
+					<ActionCode>f_setSummaryCharts();</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<Orientation>HORIZONTAL</Orientation>
+					<Button>Afname</Button>
+					<Button>Teruglevering</Button>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
 		</Presentation>
 	</Group>
-	<Control Type="RadioButtons">
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Id>1739207750702</Id>
-		<Name><![CDATA[rb_GSLDSummary3_delivery_or_feedin]]></Name>
-		<X>1160</X>
-		<Y>100</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="140" Height="60">
-			<EmbeddedIcon>false</EmbeddedIcon>
-			<TextColor/>
-			<Enabled>true</Enabled>
-		</BasicProperties>
-		<ExtendedProperties>
-			<Font Name="Dialog" Size="11" Style="0"/>
-			<Orientation>HORIZONTAL</Orientation>
-			<Button>Afname</Button>
-			<Button>Teruglevering</Button>
-			<LinkTo>false</LinkTo>
-		</ExtendedProperties>
-	</Control>
 </Presentation>
