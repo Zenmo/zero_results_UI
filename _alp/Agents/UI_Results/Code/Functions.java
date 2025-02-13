@@ -598,6 +598,9 @@ area.v_dataNetbelastingDuurkrommeNighttime_kW = energyModel.data_nighttimeNetbel
 area.v_dataNetbelastingDuurkrommeWeekend_kW = energyModel.data_weekendNetbelastingDuurkromme_kW;
 area.v_dataNetbelastingDuurkrommeWeekday_kW = energyModel.data_weekdayNetbelastingDuurkromme_kW;
 
+//Peak individuals
+area.v_individualPeakDelivery_kW += sum(energyModel.f_getGridConnections(), gc -> gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMax());
+area.v_individualPeakFeedin_kW += -1*sum(energyModel.f_getGridConnections(), gc -> gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMin());
 
 // Can't use pointer for (immutable) primitives in Java, so need to manually update results after a year-sim!!
 area.v_gridCapacityDelivery_kW = energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW;
@@ -1417,15 +1420,15 @@ for (GridConnection gc : gcList) {
 	gc.f_nfatoSetConnectionCapacity(false);
 	
 	//Individual gc peaks cumulative
-	//area.v_individualPeakDelivery_kW += gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).;
-	//area.v_individualPeakFeedin_kW += gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).;
+	area.v_individualPeakDelivery_kW += gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMax();
+	area.v_individualPeakFeedin_kW += -1*gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMin();
 }
 
 //Recalculate total overload duration
 area.v_totalTimeOverloaded_h = 0;
 for(double netLoad : area.v_dataNetLoadYear_kW){
 	if(netLoad > totalDeliveryCapacity_kW || netLoad < -1*totalFeedInCapacity_kW ){
-	area.v_totalTimeOverloaded_h += energyModel.p_timeStep_h;
+		area.v_totalTimeOverloaded_h += energyModel.p_timeStep_h;
 	}
 } 
     
