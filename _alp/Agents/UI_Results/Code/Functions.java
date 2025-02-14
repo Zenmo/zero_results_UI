@@ -484,7 +484,7 @@ area.v_dataElectricityForTransportConsumptionSummerWeek_kW = energyModel.data_su
 area.v_dataElectricityForStorageConsumptionSummerWeek_kW = energyModel.data_summerWeekBatteriesDemand_kW;
 area.v_dataElectricityForHydrogenConsumptionSummerWeek_kW = energyModel.data_summerWeekElectrolyserDemand_kW;
 area.v_dataElectricityForCookingConsumptionSummerWeek_kW = energyModel.data_summerWeekCookingElectricityDemand_kW;
-//area.v_dataDistrictHeatConsumptionSummerWeek_kW = energyModel.data_summerWeekDistrictHeatingDemand_kW;
+area.v_dataDistrictHeatConsumptionSummerWeek_kW = energyModel.data_summerWeekDistrictHeatingDemand_kW;
 
 //Supply
 area.dsm_summerWeekProductionDataSets_kW = energyModel.dsm_summerWeekSupplyDataSets_kW;
@@ -523,7 +523,7 @@ area.v_dataElectricityForHeatConsumptionWinterWeek_kW = energyModel.data_winterW
 area.v_dataElectricityForTransportConsumptionWinterWeek_kW = energyModel.data_winterWeekElectricVehicleDemand_kW;
 area.v_dataElectricityForStorageConsumptionWinterWeek_kW = energyModel.data_winterWeekBatteriesDemand_kW;
 area.v_dataElectricityForCookingConsumptionWinterWeek_kW = energyModel.data_winterWeekCookingElectricityDemand_kW;
-//area.v_dataDistrictHeatConsumptionWinterWeek_kW = energyModel.data_winterWeekDistrictHeatingDemand_kW;
+area.v_dataDistrictHeatConsumptionWinterWeek_kW = energyModel.data_winterWeekDistrictHeatingDemand_kW;
 
 //Supply
 area.dsm_winterWeekProductionDataSets_kW = energyModel.dsm_winterWeekSupplyDataSets_kW;
@@ -564,7 +564,7 @@ area.v_dataElectricityForTransportConsumptionYear_kW = energyModel.data_annualEl
 area.v_dataElectricityForStorageConsumptionYear_kW = energyModel.data_annualBatteriesDemand_kW;
 area.v_dataElectricityForHydrogenConsumptionYear_kW = energyModel.data_annualElectrolyserDemand_kW;
 area.v_dataElectricityForCookingConsumptionYear_kW = energyModel.data_annualCookingElectricityDemand_kW;
-//area.v_dataDistrictHeatConsumptionYear_kW = energyModel.data_annualDistrictHeatingDemand_kW;
+area.v_dataDistrictHeatConsumptionYear_kW = energyModel.data_annualDistrictHeatingDemand_kW;
 
 //Supply
 area.v_dataElectricityWindProductionYear_kW = energyModel.data_annualWindGeneration_kW;
@@ -575,10 +575,10 @@ area.v_dataElectricityCHPProductionYear_kW = energyModel.data_annualCHPElectrici
 
 //SOC (Year)
 area.v_dataBatterySOCYear_.reset();
-for (int i = 0; i < energyModel.data_annualAvgBatteryStoredEnergy_MWh.size(); i++) {
+for (int i = 0; i < energyModel.data_annualBatteryStoredEnergy_MWh.size(); i++) {
     // Get the x and y values from the source dataset
-    double x = energyModel.data_annualAvgBatteryStoredEnergy_MWh.getX(i);
-    double y = energyModel.data_annualAvgBatteryStoredEnergy_MWh.getY(i);
+    double x = energyModel.data_annualBatteryStoredEnergy_MWh.getX(i);
+    double y = energyModel.data_annualBatteryStoredEnergy_MWh.getY(i);
     
     // Modify the y value (e.g., divide it by 2)
     double SOC = area.v_batteryStorageCapacityInstalled_MWh > 0 ? y / area.v_batteryStorageCapacityInstalled_MWh : 0;
@@ -718,28 +718,66 @@ area.v_weekendElectricityConsumed_MWh = energyModel.v_weekendElectricityConsumed
 area.v_weekendElectricitySelfConsumed_MWh = energyModel.v_weekendElectricitySelfConsumed_MWh;
 
 
-
-
-
 ////Gespreksleidraad Additions
-
-//Final energy consumption dataset year
-area.data_dailyAverageFinalEnergyConsumption_kW = energyModel.data_totalFinalEnergyConsumption_kW;
-
-//Subdivision of heating assets
-area.v_totalElectricityConsumptionHeatpumps_MWh = energyModel.v_totalElectricityConsumptionHeatpumps_MWh;
-area.v_totalEnergyConsumptionForDistrictHeating_MWh = energyModel.v_totalEnergyConsumptionForDistrictHeating_MWh;
-
-//Subdivision of Production
-area.v_totalPVGeneration_MWh = energyModel.v_totalPVGeneration_MWh;
-area.v_totalWindGeneration_MWh = energyModel.v_totalWindGeneration_MWh;
-
-//Potential
-//area.v_PVPotential_kW = p_rooftopPVPotential_kW;
-//area.v_windPotential_kW = 0;
-
-//Curtailment
-area.v_totalEnergyCurtailed_MWh = energyModel.v_totalEnergyCurtailed_MWh;
+if(v_selectedRadioButton == OL_RadioButtonSetup.DEFAULT_AND_GESPREKSLEIDRAAD){
+	//Final energy consumption dataset year
+	area.data_dailyAverageFinalEnergyConsumption_kW = energyModel.data_totalFinalEnergyConsumption_kW;
+	
+	//Subdivision of heating assets
+	area.v_totalElectricityConsumptionHeatpumps_MWh = energyModel.v_totalElectricityConsumptionHeatpumps_MWh;
+	area.v_totalEnergyConsumptionForDistrictHeating_MWh = energyModel.v_totalEnergyConsumptionForDistrictHeating_MWh;
+	
+	//Subdivision of Production
+	area.v_totalPVGeneration_MWh = energyModel.v_totalPVGeneration_MWh;
+	area.v_totalWindGeneration_MWh = energyModel.v_totalWindGeneration_MWh;
+	
+	
+	//Todo: make this generic!!!!
+	
+	//Current production capacity
+	double totalInstalledCapacity_kW_companies = 0;
+	double totalInstalledCapacity_kW_households = 0;
+	for(GCNeighborhood NBH : energyModel.Neighborhoods){
+		//Find the correct production asset for rooftop solar companies
+		J_EAProduction PV_EA_companies = findFirst(NBH.c_productionAssets, EA -> EA.getName().equals("large scale rooftop PV "));
+		//Get the current capacity of the asset and add to total
+		totalInstalledCapacity_kW_companies += PV_EA_companies.getCapacityElectric_kW();
+		
+		//Find the correct production asset for rooftop solar households
+		J_EAProduction PV_EA_households = findFirst(NBH.c_productionAssets, EA -> EA.getName().equals("houshold PV "));
+		//Get the current capacity of the asset and add to total
+		totalInstalledCapacity_kW_households += PV_EA_households.getCapacityElectric_kW();
+		
+	}
+	
+	//RooftopPVInstalled
+	area.v_rooftopPVInstalled_kW = totalInstalledCapacity_kW_households + totalInstalledCapacity_kW_companies;
+	
+	//WindInstalled
+	area.v_windInstalled_kW = 0;
+	
+	//Potential
+	area.v_rooftopPVPotential_kW = 0;//p_rooftopPVPotential_kW;
+	area.v_windPotential_kW = 0;
+	
+	//Curtailment
+	area.v_totalEnergyCurtailed_MWh = energyModel.v_totalEnergyCurtailed_MWh;
+	
+	//Solar and wind: reset first, then add each seperate asset
+	area.v_totalPVEnergyCurtailed_MWh = 0;
+	area.v_totalWindEnergyCurtailed_MWh = 0;
+	for(GridConnection GC :energyModel.f_getGridConnections()){
+		
+		for(J_EAProduction productionAsset : GC.c_productionAssets){
+			if(productionAsset.energyAssetType == OL_EnergyAssetType.PHOTOVOLTAIC){
+				area.v_totalPVEnergyCurtailed_MWh += productionAsset.getEnergyCurtailed_kWh()/1000;
+			}
+			else if(productionAsset.energyAssetType == OL_EnergyAssetType.WINDMILL){
+				area.v_totalWindEnergyCurtailed_MWh += productionAsset.getEnergyCurtailed_kWh()/1000; 
+			}
+		}
+	}
+}
 /*ALCODEEND*/}
 
 double f_updateUIresultsEnergyCoop(AreaCollection area,EnergyCoop EC)
@@ -2234,184 +2272,21 @@ mainArea.v_activeProductionEnergyCarriers = energyModel.v_activeProductionEnergy
 mainArea.v_activeConsumptionEnergyCarriers = energyModel.v_activeConsumptionEnergyCarriers;
 
 
-
-//Set boolean if it has connection with heatgrid
-for (GridNode GN : energyModel.f_getGridNodesTopLevel()) {
-	if(GN.p_energyCarrier == OL_EnergyCarriers.HEAT){
-		mainArea.b_hasHeatGridConnection = true;
-		break;
-	}
-}
 //Set booleans
 f_updateActiveAssetBooleansGC(mainArea, energyModel.f_getGridConnections());
 
-//Totals
-mainArea.v_batteryStorageCapacityInstalled_MWh = energyModel.v_totalInstalledBatteryStorageCapacity_MWh;
-
-//Datasets for live charts
-//Demand
-mainArea.dsm_liveConsumption_kW = energyModel.dsm_liveDemand_kW;
-mainArea.v_dataElectricityBaseloadConsumptionLiveWeek_kW = energyModel.data_baseloadElectricityDemand_kW;
-mainArea.v_dataElectricityForHeatConsumptionLiveWeek_kW = energyModel.data_heatPumpElectricityDemand_kW;
-mainArea.v_dataElectricityForTransportConsumptionLiveWeek_kW = energyModel.data_electricVehicleDemand_kW;
-mainArea.v_dataElectricityForStorageConsumptionLiveWeek_kW = energyModel.data_batteryCharging_kW;
-mainArea.v_dataElectricityForHydrogenConsumptionLiveWeek_kW = energyModel.data_hydrogenElectricityDemand_kW;
-mainArea.v_dataElectricityForCookingConsumptionLiveWeek_kW = energyModel.data_cookingElectricityDemand_kW;
-
-//Supply
-mainArea.dsm_liveProduction_kW = energyModel.dsm_liveSupply_kW;
-
-mainArea.v_dataWindElectricityProductionLiveWeek_kW = energyModel.data_windGeneration_kW;
-mainArea.v_dataPVElectricityProductionLiveWeek_kW = energyModel.data_PVGeneration_kW;
-mainArea.v_dataStorageElectricityProductionLiveWeek_kW = energyModel.data_batteryDischarging_kW;
-mainArea.v_dataV2GElectricityProductionLiveWeek_kW = energyModel.data_V2GSupply_kW;
-mainArea.v_dataCHPElectricityProductionLiveWeek_kW = energyModel.data_CHPElectricityProductionLiveWeek_kW;
-
-//SOC (liveweek)
+//Initialize certain datasets
 mainArea.v_dataBatterySOCLiveWeek_ = new DataSet(672);
-if(mainArea.v_batteryStorageCapacityInstalled_MWh > 0){
-	for (int i = 0; i < energyModel.data_batteryStoredEnergy_MWh.size(); i++) {
-	    // Get the x and y values from the source dataset
-	    double x = energyModel.data_batteryStoredEnergy_MWh.getX(i);
-	    double y = energyModel.data_batteryStoredEnergy_MWh.getY(i);
-	    
-	    // Modify the y value (e.g., divide it by 2)
-	    double SOC = y / mainArea.v_batteryStorageCapacityInstalled_MWh;
-	    
-	    // Add the new x and y values to the target dataset
-	    mainArea.v_dataBatterySOCLiveWeek_.add(x, SOC);
-	}
-}
-
-//Datasets for live summerWeek chart
-//Demand
-mainArea.dsm_summerWeekConsumptionDataSets_kW = energyModel.dsm_summerWeekDemandDataSets_kW;
-mainArea.v_dataElectricityBaseloadConsumptionSummerWeek_kW = energyModel.data_summerWeekBaseloadElectricityDemand_kW;
-mainArea.v_dataElectricityForHeatConsumptionSummerWeek_kW = energyModel.data_summerWeekHeatPumpElectricityDemand_kW;
-mainArea.v_dataElectricityForTransportConsumptionSummerWeek_kW = energyModel.data_summerWeekElectricVehicleDemand_kW;
-mainArea.v_dataElectricityForStorageConsumptionSummerWeek_kW = energyModel.data_summerWeekBatteriesDemand_kW;
-mainArea.v_dataElectricityForHydrogenConsumptionSummerWeek_kW = energyModel.data_summerWeekElectrolyserDemand_kW;
-mainArea.v_dataElectricityForCookingConsumptionSummerWeek_kW = energyModel.data_summerWeekCookingElectricityDemand_kW;
-
-//Supply
-mainArea.dsm_summerWeekProductionDataSets_kW = energyModel.dsm_summerWeekSupplyDataSets_kW;
-
-mainArea.v_dataElectricityWindProductionSummerWeek_kW = energyModel.data_summerWeekWindGeneration_kW;
-mainArea.v_dataElectricityPVProductionSummerWeek_kW = energyModel.data_summerWeekPVGeneration_kW;
-mainArea.v_dataElectricityStorageProductionSummerWeek_kW = energyModel.data_summerWeekBatteriesSupply_kW;
-mainArea.v_dataElectricityV2GProductionSummerWeek_kW = energyModel.data_summerWeekV2GSupply_kW;
-
-mainArea.v_dataNetLoadSummerWeek_kW = energyModel.data_summerWeekNetLoad_kW;
+mainArea.v_dataBatterySOCSummerWeek_ = new DataSet(672);
+mainArea.v_dataBatterySOCWinterWeek_ = new DataSet(672);
+mainArea.v_dataBatterySOCYear_ = new DataSet(365);
 mainArea.v_dataElectricityDeliveryCapacitySummerWeek_kW = new DataSet((int) (168 / energyModel.p_timeStep_h));
 mainArea.v_dataElectricityFeedInCapacitySummerWeek_kW = new DataSet((int) (168 / energyModel.p_timeStep_h));
-mainArea.v_dataElectricityDeliveryCapacitySummerWeek_kW.add(energyModel.p_startHourSummerWeek, energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW);
-mainArea.v_dataElectricityDeliveryCapacitySummerWeek_kW.add(energyModel.p_startHourSummerWeek + 7*24, energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW);
-mainArea.v_dataElectricityFeedInCapacitySummerWeek_kW.add(energyModel.p_startHourSummerWeek, -energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW);
-mainArea.v_dataElectricityFeedInCapacitySummerWeek_kW.add(energyModel.p_startHourSummerWeek + 7*24, -energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW);
-
-//SOC (summerweek)
-mainArea.v_dataBatterySOCSummerWeek_ = new DataSet(672);
-if(mainArea.v_batteryStorageCapacityInstalled_MWh > 0){
-	for (int i = 0; i < energyModel.data_summerWeekBatteryStoredEnergy_MWh.size(); i++) {
-	    // Get the x and y values from the source dataset
-	    double x = energyModel.data_summerWeekBatteryStoredEnergy_MWh.getX(i);
-	    double y = energyModel.data_summerWeekBatteryStoredEnergy_MWh.getY(i);
-	    
-	    // Modify the y value (e.g., divide it by 2)
-	    double SOC = y / mainArea.v_batteryStorageCapacityInstalled_MWh;
-	    
-	    // Add the new x and y values to the target dataset
-	    mainArea.v_dataBatterySOCSummerWeek_.add(x, SOC);
-	}
-}
-
-//Datasets for live winterWeek chart
-//Demand
-mainArea.dsm_winterWeekConsumptionDataSets_kW = energyModel.dsm_winterWeekDemandDataSets_kW;
-mainArea.v_dataElectricityBaseloadConsumptionWinterWeek_kW = energyModel.data_winterWeekBaseloadElectricityDemand_kW;
-mainArea.v_dataElectricityForHeatConsumptionWinterWeek_kW = energyModel.data_winterWeekHeatPumpElectricityDemand_kW;
-mainArea.v_dataElectricityForTransportConsumptionWinterWeek_kW = energyModel.data_winterWeekElectricVehicleDemand_kW;
-mainArea.v_dataElectricityForStorageConsumptionWinterWeek_kW = energyModel.data_winterWeekBatteriesDemand_kW;
-mainArea.v_dataElectricityForCookingConsumptionWinterWeek_kW = energyModel.data_winterWeekCookingElectricityDemand_kW;
-
-//Supply
-mainArea.dsm_winterWeekProductionDataSets_kW = energyModel.dsm_winterWeekSupplyDataSets_kW;
-
-mainArea.v_dataElectricityWindProductionWinterWeek_kW = energyModel.data_winterWeekWindGeneration_kW;
-mainArea.v_dataElectricityPVProductionWinterWeek_kW = energyModel.data_winterWeekPVGeneration_kW;
-mainArea.v_dataElectricityStorageProductionWinterWeek_kW = energyModel.data_winterWeekBatteriesSupply_kW;
-mainArea.v_dataElectricityV2GProductionWinterWeek_kW = energyModel.data_winterWeekV2GSupply_kW;
-
-mainArea.v_dataNetLoadWinterWeek_kW = energyModel.data_winterWeekNetLoad_kW;
 mainArea.v_dataElectricityDeliveryCapacityWinterWeek_kW = new DataSet((int) (168 / energyModel.p_timeStep_h));
 mainArea.v_dataElectricityFeedInCapacityWinterWeek_kW = new DataSet((int) (168 / energyModel.p_timeStep_h));
-mainArea.v_dataElectricityDeliveryCapacityWinterWeek_kW.add(energyModel.p_startHourWinterWeek, energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW);
-mainArea.v_dataElectricityDeliveryCapacityWinterWeek_kW.add(energyModel.p_startHourWinterWeek+ 7*24, energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW);
-mainArea.v_dataElectricityFeedInCapacityWinterWeek_kW.add(energyModel.p_startHourWinterWeek, -energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW);
-mainArea.v_dataElectricityFeedInCapacityWinterWeek_kW.add(energyModel.p_startHourWinterWeek+ 7*24, -energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW);
 
-//SOC (Winterweek)
-mainArea.v_dataBatterySOCWinterWeek_ = new DataSet(672);
-if(mainArea.v_batteryStorageCapacityInstalled_MWh > 0){
-	for (int i = 0; i < energyModel.data_winterWeekBatteryStoredEnergy_MWh.size(); i++) {
-	    // Get the x and y values from the source dataset
-	    double x = energyModel.data_winterWeekBatteryStoredEnergy_MWh.getX(i);
-	    double y = energyModel.data_winterWeekBatteryStoredEnergy_MWh.getY(i);
-	    
-	    // Modify the y value (e.g., divide it by 2)
-	    double SOC = y / mainArea.v_batteryStorageCapacityInstalled_MWh;
-	    
-	    // Add the new x and y values to the target dataset
-	    mainArea.v_dataBatterySOCWinterWeek_.add(x, SOC);
-	}
-}
-//Datasets for yearly profiles chart
-//Demand
-mainArea.dsm_dailyAverageConsumptionDataSets_kW = energyModel.dsm_dailyAverageDemandDataSets_kW;
-mainArea.dsm_dailyAverageProductionDataSets_kW = energyModel.dsm_dailyAverageSupplyDataSets_kW;
+//Initialize the values
+f_updateUIresultsMainArea();
 
-mainArea.v_dataElectricityBaseloadConsumptionYear_kW = energyModel.data_annualBaseloadElectricityDemand_kW;
-mainArea.v_dataElectricityForHeatConsumptionYear_kW = energyModel.data_annualHeatPumpElectricityDemand_kW;
-mainArea.v_dataElectricityForTransportConsumptionYear_kW = energyModel.data_annualElectricVehicleDemand_kW;
-mainArea.v_dataElectricityForStorageConsumptionYear_kW = energyModel.data_annualBatteriesDemand_kW;
-mainArea.v_dataElectricityForHydrogenConsumptionYear_kW = energyModel.data_annualElectrolyserDemand_kW;
-mainArea.v_dataElectricityForCookingConsumptionYear_kW = energyModel.data_annualCookingElectricityDemand_kW;
-
-//Final energy consumption dataset year
-mainArea.data_dailyAverageFinalEnergyConsumption_kW = energyModel.data_totalFinalEnergyConsumption_kW;
-
-//Supply
-mainArea.v_dataElectricityWindProductionYear_kW = energyModel.data_annualWindGeneration_kW;
-mainArea.v_dataElectricityPVProductionYear_kW = energyModel.data_annualPVGeneration_kW;
-mainArea.v_dataElectricityStorageProductionYear_kW = energyModel.data_annualBatteriesSupply_kW;
-mainArea.v_dataElectricityV2GProductionYear_kW = energyModel.data_annualV2GSupply_kW;
-mainArea.v_dataElectricityCHPProductionYear_kW = energyModel.data_annualCHPElectricityProduction_kW;
-
-//SOC (Year)
-mainArea.v_dataBatterySOCYear_ = new DataSet(365);
-if(mainArea.v_batteryStorageCapacityInstalled_MWh > 0){
-	for (int i = 0; i < energyModel.data_annualAvgBatteryStoredEnergy_MWh.size(); i++) {
-	    // Get the x and y values from the source dataset
-	    double x = energyModel.data_annualAvgBatteryStoredEnergy_MWh.getX(i);
-	    double y = energyModel.data_annualAvgBatteryStoredEnergy_MWh.getY(i);
-	    
-	    // Modify the y value (e.g., divide it by 2)
-	    double SOC = y / mainArea.v_batteryStorageCapacityInstalled_MWh;
-	    
-	    // Add the new x and y values to the target dataset
-	    mainArea.v_dataBatterySOCYear_.add(x, SOC);
-	}
-}
-
-//Datasets for netloaddurationcurves
-mainArea.v_dataNetbelastingDuurkrommeYear_kW = energyModel.data_netbelastingDuurkromme_kW;
-mainArea.v_dataNetbelastingDuurkrommeYearVorige_kW = energyModel.data_netbelastingDuurkrommeVorige_kW;
-
-mainArea.v_dataNetbelastingDuurkrommeSummer_kW = energyModel.data_summerWeekNetbelastingDuurkromme_kW;
-mainArea.v_dataNetbelastingDuurkrommeWinter_kW = energyModel.data_winterWeekNetbelastingDuurkromme_kW;
-mainArea.v_dataNetbelastingDuurkrommeDaytime_kW = energyModel.data_daytimeNetbelastingDuurkromme_kW;
-mainArea.v_dataNetbelastingDuurkrommeNighttime_kW = energyModel.data_nighttimeNetbelastingDuurkromme_kW;
-mainArea.v_dataNetbelastingDuurkrommeWeekend_kW = energyModel.data_weekendNetbelastingDuurkromme_kW;
-mainArea.v_dataNetbelastingDuurkrommeWeekday_kW = energyModel.data_weekdayNetbelastingDuurkromme_kW;
 /*ALCODEEND*/}
 
