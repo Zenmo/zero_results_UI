@@ -442,6 +442,7 @@ area.v_dataElectricityForTransportConsumptionLiveWeek_kW = energyModel.data_elec
 area.v_dataElectricityForStorageConsumptionLiveWeek_kW = energyModel.data_batteryCharging_kW;
 area.v_dataElectricityForHydrogenConsumptionLiveWeek_kW = energyModel.data_hydrogenElectricityDemand_kW;
 area.v_dataElectricityForCookingConsumptionLiveWeek_kW = energyModel.data_cookingElectricityDemand_kW;
+area.v_dataDistrictHeatConsumptionLiveWeek_kW = energyModel.data_districtHeatingDemand_kW;
 
 //Supply
 area.dsm_liveProduction_kW = energyModel.dsm_liveSupply_kW;
@@ -449,7 +450,6 @@ area.v_dataWindElectricityProductionLiveWeek_kW = energyModel.data_windGeneratio
 area.v_dataPVElectricityProductionLiveWeek_kW = energyModel.data_PVGeneration_kW;
 area.v_dataStorageElectricityProductionLiveWeek_kW = energyModel.data_batteryDischarging_kW;
 area.v_dataV2GElectricityProductionLiveWeek_kW = energyModel.data_V2GSupply_kW;
-//area.v_dataHydrogenSupplyLiveWeek_kW = energyModel.data_hydrogenSupply_kW;
 area.v_dataCHPElectricityProductionLiveWeek_kW = energyModel.data_CHPElectricityProductionLiveWeek_kW;
 
 //SOC
@@ -484,6 +484,7 @@ area.v_dataElectricityForTransportConsumptionSummerWeek_kW = energyModel.data_su
 area.v_dataElectricityForStorageConsumptionSummerWeek_kW = energyModel.data_summerWeekBatteriesDemand_kW;
 area.v_dataElectricityForHydrogenConsumptionSummerWeek_kW = energyModel.data_summerWeekElectrolyserDemand_kW;
 area.v_dataElectricityForCookingConsumptionSummerWeek_kW = energyModel.data_summerWeekCookingElectricityDemand_kW;
+//area.v_dataDistrictHeatConsumptionSummerWeek_kW = energyModel.data_summerWeekDistrictHeatingDemand_kW;
 
 //Supply
 area.dsm_summerWeekProductionDataSets_kW = energyModel.dsm_summerWeekSupplyDataSets_kW;
@@ -522,6 +523,7 @@ area.v_dataElectricityForHeatConsumptionWinterWeek_kW = energyModel.data_winterW
 area.v_dataElectricityForTransportConsumptionWinterWeek_kW = energyModel.data_winterWeekElectricVehicleDemand_kW;
 area.v_dataElectricityForStorageConsumptionWinterWeek_kW = energyModel.data_winterWeekBatteriesDemand_kW;
 area.v_dataElectricityForCookingConsumptionWinterWeek_kW = energyModel.data_winterWeekCookingElectricityDemand_kW;
+//area.v_dataDistrictHeatConsumptionWinterWeek_kW = energyModel.data_winterWeekDistrictHeatingDemand_kW;
 
 //Supply
 area.dsm_winterWeekProductionDataSets_kW = energyModel.dsm_winterWeekSupplyDataSets_kW;
@@ -562,6 +564,7 @@ area.v_dataElectricityForTransportConsumptionYear_kW = energyModel.data_annualEl
 area.v_dataElectricityForStorageConsumptionYear_kW = energyModel.data_annualBatteriesDemand_kW;
 area.v_dataElectricityForHydrogenConsumptionYear_kW = energyModel.data_annualElectrolyserDemand_kW;
 area.v_dataElectricityForCookingConsumptionYear_kW = energyModel.data_annualCookingElectricityDemand_kW;
+//area.v_dataDistrictHeatConsumptionYear_kW = energyModel.data_annualDistrictHeatingDemand_kW;
 
 //Supply
 area.v_dataElectricityWindProductionYear_kW = energyModel.data_annualWindGeneration_kW;

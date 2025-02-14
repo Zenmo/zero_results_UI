@@ -19,7 +19,9 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		energyDemandChartYear.addDataSet( dataObject.dsm_dailyAverageConsumptionDataSets_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 	else if(dataObject.b_hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChartYear.addDataSet( dataObject.v_dataDistrictHeatConsumptionYear_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		if (dataObject.v_dataDistrictHeatConsumptionYear_kW != null) { // TODO: Fix engine and then remove this null check
+			energyDemandChartYear.addDataSet( dataObject.v_dataDistrictHeatConsumptionYear_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		}
 	}
 }
 
