@@ -375,7 +375,7 @@
 					<TextColor>-12566464</TextColor>
 				</Labels>
 				<ShowLegend>true</ShowLegend>
-				<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 				<TimeWindowExpression>168</TimeWindowExpression>
 				<SamplesToKeep>672</SamplesToKeep>
@@ -432,7 +432,7 @@
 					<TextColor>-12566464</TextColor>
 				</Labels>
 				<ShowLegend>true</ShowLegend>
-				<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 				<TimeWindowExpression>168</TimeWindowExpression>
 				<SamplesToKeep>672</SamplesToKeep>

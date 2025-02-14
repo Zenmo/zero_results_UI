@@ -3,6 +3,7 @@
 	<Id>1704197366550</Id>
 	<Name><![CDATA[UI_Results]]></Name>
 	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
+	<Import><![CDATA[import java.util.EnumSet;]]></Import>
 	<StartupCode><![CDATA[// TODO: Fill cm_consumptionColors and cm_productionColors here?
 cm_productionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricitySupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatHeatSupplyColor);
