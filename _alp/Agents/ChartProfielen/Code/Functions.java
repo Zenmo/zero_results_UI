@@ -172,7 +172,7 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	}
 	else if(dataObject.b_hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
 		if (dataObject.v_dataDistrictHeatConsumptionSummerWeek_kW!= null) { // TODO: Fix engine and then remove this null check
-			energyDemandChartYear.addDataSet( dataObject.v_dataDistrictHeatConsumptionSummerWeek_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+			energyDemandChart.addDataSet( dataObject.v_dataDistrictHeatConsumptionSummerWeek_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 		}
 	}
 }
@@ -268,7 +268,7 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	}
 	else if(dataObject.b_hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
 		if (dataObject.v_dataDistrictHeatConsumptionWinterWeek_kW!= null) { // TODO: Fix engine and then remove this null check
-			energyDemandChartYear.addDataSet( dataObject.v_dataDistrictHeatConsumptionWinterWeek_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+			energyDemandChart.addDataSet( dataObject.v_dataDistrictHeatConsumptionWinterWeek_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 		}
 	}
 }
