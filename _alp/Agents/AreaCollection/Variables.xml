@@ -3544,7 +3544,7 @@
 		<Id>1733851365900</Id>
 		<Name><![CDATA[b_hasHeatGridConnection]]></Name>
 		<X>1580</X>
-		<Y>650</Y>
+		<Y>680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3642,7 +3642,7 @@
 		<Id>1734358500128</Id>
 		<Name><![CDATA[b_hasElectrolyser]]></Name>
 		<X>1580</X>
-		<Y>670</Y>
+		<Y>700</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3664,7 +3664,7 @@
 		<Id>1734358511150</Id>
 		<Name><![CDATA[b_hasCHP]]></Name>
 		<X>1580</X>
-		<Y>690</Y>
+		<Y>720</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3686,7 +3686,7 @@
 		<Id>1734359658781</Id>
 		<Name><![CDATA[b_hasPV]]></Name>
 		<X>1580</X>
-		<Y>590</Y>
+		<Y>620</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3708,7 +3708,7 @@
 		<Id>1734359658783</Id>
 		<Name><![CDATA[b_hasWindturbine]]></Name>
 		<X>1580</X>
-		<Y>610</Y>
+		<Y>640</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3730,7 +3730,7 @@
 		<Id>1734359658785</Id>
 		<Name><![CDATA[b_hasV2G]]></Name>
 		<X>1580</X>
-		<Y>710</Y>
+		<Y>740</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3752,7 +3752,7 @@
 		<Id>1734359708747</Id>
 		<Name><![CDATA[b_hasBattery]]></Name>
 		<X>1580</X>
-		<Y>630</Y>
+		<Y>660</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3774,7 +3774,7 @@
 		<Id>1734359858091</Id>
 		<Name><![CDATA[b_hasElectricHeating]]></Name>
 		<X>1580</X>
-		<Y>550</Y>
+		<Y>580</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3796,7 +3796,7 @@
 		<Id>1734359867557</Id>
 		<Name><![CDATA[b_hasElectricTransport]]></Name>
 		<X>1580</X>
-		<Y>570</Y>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3818,7 +3818,7 @@
 		<Id>1734360597771</Id>
 		<Name><![CDATA[b_hasElectricCooking]]></Name>
 		<X>1580</X>
-		<Y>730</Y>
+		<Y>760</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4050,6 +4050,44 @@
 		<Name><![CDATA[v_individualSelfconsumptionEnergy_fr]]></Name>
 		<X>1580</X>
 		<Y>460</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1739207591239</Id>
+		<Name><![CDATA[v_individualPeakDelivery_kW]]></Name>
+		<X>1580</X>
+		<Y>490</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1739207625857</Id>
+		<Name><![CDATA[v_individualPeakFeedin_kW]]></Name>
+		<X>1580</X>
+		<Y>510</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

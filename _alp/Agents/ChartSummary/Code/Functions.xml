@@ -61,8 +61,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813831</Id>
 		<Name><![CDATA[f_setChartsSummary2]]></Name>
-		<X>60</X>
-		<Y>940</Y>
+		<X>560</X>
+		<Y>870</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -81,8 +81,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813833</Id>
 		<Name><![CDATA[f_setSelfConsumptionChart]]></Name>
-		<X>74.667</X>
-		<Y>960</Y>
+		<X>574.667</X>
+		<Y>890</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -119,6 +119,26 @@
 		<Name><![CDATA[f_setDemandAndSupplyGespreksleidraad1]]></Name>
 		<X>80</X>
 		<Y>905</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1739206434585</Id>
+		<Name><![CDATA[f_setChartsSummary3]]></Name>
+		<X>1060</X>
+		<Y>870</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

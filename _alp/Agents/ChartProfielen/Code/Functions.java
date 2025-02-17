@@ -6,20 +6,15 @@ EnumSet<OL_EnergyCarriers> activeConsumptionEnergyCarriers = EnumSet.copyOf(data
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
-//activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
-
-/*
-for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
-	energyDemandChartYear.addDataSet( dataObject.dsm_dailyAverageConsumptionDataSets_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
-}
-*/
 
 for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	if(EC_consumption != OL_EnergyCarriers.HEAT){
 		energyDemandChartYear.addDataSet( dataObject.dsm_dailyAverageConsumptionDataSets_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 	else if(dataObject.b_hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChartYear.addDataSet( dataObject.v_dataDistrictHeatConsumptionYear_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		if (dataObject.v_dataDistrictHeatConsumptionYear_kW != null) { // TODO: Fix engine and then remove this null check
+			energyDemandChartYear.addDataSet( dataObject.v_dataDistrictHeatConsumptionYear_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		}
 	}
 }
 
@@ -170,16 +165,21 @@ EnumSet<OL_EnergyCarriers> activeConsumptionEnergyCarriers = EnumSet.copyOf(data
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
-activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
+
+for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
+	if(EC_consumption != OL_EnergyCarriers.HEAT){
+		energyDemandChart.addDataSet( dataObject.dsm_summerWeekConsumptionDataSets_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
+	}
+	else if(dataObject.b_hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
+		if (dataObject.v_dataDistrictHeatConsumptionSummerWeek_kW!= null) { // TODO: Fix engine and then remove this null check
+			energyDemandChart.addDataSet( dataObject.v_dataDistrictHeatConsumptionSummerWeek_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		}
+	}
+}
 
 for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 	energySupplyChart.addDataSet( dataObject.dsm_summerWeekProductionDataSets_kW.get(EC_production), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production));
 }
-
-for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
-	energyDemandChart.addDataSet( dataObject.dsm_summerWeekConsumptionDataSets_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
-}
-
 /*ALCODEEND*/}
 
 double f_addElectricityFlows_SummerWeek(AreaCollection dataObject)
@@ -261,14 +261,20 @@ EnumSet<OL_EnergyCarriers> activeConsumptionEnergyCarriers = EnumSet.copyOf(data
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
-activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
+
+for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
+	if(EC_consumption != OL_EnergyCarriers.HEAT){
+		energyDemandChart.addDataSet( dataObject.dsm_winterWeekConsumptionDataSets_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
+	}
+	else if(dataObject.b_hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
+		if (dataObject.v_dataDistrictHeatConsumptionWinterWeek_kW!= null) { // TODO: Fix engine and then remove this null check
+			energyDemandChart.addDataSet( dataObject.v_dataDistrictHeatConsumptionWinterWeek_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		}
+	}
+}
 
 for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 	energySupplyChart.addDataSet( dataObject.dsm_winterWeekProductionDataSets_kW.get(EC_production), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production)); 
-}
-
-for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
-	energyDemandChart.addDataSet( dataObject.dsm_winterWeekConsumptionDataSets_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
 }
 
 /*ALCODEEND*/}
