@@ -50,7 +50,7 @@
 		<Id>1714855497484</Id>
 		<Name><![CDATA[radio_energyType]]></Name>
 		<X>60</X>
-		<Y>6</Y>
+		<Y>34</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -575,7 +575,7 @@
 		<Id>1715175655981</Id>
 		<Name><![CDATA[radio_period]]></Name>
 		<X>40</X>
-		<Y>34</Y>
+		<Y>6</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1457,11 +1457,11 @@
 				<ShowLegend>true</ShowLegend>
 				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
-				<TimeWindowExpression>365</TimeWindowExpression>
+				<TimeWindowExpression>8760</TimeWindowExpression>
 				<SamplesToKeep>365</SamplesToKeep>
 				<VerScaleToExpression>1</VerScaleToExpression>
 				<VerScaleType>AUTO</VerScaleType>
-				<LabelFormat>MM</LabelFormat>
+				<LabelFormat>MMM</LabelFormat>
 			</TimeStackChart>
 			<TimeStackChart>
 				<Id>1739805426153</Id>
@@ -1514,7 +1514,7 @@
 				<ShowLegend>true</ShowLegend>
 				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
-				<TimeWindowExpression>365</TimeWindowExpression>
+				<TimeWindowExpression>8760</TimeWindowExpression>
 				<SamplesToKeep>365</SamplesToKeep>
 				<VerScaleToExpression>1</VerScaleToExpression>
 				<VerScaleType>AUTO</VerScaleType>
