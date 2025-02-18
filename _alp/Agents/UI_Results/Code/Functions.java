@@ -403,7 +403,6 @@ f_setSelectedRadioButton();
 //Initialize profiles graph (starting chart)
 chartProfielen.f_setCharts();
 
-
 /*ALCODEEND*/}
 
 double f_updateUIresultsMainArea()
@@ -2287,6 +2286,15 @@ mainArea.v_dataElectricityFeedInCapacityWinterWeek_kW = new DataSet((int) (168 /
 
 //Initialize the values
 f_updateUIresultsMainArea();
+
+/*ALCODEEND*/}
+
+double f_setNonLivePlotRadioButtons(boolean active)
+{/*ALCODESTART::1739884154258*/
+rb_DEFAULT.setEnabled(active);
+chartProfielen.radio_period.setEnabled(active);
+chartNetbelasting.radio.setEnabled(active);
+chartBalans.radio_period.setEnabled(active);
 
 /*ALCODEEND*/}
 
