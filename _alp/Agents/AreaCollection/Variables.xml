@@ -100,7 +100,7 @@
 		<Id>1706182758385</Id>
 		<Name><![CDATA[v_gridCapacityFeedIn_kW]]></Name>
 		<X>1070</X>
-		<Y>400</Y>
+		<Y>420</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -119,7 +119,7 @@
 		<Id>1706182768315</Id>
 		<Name><![CDATA[v_gridCapacityDelivery_kW]]></Name>
 		<X>1070</X>
-		<Y>420</Y>
+		<Y>400</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1413,7 +1413,7 @@
 		<Id>1716209327834</Id>
 		<Name><![CDATA[v_annualExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>450</Y>
+		<Y>530</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1432,7 +1432,7 @@
 		<Id>1716209440800</Id>
 		<Name><![CDATA[v_annualExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>470</Y>
+		<Y>550</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1451,7 +1451,7 @@
 		<Id>1716209465640</Id>
 		<Name><![CDATA[v_summerWeekExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>490</Y>
+		<Y>570</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1470,7 +1470,7 @@
 		<Id>1716209471102</Id>
 		<Name><![CDATA[v_summerWeekExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>510</Y>
+		<Y>590</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1489,7 +1489,7 @@
 		<Id>1716209489154</Id>
 		<Name><![CDATA[v_daytimeExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>570</Y>
+		<Y>650</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1508,7 +1508,7 @@
 		<Id>1716209494608</Id>
 		<Name><![CDATA[v_winterWeekExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>550</Y>
+		<Y>630</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1527,7 +1527,7 @@
 		<Id>1716209496675</Id>
 		<Name><![CDATA[v_winterWeekExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>530</Y>
+		<Y>610</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1546,7 +1546,7 @@
 		<Id>1716209516398</Id>
 		<Name><![CDATA[v_daytimeExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>590</Y>
+		<Y>670</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1565,7 +1565,7 @@
 		<Id>1716209529457</Id>
 		<Name><![CDATA[v_nighttimeExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>630</Y>
+		<Y>710</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1584,7 +1584,7 @@
 		<Id>1716209533730</Id>
 		<Name><![CDATA[v_nighttimeExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>610</Y>
+		<Y>690</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1603,7 +1603,7 @@
 		<Id>1716209592672</Id>
 		<Name><![CDATA[v_weekdayExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>650</Y>
+		<Y>730</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1622,7 +1622,7 @@
 		<Id>1716209592674</Id>
 		<Name><![CDATA[v_weekdayExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>670</Y>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1641,7 +1641,7 @@
 		<Id>1716209592676</Id>
 		<Name><![CDATA[v_weekendExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>710</Y>
+		<Y>790</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1660,7 +1660,7 @@
 		<Id>1716209592678</Id>
 		<Name><![CDATA[v_weekendExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>690</Y>
+		<Y>770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4088,6 +4088,44 @@
 		<Name><![CDATA[v_individualPeakFeedin_kW]]></Name>
 		<X>1580</X>
 		<Y>510</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1740068574822</Id>
+		<Name><![CDATA[v_gridCapacityDelivery_groupcontract_kW]]></Name>
+		<X>1070</X>
+		<Y>450</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1740068589794</Id>
+		<Name><![CDATA[v_gridCapacityFeedin_groupcontract_kW]]></Name>
+		<X>1070</X>
+		<Y>470</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
