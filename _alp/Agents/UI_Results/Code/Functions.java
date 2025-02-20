@@ -227,6 +227,9 @@ else if (v_selectedObjectType == OL_GISObjectType.NEIGHBOURHOOD ||
 		 v_selectedObjectType == OL_GISObjectType.BATTERY ) {
 	dataObject = v_gridConnection;
 }
+else if(v_selectedObjectType == OL_GISObjectType.COOP){
+		dataObject = v_energyCoop;
+}
 else {
 	dataObject = v_area;
 }
@@ -294,27 +297,27 @@ rb_DEFAULT_AND_GESPREKSLEIDRAAD.setEnabled(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setEnabled(false);
 rb_DEFAULT_AND_BATTERY.setEnabled(false);
 
-switch(v_selectedRadioButton){
+switch(v_selectedRadioButtonSetup){
 
 case DEFAULT:
-	rb_DEFAULT.setVisible(true);
-	rb_DEFAULT.setEnabled(true);
+	v_selectedRadioButton = rb_DEFAULT;
 	break;
 case DEFAULT_AND_GESPREKSLEIDRAAD:
-	rb_DEFAULT_AND_GESPREKSLEIDRAAD.setVisible(true);
-	rb_DEFAULT_AND_GESPREKSLEIDRAAD.setEnabled(true);
+	v_selectedRadioButton = rb_DEFAULT_AND_GESPREKSLEIDRAAD;
 	break;
 case DEFAULT_AND_GESPREKSLEIDRAADSUMMARY:
-	rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setVisible(true);
-	rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setEnabled(true);
+	v_selectedRadioButton = rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY;
 	break;
-case DEFAULT_AND_BATTERY:
-	rb_DEFAULT_AND_BATTERY.setVisible(true);
-	rb_DEFAULT_AND_BATTERY.setEnabled(true);
+case DEFAULT_AND_BATTERY:	
+	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY;
 	break;
 case OFF:
 	f_setResultsUIHeader(null, null, false);
-}	
+	break;
+}
+
+v_selectedRadioButton.setVisible(true);
+v_selectedRadioButton.setEnabled(true);
 /*ALCODEEND*/}
 
 String f_getName(OL_EnergyCarriers energyCarrier)
@@ -395,7 +398,7 @@ f_initializePreviousTotals();
 //Initialize other area collections
 v_gridConnection = add_pop_areaResults(OL_GISObjectType.BUILDING, "GC");
 v_trafo = add_pop_areaResults(OL_GISObjectType.GRIDNODE, "GN");
-v_collective = add_pop_areaResults();
+v_energyCoop = add_pop_areaResults();
 
 //Set the selected radiobutton setup
 f_setSelectedRadioButton();
@@ -718,7 +721,7 @@ area.v_weekendElectricitySelfConsumed_MWh = energyModel.v_weekendElectricitySelf
 
 
 ////Gespreksleidraad Additions
-if(v_selectedRadioButton == OL_RadioButtonSetup.DEFAULT_AND_GESPREKSLEIDRAAD){
+if(v_selectedRadioButtonSetup == OL_RadioButtonSetup.DEFAULT_AND_GESPREKSLEIDRAAD){
 	//Final energy consumption dataset year
 	area.data_dailyAverageFinalEnergyConsumption_kW = energyModel.data_totalFinalEnergyConsumption_kW;
 	
@@ -2291,7 +2294,7 @@ f_updateUIresultsMainArea();
 
 double f_setNonLivePlotRadioButtons(boolean active)
 {/*ALCODESTART::1739884154258*/
-rb_DEFAULT.setEnabled(active);
+v_selectedRadioButton.setEnabled(active);
 chartProfielen.radio_period.setEnabled(active);
 chartNetbelasting.radio.setEnabled(active);
 chartBalans.radio_period.setEnabled(active);
