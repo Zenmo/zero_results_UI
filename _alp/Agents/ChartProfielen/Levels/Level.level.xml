@@ -23,7 +23,7 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>460</Width>
-		<Height>80</Height>
+		<Height>105</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -45,246 +45,12 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 	</Group>
-	<Group>
-		<Id>1714834211049</Id>
-		<Name><![CDATA[group_year]]></Name>
-		<X>750</X>
-		<Y>300</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>250</XCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Presentation>
-			<TimeStackChart>
-				<Id>1714746021761</Id>
-				<Name><![CDATA[energyDemandChartYear]]></Name>
-				<X>-250</X>
-				<Y>-150</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1641542400000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>460</Width>
-				<Height>210</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>380</Width>
-					<Height>120</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor>-16777216</BorderColor>
-					<GridColor>-12566464</GridColor>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
-					<TextColor>-12566464</TextColor>
-				</Labels>
-				<ShowLegend>true</ShowLegend>
-				<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
-				<TimeWindowUnits>DAY</TimeWindowUnits>
-				<TimeWindowExpression>365</TimeWindowExpression>
-				<SamplesToKeep>365</SamplesToKeep>
-				<VerScaleToExpression>1</VerScaleToExpression>
-				<VerScaleType>AUTO</VerScaleType>
-				<LabelFormat>MM</LabelFormat>
-			</TimeStackChart>
-			<TimeStackChart>
-				<Id>1714746021764</Id>
-				<Name><![CDATA[energySupplyChartYear]]></Name>
-				<X>-250</X>
-				<Y>130</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1641542400000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>460</Width>
-				<Height>210</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>380</Width>
-					<Height>120</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor>-16777216</BorderColor>
-					<GridColor>-12566464</GridColor>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
-					<TextColor>-12566464</TextColor>
-				</Labels>
-				<ShowLegend>true</ShowLegend>
-				<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
-				<TimeWindowUnits>DAY</TimeWindowUnits>
-				<TimeWindowExpression>365</TimeWindowExpression>
-				<SamplesToKeep>365</SamplesToKeep>
-				<VerScaleToExpression>1</VerScaleToExpression>
-				<VerScaleType>AUTO</VerScaleType>
-				<LabelFormat>MM</LabelFormat>
-			</TimeStackChart>
-			<Text>
-				<Id>1714746021758</Id>
-				<Name><![CDATA[t_energieAanbod]]></Name>
-				<X>-20</X>
-				<Y>130</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Rotation>0.0</Rotation>
-				<Color>-16777216</Color>
-				<Text><![CDATA[Productie]]></Text>
-				<Font>
-					<Name><![CDATA[Calibri]]></Name>
-					<Size>18</Size>
-					<Style>0</Style>
-				</Font>
-				<Alignment>CENTER</Alignment>
-			</Text>
-			<Text>
-				<Id>1714746021753</Id>
-				<Name><![CDATA[t_energieVraag]]></Name>
-				<X>-20</X>
-				<Y>-150</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Rotation>0.0</Rotation>
-				<Color>-16777216</Color>
-				<Text><![CDATA[Consumptie]]></Text>
-				<Font>
-					<Name><![CDATA[Calibri]]></Name>
-					<Size>18</Size>
-					<Style>0</Style>
-				</Font>
-				<Alignment>CENTER</Alignment>
-			</Text>
-			<Text>
-				<Id>1716386068349</Id>
-				<Name><![CDATA[t_yearProfile_ylabel]]></Name>
-				<X>-235</X>
-				<Y>-100</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Rotation>90.0</Rotation>
-				<Color>-16777216</Color>
-				<Text><![CDATA[Vermogen [kW]]]></Text>
-				<Font>
-					<Name><![CDATA[Calibri]]></Name>
-					<Size>12</Size>
-					<Style>0</Style>
-				</Font>
-				<Alignment>LEFT</Alignment>
-			</Text>
-			<Text>
-				<Id>1716386068351</Id>
-				<Name><![CDATA[t_yearProfile_ylabel1]]></Name>
-				<X>-235</X>
-				<Y>180</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Rotation>90.0</Rotation>
-				<Color>-16777216</Color>
-				<Text><![CDATA[Vermogen [kW]]]></Text>
-				<Font>
-					<Name><![CDATA[Calibri]]></Name>
-					<Size>12</Size>
-					<Style>0</Style>
-				</Font>
-				<Alignment>LEFT</Alignment>
-			</Text>
-		</Presentation>
-	</Group>
 	<Control Type="RadioButtons">
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1714855497484</Id>
 		<Name><![CDATA[radio_energyType]]></Name>
 		<X>60</X>
-		<Y>6</Y>
+		<Y>34</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -545,7 +311,7 @@
 	<Group>
 		<Id>1714907241713</Id>
 		<Name><![CDATA[group_trafo_week]]></Name>
-		<X>1230</X>
+		<X>1750</X>
 		<Y>260</Y>
 		<Label>
 			<X>10</X>
@@ -609,7 +375,7 @@
 					<TextColor>-12566464</TextColor>
 				</Labels>
 				<ShowLegend>true</ShowLegend>
-				<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 				<VerScaleFromExpression>0</VerScaleFromExpression>
 				<VerScaleToExpression>1</VerScaleToExpression>
@@ -676,7 +442,7 @@
 	<Group>
 		<Id>1715170000511</Id>
 		<Name><![CDATA[group_trafo_year]]></Name>
-		<X>1750</X>
+		<X>2250</X>
 		<Y>260</Y>
 		<Label>
 			<X>10</X>
@@ -740,7 +506,7 @@
 					<TextColor>-12566464</TextColor>
 				</Labels>
 				<ShowLegend>true</ShowLegend>
-				<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 				<TimeWindowUnits>DAY</TimeWindowUnits>
 				<VerScaleFromExpression>0</VerScaleFromExpression>
 				<VerScaleToExpression>1</VerScaleToExpression>
@@ -809,7 +575,7 @@
 		<Id>1715175655981</Id>
 		<Name><![CDATA[radio_period]]></Name>
 		<X>40</X>
-		<Y>34</Y>
+		<Y>6</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -838,7 +604,7 @@
 	<Group>
 		<Id>1721118028730</Id>
 		<Name><![CDATA[group_netload_week]]></Name>
-		<X>2250</X>
+		<X>3250</X>
 		<Y>260</Y>
 		<Label>
 			<X>10</X>
@@ -902,7 +668,7 @@
 					<TextColor>-12566464</TextColor>
 				</Labels>
 				<ShowLegend>true</ShowLegend>
-				<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 				<VerScaleFromExpression>0</VerScaleFromExpression>
 				<VerScaleToExpression>1</VerScaleToExpression>
@@ -969,7 +735,7 @@
 	<Group>
 		<Id>1721120959534</Id>
 		<Name><![CDATA[group_netload_year]]></Name>
-		<X>2730</X>
+		<X>3750</X>
 		<Y>260</Y>
 		<Label>
 			<X>10</X>
@@ -1033,7 +799,7 @@
 					<TextColor>-12566464</TextColor>
 				</Labels>
 				<ShowLegend>true</ShowLegend>
-				<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 				<TimeWindowUnits>DAY</TimeWindowUnits>
 				<VerScaleFromExpression>0</VerScaleFromExpression>
 				<VerScaleToExpression>1</VerScaleToExpression>
@@ -1043,7 +809,7 @@
 				<SamplesToKeep>8760</SamplesToKeep>
 				<TimeWindowExpression>365</TimeWindowExpression>
 				<FillAreaUnderLine>false</FillAreaUnderLine>
-				<LabelFormat>dd_MM</LabelFormat>
+				<LabelFormat>MM</LabelFormat>
 			</TimePlot>
 			<Text>
 				<Id>1721120959539</Id>
@@ -1075,6 +841,765 @@
 				<Name><![CDATA[t_yearProfileTrafo_ylabel1]]></Name>
 				<X>-220</X>
 				<Y>-35</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>90.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Vermogen [kW]]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1739803112530</Id>
+		<Name><![CDATA[group_day]]></Name>
+		<X>1250</X>
+		<Y>400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>230</XCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<TimeStackChart>
+				<Id>1739803112533</Id>
+				<Name><![CDATA[energyDemandChartDay]]></Name>
+				<X>-230</X>
+				<Y>-250</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1641542400000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>460</Width>
+				<Height>210</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>50</XOffset>
+					<YOffset>30</YOffset>
+					<Width>380</Width>
+					<Height>120</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-16777216</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>30</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
+				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+				<TimeWindowExpression>24</TimeWindowExpression>
+				<SamplesToKeep>168</SamplesToKeep>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<LabelFormat>HH_mm</LabelFormat>
+			</TimeStackChart>
+			<TimeStackChart>
+				<Id>1739803112536</Id>
+				<Name><![CDATA[energySupplyChartDay]]></Name>
+				<X>-230</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1641542400000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>460</Width>
+				<Height>210</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>50</XOffset>
+					<YOffset>30</YOffset>
+					<Width>380</Width>
+					<Height>120</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-16777216</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>30</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
+				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+				<TimeWindowExpression>24</TimeWindowExpression>
+				<SamplesToKeep>168</SamplesToKeep>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<LabelFormat>HH_mm</LabelFormat>
+			</TimeStackChart>
+			<Text>
+				<Id>1739803112538</Id>
+				<Name><![CDATA[t_energieAanbod2]]></Name>
+				<X>0</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Productie]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>18</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1739803112540</Id>
+				<Name><![CDATA[t_energieVraag6]]></Name>
+				<X>0</X>
+				<Y>-250</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Consumptie]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>18</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1739803112542</Id>
+				<Name><![CDATA[t_weekProfile_ylabel2]]></Name>
+				<X>-215</X>
+				<Y>-200</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>90.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Vermogen [kW]]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Text>
+				<Id>1739803112544</Id>
+				<Name><![CDATA[t_weekProfile_ylabel3]]></Name>
+				<X>-215</X>
+				<Y>80</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>90.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Vermogen [kW]]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+		</Presentation>
+	</Group>
+	<Control Type="RadioButtons">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1739803302604</Id>
+		<Name><![CDATA[radio_periodLive]]></Name>
+		<X>180</X>
+		<Y>62</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="100" Height="40">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor/>
+			<Enabled>true</Enabled>
+			<ActionCode>f_setCharts();</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<DefaultValueCode>0</DefaultValueCode>
+			<Orientation>HORIZONTAL</Orientation>
+			<Button>Week</Button>
+			<Button>Dag</Button>
+			<LinkTo>false</LinkTo>
+		</ExtendedProperties>
+	</Control>
+	<Group>
+		<Id>1739803854144</Id>
+		<Name><![CDATA[group_trafo_day]]></Name>
+		<X>2750</X>
+		<Y>260</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>230</XCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<TimePlot>
+				<Id>1739803854147</Id>
+				<Name><![CDATA[plot_trafo_day]]></Name>
+				<X>-230</X>
+				<Y>-110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1714982400000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>460</Width>
+				<Height>260</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>50</XOffset>
+					<YOffset>30</YOffset>
+					<Width>380</Width>
+					<Height>170</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-16777216</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>30</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
+				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+				<VerScaleFromExpression>0</VerScaleFromExpression>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<DrawLine>true</DrawLine>
+				<Interpolation>LINEAR</Interpolation>
+				<SamplesToKeep>168</SamplesToKeep>
+				<TimeWindowExpression>24</TimeWindowExpression>
+				<FillAreaUnderLine>false</FillAreaUnderLine>
+				<LabelFormat>HH_mm</LabelFormat>
+			</TimePlot>
+			<Text>
+				<Id>1739803854149</Id>
+				<Name><![CDATA[t_energieVraag7]]></Name>
+				<X>0</X>
+				<Y>-110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Trafo belasting en capaciteit]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>18</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1739803854151</Id>
+				<Name><![CDATA[t_weekProfileTrafo_ylabel2]]></Name>
+				<X>-215</X>
+				<Y>-35</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>90.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Vermogen [kW]]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1739803870474</Id>
+		<Name><![CDATA[group_netload_day]]></Name>
+		<X>4240</X>
+		<Y>260</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>230</XCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<TimePlot>
+				<Id>1739803870477</Id>
+				<Name><![CDATA[plot_netload_day]]></Name>
+				<X>-230</X>
+				<Y>-110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1714982400000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>460</Width>
+				<Height>260</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>50</XOffset>
+					<YOffset>30</YOffset>
+					<Width>380</Width>
+					<Height>170</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-16777216</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>30</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
+				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+				<VerScaleFromExpression>0</VerScaleFromExpression>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<DrawLine>true</DrawLine>
+				<Interpolation>LINEAR</Interpolation>
+				<SamplesToKeep>168</SamplesToKeep>
+				<TimeWindowExpression>24</TimeWindowExpression>
+				<FillAreaUnderLine>false</FillAreaUnderLine>
+				<LabelFormat>HH_mm</LabelFormat>
+			</TimePlot>
+			<Text>
+				<Id>1739803870479</Id>
+				<Name><![CDATA[t_energieVraag8]]></Name>
+				<X>0</X>
+				<Y>-110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Netto Belasting]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>18</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1739803870481</Id>
+				<Name><![CDATA[t_weekProfileTrafo_ylabel3]]></Name>
+				<X>-215</X>
+				<Y>-35</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>90.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Vermogen [kW]]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1739805426147</Id>
+		<Name><![CDATA[group_year]]></Name>
+		<X>750</X>
+		<Y>400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>230</XCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<TimeStackChart>
+				<Id>1739805426150</Id>
+				<Name><![CDATA[energyDemandChartYear]]></Name>
+				<X>-230</X>
+				<Y>-250</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1641542400000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>460</Width>
+				<Height>210</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>50</XOffset>
+					<YOffset>30</YOffset>
+					<Width>380</Width>
+					<Height>120</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-16777216</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>30</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
+				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+				<TimeWindowExpression>8760</TimeWindowExpression>
+				<SamplesToKeep>365</SamplesToKeep>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<LabelFormat>MMM</LabelFormat>
+			</TimeStackChart>
+			<TimeStackChart>
+				<Id>1739805426153</Id>
+				<Name><![CDATA[energySupplyChartYear]]></Name>
+				<X>-230</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>false</AutoUpdate>
+				<OccurrenceAtTime>true</OccurrenceAtTime>
+				<OccurrenceDate>1641542400000</OccurrenceDate>
+				<OccurrenceTime Class="CodeUnitValue">
+					<Code><![CDATA[0]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</OccurrenceTime>
+				<RecurrenceCode Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="TimeUnits">HOUR</Unit>
+				</RecurrenceCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>460</Width>
+				<Height>210</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>50</XOffset>
+					<YOffset>30</YOffset>
+					<Width>380</Width>
+					<Height>120</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-16777216</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>30</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
+				<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+				<TimeWindowExpression>8760</TimeWindowExpression>
+				<SamplesToKeep>365</SamplesToKeep>
+				<VerScaleToExpression>1</VerScaleToExpression>
+				<VerScaleType>AUTO</VerScaleType>
+				<LabelFormat>MM</LabelFormat>
+			</TimeStackChart>
+			<Text>
+				<Id>1739805426155</Id>
+				<Name><![CDATA[t_energieAanbod3]]></Name>
+				<X>0</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Productie]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>18</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1739805426157</Id>
+				<Name><![CDATA[t_energieVraag9]]></Name>
+				<X>0</X>
+				<Y>-250</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Consumptie]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>18</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1739805426159</Id>
+				<Name><![CDATA[t_weekProfile_ylabel4]]></Name>
+				<X>-215</X>
+				<Y>-200</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>90.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Vermogen [kW]]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Text>
+				<Id>1739805426161</Id>
+				<Name><![CDATA[t_weekProfile_ylabel5]]></Name>
+				<X>-215</X>
+				<Y>80</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>

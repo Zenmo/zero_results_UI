@@ -788,7 +788,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1708448128397</Id>
-		<Name><![CDATA[v_collective]]></Name>
+		<Name><![CDATA[v_energyCoop]]></Name>
 		<X>540</X>
 		<Y>190</Y>
 		<Label>
@@ -1113,7 +1113,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1732100762586</Id>
-		<Name><![CDATA[v_selectedRadioButton]]></Name>
+		<Name><![CDATA[v_selectedRadioButtonSetup]]></Name>
 		<X>1570</X>
 		<Y>210</Y>
 		<Label>
@@ -1430,6 +1430,28 @@
 			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[red]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1740042760714</Id>
+		<Name><![CDATA[v_selectedRadioButton]]></Name>
+		<X>1570</X>
+		<Y>230</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[ShapeRadioButtonGroup]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[rb_DEFAULT]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
