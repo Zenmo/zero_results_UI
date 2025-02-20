@@ -437,7 +437,7 @@
 	</EmbeddedObject>
 	<EmbeddedObject>
 		<Id>1730395817716</Id>
-		<Name><![CDATA[chartSummary]]></Name>
+		<Name><![CDATA[chartGespreksleidraadBedrijven]]></Name>
 		<X>820</X>
 		<Y>160</Y>
 		<Label>
@@ -450,12 +450,12 @@
 		<PresentationId>1730395820027</PresentationId>
 		<ActiveObjectClass>
 			<PackageName>digital_twin_results</PackageName>
-			<ClassName>ChartSummary</ClassName>
+			<ClassName>ChartGespreksleidraadBedrijven</ClassName>
 		</ActiveObjectClass>
 		<GenericParameterSubstitute>
 			<GenericParameterSubstituteReference>
 				<PackageName>digital_twin_results</PackageName>
-				<ClassName>ChartSummary</ClassName>
+				<ClassName>ChartGespreksleidraadBedrijven</ClassName>
 				<ItemName>1730395813818</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>

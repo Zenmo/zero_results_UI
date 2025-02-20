@@ -33,7 +33,7 @@ switch (v_selectedChartType) {
 		break;
 	case GESPREKSLEIDRAAD_SAMENVATTING:
 		gr_chartSummary_presentation.setVisible(true);
-		chartSummary.f_setSummaryCharts();
+		chartGespreksleidraadBedrijven.f_setSummaryCharts();
 		break;
 	case GESPREKSLEIDRAAD:
 		gr_chartGespreksLeidraad_presentation.setVisible(true);
@@ -143,7 +143,7 @@ chartProfielen.f_setCharts();
 chartBalans.f_setCharts();
 chartNetbelasting.f_setBelastingPlots();
 chartSankey.f_setSankey();
-chartSummary.f_setSummaryCharts();
+chartGespreksleidraadBedrijven.f_setSummaryCharts();
 
 if(b_showKPISummary){
 	chartKPISummary.f_setKPISummaryChart();
@@ -159,7 +159,7 @@ chartNetbelasting.f_styleBackground(backgroundColor, lineColor, lineWidth, lineS
 chartSankey.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartKPISummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGespreksLeidraad.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
-chartSummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartGespreksleidraadBedrijven.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartBatteries.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 
 
@@ -290,11 +290,11 @@ double f_setSelectedRadioButton()
 {/*ALCODESTART::1732015499114*/
 rb_DEFAULT.setVisible(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAAD.setVisible(false);
-rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setVisible(false);
+rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.setVisible(false);
 rb_DEFAULT_AND_BATTERY.setVisible(false);
 rb_DEFAULT.setEnabled(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAAD.setEnabled(false);
-rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.setEnabled(false);
+rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.setEnabled(false);
 rb_DEFAULT_AND_BATTERY.setEnabled(false);
 
 switch(v_selectedRadioButtonSetup){
@@ -305,8 +305,8 @@ case DEFAULT:
 case DEFAULT_AND_GESPREKSLEIDRAAD:
 	v_selectedRadioButton = rb_DEFAULT_AND_GESPREKSLEIDRAAD;
 	break;
-case DEFAULT_AND_GESPREKSLEIDRAADSUMMARY:
-	v_selectedRadioButton = rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY;
+case DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN:
+	v_selectedRadioButton = rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN;
 	break;
 case DEFAULT_AND_BATTERY:	
 	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY;
@@ -867,7 +867,6 @@ area.v_dataElectricitySupplyYear_MWh = EC.data_annualElectricitySupply_MWh;*/
 area.v_dataNetLoadYear_kW = EC.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getTimeSeries();
 
 //Datasets for netloaddurationcurves
-//EC.f_duurkrommes();
 area.v_dataNetbelastingDuurkrommeYear_kW = EC.f_getDuurkromme();
 /*area.v_dataNetbelastingDuurkrommeSummer_kW = EC.data_summerWeekBusinessParkNetbelastingDuurkromme_kW;
 area.v_dataNetbelastingDuurkrommeWinter_kW = EC.data_winterWeekBusinessParkNetbelastingDuurkromme_kW;
@@ -2298,6 +2297,190 @@ v_selectedRadioButton.setEnabled(active);
 chartProfielen.radio_period.setEnabled(active);
 chartNetbelasting.radio.setEnabled(active);
 chartBalans.radio_period.setEnabled(active);
+
+/*ALCODEEND*/}
+
+double f_updateUIresultsEnergyCoop_GOED(AreaCollection area,EnergyCoop EC)
+{/*ALCODESTART::1740056800747*/
+//Number of connected gcs
+area.v_numberOfGridconnections = EC.c_customerGridConnections.size() + EC.c_memberGridConnections.size();
+
+//Set active energyCarriers
+area.v_activeProductionEnergyCarriers = energyModel.v_activeProductionEnergyCarriers;
+area.v_activeConsumptionEnergyCarriers = energyModel.v_activeConsumptionEnergyCarriers;
+
+
+//Previous totals
+area.v_previousTotals.setPreviousTotalImports_MWh(area.fm_totalImports_MWh);
+area.v_previousTotals.setPreviousTotalExports_MWh(area.fm_totalExports_MWh);
+area.v_previousTotals.setPreviousTotalConsumedEnergy_MWh(area.v_totalEnergyConsumed_MWh);
+area.v_previousTotals.setPreviousTotalProducedEnergy_MWh(area.v_totalEnergyProduced_MWh);
+area.v_previousTotals.setPreviousSelfConsumedEnergy_MWh(area.v_totalEnergySelfConsumed_MWh);
+area.v_previousTotals.setPreviousImportedEnergy_MWh(area.v_totalEnergyImport_MWh);
+area.v_previousTotals.setPreviousExportedEnergy_MWh(area.v_totalEnergyExport_MWh);
+area.v_previousTotals.setPreviousSelfConsumedElectricity_MWh(area.v_totalElectricitySelfConsumed_MWh);
+area.v_previousTotals.setPreviousElectricityConsumed_MWh(area.v_totalElectricityConsumed_MWh);
+area.v_previousTotals.setPreviousTotalTimeOverloadedTransformers_hr(area.v_totalTimeOverloaded_h);
+
+//Grid capacity
+area.v_gridCapacityDelivery_kW = EC.p_contractedDeliveryCapacity_kW;
+area.v_gridCapacityFeedIn_kW = EC.p_contractedFeedinCapacity_kW;
+
+area.v_gridCapacityDelivery_groupcontract_kW = EC.f_getGroupContractDeliveryCapacity_kW();
+area.v_gridCapacityFeedin_groupcontract_kW = EC.f_getGroupContractFeedinCapacity_kW();
+
+area.b_isRealDeliveryCapacityAvailable = EC.b_isRealDeliveryCapacityAvailable;
+area.b_isRealFeedinCapacityAvailable = EC.b_isRealFeedinCapacityAvailable;
+
+//Installed Asset variables
+area.v_batteryStorageCapacityInstalled_MWh += EC.v_totalInstalledBatteryStorageCapacity_MWh;
+
+
+// KPIs for 'samenvatting' 
+area.v_individualSelfconsumptionElectricity_fr = sum(gcList, x -> x.v_totalElectricityProduced_MWh) > 0 ? sum(gcList, x -> x.v_totalElectricitySelfConsumed_MWh) / sum(gcList, x -> x.v_totalElectricityProduced_MWh) : 0.0;
+area.v_individualSelfSufficiencyElectricity_fr = sum(gcList, x -> x.v_totalElectricityConsumed_MWh) > 0 ? sum(gcList, x -> x.v_totalElectricitySelfConsumed_MWh) / sum(gcList, x -> x.v_totalElectricityConsumed_MWh): 0.0;
+
+area.v_individualSelfconsumptionEnergy_fr = sum(gcList, x -> x.v_totalEnergyProduced_MWh) > 0 ? sum(gcList, x -> x.v_totalEnergySelfConsumed_MWh) / sum(gcList, x -> x.v_totalEnergyProduced_MWh) : 0.0;
+area.v_individualSelfSufficiencyEnergy_fr = sum(gcList, x -> x.v_totalEnergyProduced_MWh) > 0 ? sum(gcList, x -> x.v_totalEnergySelfConsumed_MWh) / sum(gcList, x -> x.v_totalEnergyConsumed_MWh): 0.0;
+
+
+
+//Yearly
+area.fm_totalImports_MWh.clear();
+area.fm_totalExports_MWh.clear();
+for (OL_EnergyCarriers energyCarrier : activeProductionEnergyCarriers) {
+	area.fm_totalExports_MWh.put( energyCarrier, EC.fm_totalExports_MWh.get(energyCarrier) );
+}
+for (OL_EnergyCarriers energyCarrier : activeConsumptionEnergyCarriers) {
+	area.fm_totalImports_MWh.put( energyCarrier, EC.fm_totalImports_MWh.get(energyCarrier) );
+}
+
+area.v_totalEnergyImport_MWh = EC.v_totalEnergyImport_MWh)=;
+area.v_totalEnergyExport_MWh = EC.v_totalEnergyExport_MWh;
+
+area.v_totalEnergyProduced_MWh = EC.v_totalEnergyProduced_MWh;
+area.v_totalEnergyConsumed_MWh = EC.v_totalEnergyConsumed_MWh;
+area.v_totalEnergySelfConsumed_MWh = EC.v_totalEnergySelfConsumed_MWh;
+
+area.v_totalElectricityProduced_MWh = EC.v_totalElectricityProduced_MWh;
+area.v_totalElectricityConsumed_MWh = EC.v_totalElectricityConsumed_MWh;
+area.v_totalElectricitySelfConsumed_MWh = EC.v_totalElectricitySelfConsumed_MWh;
+
+//Overload duration (for multiple GC this does not really make sense right?, would be more interesting to see the influence of their combined contract capacity)
+area.v_annualOverloadDurationDelivery_hr = EC.v_totalOverloadDurationDelivery_hr);
+area.v_annualOverloadDurationFeedin_hr = EC.v_totalOverloadDurationFeedin_hr);
+
+
+// Summer/winter
+area.fm_summerWeekImports_MWh.clear();
+area.fm_summerWeekExports_MWh.clear();
+area.fm_winterWeekImports_MWh.clear();
+area.fm_winterWeekExports_MWh.clear();
+for (OL_EnergyCarriers energyCarrier : activeProductionEnergyCarriers) {
+	area.fm_summerWeekExports_MWh.put( energyCarrier, EC.fm_summerWeekExports_MWh.get(energyCarrier) );
+	area.fm_winterWeekExports_MWh.put( energyCarrier, EC.fm_winterWeekExports_MWh.get(energyCarrier) );
+}
+for (OL_EnergyCarriers energyCarrier : activeConsumptionEnergyCarriers) {
+	area.fm_summerWeekImports_MWh.put( energyCarrier, EC.fm_summerWeekImports_MWh.get(energyCarrier) );
+	area.fm_winterWeekImports_MWh.put( energyCarrier, EC.fm_winterWeekImports_MWh.get(energyCarrier) );
+}
+
+area.v_summerWeekEnergyImport_MWh = EC.v_summerWeekEnergyImport_MWh;
+area.v_summerWeekEnergyExport_MWh = EC.v_summerWeekEnergyExport_MWh;
+
+area.v_summerWeekEnergyProduced_MWh = EC.v_summerWeekEnergyProduced_MWh;
+area.v_summerWeekEnergyConsumed_MWh = EC.v_summerWeekEnergyConsumed_MWh;
+area.v_summerWeekEnergySelfConsumed_MWh = EC.v_summerWeekEnergySelfConsumed_MWh);
+
+area.v_summerWeekElectricityProduced_MWh = EC.v_summerWeekElectricityProduced_MWh;
+area.v_summerWeekElectricityConsumed_MWh = EC.v_summerWeekElectricityConsumed_MWh;
+area.v_summerWeekElectricitySelfConsumed_MWh = EC.v_summerWeekElectricitySelfConsumed_MWh;
+
+area.v_winterWeekEnergyImport_MWh = EC.v_winterWeekEnergyImport_MWh;
+area.v_winterWeekEnergyExport_MWh = EC.v_winterWeekEnergyExport_MWh;
+
+area.v_winterWeekEnergyProduced_MWh = EC.v_winterWeekEnergyProduced_MWh;
+area.v_winterWeekEnergyConsumed_MWh = EC.v_winterWeekEnergyConsumed_MWh;
+area.v_winterWeekEnergySelfConsumed_MWh = EC.v_winterWeekEnergySelfConsumed_MWh;
+
+area.v_winterWeekElectricityProduced_MWh = EC.v_winterWeekElectricityProduced_MWh;
+area.v_winterWeekElectricityConsumed_MWh = EC.v_winterWeekElectricityConsumed_MWh;
+area.v_winterWeekElectricitySelfConsumed_MWh = EC.v_winterWeekElectricitySelfConsumed_MWh;
+
+// Day/night
+area.fm_daytimeImports_MWh.clear();
+area.fm_daytimeExports_MWh.clear();
+area.fm_nighttimeImports_MWh.clear();
+area.fm_nighttimeExports_MWh.clear();
+for (OL_EnergyCarriers EC : activeProductionEnergyCarriers) {
+	area.fm_daytimeExports_MWh.put( EC, sum(gcList, x -> x.fm_daytimeExports_MWh.get(EC)) );
+	area.fm_nighttimeExports_MWh.put( EC, sum(gcList, x -> x.fm_nighttimeExports_MWh.get(EC)) );
+}
+for (OL_EnergyCarriers EC : activeConsumptionEnergyCarriers) {
+	area.fm_daytimeImports_MWh.put( EC, sum(gcList, x -> x.fm_daytimeImports_MWh.get(EC)) );
+	area.fm_nighttimeImports_MWh.put( EC, sum(gcList, x -> x.fm_nighttimeImports_MWh.get(EC)) );
+}
+
+area.v_daytimeEnergyImport_MWh = sum(gcList, x -> x.v_daytimeEnergyImport_MWh);
+area.v_daytimeEnergyExport_MWh = sum(gcList, x -> x.v_daytimeEnergyExport_MWh);
+
+area.v_daytimeEnergyProduced_MWh = sum(gcList, x -> x.v_daytimeEnergyProduced_MWh);
+area.v_daytimeEnergyConsumed_MWh = sum(gcList, x -> x.v_daytimeEnergyConsumed_MWh);
+area.v_daytimeEnergySelfConsumed_MWh = sum(gcList, x -> x.v_daytimeEnergySelfConsumed_MWh);
+
+area.v_daytimeElectricityProduced_MWh = sum(gcList, x -> x.v_daytimeElectricityProduced_MWh);
+area.v_daytimeElectricityConsumed_MWh = sum(gcList, x -> x.v_daytimeElectricityConsumed_MWh);
+area.v_daytimeElectricitySelfConsumed_MWh = sum(gcList, x -> x.v_daytimeElectricitySelfConsumed_MWh);
+
+
+area.v_nighttimeEnergyImport_MWh = sum(gcList, x -> x.v_nighttimeEnergyImport_MWh);
+area.v_nighttimeEnergyExport_MWh = sum(gcList, x -> x.v_nighttimeEnergyExport_MWh);
+
+area.v_nighttimeEnergyProduced_MWh = sum(gcList, x -> x.v_nighttimeEnergyProduced_MWh);
+area.v_nighttimeEnergyConsumed_MWh = sum(gcList, x -> x.v_nighttimeEnergyConsumed_MWh);
+area.v_nighttimeEnergySelfConsumed_MWh = sum(gcList, x -> x.v_nighttimeEnergySelfConsumed_MWh);
+
+area.v_nighttimeElectricityProduced_MWh = sum(gcList, x -> x.v_nighttimeElectricityProduced_MWh);
+area.v_nighttimeElectricityConsumed_MWh = sum(gcList, x -> x.v_nighttimeElectricityConsumed_MWh);
+area.v_nighttimeElectricitySelfConsumed_MWh = sum(gcList, x -> x.v_nighttimeElectricitySelfConsumed_MWh);
+
+// Week/weekend
+area.fm_weekdayImports_MWh.clear();
+area.fm_weekdayExports_MWh.clear();
+area.fm_weekendImports_MWh.clear();
+area.fm_weekendExports_MWh.clear();
+for (OL_EnergyCarriers EC : activeProductionEnergyCarriers) {
+	area.fm_weekdayExports_MWh.put( EC, sum(gcList, x -> x.fm_weekdayExports_MWh.get(EC)) );
+	area.fm_weekendExports_MWh.put( EC, sum(gcList, x -> x.fm_weekendExports_MWh.get(EC)) );
+}
+for (OL_EnergyCarriers EC : activeConsumptionEnergyCarriers) {
+	area.fm_weekdayImports_MWh.put( EC, sum(gcList, x -> x.fm_weekdayImports_MWh.get(EC)) );
+	area.fm_weekendImports_MWh.put( EC, sum(gcList, x -> x.fm_weekendImports_MWh.get(EC)) );
+}
+
+
+area.v_weekdayEnergyImport_MWh = sum(gcList, x -> x.v_weekdayEnergyImport_MWh);
+area.v_weekdayEnergyExport_MWh = sum(gcList, x -> x.v_weekdayEnergyExport_MWh);
+
+area.v_weekdayEnergyProduced_MWh = sum(gcList, x -> x.v_weekdayEnergyProduced_MWh);
+area.v_weekdayEnergyConsumed_MWh = sum(gcList, x -> x.v_weekdayEnergyConsumed_MWh);
+area.v_weekdayEnergySelfConsumed_MWh = sum(gcList, x -> x.v_weekdayEnergySelfConsumed_MWh);
+
+area.v_weekdayElectricityProduced_MWh = sum(gcList, x -> x.v_weekdayElectricityProduced_MWh);
+area.v_weekdayElectricityConsumed_MWh = sum(gcList, x -> x.v_weekdayElectricityConsumed_MWh);
+area.v_weekdayElectricitySelfConsumed_MWh = sum(gcList, x -> x.v_weekdayElectricitySelfConsumed_MWh);
+
+
+area.v_weekendEnergyImport_MWh = sum(gcList, x -> x.v_weekendEnergyImport_MWh);
+area.v_weekendEnergyExport_MWh = sum(gcList, x -> x.v_weekendEnergyExport_MWh);
+
+area.v_weekendEnergyProduced_MWh = sum(gcList, x -> x.v_weekendEnergyProduced_MWh);
+area.v_weekendEnergyConsumed_MWh = sum(gcList, x -> x.v_weekendEnergyConsumed_MWh);
+area.v_weekendEnergySelfConsumed_MWh = sum(gcList, x -> x.v_weekendEnergySelfConsumed_MWh);
+
+area.v_weekendElectricityProduced_MWh = sum(gcList, x -> x.v_weekendElectricityProduced_MWh);
+area.v_weekendElectricityConsumed_MWh = sum(gcList, x -> x.v_weekendElectricityConsumed_MWh);
+area.v_weekendElectricitySelfConsumed_MWh = sum(gcList, x -> x.v_weekendElectricitySelfConsumed_MWh);
 
 /*ALCODEEND*/}
 

@@ -1180,7 +1180,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391442</Id>
 		<Name><![CDATA[b_EHubConfiguration]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>710</Y>
 		<Label>
 			<X>10</X>
@@ -1202,7 +1202,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391446</Id>
 		<Name><![CDATA[v_groupATODeliveryCapacity_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>730</Y>
 		<Label>
 			<X>10</X>
@@ -1221,7 +1221,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391449</Id>
 		<Name><![CDATA[v_groupATOFeedInCapacity_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>750</Y>
 		<Label>
 			<X>10</X>
@@ -1240,7 +1240,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391451</Id>
 		<Name><![CDATA[v_dataEHubDeliveryCapacityLiveWeek_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>770</Y>
 		<Label>
 			<X>10</X>
@@ -1259,7 +1259,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391454</Id>
 		<Name><![CDATA[v_dataEHubDeliveryCapacityYear_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>790</Y>
 		<Label>
 			<X>10</X>
@@ -1278,7 +1278,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391457</Id>
 		<Name><![CDATA[v_dataEHubDeliveryCapacitySummerWeek_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>810</Y>
 		<Label>
 			<X>10</X>
@@ -1297,7 +1297,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391459</Id>
 		<Name><![CDATA[v_dataEHubDeliveryCapacityWinterWeek_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>830</Y>
 		<Label>
 			<X>10</X>
@@ -1316,7 +1316,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391462</Id>
 		<Name><![CDATA[v_dataEHubFeedInCapacityLiveWeek_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>850</Y>
 		<Label>
 			<X>10</X>
@@ -1335,7 +1335,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391464</Id>
 		<Name><![CDATA[v_dataEHubFeedInCapacityYear_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>870</Y>
 		<Label>
 			<X>10</X>
@@ -1354,7 +1354,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391467</Id>
 		<Name><![CDATA[v_dataEHubFeedInCapacitySummerWeek_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>890</Y>
 		<Label>
 			<X>10</X>
@@ -1373,7 +1373,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391470</Id>
 		<Name><![CDATA[v_dataEHubFeedInCapacityWinterWeek_kW]]></Name>
-		<X>990</X>
+		<X>1350</X>
 		<Y>910</Y>
 		<Label>
 			<X>10</X>

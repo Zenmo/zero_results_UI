@@ -250,7 +250,7 @@ f_showCorrectChart();</ActionCode>
 					<Control Type="RadioButtons">
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Id>1732012080099</Id>
-						<Name><![CDATA[rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY]]></Name>
+						<Name><![CDATA[rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN]]></Name>
 						<X>-320</X>
 						<Y>-700</Y>
 						<Label>
@@ -268,7 +268,7 @@ f_showCorrectChart();</ActionCode>
 							<YCode>-70</YCode>
 							<Enabled>false</Enabled>
 							<ActionCode>//Set correct chart
-switch(rb_DEFAULT_AND_GESPREKSLEIDRAADSUMMARY.getValue()){
+switch(rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.getValue()){
 
 case 0:
 	v_selectedChartType = PROFIEL;
@@ -559,7 +559,7 @@ f_showCorrectChart();</ActionCode>
 		<Presentation>
 			<EmbeddedObjectPresentation>
 				<Id>1730395820027</Id>
-				<Name><![CDATA[chartSummary_presentation]]></Name>
+				<Name><![CDATA[chartGespreksleidraadBedrijven_presentation]]></Name>
 				<X>0</X>
 				<Y>0</Y>
 				<Label>

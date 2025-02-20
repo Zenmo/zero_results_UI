@@ -525,6 +525,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390439</Id>
 		<Name><![CDATA[f_updateUIresultsEnergyCoop]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1150</X>
 		<Y>249.467</Y>
 		<Label>
@@ -937,6 +938,30 @@
 		<Parameter>
 			<Name><![CDATA[active]]></Name>
 			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1740056800747</Id>
+		<Name><![CDATA[f_updateUIresultsEnergyCoop_GOED]]></Name>
+		<X>970</X>
+		<Y>670</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
