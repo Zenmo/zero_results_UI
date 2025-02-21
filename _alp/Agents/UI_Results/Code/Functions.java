@@ -1168,7 +1168,7 @@ for (int i=0; i < gcList.get(0).data_annualBaseloadElectricityDemand_kW.size(); 
 		electricityForTransportDemandYear_kW += gc.data_annualElectricVehicleDemand_kW.getY(i);
 		electricityForStorageDemandYear_kW += gc.data_annualBatteriesDemand_kW.getY(i);
 		if (gc instanceof GCEnergyConversion) {
-			electricityForElectrolyser_kW += ((GCEnergyConversion)gc).data_annualElectrolyserDemand_kW.getY(i);
+			electricityForElectrolyser_kW += ((GCEnergyConversion)gc).data_annualElectrolyserElectricityDemand_kW.getY(i);
 		}
 		electricityForCookingConsumptionYear_kW += gc.data_annualCookingElectricityDemand_kW.getY(i);
 		electricityPVSupplyYear_kW += gc.data_annualPVGeneration_kW.getY(i);
@@ -1359,7 +1359,7 @@ for (int i=0; i < gcList.get(0).data_summerWeekBaseloadElectricityDemand_kW.size
 		electricityCHPSupplySummerWeek_kW += gc.data_summerWeekCHPElectricityProduction_kW.getY(i);
 		
 		if (gc instanceof GCEnergyConversion) {
-			electricityForHydrogenDemandSummerWeek_kW += ((GCEnergyConversion)gc).data_summerWeekElectrolyserDemand_kW.getY(i);
+			electricityForHydrogenDemandSummerWeek_kW += ((GCEnergyConversion)gc).data_summerWeekElectrolyserElectricityDemand_kW.getY(i);
 		}
 		
 		electricityBaseloadDemandWinterWeek_kW += gc.data_winterWeekBaseloadElectricityDemand_kW.getY(i);
@@ -1367,7 +1367,7 @@ for (int i=0; i < gcList.get(0).data_summerWeekBaseloadElectricityDemand_kW.size
 		electricityForTransportDemandWinterWeek_kW += gc.data_winterWeekElectricVehicleDemand_kW.getY(i);
 		electricityForStorageDemandWinterWeek_kW += gc.data_winterWeekBatteriesDemand_kW.getY(i);
 		if (gc instanceof GCEnergyConversion) {
-			electricityForHydrogenDemandWinterWeek_kW += ((GCEnergyConversion)gc).data_winterWeekElectrolyserDemand_kW.getY(i);
+			electricityForHydrogenDemandWinterWeek_kW += ((GCEnergyConversion)gc).data_winterWeekElectrolyserElectricityDemand_kW.getY(i);
 		}
 		electricityForCookingConsumptionWinterWeek_kW += gc.data_winterWeekCookingElectricityDemand_kW.getY(i);
 		electricityPVSupplyWinterWeek_kW += gc.data_winterWeekPVGeneration_kW.getY(i);
@@ -2494,7 +2494,7 @@ area.v_weekdayElectricitySelfConsumed_MWh = EC.v_weekdayElectricitySelfConsumed_
 area.v_weekendEnergyImport_MWh = EC.v_weekendEnergyImport_MWh;
 area.v_weekendEnergyExport_MWh = EC.v_weekendEnergyExport_MWh;
 
-area.v_weekendEnergyProduced_MWh = EC.v_weekendEnergyProduced_MWW;
+area.v_weekendEnergyProduced_MWh = EC.v_weekendEnergyProduced_MWh;
 area.v_weekendEnergyConsumed_MWh = EC.v_weekendEnergyConsumed_MWh;
 area.v_weekendEnergySelfConsumed_MWh = EC.v_weekendEnergySelfConsumed_MWh;
 
@@ -2515,7 +2515,7 @@ area.v_dataElectricityForTransportConsumptionLiveWeek_kW = EC.data_electricVehic
 area.v_dataElectricityForStorageConsumptionLiveWeek_kW = EC.data_batteryCharging_kW;
 area.v_dataElectricityForHydrogenConsumptionLiveWeek_kW = EC.data_hydrogenElectricityDemand_kW;
 area.v_dataElectricityForCookingConsumptionLiveWeek_kW = EC.data_cookingElectricityDemand_kW;
-area.v_dataDistrictHeatConsumptionLiveWeek_kW = EC.data_districtHeatingDemand_kW;
+area.v_dataDistrictHeatConsumptionLiveWeek_kW = EC.data_districtHeatDelivery_kW;
 
 //Supply
 area.dsm_liveProduction_kW = EC.dsm_liveSupply_kW;
@@ -2527,10 +2527,10 @@ area.v_dataCHPElectricityProductionLiveWeek_kW = EC.data_CHPElectricityProductio
 
 //SOC
 area.v_dataBatterySOCLiveWeek_.reset();
-for (int i = 0; i < EC.data_batteryStoredEnergy_MWh.size(); i++) {
+for (int i = 0; i < EC.data_batteryStoredEnergyLiveWeek_MWh.size(); i++) {
     // Get the x and y values from the source dataset
-    double x = EC.data_batteryStoredEnergy_MWh.getX(i);
-    double y = EC.data_batteryStoredEnergy_MWh.getY(i);
+    double x = EC.data_batteryStoredEnergyLiveWeek_MWh.getX(i);
+    double y = EC.data_batteryStoredEnergyLiveWeek_MWh.getY(i);
     
     // Modify the y value (e.g., divide it by 2)
     double SOC = area.v_batteryStorageCapacityInstalled_MWh > 0 ? y / area.v_batteryStorageCapacityInstalled_MWh : 0;
@@ -2540,7 +2540,7 @@ for (int i = 0; i < EC.data_batteryStoredEnergy_MWh.size(); i++) {
 }
 
 //Total
-area.v_dataNetLoadLiveWeek_kW = EC.data_totalGridLoad_kW;
+area.v_dataNetLoadLiveWeek_kW = EC.data_liveElectricityBalance_kW;
 area.v_batteryStorageCapacityInstalled_MWh = EC.v_totalInstalledBatteryStorageCapacity_MWh;
 
 //Capacity
@@ -2558,8 +2558,8 @@ area.v_dataElectricityBaseloadConsumptionSummerWeek_kW = EC.data_summerWeekBasel
 area.v_dataElectricityForHeatConsumptionSummerWeek_kW = EC.data_summerWeekHeatPumpElectricityDemand_kW;
 area.v_dataElectricityForTransportConsumptionSummerWeek_kW = EC.data_summerWeekElectricVehicleDemand_kW;
 area.v_dataElectricityForStorageConsumptionSummerWeek_kW = EC.data_summerWeekBatteriesDemand_kW;
-area.v_dataElectricityForHydrogenConsumptionSummerWeek_kW = EC.data_summerWeekElectrolyserDemand_kW;
 area.v_dataElectricityForCookingConsumptionSummerWeek_kW = EC.data_summerWeekCookingElectricityDemand_kW;
+area.v_dataElectricityForHydrogenConsumptionSummerWeek_kW = EC.data_summerWeekElectrolyserElectricityDemand_kW;
 area.v_dataDistrictHeatConsumptionSummerWeek_kW = EC.data_summerWeekDistrictHeatingDemand_kW;
 
 //Supply
@@ -2578,7 +2578,7 @@ area.v_dataElectricityFeedInCapacitySummerWeek_kW.add(energyModel.p_startHourSum
 area.v_dataElectricityFeedInCapacitySummerWeek_kW.add(energyModel.p_startHourSummerWeek + 7*24, -EC.p_contractedFeedinCapacity_kW);
 
 //SOC (summerweek)
-EC.v_dataBatterySOCSummerWeek_.reset();
+area.v_dataBatterySOCSummerWeek_.reset();
 for (int i = 0; i < EC.data_summerWeekBatteryStoredEnergy_MWh.size(); i++) {
     // Get the x and y values from the source dataset
     double x = EC.data_summerWeekBatteryStoredEnergy_MWh.getX(i);
@@ -2599,6 +2599,7 @@ area.v_dataElectricityForHeatConsumptionWinterWeek_kW = EC.data_winterWeekHeatPu
 area.v_dataElectricityForTransportConsumptionWinterWeek_kW = EC.data_winterWeekElectricVehicleDemand_kW;
 area.v_dataElectricityForStorageConsumptionWinterWeek_kW = EC.data_winterWeekBatteriesDemand_kW;
 area.v_dataElectricityForCookingConsumptionWinterWeek_kW = EC.data_winterWeekCookingElectricityDemand_kW;
+area.v_dataElectricityForHydrogenConsumptionSummerWeek_kW = EC.data_summerWeekElectrolyserElectricityDemand_kW;
 area.v_dataDistrictHeatConsumptionWinterWeek_kW = EC.data_winterWeekDistrictHeatingDemand_kW;
 
 //Supply
@@ -2641,7 +2642,7 @@ area.v_dataElectricityBaseloadConsumptionYear_kW = EC.data_annualBaseloadElectri
 area.v_dataElectricityForHeatConsumptionYear_kW = EC.data_annualHeatPumpElectricityDemand_kW;
 area.v_dataElectricityForTransportConsumptionYear_kW = EC.data_annualElectricVehicleDemand_kW;
 area.v_dataElectricityForStorageConsumptionYear_kW = EC.data_annualBatteriesDemand_kW;
-area.v_dataElectricityForHydrogenConsumptionYear_kW = EC.data_annualElectrolyserDemand_kW;
+area.v_dataElectricityForHydrogenConsumptionYear_kW = EC.data_annualElectrolyserElectricityDemand_kW;
 area.v_dataElectricityForCookingConsumptionYear_kW = EC.data_annualCookingElectricityDemand_kW;
 area.v_dataDistrictHeatConsumptionYear_kW = EC.data_annualDistrictHeatingDemand_kW;
 
@@ -2650,8 +2651,7 @@ area.v_dataElectricityWindProductionYear_kW = EC.data_annualWindGeneration_kW;
 area.v_dataElectricityPVProductionYear_kW = EC.data_annualPVGeneration_kW;
 area.v_dataElectricityStorageProductionYear_kW = EC.data_annualBatteriesSupply_kW;
 area.v_dataElectricityV2GProductionYear_kW = EC.data_annualV2GSupply_kW;
-area.v_dataElectricityCHPProductionYear_kW = EC.data_annualCHPElectricityProduction_kW;
-
+area.v_dataElectricityCHPProductionYear_kW = EC.data_annualCHPElectricitySupply_kW;
 //SOC (Year)
 area.v_dataBatterySOCYear_.reset();
 for (int i = 0; i < EC.data_annualBatteryStoredEnergy_MWh.size(); i++) {
