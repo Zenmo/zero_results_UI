@@ -9970,7 +9970,13 @@ group_netload_week.setVisible(false);
 group_netload_year.setVisible(false);
 plot_trafo_week.removeAll();
 plot_trafo_year.removeAll();
-plot_netload_week.removeAll();
+
+try {
+	plot_netload_week.removeAll();
+}
+catch (IndexOutOfBoundsException e){
+	
+}
 plot_netload_year.removeAll();
 energyDemandChartYear.removeAll();
 energySupplyChartYear.removeAll();
@@ -10079,7 +10085,13 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 				f_addElectricityFlowsTrafo_Live(dataObject);
 			}
 			else {
-				f_addElectricityNetLoad_Live(dataObject);
+				try {
+					f_addElectricityNetLoad_Live(dataObject);
+				}
+				catch (NullPointerException e) {
+					traceln ("Error: Netload chart not available, charts reset to electricity");
+					radio_energyType.setValue(0, true);
+				}
 			}
 			break;
 		
@@ -10165,7 +10177,8 @@ else { // Stack Chart
 		default:
 			break;
 	}
-}]]></Body>
+}
+]]></Body>
 				</Function>
 				<Function AccessType="private" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
