@@ -1049,7 +1049,7 @@
 		<Id>1727706137865</Id>
 		<Name><![CDATA[b_showKPISummary]]></Name>
 		<X>1600</X>
-		<Y>450</Y>
+		<Y>470</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1115,7 +1115,7 @@
 		<Id>1732100762586</Id>
 		<Name><![CDATA[v_selectedRadioButtonSetup]]></Name>
 		<X>1570</X>
-		<Y>210</Y>
+		<Y>230</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1437,7 +1437,7 @@
 		<Id>1740042760714</Id>
 		<Name><![CDATA[v_selectedRadioButton]]></Name>
 		<X>1570</X>
-		<Y>230</Y>
+		<Y>250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
