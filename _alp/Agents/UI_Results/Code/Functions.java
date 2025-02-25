@@ -2488,3 +2488,16 @@ f_updateUIresultsMainArea();
 
 /*ALCODEEND*/}
 
+double f_addTimeStepLiveDataSetsEnergyCoop(AreaCollection area,EnergyCoop EC)
+{/*ALCODESTART::1740501467386*/
+//Update SOC live plot
+double batteryStoredEnergyLiveWeek_MWh = 0;
+int i = max(0, EC.data_batteryStoredEnergyLiveWeek_MWh.size() - 1);
+batteryStoredEnergyLiveWeek_MWh = 	EC.data_batteryStoredEnergyLiveWeek_MWh.getY(i);	
+double timeAxisValue = EC.data_batteryStoredEnergyLiveWeek_MWh.getX(i);
+double SOC = area.v_batteryStorageCapacityInstalled_MWh > 0 ? batteryStoredEnergyLiveWeek_MWh / area.v_batteryStorageCapacityInstalled_MWh : 0;
+area.v_dataBatterySOCLiveWeek_.add(timeAxisValue, SOC); 
+
+
+/*ALCODEEND*/}
+
