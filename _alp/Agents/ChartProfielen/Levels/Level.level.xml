@@ -1622,4 +1622,32 @@
 			</Text>
 		</Presentation>
 	</Group>
+	<Control Type="CheckBox">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1740570919804</Id>
+		<Name><![CDATA[cb_subdivideEnergyCoopFlows]]></Name>
+		<X>20</X>
+		<Y>110</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="220" Height="30">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor/>
+			<VisibleCode>uI_Results.v_selectedObjectType == OL_GISObjectType.COOP</VisibleCode>
+			<Enabled>true</Enabled>
+			<EnableExpression>uI_Results.v_selectedObjectType == OL_GISObjectType.COOP</EnableExpression>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<LabelText>Toon onderscheid tussen aansluitingen</LabelText>
+			<LinkTo>true</LinkTo>
+			<Link>b_subdivideEnergyCoopFlows</Link>
+		</ExtendedProperties>
+	</Control>
 </Presentation>

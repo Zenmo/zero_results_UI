@@ -2403,9 +2403,9 @@ area.v_dataElectricityCHPProductionWinterWeek_kW = EC.data_winterWeekCHPElectric
 
 //Netload
 area.v_dataNetLoadWinterWeek_kW = EC.data_winterWeekNetLoad_kW;
-area.v_dataElectricityDeliveryCapacityWinterWeek_kW.add(energyModel.p_startHourWinterWeek, EC.p_contractedDeliveryCapacity_kW);
+area.v_dataElectricityDeliveryCapacitySummerWeek_kW.add(energyModel.p_startHourSummerWeek, EC.p_contractedDeliveryCapacity_kW);
 area.v_dataElectricityDeliveryCapacityWinterWeek_kW.add(energyModel.p_startHourWinterWeek + 7*24, EC.p_contractedDeliveryCapacity_kW);
-area.v_dataElectricityFeedInCapacityWinterWeek_kW.add(energyModel.p_startHourWinterWeek, -EC.p_contractedFeedinCapacity_kW);
+area.v_dataElectricityFeedInCapacitySummerWeek_kW.add(energyModel.p_startHourSummerWeek, -EC.p_contractedFeedinCapacity_kW);
 area.v_dataElectricityFeedInCapacityWinterWeek_kW.add(energyModel.p_startHourWinterWeek + 7*24, -EC.p_contractedFeedinCapacity_kW);
 
 //SOC (Winterweek)

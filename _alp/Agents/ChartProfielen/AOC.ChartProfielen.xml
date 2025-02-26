@@ -99,6 +99,7 @@ import java.util.EnumSet;]]></Import>
 	</ScaleRuler>
 	<CurrentLevel>1714743515623</CurrentLevel>
 	<ConnectionsId>1714743515617</ConnectionsId>
+	<Variables xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
