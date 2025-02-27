@@ -413,6 +413,7 @@ chartProfielen.f_setCharts();
 double f_updateUIresultsMainArea()
 {/*ALCODESTART::1739364390437*/
 AreaCollection area = v_area;
+area.v_engineAgent = energyModel;
 
 //Set active energyCarriers
 area.v_activeProductionEnergyCarriers = energyModel.v_activeProductionEnergyCarriers;
@@ -786,6 +787,8 @@ if(v_selectedRadioButtonSetup == OL_RadioButtonSetup.DEFAULT_AND_GESPREKSLEIDRAA
 
 double f_updateUIresultsGridNode(AreaCollection area,GridNode GN)
 {/*ALCODESTART::1739364390441*/
+area.v_engineAgent = GN;
+
 // Can't use pointer for (immutable) primitives in Java, so need to manually update results after a year-sim!!
 area.v_gridCapacityDelivery_kW = GN.p_capacity_kW;
 area.v_gridCapacityFeedIn_kW = GN.p_capacity_kW;

@@ -657,7 +657,7 @@ if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows
 	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
 	for (GridConnection GC : memberGridConnections) {
 		//Fix after AM has a getDataset() method
-		//plot_netload_week.addDataSet(GC.data_summerWeekNetLoad_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(GC.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startHourSummerWeek), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 	}
 }
 
