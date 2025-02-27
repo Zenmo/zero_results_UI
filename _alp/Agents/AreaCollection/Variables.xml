@@ -1413,7 +1413,7 @@
 		<Id>1716209327834</Id>
 		<Name><![CDATA[v_annualExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>530</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1432,7 +1432,7 @@
 		<Id>1716209440800</Id>
 		<Name><![CDATA[v_annualExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>550</Y>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1451,7 +1451,7 @@
 		<Id>1716209465640</Id>
 		<Name><![CDATA[v_summerWeekExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>570</Y>
+		<Y>540</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1470,7 +1470,7 @@
 		<Id>1716209471102</Id>
 		<Name><![CDATA[v_summerWeekExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>590</Y>
+		<Y>560</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1489,7 +1489,7 @@
 		<Id>1716209489154</Id>
 		<Name><![CDATA[v_daytimeExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>650</Y>
+		<Y>620</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1508,7 +1508,7 @@
 		<Id>1716209494608</Id>
 		<Name><![CDATA[v_winterWeekExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>630</Y>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1527,7 +1527,7 @@
 		<Id>1716209496675</Id>
 		<Name><![CDATA[v_winterWeekExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>610</Y>
+		<Y>580</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1546,7 +1546,7 @@
 		<Id>1716209516398</Id>
 		<Name><![CDATA[v_daytimeExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>670</Y>
+		<Y>640</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1565,7 +1565,7 @@
 		<Id>1716209529457</Id>
 		<Name><![CDATA[v_nighttimeExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>710</Y>
+		<Y>680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1584,7 +1584,7 @@
 		<Id>1716209533730</Id>
 		<Name><![CDATA[v_nighttimeExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>690</Y>
+		<Y>660</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1603,7 +1603,7 @@
 		<Id>1716209592672</Id>
 		<Name><![CDATA[v_weekdayExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>730</Y>
+		<Y>700</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1622,7 +1622,7 @@
 		<Id>1716209592674</Id>
 		<Name><![CDATA[v_weekdayExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>750</Y>
+		<Y>720</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1641,7 +1641,7 @@
 		<Id>1716209592676</Id>
 		<Name><![CDATA[v_weekendExcessExport_MWh]]></Name>
 		<X>1070</X>
-		<Y>790</Y>
+		<Y>760</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1660,7 +1660,7 @@
 		<Id>1716209592678</Id>
 		<Name><![CDATA[v_weekendExcessImport_MWh]]></Name>
 		<X>1070</X>
-		<Y>770</Y>
+		<Y>740</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3393,6 +3393,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[DataSet]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new DataSet(672)]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -3412,6 +3415,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[DataSet]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new DataSet(672)]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -3431,6 +3437,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[DataSet]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new DataSet(672)]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -3450,6 +3459,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[DataSet]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new DataSet(672)]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -3929,6 +3941,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[DataSet]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new DataSet(672)]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -3948,6 +3963,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[DataSet]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new DataSet(roundToInt((uI_Results.energyModel.p_runEndTime_h - uI_Results.energyModel.p_runStartTime_h)/24))]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -3967,6 +3985,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[DataSet]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new DataSet(672)]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -3986,6 +4007,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[DataSet]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new DataSet(672)]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">

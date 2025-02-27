@@ -1246,7 +1246,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>480</Width>
-		<Height>130</Height>
+		<Height>110</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>

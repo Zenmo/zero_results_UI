@@ -546,12 +546,12 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 }
 
 group_trafo_week.setVisible(true);
-plot_trafo_week.addDataSet(dataObject.data_gridCapacityDeliverySummerWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(dataObject.data_gridCapacityFeedInSummerWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
-int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMax(), dataObject.data_gridCapacityDeliverySummerWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMin(), dataObject.data_gridCapacityFeedInSummerWeek_kW.getYMin()));
+int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW.getYMax()));
+int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW.getYMin()));
 plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
 
 /*ALCODEEND*/}
@@ -573,12 +573,12 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 }
 
 group_trafo_week.setVisible(true);
-plot_trafo_week.addDataSet(dataObject.data_gridCapacityDeliveryWinterWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(dataObject.data_gridCapacityFeedInWinterWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
-int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW.getYMax(), dataObject.data_gridCapacityDeliveryWinterWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW.getYMin(), dataObject.data_gridCapacityFeedInWinterWeek_kW.getYMin()));
+int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW.getYMax()));
+int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW.getYMin()));
 plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
 
 /*ALCODEEND*/}
