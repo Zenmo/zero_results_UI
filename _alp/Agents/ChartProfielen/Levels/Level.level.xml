@@ -1639,9 +1639,10 @@
 		<BasicProperties Width="220" Height="30">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor/>
-			<VisibleCode>uI_Results.v_selectedObjectType == OL_GISObjectType.COOP</VisibleCode>
+			<VisibleCode>uI_Results.v_selectedObjectType == OL_GISObjectType.COOP &amp;&amp; radio_energyType.getValue() != 1</VisibleCode>
 			<Enabled>true</Enabled>
-			<EnableExpression>uI_Results.v_selectedObjectType == OL_GISObjectType.COOP</EnableExpression>
+			<EnableExpression>uI_Results.v_selectedObjectType == OL_GISObjectType.COOP &amp;&amp; radio_energyType.getValue() != 1</EnableExpression>
+			<ActionCode>f_setCharts();</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="11" Style="0"/>

@@ -873,7 +873,7 @@
 		<Id>1714855681842</Id>
 		<Name><![CDATA[v_selectedObjectType]]></Name>
 		<X>540</X>
-		<Y>260</Y>
+		<Y>240</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -895,7 +895,7 @@
 		<Id>1714895695214</Id>
 		<Name><![CDATA[v_selectedChartType]]></Name>
 		<X>540</X>
-		<Y>280</Y>
+		<Y>260</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1180,8 +1180,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1736425391442</Id>
 		<Name><![CDATA[b_EHubConfiguration]]></Name>
-		<X>1350</X>
-		<Y>710</Y>
+		<X>540</X>
+		<Y>460</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1197,196 +1197,6 @@
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[false]]></Code>
 			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391446</Id>
-		<Name><![CDATA[v_groupATODeliveryCapacity_kW]]></Name>
-		<X>1350</X>
-		<Y>730</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[double]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391449</Id>
-		<Name><![CDATA[v_groupATOFeedInCapacity_kW]]></Name>
-		<X>1350</X>
-		<Y>750</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[double]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391451</Id>
-		<Name><![CDATA[v_dataEHubDeliveryCapacityLiveWeek_kW]]></Name>
-		<X>1350</X>
-		<Y>770</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[DataSet]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391454</Id>
-		<Name><![CDATA[v_dataEHubDeliveryCapacityYear_kW]]></Name>
-		<X>1350</X>
-		<Y>790</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[DataSet]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391457</Id>
-		<Name><![CDATA[v_dataEHubDeliveryCapacitySummerWeek_kW]]></Name>
-		<X>1350</X>
-		<Y>810</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[DataSet]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391459</Id>
-		<Name><![CDATA[v_dataEHubDeliveryCapacityWinterWeek_kW]]></Name>
-		<X>1350</X>
-		<Y>830</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[DataSet]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391462</Id>
-		<Name><![CDATA[v_dataEHubFeedInCapacityLiveWeek_kW]]></Name>
-		<X>1350</X>
-		<Y>850</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[DataSet]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391464</Id>
-		<Name><![CDATA[v_dataEHubFeedInCapacityYear_kW]]></Name>
-		<X>1350</X>
-		<Y>870</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[DataSet]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391467</Id>
-		<Name><![CDATA[v_dataEHubFeedInCapacitySummerWeek_kW]]></Name>
-		<X>1350</X>
-		<Y>890</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[DataSet]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1736425391470</Id>
-		<Name><![CDATA[v_dataEHubFeedInCapacityWinterWeek_kW]]></Name>
-		<X>1350</X>
-		<Y>910</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[DataSet]]></Type>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -1484,7 +1294,7 @@
 		<Id>1727085344073</Id>
 		<Name><![CDATA[p_previousTotals_Region]]></Name>
 		<X>540</X>
-		<Y>360</Y>
+		<Y>340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1534,28 +1344,10 @@
 		</Properties>
 	</Variable>
 	<Variable Class="CollectionVariable">
-		<Id>1725452042532</Id>
-		<Name><![CDATA[c_individualGridConnections]]></Name>
-		<X>540</X>
-		<Y>230</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-			<CollectionClass>ArrayList</CollectionClass>
-			<ElementClass>AreaCollection</ElementClass>
-			<ValueElementClass>String</ValueElementClass>
-		</Properties>
-	</Variable>
-	<Variable Class="CollectionVariable">
 		<Id>1727085020565</Id>
 		<Name><![CDATA[c_previousTotals_GC]]></Name>
 		<X>540</X>
-		<Y>380</Y>
+		<Y>360</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

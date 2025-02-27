@@ -298,7 +298,7 @@
 		<Id>1727083916594</Id>
 		<Name><![CDATA[f_getDataObject]]></Name>
 		<X>540</X>
-		<Y>310</Y>
+		<Y>290</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -767,10 +767,6 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[multiSelect]]></Name>
-			<Type><![CDATA[boolean]]></Type>
-		</Parameter>
-		<Parameter>
 			<Name><![CDATA[selectedGridConnections]]></Name>
 			<Type><![CDATA[ArrayList<GridConnection>]]></Type>
 		</Parameter>
@@ -781,6 +777,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390468</Id>
 		<Name><![CDATA[f_EHubCapacityDataSets]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1150</X>
 		<Y>650</Y>
 		<Label>
@@ -801,6 +798,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390470</Id>
 		<Name><![CDATA[f_updateLiveEHubCapacityDataSets]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1150</X>
 		<Y>670</Y>
 		<Label>
@@ -821,6 +819,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390473</Id>
 		<Name><![CDATA[f_fillAreaCollectionsOfIndividualGCs]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1150</X>
 		<Y>630</Y>
 		<Label>

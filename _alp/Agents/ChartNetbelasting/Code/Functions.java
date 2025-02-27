@@ -110,6 +110,44 @@ if( area.v_dataNetbelastingDuurkrommeWeekday_kW != null){
 
 double f_addTrafoLimits(AreaCollection area)
 {/*ALCODESTART::1736430711431*/
+String deliveryCapacityLabel = "Geschatte capaciteit afname";
+String feedinCapacityLabel = "Geschatte capaciteit teruglevering";
+Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
+Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
+
+if(area.b_isRealDeliveryCapacityAvailable){
+	deliveryCapacityLabel = "Capaciteit afname";
+	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+}
+if(area.b_isRealFeedinCapacityAvailable){
+	feedinCapacityLabel = "Capaciteit teruglevering";
+	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+}
+
+plot_jaar.addDataSet(area.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel);
+plot_jaar.addDataSet(area.data_gridCapacityFeedInYear_kW, feedinCapacityLabel);
+plot_jaar.setColor(1, deliveryCapacityColor);
+plot_jaar.setColor(2, feedinCapacityColor);
+
+plot_week.addDataSet(area.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel);
+plot_week.addDataSet(area.data_gridCapacityFeedInYear_kW, feedinCapacityLabel);
+plot_week.setColor(plot_week.getCount() - 2, deliveryCapacityColor);
+plot_week.setColor(plot_week.getCount() - 1, feedinCapacityColor);
+
+plot_dagnacht.addDataSet(area.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel);
+plot_dagnacht.addDataSet(area.data_gridCapacityFeedInYear_kW, feedinCapacityLabel);
+plot_dagnacht.setColor(plot_dagnacht.getCount() - 2, deliveryCapacityColor);
+plot_dagnacht.setColor(plot_dagnacht.getCount() - 1, feedinCapacityColor);
+
+plot_seizoen.addDataSet(area.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel);
+plot_seizoen.addDataSet(area.data_gridCapacityFeedInYear_kW, feedinCapacityLabel);
+plot_seizoen.setColor(plot_seizoen.getCount() - 2, deliveryCapacityColor);
+plot_seizoen.setColor(plot_seizoen.getCount() - 1, feedinCapacityColor);
+
+/*ALCODEEND*/}
+
+double f_addTrafoLimits_OUD(AreaCollection area)
+{/*ALCODESTART::1740584474407*/
 //Add and color grid capacities
 if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
 	plot_jaar.addDataSet(area.data_gridCapacityDeliveryYear_kW,"Cumulatieve GTV afname van bedrijven");

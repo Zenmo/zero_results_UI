@@ -876,6 +876,9 @@ area.v_dataNetbelastingDuurkrommeWeekend_kW = GN.data_weekendNetbelastingDuurkro
 
 double f_updateUIresultsGridConnection(AreaCollection area,ArrayList<GridConnection> selectedGridConnections)
 {/*ALCODESTART::1739364390445*/
+//Set engine object
+area.v_engineAgent = selectedGridConnections.get(0);
+
 //Update to new variables
 f_updateVariablesOfGCData(area, selectedGridConnections);
 f_updateActiveAssetBooleansGC(area, selectedGridConnections);
@@ -1894,26 +1897,19 @@ for(GridConnection GC : selectedGridConnections){
 
 /*ALCODEEND*/}
 
-double f_updateActiveAssetBooleans(boolean multiSelect,ArrayList<GridConnection> selectedGridConnections)
+double f_updateActiveAssetBooleans(ArrayList<GridConnection> selectedGridConnections)
 {/*ALCODESTART::1739364390466*/
 //Update main area
 f_updateActiveAssetBooleansGC(v_area, energyModel.f_getGridConnections());
 
 //Update coop
 if(energyModel.pop_energyCoops.size()>0){
-f_updateActiveAssetBooleansGC(v_energyCoop, energyModel.pop_energyCoops.get(energyModel.pop_energyCoops.size()-1).f_getAllChildMemberGridConnections());
+	f_updateActiveAssetBooleansGC(v_energyCoop, energyModel.pop_energyCoops.get(energyModel.pop_energyCoops.size()-1).f_getAllChildMemberGridConnections());
 }	
 
-
 //Update grid connection area collections
-if(multiSelect && selectedGridConnections.size() > 1){
-	for (int i = 0; i < selectedGridConnections.size(); i++) {
-		f_updateActiveAssetBooleansGC(c_individualGridConnections.get(i), new ArrayList<GridConnection>(selectedGridConnections.subList(i, i+1)));
-	}
-}
-else{
-	f_updateActiveAssetBooleansGC(v_gridConnection, selectedGridConnections);
-}
+f_updateActiveAssetBooleansGC(v_gridConnection, selectedGridConnections);
+
 
 //Show correct chart
 f_showCorrectChart();
@@ -2095,6 +2091,9 @@ chartBalans.radio_period.setEnabled(active);
 
 double f_updateUIresultsEnergyCoop(AreaCollection area,EnergyCoop EC)
 {/*ALCODESTART::1740056800747*/
+//Set engine object
+area.v_engineAgent = EC;
+
 //Number of connected gcs
 area.v_numberOfGridconnections = EC.c_customerGridConnections.size() + EC.c_memberGridConnections.size();
 
