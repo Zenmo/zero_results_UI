@@ -524,7 +524,7 @@ en opwek heb ik?]]></Text>
 	<Control Type="RadioButtons">
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1730395814011</Id>
-		<Name><![CDATA[rb_chartType]]></Name>
+		<Name><![CDATA[rb_gespreksleidraadBedrijvenChartType]]></Name>
 		<X>120</X>
 		<Y>5</Y>
 		<Label>
@@ -539,7 +539,7 @@ en opwek heb ik?]]></Text>
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor/>
 			<Enabled>true</Enabled>
-			<ActionCode>f_setSummaryCharts();</ActionCode>
+			<ActionCode>f_setGespreksleidraadBedrijvenCharts();</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="11" Style="0"/>
@@ -547,7 +547,7 @@ en opwek heb ik?]]></Text>
 			<Orientation>VERTICAL</Orientation>
 			<Button>Opwek en verbruik over het jaar</Button>
 			<Button>Individuele en collectieve zelfconsumptie</Button>
-			<Button>Individuele en collectieve pieken</Button>
+			<Button>Capaciteit en pieken</Button>
 			<LinkTo>false</LinkTo>
 		</ExtendedProperties>
 	</Control>
@@ -1052,7 +1052,7 @@ lokaal gebruikt]]></Text>
 			</Rectangle>
 			<Text>
 				<Id>1739206645169</Id>
-				<Name><![CDATA[tx_titleCollectiveVsIndividualPeaks]]></Name>
+				<Name><![CDATA[t_titleGespreksleidraadBedrijven3]]></Name>
 				<X>-10</X>
 				<Y>-250</Y>
 				<Label>
@@ -1068,7 +1068,7 @@ lokaal gebruikt]]></Text>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Wat is de maximale piek van
-het collectief?]]></Text>
+het collectief vs individueel?]]></Text>
 				<Font>
 					<Name><![CDATA[Arial]]></Name>
 					<Size>28</Size>
@@ -1194,7 +1194,7 @@ het collectief?]]></Text>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<TextColor/>
 					<Enabled>true</Enabled>
-					<ActionCode>f_setSummaryCharts();</ActionCode>
+					<ActionCode>f_setGespreksleidraadBedrijvenCharts();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>

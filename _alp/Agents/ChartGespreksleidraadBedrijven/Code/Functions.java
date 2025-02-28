@@ -1,4 +1,4 @@
-double f_setSummaryCharts()
+double f_setGespreksleidraadBedrijvenCharts()
 {/*ALCODESTART::1730395813825*/
 gr_GSLDSummary1.setVisible(false);
 gr_GSLDSummary2.setVisible(false);
@@ -10,20 +10,25 @@ if(uI_Results.f_getDataObject().v_numberOfGridconnections > 1){
 	visualizedAreaCollection = uI_Results.f_getDataObject();
 }
 
-if (rb_chartType.getValue()==0) {
+if (rb_gespreksleidraadBedrijvenChartType.getValue()==0) {
 	gr_GSLDSummary1.setVisible(true);
-	f_setChartsSummary1(visualizedAreaCollection);
-} else if (rb_chartType.getValue()==1) {
+	f_setChartsGespreksleidraadBedrijven1(visualizedAreaCollection);
+} else if (rb_gespreksleidraadBedrijvenChartType.getValue()==1) {
 	gr_GSLDSummary2.setVisible(true);
-	f_setChartsSummary2(visualizedAreaCollection);
-} else if (rb_chartType.getValue()==2) {
+	f_setChartsGespreksleidraadBedrijven2(visualizedAreaCollection);
+} else if (rb_gespreksleidraadBedrijvenChartType.getValue()==2) {
 	gr_GSLDSummary3.setVisible(true);
-	f_setChartsSummary3(visualizedAreaCollection);
+	if(uI_Results.b_showGroupContractValues && visualizedAreaCollection == uI_Results.v_energyCoop){
+		f_setGroupContractChart(visualizedAreaCollection);
+	}
+	else{
+		f_setChartsGespreksleidraadBedrijven3(visualizedAreaCollection);
+	}
 }
 
 /*ALCODEEND*/}
 
-double f_setChartsSummary1(AreaCollection area)
+double f_setChartsGespreksleidraadBedrijven1(AreaCollection area)
 {/*ALCODESTART::1730395813827*/
 f_setEnergyBalanceChartFull(area);
 
@@ -116,7 +121,7 @@ if (chartScale_MWh<10) {
 }
 /*ALCODEEND*/}
 
-double f_setChartsSummary2(AreaCollection area)
+double f_setChartsGespreksleidraadBedrijven2(AreaCollection area)
 {/*ALCODESTART::1730395813831*/
 double totalCollectiveSelfSufficiencyElectricity_fr = area.v_totalElectricitySelfConsumed_MWh/area.v_totalElectricityConsumed_MWh;
 
@@ -193,11 +198,11 @@ energyDemandChartYearGespreksleidraad1.setVisible(true);
 energySupplyChartYearGespreksleidraad1.setVisible(true);
 /*ALCODEEND*/}
 
-double f_setChartsSummary3(AreaCollection area)
+double f_setChartsGespreksleidraadBedrijven3(AreaCollection area)
 {/*ALCODESTART::1739206434585*/
 chart_barChartGSLDSummary3.removeAll();
 
-
+t_titleGespreksleidraadBedrijven3.setText("Wat is de maximale piek van\n het collectief vs individueel");
 DataItem totalGTV_kW = new DataItem();
 DataItem peakIndividual_kW = new DataItem();
 DataItem peakCollective_kW = new DataItem();
@@ -217,6 +222,40 @@ else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
 
 
 chart_barChartGSLDSummary3.addDataItem(totalGTV_kW,"Totaal GTV " + text_peakType,darkMagenta);
+chart_barChartGSLDSummary3.addDataItem(peakIndividual_kW,"Piek " + text_peakType + " individueel",orange);
+chart_barChartGSLDSummary3.addDataItem(peakCollective_kW,"Piek " + text_peakType + " collectief",green);
+
+/*ALCODEEND*/}
+
+double f_setGroupContractChart(AreaCollection area)
+{/*ALCODESTART::1740754239000*/
+chart_barChartGSLDSummary3.removeAll();
+
+t_titleGespreksleidraadBedrijven3.setText("Groepscontract capaciteit");
+
+DataItem totalGTV_kW = new DataItem();
+DataItem totalGTVgroupcontract_kW = new DataItem();
+DataItem peakIndividual_kW = new DataItem();
+DataItem peakCollective_kW = new DataItem();
+String text_peakType = "";
+if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
+	totalGTV_kW.setValue(area.v_gridCapacityDelivery_kW);
+	totalGTVgroupcontract_kW.setValue(area.v_gridCapacityDelivery_groupcontract_kW);
+	peakIndividual_kW.setValue(area.v_individualPeakDelivery_kW);
+	peakCollective_kW.setValue(max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax()));
+	text_peakType = "levering";
+}
+else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
+	totalGTV_kW.setValue(area.v_gridCapacityFeedIn_kW);
+	totalGTVgroupcontract_kW.setValue(area.v_gridCapacityFeedin_groupcontract_kW);
+	peakIndividual_kW.setValue(area.v_individualPeakFeedin_kW);
+	peakCollective_kW.setValue(-1*min(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin()));
+	text_peakType = "teruglevering";
+}
+
+
+chart_barChartGSLDSummary3.addDataItem(totalGTV_kW,"Totaal GTV Cumulatief" + text_peakType,darkMagenta);
+chart_barChartGSLDSummary3.addDataItem(totalGTVgroupcontract_kW,"GTV Groepscontract" + text_peakType, magenta);
 chart_barChartGSLDSummary3.addDataItem(peakIndividual_kW,"Piek " + text_peakType + " individueel",orange);
 chart_barChartGSLDSummary3.addDataItem(peakCollective_kW,"Piek " + text_peakType + " collectief",green);
 

@@ -519,12 +519,12 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 }
 
 group_trafo_year.setVisible(true);
-plot_trafo_year.addDataSet(dataObject.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_year.addDataSet(dataObject.data_gridCapacityFeedInYear_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_year.addDataSet(uI_Results.f_createFlatDataset(0, 8760, dataObject.v_gridCapacityDelivery_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_year.addDataSet(uI_Results.f_createFlatDataset(0, 8760, -dataObject.v_gridCapacityFeedIn_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_year.addDataSet(dataObject.v_dataElectricityBaseloadConsumptionYear_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 0.25, Chart.PointStyle.POINT_NONE);
 
-int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionYear_kW.getYMax(), dataObject.data_gridCapacityDeliveryYear_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionYear_kW.getYMin(), dataObject.data_gridCapacityFeedInYear_kW.getYMin()));
+int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionYear_kW.getYMax(), dataObject.v_gridCapacityDelivery_kW));
+int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionYear_kW.getYMin(), -dataObject.v_gridCapacityFeedIn_kW));
 plot_trafo_year.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
 
 /*ALCODEEND*/}
@@ -546,12 +546,14 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 }
 
 group_trafo_week.setVisible(true);
-plot_trafo_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+
+//Add datasets to plot
+plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourSummerWeek, 168, dataObject.v_gridCapacityDelivery_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourSummerWeek, 168, -dataObject.v_gridCapacityFeedIn_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
-int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW.getYMin()));
+int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMax(), dataObject.v_gridCapacityDelivery_kW));
+int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMin(), -dataObject.v_gridCapacityFeedIn_kW));
 plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
 
 /*ALCODEEND*/}
@@ -573,12 +575,12 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 }
 
 group_trafo_week.setVisible(true);
-plot_trafo_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourWinterWeek, 168, dataObject.v_gridCapacityDelivery_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourWinterWeek, 168, -dataObject.v_gridCapacityFeedIn_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
-int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW.getYMin()));
+int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW.getYMax(), dataObject.v_gridCapacityDelivery_kW));
+int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionWinterWeek_kW.getYMin(), -dataObject.v_gridCapacityFeedIn_kW));
 plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
 
 /*ALCODEEND*/}
@@ -599,16 +601,23 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
 
-group_netload_week.setVisible(true);
-
+//Add datasets to plot
 plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW, feedinCapacityLabel, feedinCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.v_dataNetLoadLiveWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
 
-if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows) {
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
-	for (GridConnection GC : memberGridConnections) {
-		plot_netload_week.addDataSet(GC.data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+//Specific coop plot additions
+if (dataObject.p_areaType == OL_GISObjectType.COOP ) {
+
+	if(uI_Results.b_showGroupContractValues) {
+		//plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityLiveWeek_kW, "Groeps GTV afname (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		//plot_netload_week.addDataSet(uI_Results.v_dataEHubFeedInCapacityLiveWeek_kW, "Groeps GTV teruglevering (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	}
+	if (b_subdivideEnergyCoopFlows) {
+		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
+		for (GridConnection GC : memberGridConnections) {
+			plot_netload_week.addDataSet(GC.data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+		}
 	}
 }
 
@@ -616,6 +625,7 @@ int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dat
 int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW.getYMin()));
 plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.3, maxValue + maxValue * 0.3);
 
+group_netload_week.setVisible(true);
 /*ALCODEEND*/}
 
 double f_addElectricityNetLoad_Year(AreaCollection dataObject)
@@ -647,23 +657,32 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
 
-group_netload_week.setVisible(true);
-
-plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+//Add datasets to plot
+plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourSummerWeek, 168, dataObject.v_gridCapacityDelivery_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourSummerWeek, 168, -dataObject.v_gridCapacityFeedIn_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.v_dataNetLoadSummerWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
 
-if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows) {
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
-	for (GridConnection GC : memberGridConnections) {
-		//Fix after AM has a getDataset() method
-		plot_netload_week.addDataSet(GC.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startHourSummerWeek), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+//Specific coop plot additions
+if (dataObject.p_areaType == OL_GISObjectType.COOP ) {
+
+	if(uI_Results.b_showGroupContractValues) {
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourSummerWeek, 168, dataObject.v_gridCapacityDelivery_groupcontract_kW), "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourSummerWeek, 168, dataObject.v_gridCapacityFeedin_groupcontract_kW), "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	}
+	if (b_subdivideEnergyCoopFlows) {
+		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
+		for (GridConnection GC : memberGridConnections) {
+			plot_netload_week.addDataSet(GC.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startHourSummerWeek), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+		}
 	}
 }
 
-int maxValue = roundToInt(max(dataObject.v_dataNetLoadSummerWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataNetLoadSummerWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW.getYMin()));
+//Set vertical scale
+int maxValue = roundToInt(max(dataObject.v_dataNetLoadSummerWeek_kW.getYMax(), dataObject.v_gridCapacityDelivery_kW));
+int minValue = roundToInt(min(dataObject.v_dataNetLoadSummerWeek_kW.getYMin(), -dataObject.v_gridCapacityFeedIn_kW));
 plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
+
+group_netload_week.setVisible(true);
 
 /*ALCODEEND*/}
 
@@ -683,23 +702,32 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
 
-group_netload_week.setVisible(true);
-
-plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+//Add datasets to plot
+plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourWinterWeek, 168, dataObject.v_gridCapacityDelivery_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourWinterWeek, 168, -dataObject.v_gridCapacityFeedIn_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.v_dataNetLoadWinterWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
 
-if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows) {
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
-	for (GridConnection GC : memberGridConnections) {
-		//Fix after AM has a getDataset() method
-		//plot_netload_week.addDataSet(GC.data_winterWeekNetLoad_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+//Specific coop plot additions
+if (dataObject.p_areaType == OL_GISObjectType.COOP ) {
+
+	if(uI_Results.b_showGroupContractValues) {
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourWinterWeek, 168, dataObject.v_gridCapacityDelivery_groupcontract_kW), "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourWinterWeek, 168, dataObject.v_gridCapacityFeedin_groupcontract_kW), "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	}
+	if (b_subdivideEnergyCoopFlows){
+		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
+		for (GridConnection GC : memberGridConnections) {
+			plot_netload_week.addDataSet(GC.am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startHourWinterWeek), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+		}
 	}
 }
 
-int maxValue = roundToInt(max(dataObject.v_dataNetLoadWinterWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataNetLoadWinterWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW.getYMin()));
+//Set vertical scale
+int maxValue = roundToInt(max(dataObject.v_dataNetLoadWinterWeek_kW.getYMax(), dataObject.v_gridCapacityDelivery_kW));
+int minValue = roundToInt(min(dataObject.v_dataNetLoadWinterWeek_kW.getYMin(), -dataObject.v_gridCapacityFeedIn_kW));
 plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
+
+group_netload_week.setVisible(true);
 
 /*ALCODEEND*/}
 
@@ -813,8 +841,6 @@ plot_trafo_day.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxV
 
 double f_addElectricityNetLoad_LiveDay(AreaCollection dataObject)
 {/*ALCODESTART::1739804290055*/
-group_netload_day.setVisible(true);
-
 String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
 String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
 Color  deliveryCapacityColor = uI_Results.v_electricityCapacityColor_estimated;
@@ -829,15 +855,23 @@ if(dataObject.b_isRealFeedinCapacityAvailable){
 	feedinCapacityColor	= uI_Results.v_electricityCapacityColor_known;
 }
 
-
+//Add datasets to plot
 plot_netload_day.addDataSet(dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_day.addDataSet(dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW, feedinCapacityLabel, feedinCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_day.addDataSet(dataObject.v_dataNetLoadLiveWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
 
-if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows) {
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
-	for (GridConnection GC : memberGridConnections) {
-		plot_netload_day.addDataSet(GC.data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+//Specific coop plot additions
+if (dataObject.p_areaType == OL_GISObjectType.COOP ) {
+
+	if(uI_Results.b_showGroupContractValues) {
+		//plot_netload_day.addDataSet(uI_Results.v_dataEHubDeliveryCapacityLiveWeek_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		//plot_netload_day.addDataSet(uI_Results.v_dataEHubFeedInCapacityLiveWeek_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	}
+	if (b_subdivideEnergyCoopFlows) {
+		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
+		for (GridConnection GC : memberGridConnections) {
+			plot_netload_day.addDataSet(GC.data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+		}
 	}
 }
 
@@ -845,195 +879,6 @@ int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dat
 int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW.getYMin()));
 plot_netload_day.setFixedVerticalScale(minValue + minValue * 0.3, maxValue + maxValue * 0.3);
 
-/*ALCODEEND*/}
-
-double f_addElectricityNetLoad_Live_OUD(AreaCollection dataObject)
-{/*ALCODESTART::1740585696131*/
-String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
-String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
-Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-
-if(dataObject.b_isRealDeliveryCapacityAvailable){
-	deliveryCapacityLabel = "Piek leveringscapaciteit";
-	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-if(dataObject.b_isRealFeedinCapacityAvailable){
-	feedinCapacityLabel = "Piek terugleveringscapaciteit";
-	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-
-group_netload_week.setVisible(true);
-
-if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW, "Cumulatieve GTV afname van bedrijven", uI_Results.v_cumulativeGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW, "Cumulatieve GTV afname van bedrijven", uI_Results.v_cumulativeGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityLiveWeek_kW, "Groeps GTV afname (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubFeedInCapacityLiveWeek_kW, "Groeps GTV teruglevering (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-}
-else {
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW, feedinCapacityLabel, feedinCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-}
-
-plot_netload_week.addDataSet(dataObject.v_dataNetLoadLiveWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
-
-if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows) {
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
-	for (GridConnection GC : memberGridConnections) {
-		plot_netload_week.addDataSet(GC.data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
-	}
-}
-
-int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW.getYMin()));
-plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.3, maxValue + maxValue * 0.3);
-
-/*ALCODEEND*/}
-
-double f_addElectricityNetLoad_Year_OUD(AreaCollection dataObject)
-{/*ALCODESTART::1740585696133*/
-group_netload_year.setVisible(true);
-plot_netload_year.addDataSet(dataObject.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_year.addDataSet(dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_year.addDataSet(dataObject.v_dataNetLoadLiveWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
-
-int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDemandCapacityLiveWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW.getYMin()));
-plot_netload_year.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
-
-/*ALCODEEND*/}
-
-double f_addElectricityNetLoad_SummerWeek_OUD(AreaCollection dataObject)
-{/*ALCODESTART::1740585696135*/
-String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
-String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
-Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-
-if(dataObject.b_isRealDeliveryCapacityAvailable){
-	deliveryCapacityLabel = "Piek leveringscapaciteit";
-	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-if(dataObject.b_isRealFeedinCapacityAvailable){
-	feedinCapacityLabel = "Piek terugleveringscapaciteit";
-	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-
-group_netload_week.setVisible(true);
-
-if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW, "Cumulatieve GTV afname van bedrijven", uI_Results.v_cumulativeGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW, "Cumulatieve GTV afname van bedrijven", uI_Results.v_cumulativeGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacitySummerWeek_kW, "Groeps GTV afname (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubFeedInCapacitySummerWeek_kW, "Groeps GTV teruglevering (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-}
-else {
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-}
-
-plot_netload_week.addDataSet(dataObject.v_dataNetLoadSummerWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
-
-if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows) {
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
-	for (GridConnection GC : memberGridConnections) {
-		plot_netload_week.addDataSet(GC.data_summerWeekNetLoad_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
-	}
-}
-
-int maxValue = roundToInt(max(dataObject.v_dataNetLoadSummerWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacitySummerWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataNetLoadSummerWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacitySummerWeek_kW.getYMin()));
-plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
-
-/*ALCODEEND*/}
-
-double f_addElectricityNetLoad_WinterWeek_OUD(AreaCollection dataObject)
-{/*ALCODESTART::1740585696137*/
-String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
-String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
-Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-
-if(dataObject.b_isRealDeliveryCapacityAvailable){
-	deliveryCapacityLabel = "Piek leveringscapaciteit";
-	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-if(dataObject.b_isRealFeedinCapacityAvailable){
-	feedinCapacityLabel = "Piek terugleveringscapaciteit";
-	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-
-group_netload_week.setVisible(true);
-
-if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW, "Cumulatieve GTV afname van bedrijven", uI_Results.v_cumulativeGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW, "Cumulatieve GTV afname van bedrijven", uI_Results.v_cumulativeGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityWinterWeek_kW, "Groeps GTV afname (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(uI_Results.v_dataEHubFeedInCapacityWinterWeek_kW, "Groeps GTV teruglevering (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-}
-else {
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_week.addDataSet(dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-
-}
-
-plot_netload_week.addDataSet(dataObject.v_dataNetLoadWinterWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
-
-if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows) {
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
-	for (GridConnection GC : memberGridConnections) {
-		plot_netload_week.addDataSet(GC.data_winterWeekNetLoad_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
-	}
-}
-
-int maxValue = roundToInt(max(dataObject.v_dataNetLoadWinterWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacityWinterWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataNetLoadWinterWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityWinterWeek_kW.getYMin()));
-plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
-
-/*ALCODEEND*/}
-
-double f_addElectricityNetLoad_LiveDay_OUD(AreaCollection dataObject)
-{/*ALCODESTART::1740585696139*/
 group_netload_day.setVisible(true);
-
-String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
-String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
-Color  deliveryCapacityColor = uI_Results.v_electricityCapacityColor_estimated;
-Color  feedinCapacityColor = uI_Results.v_electricityCapacityColor_estimated;
-
-if(dataObject.b_isRealDeliveryCapacityAvailable){
-	deliveryCapacityLabel = "Piek leveringscapaciteit";
-	deliveryCapacityColor = uI_Results.v_electricityCapacityColor_known;
-}
-if(dataObject.b_isRealFeedinCapacityAvailable){
-	feedinCapacityLabel = "Piek terugleveringscapaciteit";
-	feedinCapacityColor	= uI_Results.v_electricityCapacityColor_known;
-}
-
-if (uI_Results.b_EHubConfiguration && uI_Results.c_individualGridConnections.size() > 0) {
-	plot_netload_day.addDataSet(dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW, "Cumulatieve GTV afname van bedrijven", uI_Results.v_cumulativeGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_day.addDataSet(dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW, "Cumulatieve GTV afname van bedrijven", uI_Results.v_cumulativeGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_day.addDataSet(uI_Results.v_dataEHubDeliveryCapacityLiveWeek_kW, "Groeps GTV afname (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_day.addDataSet(uI_Results.v_dataEHubFeedInCapacityLiveWeek_kW, "Groeps GTV teruglevering (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-}
-else {
-	plot_netload_day.addDataSet(dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_netload_day.addDataSet(dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW, feedinCapacityLabel, feedinCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-}
-
-plot_netload_day.addDataSet(dataObject.v_dataNetLoadLiveWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
-
-if (dataObject.p_areaType == OL_GISObjectType.COOP && b_subdivideEnergyCoopFlows) {
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.v_engineAgent).f_getAllChildMemberGridConnections();
-	for (GridConnection GC : memberGridConnections) {
-		plot_netload_day.addDataSet(GC.data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
-	}
-}
-
-int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW.getYMin()));
-plot_netload_day.setFixedVerticalScale(minValue + minValue * 0.3, maxValue + maxValue * 0.3);
-
 /*ALCODEEND*/}
 

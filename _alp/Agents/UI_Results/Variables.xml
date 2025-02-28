@@ -1179,7 +1179,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1736425391442</Id>
-		<Name><![CDATA[b_EHubConfiguration]]></Name>
+		<Name><![CDATA[b_showGroupContractValues]]></Name>
 		<X>540</X>
 		<Y>460</Y>
 		<Label>

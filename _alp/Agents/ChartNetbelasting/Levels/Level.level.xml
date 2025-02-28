@@ -524,7 +524,7 @@
 				<Id>1714746143882</Id>
 				<Name><![CDATA[tx_topBarplotText2]]></Name>
 				<X>10</X>
-				<Y>-190</Y>
+				<Y>-220</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -549,7 +549,7 @@
 				<Id>1714746143885</Id>
 				<Name><![CDATA[plot_jaar]]></Name>
 				<X>-210</X>
-				<Y>-180</Y>
+				<Y>-210</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -608,7 +608,7 @@
 				<Id>1714746143887</Id>
 				<Name><![CDATA[t_duurkromme_xlabel]]></Name>
 				<X>-15</X>
-				<Y>35</Y>
+				<Y>5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -633,7 +633,7 @@
 				<Id>1714746143889</Id>
 				<Name><![CDATA[t_duurkromme_ylabel]]></Name>
 				<X>-205</X>
-				<Y>-105</Y>
+				<Y>-135</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
