@@ -584,8 +584,8 @@ area.v_dataNetbelastingDuurkrommeWeekend_kW = energyModel.data_weekendNetbelasti
 area.v_dataNetbelastingDuurkrommeWeekday_kW = energyModel.data_weekdayNetbelastingDuurkromme_kW;
 
 //Peak individuals
-area.v_individualPeakDelivery_kW += sum(energyModel.f_getGridConnections(), gc -> gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMax());
-area.v_individualPeakFeedin_kW += -1*sum(energyModel.f_getGridConnections(), gc -> gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMin());
+area.v_individualPeakDelivery_kW += sum(energyModel.f_getGridConnections(), gc -> gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW());
+area.v_individualPeakFeedin_kW += -1*sum(energyModel.f_getGridConnections(), gc -> gc.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMinPower_kW());
 
 // Can't use pointer for (immutable) primitives in Java, so need to manually update results after a year-sim!!
 area.v_gridCapacityDelivery_kW = energyModel.f_getGridNodesTopLevel().get(0).p_capacity_kW;
@@ -1447,8 +1447,8 @@ area.v_individualSelfSufficiencyElectricity_fr = GC.v_totalElectricitySelfConsum
 area.v_individualSelfconsumptionEnergy_fr = GC.v_totalEnergySelfConsumed_MWh/GC.v_totalEnergyConsumed_MWh;
 area.v_individualSelfSufficiencyEnergy_fr = GC.v_totalEnergySelfConsumed_MWh/GC.v_totalEnergyProduced_MWh;
 
-area.v_individualPeakDelivery_kW = GC.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMax();
-area.v_individualPeakFeedin_kW = GC.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMin();	
+area.v_individualPeakDelivery_kW = GC.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW();
+area.v_individualPeakFeedin_kW = GC.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMinPower_kW();	
 
 //Yearly
 area.fm_totalImports_MWh.clear();
