@@ -101,6 +101,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1714899014782</Id>
 		<Name><![CDATA[f_setChartsBatteries]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>20</X>
 		<Y>800</Y>
 		<Label>

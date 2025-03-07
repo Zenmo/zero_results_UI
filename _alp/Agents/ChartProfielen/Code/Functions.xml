@@ -16,7 +16,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -36,7 +36,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -56,7 +56,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -76,7 +76,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -96,7 +96,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -116,7 +116,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -152,7 +152,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -172,7 +172,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -389,7 +389,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -409,7 +409,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -440,6 +440,481 @@
 		<Name><![CDATA[f_addElectricityNetLoad_LiveDay]]></Name>
 		<X>890</X>
 		<Y>1172</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336542</Id>
+		<Name><![CDATA[f_addOtherEnergyFlows_Year1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1800</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336544</Id>
+		<Name><![CDATA[f_addElectricityFlows_Year1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336546</Id>
+		<Name><![CDATA[f_addOtherEnergyCarriers_Live1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1698</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336548</Id>
+		<Name><![CDATA[f_addElectricityFlows_Live1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1678</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336550</Id>
+		<Name><![CDATA[f_addOtherEnergyFlows_SummerWeek1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1850</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336552</Id>
+		<Name><![CDATA[f_addElectricityFlows_SummerWeek1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1830</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>AreaCollection</ReturnType>
+		<Id>1741337336554</Id>
+		<Name><![CDATA[f_resetCharts1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336556</Id>
+		<Name><![CDATA[f_addOtherEnergyFlows_WinterWeek1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1900</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336558</Id>
+		<Name><![CDATA[f_addElectricityFlows_WinterWeek1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1880</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336560</Id>
+		<Name><![CDATA[f_setCharts1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>180</X>
+		<Y>1600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336562</Id>
+		<Name><![CDATA[f_setTrafoPlotScale1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>550</X>
+		<Y>1600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336564</Id>
+		<Name><![CDATA[f_addElectricityFlowsTrafo_Live1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>540</X>
+		<Y>1680</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336566</Id>
+		<Name><![CDATA[f_addElectricityFlowsTrafo_Year1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>540</X>
+		<Y>1780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336568</Id>
+		<Name><![CDATA[f_addElectricityFlowsTrafo_SummerWeek1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>540</X>
+		<Y>1830</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336570</Id>
+		<Name><![CDATA[f_addElectricityFlowsTrafo_WinterWeek1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>540</X>
+		<Y>1880</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336572</Id>
+		<Name><![CDATA[f_addElectricityNetLoad_Live1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>950</X>
+		<Y>1680</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336574</Id>
+		<Name><![CDATA[f_addElectricityNetLoad_Year1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>950</X>
+		<Y>1780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336576</Id>
+		<Name><![CDATA[f_addElectricityNetLoad_SummerWeek1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>950</X>
+		<Y>1830</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336578</Id>
+		<Name><![CDATA[f_addElectricityNetLoad_WinterWeek1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>950</X>
+		<Y>1880</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336580</Id>
+		<Name><![CDATA[f_addOtherEnergyCarriers_LiveDay1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1750</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336582</Id>
+		<Name><![CDATA[f_addElectricityFlows_LiveDay1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>210</X>
+		<Y>1730</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336584</Id>
+		<Name><![CDATA[f_addElectricityFlowsTrafo_LiveDay1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>540</X>
+		<Y>1732</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337336586</Id>
+		<Name><![CDATA[f_addElectricityNetLoad_LiveDay1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>950</X>
+		<Y>1732</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

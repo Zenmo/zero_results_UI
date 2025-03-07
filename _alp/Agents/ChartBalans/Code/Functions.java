@@ -310,26 +310,27 @@ double f_setCharts()
 {/*ALCODESTART::1714987683635*/
 f_resetCharts();
 f_setVisiblity();
-AreaCollection area = uI_Results.f_getDataObject();
 
-if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
-	f_setTrafoBalanceChartYear(area);
-	f_setTrafoBalanceChartSummerWinter(area);
-	f_setTrafoBalanceChartDayNight(area);
-	f_setTrafoBalanceChartWeekdayWeekend(area);
+
+if (uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE) {
+	f_setTrafoBalanceChartYear(uI_Results.v_gridNode);
+	f_setTrafoBalanceChartSummerWinter(uI_Results.v_gridNode);
+	f_setTrafoBalanceChartDayNight(uI_Results.v_gridNode);
+	f_setTrafoBalanceChartWeekdayWeekend(uI_Results.v_gridNode);
 	}
 else {
+	I_EnergyData data = uI_Results.f_getSelectedObjectData();
 	if( radio_energyType.getValue() == 0){
-		f_setElectricityBalanceChartYear(area);
-		f_setElectricityBalanceChartSummerWinter(area);
-		f_setElectricityBalanceChartDayNight(area);
-		f_setElectricityBalanceChartWeekdayWeekend(area);
+		f_setElectricityBalanceChartYear(data);
+		f_setElectricityBalanceChartSummerWinter(data);
+		f_setElectricityBalanceChartDayNight(data);
+		f_setElectricityBalanceChartWeekdayWeekend(data);
 	}
 	else if( radio_energyType.getValue() == 1){
-		f_setEnergyBalanceChartYear(area);
-		f_setEnergyBalanceChartSummerWinter(area);
-		f_setEnergyBalanceChartDayNight(area);
-		f_setEnergyBalanceChartWeekdayWeekend(area);
+		f_setEnergyBalanceChartYear(data);
+		f_setEnergyBalanceChartSummerWinter(data);
+		f_setEnergyBalanceChartDayNight(data);
+		f_setEnergyBalanceChartWeekdayWeekend(data);
 	}
 }
 

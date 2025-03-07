@@ -5,6 +5,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1714746143909</Id>
 		<Name><![CDATA[f_setBelastingPlots]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>50</X>
 		<Y>770</Y>
 		<Label>

@@ -1,17 +1,19 @@
 double f_setKPISummaryChart()
 {/*ALCODESTART::1726830495435*/
-AreaCollection dataObject = uI_Results.f_getDataObject();
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
+/*
 //At least for now grid nodes are not supported
-if(uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE){
+if(uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE){
 	dataObject = uI_Results.v_area;
 }
+*/
 
 //Reset chart
 f_resetChart();
 
 //Set KPIs
-f_setKPIs(dataObject);
+f_setKPIs(data);
 
 //Set visible
 uI_Results.chartKPISummary_presentation.setVisible(true);
@@ -36,7 +38,7 @@ double KPIselfsufficiency_pct = area.v_totalEnergySelfConsumed_MWh / totalEnergy
 
 //Overload of GC for GC and overload of all gridnodes combined for Region (GN is not supported and shows same KPIs as whole region)
 double KPIOverloadHours_pct;
-if(uI_Results.v_selectedObjectType == OL_GISObjectType.REGION){
+if(uI_Results.v_selectedObjectType == OL_SelectedObjectType.ENERGYMODEL){
 	KPIOverloadHours_pct = area.v_totalTimeOverloaded_h/8760*100;
 }
 else{
@@ -95,7 +97,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null && area.v_
 	
 	//Overload of GC for GC and overload of all gridnodes combined for Region (GN is not supported and shows same KPIs as whole region)
 	double previousKPIOverloadHours_pct;
-	if(uI_Results.v_selectedObjectType == OL_GISObjectType.REGION || uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE){
+	if(uI_Results.v_selectedObjectType == OL_SelectedObjectType.ENERGYMODEL || uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE){
 		previousKPIOverloadHours_pct = area.v_previousTotals.getPreviousTotalTimeOverloadedTransformers_hr()/8760*100;
 	}
 	else{

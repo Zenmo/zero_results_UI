@@ -294,11 +294,11 @@
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>AreaCollection</ReturnType>
+		<ReturnType>I_EnergyData</ReturnType>
 		<Id>1727083916594</Id>
-		<Name><![CDATA[f_getDataObject]]></Name>
+		<Name><![CDATA[f_getSelectedObjectData]]></Name>
 		<X>540</X>
-		<Y>290</Y>
+		<Y>130</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -313,6 +313,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1727103171052</Id>
 		<Name><![CDATA[f_initializePreviousTotalsGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1310</X>
 		<Y>110</Y>
 		<Label>
@@ -509,8 +510,9 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390437</Id>
 		<Name><![CDATA[f_updateUIresultsMainArea]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1150</X>
-		<Y>210</Y>
+		<Y>250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -526,7 +528,7 @@
 		<Id>1739364390441</Id>
 		<Name><![CDATA[f_updateUIresultsGridNode]]></Name>
 		<X>1150</X>
-		<Y>260</Y>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -549,8 +551,9 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390454</Id>
 		<Name><![CDATA[f_updatePreviousTotalsGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
-		<Y>590</Y>
+		<Y>630</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -565,8 +568,9 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390464</Id>
 		<Name><![CDATA[f_updateActiveAssetBooleansGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1180</X>
-		<Y>640</Y>
+		<Y>680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -589,8 +593,9 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390466</Id>
 		<Name><![CDATA[f_updateActiveAssetBooleans]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1150</X>
-		<Y>620</Y>
+		<Y>660</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -609,8 +614,9 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390477</Id>
 		<Name><![CDATA[f_addTimeStepLiveDataSetsMain]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
-		<Y>230</Y>
+		<Y>270</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -649,8 +655,9 @@
 		<ReturnType>double</ReturnType>
 		<Id>1740056800747</Id>
 		<Name><![CDATA[f_updateUIresultsEnergyCoop]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1150</X>
-		<Y>290</Y>
+		<Y>330</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -673,54 +680,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1740067768680</Id>
 		<Name><![CDATA[f_updateVariablesOfEnergyCoop]]></Name>
-		<X>1170</X>
-		<Y>310</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[EC]]></Name>
-			<Type><![CDATA[EnergyCoop]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1740067795909</Id>
-		<Name><![CDATA[f_updateLiveDatasetsEnergyCoop]]></Name>
-		<X>1170</X>
-		<Y>330</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[EC]]></Name>
-			<Type><![CDATA[EnergyCoop]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1740067796943</Id>
-		<Name><![CDATA[f_updateWeeklyDatasetsEnergyCoop]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
 		<Y>350</Y>
 		<Label>
@@ -743,8 +703,9 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1740067908197</Id>
-		<Name><![CDATA[f_updateYearlyDatasetsEnergyCoop]]></Name>
+		<Id>1740067795909</Id>
+		<Name><![CDATA[f_updateLiveDatasetsEnergyCoop]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
 		<Y>370</Y>
 		<Label>
@@ -767,8 +728,59 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
+		<Id>1740067796943</Id>
+		<Name><![CDATA[f_updateWeeklyDatasetsEnergyCoop]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1170</X>
+		<Y>390</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1740067908197</Id>
+		<Name><![CDATA[f_updateYearlyDatasetsEnergyCoop]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1170</X>
+		<Y>410</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
 		<Id>1740497182921</Id>
 		<Name><![CDATA[f_initializeMainAreaCollection]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1310</X>
 		<Y>90</Y>
 		<Label>
@@ -785,8 +797,9 @@
 		<ReturnType>double</ReturnType>
 		<Id>1740501467386</Id>
 		<Name><![CDATA[f_addTimeStepLiveDataSetsEnergyCoop]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
-		<Y>410</Y>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -809,8 +822,9 @@
 		<ReturnType>double</ReturnType>
 		<Id>1740657920600</Id>
 		<Name><![CDATA[f_updateUIresultsGridConnection]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1150</X>
-		<Y>450</Y>
+		<Y>490</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -833,54 +847,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1740660879660</Id>
 		<Name><![CDATA[f_updateVariablesOfGC]]></Name>
-		<X>1170</X>
-		<Y>470</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[GC]]></Name>
-			<Type><![CDATA[GridConnection]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1740661244566</Id>
-		<Name><![CDATA[f_updateLiveDatasetsGC]]></Name>
-		<X>1170</X>
-		<Y>490</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[GC]]></Name>
-			<Type><![CDATA[GridConnection]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1740661336358</Id>
-		<Name><![CDATA[f_updateWeeklyDatasetsGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
 		<Y>510</Y>
 		<Label>
@@ -903,34 +870,11 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1740661736036</Id>
-		<Name><![CDATA[f_updateYearlyDatasetsGC]]></Name>
+		<Id>1740661244566</Id>
+		<Name><![CDATA[f_updateLiveDatasetsGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
 		<Y>530</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[GC]]></Name>
-			<Type><![CDATA[GridConnection]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="public" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1740661810239</Id>
-		<Name><![CDATA[f_addTimeStepLiveDataSetsGC]]></Name>
-		<X>1170</X>
-		<Y>570</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -951,8 +895,9 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1740671109745</Id>
-		<Name><![CDATA[f_updateDuurkrommeGC]]></Name>
+		<Id>1740661336358</Id>
+		<Name><![CDATA[f_updateWeeklyDatasetsGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
 		<Y>550</Y>
 		<Label>
@@ -975,10 +920,86 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
+		<Id>1740661736036</Id>
+		<Name><![CDATA[f_updateYearlyDatasetsGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1170</X>
+		<Y>570</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1740661810239</Id>
+		<Name><![CDATA[f_addTimeStepLiveDataSetsGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1170</X>
+		<Y>610</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1740671109745</Id>
+		<Name><![CDATA[f_updateDuurkrommeGC]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1170</X>
+		<Y>590</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
 		<Id>1740671165669</Id>
 		<Name><![CDATA[f_updateDuurkrommeEnergyCoop]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>1170</X>
-		<Y>390</Y>
+		<Y>430</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1021,6 +1042,435 @@
 		<Parameter>
 			<Name><![CDATA[value]]></Name>
 			<Type><![CDATA[double]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394918</Id>
+		<Name><![CDATA[f_updateUIresultsMainArea1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1500</X>
+		<Y>1440</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394922</Id>
+		<Name><![CDATA[f_updatePreviousTotalsGC1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1820</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394924</Id>
+		<Name><![CDATA[f_addTimeStepLiveDataSetsMain1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1460</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394926</Id>
+		<Name><![CDATA[f_updateUIresultsEnergyCoop1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1500</X>
+		<Y>1520</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394928</Id>
+		<Name><![CDATA[f_updateVariablesOfEnergyCoop1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1540</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394930</Id>
+		<Name><![CDATA[f_updateLiveDatasetsEnergyCoop1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394932</Id>
+		<Name><![CDATA[f_updateWeeklyDatasetsEnergyCoop1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1580</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394934</Id>
+		<Name><![CDATA[f_updateYearlyDatasetsEnergyCoop1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394936</Id>
+		<Name><![CDATA[f_addTimeStepLiveDataSetsEnergyCoop1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1640</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394938</Id>
+		<Name><![CDATA[f_updateUIresultsGridConnection1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1500</X>
+		<Y>1680</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394940</Id>
+		<Name><![CDATA[f_updateVariablesOfGC1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1700</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394942</Id>
+		<Name><![CDATA[f_updateLiveDatasetsGC1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1720</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394944</Id>
+		<Name><![CDATA[f_updateWeeklyDatasetsGC1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1740</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394946</Id>
+		<Name><![CDATA[f_updateYearlyDatasetsGC1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1760</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394948</Id>
+		<Name><![CDATA[f_addTimeStepLiveDataSetsGC1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1800</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394950</Id>
+		<Name><![CDATA[f_updateDuurkrommeGC1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[GC]]></Name>
+			<Type><![CDATA[GridConnection]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741275394952</Id>
+		<Name><![CDATA[f_updateDuurkrommeEnergyCoop1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1520</X>
+		<Y>1620</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[area]]></Name>
+			<Type><![CDATA[AreaCollection]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741337780594</Id>
+		<Name><![CDATA[f_updateResultsUI]]></Name>
+		<X>1150</X>
+		<Y>210</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[selectedObjectInterface]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[selectedObjectType]]></Name>
+			<Type><![CDATA[OL_SelectedObjectType]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

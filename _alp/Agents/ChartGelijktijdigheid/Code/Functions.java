@@ -453,7 +453,7 @@ f_resetCharts();
 f_setVisiblity();
 AreaCollection area = uI_Results.f_getDataObject();
 
-if (uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE) {
+if (uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE) {
 	f_setTrafoBalanceChartYear(area);
 	f_setTrafoBalanceChartSummerWinter(area);
 	f_setTrafoBalanceChartDayNight(area);

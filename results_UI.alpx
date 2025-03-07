@@ -90,6 +90,26 @@
 					<Name><![CDATA[OFF]]></Name>
 				</Option>
 			</OptionList>
+			<OptionList>
+				<Id>1741338938600</Id>
+				<Name><![CDATA[OL_SelectedObjectType]]></Name>
+				<Option>
+					<Id>1741338938708</Id>
+					<Name><![CDATA[GC]]></Name>
+				</Option>
+				<Option>
+					<Id>1741338942496</Id>
+					<Name><![CDATA[COOP]]></Name>
+				</Option>
+				<Option>
+					<Id>1741338946106</Id>
+					<Name><![CDATA[ENERGYMODEL]]></Name>
+				</Option>
+				<Option>
+					<Id>1741338950458</Id>
+					<Name><![CDATA[GRIDNODE]]></Name>
+				</Option>
+			</OptionList>
 		</OptionLists>
 		<Folders/>
 		<ActiveObjectClasses/>

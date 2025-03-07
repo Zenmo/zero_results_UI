@@ -5,6 +5,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1726830495435</Id>
 		<Name><![CDATA[f_setKPISummaryChart]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-300</X>
 		<Y>390</Y>
 		<Label>

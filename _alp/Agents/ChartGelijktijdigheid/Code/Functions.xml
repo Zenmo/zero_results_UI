@@ -334,7 +334,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1732117901396</Id>
 		<Name><![CDATA[f_setCharts]]></Name>
-		<X>320</X>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>370</X>
 		<Y>760</Y>
 		<Label>
 			<X>10</X>

@@ -5,6 +5,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813825</Id>
 		<Name><![CDATA[f_setGespreksleidraadBedrijvenCharts]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>60</X>
 		<Y>840</Y>
 		<Label>
@@ -21,6 +22,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813827</Id>
 		<Name><![CDATA[f_setChartsGespreksleidraadBedrijven1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>60</X>
 		<Y>870</Y>
 		<Label>
@@ -31,8 +33,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -41,6 +43,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813829</Id>
 		<Name><![CDATA[f_setEnergyBalanceChartFull]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>80</X>
 		<Y>886</Y>
 		<Label>
@@ -51,8 +54,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -61,6 +64,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813831</Id>
 		<Name><![CDATA[f_setChartsGespreksleidraadBedrijven2]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>560</X>
 		<Y>870</Y>
 		<Label>
@@ -71,8 +75,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -81,6 +85,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813833</Id>
 		<Name><![CDATA[f_setSelfConsumptionChart]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>574.667</X>
 		<Y>890</Y>
 		<Label>
@@ -117,6 +122,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1737988539936</Id>
 		<Name><![CDATA[f_setDemandAndSupplyGespreksleidraad1]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>80</X>
 		<Y>905</Y>
 		<Label>
@@ -127,8 +133,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -137,6 +143,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739206434585</Id>
 		<Name><![CDATA[f_setChartsGespreksleidraadBedrijven3]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>990</X>
 		<Y>870</Y>
 		<Label>
@@ -147,8 +154,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -157,6 +164,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1740754239000</Id>
 		<Name><![CDATA[f_setGroupContractChart]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>990</X>
 		<Y>900</Y>
 		<Label>
@@ -167,8 +175,28 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1741342546947</Id>
+		<Name><![CDATA[f_setWarningScreen]]></Name>
+		<X>-1100</X>
+		<Y>760</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[showWarningScreen]]></Name>
+			<Type><![CDATA[boolean]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

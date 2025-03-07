@@ -36,28 +36,29 @@ SOCChart_week.addDataSet(dataObject.v_dataBatterySOCWinterWeek_, "Batterij SOC",
 double f_setChartsBatteries()
 {/*ALCODESTART::1714899014782*/
 f_resetCharts();
-AreaCollection dataObject = uI_Results.f_getDataObject();
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+
 
 switch(radio_period.getValue()){
 
 case 0:
 	gr_week.setVisible(true);
-	f_addSOC_Live(dataObject);
-	f_addBatteryNetLoad_Live(dataObject);
+	f_addSOC_Live(data);
+	f_addBatteryNetLoad_Live(data);
 	break;
 case 1:
 	gr_week.setVisible(true);
-	f_addSOC_SummerWeek(dataObject);
-	f_addBatteryNetLoad_SummerWeek(dataObject);
+	f_addSOC_SummerWeek(data);
+	f_addBatteryNetLoad_SummerWeek(data);
 	break;
 case 2:
 	gr_week.setVisible(true);
-	f_addSOC_WinterWeek(dataObject);
-	f_addBatteryNetLoad_WinterWeek(dataObject);
+	f_addSOC_WinterWeek(data);
+	f_addBatteryNetLoad_WinterWeek(data);
 	break;
 case 3:
 	gr_year.setVisible(true);
-	f_addSOC_Year(dataObject);
+	f_addSOC_Year(data);
 	//f_addBatteryNetLoad_Year(dataObject);
 	break;
 }

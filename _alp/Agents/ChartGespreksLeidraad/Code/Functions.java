@@ -1,6 +1,6 @@
 double f_selectGespreksleidraadCharts()
 {/*ALCODESTART::1714765506606*/
-AreaCollection area = uI_Results.v_area;
+f_setWarningScreen(true);
 
 gr_gespreksleidraad1.setVisible(false);
 gr_gespreksleidraad2.setVisible(false);
@@ -10,14 +10,21 @@ gr_gespreksleidraad5.setVisible(false);
 gr_gespreksleidraad6.setVisible(false);
 gr_gespreksleidraad3v2.setVisible(false);
 
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+
+if(uI_Results.v_selectedObjectType == OL_SelectedObjectType.ENERGYMODEL){
+	f_setWarningScreen(false);
+	return;
+}
+
 switch(rb_gespreksleidraad.getValue()+1){
 	case 1:
-		f_setChartsGespreksleidraad1(area);
+		f_setChartsGespreksleidraad1(data);
 		f_setChartDescriptionText("i_gespreksleidraad1", false);
 		gr_gespreksleidraad1.setVisible(true);
 		break;	
 	case 2:
-		f_setChartsGespreksleidraad2(area);
+		f_setChartsGespreksleidraad2(data);
 		f_setChartDescriptionText("i_gespreksleidraad2", false);
 		gr_gespreksleidraad2.setVisible(true);	
 		break;	
@@ -26,21 +33,21 @@ switch(rb_gespreksleidraad.getValue()+1){
 
 		//gr_gespreksleidraad3.setVisible(true);	
 		f_setChartDescriptionText("i_gespreksleidraad3", false);
-		f_setChartsGespreksleidraad3v2(area);
+		f_setChartsGespreksleidraad3v2(data);
 		gr_gespreksleidraad3v2.setVisible(true);	
 		break;	
 	case 4:
-		f_setChartsGespreksleidraad4(area);
+		f_setChartsGespreksleidraad4(data);
 		f_setChartDescriptionText("i_gespreksleidraad4", false);
 		gr_gespreksleidraad4.setVisible(true);	
 		break;	
 	case 5:
-		f_setChartsGespreksleidraad5(area);
+		f_setChartsGespreksleidraad5(data);
 		f_setChartDescriptionText("i_gespreksleidraad5", false);
 		gr_gespreksleidraad5.setVisible(true);		
 		break;
 	case 6:
-		f_setChartsGespreksleidraad6(area);
+		f_setChartsGespreksleidraad6(data);
 		f_setChartDescriptionText("i_gespreksleidraad6", false);
 		gr_gespreksleidraad6.setVisible(true);		
 		break;
@@ -350,7 +357,7 @@ sc_PVSupplyStack.setFixedScale(chartScaleSupply_GWh);
 
 double f_setChartsGespreksleidraad4(AreaCollection area)
 {/*ALCODESTART::1730392914975*/
-f_setBelastingPlots();
+f_setBelastingPlots(area);
 /*ALCODEEND*/}
 
 double f_setChartsGespreksleidraad5(AreaCollection area)
@@ -574,10 +581,9 @@ if (consumption_MWh < 10 || production_MWh < 10) {
 
 /*ALCODEEND*/}
 
-double f_setBelastingPlots()
+double f_setBelastingPlots(AreaCollection area)
 {/*ALCODESTART::1740753193998*/
 f_resetPlots();
-AreaCollection area = uI_Results.f_getDataObject();
 f_addDataToPlots(area);
 f_addTrafoLimits(area); 
 
@@ -696,7 +702,7 @@ Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, area.v_gridCapacityDelivery_kW);
 DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -area.v_gridCapacityFeedIn_kW);
 	
-if(uI_Results.b_showGroupContractValues && area == uI_Results.v_energyCoop){
+if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectType == OL_SelectedObjectType.COOP){
 	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	feedinCapacityLabel = "Cumulatieve GTV teruglevering van bedrijven";
@@ -745,5 +751,10 @@ plot_seizoen.addDataSet(gridCapacityFeedin_kW, feedinCapacityLabel);
 plot_seizoen.setColor(plot_seizoen.getCount() - 2, deliveryCapacityColor);
 plot_seizoen.setColor(plot_seizoen.getCount() - 1, feedinCapacityColor);
 
+/*ALCODEEND*/}
+
+double f_setWarningScreen(boolean showWarningScreen)
+{/*ALCODESTART::1741345541726*/
+gr_warningScreen.setVisible(showWarningScreen);
 /*ALCODEEND*/}
 

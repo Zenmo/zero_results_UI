@@ -5,6 +5,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1714746374796</Id>
 		<Name><![CDATA[f_setSankey]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>70</X>
 		<Y>670</Y>
 		<Label>

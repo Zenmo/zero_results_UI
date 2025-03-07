@@ -1,12 +1,12 @@
 double f_setBelastingPlots()
 {/*ALCODESTART::1714746143909*/
 f_resetPlots();
-AreaCollection area = uI_Results.f_getDataObject();
-f_addDataToPlots(area);
-f_addTrafoLimits(area); 
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+f_addDataToPlots(data);
+f_addTrafoLimits(data); 
 
-double maxDemand_kW = max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
-double maxSupply_kW = abs(min(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin()));
+double maxDemand_kW = max(0, data.getRapidRunData().v_dataNetbelastingDuurkrommeYear_kW.getYMax());
+double maxSupply_kW = abs(min(0, data.getRapidRunData().v_dataNetbelastingDuurkrommeYear_kW.getYMin()));
 double maxDemandSupply_kW = max(maxDemand_kW, maxSupply_kW);
 /*
 if (maxDemandSupply_kW < 1 * pow(10,3)) {
@@ -36,7 +36,7 @@ if (maxDemandSupply_kW < 1 * pow(10,3)) {
 } 
 
 
-f_setNetAverageLoad(area);
+f_setNetAverageLoad(data);
 /*ALCODEEND*/}
 
 double f_setNetAverageLoad(AreaCollection area)
@@ -120,7 +120,7 @@ Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, area.v_gridCapacityDelivery_kW);
 DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -area.v_gridCapacityFeedIn_kW);
 	
-if(uI_Results.b_showGroupContractValues && area == uI_Results.v_energyCoop){
+if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectType == OL_SelectedObjectType.COOP){
 	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	feedinCapacityLabel = "Cumulatieve GTV teruglevering van bedrijven";
