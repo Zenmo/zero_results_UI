@@ -2,14 +2,14 @@ double f_setSankey()
 {/*ALCODESTART::1714746374796*/
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
-double selfConsumedEnergy_MWh = data.getRapidRunData().v_totalEnergySelfConsumed_MWh;
-double importE_MWh = data.getRapidRunData().fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);;
-double importG_MWh = data.getRapidRunData().fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE);;
-double importF_MWh = data.getRapidRunData().fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL);;
-double importHeat_MWh = data.getRapidRunData().fm_totalImports_MWh.get(OL_EnergyCarriers.HEAT);
-double importH_MWh = data.getRapidRunData().fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN);
-double exportH_MWh = data.getRapidRunData().fm_totalExports_MWh.get(OL_EnergyCarriers.HYDROGEN);
-double exportE_MWh = data.getRapidRunData().v_totalEnergyExport_MWh - exportH_MWh;
+double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh();
+double importE_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000;
+double importG_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000;
+double importF_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegralPos_kWh()/1000;
+double importHeat_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HEAT).getIntegralPos_kWh()/1000;
+double importH_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralPos_kWh()/1000;
+double exportH_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralNeg_kWh()/1000;
+double exportE_MWh = data.getRapidRunData().getTotalEnergyExport_MWh() - exportH_MWh;
 double heatProduced_MWh = 0;
 
 flowDataset = new DefaultFlowDataset();

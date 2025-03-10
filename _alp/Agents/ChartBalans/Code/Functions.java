@@ -312,7 +312,7 @@ f_resetCharts();
 f_setVisiblity();
 
 
-if (uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE) {
+if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 	f_setTrafoBalanceChartYear(uI_Results.v_gridNode);
 	f_setTrafoBalanceChartSummerWinter(uI_Results.v_gridNode);
 	f_setTrafoBalanceChartDayNight(uI_Results.v_gridNode);
@@ -338,23 +338,23 @@ else {
 
 /*ALCODEEND*/}
 
-double f_setElectricityBalanceChartYear(AreaCollection area)
+double f_setElectricityBalanceChartYear(I_EnergyData dataObject)
 {/*ALCODESTART::1714988096086*/
 DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(area.v_totalElectricitySelfConsumed_MWh);
+annualSelfConsumed.setValue(dataObject.getRapidRunData().getTotalElectricitySelfConsumed_MWh());
 pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualImport = new DataItem();
-annualImport.setValue(area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+annualImport.setValue(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000);
 pl_consumptionChartYear.addDataItem(annualImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem annualExport = new DataItem();
-annualExport.setValue(area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+annualExport.setValue(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000);
 pl_productionChartYear.addDataItem(annualExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
-double production_MWh = area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double consumption_MWh = area.v_totalElectricitySelfConsumed_MWh + area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
+double production_MWh = dataObject.getRapidRunData().getTotalElectricityProduced_MWh(); 
+double consumption_MWh = dataObject.getRapidRunData().getTotalElectricityConsumed_MWh();
 double chartScale_MWh = max(production_MWh, consumption_MWh);
 pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
@@ -498,41 +498,41 @@ else{
 
 /*ALCODEEND*/}
 
-double f_setElectricityBalanceChartSummerWinter(AreaCollection area)
+double f_setElectricityBalanceChartSummerWinter(I_EnergyData dataObject)
 {/*ALCODESTART::1714989305355*/
 // Summer
 DataItem summerSelfConsumed = new DataItem();
-summerSelfConsumed.setValue(area.v_summerWeekElectricitySelfConsumed_MWh);
+summerSelfConsumed.setValue(dataObject.getRapidRunData().getSummerWeekElectricitySelfConsumed_MWh());
 pl_productionChartSummer.addDataItem(summerSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartSummer.addDataItem(summerSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem summerImport = new DataItem();
-summerImport.setValue(area.fm_summerWeekImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+summerImport.setValue(dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000);
 pl_consumptionChartSummer.addDataItem(summerImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem summerExport = new DataItem();
-summerExport.setValue(area.fm_summerWeekExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+summerExport.setValue(dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000);
 pl_productionChartSummer.addDataItem(summerExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Winter
 DataItem winterSelfConsumed = new DataItem();
-winterSelfConsumed.setValue(area.v_winterWeekElectricitySelfConsumed_MWh);
+winterSelfConsumed.setValue(dataObject.getRapidRunData().getWinterWeekElectricitySelfConsumed_MWh());
 pl_productionChartWinter.addDataItem(winterSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartWinter.addDataItem(winterSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem winterImport = new DataItem();
-winterImport.setValue(area.fm_winterWeekImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+winterImport.setValue(dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000);
 pl_consumptionChartWinter.addDataItem(winterImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem winterExport = new DataItem();
-winterExport.setValue(area.fm_winterWeekExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+winterExport.setValue(dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000);
 pl_productionChartWinter.addDataItem(winterExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 
-double summerProduction_MWh = area.v_summerWeekElectricityProduced_MWh;
-double summerConsumption_MWh = area.v_summerWeekElectricityConsumed_MWh;
-double winterProduction_MWh = area.v_winterWeekElectricityProduced_MWh;
-double winterConsumption_MWh = area.v_winterWeekElectricityConsumed_MWh;
+double summerProduction_MWh = dataObject.getRapidRunData().getSummerWeekElectricityProduced_MWh();
+double summerConsumption_MWh = dataObject.getRapidRunData().getSummerWeekElectricityConsumed_MWh();
+double winterProduction_MWh = dataObject.getRapidRunData().getWinterWeekElectricityProduced_MWh();
+double winterConsumption_MWh = dataObject.getRapidRunData().getWinterWeekElectricityConsumed_MWh();
 double chartScale_MWh = max(max(summerProduction_MWh, winterProduction_MWh), max(summerConsumption_MWh, winterConsumption_MWh));
 pl_productionChartSummer.setFixedScale(chartScale_MWh);
 pl_productionChartWinter.setFixedScale(chartScale_MWh);
@@ -557,46 +557,46 @@ if (chartScale_MWh<10) {
 }
 /*ALCODEEND*/}
 
-double f_setElectricityBalanceChartDayNight(AreaCollection area)
+double f_setElectricityBalanceChartDayNight(I_EnergyData dataObject)
 {/*ALCODESTART::1714989319026*/
 // Day
 DataItem daytimeSelfConsumed = new DataItem();
-daytimeSelfConsumed.setValue(area.v_daytimeElectricitySelfConsumed_MWh);
+daytimeSelfConsumed.setValue(dataObject.getRapidRunData().getDaytimeElectricitySelfConsumed_MWh());
 pl_productionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 
 
 DataItem daytimeImport = new DataItem();
-daytimeImport.setValue(area.fm_daytimeImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+daytimeImport.setValue(dataObject.getRapidRunData().am_daytimeImports_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_kWh()/1000);
 pl_consumptionChartDay.addDataItem(daytimeImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 
 DataItem daytimeExport = new DataItem();
-daytimeExport.setValue(area.fm_daytimeExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+daytimeExport.setValue(dataObject.getRapidRunData().am_daytimeExports_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_kWh()/1000);
 pl_productionChartDay.addDataItem(daytimeExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 
 // Night
 DataItem nighttimeSelfConsumed = new DataItem();
-nighttimeSelfConsumed.setValue(area.v_nighttimeElectricitySelfConsumed_MWh);
+nighttimeSelfConsumed.setValue(dataObject.getRapidRunData().getNighttimeElectricitySelfConsumed_MWh());
 pl_productionChartNight.addDataItem(nighttimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartNight.addDataItem(nighttimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem nighttimeImport = new DataItem();
-nighttimeImport.setValue(area.fm_nighttimeImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+nighttimeImport.setValue(dataObject.getRapidRunData().am_nighttimelmports_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_kWh()/1000);
 pl_consumptionChartNight.addDataItem(nighttimeImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem nighttimeExport = new DataItem();
-nighttimeExport.setValue(area.fm_nighttimeExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+nighttimeExport.setValue(dataObject.getRapidRunData().am_nighttimeExports_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_kWh()/1000);
 pl_productionChartNight.addDataItem(nighttimeExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 
 
-double dayProduction_MWh = area.v_daytimeElectricityProduced_MWh;
-double dayConsumption_MWh = area.v_daytimeElectricityConsumed_MWh;
-double nightProduction_MWh = area.v_nighttimeElectricityProduced_MWh;
-double nightConsumption_MWh = area.v_nighttimeElectricityConsumed_MWh;
+double dayProduction_MWh = dataObject.getRapidRunData().getDaytimeElectricityProduced_MWh();
+double dayConsumption_MWh = dataObject.getRapidRunData().getDaytimeElectricityConsumed_MWh();
+double nightProduction_MWh = dataObject.getRapidRunData().getNighttimeElectricityProduced_MWh();
+double nightConsumption_MWh = dataObject.getRapidRunData().getNighttimeElectricityConsumed_MWh();
 double chartScale_MWh = max(max(dayProduction_MWh, nightProduction_MWh), max(dayConsumption_MWh, nightConsumption_MWh));
 pl_productionChartDay.setFixedScale(chartScale_MWh);
 pl_productionChartNight.setFixedScale(chartScale_MWh);
@@ -622,42 +622,42 @@ if (chartScale_MWh<10) {
 
 /*ALCODEEND*/}
 
-double f_setElectricityBalanceChartWeekdayWeekend(AreaCollection area)
+double f_setElectricityBalanceChartWeekdayWeekend(I_EnergyData dataObject)
 {/*ALCODESTART::1714989368829*/
 // Weekday
 DataItem weekdaySelfConsumed = new DataItem();
-weekdaySelfConsumed.setValue(area.v_weekdayElectricitySelfConsumed_MWh);
+weekdaySelfConsumed.setValue(dataObject.getRapidRunData().getWeekdayElectricitySelfConsumed_MWh());
 pl_productionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekdayimeImport = new DataItem();
-weekdayimeImport.setValue(area.fm_weekdayImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+weekdayimeImport.setValue(dataObject.getRapidRunData().am_weekdayImports_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_kWh()/1000);
 pl_consumptionChartWeekday.addDataItem(weekdayimeImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem weekdayExport = new DataItem();
-weekdayExport.setValue(area.fm_weekdayExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+weekdayExport.setValue(dataObject.getRapidRunData().am_weekdayExports_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_kWh()/1000);
 pl_productionChartWeekday.addDataItem(weekdayExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Weekend
 DataItem weekendSelfConsumed = new DataItem();
-weekendSelfConsumed.setValue(area.v_weekendElectricitySelfConsumed_MWh);
+weekendSelfConsumed.setValue(dataObject.getRapidRunData().getWeekendElectricitySelfConsumed_MWh());
 pl_productionChartWeekend.addDataItem(weekendSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartWeekend.addDataItem(weekendSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekendImport = new DataItem();
-weekendImport.setValue(area.fm_weekendImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+weekendImport.setValue(dataObject.getRapidRunData().am_weekendImports_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_kWh()/1000);
 pl_consumptionChartWeekend.addDataItem(weekendImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem weekendExport = new DataItem();
-weekendExport.setValue(area.fm_weekendExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+weekendExport.setValue(dataObject.getRapidRunData().am_weekendExports_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_kWh()/1000);
 pl_productionChartWeekend.addDataItem(weekendExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 
 
-double weekdayProduction_MWh = area.v_weekdayElectricityProduced_MWh;
-double weekdayConsumption_MWh = area.v_weekdayElectricityConsumed_MWh;
-double weekendProduction_MWh = area.v_weekendElectricityProduced_MWh;
-double weekendConsumption_MWh = area.v_weekendElectricityConsumed_MWh;
+double weekdayProduction_MWh = dataObject.getRapidRunData().getWeekdayElectricityProduced_MWh();
+double weekdayConsumption_MWh = dataObject.getRapidRunData().getWeekdayElectricityConsumed_MWh();
+double weekendProduction_MWh = dataObject.getRapidRunData().getWeekendElectricityProduced_MWh();
+double weekendConsumption_MWh = dataObject.getRapidRunData().getWeekendElectricityConsumed_MWh();
 double chartScale_MWh = max(max(weekdayProduction_MWh, weekendProduction_MWh), max(weekdayConsumption_MWh, weekendConsumption_MWh));
 pl_productionChartWeekday.setFixedScale(chartScale_MWh);
 pl_productionChartWeekend.setFixedScale(chartScale_MWh);
@@ -714,11 +714,11 @@ pl_consumptionChartWeekend.removeAll();
 t_consumptionTextWeekend.setText("Gebruik");
 /*ALCODEEND*/}
 
-double f_setEnergyBalanceChartYear(AreaCollection area)
+double f_setEnergyBalanceChartYear(I_EnergyData dataObject)
 {/*ALCODESTART::1714991716133*/
 // SelfConsumption
 DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(area.v_totalEnergySelfConsumed_MWh);
+annualSelfConsumed.setValue(dataObject.getRapidRunData().v_totalEnergySelfConsumed_MWh);
 pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedEnergyColor);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedEnergyColor);
 
@@ -736,13 +736,13 @@ for (OL_EnergyCarriers EC : uI_Results.energyModel.v_activeEnergyCarriers) {
 	// Production
 	if (area.fm_totalExports_MWh.get(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem totalExport = new DataItem();
-		totalExport.setValue(area.fm_totalExports_MWh.get(EC));
+		totalExport.setValue(dataObject.getRapidRunData().am_toget(EC));
 		pl_productionChartYear.addDataItem(totalExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 	// Consumption
 	if (area.fm_totalImports_MWh.get(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem totalImport = new DataItem();
-		totalImport.setValue(area.fm_totalImports_MWh.get(EC));
+		totalImport.setValue(dataObject.getRapidRunData().fm_totalImports_MWh.get(EC));
 		pl_consumptionChartYear.addDataItem(totalImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_consumptionColors.get(EC));
 	}
 }
@@ -765,8 +765,8 @@ annualHydrogenSupply.setValue(area.fm_totalExports_MWh.get(OL_EnergyCarriers.HYD
 pl_productionChartYear.addDataItem(annualHydrogenSupply, "Waterstof geproduceerd [MWh]", uI_Results.v_hydrogenSupplyColor);
 */
 
-double production_MWh = area.v_totalEnergyProduced_MWh;
-double consumption_MWh = area.v_totalEnergyConsumed_MWh;
+double production_MWh = dataObject.getRapidRunData().getTotalEnergyProduced_MWh();
+double consumption_MWh = dataObject.getRapidRunData().getTotalEnergyConsumed_MWh();
 double chartScale_MWh = max(production_MWh, consumption_MWh);
 pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
@@ -783,7 +783,7 @@ if (chartScale_MWh<10) {
 }
 /*ALCODEEND*/}
 
-double f_setEnergyBalanceChartSummerWinter(AreaCollection area)
+double f_setEnergyBalanceChartSummerWinter(I_EnergyData dataObject)
 {/*ALCODESTART::1714992323083*/
 // Summer SelfConsumption
 DataItem summerSelfConsumed = new DataItem();
@@ -910,7 +910,7 @@ if (chartScale_MWh<10) {
 }
 /*ALCODEEND*/}
 
-double f_setEnergyBalanceChartWeekdayWeekend(AreaCollection area)
+double f_setEnergyBalanceChartWeekdayWeekend(I_EnergyData dataObject)
 {/*ALCODESTART::1714992338018*/
 // Weekday SelfConsumption
 DataItem weekdaySelfConsumed = new DataItem();
@@ -1037,17 +1037,17 @@ if (chartScale_MWh<10) {
 }
 /*ALCODEEND*/}
 
-double f_setEnergyBalanceChartDayNight(AreaCollection area)
+double f_setEnergyBalanceChartDayNight(I_EnergyData dataObject)
 {/*ALCODESTART::1714992339107*/
 // Daytime SelfConsumption
 DataItem daytimeSelfConsumed = new DataItem();
-daytimeSelfConsumed.setValue(area.v_daytimeEnergySelfConsumed_MWh);
+daytimeSelfConsumed.setValue(dataObject.getRapidRunData().getDaytimeEnergySelfConsumed_MWh());
 pl_productionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 // Nighttime SelfConsumption
 DataItem nighttimeSelfConsumed = new DataItem();
-nighttimeSelfConsumed.setValue(area.v_nighttimeEnergySelfConsumed_MWh);
+nighttimeSelfConsumed.setValue(dataObject.getRapidRunData().getNighttimeEnergySelfConsumed_MWh());
 pl_productionChartNight.addDataItem(nighttimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartNight.addDataItem(nighttimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
@@ -1062,31 +1062,33 @@ daytimeExport.setValue(area.v_daytimeExports_MWh.get(OL_EnergyCarriers.ELECTRICI
 pl_productionChartDay.addDataItem(daytimeExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 */
 
-for (OL_EnergyCarriers EC : uI_Results.energyModel.v_activeEnergyCarriers) {
-	// Daytime Production
-	if (area.fm_daytimeExports_MWh.get(EC) > uI_Results.p_cutOff_MWh) {	
-		DataItem daytimeExport = new DataItem();
-		daytimeExport.setValue(area.fm_daytimeExports_MWh.get(EC));
-		pl_productionChartDay.addDataItem(daytimeExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
-	}
+for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeConsumptionEnergyCarriers) {
 	// Daytime Consumption
-	if (area.fm_daytimeImports_MWh.get(EC) > uI_Results.p_cutOff_MWh) {
+	if (dataObject.getRapidRunData().am_daytimeImports_kW.get(EC).getIntegral_kWh()/1000 > uI_Results.p_cutOff_MWh) {
 		DataItem daytimeImport = new DataItem();
-		daytimeImport.setValue(area.fm_daytimeImports_MWh.get(EC));
+		daytimeImport.setValue(dataObject.getRapidRunData().am_daytimeImports_kW.get(EC).getIntegral_kWh()/1000);
 		pl_consumptionChartDay.addDataItem(daytimeImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
-	// Nighttime Production
-	if (area.fm_nighttimeExports_MWh.get(EC) > uI_Results.p_cutOff_MWh) {
-		DataItem nighttimeExport = new DataItem();
-		nighttimeExport.setValue(area.fm_nighttimeExports_MWh.get(EC));
-		pl_productionChartNight.addDataItem(nighttimeExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
-	}
 	// Nighttime Consumption
-	if (area.fm_nighttimeImports_MWh.get(EC) > uI_Results.p_cutOff_MWh) {
+	if (dataObject.getRapidRunData().am_nighttimelmports_kW.get(EC).getIntegral_kWh()/1000 > uI_Results.p_cutOff_MWh) {
 		DataItem nighttimeImport = new DataItem();
-		nighttimeImport.setValue(area.fm_nighttimeImports_MWh.get(EC));
+		nighttimeImport.setValue(dataObject.getRapidRunData().am_nighttimelmports_kW.get(EC).getIntegral_kWh()/1000);
 		pl_consumptionChartNight.addDataItem(nighttimeImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}	
+}
+for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeProductionEnergyCarriers) {
+	// Daytime Production
+	if (dataObject.getRapidRunData().am_daytimeExports_kW.get(EC).getIntegral_kWh()/1000 > uI_Results.p_cutOff_MWh) {	
+		DataItem daytimeExport = new DataItem();
+		daytimeExport.setValue(dataObject.getRapidRunData().am_daytimeExports_kW.get(EC).getIntegral_kWh()/1000);
+		pl_productionChartDay.addDataItem(daytimeExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+	}	
+	// Nighttime Production
+	if (dataObject.getRapidRunData().am_nighttimeExports_kW.get(EC).getIntegral_kWh()/1000 > uI_Results.p_cutOff_MWh) {
+		DataItem nighttimeExport = new DataItem();
+		nighttimeExport.setValue(dataObject.getRapidRunData().am_nighttimeExports_kW.get(EC).getIntegral_kWh()/1000);
+		pl_productionChartNight.addDataItem(nighttimeExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+	}
 }
 
 /*
@@ -1136,10 +1138,10 @@ nighttimeHydrogenSupply.setValue(area.v_nighttimeExports_MWh.get(OL_EnergyCarrie
 pl_productionChartNight.addDataItem(nighttimeHydrogenSupply, "Waterstof geproduceerd [MWh]", uI_Results.v_hydrogenSupplyColor);					
 */
 
-double dayProduction_MWh = area.v_daytimeEnergyProduced_MWh;
-double dayConsumption_MWh = area.v_daytimeEnergyConsumed_MWh;
-double nightProduction_MWh = area.v_nighttimeEnergyProduced_MWh;
-double nightConsumption_MWh = area.v_nighttimeEnergyConsumed_MWh;
+double dayProduction_MWh = dataObject.getRapidRunData().getDaytimeEnergyProduced_MWh();
+double dayConsumption_MWh = dataObject.getRapidRunData().getDaytimeEnergyConsumed_MWh();
+double nightProduction_MWh = dataObject.getRapidRunData().getNighttimeEnergyProduced_MWh();
+double nightConsumption_MWh = dataObject.getRapidRunData().getNighttimeEnergyConsumed_MWh();
 double chartScale_MWh = max(max(dayProduction_MWh, nightProduction_MWh), max(dayConsumption_MWh, nightConsumption_MWh));
 pl_productionChartDay.setFixedScale(chartScale_MWh);
 pl_productionChartNight.setFixedScale(chartScale_MWh);
@@ -1183,84 +1185,84 @@ if (radio_period.getValue() == 0) {
 }
 /*ALCODEEND*/}
 
-double f_setTrafoBalanceChartYear(AreaCollection area)
+double f_setTrafoBalanceChartYear(GridNode GN)
 {/*ALCODESTART::1715003709481*/
 DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY) - area.v_annualExcessImport_MWh);
+annualSelfConsumed.setValue(GN.v_totalImport_MWh - GN.v_annualExcessImport_MWh);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualSelfProduced = new DataItem();
-annualSelfProduced.setValue(area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY) - area.v_annualExcessExport_MWh);
+annualSelfProduced.setValue(GN.v_totalExport_MWh - GN.v_annualExcessExport_MWh);
 pl_productionChartYear.addDataItem(annualSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualImport = new DataItem();
-annualImport.setValue(area.v_annualExcessExport_MWh);
+annualImport.setValue(GN.v_annualExcessExport_MWh);
 pl_productionChartYear.addDataItem(annualImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem annualExport = new DataItem();
-annualExport.setValue(area.v_annualExcessImport_MWh);
+annualExport.setValue(GN.v_annualExcessImport_MWh);
 pl_consumptionChartYear.addDataItem(annualExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
-double chartScale_MWh = max(area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY), area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+double chartScale_MWh = max(GN.v_totalImport_MWh, GN.v_totalExport_MWh);
 pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
 
 if (chartScale_MWh<10) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt((area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY))*1000) + " kWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt((area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY))*1000) + " kWh");
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(GN.v_totalExport_MWh*1000) + " kWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(GN.v_totalImport_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt((area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY))) + " MWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt((area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY))) + " MWh");
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(GN.v_totalExport_MWh) + " MWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(GN.v_totalImport_MWh) + " MWh");
 } else {
-	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal((area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY))/1000, 1) + " GWh");
-	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal((area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY))/1000, 1) + " GWh");
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(GN.v_totalExport_MWh/1000, 1) + " GWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(GN.v_totalImport_MWh/1000, 1) + " GWh");
 }
 /*ALCODEEND*/}
 
-double f_setTrafoBalanceChartSummerWinter(AreaCollection area)
+double f_setTrafoBalanceChartSummerWinter(GridNode GN)
 {/*ALCODESTART::1715003741494*/
-double summerWeekImport_MWh = area.fm_summerWeekImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double summerWeekExport_MWh = area.fm_summerWeekExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double winterWeekImport_MWh = area.fm_winterWeekImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double winterWeekExport_MWh = area.fm_winterWeekExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
+double summerWeekImport_MWh = GN.v_summerWeekImport_MWh;
+double summerWeekExport_MWh = GN.v_summerWeekExport_MWh;;
+double winterWeekImport_MWh = GN.v_winterWeekImport_MWh;
+double winterWeekExport_MWh = GN.v_winterWeekExport_MWh;;
 
-//// Day
+//// Summer
 // Consumption
 DataItem summerWeekSelfConsumed = new DataItem();
-summerWeekSelfConsumed.setValue(summerWeekImport_MWh - area.v_summerWeekExcessImport_MWh);
+summerWeekSelfConsumed.setValue(summerWeekImport_MWh - GN.v_summerWeekExcessImport_MWh);
 pl_consumptionChartSummer.addDataItem(summerWeekSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem summerWeekExport = new DataItem();
-summerWeekExport.setValue(area.v_summerWeekExcessImport_MWh);
+summerWeekExport.setValue(GN.v_summerWeekExcessImport_MWh);
 pl_consumptionChartSummer.addDataItem(summerWeekExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Production
 DataItem summerWeekSelfProduced = new DataItem();
-summerWeekSelfProduced.setValue(summerWeekExport_MWh - area.v_summerWeekExcessExport_MWh);
+summerWeekSelfProduced.setValue(summerWeekExport_MWh - GN.v_summerWeekExcessExport_MWh);
 pl_productionChartSummer.addDataItem(summerWeekSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem summerWeekImport = new DataItem();
-summerWeekImport.setValue(area.v_summerWeekExcessExport_MWh);
+summerWeekImport.setValue(GN.v_summerWeekExcessExport_MWh);
 pl_productionChartSummer.addDataItem(summerWeekImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 
-//// Night
+//// Winter
 // Consumption
 DataItem winterWeekSelfConsumed = new DataItem();
-winterWeekSelfConsumed.setValue(winterWeekImport_MWh - area.v_winterWeekExcessImport_MWh);
+winterWeekSelfConsumed.setValue(winterWeekImport_MWh - GN.v_winterWeekExcessImport_MWh);
 pl_consumptionChartWinter.addDataItem(winterWeekSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem winterWeekExport = new DataItem();
-winterWeekExport.setValue(area.v_winterWeekExcessImport_MWh);
+winterWeekExport.setValue(GN.v_winterWeekExcessImport_MWh);
 pl_consumptionChartWinter.addDataItem(winterWeekExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Production
 DataItem winterWeekSelfProduced = new DataItem();
-winterWeekSelfProduced.setValue(winterWeekExport_MWh - area.v_winterWeekExcessExport_MWh);
+winterWeekSelfProduced.setValue(winterWeekExport_MWh - GN.v_winterWeekExcessExport_MWh);
 pl_productionChartWinter.addDataItem(winterWeekSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem winterWeekImport = new DataItem();
-winterWeekImport.setValue(area.v_winterWeekExcessExport_MWh);
+winterWeekImport.setValue(GN.v_winterWeekExcessExport_MWh);
 pl_productionChartWinter.addDataItem(winterWeekImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 
@@ -1289,50 +1291,50 @@ if (chartScale_MWh<10) {
 }
 /*ALCODEEND*/}
 
-double f_setTrafoBalanceChartDayNight(AreaCollection area)
+double f_setTrafoBalanceChartDayNight(GridNode GN)
 {/*ALCODESTART::1715003742134*/
-double daytimeImport_MWh = area.fm_daytimeImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double daytimeExport_MWh = area.fm_daytimeExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double nighttimeImport_MWh = area.fm_nighttimeImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double nighttimeExport_MWh = area.fm_nighttimeExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
+double daytimeImport_MWh = GN.v_daytimeImport_MWh;
+double daytimeExport_MWh = GN.v_daytimeExport_MWh;
+double nighttimeImport_MWh = GN.v_nighttimeImport_MWh;
+double nighttimeExport_MWh = GN.v_nighttimeExport_MWh;
 
 //// Day
 // Consumption
 DataItem daytimeSelfConsumed = new DataItem();
-daytimeSelfConsumed.setValue(daytimeImport_MWh - area.v_daytimeExcessImport_MWh);
+daytimeSelfConsumed.setValue(daytimeImport_MWh - GN.v_daytimeExcessImport_MWh);
 pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem daytimeExport = new DataItem();
-daytimeExport.setValue(area.v_daytimeExcessImport_MWh);
+daytimeExport.setValue(GN.v_daytimeExcessImport_MWh);
 pl_consumptionChartDay.addDataItem(daytimeExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Production
 DataItem daytimeSelfProduced = new DataItem();
-daytimeSelfProduced.setValue(daytimeExport_MWh - area.v_daytimeExcessExport_MWh);
+daytimeSelfProduced.setValue(daytimeExport_MWh - GN.v_daytimeExcessExport_MWh);
 pl_productionChartDay.addDataItem(daytimeSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem daytimeImport = new DataItem();
-daytimeImport.setValue(area.v_daytimeExcessExport_MWh);
+daytimeImport.setValue(GN.v_daytimeExcessExport_MWh);
 pl_productionChartDay.addDataItem(daytimeImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 
 //// Night
 // Consumption
 DataItem nighttimeSelfConsumed = new DataItem();
-nighttimeSelfConsumed.setValue(nighttimeImport_MWh - area.v_nighttimeExcessImport_MWh);
+nighttimeSelfConsumed.setValue(nighttimeImport_MWh - GN.v_nighttimeExcessImport_MWh);
 pl_consumptionChartNight.addDataItem(nighttimeSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem nighttimeExport = new DataItem();
-nighttimeExport.setValue(area.v_nighttimeExcessImport_MWh);
+nighttimeExport.setValue(GN.v_nighttimeExcessImport_MWh);
 pl_consumptionChartNight.addDataItem(nighttimeExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Production
 DataItem nighttimeSelfProduced = new DataItem();
-nighttimeSelfProduced.setValue(nighttimeExport_MWh - area.v_nighttimeExcessExport_MWh);
+nighttimeSelfProduced.setValue(nighttimeExport_MWh - GN.v_nighttimeExcessExport_MWh);
 pl_productionChartNight.addDataItem(nighttimeSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem nighttimeImport = new DataItem();
-nighttimeImport.setValue(area.v_nighttimeExcessExport_MWh);
+nighttimeImport.setValue(GN.v_nighttimeExcessExport_MWh);
 pl_productionChartNight.addDataItem(nighttimeImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 
@@ -1361,50 +1363,50 @@ if (chartScale_MWh<10) {
 }
 /*ALCODEEND*/}
 
-double f_setTrafoBalanceChartWeekdayWeekend(AreaCollection area)
+double f_setTrafoBalanceChartWeekdayWeekend(GridNode GN)
 {/*ALCODESTART::1715003742758*/
-double weekdayImport_MWh = area.fm_weekdayImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double weekdayExport_MWh = area.fm_weekdayExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double weekendImport_MWh = area.fm_weekendImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double weekendExport_MWh = area.fm_weekendExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
+double weekdayImport_MWh = GN.v_weekdayImport_MWh;
+double weekdayExport_MWh = GN.v_weekdayExport_MWh;
+double weekendImport_MWh = GN.v_weekendImport_MWh;
+double weekendExport_MWh = GN.v_weekendExport_MWh;
 
-//// Day
+//// Weekday
 // Consumption
 DataItem weekdaySelfConsumed = new DataItem();
-weekdaySelfConsumed.setValue(weekdayImport_MWh - area.v_weekdayExcessImport_MWh);
+weekdaySelfConsumed.setValue(weekdayImport_MWh - GN.v_weekdayExcessImport_MWh);
 pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekdayExport = new DataItem();
-weekdayExport.setValue(area.v_weekdayExcessImport_MWh);
+weekdayExport.setValue(GN.v_weekdayExcessImport_MWh);
 pl_consumptionChartWeekday.addDataItem(weekdayExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Production
 DataItem weekdaySelfProduced = new DataItem();
-weekdaySelfProduced.setValue(weekdayExport_MWh - area.v_weekdayExcessExport_MWh);
+weekdaySelfProduced.setValue(weekdayExport_MWh - GN.v_weekdayExcessExport_MWh);
 pl_productionChartWeekday.addDataItem(weekdaySelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekdayImport = new DataItem();
-weekdayImport.setValue(area.v_weekdayExcessExport_MWh);
+weekdayImport.setValue(GN.v_weekdayExcessExport_MWh);
 pl_productionChartWeekday.addDataItem(weekdayImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 
-//// Night
+//// Weekend
 // Consumption
 DataItem weekendSelfConsumed = new DataItem();
-weekendSelfConsumed.setValue(weekendImport_MWh - area.v_weekendExcessImport_MWh);
+weekendSelfConsumed.setValue(weekendImport_MWh - GN.v_weekendExcessImport_MWh);
 pl_consumptionChartWeekend.addDataItem(weekendSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekendExport = new DataItem();
-weekendExport.setValue(area.v_weekendExcessImport_MWh);
+weekendExport.setValue(GN.v_weekendExcessImport_MWh);
 pl_consumptionChartWeekend.addDataItem(weekendExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 // Production
 DataItem weekendSelfProduced = new DataItem();
-weekendSelfProduced.setValue(weekendExport_MWh - area.v_weekendExcessExport_MWh);
+weekendSelfProduced.setValue(weekendExport_MWh - GN.v_weekendExcessExport_MWh);
 pl_productionChartWeekend.addDataItem(weekendSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem weekendImport = new DataItem();
-weekendImport.setValue(area.v_weekendExcessExport_MWh);
+weekendImport.setValue(GN.v_weekendExcessExport_MWh);
 pl_productionChartWeekend.addDataItem(weekendImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
 
 

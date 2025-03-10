@@ -1639,9 +1639,9 @@
 		<BasicProperties Width="220" Height="30">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor/>
-			<VisibleCode>uI_Results.v_selectedObjectType == OL_SelectedObjectType.COOP &amp;&amp; radio_energyType.getValue() != 1</VisibleCode>
+			<VisibleCode>uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP &amp;&amp; radio_energyType.getValue() != 1</VisibleCode>
 			<Enabled>true</Enabled>
-			<EnableExpression>uI_Results.v_selectedObjectType == OL_SelectedObjectType.COOP &amp;&amp; radio_energyType.getValue() != 1</EnableExpression>
+			<EnableExpression>uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP &amp;&amp; radio_energyType.getValue() != 1</EnableExpression>
 			<ActionCode>f_setCharts();</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>

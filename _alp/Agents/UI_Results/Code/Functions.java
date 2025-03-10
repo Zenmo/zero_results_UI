@@ -215,10 +215,10 @@ I_EnergyData f_getSelectedObjectData()
 {/*ALCODESTART::1727083916594*/
 I_EnergyData objectInterface;
 
-if (v_selectedObjectType == OL_SelectedObjectType.GC){
+if (v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
 	objectInterface = v_selectedObjectInterface;
 }
-else if(v_selectedObjectType == OL_SelectedObjectType.COOP){
+else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 		objectInterface = v_selectedObjectInterface;
 }
 else {
@@ -480,9 +480,9 @@ if(v_selectedRadioButtonSetup == OL_RadioButtonSetup.DEFAULT_AND_GESPREKSLEIDRAA
 }
 /*ALCODEEND*/}
 
-double f_updateUIresultsGridNode(AreaCollection area,GridNode GN)
+double f_updateUIresultsGridNode(GridNode GN)
 {/*ALCODESTART::1739364390441*/
-v_selectedObjectType = OL_SelectedObjectType.GRIDNODE;
+v_selectedObjectScope = OL_ResultScope.GRIDNODE;
 v_gridNode = GN;
 
 f_showCorrectChart();
@@ -2645,14 +2645,10 @@ area.v_dataNetbelastingDuurkrommeWeekend_kW = EC.data_weekendNetbelastingDuurkro
 area.v_dataNetbelastingDuurkrommeWeekday_kW = EC.data_weekdayNetbelastingDuurkromme_kW;
 /*ALCODEEND*/}
 
-double f_updateResultsUI(I_EnergyData selectedObjectInterface,OL_SelectedObjectType selectedObjectType)
+double f_updateResultsUI(I_EnergyData selectedObjectInterface)
 {/*ALCODESTART::1741337780594*/
-v_selectedObjectType = selectedObjectType;
 v_selectedObjectInterface = selectedObjectInterface;
-
-
-
-
+v_selectedObjectScope = v_selectedObjectInterface.getScope();
 
 f_showCorrectChart();
 /*ALCODEEND*/}

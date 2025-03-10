@@ -874,7 +874,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1714855681842</Id>
-		<Name><![CDATA[v_selectedObjectType]]></Name>
+		<Name><![CDATA[v_selectedObjectScope]]></Name>
 		<X>540</X>
 		<Y>170</Y>
 		<Label>
@@ -888,9 +888,9 @@
               Constant="false"
               AccessType="protected"
               StaticVariable="false">
-			<Type><![CDATA[OL_SelectedObjectType]]></Type>
+			<Type><![CDATA[OL_ResultScope]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[OL_SelectedObjectType.ENERGYMODEL]]></Code>
+				<Code><![CDATA[OL_ResultScope.ENERGYMODEL]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>

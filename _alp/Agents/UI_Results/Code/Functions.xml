@@ -537,10 +537,6 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
-		</Parameter>
-		<Parameter>
 			<Name><![CDATA[GN]]></Name>
 			<Type><![CDATA[GridNode]]></Type>
 		</Parameter>
@@ -1467,10 +1463,6 @@
 		<Parameter>
 			<Name><![CDATA[selectedObjectInterface]]></Name>
 			<Type><![CDATA[I_EnergyData]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[selectedObjectType]]></Name>
-			<Type><![CDATA[OL_SelectedObjectType]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

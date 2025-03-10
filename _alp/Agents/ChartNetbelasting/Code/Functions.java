@@ -120,7 +120,7 @@ Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, area.v_gridCapacityDelivery_kW);
 DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -area.v_gridCapacityFeedIn_kW);
 	
-if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectType == OL_SelectedObjectType.COOP){
+if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	feedinCapacityLabel = "Cumulatieve GTV teruglevering van bedrijven";

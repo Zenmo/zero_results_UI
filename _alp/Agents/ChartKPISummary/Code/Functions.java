@@ -38,7 +38,7 @@ double KPIselfsufficiency_pct = area.v_totalEnergySelfConsumed_MWh / totalEnergy
 
 //Overload of GC for GC and overload of all gridnodes combined for Region (GN is not supported and shows same KPIs as whole region)
 double KPIOverloadHours_pct;
-if(uI_Results.v_selectedObjectType == OL_SelectedObjectType.ENERGYMODEL){
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
 	KPIOverloadHours_pct = area.v_totalTimeOverloaded_h/8760*100;
 }
 else{
@@ -97,7 +97,7 @@ if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null && area.v_
 	
 	//Overload of GC for GC and overload of all gridnodes combined for Region (GN is not supported and shows same KPIs as whole region)
 	double previousKPIOverloadHours_pct;
-	if(uI_Results.v_selectedObjectType == OL_SelectedObjectType.ENERGYMODEL || uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE){
+	if(uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYMODEL || uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
 		previousKPIOverloadHours_pct = area.v_previousTotals.getPreviousTotalTimeOverloadedTransformers_hr()/8760*100;
 	}
 	else{
