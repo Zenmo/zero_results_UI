@@ -6,8 +6,8 @@
 		<Id>1732117759406</Id>
 		<Name><![CDATA[f_setEnergyBalanceChartSimple]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>20</X>
-		<Y>760</Y>
+		<X>-420</X>
+		<Y>720</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -51,8 +51,8 @@
 		<Id>1732117759408</Id>
 		<Name><![CDATA[f_setEnergyBalanceChartFull]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>20</X>
-		<Y>690</Y>
+		<X>-420</X>
+		<Y>650</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -108,8 +108,8 @@
 		<Id>1732117759410</Id>
 		<Name><![CDATA[f_setEnergyBalanceChartSimpleBoth]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>20</X>
-		<Y>790</Y>
+		<X>-420</X>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -181,8 +181,8 @@
 		<Id>1732117759412</Id>
 		<Name><![CDATA[f_setEnergyBalanceChartFullBoth]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>20</X>
-		<Y>720</Y>
+		<X>-420</X>
+		<Y>680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -278,8 +278,8 @@
 		<Id>1732117759420</Id>
 		<Name><![CDATA[f_setSupplyDemandGraphsFromString]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>30</X>
-		<Y>950</Y>
+		<X>-400</X>
+		<Y>880</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -334,7 +334,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1732117901396</Id>
 		<Name><![CDATA[f_setCharts]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>370</X>
 		<Y>760</Y>
 		<Label>

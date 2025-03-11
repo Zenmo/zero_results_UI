@@ -1369,8 +1369,9 @@
 	<Variable Class="CollectionVariable">
 		<Id>1727085020565</Id>
 		<Name><![CDATA[c_previousTotals_GC]]></Name>
-		<X>540</X>
-		<Y>410</Y>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>1170</X>
+		<Y>770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

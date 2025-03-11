@@ -159,7 +159,7 @@ else{
 
 double f_addOtherEnergyFlows_SummerWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897296534*/
-double startTime_h = uI_Results.energyModel.p_startHourSummerWeek;
+double startTime_h = uI_Results.energyModel.p_startHourSummerWeek - uI_Results.energyModel.p_runStartTime_h;
 
 EnumSet<OL_EnergyCarriers> activeProductionEnergyCarriers = EnumSet.copyOf(dataObject.getActiveAssetData().activeProductionEnergyCarriers);
 EnumSet<OL_EnergyCarriers> activeConsumptionEnergyCarriers = EnumSet.copyOf(dataObject.getActiveAssetData().activeConsumptionEnergyCarriers);
@@ -186,7 +186,7 @@ double f_addElectricityFlows_SummerWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897296536*/
 group_week.setVisible(true);
 
-double startTime_h = uI_Results.energyModel.p_startHourSummerWeek;
+double startTime_h = uI_Results.energyModel.p_startHourSummerWeek - uI_Results.energyModel.p_runStartTime_h;
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -265,7 +265,7 @@ radio_periodLive.setVisible(false);
 
 double f_addOtherEnergyFlows_WinterWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897923568*/
-double startTime_h = uI_Results.energyModel.p_startHourWinterWeek;
+double startTime_h = uI_Results.energyModel.p_startHourWinterWeek - uI_Results.energyModel.p_runStartTime_h;
 
 EnumSet<OL_EnergyCarriers> activeProductionEnergyCarriers = EnumSet.copyOf(dataObject.getActiveAssetData().activeProductionEnergyCarriers);
 EnumSet<OL_EnergyCarriers> activeConsumptionEnergyCarriers = EnumSet.copyOf(dataObject.getActiveAssetData().activeConsumptionEnergyCarriers);
@@ -293,7 +293,7 @@ double f_addElectricityFlows_WinterWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897923570*/
 group_week.setVisible(true);
 
-double startTime_h = uI_Results.energyModel.p_startHourWinterWeek;
+double startTime_h = uI_Results.energyModel.p_startHourWinterWeek - uI_Results.energyModel.p_runStartTime_h;
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -659,7 +659,7 @@ if(dataObject.getFeedinCapacityKnown()){
 }
 
 //Add datasets to plot
-double startTime_h = uI_Results.energyModel.p_startHourSummerWeek;
+double startTime_h = uI_Results.energyModel.p_startHourSummerWeek - uI_Results.energyModel.p_runStartTime_h;
 plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekDeliveryCapacity_kW.getDataSet(startTime_h), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getDataSet(startTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
@@ -674,7 +674,7 @@ if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
 	if (b_subdivideEnergyCoopFlows) {
 		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getAllChildMemberGridConnections();
 		for (GridConnection GC : memberGridConnections) {
-			plot_netload_week.addDataSet(GC.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startHourSummerWeek), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+			plot_netload_week.addDataSet(GC.v_rapidRunData.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startHourSummerWeek), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 		}
 	}
 }
@@ -706,7 +706,7 @@ if(dataObject.getFeedinCapacityKnown()){
 }
 
 //Add datasets to plot
-double startTime_h = uI_Results.energyModel.p_startHourWinterWeek;
+double startTime_h = uI_Results.energyModel.p_startHourWinterWeek - uI_Results.energyModel.p_runStartTime_h;
 plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_winterWeekDeliveryCapacity_kW.getDataSet(startTime_h), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_winterWeekFeedinCapacity_kW.getDataSet(startTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_netload_week.addDataSet(dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
@@ -721,7 +721,7 @@ if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
 	if (b_subdivideEnergyCoopFlows){
 		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getAllChildMemberGridConnections();
 		for (GridConnection GC : memberGridConnections) {
-			plot_netload_week.addDataSet(GC.am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startHourWinterWeek), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+			plot_netload_week.addDataSet(GC.v_rapidRunData.am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startHourWinterWeek), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 		}
 	}
 }

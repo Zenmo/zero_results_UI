@@ -630,7 +630,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1739884154258</Id>
-		<Name><![CDATA[f_setNonLivePlotRadioButtons]]></Name>
+		<Name><![CDATA[f_enableNonLivePlotRadioButtons]]></Name>
 		<X>820</X>
 		<Y>390</Y>
 		<Label>

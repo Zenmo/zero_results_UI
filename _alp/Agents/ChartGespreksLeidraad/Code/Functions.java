@@ -12,7 +12,7 @@ gr_gespreksleidraad3v2.setVisible(false);
 
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
-if(uI_Results.v_selectedObjectType == OL_SelectedObjectType.ENERGYMODEL){
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
 	f_setWarningScreen(false);
 	return;
 }

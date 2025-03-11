@@ -5,7 +5,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813825</Id>
 		<Name><![CDATA[f_setGespreksleidraadBedrijvenCharts]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>60</X>
 		<Y>840</Y>
 		<Label>
@@ -22,7 +21,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813827</Id>
 		<Name><![CDATA[f_setChartsGespreksleidraadBedrijven1]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>60</X>
 		<Y>870</Y>
 		<Label>
@@ -43,7 +41,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813829</Id>
 		<Name><![CDATA[f_setEnergyBalanceChartFull]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>80</X>
 		<Y>886</Y>
 		<Label>
@@ -64,7 +61,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813831</Id>
 		<Name><![CDATA[f_setChartsGespreksleidraadBedrijven2]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>560</X>
 		<Y>870</Y>
 		<Label>
@@ -85,7 +81,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730395813833</Id>
 		<Name><![CDATA[f_setSelfConsumptionChart]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>574.667</X>
 		<Y>890</Y>
 		<Label>
@@ -121,8 +116,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1737988539936</Id>
-		<Name><![CDATA[f_setDemandAndSupplyGespreksleidraad1]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<Name><![CDATA[f_setDemandAndSupplyGespreksleidraadBedrijven1]]></Name>
 		<X>80</X>
 		<Y>905</Y>
 		<Label>
@@ -143,7 +137,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739206434585</Id>
 		<Name><![CDATA[f_setChartsGespreksleidraadBedrijven3]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>990</X>
 		<Y>870</Y>
 		<Label>
@@ -164,7 +157,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1740754239000</Id>
 		<Name><![CDATA[f_setGroupContractChart]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>990</X>
 		<Y>900</Y>
 		<Label>
@@ -175,8 +167,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[data]]></Name>
-			<Type><![CDATA[I_EnergyData]]></Type>
+			<Name><![CDATA[COOP]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

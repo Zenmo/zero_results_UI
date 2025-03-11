@@ -451,8 +451,7 @@ double f_setCharts()
 {/*ALCODESTART::1732117901396*/
 f_resetCharts();
 f_setVisiblity();
-AreaCollection area = uI_Results.f_getDataObject();
-
+/*
 if (uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE) {
 	f_setTrafoBalanceChartYear(area);
 	f_setTrafoBalanceChartSummerWinter(area);
@@ -473,7 +472,7 @@ else {
 		f_setEnergyBalanceChartWeekdayWeekend(area);
 	}
 }
-
+*/
 // chart scale?
 
 /*ALCODEEND*/}

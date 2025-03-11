@@ -709,7 +709,7 @@ area.v_dataBatterySOCLiveWeek_.add(timeAxisValue, SOC);
 
 /*ALCODEEND*/}
 
-double f_setNonLivePlotRadioButtons(boolean active)
+double f_enableNonLivePlotRadioButtons(boolean active)
 {/*ALCODESTART::1739884154258*/
 v_selectedRadioButton.setEnabled(active);
 chartProfielen.radio_period.setEnabled(active);

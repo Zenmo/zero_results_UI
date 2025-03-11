@@ -2,13 +2,13 @@ double f_setKPISummaryChart()
 {/*ALCODESTART::1726830495435*/
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
-/*
-//At least for now grid nodes are not supported
-if(uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE){
-	dataObject = uI_Results.v_area;
-}
-*/
 
+//At least for now grid nodes are not supported
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+	return;
+}
+
+/*
 //Reset chart
 f_resetChart();
 
@@ -17,6 +17,7 @@ f_setKPIs(data);
 
 //Set visible
 uI_Results.chartKPISummary_presentation.setVisible(true);
+*/
 /*ALCODEEND*/}
 
 double f_setKPIs(AreaCollection area)

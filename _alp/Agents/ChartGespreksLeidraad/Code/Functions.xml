@@ -5,7 +5,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1714765506606</Id>
 		<Name><![CDATA[f_selectGespreksleidraadCharts]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-380</X>
 		<Y>320</Y>
 		<Label>
@@ -101,7 +100,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730385220445</Id>
 		<Name><![CDATA[f_setGespreksleidraadGraphsLocation]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-380</X>
 		<Y>340</Y>
 		<Label>
@@ -130,7 +128,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730391982666</Id>
 		<Name><![CDATA[f_setChartDescriptionText]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-380</X>
 		<Y>740</Y>
 		<Label>
@@ -155,7 +152,6 @@
 		<ReturnType>String</ReturnType>
 		<Id>1730391982677</Id>
 		<Name><![CDATA[formatText]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-380</X>
 		<Y>760</Y>
 		<Label>
