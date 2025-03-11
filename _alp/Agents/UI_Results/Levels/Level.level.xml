@@ -1101,7 +1101,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		<Id>1732015096373</Id>
 		<Name><![CDATA[rect_setupAndStylingFunctions]]></Name>
 		<X>1520</X>
-		<Y>160</Y>
+		<Y>120</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
@@ -1127,7 +1127,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		<Id>1732015137573</Id>
 		<Name><![CDATA[txt_resultsUISetupAndStylingFunctions]]></Name>
 		<X>1530</X>
-		<Y>170</Y>
+		<Y>130</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1178,7 +1178,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		<Id>1739364328107</Id>
 		<Name><![CDATA[rect_areaCollectionUpdateFunctions]]></Name>
 		<X>1120</X>
-		<Y>160</Y>
+		<Y>120</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
@@ -1195,7 +1195,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>380</Width>
-		<Height>530</Height>
+		<Height>100</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -1204,7 +1204,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		<Id>1739369152606</Id>
 		<Name><![CDATA[txt_resultsUIDataUpdateFunctions]]></Name>
 		<X>1130</X>
-		<Y>170</Y>
+		<Y>130</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1217,7 +1217,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Update area collections]]></Text>
+		<Text><![CDATA[Update data functions]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>16</Size>
@@ -1246,7 +1246,7 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>480</Width>
-		<Height>110</Height>
+		<Height>80</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>

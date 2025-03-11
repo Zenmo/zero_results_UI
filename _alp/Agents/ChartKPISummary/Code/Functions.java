@@ -20,7 +20,7 @@ uI_Results.chartKPISummary_presentation.setVisible(true);
 */
 /*ALCODEEND*/}
 
-double f_setKPIs(AreaCollection area)
+double f_setKPIs(I_EnergyData data)
 {/*ALCODESTART::1726830499836*/
 ////Calculate the values
 

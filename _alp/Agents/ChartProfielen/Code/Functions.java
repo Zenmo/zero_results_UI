@@ -472,13 +472,6 @@ else { // Stack Chart
 }
 /*ALCODEEND*/}
 
-double f_setTrafoPlotScale(AreaCollection dataObject)
-{/*ALCODESTART::1714908011118*/
-int maxValue = roundToInt(max(dataObject.v_dataElectricityBaseloadConsumptionLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataElectricityBaseloadConsumptionLiveWeek_kW.getYMin(), -dataObject.v_dataElectricityDeliveryCapacityLiveWeek_kW.getYMin()));
-plot_trafo_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
-/*ALCODEEND*/}
-
 double f_addElectricityFlowsTrafo_Live(GridNode GN)
 {/*ALCODESTART::1715169261226*/
 String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";

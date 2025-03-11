@@ -1,69 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EmbeddedObjects>
 	<EmbeddedObject>
-		<Id>1705600400170</Id>
-		<Name><![CDATA[pop_areaResults]]></Name>
-		<X>540</X>
-		<Y>80</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<ActiveObjectClass>
-			<PackageName>digital_twin_results</PackageName>
-			<ClassName>AreaCollection</ClassName>
-		</ActiveObjectClass>
-		<GenericParameterSubstitute>
-			<GenericParameterSubstituteReference>
-				<PackageName>digital_twin_results</PackageName>
-				<ClassName>AreaCollection</ClassName>
-				<ItemName>1705600400160</ItemName>
-			</GenericParameterSubstituteReference>
-		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[p_areaType]]></Name>
-			</Parameter>
-			<Parameter>
-				<Name><![CDATA[p_name]]></Name>
-			</Parameter>
-		</Parameters>
-		<ReplicationFlag>true</ReplicationFlag>
-		<Replication Class="CodeValue">
-			<Code><![CDATA[100]]></Code>
-		</Replication>
-		<CollectionType>ARRAY_LIST_BASED</CollectionType>
-		<InEnvironment>true</InEnvironment>
-		<InitialLocationType>XYZ</InitialLocationType>
-		<XCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</XCode>
-		<YCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</YCode>
-		<ZCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ZCode>
-		<ColumnCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</ColumnCode>
-		<RowCode Class="CodeValue">
-			<Code><![CDATA[0]]></Code>
-		</RowCode>
-		<LocationNameCode Class="CodeValue">
-			<Code><![CDATA[""]]></Code>
-		</LocationNameCode>
-		<InitializationType>EMPTY</InitializationType>
-		<InitializationDatabaseTableQuery>
-			<TableReference/>
-		</InitializationDatabaseTableQuery>
-		<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-		<QuantityColumn/>
-	</EmbeddedObject>
-	<EmbeddedObject>
 		<Id>1714769685819</Id>
 		<Name><![CDATA[chartProfielen]]></Name>
 		<X>820</X>

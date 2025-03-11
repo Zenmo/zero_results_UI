@@ -21,6 +21,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1726830499836</Id>
 		<Name><![CDATA[f_setKPIs]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-280</X>
 		<Y>430</Y>
 		<Label>
@@ -31,8 +32,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -73,6 +74,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1727107912139</Id>
 		<Name><![CDATA[f_resetChart]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-280</X>
 		<Y>410</Y>
 		<Label>

@@ -661,26 +661,6 @@
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
-		<Id>1705603337539</Id>
-		<Name><![CDATA[v_area]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>580</X>
-		<Y>-150</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[AreaCollection]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
 		<Id>1706006311653</Id>
 		<Name><![CDATA[v_energyDemandColor]]></Name>
 		<X>80</X>
@@ -766,46 +746,6 @@
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[dodgerBlue]]></Code>
 			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1708448119976</Id>
-		<Name><![CDATA[v_gridConnection]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>580</X>
-		<Y>-130</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[AreaCollection]]></Type>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1708448128397</Id>
-		<Name><![CDATA[v_energyCoop]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>580</X>
-		<Y>-110</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[AreaCollection]]></Type>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -1052,7 +992,7 @@
 		<Id>1727706137865</Id>
 		<Name><![CDATA[b_showKPISummary]]></Name>
 		<X>1600</X>
-		<Y>470</Y>
+		<Y>430</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1118,7 +1058,7 @@
 		<Id>1732100762586</Id>
 		<Name><![CDATA[v_selectedRadioButtonSetup]]></Name>
 		<X>1570</X>
-		<Y>230</Y>
+		<Y>190</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1184,7 +1124,7 @@
 		<Id>1736425391442</Id>
 		<Name><![CDATA[b_showGroupContractValues]]></Name>
 		<X>540</X>
-		<Y>460</Y>
+		<Y>260</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1250,7 +1190,7 @@
 		<Id>1740042760714</Id>
 		<Name><![CDATA[v_selectedRadioButton]]></Name>
 		<X>1570</X>
-		<Y>250</Y>
+		<Y>210</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1265,29 +1205,6 @@
 			<Type><![CDATA[ShapeRadioButtonGroup]]></Type>
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[rb_DEFAULT]]></Code>
-			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1741338975468</Id>
-		<Name><![CDATA[v_selectedObjectType1]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1170</X>
-		<Y>740</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[OL_GISObjectType]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[OL_GISObjectType.REGION]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -1364,25 +1281,6 @@
 				<MaxSliderValue>100</MaxSliderValue>
 				<DelimeterType>NO_DELIMETER</DelimeterType>
 			</ParameterEditor>
-		</Properties>
-	</Variable>
-	<Variable Class="CollectionVariable">
-		<Id>1727085020565</Id>
-		<Name><![CDATA[c_previousTotals_GC]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1170</X>
-		<Y>770</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-			<CollectionClass>LinkedHashMap</CollectionClass>
-			<ElementClass>GridConnection</ElementClass>
-			<ValueElementClass>J_previousTotals</ValueElementClass>
 		</Properties>
 	</Variable>
 </Variables>
