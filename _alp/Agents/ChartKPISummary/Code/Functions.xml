@@ -21,7 +21,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1726830499836</Id>
 		<Name><![CDATA[f_setKPIs]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-280</X>
 		<Y>430</Y>
 		<Label>
@@ -74,7 +73,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1727107912139</Id>
 		<Name><![CDATA[f_resetChart]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-280</X>
 		<Y>410</Y>
 		<Label>

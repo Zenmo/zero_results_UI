@@ -2290,7 +2290,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Netbelasting]]></Text>
+		<Text><![CDATA[Overbelasting]]></Text>
 		<Font>
 			<Name><![CDATA[Arial]]></Name>
 			<Size>20</Size>

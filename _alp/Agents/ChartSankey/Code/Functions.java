@@ -3,13 +3,13 @@ double f_setSankey()
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
 double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh();
-double importE_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000 : 0;
-double importG_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000 : 0;
-double importF_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegralPos_kWh()/1000 : 0;
-double importHeat_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HEAT).getIntegralPos_kWh()/1000 : 0;
-double importH_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralPos_kWh()/1000 : 0;
-double exportH_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralNeg_kWh()/1000 : 0;
-double exportE_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000 : 0;
+double importE_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY) : 0;
+double importG_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE) : 0;
+double importF_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.DIESEL) : 0;
+double importHeat_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT) : 0;
+double importH_MWh = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HYDROGEN) : 0;
+double exportH_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HYDROGEN) : 0;
+double exportE_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY) : 0;
 double heatProduced_MWh = 0;
 
 flowDataset = new DefaultFlowDataset();
