@@ -451,6 +451,11 @@ double f_setCharts()
 {/*ALCODESTART::1732117901396*/
 f_resetCharts();
 f_setVisiblity();
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+
+EnergyCoop coop = (EnergyCoop)data;
+f_setElectricityBalanceChartYear(coop);
+
 /*
 if (uI_Results.v_selectedObjectType == OL_SelectedObjectType.GRIDNODE) {
 	f_setTrafoBalanceChartYear(area);
@@ -477,27 +482,33 @@ else {
 
 /*ALCODEEND*/}
 
-double f_setElectricityBalanceChartYear(AreaCollection area)
+double f_setElectricityBalanceChartYear(EnergyCoop coop)
 {/*ALCODESTART::1732117901398*/
+double production_MWh = coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + coop.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY);
+coop.getRapidRunData().getTotalElectricityProduced_MWh(); // is this the same?
+
+double consumption_MWh = coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + coop.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY);
+coop.getRapidRunData().getTotalElectricityConsumed_MWh(); // is this the same?
+
+double import_MWh = coop.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY);
+double export_MWh = coop.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY);
+double electricitySelfconsumed_MWh = coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh();
 DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(area.v_totalElectricitySelfConsumed_MWh);
+annualSelfConsumed.setValue(electricitySelfconsumed_MWh);
 pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal geleverd [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualImport = new DataItem();
-annualImport.setValue(area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+annualImport.setValue(import_MWh);
 pl_consumptionChartYear.addDataItem(annualImport, "Tekorten ingekocht [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem annualExport = new DataItem();
-annualExport.setValue(area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY));
+annualExport.setValue(export_MWh);
 pl_productionChartYear.addDataItem(annualExport, "Overschotten verkocht [MWh]", uI_Results.v_exportedEnergyColor);
 
-double production_MWh = area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double consumption_MWh = area.v_totalElectricitySelfConsumed_MWh + area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
 double chartScale_MWh = max(production_MWh, consumption_MWh);
 pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
-
 
 if (chartScale_MWh<10) {
 	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");

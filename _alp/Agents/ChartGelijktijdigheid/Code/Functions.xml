@@ -350,7 +350,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1732117901398</Id>
 		<Name><![CDATA[f_setElectricityBalanceChartYear]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>370</X>
 		<Y>800</Y>
 		<Label>
@@ -361,8 +360,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[area]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Name><![CDATA[coop]]></Name>
+			<Type><![CDATA[EnergyCoop]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
