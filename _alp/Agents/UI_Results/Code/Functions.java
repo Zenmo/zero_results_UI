@@ -31,7 +31,7 @@ switch (v_selectedChartType) {
 		gr_chartSankey_presentation.setVisible(true);
 		chartSankey.f_setSankey();
 		break;
-	case GESPREKSLEIDRAAD_SAMENVATTING:
+	case GESPREKSLEIDRAAD_BEDRIJVEN:
 		gr_chartSummary_presentation.setVisible(true);
 		chartGespreksleidraadBedrijven.f_setGespreksleidraadBedrijvenCharts();
 		break;

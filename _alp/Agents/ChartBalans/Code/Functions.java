@@ -1,311 +1,3 @@
-double f_setEnergyBalanceChartSimple(double selfConsumedEnergy_MWh,double import_MWh,double export_MWh,StackChart pl_consumptionChart,StackChart pl_productionChart,ShapeText t_OpwekText,ShapeText t_GebruikText)
-{/*ALCODESTART::1714746556112*/
-//gr_onbalansGraphs.setVisible(false);
-pl_productionChart.removeAll();
-pl_consumptionChart.removeAll();
-DataItem d1 = new DataItem();
-d1.setValue(selfConsumedEnergy_MWh);
-DataItem d2 = new DataItem();
-d2.setValue(import_MWh);
-DataItem d3 = new DataItem();
-d3.setValue(export_MWh);
-pl_consumptionChart.addDataItem(d1,"Lokaal opgewekt [MWh]",v_selfConsumedElectricityColor);
-pl_consumptionChart.addDataItem(d2,"Externe bronnen [MWh]",v_importedEnergyColor);
-//pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
-pl_productionChart.addDataItem(d1,"Lokaal gebruik gebied [MWh]",v_selfConsumedElectricityColor);
-pl_productionChart.addDataItem(d3,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
-//pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
-double chartScale_MWh = max(selfConsumedEnergy_MWh+export_MWh, selfConsumedEnergy_MWh+import_MWh);
-pl_consumptionChart.setFixedScale(chartScale_MWh);
-pl_productionChart.setFixedScale(chartScale_MWh);
-
-if (chartScale_MWh<10) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)*1000) + " kWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<1000) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)) + " MWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)) + " MWh");
-} else {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)/1000) + " GWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)/1000) + " GWh");
-}
-	
-/*ALCODEEND*/}
-
-double f_setEnergyBalanceChartFull(double selfConsumedEnergy_MWh,double importE_MWh,double importG_MWh,double importF_MWh,double importH_MWh,double exportE_MWh,StackChart pl_consumptionChart,StackChart pl_productionChart,ShapeText t_OpwekText,ShapeText t_GebruikText)
-{/*ALCODESTART::1714746556114*/
-//gr_onbalansGraphs.setVisible(false);
-pl_productionChart.removeAll();
-pl_consumptionChart.removeAll();
-
-
-DataItem d1 = new DataItem();
-d1.setValue(selfConsumedEnergy_MWh);
-DataItem d3 = new DataItem();
-d3.setValue(exportE_MWh);
-
-/*pl_productionChart.addDataItem(d1,"Zelfconsumptie gebied [MWh]",yellowGreen);
-pl_productionChart.addDataItem(d3,"Teruggeleverde Electriciteit [MWh]",navy);
-//pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
-pl_consumptionChart.addDataItem(d1,"Zelfconsumptie gebied [MWh]",yellowGreen);*/
-
-pl_consumptionChart.addDataItem(d1,"Lokaal opgewekt [MWh]",v_selfConsumedEnergyColor);
-//pl_consumptionChart.addDataItem(d2,"Externe bronnen [MWh]",brown);
-//pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
-pl_productionChart.addDataItem(d1,"Lokaal gebruik gebied [MWh]",v_selfConsumedEnergyColor);
-pl_productionChart.addDataItem(d3,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
-
-
-if (importE_MWh > 0) {
-	DataItem d2 = new DataItem();
-	d2.setValue(importE_MWh);
-	pl_consumptionChart.addDataItem(d2,"Electriciteit uit het net [MWh]",v_importedElectricityColor);
-}
-if (importG_MWh > 0 ) {
-	DataItem d4 = new DataItem();
-	d4.setValue(importG_MWh); //
-	pl_consumptionChart.addDataItem(d4,"Aardgas [MWh]",v_naturalGasDemandColor);
-}	
-if (importF_MWh > 0 ) {
-	DataItem d5 = new DataItem();
-	d5.setValue(importF_MWh); // fuel
-	pl_consumptionChart.addDataItem(d5,"Benzine/diesel[MWh]",v_petroleumProductsDemandColor);
-}
-if (importH_MWh > 0 ) {
-	DataItem d6 = new DataItem();
-	d6.setValue(importH_MWh); // Hydrogen
-	pl_consumptionChart.addDataItem(d6,"Waterstof [MWh]",v_hydrogenDemandColor);
-}
-
-
-//pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
-double chartScale_MWh = max(selfConsumedEnergy_MWh + exportE_MWh, selfConsumedEnergy_MWh + importE_MWh+importG_MWh + importF_MWh+importH_MWh);
-pl_consumptionChart.setFixedScale(chartScale_MWh);
-pl_productionChart.setFixedScale(chartScale_MWh);
-
-//t_OpwekText.setText("Lokale" + System.lineSeparator() + "opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)/1000) + " GWh");
-//t_GebruikText.setText("Lokaal" + System.lineSeparator() + "verbruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh)/1000) + " GWh");
-
-if (chartScale_MWh<10) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)*1000) + " kWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<1000) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)) + " MWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh)) + " MWh");
-} else {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToDecimal((selfConsumedEnergy_MWh+exportE_MWh)/1000, 1) + " GWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToDecimal((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh)/1000,1) + " GWh");
-}
-/*ALCODEEND*/}
-
-double f_setEnergyBalanceChartSimpleBoth(double selfConsumedEnergy_MWh,double import_MWh,double export_MWh,StackChart pl_consumptionChart,StackChart pl_productionChart,ShapeText t_OpwekText,ShapeText t_GebruikText,double selfConsumedEnergyBottom_MWh,double importBottom_MWh,double exportBottom_MWh,StackChart pl_consumptionChartBottom,StackChart pl_productionChartBottom,ShapeText t_OpwekTextBottom,ShapeText t_GebruikTextBottom)
-{/*ALCODESTART::1714746556116*/
-//gr_onbalansGraphs.setVisible(false);
-
-DataItem d1 = new DataItem();
-d1.setValue(selfConsumedEnergy_MWh);
-DataItem d2 = new DataItem();
-d2.setValue(import_MWh);
-DataItem d3 = new DataItem();
-d3.setValue(export_MWh);
-pl_productionChart.removeAll();
-pl_consumptionChart.removeAll();
-pl_consumptionChart.addDataItem(d1,"Lokaal opgewekt [MWh]",v_selfConsumedElectricityColor);
-pl_consumptionChart.addDataItem(d2,"Externe bronnen [MWh]",v_importedEnergyColor);
-//pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
-pl_productionChart.addDataItem(d1,"Lokaal gebruik gebied [MWh]",v_selfConsumedElectricityColor);
-pl_productionChart.addDataItem(d3,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
-
-DataItem d4 = new DataItem();
-d4.setValue(selfConsumedEnergyBottom_MWh);
-DataItem d5 = new DataItem();
-d5.setValue(importBottom_MWh);
-DataItem d6 = new DataItem();
-d6.setValue(exportBottom_MWh);
-pl_productionChartBottom.removeAll();
-pl_consumptionChartBottom.removeAll();
-pl_consumptionChartBottom.addDataItem(d4,"Lokaal opgewekt [MWh]",v_selfConsumedElectricityColor);
-pl_consumptionChartBottom.addDataItem(d5,"Externe bronnen [MWh]",v_importedEnergyColor);
-//pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
-pl_productionChartBottom.addDataItem(d4,"Lokaal gebruik gebied [MWh]",v_selfConsumedElectricityColor);
-pl_productionChartBottom.addDataItem(d6,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
-
-//pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
-double chartScale_MWh = max(max(selfConsumedEnergy_MWh+export_MWh, selfConsumedEnergy_MWh+import_MWh),
-							max(selfConsumedEnergyBottom_MWh+exportBottom_MWh, selfConsumedEnergyBottom_MWh+importBottom_MWh));
-pl_consumptionChart.setFixedScale(chartScale_MWh);
-pl_productionChart.setFixedScale(chartScale_MWh);
-pl_consumptionChartBottom.setFixedScale(chartScale_MWh);
-pl_productionChartBottom.setFixedScale(chartScale_MWh);
-
-if (chartScale_MWh<10) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)*1000) + " kWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<10000) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)) + " MWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)) + " MWh");
-} else {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+export_MWh)/1000) + " GWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+import_MWh)/1000) + " GWh");
-}
-if (chartScale_MWh<10) {
-	t_OpwekTextBottom.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+exportBottom_MWh)*1000) + " kWh");
-	t_GebruikTextBottom.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+importBottom_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<10000) {
-	t_OpwekTextBottom.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+exportBottom_MWh)) + " MWh");
-	t_GebruikTextBottom.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+importBottom_MWh)) + " MWh");
-} else {
-	t_OpwekTextBottom.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+exportBottom_MWh)/1000) + " GWh");
-	t_GebruikTextBottom.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+importBottom_MWh)/1000) + " GWh");
-}
-	
-/*ALCODEEND*/}
-
-double f_setEnergyBalanceChartFullBoth(double selfConsumedEnergy_MWh,double importE_MWh,double importG_MWh,double importF_MWh,double importH_MWh,double exportE_MWh,StackChart pl_consumptionChart,StackChart pl_productionChart,ShapeText t_OpwekText,ShapeText t_GebruikText,double selfConsumedEnergyBottom_MWh,double importEBottom_MWh,double importGBottom_MWh,double importFBottom_MWh,double importHBottom_MWh,double exportEBottom_MWh,StackChart pl_consumptionChartBottom,StackChart pl_productionChartBottom,ShapeText t_OpwekTextBottom,ShapeText t_GebruikTextBottom)
-{/*ALCODESTART::1714746556118*/
-//gr_onbalansGraphs.setVisible(false);
-pl_productionChart.removeAll();
-pl_consumptionChart.removeAll();
-pl_productionChartBottom.removeAll();
-pl_consumptionChartBottom.removeAll();
-
-DataItem d1 = new DataItem();
-d1.setValue(selfConsumedEnergy_MWh);
-DataItem d3 = new DataItem();
-d3.setValue(exportE_MWh);
-
-pl_consumptionChart.addDataItem(d1,"Lokaal opgewekt [MWh]",v_selfConsumedEnergyColor);
-pl_productionChart.addDataItem(d1,"Lokaal gebruik gebied [MWh]",v_selfConsumedEnergyColor);
-pl_productionChart.addDataItem(d3,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
-
-if (importE_MWh > 0) {
-	DataItem d2 = new DataItem();
-	d2.setValue(importE_MWh);
-	pl_consumptionChart.addDataItem(d2,"Electriciteit uit het net [MWh]",v_importedElectricityColor);
-}
-if (importG_MWh > 0 ) {
-	DataItem d4 = new DataItem();
-	d4.setValue(importG_MWh); //
-	pl_consumptionChart.addDataItem(d4,"Aardgas [MWh]",v_naturalGasDemandColor);
-}	
-if (importF_MWh > 0 ) {
-	DataItem d5 = new DataItem();
-	d5.setValue(importF_MWh); // fuel
-	pl_consumptionChart.addDataItem(d5,"Benzine/diesel[MWh]",v_petroleumProductsDemandColor);
-}
-if (importH_MWh > 0 ) {
-	DataItem d6 = new DataItem();
-	d6.setValue(importH_MWh); // Hydrogen
-	pl_consumptionChart.addDataItem(d6,"Waterstof [MWh]",v_hydrogenDemandColor);
-}
-
-
-DataItem d1bottom = new DataItem();
-d1bottom.setValue(selfConsumedEnergyBottom_MWh);
-DataItem d3bottom = new DataItem();
-d3bottom.setValue(exportEBottom_MWh);
-
-pl_consumptionChartBottom.addDataItem(d1bottom,"Lokaal opgewekt [MWh]",v_selfConsumedEnergyColor);
-pl_productionChartBottom.addDataItem(d1bottom,"Lokaal gebruik gebied [MWh]",v_selfConsumedEnergyColor);
-pl_productionChartBottom.addDataItem(d3bottom,"Teruggeleverde elektriciteit [MWh]",v_exportedEnergyColor);
-
-
-if (importEBottom_MWh > 0) {
-	DataItem d2bottom = new DataItem();
-	d2bottom.setValue(importEBottom_MWh);
-	pl_consumptionChartBottom.addDataItem(d2bottom,"Electriciteit uit het net [MWh]",v_importedElectricityColor);
-}
-if (importGBottom_MWh > 0 ) {
-	DataItem d4bottom = new DataItem();
-	d4bottom.setValue(importGBottom_MWh); //
-	pl_consumptionChartBottom.addDataItem(d4bottom,"Aardgas [MWh]",v_naturalGasDemandColor);
-}	
-if (importFBottom_MWh > 0 ) {
-	DataItem d5bottom = new DataItem();
-	d5bottom.setValue(importFBottom_MWh); // fuel
-	pl_consumptionChartBottom.addDataItem(d5bottom,"Benzine/diesel[MWh]",v_petroleumProductsDemandColor);
-}
-if (importHBottom_MWh > 0 ) {
-	DataItem d6bottom = new DataItem();
-	d6bottom.setValue(importHBottom_MWh); // Hydrogen
-	pl_consumptionChartBottom.addDataItem(d6bottom,"Waterstof [MWh]",v_hydrogenDemandColor);
-}
-
-
-/*pl_consumptionChartBottom.addDataItem(d4,"Lokaal opgewekt [MWh]",yellowGreen);
-pl_consumptionChartBottom.addDataItem(d5,"Externe bronnen [MWh]",brown);
-//pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
-pl_productionChartBottom.addDataItem(d4,"Lokaal gebruik gebied [MWh]",yellowGreen);
-pl_productionChartBottom.addDataItem(d6,"Teruggeleverde elektriciteit [MWh]",navy);*/
-
-//pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
-double chartScale_MWh = max(max(selfConsumedEnergy_MWh+exportE_MWh, selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh),
-							max(selfConsumedEnergyBottom_MWh+exportEBottom_MWh, selfConsumedEnergyBottom_MWh+importEBottom_MWh+importGBottom_MWh+importFBottom_MWh+importHBottom_MWh));
-pl_consumptionChart.setFixedScale(chartScale_MWh);
-pl_productionChart.setFixedScale(chartScale_MWh);
-pl_consumptionChartBottom.setFixedScale(chartScale_MWh);
-pl_productionChartBottom.setFixedScale(chartScale_MWh);
-
-
-if (chartScale_MWh<10) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)*1000) + " kWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<1000) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)) + " MWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh)) + " MWh");
-} else {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToDecimal((selfConsumedEnergy_MWh+exportE_MWh)/1000, 1) + " GWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToDecimal((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh)/1000,1) + " GWh");
-}
-if (chartScale_MWh<10) {
-	t_OpwekTextBottom.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+exportEBottom_MWh)*1000) + " kWh");
-	t_GebruikTextBottom.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+importEBottom_MWh+importGBottom_MWh+importFBottom_MWh+importHBottom_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<1000) {
-	t_OpwekTextBottom.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+exportEBottom_MWh)) + " MWh");
-	t_GebruikTextBottom.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergyBottom_MWh+importEBottom_MWh+importGBottom_MWh+importFBottom_MWh+importHBottom_MWh)) + " MWh");
-} else {
-	t_OpwekTextBottom.setText("Opwek" + System.lineSeparator() + roundToDecimal((selfConsumedEnergyBottom_MWh+exportEBottom_MWh)/1000,1) + " GWh");
-	t_GebruikTextBottom.setText("Gebruik" + System.lineSeparator() + roundToDecimal((selfConsumedEnergyBottom_MWh+importEBottom_MWh+importGBottom_MWh+importFBottom_MWh+importHBottom_MWh)/1000,1) + " GWh");
-}
-
-
-/*ALCODEEND*/}
-
-double f_setEnergyBalanceChartTrafo(double selfConsumedEnergy_MWh,double selfProducedEnergy_MWh,double import_MWh,double export_MWh,StackChart pl_consumptionChart,StackChart pl_productionChart,ShapeText t_OpwekText,ShapeText t_GebruikText)
-{/*ALCODESTART::1714746556120*/
-//gr_onbalansGraphs.setVisible(false);
-pl_productionChart.removeAll();
-pl_consumptionChart.removeAll();
-DataItem d1 = new DataItem();
-d1.setValue(selfConsumedEnergy_MWh-export_MWh);
-DataItem d2 = new DataItem();
-d2.setValue(import_MWh);
-DataItem d3 = new DataItem();
-d3.setValue(export_MWh);
-DataItem d4 = new DataItem();
-d4.setValue(selfProducedEnergy_MWh-import_MWh);
-pl_consumptionChart.addDataItem(d4,"Geleverde Stroom [MWh]", v_selfConsumedElectricityColor);
-pl_consumptionChart.addDataItem(d2,"Over Capaciteit [MWh]",v_importedEnergyColor);
-pl_productionChart.addDataItem(d1,"Teruggeleverde Stroom [MWh]", v_selfConsumedElectricityColor);
-pl_productionChart.addDataItem(d3,"Over Capaciteit [MWh]",v_importedEnergyColor);
-//pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
-double chartScale_MWh = max(selfConsumedEnergy_MWh, selfProducedEnergy_MWh);
-pl_consumptionChart.setFixedScale(chartScale_MWh);
-pl_productionChart.setFixedScale(chartScale_MWh);
-
-if (chartScale_MWh<10) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh)*1000) + " kWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfProducedEnergy_MWh)*1000) + " kWh");
-} else if (chartScale_MWh<1000) {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh)) + " MWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfProducedEnergy_MWh)) + " MWh");
-} else {
-	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh)/1000) + " GWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfProducedEnergy_MWh)/1000) + " GWh");
-}
-	
-/*ALCODEEND*/}
-
 double f_setCharts()
 {/*ALCODESTART::1714987683635*/
 f_resetCharts();
@@ -321,21 +13,39 @@ if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 else {
 	I_EnergyData data = uI_Results.f_getSelectedObjectData();
 	if( radio_energyType.getValue() == 0){
-		f_setElectricityBalanceChartYear(data);
-		f_setElectricityBalanceChartSummerWinter(data);
-		f_setElectricityBalanceChartDayNight(data);
-		f_setElectricityBalanceChartWeekdayWeekend(data);
+		switch(radio_period.getValue()){
+			case 0:
+				f_setElectricityBalanceChartYear(data);
+				break;
+			case 1:
+				f_setElectricityBalanceChartSummerWinter(data);
+				break;
+			case 2:
+				f_setElectricityBalanceChartDayNight(data);
+				break;
+			case 3:
+				f_setElectricityBalanceChartWeekdayWeekend(data);
+				break;
+		}
 	}
 	else if( radio_energyType.getValue() == 1){
-		f_setEnergyBalanceChartYear(data);
-		f_setEnergyBalanceChartSummerWinter(data);
-		f_setEnergyBalanceChartDayNight(data);
-		f_setEnergyBalanceChartWeekdayWeekend(data);
+	
+			switch(radio_period.getValue()){
+			case 0:
+				f_setEnergyBalanceChartYear(data);
+				break;
+			case 1:
+				f_setEnergyBalanceChartSummerWinter(data);
+				break;
+			case 2:
+				f_setEnergyBalanceChartDayNight(data);
+				break;
+			case 3:
+				f_setEnergyBalanceChartWeekdayWeekend(data);
+				break;
+		}
 	}
 }
-
-// chart scale?
-
 /*ALCODEEND*/}
 
 double f_setElectricityBalanceChartYear(I_EnergyData dataObject)
@@ -350,7 +60,7 @@ annualImport.setValue(dataObject.getRapidRunData().am_totalBalanceAccumulators_k
 pl_consumptionChartYear.addDataItem(annualImport, "Externe bronnen [MWh]", uI_Results.v_importedEnergyColor);
 
 DataItem annualExport = new DataItem();
-annualExport.setValue(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000);
+annualExport.setValue(-dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000);
 pl_productionChartYear.addDataItem(annualExport, "Teruggeleverde elektriciteit [MWh]", uI_Results.v_exportedEnergyColor);
 
 double production_MWh = dataObject.getRapidRunData().getTotalElectricityProduced_MWh(); 
@@ -370,132 +80,6 @@ if (chartScale_MWh<10) {
 	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
 	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
 }
-/*ALCODEEND*/}
-
-double f_setSupplyDemandGraphsFromString(String graph,AreaCollection area)
-{/*ALCODESTART::1714988248484*/
-gr_onbalansGraphs.setVisible(true);
-//SupplyDemand
-if( graph.contains( "Jaar")){	
-	if( graph.contains( "Energie")){
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFull(area.v_annualSelfConsumedEnergy_MWh, area.v_annualElectricityImport_MWh, 
-							area.v_annualNaturalGasDemand_MWh, area.v_annualPetroleumProductsDemand_MWh, area.v_annualHydrogenDemand_MWh, area.v_annualElectricityExport_MWh, 
-							pl_consumptionChartTop, pl_productionChartTop,
-							t_opwekTextTop, t_gebruikTextTop);
-	}
-	else if( graph.contains( "Elektriciteit")){	
-		tx_topBarplotText1.setText("Elektriciteitsbalans");
-		if (area == v_trafo) {
-			f_setEnergyBalanceChartTrafo(area.v_annualSelfConsumedElectricity_MWh, area.v_annualSelfProducedElectricity_MWh, area.v_annualElectricityImport_MWh, area.v_annualElectricityExport_MWh, 
-						pl_consumptionChartTop, pl_productionChartTop,
-						t_opwekTextTop, t_gebruikTextTop);
-		}
-		else {
-			f_setEnergyBalanceChartSimple(area.v_annualSelfConsumedElectricity_MWh, area.v_annualElectricityImport_MWh, area.v_annualElectricityExport_MWh, 
-						pl_consumptionChartTop, pl_productionChartTop,
-						t_opwekTextTop, t_gebruikTextTop);
-		}
-		t_topBarplotText.setText("Jaaroverzicht");
-	}
-	
-}
-else if( graph.contains( "Zomer/winterweek")){	
-	if( graph.contains( "Energie")){			
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricitySummerWeek_MWh, area.v_importedElectricitySummerWeek_MWh, 
-									area.v_naturalGasDemandSummerWeek_MWh, area.v_petroleumProductsDemandSummerWeek_MWh, area.v_hydrogenImportSummerWeek_MWh,
-									area.v_exportedElectricitySummerWeek_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyWinterWeek_MWh, area.v_importedElectricityWinterWeek_MWh, 
-									area.v_naturalGasDemandWinterWeek_MWh, area.v_petroleumProductsDemandWinterWeek_MWh, area.v_hydrogenImportWinterWeek_MWh,
-									area.v_exportedElectricityWinterWeek_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-		
-	}
-	else if( graph.contains( "Elektriciteit")){	
-		tx_topBarplotText1.setText("Elektriciteitsbalans");	
-		f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricitySummerWeek_MWh, area.v_importedElectricitySummerWeek_MWh, 
-									area.v_exportedElectricitySummerWeek_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityWinterWeek_MWh, area.v_importedElectricityWinterWeek_MWh,								
-									area.v_exportedElectricityWinterWeek_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Zomerweek");
-	t_bottomBarplotText.setText("Winterweek");
-}
-else if( graph.contains( "Dag/nacht")){	
-	if( graph.contains( "Energie")){	
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricityDaytime_MWh, area.v_importedElectricityDaytime_MWh, 
-									area.v_naturalGasDemandDaytime_MWh, area.v_petroleumProductsDemandDaytime_MWh, area.v_hydrogenImportDaytime_MWh,
-									area.v_exportedElectricityDaytime_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyNighttime_MWh, area.v_importedElectricityNighttime_MWh, 
-									area.v_naturalGasDemandNighttime_MWh, area.v_petroleumProductsDemandNighttime_MWh, area.v_hydrogenImportNighttime_MWh,
-									area.v_exportedElectricityNighttime_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	else if( graph.contains( "Elektriciteit")){
-				tx_topBarplotText1.setText("Elektriciteitsbalans");
-				f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricityDaytime_MWh, area.v_importedElectricityDaytime_MWh, 
-									area.v_exportedElectricityDaytime_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityNighttime_MWh, area.v_importedElectricityNighttime_MWh,								
-									area.v_exportedElectricityNighttime_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Totaal overdag");
-	t_bottomBarplotText.setText("Totaal 's nachts");
-}
-else if( graph.contains( "Week/weekend")){	
-	if( graph.contains( "Energie")){	
-		tx_topBarplotText1.setText("Energiebalans");
-		f_setEnergyBalanceChartFullBoth(area.v_selfConsumedElectricityWeekday_MWh, area.v_importedElectricityWeekday_MWh, 
-									area.v_naturalGasDemandWeekday_MWh, area.v_petroleumProductsDemandWeekday_MWh, area.v_hydrogenImportWeekday_MWh,
-									area.v_exportedElectricityWeekday_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedEnergyWeekend_MWh, area.v_importedElectricityWeekend_MWh, 
-									area.v_naturalGasDemandWeekend_MWh, area.v_petroleumProductsDemandWeekend_MWh, area.v_hydrogenImportWeekend_MWh,
-									area.v_exportedElectricityWeekend_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	else if( graph.contains( "Elektriciteit")){	
-				tx_topBarplotText1.setText("Elektriciteitsbalans");
-				f_setEnergyBalanceChartSimpleBoth(area.v_selfConsumedElectricityWeekday_MWh, area.v_importedElectricityWeekday_MWh, 
-									area.v_exportedElectricityWeekday_MWh,
-									pl_consumptionChartTop, pl_productionChartTop,
-									t_opwekTextTop, t_gebruikTextTop,
-									area.v_selfConsumedElectricityWeekend_MWh, area.v_importedElectricityWeekend_MWh,								
-									area.v_exportedElectricityWeekend_MWh,
-									pl_consumptionChartBottom, pl_productionChartBottom,
-									t_opwekTextBottom, t_gebruikTextBottom);
-	}
-	t_topBarplotText.setText("Weekdagen");
-	t_bottomBarplotText.setText("Weekend");
-}
-
-
-if(v_graphString.contains( "Jaar")){
-	gr_onbalansBarplot2.setVisible(false);
-}
-else{
-	gr_onbalansBarplot2.setVisible(true);
-	
-}
-
-
 /*ALCODEEND*/}
 
 double f_setElectricityBalanceChartSummerWinter(I_EnergyData dataObject)

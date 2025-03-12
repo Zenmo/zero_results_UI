@@ -6,12 +6,12 @@ gr_GSLDSummary3.setVisible(false);
 f_setWarningScreen(false);
 		
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
-
+/*
 if(uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYCOOP || uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYMODEL){
 	f_setWarningScreen(true);
 	return;
 }
-
+*/
 if (rb_gespreksleidraadBedrijvenChartType.getValue()==0) {
 	gr_GSLDSummary1.setVisible(true);
 	f_setChartsGespreksleidraadBedrijven1(data);
@@ -43,10 +43,10 @@ f_setDemandAndSupplyGespreksleidraadBedrijven1(data);
 double f_setEnergyBalanceChartFull(I_EnergyData data)
 {/*ALCODESTART::1730395813829*/
 double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh(); 	
-double importE_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh();	
-double importG_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh();
-double importF_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegralPos_kWh(); 
-double importH_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralPos_kWh(); 
+double importE_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000 : 0;	
+double importG_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000 : 0;
+double importF_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegralPos_kWh()/1000 : 0; 
+double importH_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralPos_kWh()/1000 : 0; 
 double exportE_MWh = data.getRapidRunData().getTotalEnergyExport_MWh(); 
 StackChart pl_consumptionChart = pl_consumptionChartGespreksleidraad1; 
 StackChart pl_productionChart = pl_productionChartGespreksleidraad1; 
