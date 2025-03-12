@@ -129,14 +129,12 @@ double totalCollectiveSelfSufficiencyElectricity_fr = data.getRapidRunData().get
 
 
 
-
-
 double individualSelfconsumptionElectricity_fr = 0;
 if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
 	individualSelfconsumptionElectricity_fr = ((EnergyCoop)data.getRapidRunData().parentAgent).v_cumulativeIndividualSelfconsumptionElectricity_fr;
 }
 else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
-	individualSelfconsumptionElectricity_fr = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh()/GC.v_rapidRunData.getTotalElectricityConsumed_MWh());
+	individualSelfconsumptionElectricity_fr = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh())/sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricityConsumed_MWh());
 }
 
 double annualSelfConsumedElectricityIndividual_MWh;
@@ -147,10 +145,8 @@ if (individualSelfconsumptionElectricity_fr <= 0) {
 	annualSelfConsumedElectricityIndividual_MWh = (data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + (data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000)) * individualSelfconsumptionElectricity_fr;
 }
 
-t_KPIselfsufficiencyCollective_pct.setText(roundToInt(totalCollectiveSelfSufficiencyElectricity_fr*100) + "%");
-t_KPIselfsufficiencyIndividual_pct.setText(roundToInt(individualSelfconsumptionElectricity_fr*100) + "%");
 
-f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, data.getRapidRunData().getTotalElectricitySelfConsumed_MWh(), data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000,
+f_setSelfConsumptionChart(annualSelfConsumedElectricityIndividual_MWh, data.getRapidRunData().getTotalElectricitySelfConsumed_MWh(), -data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000,
 					pl_productionChartIndividual, pl_productionChartCollective);
 
 
@@ -171,11 +167,11 @@ DataItem d4 = new DataItem();
 d4.setValue((selfConsumedEnergyCollective_MWh+export_MWh)-selfConsumedEnergyIndividual_MWh);
 pl_individualChart.removeAll();
 pl_collectiveChart.removeAll();
-pl_individualChart.addDataItem(d1,"Zelf gebruikt [MWh]",v_selfConsumedElectricityColor);
-pl_individualChart.addDataItem(d4,"Teruggeleverd [MWh]",v_exportedEnergyColor);
+pl_individualChart.addDataItem(d1,"Zelf gebruikt",v_selfConsumedElectricityColor);
+pl_individualChart.addDataItem(d4,"Teruggeleverd",v_exportedEnergyColor);
 //pl_consumptionChart.addDataItem(d4,"Overbelasting [MWh]",red);
-pl_collectiveChart.addDataItem(d2,"Lokaal gebruikt [MWh]",v_selfConsumedElectricityColor);
-pl_collectiveChart.addDataItem(d3,"Geëxporteerd [MWh]",v_exportedEnergyColor);
+pl_collectiveChart.addDataItem(d2,"Lokaal gebruikt",v_selfConsumedElectricityColor);
+pl_collectiveChart.addDataItem(d3,"Geëxporteerd",v_exportedEnergyColor);
 //pl_productionChart.addDataItem(d5,"Overbelasting [MWh]",red);
 double chartScale_MWh = selfConsumedEnergyCollective_MWh+export_MWh;
 pl_individualChart.setFixedScale(chartScale_MWh);
@@ -290,7 +286,7 @@ else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
 
 
 chart_barChartGSLDSummary3.addDataItem(totalGTV_kW,"Totaal GTV Cumulatief" + text_peakType,darkMagenta);
-chart_barChartGSLDSummary3.addDataItem(totalGTVgroupcontract_kW,"GTV Groepscontract" + text_peakType, magenta);
+chart_barChartGSLDSummary3.addDataItem(totalGTVgroupcontract_kW,"GTV Groepscontract" + text_peakType, darkBlue);
 chart_barChartGSLDSummary3.addDataItem(peakIndividual_kW,"Piek " + text_peakType + " individueel",orange);
 chart_barChartGSLDSummary3.addDataItem(peakCollective_kW,"Piek " + text_peakType + " collectief",green);
 
