@@ -6,12 +6,12 @@ gr_GSLDSummary3.setVisible(false);
 f_setWarningScreen(false);
 		
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
-/*
-if(uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYCOOP || uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYMODEL){
+
+if(uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYCOOP && uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYMODEL){
 	f_setWarningScreen(true);
 	return;
 }
-*/
+
 if (rb_gespreksleidraadBedrijvenChartType.getValue()==0) {
 	gr_GSLDSummary1.setVisible(true);
 	f_setChartsGespreksleidraadBedrijven1(data);

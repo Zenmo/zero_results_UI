@@ -12,7 +12,8 @@ gr_gespreksleidraad3v2.setVisible(false);
 
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
-if(uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYMODEL || uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYCOOP){
+
+if(data.getScope() != OL_ResultScope.ENERGYMODEL && data.getScope() != OL_ResultScope.ENERGYCOOP){
 	f_setWarningScreen(false);
 	return;
 }
@@ -25,16 +26,13 @@ switch(rb_gespreksleidraad.getValue()+1){
 		gr_gespreksleidraad1.setVisible(true);
 		break;	
 	case 2:
-		//f_setChartsGespreksleidraad2(data);
+		f_setChartsGespreksleidraad2(data);
 		f_setChartDescriptionText("i_gespreksleidraad2", false);
 		gr_gespreksleidraad2.setVisible(true);	
 		break;	
 	case 3:
-		//f_setChartsGespreksleidraad3(area);
-
-		//gr_gespreksleidraad3.setVisible(true);	
-		f_setChartDescriptionText("i_gespreksleidraad3", false);
 		f_setChartsGespreksleidraad3v2(data);
+		f_setChartDescriptionText("i_gespreksleidraad3", false);
 		gr_gespreksleidraad3v2.setVisible(true);	
 		break;	
 	case 4:
@@ -327,11 +325,11 @@ totalWindProduction_GWh.setValue(data.getRapidRunData().acc_dailyAverageWindProd
 sc_windSupplyStack.addDataItem(totalWindProduction_GWh, "Opwek wind", v_windElectricitySupplyColor);
 
 DataItem totalCurtailedWindEnergy_GWh = new DataItem();
-totalCurtailedWindEnergy_GWh.setValue(data.getRapidRunData().v_totalWindEnergyCurtailed_MWh/1000);
+totalCurtailedWindEnergy_GWh.setValue(0); //data.getRapidRunData().v_totalWindEnergyCurtailed_MWh/1000);
 sc_windSupplyStack.addDataItem(totalCurtailedWindEnergy_GWh, "Totaal gecurtailde wind energy", v_curtailedColor);
 
 DataItem remainingWindPotential_GWh = new DataItem();
-remainingWindPotential_GWh.setValue(max(0,((data.getRapidRunData().v_windPotential_kW - data.getRapidRunData().v_windInstalled_kW)*totalFullLoadHoursWind_hr/1000000)));
+remainingWindPotential_GWh.setValue(max(0,((data.getRapidRunData().assetsMetaData.windPotential_kW - data.getRapidRunData().assetsMetaData.totalInstalledWindPower_kW)*totalFullLoadHoursWind_hr/1000000)));
 sc_windSupplyStack.addDataItem(remainingWindPotential_GWh, "Resterende potentie wind energie", v_potentialColor);
 
 //Production (Solar)			
@@ -341,12 +339,13 @@ DataItem totalSolarProduction_GWh = new DataItem();
 totalSolarProduction_GWh.setValue(data.getRapidRunData().acc_dailyAveragePVProduction_kW.getIntegral_kWh()/1000000);
 sc_PVSupplyStack.addDataItem(totalSolarProduction_GWh, "Opwek zon", v_PVElectricitySupplyColor);
 
+
 DataItem totalCurtailedPVEnergy_GWh = new DataItem();
-totalCurtailedPVEnergy_GWh.setValue(data.getRapidRunData().v_totalPVEnergyCurtailed_MWh/1000);
+totalCurtailedPVEnergy_GWh.setValue(0); //data.getRapidRunData().v_totalPVEnergyCurtailed_MWh/1000);
 sc_PVSupplyStack.addDataItem(totalCurtailedPVEnergy_GWh, "Totaal gecurtailde zonne energy", v_curtailedColor);
 
 DataItem remainingRoofSolarPotential_GWh = new DataItem();
-remainingRoofSolarPotential_GWh.setValue(max(0,((data.getRapidRunData().v_rooftopPVPotential_kW - data.getRapidRunData().v_rooftopPVInstalled_kW)*totalFullLoadHoursSolar_hr/1000000)));
+remainingRoofSolarPotential_GWh.setValue(max(0,((data.getRapidRunData().assetsMetaData.PVPotential_kW - data.getRapidRunData().assetsMetaData.totalInstalledPVPower_kW)*totalFullLoadHoursSolar_hr/1000000)));
 sc_PVSupplyStack.addDataItem(remainingRoofSolarPotential_GWh, "Resterende potentie zon op dak", v_potentialColor);
 
 //Set production charts scaling
@@ -500,7 +499,7 @@ if (! (individualSelfconsumptionElectricity_fr > 0) ) {
 					
 double selfConsumedElectricityIndividual_MWh = annualSelfConsumedElectricityIndividual_MWh;
 double additionalSelfConsumedElectricityCollective_MWh = data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() - annualSelfConsumedElectricityIndividual_MWh;
-double totalExportedElectricity_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000;
+double totalExportedElectricity_MWh = -data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000;
 double totalImportedElectricity_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000;
 
 double production_MWh = data.getRapidRunData().getTotalElectricityProduced_MWh(); //data.getRapidRunData().getTotalElectricitySelfConsumed_MWh + data.getRapidRunData().fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);

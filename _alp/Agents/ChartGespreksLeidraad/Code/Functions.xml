@@ -175,7 +175,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1730392911211</Id>
 		<Name><![CDATA[f_setChartsGespreksleidraad2]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-380</X>
 		<Y>400</Y>
 		<Label>
