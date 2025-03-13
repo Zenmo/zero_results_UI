@@ -306,7 +306,7 @@ annualSelfConsumed.setValue(dataObject.getRapidRunData().getTotalEnergySelfConsu
 pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedEnergyColor);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedEnergyColor);
 
-for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeConsumptionEnergyCarriers) {
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergyCarriers) {
 		// Consumption
 	if (dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getIntegralPos_kWh()/1000 > uI_Results.p_cutOff_MWh) {
 		DataItem totalImport = new DataItem();
@@ -315,7 +315,7 @@ for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeConsumptionEne
 	}
 
 }
-for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeProductionEnergyCarriers) {
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
 	// Production
 	if (dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getIntegralNeg_kWh()/1000 > uI_Results.p_cutOff_MWh) {
 		DataItem totalExport = new DataItem();
@@ -356,7 +356,7 @@ winterSelfConsumed.setValue(dataObject.getRapidRunData().getWinterWeekEnergySelf
 pl_productionChartWinter.addDataItem(winterSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartWinter.addDataItem(winterSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
-for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeConsumptionEnergyCarriers) {
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergyCarriers) {
 	// Summer Consumption
 	if (dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(EC).getIntegralPos_kWh()/1000 > uI_Results.p_cutOff_MWh) {
 		DataItem summerImport = new DataItem();
@@ -370,7 +370,7 @@ for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeConsumptionEne
 		pl_consumptionChartWinter.addDataItem(winterImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
-for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeProductionEnergyCarriers) {
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
 	// Summer Production
 	if (dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(EC).getIntegralNeg_kWh()/1000 > uI_Results.p_cutOff_MWh) {
 		DataItem summerExport = new DataItem();
@@ -498,7 +498,7 @@ nighttimeSelfConsumed.setValue(dataObject.getRapidRunData().getNighttimeEnergySe
 pl_productionChartNight.addDataItem(nighttimeSelfConsumed, "Lokaal gebruikt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartNight.addDataItem(nighttimeSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
-for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeConsumptionEnergyCarriers) {
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergyCarriers) {
 	// Daytime Consumption
 	if (dataObject.getRapidRunData().getDaytimeImport_MWh(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem daytimeImport = new DataItem();
@@ -512,7 +512,7 @@ for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeConsumptionEne
 		pl_consumptionChartNight.addDataItem(nighttimeImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}	
 }
-for (OL_EnergyCarriers EC : dataObject.getActiveAssetData().activeProductionEnergyCarriers) {
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
 	// Daytime Production
 	if (dataObject.getRapidRunData().getDaytimeExport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
 		DataItem daytimeExport = new DataItem();

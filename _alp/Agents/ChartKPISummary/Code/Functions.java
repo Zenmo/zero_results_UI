@@ -31,10 +31,10 @@ double totalEnergyConsumption_MWh = data.getRapidRunData().getTotalEnergyConsume
 double totalImport_MWh = data.getRapidRunData().getTotalEnergyImport_MWh();
 double totalExport_MWh = data.getRapidRunData().getTotalEnergyExport_MWh();
 	
-double elecConsumption_pct = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
-double gasConsumption_pct = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
-double FFconsumption_pct = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
-double h2consumption_pct = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
+double elecConsumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
+double gasConsumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
+double FFconsumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
+double h2consumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
 double production_MWh = data.getRapidRunData().getTotalEnergyProduced_MWh();
 
 double KPIselfsufficiency_pct = data.getRapidRunData().getTotalEnergySelfConsumed_MWh() / totalEnergyConsumption_MWh * 100;
@@ -85,10 +85,10 @@ if(data.getPreviousRapidRunData() != null && data.getPreviousRapidRunData().getT
 	double previousTotalExport_MWh = data.getPreviousRapidRunData().getTotalEnergyExport_MWh();
 	
 	
-	double previousElectricityConsumption_pct = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
-	double previousGasConsumption_pct = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
-	double previousFFConsumption_pct = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
-	double previousH2Consumption_pct = data.getActiveAssetData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0; 
+	double previousElectricityConsumption_pct = data.getPreviousRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
+	double previousGasConsumption_pct = data.getPreviousRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
+	double previousFFConsumption_pct = data.getPreviousRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
+	double previousH2Consumption_pct = data.getPreviousRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0; 
 	double previousProduction_MWh = data.getPreviousRapidRunData().getTotalEnergyProduced_MWh();  
 	
 	double previousKPIselfsufficiency_pct = data.getPreviousRapidRunData().getTotalEnergySelfConsumed_MWh() / previousTotalEnergyConsumption_MWh * 100; 

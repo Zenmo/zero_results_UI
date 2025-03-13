@@ -647,7 +647,7 @@ double totalAbsoluteLoad_kW = 0;
 for(int i=0; i< loadDurationCurves.ds_loadDurationCurveTotal_kW.size(); i++){
 	totalAbsoluteLoad_kW += abs(loadDurationCurves.ds_loadDurationCurveTotal_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
 }
-benuttingsgraad = totalAbsoluteLoad_kW / ((dataObject.getDeliveryCapacity_kW() + dataObject.getFeedinCapacity_kW()) * 8760) * 100;
+benuttingsgraad = totalAbsoluteLoad_kW / ((dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW + dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW) * 8760) * 100;
 t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
 /*ALCODEEND*/}
 
@@ -717,8 +717,8 @@ Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
 //Create delivery and capacity year datasets
-DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getDeliveryCapacity_kW());
-DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getFeedinCapacity_kW());
+DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
+DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
 	
 if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
@@ -740,11 +740,11 @@ if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == O
 	plot_seizoen.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 }
 else{
-	if(dataObject.getDeliveryCapacityKnown()){
+	if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
 		deliveryCapacityLabel = "Capaciteit afname";
 		deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	}
-	if(dataObject.getFeedinCapacityKnown()){
+	if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
 		feedinCapacityLabel = "Capaciteit teruglevering";
 		feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	}

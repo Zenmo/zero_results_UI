@@ -76,11 +76,11 @@ String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
 Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
-if(dataObject.getDeliveryCapacityKnown()){
+if(dataObject.getLiveData().connectionMetaData.contractedDeliveryCapacityKnown){
 	deliveryCapacityLabel = "Piek leveringscapaciteit";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
-if(dataObject.getDeliveryCapacityKnown()){
+if(dataObject.getLiveData().connectionMetaData.contractedFeedinCapacityKnown){
 	feedinCapacityLabel = "Piek terugleveringscapaciteit";
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
@@ -117,11 +117,11 @@ String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
 Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
-if(dataObject.getDeliveryCapacityKnown()){
+if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
 	deliveryCapacityLabel = "Piek leveringscapaciteit";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
-if(dataObject.getDeliveryCapacityKnown()){
+if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
 	feedinCapacityLabel = "Piek terugleveringscapaciteit";
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
@@ -144,11 +144,11 @@ String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
 Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
-if(dataObject.getDeliveryCapacityKnown()){
+if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
 	deliveryCapacityLabel = "Piek leveringscapaciteit";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
-if(dataObject.getDeliveryCapacityKnown()){
+if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
 	feedinCapacityLabel = "Piek terugleveringscapaciteit";
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }

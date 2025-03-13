@@ -43,10 +43,10 @@ f_setDemandAndSupplyGespreksleidraadBedrijven1(data);
 double f_setEnergyBalanceChartFull(I_EnergyData data)
 {/*ALCODESTART::1730395813829*/
 double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh(); 	
-double importE_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000 : 0;	
-double importG_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000 : 0;
-double importF_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegralPos_kWh()/1000 : 0; 
-double importH_MWh = data.getActiveAssetData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralPos_kWh()/1000 : 0; 
+double importE_MWh = data.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000 : 0;	
+double importG_MWh = data.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000 : 0;
+double importF_MWh = data.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegralPos_kWh()/1000 : 0; 
+double importH_MWh = data.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralPos_kWh()/1000 : 0; 
 double exportE_MWh = data.getRapidRunData().getTotalEnergyExport_MWh(); 
 StackChart pl_consumptionChart = pl_consumptionChartGespreksleidraad1; 
 StackChart pl_productionChart = pl_productionChartGespreksleidraad1; 
@@ -223,13 +223,13 @@ String text_peakType = "";
 if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
 	EnergyCoop COOP = (EnergyCoop)data.getRapidRunData().parentAgent;
 	if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
-		totalGTV_kW.setValue(data.getDeliveryCapacity_kW());
+		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
 		peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakDelivery_kW);
 		peakCollective_kW.setValue(max(0, data.getRapidRunData().getPeakDelivery_kW()));
 		text_peakType = "levering";
 	}
 	else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
-		totalGTV_kW.setValue(data.getFeedinCapacity_kW());
+		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
 		peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakFeedin_kW);
 		peakCollective_kW.setValue(-1*min(0, data.getRapidRunData().getPeakFeedin_kW()));
 		text_peakType = "teruglevering";
@@ -237,13 +237,13 @@ if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
 }
 else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
 	if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
-		totalGTV_kW.setValue(data.getDeliveryCapacity_kW());
+		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
 		peakIndividual_kW.setValue(sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getPeakDelivery_kW()));
 		peakCollective_kW.setValue(max(0, data.getRapidRunData().getPeakDelivery_kW()));
 		text_peakType = "levering";
 	}
 	else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
-		totalGTV_kW.setValue(data.getFeedinCapacity_kW());
+		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
 		peakIndividual_kW.setValue(sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getPeakFeedin_kW()));
 		peakCollective_kW.setValue(-1*min(0, data.getRapidRunData().getPeakFeedin_kW()));
 		text_peakType = "teruglevering";
