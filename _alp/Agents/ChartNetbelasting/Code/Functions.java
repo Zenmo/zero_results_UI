@@ -71,8 +71,8 @@ double f_addDataToPlots(I_EnergyData dataObject,J_LoadDurationCurves loadDuratio
 double scaleMin_kW;
 double scaleMax_kW;
 
-double gridCapacityDelivery_kW = 0;//dataObject.
-double gridCapacityFeedin_kW = 0;//dataObject.
+double gridCapacityDelivery_kW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
+double gridCapacityFeedin_kW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW;
 
 //Jaar
 plot_jaar.addDataSet(loadDurationCurves.ds_loadDurationCurveTotal_kW,"Belasting jaar");
