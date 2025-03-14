@@ -429,30 +429,32 @@ pl_productionChartWeekend.addDataItem(weekendSelfConsumed, "Lokaal gebruikt [MWh
 pl_consumptionChartWeekend.addDataItem(weekendSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
 
-for (OL_EnergyCarriers EC : uI_Results.energyModel.v_activeEnergyCarriers) {
-	// Weekday Production
-	if (dataObject.getRapidRunData().getWeekdayExport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
-		DataItem weekdayExport = new DataItem();
-		weekdayExport.setValue(dataObject.getRapidRunData().getWeekdayExport_MWh(EC));
-		pl_productionChartWeekday.addDataItem(weekdayExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
-	}
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergyCarriers) {
 	// Weekday Consumption
 	if (dataObject.getRapidRunData().getWeekdayImport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
 		DataItem weekdayImport = new DataItem();
 		weekdayImport.setValue(dataObject.getRapidRunData().getWeekdayImport_MWh(EC));
 		pl_consumptionChartWeekday.addDataItem(weekdayImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
-	// Weekend Production
-	if (dataObject.getRapidRunData().getWeekendExport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
-		DataItem weekendExport = new DataItem();
-		weekendExport.setValue(dataObject.getRapidRunData().getWeekendExport_MWh(EC));
-		pl_productionChartWeekend.addDataItem(weekendExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
-	}
 	// Weekend Consumption
 	if (dataObject.getRapidRunData().getWeekendImport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
 		DataItem weekendImport = new DataItem();
 		weekendImport.setValue(dataObject.getRapidRunData().getWeekendImport_MWh(EC));
 		pl_consumptionChartWeekend.addDataItem(weekendImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
+	}
+}
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
+	// Weekday Production
+	if (dataObject.getRapidRunData().getWeekdayExport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
+		DataItem weekdayExport = new DataItem();
+		weekdayExport.setValue(dataObject.getRapidRunData().getWeekdayExport_MWh(EC));
+		pl_productionChartWeekday.addDataItem(weekdayExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+	}
+	// Weekend Production
+	if (dataObject.getRapidRunData().getWeekendExport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
+		DataItem weekendExport = new DataItem();
+		weekendExport.setValue(dataObject.getRapidRunData().getWeekendExport_MWh(EC));
+		pl_productionChartWeekend.addDataItem(weekendExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
 
