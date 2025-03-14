@@ -135,10 +135,6 @@
 		</RunConfiguration>
 		<JavaClasses>
 			<JavaClass>
-				<Id>1727079940983</Id>
-				<Name><![CDATA[J_previousTotals]]></Name>
-			</JavaClass>
-			<JavaClass>
 				<Id>1731527126794</Id>
 				<Name><![CDATA[J_ColorMap]]></Name>
 			</JavaClass>

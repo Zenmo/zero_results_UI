@@ -125,7 +125,7 @@ Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
 //Create delivery and capacity year datasets
 DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
-DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
+DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
 	
 if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
