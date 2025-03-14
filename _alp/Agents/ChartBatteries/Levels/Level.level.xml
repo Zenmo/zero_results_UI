@@ -149,7 +149,7 @@
 						<TimeWindowExpression>365</TimeWindowExpression>
 						<SamplesToKeep>365</SamplesToKeep>
 						<VerScaleToExpression>1</VerScaleToExpression>
-						<VerScaleType>AUTO</VerScaleType>
+						<VerScaleType>FIXED</VerScaleType>
 						<LabelFormat>MM</LabelFormat>
 					</TimeStackChart>
 					<Text>
@@ -426,7 +426,7 @@
 						<TimeWindowExpression>168</TimeWindowExpression>
 						<SamplesToKeep>672</SamplesToKeep>
 						<VerScaleToExpression>1</VerScaleToExpression>
-						<VerScaleType>AUTO</VerScaleType>
+						<VerScaleType>FIXED</VerScaleType>
 						<LabelFormat>dd_MM</LabelFormat>
 					</TimeStackChart>
 					<Text>
