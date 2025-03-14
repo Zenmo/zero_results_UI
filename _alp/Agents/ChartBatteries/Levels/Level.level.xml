@@ -149,7 +149,7 @@
 						<TimeWindowExpression>365</TimeWindowExpression>
 						<SamplesToKeep>365</SamplesToKeep>
 						<VerScaleToExpression>1</VerScaleToExpression>
-						<VerScaleType>AUTO</VerScaleType>
+						<VerScaleType>FIXED</VerScaleType>
 						<LabelFormat>MM</LabelFormat>
 					</TimeStackChart>
 					<Text>
@@ -421,12 +421,12 @@
 							<TextColor>-12566464</TextColor>
 						</Labels>
 						<ShowLegend>true</ShowLegend>
-						<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
+						<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 						<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 						<TimeWindowExpression>168</TimeWindowExpression>
 						<SamplesToKeep>672</SamplesToKeep>
 						<VerScaleToExpression>1</VerScaleToExpression>
-						<VerScaleType>AUTO</VerScaleType>
+						<VerScaleType>FIXED</VerScaleType>
 						<LabelFormat>dd_MM</LabelFormat>
 					</TimeStackChart>
 					<Text>
@@ -547,7 +547,7 @@
 							<TextColor>-12566464</TextColor>
 						</Labels>
 						<ShowLegend>true</ShowLegend>
-						<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>
+						<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>
 						<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
 						<VerScaleFromExpression>0</VerScaleFromExpression>
 						<VerScaleToExpression>1</VerScaleToExpression>

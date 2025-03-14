@@ -1,15 +1,15 @@
 double f_setSankey()
 {/*ALCODESTART::1714746374796*/
-AreaCollection area = uI_Results.f_getDataObject();
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
-double selfConsumedEnergy_MWh = area.v_totalEnergySelfConsumed_MWh;
-double importE_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);;
-double importG_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE);;
-double importF_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL);;
-double importHeat_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.HEAT);
-double importH_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN);
-double exportH_MWh = area.fm_totalExports_MWh.get(OL_EnergyCarriers.HYDROGEN);
-double exportE_MWh = area.v_totalEnergyExport_MWh - exportH_MWh;
+double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh();
+double importE_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY) : 0;
+double importG_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE) : 0;
+double importF_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.DIESEL) : 0;
+double importHeat_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT) : 0;
+double importH_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HYDROGEN) : 0;
+double exportH_MWh = data.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HYDROGEN) : 0;
+double exportE_MWh = data.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY) : 0;
 double heatProduced_MWh = 0;
 
 flowDataset = new DefaultFlowDataset();

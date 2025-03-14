@@ -524,7 +524,7 @@ en opwek heb ik?]]></Text>
 	<Control Type="RadioButtons">
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1730395814011</Id>
-		<Name><![CDATA[rb_chartType]]></Name>
+		<Name><![CDATA[rb_gespreksleidraadBedrijvenChartType]]></Name>
 		<X>120</X>
 		<Y>5</Y>
 		<Label>
@@ -539,7 +539,7 @@ en opwek heb ik?]]></Text>
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor/>
 			<Enabled>true</Enabled>
-			<ActionCode>f_setSummaryCharts();</ActionCode>
+			<ActionCode>f_setGespreksleidraadBedrijvenCharts();</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="11" Style="0"/>
@@ -547,7 +547,7 @@ en opwek heb ik?]]></Text>
 			<Orientation>VERTICAL</Orientation>
 			<Button>Opwek en verbruik over het jaar</Button>
 			<Button>Individuele en collectieve zelfconsumptie</Button>
-			<Button>Individuele en collectieve pieken</Button>
+			<Button>Capaciteit en pieken</Button>
 			<LinkTo>false</LinkTo>
 		</ExtendedProperties>
 	</Control>
@@ -573,7 +573,7 @@ en opwek heb ik?]]></Text>
 			<Text>
 				<Id>1730395814015</Id>
 				<Name><![CDATA[tx_topBarplotText7]]></Name>
-				<X>-30</X>
+				<X>-40</X>
 				<Y>-290</Y>
 				<Label>
 					<X>0</X>
@@ -599,7 +599,7 @@ op elkaar afstemmen?]]></Text>
 			<Group>
 				<Id>1730395814017</Id>
 				<Name><![CDATA[gr_KPIzelfvoorzienendheid1]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>-120</Y>
 				<Label>
 					<X>10</X>
@@ -631,86 +631,8 @@ op elkaar afstemmen?]]></Text>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Individuele
-zelfconsumptie]]></Text>
-						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>20</Size>
-							<Style>0</Style>
-						</Font>
-						<Alignment>CENTER</Alignment>
-					</Text>
-					<Oval>
-						<Id>1730395814021</Id>
-						<Name><![CDATA[ovalZelfvoorzienendheid1]]></Name>
-						<X>24.667</X>
-						<Y>335.333</Y>
-						<Label>
-							<X>0</X>
-							<Y>0</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>false</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<ZHeight>10</ZHeight>
-						<LineWidth>1</LineWidth>
-						<LineColor>-16777216</LineColor>
-						<LineMaterial>null</LineMaterial>
-						<LineStyle>SOLID</LineStyle>
-						<RadiusX>45</RadiusX>
-						<RadiusY>40</RadiusY>
-						<Rotation>0.0</Rotation>
-						<FillColor>-2578</FillColor>
-						<FillColorCode>//setSelfSufficiencyOvalColor(energyModel.v_modelSelfSufficiency_fr*100)</FillColorCode>
-						<FillMaterial>null</FillMaterial>
-					</Oval>
-					<Text>
-						<Id>1730395814023</Id>
-						<Name><![CDATA[text1124]]></Name>
-						<X>14.667</X>
-						<Y>235.333</Y>
-						<Label>
-							<X>0</X>
-							<Y>-10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>false</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Rotation>0.0</Rotation>
-						<Color>-16777216</Color>
-						<Text><![CDATA[aandeel duurzame opwek
-zelf gebruikt]]></Text>
-						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>14</Size>
-							<Style>0</Style>
-						</Font>
-						<Alignment>CENTER</Alignment>
-					</Text>
-					<Text>
-						<Id>1730395814025</Id>
-						<Name><![CDATA[t_KPIselfsufficiencyIndividual_pct]]></Name>
-						<X>24.667</X>
-						<Y>323.333</Y>
-						<Label>
-							<X>0</X>
-							<Y>-10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>false</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Rotation>0.0</Rotation>
-						<Color>-16777216</Color>
-						<Text><![CDATA[20%]]></Text>
-						<TextCode>//roundToInt(energyModel.v_modelSelfSufficiency_fr*100) + "%"</TextCode>
+zelfconsumptie
+[MWh]]]></Text>
 						<Font>
 							<Name><![CDATA[Arial]]></Name>
 							<Size>20</Size>
@@ -723,7 +645,7 @@ zelf gebruikt]]></Text>
 			<Group>
 				<Id>1730395814027</Id>
 				<Name><![CDATA[gr_KPIzelfvoorzienendheid2]]></Name>
-				<X>80</X>
+				<X>50</X>
 				<Y>-120</Y>
 				<Label>
 					<X>10</X>
@@ -755,86 +677,8 @@ zelf gebruikt]]></Text>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Collectieve
-zelfconsumptie]]></Text>
-						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>20</Size>
-							<Style>0</Style>
-						</Font>
-						<Alignment>CENTER</Alignment>
-					</Text>
-					<Oval>
-						<Id>1730395814031</Id>
-						<Name><![CDATA[ovalZelfvoorzienendheid2]]></Name>
-						<X>0</X>
-						<Y>340</Y>
-						<Label>
-							<X>0</X>
-							<Y>0</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>false</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<ZHeight>10</ZHeight>
-						<LineWidth>1</LineWidth>
-						<LineColor>-16777216</LineColor>
-						<LineMaterial>null</LineMaterial>
-						<LineStyle>SOLID</LineStyle>
-						<RadiusX>45</RadiusX>
-						<RadiusY>40</RadiusY>
-						<Rotation>0.0</Rotation>
-						<FillColor>-2578</FillColor>
-						<FillColorCode>//setSelfSufficiencyOvalColor(energyModel.v_modelSelfSufficiency_fr*100)</FillColorCode>
-						<FillMaterial>null</FillMaterial>
-					</Oval>
-					<Text>
-						<Id>1730395814033</Id>
-						<Name><![CDATA[text1125]]></Name>
-						<X>0</X>
-						<Y>231</Y>
-						<Label>
-							<X>0</X>
-							<Y>-10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>false</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Rotation>0.0</Rotation>
-						<Color>-16777216</Color>
-						<Text><![CDATA[aandeel duurzame opwek
-lokaal gebruikt]]></Text>
-						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>14</Size>
-							<Style>0</Style>
-						</Font>
-						<Alignment>CENTER</Alignment>
-					</Text>
-					<Text>
-						<Id>1730395814035</Id>
-						<Name><![CDATA[t_KPIselfsufficiencyCollective_pct]]></Name>
-						<X>0</X>
-						<Y>328</Y>
-						<Label>
-							<X>0</X>
-							<Y>-10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>false</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Rotation>0.0</Rotation>
-						<Color>-16777216</Color>
-						<Text><![CDATA[20%]]></Text>
-						<TextCode>//roundToInt(energyModel.v_modelSelfSufficiency_fr*100) + "%"</TextCode>
+zelfconsumptie
+[MWh]]]></Text>
 						<Font>
 							<Name><![CDATA[Arial]]></Name>
 							<Size>20</Size>
@@ -847,10 +691,10 @@ lokaal gebruikt]]></Text>
 			<Group>
 				<Id>1730395814039</Id>
 				<Name><![CDATA[gr_zelfconsumptieBarplots]]></Name>
-				<X>100</X>
+				<X>90</X>
 				<Y>-20</Y>
 				<Label>
-					<X>10.122</X>
+					<X>9.468</X>
 					<Y>0</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
@@ -864,8 +708,8 @@ lokaal gebruikt]]></Text>
 					<StackChart>
 						<Id>1730395814042</Id>
 						<Name><![CDATA[pl_productionChartIndividual]]></Name>
-						<X>-320</X>
-						<Y>-140</Y>
+						<X>-324.675</X>
+						<Y>-112.208</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -886,15 +730,15 @@ lokaal gebruikt]]></Text>
 							<Unit Class="TimeUnits">HOUR</Unit>
 						</RecurrenceCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
-						<Width>142.133</Width>
-						<Height>231.007</Height>
+						<Width>132.948</Width>
+						<Height>216.007</Height>
 						<BackgroundColor/>
 						<BorderColor/>
 						<ChartArea>
-							<XOffset>50</XOffset>
+							<XOffset>60</XOffset>
 							<YOffset>30</YOffset>
-							<Width>62.13300000000004</Width>
-							<Height>151.007</Height>
+							<Width>54.67500000000001</Width>
+							<Height>147.208</Height>
 							<BackgroundColor/>
 							<BorderColor>-16777216</BorderColor>
 							<GridColor>-12566464</GridColor>
@@ -902,7 +746,7 @@ lokaal gebruikt]]></Text>
 						<Legend>
 							<Place>SOUTH</Place>
 							<TextColor>-16777216</TextColor>
-							<Size>36</Size>
+							<Size>36.007000000000005</Size>
 						</Legend>
 						<Labels>
 							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
@@ -920,8 +764,8 @@ lokaal gebruikt]]></Text>
 					<StackChart>
 						<Id>1730395814045</Id>
 						<Name><![CDATA[pl_productionChartCollective]]></Name>
-						<X>-100</X>
-						<Y>-140</Y>
+						<X>-120</X>
+						<Y>-112.208</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -942,15 +786,15 @@ lokaal gebruikt]]></Text>
 							<Unit Class="TimeUnits">HOUR</Unit>
 						</RecurrenceCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
-						<Width>140</Width>
-						<Height>230</Height>
+						<Width>160</Width>
+						<Height>215.065</Height>
 						<BackgroundColor/>
 						<BorderColor/>
 						<ChartArea>
-							<XOffset>50</XOffset>
+							<XOffset>55</XOffset>
 							<YOffset>30</YOffset>
-							<Width>60</Width>
-							<Height>150</Height>
+							<Width>55</Width>
+							<Height>147.208</Height>
 							<BackgroundColor/>
 							<BorderColor>-16777216</BorderColor>
 							<GridColor>-12566464</GridColor>
@@ -958,7 +802,7 @@ lokaal gebruikt]]></Text>
 						<Legend>
 							<Place>SOUTH</Place>
 							<TextColor>-16777216</TextColor>
-							<Size>36</Size>
+							<Size>35</Size>
 						</Legend>
 						<Labels>
 							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
@@ -1052,7 +896,7 @@ lokaal gebruikt]]></Text>
 			</Rectangle>
 			<Text>
 				<Id>1739206645169</Id>
-				<Name><![CDATA[tx_titleCollectiveVsIndividualPeaks]]></Name>
+				<Name><![CDATA[t_titleGespreksleidraadBedrijven3]]></Name>
 				<X>-10</X>
 				<Y>-250</Y>
 				<Label>
@@ -1068,7 +912,7 @@ lokaal gebruikt]]></Text>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Wat is de maximale piek van
-het collectief?]]></Text>
+het collectief vs individueel?]]></Text>
 				<Font>
 					<Name><![CDATA[Arial]]></Name>
 					<Size>28</Size>
@@ -1194,7 +1038,7 @@ het collectief?]]></Text>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<TextColor/>
 					<Enabled>true</Enabled>
-					<ActionCode>f_setSummaryCharts();</ActionCode>
+					<ActionCode>f_setGespreksleidraadBedrijvenCharts();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1204,6 +1048,86 @@ het collectief?]]></Text>
 					<LinkTo>false</LinkTo>
 				</ExtendedProperties>
 			</Control>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1741342910318</Id>
+		<Name><![CDATA[gr_warningScreen]]></Name>
+		<X>-920</X>
+		<Y>400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>230</XCode>
+		<YCode>410</YCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<Rectangle>
+				<Id>1741342606035</Id>
+				<Name><![CDATA[rect_warningScreenGespreksleidraadBedrijven]]></Name>
+				<X>-230</X>
+				<Y>-330</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>int click = 0;</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineWidthCode>v_lineWidth</LineWidthCode>
+				<LineColor>-1644806</LineColor>
+				<LineColorCode>v_lineColor</LineColorCode>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>460</Width>
+				<Height>660</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-1644806</FillColor>
+				<FillMaterial>null</FillMaterial>
+			</Rectangle>
+			<Text>
+				<Id>1741342722870</Id>
+				<Name><![CDATA[txt_WarningScreenMessage]]></Name>
+				<X>10</X>
+				<Y>-110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[LET OP: Het geselecteerde object wordt 
+niet ondersteund door deze grafiek!
+
+Selecteer meerdere aansluitingen 
+of het gehele gebied om deze 
+grafieken te gebruiken.]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>20</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
 		</Presentation>
 	</Group>
 </Presentation>

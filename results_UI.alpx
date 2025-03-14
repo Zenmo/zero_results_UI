@@ -31,7 +31,7 @@
 				</Option>
 				<Option>
 					<Id>1727084692169</Id>
-					<Name><![CDATA[GESPREKSLEIDRAAD_SAMENVATTING]]></Name>
+					<Name><![CDATA[GESPREKSLEIDRAAD_BEDRIJVEN]]></Name>
 				</Option>
 				<Option>
 					<Id>1727109293058</Id>
@@ -75,7 +75,7 @@
 				</Option>
 				<Option>
 					<Id>1732010785855</Id>
-					<Name><![CDATA[DEFAULT_AND_GESPREKSLEIDRAADSUMMARY]]></Name>
+					<Name><![CDATA[DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN]]></Name>
 				</Option>
 				<Option>
 					<Id>1732010755456</Id>
@@ -134,10 +134,6 @@
 			<Outputs/>
 		</RunConfiguration>
 		<JavaClasses>
-			<JavaClass>
-				<Id>1727079940983</Id>
-				<Name><![CDATA[J_previousTotals]]></Name>
-			</JavaClass>
 			<JavaClass>
 				<Id>1731527126794</Id>
 				<Name><![CDATA[J_ColorMap]]></Name>

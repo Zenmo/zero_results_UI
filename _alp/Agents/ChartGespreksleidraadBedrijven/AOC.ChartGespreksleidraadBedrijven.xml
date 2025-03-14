@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ActiveObjectClass>
 	<Id>1730395813823</Id>
-	<Name><![CDATA[ChartSummary]]></Name>
+	<Name><![CDATA[ChartGespreksleidraadBedrijven]]></Name>
+	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>

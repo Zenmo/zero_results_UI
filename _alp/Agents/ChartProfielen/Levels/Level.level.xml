@@ -1622,4 +1622,155 @@
 			</Text>
 		</Presentation>
 	</Group>
+	<Control Type="CheckBox">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1740570919804</Id>
+		<Name><![CDATA[cb_subdivideEnergyCoopFlows]]></Name>
+		<X>20</X>
+		<Y>110</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="220" Height="30">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor/>
+			<VisibleCode>uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP &amp;&amp; radio_energyType.getValue() != 1</VisibleCode>
+			<Enabled>true</Enabled>
+			<EnableExpression>uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP &amp;&amp; radio_energyType.getValue() != 1</EnableExpression>
+			<ActionCode>f_setCharts();</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<LabelText>Toon onderscheid tussen aansluitingen</LabelText>
+			<LinkTo>true</LinkTo>
+			<Link>b_subdivideEnergyCoopFlows</Link>
+		</ExtendedProperties>
+	</Control>
+	<Rectangle>
+		<Id>1741771180123</Id>
+		<Name><![CDATA[rect_yearlyViewBlocker]]></Name>
+		<X>340</X>
+		<Y>60</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<Lock>true</Lock>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>325</XCode>
+		<YCode>10</YCode>
+		<VisibleCode>radio_energyType.getValue() == 2;</VisibleCode>
+		<OnClickCode>int clickBlocker = 0;</OnClickCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0</LineWidth>
+		<LineColor/>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<Width>100</Width>
+		<Height>30</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor>-657931</FillColor>
+		<FillMaterial>null</FillMaterial>
+	</Rectangle>
+	<Rectangle>
+		<Id>1741771467933</Id>
+		<Name><![CDATA[rect_yearlyViewBlocker1]]></Name>
+		<X>340</X>
+		<Y>60</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<Lock>true</Lock>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>320</XCode>
+		<YCode>5</YCode>
+		<VisibleCode>radio_energyType.getValue() == 2;</VisibleCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0</LineWidth>
+		<LineColor/>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<Width>110</Width>
+		<Height>40</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor>-657931</FillColor>
+		<FillMaterial>null</FillMaterial>
+	</Rectangle>
+	<Rectangle>
+		<Id>1741790115109</Id>
+		<Name><![CDATA[rect_yearlyViewBlocker2]]></Name>
+		<X>360</X>
+		<Y>70</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<Lock>true</Lock>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>300</XCode>
+		<YCode>40</YCode>
+		<VisibleCode>radio_period.getValue() == 3;</VisibleCode>
+		<OnClickCode>int clickBlocker = 0;</OnClickCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0</LineWidth>
+		<LineColor/>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<Width>87</Width>
+		<Height>30</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor>-657931</FillColor>
+		<FillMaterial>null</FillMaterial>
+	</Rectangle>
+	<Rectangle>
+		<Id>1741790548327</Id>
+		<Name><![CDATA[rect_yearlyViewBlocker3]]></Name>
+		<X>350</X>
+		<Y>60</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<Lock>true</Lock>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>295</XCode>
+		<YCode>35</YCode>
+		<VisibleCode>radio_period.getValue() == 3;</VisibleCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0</LineWidth>
+		<LineColor/>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<Width>110</Width>
+		<Height>40</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor>-657931</FillColor>
+		<FillMaterial>null</FillMaterial>
+	</Rectangle>
 </Presentation>

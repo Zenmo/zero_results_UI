@@ -1,47 +1,47 @@
 double f_setKPISummaryChart()
 {/*ALCODESTART::1726830495435*/
-AreaCollection dataObject = uI_Results.f_getDataObject();
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+
 
 //At least for now grid nodes are not supported
-if(uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE){
-	dataObject = uI_Results.v_area;
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+	return;
 }
+
 
 //Reset chart
 f_resetChart();
 
 //Set KPIs
-f_setKPIs(dataObject);
+f_setKPIs(data);
 
 //Set visible
 uI_Results.chartKPISummary_presentation.setVisible(true);
+
 /*ALCODEEND*/}
 
-double f_setKPIs(AreaCollection area)
+double f_setKPIs(I_EnergyData data)
 {/*ALCODESTART::1726830499836*/
+double simulationLength_hr =  uI_Results.energyModel.p_runEndTime_h - uI_Results.energyModel.p_runStartTime_h;
+
 ////Calculate the values
 
 //Calculate and set new values
-double totalEnergyConsumption_MWh = area.v_totalEnergyConsumed_MWh;
-double totalImport_MWh = area.v_totalEnergyImport_MWh;
-double totalExport_MWh = area.v_totalEnergyExport_MWh;
+double totalEnergyConsumption_MWh = data.getRapidRunData().getTotalEnergyConsumed_MWh();
+double totalImport_MWh = data.getRapidRunData().getTotalEnergyImport_MWh();
+double totalExport_MWh = data.getRapidRunData().getTotalEnergyExport_MWh();
 	
-double elecConsumption_pct = area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY) / totalEnergyConsumption_MWh * 100;
-double gasConsumption_pct = area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE) / totalEnergyConsumption_MWh * 100;
-double FFconsumption_pct = area.fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL) / totalEnergyConsumption_MWh * 100;
-double h2consumption_pct = area.fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN) / totalEnergyConsumption_MWh * 100;
-double production_MWh = area.v_totalEnergyProduced_MWh;
+double elecConsumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
+double gasConsumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
+double FFconsumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
+double h2consumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
+double production_MWh = data.getRapidRunData().getTotalEnergyProduced_MWh();
 
-double KPIselfsufficiency_pct = area.v_totalEnergySelfConsumed_MWh / totalEnergyConsumption_MWh * 100;
+double KPIselfsufficiency_pct = data.getRapidRunData().getTotalEnergySelfConsumed_MWh() / totalEnergyConsumption_MWh * 100;
 
-//Overload of GC for GC and overload of all gridnodes combined for Region (GN is not supported and shows same KPIs as whole region)
-double KPIOverloadHours_pct;
-if(uI_Results.v_selectedObjectType == OL_GISObjectType.REGION){
-	KPIOverloadHours_pct = area.v_totalTimeOverloaded_h/8760*100;
-}
-else{
-	KPIOverloadHours_pct = (area.v_annualOverloadDurationDelivery_hr + area.v_annualOverloadDurationFeedin_hr)/8760 * 100;
-}
+//Total overload hours as a Pct of total simulation hours 
+double KPIOverloadHours_pct = (data.getRapidRunData().getTotalOverloadDurationDelivery_hr() + data.getRapidRunData().getTotalOverloadDurationFeedin_hr())/simulationLength_hr * 100;
+
 
 
 //Set new values text
@@ -78,29 +78,23 @@ t_KPIOverloadHours_pct.setText(df.format(KPIOverloadHours_pct) + " %");
 
 
 //Calculate and set previous values (if they exist) + arrows and styling
-if(area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != null && area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh() != 0){
+if(data.getPreviousRapidRunData() != null && data.getPreviousRapidRunData().getTotalEnergyConsumed_MWh() > 0){
 
-	double previousTotalEnergyConsumption_MWh = area.v_previousTotals.getPreviousTotalConsumedEnergy_MWh();
-	double previousTotalImport_MWh = area.v_previousTotals.getPreviousImportedEnergy_MWh();
-	double previousTotalExport_MWh = area.v_previousTotals.getPreviousExportedEnergy_MWh();
+	double previousTotalEnergyConsumption_MWh = data.getPreviousRapidRunData().getTotalEnergyConsumed_MWh();
+	double previousTotalImport_MWh = data.getPreviousRapidRunData().getTotalEnergyImport_MWh();
+	double previousTotalExport_MWh = data.getPreviousRapidRunData().getTotalEnergyExport_MWh();
 	
 	
-	double previousElectricityConsumption_pct = area.v_previousTotals.getPreviousTotalImports_MWh().get(OL_EnergyCarriers.ELECTRICITY) / previousTotalEnergyConsumption_MWh * 100;
-	double previousGasConsumption_pct = area.v_previousTotals.getPreviousTotalImports_MWh().get(OL_EnergyCarriers.METHANE) / previousTotalEnergyConsumption_MWh * 100;
-	double previousFFConsumption_pct = area.v_previousTotals.getPreviousTotalImports_MWh().get(OL_EnergyCarriers.DIESEL) / previousTotalEnergyConsumption_MWh * 100;
-	double previousH2Consumption_pct = area.v_previousTotals.getPreviousTotalImports_MWh().get(OL_EnergyCarriers.HYDROGEN) / previousTotalEnergyConsumption_MWh * 100; 
-	double previousProduction_MWh = area.v_previousTotals.getPreviousTotalProducedEnergy_MWh();  
+	double previousElectricityConsumption_pct = data.getPreviousRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
+	double previousGasConsumption_pct = data.getPreviousRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
+	double previousFFConsumption_pct = data.getPreviousRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0;
+	double previousH2Consumption_pct = data.getPreviousRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getPreviousRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegral_MWh() / previousTotalEnergyConsumption_MWh * 100 : 0; 
+	double previousProduction_MWh = data.getPreviousRapidRunData().getTotalEnergyProduced_MWh();  
 	
-	double previousKPIselfsufficiency_pct = area.v_previousTotals.getPreviousSelfConsumedEnergy_MWh() / previousTotalEnergyConsumption_MWh * 100; 
+	double previousKPIselfsufficiency_pct = data.getPreviousRapidRunData().getTotalEnergySelfConsumed_MWh() / previousTotalEnergyConsumption_MWh * 100; 
 	
 	//Overload of GC for GC and overload of all gridnodes combined for Region (GN is not supported and shows same KPIs as whole region)
-	double previousKPIOverloadHours_pct;
-	if(uI_Results.v_selectedObjectType == OL_GISObjectType.REGION || uI_Results.v_selectedObjectType == OL_GISObjectType.GRIDNODE){
-		previousKPIOverloadHours_pct = area.v_previousTotals.getPreviousTotalTimeOverloadedTransformers_hr()/8760*100;
-	}
-	else{
-	previousKPIOverloadHours_pct = (area.v_previousTotals.getPreviousOverloadDurationDelivery_hr() + area.v_previousTotals.getPreviousOverloadDurationFeedin_hr())/ 8760.0 * 100;
-	}
+	double previousKPIOverloadHours_pct = (data.getPreviousRapidRunData().getTotalOverloadDurationDelivery_hr() + data.getPreviousRapidRunData().getTotalOverloadDurationFeedin_hr())/ simulationLength_hr * 100;
 	
 	//Set previous values text (convert to same unit as totalEnergyConsumption text, so same if statement)
 	if(roundToInt(totalEnergyConsumption_MWh) >= 1000){

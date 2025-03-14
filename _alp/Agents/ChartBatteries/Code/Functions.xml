@@ -16,7 +16,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -36,7 +36,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -56,7 +56,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -92,7 +92,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -128,7 +128,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -149,7 +149,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -169,7 +169,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -189,7 +189,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[AreaCollection]]></Type>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

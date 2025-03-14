@@ -1,6 +1,6 @@
 double f_selectGespreksleidraadCharts()
 {/*ALCODESTART::1714765506606*/
-AreaCollection area = uI_Results.v_area;
+f_setWarningScreen(true);
 
 gr_gespreksleidraad1.setVisible(false);
 gr_gespreksleidraad2.setVisible(false);
@@ -10,52 +10,54 @@ gr_gespreksleidraad5.setVisible(false);
 gr_gespreksleidraad6.setVisible(false);
 gr_gespreksleidraad3v2.setVisible(false);
 
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+
+
+if(data.getScope() != OL_ResultScope.ENERGYMODEL && data.getScope() != OL_ResultScope.ENERGYCOOP){
+	f_setWarningScreen(false);
+	return;
+}
+
+
 switch(rb_gespreksleidraad.getValue()+1){
 	case 1:
-		f_setChartsGespreksleidraad1(area);
+		f_setChartsGespreksleidraad1(data);
 		f_setChartDescriptionText("i_gespreksleidraad1", false);
 		gr_gespreksleidraad1.setVisible(true);
 		break;	
 	case 2:
-		f_setChartsGespreksleidraad2(area);
+		f_setChartsGespreksleidraad2(data);
 		f_setChartDescriptionText("i_gespreksleidraad2", false);
 		gr_gespreksleidraad2.setVisible(true);	
 		break;	
 	case 3:
-		//f_setChartsGespreksleidraad3(area);
-
-		//gr_gespreksleidraad3.setVisible(true);	
+		f_setChartsGespreksleidraad3v2(data);
 		f_setChartDescriptionText("i_gespreksleidraad3", false);
-		f_setChartsGespreksleidraad3v2(area);
 		gr_gespreksleidraad3v2.setVisible(true);	
 		break;	
 	case 4:
-		f_setChartsGespreksleidraad4(area);
+		f_setChartsGespreksleidraad4(data);
 		f_setChartDescriptionText("i_gespreksleidraad4", false);
 		gr_gespreksleidraad4.setVisible(true);	
 		break;	
 	case 5:
-		f_setChartsGespreksleidraad5(area);
+		f_setChartsGespreksleidraad5(data);
 		f_setChartDescriptionText("i_gespreksleidraad5", false);
 		gr_gespreksleidraad5.setVisible(true);		
 		break;
-	case 6:
-		f_setChartsGespreksleidraad6(area);
-		f_setChartDescriptionText("i_gespreksleidraad6", false);
-		gr_gespreksleidraad6.setVisible(true);		
-		break;
 }
-	
+
 /*ALCODEEND*/}
 
-double f_setChartsGespreksleidraad1(AreaCollection area)
+double f_setChartsGespreksleidraad1(I_EnergyData data)
 {/*ALCODESTART::1727090219811*/
-double selfConsumedEnergy_MWh = area.v_totalEnergySelfConsumed_MWh;
-double importE_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY); 
-double importG_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE);
-double importF_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.DIESEL); 
-double importH_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.HYDROGEN); 
-double exportE_MWh = area.v_totalEnergyExport_MWh;
+double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh();
+double importE_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000; 
+double importG_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000;
+double importF_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegralPos_kWh()/1000; 
+double importH_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralPos_kWh()/1000; 
+double exportE_MWh = data.getRapidRunData().getTotalEnergyExport_MWh();
+double districtHeating_consumption_MWh = data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_kWh()/1000;
 StackChart pl_consumptionChart = pl_consumptionChartGespreksleidraad1; 
 StackChart pl_productionChart = pl_productionChartGespreksleidraad1; 
 ShapeText t_OpwekText = t_opwekTextGespreksleidraad1;
@@ -98,26 +100,26 @@ if (importH_MWh > 0 ) {
 	d6.setValue(importH_MWh/1000); // Hydrogen
 	pl_consumptionChart.addDataItem(d6,"Waterstof [MWh]",v_hydrogenDemandColor);
 }
-if (area.v_totalEnergyConsumptionForDistrictHeating_MWh > 0){
+if (districtHeating_consumption_MWh > 0){
 	DataItem d8 = new DataItem();
-	d8.setValue(area.v_totalEnergyConsumptionForDistrictHeating_MWh/1000); // Warmtenet
+	d8.setValue(districtHeating_consumption_MWh/1000); // Warmtenet
 	pl_consumptionChart.addDataItem(d8,"Warmte uit warmtenet [MWh]",v_districtHeatHeatSupplyColor);
 }
 
 
-double chartScale_MWh = max(selfConsumedEnergy_MWh+exportE_MWh, selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh+area.v_totalEnergyConsumptionForDistrictHeating_MWh);
+double chartScale_MWh = max(selfConsumedEnergy_MWh+exportE_MWh, selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh+districtHeating_consumption_MWh);
 pl_consumptionChart.setFixedScale(chartScale_MWh/1000);
 pl_productionChart.setFixedScale(chartScale_MWh/1000);
 
 if (chartScale_MWh<10) {
 	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)*1000) + " kWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh+area.v_totalEnergyConsumptionForDistrictHeating_MWh)*1000) + " kWh");
+	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh+districtHeating_consumption_MWh)*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
 	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+exportE_MWh)) + " MWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh+area.v_totalEnergyConsumptionForDistrictHeating_MWh)) + " MWh");
+	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToInt((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh+districtHeating_consumption_MWh)) + " MWh");
 } else {
 	t_OpwekText.setText("Opwek" + System.lineSeparator() + roundToDecimal((selfConsumedEnergy_MWh+exportE_MWh)/1000, 1) + " GWh");
-	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToDecimal((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh+area.v_totalEnergyConsumptionForDistrictHeating_MWh)/1000,1) + " GWh");
+	t_GebruikText.setText("Gebruik" + System.lineSeparator() + roundToDecimal((selfConsumedEnergy_MWh+importE_MWh+importG_MWh+importF_MWh+importH_MWh+districtHeating_consumption_MWh)/1000,1) + " GWh");
 }					 				 
 /*ALCODEEND*/}
 
@@ -253,34 +255,34 @@ return formattedText.toString();
 
 /*ALCODEEND*/}
 
-double f_setChartsGespreksleidraad2(AreaCollection area)
+double f_setChartsGespreksleidraad2(I_EnergyData data)
 {/*ALCODESTART::1730392911211*/
 //Electricity consumption
 sc_electricityDemandStack.removeAll();
 
-DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(area.v_totalElectricitySelfConsumed_MWh/1000);
-sc_electricityDemandStack.addDataItem(annualSelfConsumed, "Lokaal opgewekt", uI_Results.v_selfConsumedElectricityColor);
+DataItem annualSelfConsumed_GWh = new DataItem();
+annualSelfConsumed_GWh.setValue(data.getRapidRunData().getTotalElectricitySelfConsumed_MWh()/1000);
+sc_electricityDemandStack.addDataItem(annualSelfConsumed_GWh, "Lokaal opgewekt", uI_Results.v_selfConsumedElectricityColor);
 
-DataItem annualImport = new DataItem();
-annualImport.setValue(area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY)/1000);
-sc_electricityDemandStack.addDataItem(annualImport, "Invoer", uI_Results.v_importedEnergyColor);
+DataItem annualImport_GWh = new DataItem();
+annualImport_GWh.setValue(data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000000);
+sc_electricityDemandStack.addDataItem(annualImport_GWh, "Invoer", uI_Results.v_importedEnergyColor);
 
 
 //Heat consumption
 sc_heatDemandStack.removeAll();
 
-DataItem totalEnergyConsumptionForDistrictHeating_MWh = new DataItem();
-totalEnergyConsumptionForDistrictHeating_MWh.setValue(area.v_totalEnergyConsumptionForDistrictHeating_MWh/1000);
-sc_heatDemandStack.addDataItem(totalEnergyConsumptionForDistrictHeating_MWh, "Energie voor warmtenet", v_districtHeatDemandColor);
+DataItem totalEnergyConsumptionForDistrictHeating_GWh = new DataItem();
+totalEnergyConsumptionForDistrictHeating_GWh.setValue(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_kWh()/1000000);
+sc_heatDemandStack.addDataItem(totalEnergyConsumptionForDistrictHeating_GWh, "Energie voor warmtenet", v_districtHeatDemandColor);
 
-DataItem totalElectricityConsumptionHeatpumps_MWh = new DataItem();
-totalElectricityConsumptionHeatpumps_MWh.setValue(area.v_totalElectricityConsumptionHeatpumps_MWh/1000);
-sc_heatDemandStack.addDataItem(totalElectricityConsumptionHeatpumps_MWh, "Elek. voor warmtepompen", v_heatPumpHeatSupplyColor);
+DataItem totalElectricityConsumptionHeatpumps_GWh = new DataItem();
+totalElectricityConsumptionHeatpumps_GWh.setValue(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_kWh()/1000000);
+sc_heatDemandStack.addDataItem(totalElectricityConsumptionHeatpumps_GWh, "Elek. voor warmtepompen", v_heatPumpHeatSupplyColor);
 
-DataItem totalNaturalGasDemand_MWh = new DataItem();
-totalNaturalGasDemand_MWh.setValue(area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE)/1000);
-sc_heatDemandStack.addDataItem(totalNaturalGasDemand_MWh, "Gas", v_naturalGasSupplyColor);
+DataItem totalNaturalGasDemand_GWh = new DataItem();
+totalNaturalGasDemand_GWh.setValue(data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000000);
+sc_heatDemandStack.addDataItem(totalNaturalGasDemand_GWh, "Gas", v_naturalGasSupplyColor);
 
 
 // Transport consumption
@@ -288,7 +290,12 @@ sc_transportDemandStack.removeAll();
 
 
 //Set scales
-double chartScale_MWh = max(area.v_totalElectricitySelfConsumed_MWh + area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY), area.v_totalEnergyConsumptionForDistrictHeating_MWh + area.v_totalElectricityConsumptionHeatpumps_MWh + area.fm_totalImports_MWh.get(OL_EnergyCarriers.METHANE) - area.v_totalEnergyConsumptionForDistrictHeating_MWh);
+double chartScale_MWh = max(data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + 
+							(data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000), 
+							(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_kWh()/1000) + 
+							(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_kWh()/1000) + 
+							(data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000));
+							
 sc_electricityDemandStack.setFixedScale(chartScale_MWh/1000);
 sc_heatDemandStack.setFixedScale(chartScale_MWh/1000);
 sc_transportDemandStack.setFixedScale(chartScale_MWh/1000);
@@ -314,30 +321,31 @@ for (double value : uI_Results.energyModel.tf_p_solar_e_normalized.getValues()) 
 sc_windSupplyStack.removeAll();
 
 DataItem totalWindProduction_GWh = new DataItem();
-totalWindProduction_GWh.setValue(area.v_totalWindGeneration_MWh/1000);
+totalWindProduction_GWh.setValue(data.getRapidRunData().acc_dailyAverageWindProduction_kW.getIntegral_kWh()/1000000);
 sc_windSupplyStack.addDataItem(totalWindProduction_GWh, "Opwek wind", v_windElectricitySupplyColor);
 
 DataItem totalCurtailedWindEnergy_GWh = new DataItem();
-totalCurtailedWindEnergy_GWh.setValue(area.v_totalWindEnergyCurtailed_MWh/1000);
+totalCurtailedWindEnergy_GWh.setValue(0); //data.getRapidRunData().v_totalWindEnergyCurtailed_MWh/1000);
 sc_windSupplyStack.addDataItem(totalCurtailedWindEnergy_GWh, "Totaal gecurtailde wind energy", v_curtailedColor);
 
 DataItem remainingWindPotential_GWh = new DataItem();
-remainingWindPotential_GWh.setValue(max(0,((area.v_windPotential_kW - area.v_windInstalled_kW)*totalFullLoadHoursWind_hr/1000000)));
+remainingWindPotential_GWh.setValue(max(0,((data.getRapidRunData().assetsMetaData.windPotential_kW - data.getRapidRunData().assetsMetaData.totalInstalledWindPower_kW)*totalFullLoadHoursWind_hr/1000000)));
 sc_windSupplyStack.addDataItem(remainingWindPotential_GWh, "Resterende potentie wind energie", v_potentialColor);
 
 //Production (Solar)			
 sc_PVSupplyStack.removeAll();
 
 DataItem totalSolarProduction_GWh = new DataItem();
-totalSolarProduction_GWh.setValue(area.v_totalPVGeneration_MWh/1000);
+totalSolarProduction_GWh.setValue(data.getRapidRunData().acc_dailyAveragePVProduction_kW.getIntegral_kWh()/1000000);
 sc_PVSupplyStack.addDataItem(totalSolarProduction_GWh, "Opwek zon", v_PVElectricitySupplyColor);
 
+
 DataItem totalCurtailedPVEnergy_GWh = new DataItem();
-totalCurtailedPVEnergy_GWh.setValue(area.v_totalPVEnergyCurtailed_MWh/1000);
+totalCurtailedPVEnergy_GWh.setValue(0); //data.getRapidRunData().v_totalPVEnergyCurtailed_MWh/1000);
 sc_PVSupplyStack.addDataItem(totalCurtailedPVEnergy_GWh, "Totaal gecurtailde zonne energy", v_curtailedColor);
 
 DataItem remainingRoofSolarPotential_GWh = new DataItem();
-remainingRoofSolarPotential_GWh.setValue(max(0,((area.v_rooftopPVPotential_kW - area.v_rooftopPVInstalled_kW)*totalFullLoadHoursSolar_hr/1000000)));
+remainingRoofSolarPotential_GWh.setValue(max(0,((data.getRapidRunData().assetsMetaData.PVPotential_kW - data.getRapidRunData().assetsMetaData.totalInstalledPVPower_kW)*totalFullLoadHoursSolar_hr/1000000)));
 sc_PVSupplyStack.addDataItem(remainingRoofSolarPotential_GWh, "Resterende potentie zon op dak", v_potentialColor);
 
 //Set production charts scaling
@@ -348,38 +356,39 @@ sc_PVSupplyStack.setFixedScale(chartScaleSupply_GWh);
 
 /*ALCODEEND*/}
 
-double f_setChartsGespreksleidraad4(AreaCollection area)
+double f_setChartsGespreksleidraad4(I_EnergyData data)
 {/*ALCODESTART::1730392914975*/
-f_setBelastingPlots();
+f_setBelastingPlots(data);
 /*ALCODEEND*/}
 
-double f_setChartsGespreksleidraad5(AreaCollection area)
+double f_setChartsGespreksleidraad5(I_EnergyData data)
 {/*ALCODESTART::1730392915853*/
 //Electricity demand chart
 energyDemandChartYearGespreksleidraad5.removeAll();
+double startTime_h = 0;
 double maxDemandChart = 0;
 if(rb_gespreksleidraad5.getValue() == 0){ // Electricity
-	energyDemandChartYearGespreksleidraad5.addDataSet(area.dsm_dailyAverageConsumptionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY), "Elektriciteitsvraag", v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
-	maxDemandChart = area.dsm_dailyAverageConsumptionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax();
+	energyDemandChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), "Elektriciteitsvraag", v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+	maxDemandChart = data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW();
 }
 else if(rb_gespreksleidraad5.getValue() == 1){ // Energy
-	energyDemandChartYearGespreksleidraad5.addDataSet(area.data_dailyAverageFinalEnergyConsumption_kW, "Energievraag", v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
-	maxDemandChart = area.data_dailyAverageFinalEnergyConsumption_kW.getYMax();
+	energyDemandChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageFinalEnergyConsumption_kW.getDataSet(startTime_h), "Energievraag", v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+	maxDemandChart = data.getRapidRunData().acc_dailyAverageFinalEnergyConsumption_kW.getMaxPower_kW();
 }
 energyDemandChartYearGespreksleidraad5.setVisible(true);
 
 //Electricity supply chart
 energySupplyChartYearGespreksleidraad5.removeAll();
-energySupplyChartYearGespreksleidraad5.addDataSet(area.v_dataElectricityWindProductionYear_kW, v_windElectricitySupplyText, v_windElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad5.addDataSet(area.v_dataElectricityPVProductionYear_kW, v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad5.addDataSet(area.v_dataElectricityStorageProductionYear_kW, v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad5.addDataSet(area.v_dataElectricityV2GProductionYear_kW, v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageWindProduction_kW.getDataSet(startTime_h), v_windElectricitySupplyText, v_windElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAveragePVProduction_kW.getDataSet(startTime_h), v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageBatteriesProduction_kW.getDataSet(startTime_h), v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
+energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageV2GProduction_kW.getDataSet(startTime_h), v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
 
 
 //energySupplyChartYearGespreksleidraad1.addDataSet(area.data_petroleumProductsSupplyYear_MWh, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);
 //energySupplyChartYearGespreksleidraad1.addDataSet(area.data_districtHeatHeatSupplyYear_MWh, v_districtHeatHeatSupplyText, v_districtHeatHeatSupplyColor);
 
-double maxScale = max(maxDemandChart, area.dsm_dailyAverageProductionDataSets_kW.get(OL_EnergyCarriers.ELECTRICITY).getYMax());
+double maxScale = max(maxDemandChart, data.getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW());
 //double maxScale = max(uI_Results.energySupplyChartYearGespreksleidraad1.getScaleY(), uI_Results.energyDemandChartYearGespreksleidraad1.getScaleY());
 energyDemandChartYearGespreksleidraad5.setFixedVerticalScale(0, maxScale);
 energySupplyChartYearGespreksleidraad5.setFixedVerticalScale(maxScale);
@@ -389,145 +398,14 @@ energySupplyChartYearGespreksleidraad5.setVisible(true);
 
 /*ALCODEEND*/}
 
-double f_setChartsGespreksleidraad6(AreaCollection area)
+double f_setChartsGespreksleidraad6(I_EnergyData data)
 {/*ALCODESTART::1730392916575*/
 
 /*ALCODEEND*/}
 
-double f_setBelastingPlots()
-{/*ALCODESTART::1731340792354*/
-f_resetPlots();
-AreaCollection area = uI_Results.v_area;
-f_addDataToPlots(area);
-f_addTrafoLimits(area); 
-
-double maxDemand_kW = max(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
-double maxSupply_kW = abs(min(0, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin()));
-double maxDemandSupply_kW = max(maxDemand_kW, maxSupply_kW);
-if (maxDemandSupply_kW < 1 * pow(10,3)) {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
-	tx_maxSupply.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
-} else if (maxDemandSupply_kW<1 * pow(10,6)) {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
-	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
-} else {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
-	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
-} 
-
-f_setNetAverageLoad(area);
-/*ALCODEEND*/}
-
-double f_setNetAverageLoad(AreaCollection area)
-{/*ALCODESTART::1731340792370*/
-double benuttingsgraad = 0;
-double totalAbsoluteLoad_kW = 0;
-for(int i=0; i< area.v_dataNetbelastingDuurkrommeYear_kW.size(); i++){
-	totalAbsoluteLoad_kW += abs(area.v_dataNetbelastingDuurkrommeYear_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
-}
-benuttingsgraad = totalAbsoluteLoad_kW / ((area.v_gridCapacityDelivery_kW+area.v_gridCapacityFeedIn_kW) * 8760) * 100;
-t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
-/*ALCODEEND*/}
-
-double f_resetPlots()
-{/*ALCODESTART::1731340792372*/
-plot_jaar.removeAll();
-plot_week.removeAll();
-plot_dagnacht.removeAll();
-plot_seizoen.removeAll();
-/*ALCODEEND*/}
-
-double f_addTrafoLimits(AreaCollection area)
-{/*ALCODESTART::1731340792374*/
-String deliveryCapacityLabel = "Geschatte capaciteit afname";
-String feedinCapacityLabel = "Geschatte capaciteit teruglevering";
-Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-
-if(area.b_isRealDeliveryCapacityAvailable){
-	deliveryCapacityLabel = "Capaciteit afname";
-	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-if(area.b_isRealFeedinCapacityAvailable){
-	feedinCapacityLabel = "Capaciteit teruglevering";
-	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-
-//Add and color grid capacities
-plot_jaar.addDataSet(area.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel);
-plot_jaar.addDataSet(area.data_gridCapacityFeedInYear_kW, feedinCapacityLabel);
-plot_jaar.setColor(1, deliveryCapacityColor);
-plot_jaar.setColor(2, feedinCapacityColor);
-
-plot_week.addDataSet(area.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel);
-plot_week.addDataSet(area.data_gridCapacityFeedInYear_kW, feedinCapacityLabel);
-plot_week.setColor(plot_week.getCount() - 2, deliveryCapacityColor);
-plot_week.setColor(plot_week.getCount() - 1, feedinCapacityColor);
-
-plot_dagnacht.addDataSet(area.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel);
-plot_dagnacht.addDataSet(area.data_gridCapacityFeedInYear_kW, feedinCapacityLabel);
-plot_dagnacht.setColor(plot_dagnacht.getCount() - 2, deliveryCapacityColor);
-plot_dagnacht.setColor(plot_dagnacht.getCount() - 1, feedinCapacityColor);
-
-plot_seizoen.addDataSet(area.data_gridCapacityDeliveryYear_kW, deliveryCapacityLabel);
-plot_seizoen.addDataSet(area.data_gridCapacityFeedInYear_kW, feedinCapacityLabel);
-plot_seizoen.setColor(plot_seizoen.getCount() - 2, deliveryCapacityColor);
-plot_seizoen.setColor(plot_seizoen.getCount() - 1, feedinCapacityColor);
-/*ALCODEEND*/}
-
-double f_addDataToPlots(AreaCollection area)
-{/*ALCODESTART::1731340792385*/
-double scaleMin_kW;
-double scaleMax_kW;
-
-//Jaar
-plot_jaar.addDataSet(area.v_dataNetbelastingDuurkrommeYear_kW,"Belasting jaar");
-scaleMin_kW = -1 + min(area.data_gridCapacityFeedInYear_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
-scaleMax_kW = 1 + max(area.data_gridCapacityDeliveryYear_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
-plot_jaar.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
-if (area.v_dataNetbelastingDuurkrommeYearVorige_kW != null) {
-	//plot_jaar.addDataSet(area.v_dataNetbelastingDuurkrommeYearVorige_kW,"Vorige situatie");
-	//plot_jaar.setColor(3,gray);
-}
-
-//summer/winter
-if( area.v_dataNetbelastingDuurkrommeSummer_kW != null){
-	plot_seizoen.addDataSet(area.v_dataNetbelastingDuurkrommeSummer_kW,"Belasting zomerweek");
-	plot_seizoen.addDataSet(area.v_dataNetbelastingDuurkrommeWinter_kW,"Belasting winterweek");
-	plot_seizoen.setColor(0,blue);
-	plot_seizoen.setColor(1,green);
-	scaleMin_kW = -1 + min(area.data_gridCapacityFeedInYear_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
-	scaleMax_kW = 1 + max(area.data_gridCapacityDeliveryYear_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
-	plot_seizoen.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
-}
-
-// Day/night
-if( area.v_dataNetbelastingDuurkrommeDaytime_kW != null){
-	plot_dagnacht.addDataSet(area.v_dataNetbelastingDuurkrommeDaytime_kW,"Belasting overdag");
-	plot_dagnacht.addDataSet(area.v_dataNetbelastingDuurkrommeNighttime_kW,"Belasting 's nachts");
-	plot_dagnacht.setColor(0,blue);
-	plot_dagnacht.setColor(1,green);	
-	scaleMin_kW = -1 + min(area.data_gridCapacityFeedInYear_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
-	scaleMax_kW = 1 + max(area.data_gridCapacityDeliveryYear_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
-	plot_dagnacht.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
-}
-
-// Weekday/weekend
-if( area.v_dataNetbelastingDuurkrommeWeekday_kW != null){
-	plot_week.addDataSet(area.v_dataNetbelastingDuurkrommeWeekday_kW,"Belasting weekdagen");
-	plot_week.addDataSet(area.v_dataNetbelastingDuurkrommeWeekend_kW,"Belasting weekenddagen");
-	plot_week.setColor(0,blue);
-	plot_week.setColor(1,green);
-	scaleMin_kW = -1 + min(area.data_gridCapacityFeedInYear_kW.getYMin()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMin());
-	scaleMax_kW = 1 + max(area.data_gridCapacityDeliveryYear_kW.getYMax()*1.2, area.v_dataNetbelastingDuurkrommeYear_kW.getYMax());
-	plot_week.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
-}
-
-/*ALCODEEND*/}
-
-double f_setChartsGespreksleidraad3v2(AreaCollection area)
+double f_setChartsGespreksleidraad3v2(I_EnergyData data)
 {/*ALCODESTART::1732205673839*/
-f_setChartsGespreksleidraad3v2_PieChart(area);
+f_setChartsGespreksleidraad3v2_PieChart(data);
 /*
 //Clear
 pl_consumptionChart3v2.removeAll();
@@ -590,7 +468,7 @@ if (chartScale_MWh<10) {
 */
 /*ALCODEEND*/}
 
-double f_setChartsGespreksleidraad3v2_PieChart(AreaCollection area)
+double f_setChartsGespreksleidraad3v2_PieChart(I_EnergyData data)
 {/*ALCODESTART::1732208184134*/
 //Clear
 pl_productionChart3v2_pieLegenda.removeAll();
@@ -602,22 +480,30 @@ pl_consumptionChart3v2_pie.setScale(1);
 pl_productionChart3v2_pie.setPos(-250, -50);
 pl_consumptionChart3v2_pie.setPos(-20, -50);
 
+double individualSelfconsumptionElectricity_fr = 0;
+if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
+	individualSelfconsumptionElectricity_fr = ((EnergyCoop)data.getRapidRunData().parentAgent).v_cumulativeIndividualSelfconsumptionElectricity_fr;
+}
+else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
+	individualSelfconsumptionElectricity_fr = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh()/GC.v_rapidRunData.getTotalElectricityConsumed_MWh());
+}
+
 double annualSelfConsumedElectricityIndividual_MWh;
 
-if (! (area.v_individualSelfconsumptionElectricity_fr > 0) ) {
+if (! (individualSelfconsumptionElectricity_fr > 0) ) {
 	annualSelfConsumedElectricityIndividual_MWh = 0.0;
 	traceln("NaN detected!");
 } else {
-	annualSelfConsumedElectricityIndividual_MWh = (area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY)) * area.v_individualSelfconsumptionElectricity_fr;
+	annualSelfConsumedElectricityIndividual_MWh = (data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000) * individualSelfconsumptionElectricity_fr;
 }
 					
 double selfConsumedElectricityIndividual_MWh = annualSelfConsumedElectricityIndividual_MWh;
-double additionalSelfConsumedElectricityCollective_MWh = area.v_totalElectricitySelfConsumed_MWh - annualSelfConsumedElectricityIndividual_MWh;
-double totalExportedElectricity_MWh = area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double totalImportedElectricity_MWh = area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
+double additionalSelfConsumedElectricityCollective_MWh = data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() - annualSelfConsumedElectricityIndividual_MWh;
+double totalExportedElectricity_MWh = -data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000;
+double totalImportedElectricity_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000;
 
-double production_MWh = area.v_totalElectricitySelfConsumed_MWh + area.fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double consumption_MWh = area.v_totalElectricitySelfConsumed_MWh + area.fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
+double production_MWh = data.getRapidRunData().getTotalElectricityProduced_MWh(); //data.getRapidRunData().getTotalElectricitySelfConsumed_MWh + data.getRapidRunData().fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
+double consumption_MWh = data.getRapidRunData().getTotalElectricityConsumed_MWh(); //data.getRapidRunData().getTotalElectricitySelfConsumed_MWh + data.getRapidRunData().fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
 
 double selfConsumedElectricityIndividual_scaledUnit;
 double additionalSelfConsumedElectricityCollective_scaledUnit;
@@ -702,6 +588,186 @@ if (consumption_MWh < 10 || production_MWh < 10) {
 	t_totalConsumptionYear.setText("Gebruik [GWh]" + System.lineSeparator() + "Totaal : " + roundToDecimal(consumption_MWh/1000,1));// + " GWh");
 }
 
+
+/*ALCODEEND*/}
+
+double f_setWarningScreen(boolean showWarningScreen)
+{/*ALCODESTART::1741345541726*/
+gr_warningScreen.setVisible(showWarningScreen);
+/*ALCODEEND*/}
+
+double f_setBelastingPlots(I_EnergyData data)
+{/*ALCODESTART::1741706256154*/
+f_resetPlots();
+
+J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
+
+f_addDataToPlots(data, loadDurationCurves);
+f_addTrafoLimits(data); 
+
+double maxDemand_kW = max(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
+double maxSupply_kW = abs(min(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin()));
+double maxDemandSupply_kW = max(maxDemand_kW, maxSupply_kW);
+/*
+if (maxDemandSupply_kW < 1 * pow(10,3)) {
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
+	tx_maxSupply.setText(roundToDecimal(maxSupply_kW, 0) + " kW");
+} else if (maxDemandSupply_kW<1 * pow(10,6)) {
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
+	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
+} else {
+	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
+	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
+} */
+
+if (maxDemandSupply_kW < 1 * pow(10,3)) {
+	tx_maxDemand.setText(String.format("%.0f", maxDemand_kW) + " kW");
+	tx_maxSupply.setText(String.format("%.0f", maxSupply_kW) + " kW");
+} else if (maxDemandSupply_kW<1 * pow(10,6)) {
+	tx_maxDemand.setText(String.format("%.2f", maxDemand_kW / pow(10,3)) + " MW");
+	tx_maxSupply.setText(String.format("%.2f", maxSupply_kW / pow(10,3)) + " MW");
+	//tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
+	//tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
+} else {
+	tx_maxDemand.setText(String.format("%.2f", maxDemand_kW / pow(10,6)) + " GW");
+	tx_maxSupply.setText(String.format("%.2f", maxSupply_kW / pow(10,6)) + " GW");
+	//tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
+	//tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
+} 
+
+
+f_setNetAverageLoad(data, loadDurationCurves);
+/*ALCODEEND*/}
+
+double f_setNetAverageLoad(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
+{/*ALCODESTART::1741706256165*/
+double benuttingsgraad = 0;
+double totalAbsoluteLoad_kW = 0;
+for(int i=0; i< loadDurationCurves.ds_loadDurationCurveTotal_kW.size(); i++){
+	totalAbsoluteLoad_kW += abs(loadDurationCurves.ds_loadDurationCurveTotal_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
+}
+benuttingsgraad = totalAbsoluteLoad_kW / ((dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW + dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW) * 8760) * 100;
+t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
+/*ALCODEEND*/}
+
+double f_resetPlots()
+{/*ALCODESTART::1741706256171*/
+plot_jaar.removeAll();
+plot_week.removeAll();
+plot_dagnacht.removeAll();
+plot_seizoen.removeAll();
+/*ALCODEEND*/}
+
+double f_addDataToPlots(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
+{/*ALCODESTART::1741706256175*/
+double scaleMin_kW;
+double scaleMax_kW;
+
+double gridCapacityDelivery_kW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
+double gridCapacityFeedin_kW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW;
+
+//Jaar
+plot_jaar.addDataSet(loadDurationCurves.ds_loadDurationCurveTotal_kW,"Belasting jaar");
+scaleMin_kW = -1 + min(-gridCapacityFeedin_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin());
+scaleMax_kW = 1 + max(gridCapacityDelivery_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
+plot_jaar.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
+//if (area.v_dataNetbelastingDuurkrommeYearVorige_kW != null) {
+	//plot_jaar.addDataSet(area.v_dataNetbelastingDuurkrommeYearVorige_kW,"Vorige situatie");
+	//plot_jaar.setColor(3,gray);
+//}
+
+//summer/winter
+plot_seizoen.addDataSet(loadDurationCurves.ds_loadDurationCurveSummer_kW,"Belasting zomerweek");
+plot_seizoen.addDataSet(loadDurationCurves.ds_loadDurationCurveWinter_kW,"Belasting winterweek");
+plot_seizoen.setColor(0,blue);
+plot_seizoen.setColor(1,green);
+scaleMin_kW = -1 + min(-gridCapacityFeedin_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin());
+scaleMax_kW = 1 + max(gridCapacityDelivery_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
+plot_seizoen.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
+
+
+// Day/night
+plot_dagnacht.addDataSet(loadDurationCurves.ds_loadDurationCurveDaytime_kW,"Belasting overdag");
+plot_dagnacht.addDataSet(loadDurationCurves.ds_loadDurationCurveNighttime_kW,"Belasting 's nachts");
+plot_dagnacht.setColor(0,blue);
+plot_dagnacht.setColor(1,green);	
+scaleMin_kW = -1 + min(-gridCapacityFeedin_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin());
+scaleMax_kW = 1 + max(gridCapacityDelivery_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
+plot_dagnacht.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
+
+
+// Weekday/weekend
+plot_week.addDataSet(loadDurationCurves.ds_loadDurationCurveWeekday_kW,"Belasting weekdagen");
+plot_week.addDataSet(loadDurationCurves.ds_loadDurationCurveWeekend_kW,"Belasting weekenddagen");
+plot_week.setColor(0,blue);
+plot_week.setColor(1,green);
+scaleMin_kW = -1 + min(-gridCapacityFeedin_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin());
+scaleMax_kW = 1 + max(gridCapacityDelivery_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
+plot_week.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
+
+/*ALCODEEND*/}
+
+double f_addTrafoLimits(I_EnergyData dataObject)
+{/*ALCODESTART::1741706256178*/
+//Add and color grid capacities
+String deliveryCapacityLabel = "Geschatte capaciteit afname";
+String feedinCapacityLabel = "Geschatte capaciteit teruglevering";
+Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
+Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
+
+//Create delivery and capacity year datasets
+DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
+DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
+	
+if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
+	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
+	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+	feedinCapacityLabel = "Cumulatieve GTV teruglevering van bedrijven";
+	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+	
+	//And: add group contract values
+	DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW());
+	DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW());
+	
+	plot_jaar.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_jaar.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	plot_week.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_week.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	plot_dagnacht.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_dagnacht.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	plot_seizoen.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	plot_seizoen.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+}
+else{
+	if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
+		deliveryCapacityLabel = "Capaciteit afname";
+		deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+	}
+	if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
+		feedinCapacityLabel = "Capaciteit teruglevering";
+		feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+	}
+}
+	
+plot_jaar.addDataSet(gridCapacityDelivery_kW, deliveryCapacityLabel);
+plot_jaar.addDataSet(gridCapacityFeedin_kW, feedinCapacityLabel);
+plot_jaar.setColor(1, deliveryCapacityColor);
+plot_jaar.setColor(2, feedinCapacityColor);
+
+plot_week.addDataSet(gridCapacityDelivery_kW, deliveryCapacityLabel);
+plot_week.addDataSet(gridCapacityFeedin_kW, feedinCapacityLabel);
+plot_week.setColor(plot_week.getCount() - 2, deliveryCapacityColor);
+plot_week.setColor(plot_week.getCount() - 1, feedinCapacityColor);
+
+plot_dagnacht.addDataSet(gridCapacityDelivery_kW, deliveryCapacityLabel);
+plot_dagnacht.addDataSet(gridCapacityFeedin_kW, feedinCapacityLabel);
+plot_dagnacht.setColor(plot_dagnacht.getCount() - 2, deliveryCapacityColor);
+plot_dagnacht.setColor(plot_dagnacht.getCount() - 1, feedinCapacityColor);
+
+plot_seizoen.addDataSet(gridCapacityDelivery_kW, deliveryCapacityLabel);
+plot_seizoen.addDataSet(gridCapacityFeedin_kW, feedinCapacityLabel);
+plot_seizoen.setColor(plot_seizoen.getCount() - 2, deliveryCapacityColor);
+plot_seizoen.setColor(plot_seizoen.getCount() - 1, feedinCapacityColor);
 
 /*ALCODEEND*/}
 
