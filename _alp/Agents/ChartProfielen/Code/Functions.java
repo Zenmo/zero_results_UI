@@ -14,7 +14,7 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(EC_consumption).getDataSet(startTime_h), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 	else if(dataObject.getRapidRunData().assetsMetaData.hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getDataSet(startTime_h), "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getDataSet(startTime_h), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
@@ -94,7 +94,7 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		energyDemandChart.addDataSet( dataObject.getLiveData().dsm_liveDemand_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 	else if(dataObject.getLiveData().assetsMetaData.hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChart.addDataSet( dataObject.getLiveData().data_districtHeatDelivery_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		energyDemandChart.addDataSet( dataObject.getLiveData().data_districtHeatDelivery_kW, "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
@@ -173,7 +173,7 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		energyDemandChart.addDataSet( dataObject.getRapidRunData().am_summerWeekConsumptionAccumulators_kW.get(EC_consumption).getDataSet(startTime_h), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
 	}
 	else if(dataObject.getRapidRunData().assetsMetaData.hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChart.addDataSet( dataObject.getRapidRunData().acc_summerWeekDistrictHeatingConsumption_kW.getDataSet(startTime_h), "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		energyDemandChart.addDataSet( dataObject.getRapidRunData().acc_summerWeekDistrictHeatingConsumption_kW.getDataSet(startTime_h), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
@@ -279,7 +279,7 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		energyDemandChart.addDataSet( dataObject.getRapidRunData().am_winterWeekConsumptionAccumulators_kW.get(EC_consumption).getDataSet(startTime_h), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
 	}
 	else if(dataObject.getRapidRunData().assetsMetaData.hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChart.addDataSet( dataObject.getRapidRunData().acc_winterWeekDistrictHeatingConsumption_kW.getDataSet(startTime_h), "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		energyDemandChart.addDataSet( dataObject.getRapidRunData().acc_winterWeekDistrictHeatingConsumption_kW.getDataSet(startTime_h), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
@@ -744,7 +744,7 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		energyDemandChartDay.addDataSet( dataObject.getLiveData().dsm_liveDemand_kW.get(EC_consumption), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 	else if(dataObject.getLiveData().assetsMetaData.hasHeatGridConnection){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChartDay.addDataSet( dataObject.getLiveData().data_districtHeatDelivery_kW, "Warmte import", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		energyDemandChartDay.addDataSet( dataObject.getLiveData().data_districtHeatDelivery_kW, "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
