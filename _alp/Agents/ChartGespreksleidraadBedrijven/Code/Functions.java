@@ -270,14 +270,14 @@ DataItem peakIndividual_kW = new DataItem();
 DataItem peakCollective_kW = new DataItem();
 String text_peakType = "";
 if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
-	totalGTV_kW.setValue(COOP.p_contractedDeliveryCapacity_kW);
+	totalGTV_kW.setValue(COOP.v_liveConnectionMetaData.contractedDeliveryCapacity_kW);
 	totalGTVgroupcontract_kW.setValue(COOP.f_getGroupContractDeliveryCapacity_kW());
 	peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakDelivery_kW);
 	peakCollective_kW.setValue(max(0, COOP.v_rapidRunData.getPeakDelivery_kW()));
 	text_peakType = "levering";
 }
 else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
-	totalGTV_kW.setValue(COOP.p_contractedFeedinCapacity_kW);
+	totalGTV_kW.setValue(COOP.v_liveConnectionMetaData.contractedFeedinCapacity_kW);
 	totalGTVgroupcontract_kW.setValue(COOP.f_getGroupContractFeedinCapacity_kW());
 	peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakFeedin_kW);
 	peakCollective_kW.setValue(-1*min(0, COOP.v_rapidRunData.getPeakFeedin_kW()));
