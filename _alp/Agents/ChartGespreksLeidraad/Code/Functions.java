@@ -372,8 +372,8 @@ if(rb_gespreksleidraad5.getValue() == 0){ // Electricity
 	maxDemandChart = data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW();
 }
 else if(rb_gespreksleidraad5.getValue() == 1){ // Energy
-	energyDemandChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageFinalEnergyConsumption_kW.getDataSet(startTime_h), "Energievraag", v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
-	maxDemandChart = data.getRapidRunData().acc_dailyAverageFinalEnergyConsumption_kW.getMaxPower_kW();
+	energyDemandChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageEnergyConsumption_kW.getDataSet(startTime_h), "Energievraag", v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+	maxDemandChart = data.getRapidRunData().acc_dailyAverageEnergyConsumption_kW.getMaxPower_kW();
 }
 energyDemandChartYearGespreksleidraad5.setVisible(true);
 
