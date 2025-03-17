@@ -24,7 +24,7 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>460</Width>
-		<Height>740</Height>
+		<Height>750</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor/>
 		<FillColorCode>v_backgroundColor</FillColorCode>

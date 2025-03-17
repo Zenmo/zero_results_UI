@@ -3,6 +3,8 @@ double f_setCharts()
 f_resetCharts();
 f_setVisiblity();
 
+//Set selected object display
+uI_Results.f_setSelectedObjectDisplay(230, 90);
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 	f_setTrafoBalanceChartYear(uI_Results.v_gridNode);

@@ -1,5 +1,8 @@
 double f_setSankey()
 {/*ALCODESTART::1714746374796*/
+//Set selected object display
+uI_Results.f_setSelectedObjectDisplay(230, 10);
+
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
 double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh();

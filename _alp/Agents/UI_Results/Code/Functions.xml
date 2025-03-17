@@ -576,4 +576,76 @@
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1742210371105</Id>
+		<Name><![CDATA[f_setSelectedObjectText]]></Name>
+		<X>540</X>
+		<Y>300</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[customSelectedObjectText]]></Name>
+			<Type><![CDATA[String]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1742218383411</Id>
+		<Name><![CDATA[f_setCB_KPISummary_Presentation]]></Name>
+		<X>1560</X>
+		<Y>560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[location_x]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[location_y]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[visible]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1742221943777</Id>
+		<Name><![CDATA[f_setSelectedObjectDisplay]]></Name>
+		<X>1560</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[location_x]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[location_y]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
 </Functions>

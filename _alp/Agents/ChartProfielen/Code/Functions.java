@@ -346,6 +346,10 @@ else{
 double f_setCharts()
 {/*ALCODESTART::1714899014782*/
 f_resetCharts();
+
+//Set selected object display
+uI_Results.f_setSelectedObjectDisplay(230, 115);
+
 if (radio_period.getValue() == 0) {
 	radio_periodLive.setVisible(true);
 }

@@ -23,7 +23,7 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>460</Width>
-		<Height>60</Height>
+		<Height>40</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -863,7 +863,7 @@
 		<Id>1714923264961</Id>
 		<Name><![CDATA[radio]]></Name>
 		<X>160</X>
-		<Y>10</Y>
+		<Y>0</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
