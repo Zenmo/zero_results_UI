@@ -12,6 +12,9 @@ gr_gespreksleidraad3v2.setVisible(false);
 
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
+//Set selected object display
+uI_Results.f_setSelectedObjectDisplay(230, 150);
+
 
 if(data.getScope() != OL_ResultScope.ENERGYMODEL && data.getScope() != OL_ResultScope.ENERGYCOOP){
 	f_setWarningScreen(false);

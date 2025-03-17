@@ -1310,15 +1310,13 @@ f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
 				<LineWidth>1</LineWidth>
-				<LineColor>-90267965</LineColor>
-				<LineColorCode>white</LineColorCode>
+				<LineColor>10395331</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
 				<Width>450</Width>
 				<Height>50</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-3092235</FillColor>
-				<FillColorCode>white</FillColorCode>
+				<FillColor>13684981</FillColor>
 				<FillMaterial>null</FillMaterial>
 			</Rectangle>
 			<Text>

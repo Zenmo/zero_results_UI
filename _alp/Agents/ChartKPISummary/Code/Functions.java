@@ -2,6 +2,8 @@ double f_setKPISummaryChart()
 {/*ALCODESTART::1726830495435*/
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
+//Set selected object display
+uI_Results.f_setSelectedObjectDisplay(230, 60);
 
 //At least for now grid nodes are not supported
 if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){

@@ -4,7 +4,7 @@
 		<Id>1726827568300</Id>
 		<Name><![CDATA[ovalSelfsufficiency]]></Name>
 		<X>130</X>
-		<Y>640</Y>
+		<Y>660</Y>
 		<Label>
 			<X>0</X>
 			<Y>0</Y>
@@ -30,7 +30,7 @@
 		<Id>1726827568315</Id>
 		<Name><![CDATA[ovalGridload]]></Name>
 		<X>346</X>
-		<Y>640</Y>
+		<Y>660</Y>
 		<Label>
 			<X>0</X>
 			<Y>0</Y>
@@ -75,7 +75,7 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>460</Width>
-		<Height>60</Height>
+		<Height>50</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -84,7 +84,7 @@
 		<Id>1726825366299</Id>
 		<Name><![CDATA[txt_KPISummary]]></Name>
 		<X>235</X>
-		<Y>15</Y>
+		<Y>10</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -212,7 +212,7 @@
 		<Id>1726830241670</Id>
 		<Name><![CDATA[t_totals]]></Name>
 		<X>230</X>
-		<Y>85</Y>
+		<Y>105</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -237,7 +237,7 @@
 		<Id>1726837161070</Id>
 		<Name><![CDATA[gr_totalsSeperate]]></Name>
 		<X>150</X>
-		<Y>390</Y>
+		<Y>410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1575,7 +1575,7 @@
 		<Id>1726839051175</Id>
 		<Name><![CDATA[arrows_totalconsumption]]></Name>
 		<X>40</X>
-		<Y>168</Y>
+		<Y>188</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1674,7 +1674,7 @@
 		<Id>1726839084436</Id>
 		<Name><![CDATA[arrows_import]]></Name>
 		<X>190</X>
-		<Y>168</Y>
+		<Y>188</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1773,7 +1773,7 @@
 		<Id>1726839116842</Id>
 		<Name><![CDATA[arrows_export]]></Name>
 		<X>340</X>
-		<Y>168</Y>
+		<Y>188</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1872,7 +1872,7 @@
 		<Id>1727856926839</Id>
 		<Name><![CDATA[line]]></Name>
 		<X>80</X>
-		<Y>220</Y>
+		<Y>240</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1900,7 +1900,7 @@
 		<Id>1727856991521</Id>
 		<Name><![CDATA[line1]]></Name>
 		<X>100</X>
-		<Y>540</Y>
+		<Y>560</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1928,7 +1928,7 @@
 		<Id>1728289186016</Id>
 		<Name><![CDATA[txt_totalSubGroups1]]></Name>
 		<X>220</X>
-		<Y>130</Y>
+		<Y>150</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1953,7 +1953,7 @@
 		<Id>1728289194235</Id>
 		<Name><![CDATA[txt_totalSubGroups2]]></Name>
 		<X>370</X>
-		<Y>130</Y>
+		<Y>150</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1978,7 +1978,7 @@
 		<Id>1726836119936</Id>
 		<Name><![CDATA[t_totalImport_MWh]]></Name>
 		<X>210</X>
-		<Y>150</Y>
+		<Y>170</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2003,7 +2003,7 @@
 		<Id>1726836207371</Id>
 		<Name><![CDATA[t_previousTotalImport_MWh]]></Name>
 		<X>215</X>
-		<Y>175</Y>
+		<Y>195</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2028,7 +2028,7 @@
 		<Id>1726836615693</Id>
 		<Name><![CDATA[t_totalconsumption_MWh]]></Name>
 		<X>60</X>
-		<Y>150</Y>
+		<Y>170</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2053,7 +2053,7 @@
 		<Id>1726836620191</Id>
 		<Name><![CDATA[t_previousTotalconsumption_MWh]]></Name>
 		<X>65</X>
-		<Y>175</Y>
+		<Y>195</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2078,7 +2078,7 @@
 		<Id>1726836045104</Id>
 		<Name><![CDATA[txt_totalSubGroups]]></Name>
 		<X>80</X>
-		<Y>130</Y>
+		<Y>150</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2103,7 +2103,7 @@
 		<Id>1726836045106</Id>
 		<Name><![CDATA[t_totalExport_MWh]]></Name>
 		<X>360</X>
-		<Y>150</Y>
+		<Y>170</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2128,7 +2128,7 @@
 		<Id>1726836045108</Id>
 		<Name><![CDATA[t_previousTotalExport_MWh]]></Name>
 		<X>365</X>
-		<Y>175</Y>
+		<Y>195</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2153,7 +2153,7 @@
 		<Id>1726834022249</Id>
 		<Name><![CDATA[arrows_gridload]]></Name>
 		<X>329</X>
-		<Y>658</Y>
+		<Y>678</Y>
 		<Label>
 			<X>6.923</X>
 			<Y>0</Y>
@@ -2252,7 +2252,7 @@
 		<Id>1726838689417</Id>
 		<Name><![CDATA[t_previousKPIOverloadHours_pct]]></Name>
 		<X>345</X>
-		<Y>650</Y>
+		<Y>670</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2277,7 +2277,7 @@
 		<Id>1726827568313</Id>
 		<Name><![CDATA[txt_gridload]]></Name>
 		<X>346</X>
-		<Y>560</Y>
+		<Y>580</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2302,7 +2302,7 @@
 		<Id>1726827568317</Id>
 		<Name><![CDATA[txt_overload]]></Name>
 		<X>346</X>
-		<Y>697</Y>
+		<Y>717</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2327,7 +2327,7 @@
 		<Id>1726827568319</Id>
 		<Name><![CDATA[t_KPIOverloadHours_pct]]></Name>
 		<X>346</X>
-		<Y>627</Y>
+		<Y>647</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2352,7 +2352,7 @@
 		<Id>1726833977855</Id>
 		<Name><![CDATA[arrows_selfsufficiency]]></Name>
 		<X>109</X>
-		<Y>658</Y>
+		<Y>678</Y>
 		<Label>
 			<X>6.959</X>
 			<Y>0</Y>
@@ -2451,7 +2451,7 @@
 		<Id>1726838662434</Id>
 		<Name><![CDATA[t_previousKPIselfsufficiency_pct]]></Name>
 		<X>125</X>
-		<Y>650</Y>
+		<Y>670</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2476,7 +2476,7 @@
 		<Id>1726827568298</Id>
 		<Name><![CDATA[txt_selfsufficiency]]></Name>
 		<X>130</X>
-		<Y>560</Y>
+		<Y>580</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2501,7 +2501,7 @@
 		<Id>1726827568302</Id>
 		<Name><![CDATA[txt_selfsufficiencyPercentage]]></Name>
 		<X>130</X>
-		<Y>697</Y>
+		<Y>717</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2527,7 +2527,7 @@ lokaal opgewekt]]></Text>
 		<Id>1726827568304</Id>
 		<Name><![CDATA[t_KPIselfsufficiency_pct]]></Name>
 		<X>130</X>
-		<Y>627</Y>
+		<Y>647</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>

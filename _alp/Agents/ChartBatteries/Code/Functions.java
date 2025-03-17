@@ -40,6 +40,8 @@ double f_setChartsBatteries()
 f_resetCharts();
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
+//Set selected object display
+uI_Results.f_setSelectedObjectDisplay(230, 60);
 
 switch(radio_period.getValue()){
 

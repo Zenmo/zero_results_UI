@@ -23,7 +23,7 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>460</Width>
-		<Height>80</Height>
+		<Height>50</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -33,7 +33,7 @@
 		<Id>1715175655981</Id>
 		<Name><![CDATA[radio_period]]></Name>
 		<X>50</X>
-		<Y>24</Y>
+		<Y>4</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
