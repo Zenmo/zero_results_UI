@@ -52,10 +52,10 @@ switch(rb_gespreksleidraad.getValue()+1){
 double f_setChartsGespreksleidraad1(I_EnergyData data)
 {/*ALCODESTART::1727090219811*/
 double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh();
-double importE_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000; 
-double importG_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000;
-double importF_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.DIESEL).getIntegralPos_kWh()/1000; 
-double importH_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN).getIntegralPos_kWh()/1000; 
+double importE_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY) : 0; 
+double importG_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE) : 0;
+double importF_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.DIESEL) : 0; 
+double importH_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HYDROGEN) : 0; 
 double exportE_MWh = data.getRapidRunData().getTotalEnergyExport_MWh();
 double districtHeating_consumption_MWh = data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_kWh()/1000;
 StackChart pl_consumptionChart = pl_consumptionChartGespreksleidraad1; 
@@ -372,8 +372,8 @@ if(rb_gespreksleidraad5.getValue() == 0){ // Electricity
 	maxDemandChart = data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW();
 }
 else if(rb_gespreksleidraad5.getValue() == 1){ // Energy
-	energyDemandChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageFinalEnergyConsumption_kW.getDataSet(startTime_h), "Energievraag", v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
-	maxDemandChart = data.getRapidRunData().acc_dailyAverageFinalEnergyConsumption_kW.getMaxPower_kW();
+	energyDemandChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageEnergyConsumption_kW.getDataSet(startTime_h), "Energievraag", v_energyDemandColor, true, false, Chart.INTERPOLATION_LINEAR, 2, Chart.POINT_NONE);
+	maxDemandChart = data.getRapidRunData().acc_dailyAverageEnergyConsumption_kW.getMaxPower_kW();
 }
 energyDemandChartYearGespreksleidraad5.setVisible(true);
 
