@@ -265,7 +265,7 @@ annualSelfConsumed_GWh.setValue(data.getRapidRunData().getTotalElectricitySelfCo
 sc_electricityDemandStack.addDataItem(annualSelfConsumed_GWh, "Lokaal opgewekt", uI_Results.v_selfConsumedElectricityColor);
 
 DataItem annualImport_GWh = new DataItem();
-annualImport_GWh.setValue(data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000000);
+annualImport_GWh.setValue(data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY)/1000);
 sc_electricityDemandStack.addDataItem(annualImport_GWh, "Invoer", uI_Results.v_importedEnergyColor);
 
 
@@ -281,7 +281,7 @@ totalElectricityConsumptionHeatpumps_GWh.setValue(data.getRapidRunData().acc_dai
 sc_heatDemandStack.addDataItem(totalElectricityConsumptionHeatpumps_GWh, "Elek. voor warmtepompen", v_heatPumpHeatSupplyColor);
 
 DataItem totalNaturalGasDemand_GWh = new DataItem();
-totalNaturalGasDemand_GWh.setValue(data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000000);
+totalNaturalGasDemand_GWh.setValue(data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE)/1000);
 sc_heatDemandStack.addDataItem(totalNaturalGasDemand_GWh, "Gas", v_naturalGasSupplyColor);
 
 
@@ -291,10 +291,10 @@ sc_transportDemandStack.removeAll();
 
 //Set scales
 double chartScale_MWh = max(data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + 
-							(data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000), 
+							data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY), 
 							(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_kWh()/1000) + 
 							(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_kWh()/1000) + 
-							(data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegralPos_kWh()/1000));
+							data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE));
 							
 sc_electricityDemandStack.setFixedScale(chartScale_MWh/1000);
 sc_heatDemandStack.setFixedScale(chartScale_MWh/1000);
@@ -480,30 +480,22 @@ pl_consumptionChart3v2_pie.setScale(1);
 pl_productionChart3v2_pie.setPos(-250, -50);
 pl_consumptionChart3v2_pie.setPos(-20, -50);
 
-double individualSelfconsumptionElectricity_fr = 0;
+double annualSelfConsumedElectricityIndividual_MWh = 0;
 if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
-	individualSelfconsumptionElectricity_fr = ((EnergyCoop)data.getRapidRunData().parentAgent).v_cumulativeIndividualSelfconsumptionElectricity_fr;
+	annualSelfConsumedElectricityIndividual_MWh = ((EnergyCoop)data.getRapidRunData().parentAgent).v_cumulativeIndividualSelfconsumptionElectricity_MWh;
 }
 else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
-	individualSelfconsumptionElectricity_fr = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh()/GC.v_rapidRunData.getTotalElectricityConsumed_MWh());
+	annualSelfConsumedElectricityIndividual_MWh = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
 }
 
-double annualSelfConsumedElectricityIndividual_MWh;
-
-if (! (individualSelfconsumptionElectricity_fr > 0) ) {
-	annualSelfConsumedElectricityIndividual_MWh = 0.0;
-	traceln("NaN detected!");
-} else {
-	annualSelfConsumedElectricityIndividual_MWh = (data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000) * individualSelfconsumptionElectricity_fr;
-}
-					
-double selfConsumedElectricityIndividual_MWh = annualSelfConsumedElectricityIndividual_MWh;
+				
+double selfConsumedElectricityIndividual_MWh = max(0, annualSelfConsumedElectricityIndividual_MWh);
 double additionalSelfConsumedElectricityCollective_MWh = data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() - annualSelfConsumedElectricityIndividual_MWh;
-double totalExportedElectricity_MWh = -data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralNeg_kWh()/1000;
-double totalImportedElectricity_MWh = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegralPos_kWh()/1000;
+double totalExportedElectricity_MWh = data.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY);
+double totalImportedElectricity_MWh = data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY);
 
-double production_MWh = data.getRapidRunData().getTotalElectricityProduced_MWh(); //data.getRapidRunData().getTotalElectricitySelfConsumed_MWh + data.getRapidRunData().fm_totalExports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
-double consumption_MWh = data.getRapidRunData().getTotalElectricityConsumed_MWh(); //data.getRapidRunData().getTotalElectricitySelfConsumed_MWh + data.getRapidRunData().fm_totalImports_MWh.get(OL_EnergyCarriers.ELECTRICITY);
+double production_MWh = data.getRapidRunData().getTotalElectricityProduced_MWh();
+double consumption_MWh = data.getRapidRunData().getTotalElectricityConsumed_MWh(); 
 
 double selfConsumedElectricityIndividual_scaledUnit;
 double additionalSelfConsumedElectricityCollective_scaledUnit;
