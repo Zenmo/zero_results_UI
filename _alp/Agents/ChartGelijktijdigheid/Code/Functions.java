@@ -1407,3 +1407,8 @@ if (chartScale_MWh<10) {
 }
 /*ALCODEEND*/}
 
+long f_getChartGroupSVGId()
+{/*ALCODESTART::1742390987495*/
+return gr_Year.getSVGId();
+/*ALCODEEND*/}
+
