@@ -494,8 +494,8 @@ else{
 	
 	DataItem weekdaySelfConsumedHeatpumpHeat = new DataItem();
 	weekdaySelfConsumedHeatpumpHeat.setValue(weekdayPrimaryHeatPumpEnergyProductionSelfConsumed);
-	pl_productionChartYear.addDataItem(weekdaySelfConsumedHeatpumpHeat, "Omgevingswarmte benut door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
-	pl_consumptionChartYear.addDataItem(weekdaySelfConsumedHeatpumpHeat, "Omgevingswarmte gewonnen door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
+	pl_productionChartWeekday.addDataItem(weekdaySelfConsumedHeatpumpHeat, "Omgevingswarmte benut door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
+	pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumedHeatpumpHeat, "Omgevingswarmte gewonnen door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
 }
 if(remainingWeekdayEnergySelfConsumed < uI_Results.p_cutOff_MWh){
 	remainingWeekdayEnergySelfConsumed = 0;
@@ -504,8 +504,8 @@ if(remainingWeekdayEnergySelfConsumed < uI_Results.p_cutOff_MWh){
 //Add selfconsumed energy
 DataItem weekdaySelfConsumedRemainingEnergy = new DataItem();
 weekdaySelfConsumedRemainingEnergy.setValue(remainingWeekdayEnergySelfConsumed);
-pl_productionChartYear.addDataItem(weekdaySelfConsumedRemainingEnergy, "Lokaal gebruikte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
-pl_consumptionChartYear.addDataItem(weekdaySelfConsumedRemainingEnergy, "Lokaal opgewekte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_productionChartWeekday.addDataItem(weekdaySelfConsumedRemainingEnergy, "Lokaal gebruikte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumedRemainingEnergy, "Lokaal opgewekte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
 
 // Weekend SelfConsumption
 double weekendEnergySelfConsumed = dataObject.getRapidRunData().getWeekendEnergySelfConsumed_MWh();
@@ -521,8 +521,8 @@ else{
 	
 	DataItem weekendSelfConsumedHeatpumpHeat = new DataItem();
 	weekendSelfConsumedHeatpumpHeat.setValue(weekendPrimaryHeatPumpEnergyProductionSelfConsumed);
-	pl_productionChartYear.addDataItem(weekendSelfConsumedHeatpumpHeat, "Omgevingswarmte benut door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
-	pl_consumptionChartYear.addDataItem(weekendSelfConsumedHeatpumpHeat, "Omgevingswarmte gewonnen door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
+	pl_productionChartWeekend.addDataItem(weekendSelfConsumedHeatpumpHeat, "Omgevingswarmte benut door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
+	pl_consumptionChartWeekend.addDataItem(weekendSelfConsumedHeatpumpHeat, "Omgevingswarmte gewonnen door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
 }
 if(remainingWeekendEnergySelfConsumed < uI_Results.p_cutOff_MWh){
 	remainingWeekendEnergySelfConsumed = 0;
@@ -531,8 +531,8 @@ if(remainingWeekendEnergySelfConsumed < uI_Results.p_cutOff_MWh){
 //Add selfconsumed energy
 DataItem weekendSelfConsumedRemainingEnergy = new DataItem();
 weekendSelfConsumedRemainingEnergy.setValue(remainingWeekendEnergySelfConsumed);
-pl_productionChartYear.addDataItem(weekendSelfConsumedRemainingEnergy, "Lokaal gebruikte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
-pl_consumptionChartYear.addDataItem(weekendSelfConsumedRemainingEnergy, "Lokaal opgewekte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_productionChartWeekend.addDataItem(weekendSelfConsumedRemainingEnergy, "Lokaal gebruikte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_consumptionChartWeekend.addDataItem(weekendSelfConsumedRemainingEnergy, "Lokaal opgewekte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
 
 
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergyCarriers) {
@@ -608,8 +608,8 @@ else{
 	
 	DataItem daytimeSelfConsumedHeatpumpHeat = new DataItem();
 	daytimeSelfConsumedHeatpumpHeat.setValue(daytimePrimaryHeatPumpEnergyProductionSelfConsumed);
-	pl_productionChartYear.addDataItem(daytimeSelfConsumedHeatpumpHeat, "Omgevingswarmte benut door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
-	pl_consumptionChartYear.addDataItem(daytimeSelfConsumedHeatpumpHeat, "Omgevingswarmte gewonnen door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
+	pl_productionChartDay.addDataItem(daytimeSelfConsumedHeatpumpHeat, "Omgevingswarmte benut door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
+	pl_consumptionChartDay.addDataItem(daytimeSelfConsumedHeatpumpHeat, "Omgevingswarmte gewonnen door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
 }
 if(remainingDaytimeEnergySelfConsumed < uI_Results.p_cutOff_MWh){
 	remainingDaytimeEnergySelfConsumed = 0;
@@ -618,8 +618,8 @@ if(remainingDaytimeEnergySelfConsumed < uI_Results.p_cutOff_MWh){
 //Add Daytime selfconsumed energy
 DataItem daytimeSelfConsumedRemainingEnergy = new DataItem();
 daytimeSelfConsumedRemainingEnergy.setValue(remainingDaytimeEnergySelfConsumed);
-pl_productionChartYear.addDataItem(daytimeSelfConsumedRemainingEnergy, "Lokaal gebruikte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
-pl_consumptionChartYear.addDataItem(daytimeSelfConsumedRemainingEnergy, "Lokaal opgewekte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_productionChartDay.addDataItem(daytimeSelfConsumedRemainingEnergy, "Lokaal gebruikte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_consumptionChartDay.addDataItem(daytimeSelfConsumedRemainingEnergy, "Lokaal opgewekte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
 
 
 // Nighttime SelfConsumption
@@ -636,8 +636,8 @@ else{
 	
 	DataItem nighttimeSelfConsumedHeatpumpHeat = new DataItem();
 	nighttimeSelfConsumedHeatpumpHeat.setValue(nighttimePrimaryHeatPumpEnergyProductionSelfConsumed);
-	pl_productionChartYear.addDataItem(nighttimeSelfConsumedHeatpumpHeat, "Omgevingswarmte benut door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
-	pl_consumptionChartYear.addDataItem(nighttimeSelfConsumedHeatpumpHeat, "Omgevingswarmte gewonnen door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
+	pl_productionChartNight.addDataItem(nighttimeSelfConsumedHeatpumpHeat, "Omgevingswarmte benut door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
+	pl_consumptionChartNight.addDataItem(nighttimeSelfConsumedHeatpumpHeat, "Omgevingswarmte gewonnen door warmtepomp [MWh]", uI_Results.v_heatPumpHeatSupplyColor);
 }
 if(remainingNighttimeEnergySelfConsumed < uI_Results.p_cutOff_MWh){
 	remainingNighttimeEnergySelfConsumed = 0;
@@ -646,8 +646,8 @@ if(remainingNighttimeEnergySelfConsumed < uI_Results.p_cutOff_MWh){
 //Add selfconsumed energy
 DataItem nighttimeSelfConsumedRemainingEnergy = new DataItem();
 nighttimeSelfConsumedRemainingEnergy.setValue(remainingNighttimeEnergySelfConsumed);
-pl_productionChartYear.addDataItem(nighttimeSelfConsumedRemainingEnergy, "Lokaal gebruikte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
-pl_consumptionChartYear.addDataItem(nighttimeSelfConsumedRemainingEnergy, "Lokaal opgewekte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_productionChartNight.addDataItem(nighttimeSelfConsumedRemainingEnergy, "Lokaal gebruikte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
+pl_consumptionChartNight.addDataItem(nighttimeSelfConsumedRemainingEnergy, "Lokaal opgewekte energie [MWh]", uI_Results.v_selfConsumedEnergyColor);
 
 
 
