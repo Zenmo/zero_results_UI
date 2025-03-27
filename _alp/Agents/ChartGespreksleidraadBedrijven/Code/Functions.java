@@ -274,8 +274,8 @@ else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
 }
 
 
-chart_barChartGSLDSummary3.addDataItem(totalGTV_kW,"Totaal GTV Cumulatief" + text_peakType,darkMagenta);
-chart_barChartGSLDSummary3.addDataItem(totalGTVgroupcontract_kW,"GTV Groepscontract" + text_peakType, darkBlue);
+chart_barChartGSLDSummary3.addDataItem(totalGTV_kW,"Totaal GTV Cumulatief " + text_peakType,darkMagenta);
+chart_barChartGSLDSummary3.addDataItem(totalGTVgroupcontract_kW,"GTV Groepscontract " + text_peakType, darkBlue);
 chart_barChartGSLDSummary3.addDataItem(peakIndividual_kW,"Piek " + text_peakType + " individueel",orange);
 chart_barChartGSLDSummary3.addDataItem(peakCollective_kW,"Piek " + text_peakType + " collectief",green);
 

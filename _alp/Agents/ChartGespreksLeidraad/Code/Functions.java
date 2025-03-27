@@ -57,7 +57,7 @@ double importG_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.cont
 double importF_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.DIESEL) : 0; 
 double importH_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HYDROGEN) : 0; 
 double exportE_MWh = data.getRapidRunData().getTotalEnergyExport_MWh();
-double districtHeating_consumption_MWh = data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_kWh()/1000;
+double districtHeating_consumption_MWh = data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_MWh();
 StackChart pl_consumptionChart = pl_consumptionChartGespreksleidraad1; 
 StackChart pl_productionChart = pl_productionChartGespreksleidraad1; 
 ShapeText t_OpwekText = t_opwekTextGespreksleidraad1;
@@ -273,11 +273,11 @@ sc_electricityDemandStack.addDataItem(annualImport_GWh, "Invoer", uI_Results.v_i
 sc_heatDemandStack.removeAll();
 
 DataItem totalEnergyConsumptionForDistrictHeating_GWh = new DataItem();
-totalEnergyConsumptionForDistrictHeating_GWh.setValue(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_kWh()/1000000);
+totalEnergyConsumptionForDistrictHeating_GWh.setValue(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_MWh()/1000);
 sc_heatDemandStack.addDataItem(totalEnergyConsumptionForDistrictHeating_GWh, "Energie voor warmtenet", v_districtHeatDemandColor);
 
 DataItem totalElectricityConsumptionHeatpumps_GWh = new DataItem();
-totalElectricityConsumptionHeatpumps_GWh.setValue(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_kWh()/1000000);
+totalElectricityConsumptionHeatpumps_GWh.setValue(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_MWh()/1000);
 sc_heatDemandStack.addDataItem(totalElectricityConsumptionHeatpumps_GWh, "Elek. voor warmtepompen", v_heatPumpHeatSupplyColor);
 
 DataItem totalNaturalGasDemand_GWh = new DataItem();
@@ -292,8 +292,8 @@ sc_transportDemandStack.removeAll();
 //Set scales
 double chartScale_MWh = max(data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + 
 							data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY), 
-							(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_kWh()/1000) + 
-							(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_kWh()/1000) + 
+							(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_MWh()) + 
+							(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_MWh()) + 
 							data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE));
 							
 sc_electricityDemandStack.setFixedScale(chartScale_MWh/1000);
@@ -321,7 +321,7 @@ for (double value : uI_Results.energyModel.tf_p_solar_e_normalized.getValues()) 
 sc_windSupplyStack.removeAll();
 
 DataItem totalWindProduction_GWh = new DataItem();
-totalWindProduction_GWh.setValue(data.getRapidRunData().acc_dailyAverageWindProduction_kW.getIntegral_kWh()/1000000);
+totalWindProduction_GWh.setValue(data.getRapidRunData().acc_dailyAverageWindProduction_kW.getIntegral_MWh()/1000);
 sc_windSupplyStack.addDataItem(totalWindProduction_GWh, "Opwek wind", v_windElectricitySupplyColor);
 
 DataItem totalCurtailedWindEnergy_GWh = new DataItem();
@@ -336,7 +336,7 @@ sc_windSupplyStack.addDataItem(remainingWindPotential_GWh, "Resterende potentie 
 sc_PVSupplyStack.removeAll();
 
 DataItem totalSolarProduction_GWh = new DataItem();
-totalSolarProduction_GWh.setValue(data.getRapidRunData().acc_dailyAveragePVProduction_kW.getIntegral_kWh()/1000000);
+totalSolarProduction_GWh.setValue(data.getRapidRunData().acc_dailyAveragePVProduction_kW.getIntegral_MWh()/1000);
 sc_PVSupplyStack.addDataItem(totalSolarProduction_GWh, "Opwek zon", v_PVElectricitySupplyColor);
 
 
