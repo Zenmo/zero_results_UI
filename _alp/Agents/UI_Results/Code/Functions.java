@@ -9,10 +9,7 @@ gr_chartGespreksLeidraad_presentation.setVisible(false);
 gr_chartKPISummary_presentation.setVisible(false);
 gr_chartBatteries_presentation.setVisible(false);
 
-if(b_showKPISummary){
-	gr_chartKPISummary_presentation.setVisible(true);
-	chartKPISummary.f_setKPISummaryChart();
-}
+
 
 switch (v_selectedChartType) {
 	case PROFIEL:
@@ -43,6 +40,11 @@ switch (v_selectedChartType) {
 		gr_chartBatteries_presentation.setVisible(true);
 		chartBatteries.f_setChartsBatteries();
 		break;
+}
+
+if(b_showKPISummary){
+	gr_chartKPISummary_presentation.setVisible(true);
+	chartKPISummary.f_setKPISummaryChart();
 }
 /*ALCODEEND*/}
 
@@ -376,7 +378,7 @@ double f_updateUIresultsGridNode(GridNode GN)
 {/*ALCODESTART::1739364390441*/
 v_selectedObjectScope = OL_ResultScope.GRIDNODE;
 v_gridNode = GN;
-
+f_setSelectedObjectText(null);
 f_showCorrectChart();
 
 /*
@@ -478,7 +480,119 @@ double f_updateResultsUI(I_EnergyData selectedObjectInterface)
 {/*ALCODESTART::1741337780594*/
 v_selectedObjectInterface = selectedObjectInterface;
 v_selectedObjectScope = v_selectedObjectInterface.getScope();
+f_setSelectedObjectText(null);
 
 f_showCorrectChart();
+/*ALCODEEND*/}
+
+double f_setSelectedObjectText(String customSelectedObjectText)
+{/*ALCODESTART::1742210371105*/
+String selectedObjectText = "";
+
+if(customSelectedObjectText != null){
+	selectedObjectText = customSelectedObjectText;
+}
+else{
+	if(v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
+		GridConnection GC = ((GridConnection)v_selectedObjectInterface.getLiveData().parentAgent);
+		String connectionDisplayName = GC.p_ownerID;
+		if(GC.c_connectedGISObjects.get(0).p_annotation != null && GC.c_connectedGISObjects.get(0).c_containedGridConnections.size() == 1){
+			connectionDisplayName = GC.c_connectedGISObjects.get(0).p_annotation;
+		}
+		
+		if(connectionDisplayName.contains("verblijfsobject.") || connectionDisplayName.contains("pand.")){
+			selectedObjectText = "Een generieke aansluiting";
+		}
+		else{
+			selectedObjectText = connectionDisplayName;
+		}
+	}
+	else if(v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+	selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
+	}
+	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
+		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface.getLiveData().parentAgent).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.p_batteryOperationMode == OL_BatteryOperationMode.BALANCE_COOP));
+		
+		ArrayList<GIS_Object> firstMemberGCBuildings = memberGCList.get(0).c_connectedGISObjects;
+		boolean allGCInOneBuilding = false;
+		for(GIS_Object gisobject : firstMemberGCBuildings){
+			allGCInOneBuilding = true;
+			for(GridConnection memberGC : memberGCList){
+				if(!gisobject.c_containedGridConnections.contains(memberGC)){
+					allGCInOneBuilding = false;
+					break;
+				}
+			}
+			if(allGCInOneBuilding){
+				break;
+			}
+		}
+		
+		if(allGCInOneBuilding){
+			selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
+		}
+		else{
+			selectedObjectText = "Een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
+		}
+
+	}
+	else if(v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
+			selectedObjectText = "Het gehele model";
+		if(((EnergyModel)v_selectedObjectInterface.getLiveData().parentAgent).p_regionName != null){
+			selectedObjectText = ((EnergyModel)v_selectedObjectInterface.getLiveData().parentAgent).p_regionName;
+		}
+	}
+}
+
+//Limit visible length
+int maxStringLength = 36;
+if (selectedObjectText.length() > maxStringLength){
+     selectedObjectText = selectedObjectText.substring(0, maxStringLength);
+}
+
+t_selectedObjectDisplayText.setText("Data van: " + selectedObjectText);
+/*ALCODEEND*/}
+
+double f_setCB_KPISummary_Presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1742218383411*/
+//Set the location and visibility of the checkbox for the KPI summary chart
+
+//Set x axis
+if(location_x != null){
+	checkbox_KPISummary.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	checkbox_KPISummary.setY(location_y);
+}
+
+//Set visibility
+checkbox_KPISummary.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setSelectedObjectDisplay(Integer location_x,Integer location_y,boolean setVisible)
+{/*ALCODESTART::1742221943777*/
+//Set the location and visibility of the checkbox for the 'selected object display' group
+
+//Set x axis
+if(location_x != null){
+	gr_selectedObjectDisplay.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_selectedObjectDisplay.setY(location_y);
+}
+
+
+//Set visibility
+if(b_isCompanyUIResultsUI){
+	gr_selectedObjectDisplay.setVisible(false);
+}
+else{
+	gr_selectedObjectDisplay.setVisible(setVisible);
+}
+
 /*ALCODEEND*/}
 
