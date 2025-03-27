@@ -609,7 +609,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Zelfconsumptie]]></Text>
+				<Text><![CDATA[Lokaal gebruikt]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>12</Size>
@@ -713,7 +713,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Lokale opwek]]></Text>
+				<Text><![CDATA[Lokaal opgewekt]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>12</Size>
