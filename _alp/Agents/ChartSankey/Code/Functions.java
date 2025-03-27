@@ -1,7 +1,7 @@
 double f_setSankey()
 {/*ALCODESTART::1714746374796*/
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 10);
+uI_Results.f_setSelectedObjectDisplay(230, 10, true);
 
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 

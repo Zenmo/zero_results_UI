@@ -646,6 +646,10 @@
 			<Name><![CDATA[location_y]]></Name>
 			<Type><![CDATA[Integer]]></Type>
 		</Parameter>
+		<Parameter>
+			<Name><![CDATA[setVisible]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

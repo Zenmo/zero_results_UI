@@ -10,7 +10,7 @@ f_setWarningScreen(false);
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 85);
+uI_Results.f_setSelectedObjectDisplay(230, 85, true);
 
 if(uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYCOOP && uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYMODEL){
 	f_setWarningScreen(true);

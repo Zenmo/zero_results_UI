@@ -348,7 +348,7 @@ double f_setCharts()
 f_resetCharts();
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 115);
+uI_Results.f_setSelectedObjectDisplay(230, 115, true);
 
 if (radio_period.getValue() == 0) {
 	radio_periodLive.setVisible(true);

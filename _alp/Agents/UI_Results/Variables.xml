@@ -1232,7 +1232,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1742221996041</Id>
-		<Name><![CDATA[b_showSelectedObjectDisplay]]></Name>
+		<Name><![CDATA[b_isCompanyUIResultsUI]]></Name>
 		<X>1600</X>
 		<Y>620</Y>
 		<Label>
@@ -1247,9 +1247,6 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[boolean]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[true]]></Code>
-			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="Parameter">

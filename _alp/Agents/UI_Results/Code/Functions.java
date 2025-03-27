@@ -9,10 +9,7 @@ gr_chartGespreksLeidraad_presentation.setVisible(false);
 gr_chartKPISummary_presentation.setVisible(false);
 gr_chartBatteries_presentation.setVisible(false);
 
-if(b_showKPISummary){
-	gr_chartKPISummary_presentation.setVisible(true);
-	chartKPISummary.f_setKPISummaryChart();
-}
+
 
 switch (v_selectedChartType) {
 	case PROFIEL:
@@ -43,6 +40,11 @@ switch (v_selectedChartType) {
 		gr_chartBatteries_presentation.setVisible(true);
 		chartBatteries.f_setChartsBatteries();
 		break;
+}
+
+if(b_showKPISummary){
+	gr_chartKPISummary_presentation.setVisible(true);
+	chartKPISummary.f_setKPISummaryChart();
 }
 /*ALCODEEND*/}
 
@@ -494,7 +496,7 @@ else{
 	if(v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
 		GridConnection GC = ((GridConnection)v_selectedObjectInterface.getLiveData().parentAgent);
 		String connectionDisplayName = GC.p_ownerID;
-		if(GC.c_connectedGISObjects.get(0).p_annotation != null){
+		if(GC.c_connectedGISObjects.get(0).p_annotation != null && GC.c_connectedGISObjects.get(0).c_containedGridConnections.size() == 1){
 			connectionDisplayName = GC.c_connectedGISObjects.get(0).p_annotation;
 		}
 		
@@ -506,13 +508,39 @@ else{
 		}
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-		selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
+	selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
-			selectedObjectText = "Een selectie van aansluitingen";
+		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface.getLiveData().parentAgent).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.p_batteryOperationMode == OL_BatteryOperationMode.BALANCE_COOP));
+		
+		ArrayList<GIS_Object> firstMemberGCBuildings = memberGCList.get(0).c_connectedGISObjects;
+		boolean allGCInOneBuilding = false;
+		for(GIS_Object gisobject : firstMemberGCBuildings){
+			allGCInOneBuilding = true;
+			for(GridConnection memberGC : memberGCList){
+				if(!gisobject.c_containedGridConnections.contains(memberGC)){
+					allGCInOneBuilding = false;
+					break;
+				}
+			}
+			if(allGCInOneBuilding){
+				break;
+			}
+		}
+		
+		if(allGCInOneBuilding){
+			selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
+		}
+		else{
+			selectedObjectText = "Een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
+		}
+
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
 			selectedObjectText = "Het gehele model";
+		if(((EnergyModel)v_selectedObjectInterface.getLiveData().parentAgent).p_regionName != null){
+			selectedObjectText = ((EnergyModel)v_selectedObjectInterface.getLiveData().parentAgent).p_regionName;
+		}
 	}
 }
 
@@ -543,7 +571,7 @@ if(location_y != null){
 checkbox_KPISummary.setVisible(visible);
 /*ALCODEEND*/}
 
-double f_setSelectedObjectDisplay(Integer location_x,Integer location_y)
+double f_setSelectedObjectDisplay(Integer location_x,Integer location_y,boolean setVisible)
 {/*ALCODESTART::1742221943777*/
 //Set the location and visibility of the checkbox for the 'selected object display' group
 
@@ -556,8 +584,15 @@ if(location_x != null){
 if(location_y != null){
 	gr_selectedObjectDisplay.setY(location_y);
 }
-gr_selectedObjectDisplay.setVisible(false);
+
+
 //Set visibility
-gr_selectedObjectDisplay.setVisible(b_showSelectedObjectDisplay);
+if(b_isCompanyUIResultsUI){
+	gr_selectedObjectDisplay.setVisible(false);
+}
+else{
+	gr_selectedObjectDisplay.setVisible(setVisible);
+}
+
 /*ALCODEEND*/}
 

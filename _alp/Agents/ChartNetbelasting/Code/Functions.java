@@ -3,7 +3,7 @@ double f_setBelastingPlots()
 f_resetPlots();
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 50);
+uI_Results.f_setSelectedObjectDisplay(230, 50, true);
 
 if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
 	f_setBelastingPlotsGN();

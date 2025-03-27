@@ -1006,11 +1006,18 @@ f_showCorrectChart();</ActionCode>
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor/>
 			<Enabled>true</Enabled>
-			<ActionCode>if(b_showKPISummary){
-	chartKPISummary.f_setKPISummaryChart();
+			<ActionCode>if(b_isCompanyUIResultsUI){
+	f_setAllCharts();
+	if(checkbox_KPISummary.isSelected()){
+		gr_chartKPISummary_presentation.setVisible(true);
+	}
+	else{
+		gr_chartKPISummary_presentation.setVisible(false);
+	}
 }
-f_setChartKPISummary_Presentation(null, null, b_showKPISummary);
-</ActionCode>
+else{
+	f_showCorrectChart();
+}</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="11" Style="0"/>
