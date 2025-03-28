@@ -160,7 +160,9 @@ else{
 double f_addOtherEnergyFlows_SummerWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897296534*/
 double startTime_h = uI_Results.energyModel.p_startHourSummerWeek - uI_Results.energyModel.p_runStartTime_h;
-
+if (startTime_h<0) {
+	startTime_h +=8760;
+}
 EnumSet<OL_EnergyCarriers> activeProductionEnergyCarriers = EnumSet.copyOf(dataObject.getRapidRunData().activeProductionEnergyCarriers);
 EnumSet<OL_EnergyCarriers> activeConsumptionEnergyCarriers = EnumSet.copyOf(dataObject.getRapidRunData().activeConsumptionEnergyCarriers);
 
@@ -187,6 +189,9 @@ double f_addElectricityFlows_SummerWeek(I_EnergyData dataObject)
 group_week.setVisible(true);
 
 double startTime_h = uI_Results.energyModel.p_startHourSummerWeek - uI_Results.energyModel.p_runStartTime_h;
+if (startTime_h<0) {
+	startTime_h +=8760;
+}
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -266,7 +271,9 @@ radio_periodLive.setVisible(false);
 double f_addOtherEnergyFlows_WinterWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897923568*/
 double startTime_h = uI_Results.energyModel.p_startHourWinterWeek - uI_Results.energyModel.p_runStartTime_h;
-
+if (startTime_h<0) {
+	startTime_h +=8760;
+}
 EnumSet<OL_EnergyCarriers> activeProductionEnergyCarriers = EnumSet.copyOf(dataObject.getRapidRunData().activeProductionEnergyCarriers);
 EnumSet<OL_EnergyCarriers> activeConsumptionEnergyCarriers = EnumSet.copyOf(dataObject.getRapidRunData().activeConsumptionEnergyCarriers);
 
@@ -294,6 +301,9 @@ double f_addElectricityFlows_WinterWeek(I_EnergyData dataObject)
 group_week.setVisible(true);
 
 double startTime_h = uI_Results.energyModel.p_startHourWinterWeek - uI_Results.energyModel.p_runStartTime_h;
+if (startTime_h<0) {
+	startTime_h +=8760;
+}
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -544,9 +554,14 @@ if(GN.p_realCapacityAvailable){
 
 group_trafo_week.setVisible(true);
 
+double startTime_h = uI_Results.energyModel.p_startHourSummerWeek - uI_Results.energyModel.p_runStartTime_h;
+if (startTime_h<0) {
+	startTime_h +=8760;
+}
+
 //Add datasets to plot
-plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourSummerWeek, 168, GN.p_capacity_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourSummerWeek, 168, -GN.p_capacity_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, GN.p_capacity_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, -GN.p_capacity_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(GN.data_summerWeekLoad_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
 /*
@@ -571,8 +586,13 @@ if(GN.p_realCapacityAvailable){
 }
 
 group_trafo_week.setVisible(true);
-plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourWinterWeek, 168, GN.p_capacity_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(uI_Results.energyModel.p_startHourWinterWeek, 168, -GN.p_capacity_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+
+double startTime_h = uI_Results.energyModel.p_startHourWinterWeek - uI_Results.energyModel.p_runStartTime_h;
+if (startTime_h<0) {
+	startTime_h +=8760;
+}
+plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, GN.p_capacity_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, -GN.p_capacity_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(GN.data_winterWeekLoad_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
 /*
