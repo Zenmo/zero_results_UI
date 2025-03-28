@@ -781,7 +781,11 @@ for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 
 double f_addElectricityFlows_LiveDay(I_EnergyData dataObject)
 {/*ALCODESTART::1739804290048*/
+//Set speed to slower.
+getExperimentHost().setSpeed(5);
+
 group_day.setVisible(true);
+
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
 	List<Color> colorSpectrum = new ArrayList<>();
