@@ -4,7 +4,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1714746057324</Id>
-		<Name><![CDATA[f_addSOC_Year]]></Name>
+		<Name><![CDATA[f_addSOC_total]]></Name>
 		<X>50</X>
 		<Y>960</Y>
 		<Label>
@@ -24,7 +24,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1714746057328</Id>
-		<Name><![CDATA[f_addSOC_Live]]></Name>
+		<Name><![CDATA[f_addSOC_live]]></Name>
 		<X>50</X>
 		<Y>878</Y>
 		<Label>
@@ -44,7 +44,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1714897296536</Id>
-		<Name><![CDATA[f_addSOC_SummerWeek]]></Name>
+		<Name><![CDATA[f_addSOC_summerWeek]]></Name>
 		<X>50</X>
 		<Y>910</Y>
 		<Label>
@@ -66,7 +66,7 @@
 		<Id>1714897512553</Id>
 		<Name><![CDATA[f_resetCharts]]></Name>
 		<X>50</X>
-		<Y>830</Y>
+		<Y>820</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -80,7 +80,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1714897923570</Id>
-		<Name><![CDATA[f_addSOC_WinterWeek]]></Name>
+		<Name><![CDATA[f_addSOC_winterWeek]]></Name>
 		<X>50</X>
 		<Y>930</Y>
 		<Label>
@@ -116,7 +116,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1736430560710</Id>
-		<Name><![CDATA[f_addBatteryNetLoad_Live]]></Name>
+		<Name><![CDATA[f_addBatteryNetLoad_live]]></Name>
 		<X>420</X>
 		<Y>880</Y>
 		<Label>
@@ -136,7 +136,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1736430560714</Id>
-		<Name><![CDATA[f_addBatteryNetLoad_Year]]></Name>
+		<Name><![CDATA[f_addBatteryNetLoad_total]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>420</X>
 		<Y>960</Y>
@@ -157,7 +157,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1736430560716</Id>
-		<Name><![CDATA[f_addBatteryNetLoad_SummerWeek]]></Name>
+		<Name><![CDATA[f_addBatteryNetLoad_summerWeek]]></Name>
 		<X>420</X>
 		<Y>910</Y>
 		<Label>
@@ -177,9 +177,89 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1736430560718</Id>
-		<Name><![CDATA[f_addBatteryNetLoad_WinterWeek]]></Name>
+		<Name><![CDATA[f_addBatteryNetLoad_winterWeek]]></Name>
 		<X>420</X>
 		<Y>930</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1743417074489</Id>
+		<Name><![CDATA[f_addBatteryKPIs_summerWeek]]></Name>
+		<X>820</X>
+		<Y>900</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1743417142841</Id>
+		<Name><![CDATA[f_addBatteryKPIs_winterWeek]]></Name>
+		<X>820</X>
+		<Y>920</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1743417159083</Id>
+		<Name><![CDATA[f_addBatteryKPIs_total]]></Name>
+		<X>820</X>
+		<Y>950</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1743419350262</Id>
+		<Name><![CDATA[f_addBatteryCapacity]]></Name>
+		<X>50</X>
+		<Y>840</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
