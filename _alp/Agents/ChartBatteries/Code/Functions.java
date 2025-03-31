@@ -14,6 +14,10 @@ SOCChart_week.addDataSet(dataObject.getLiveData().data_batterySOC_fr, "Batterij 
 double f_addSOC_SummerWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897296536*/
 double startTime_h = uI_Results.energyModel.p_startHourSummerWeek - uI_Results.energyModel.p_runStartTime_h;
+if (startTime_h<0) {
+	startTime_h +=8760;
+}
+
 SOCChart_week.addDataSet(dataObject.getRapidRunData().ts_summerWeekBatteriesSOC_fr.getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
 
 /*ALCODEEND*/}
@@ -31,6 +35,10 @@ plot_netload_year.removeAll();
 double f_addSOC_WinterWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897923570*/
 double startTime_h = uI_Results.energyModel.p_startHourWinterWeek - uI_Results.energyModel.p_runStartTime_h;
+if (startTime_h<0) {
+	startTime_h +=8760;
+}
+
 SOCChart_week.addDataSet(dataObject.getRapidRunData().ts_winterWeekBatteriesSOC_fr.getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
 
 /*ALCODEEND*/}
