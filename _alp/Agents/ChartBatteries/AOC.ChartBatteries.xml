@@ -4,7 +4,8 @@
 	<Name><![CDATA[ChartBatteries]]></Name>
 	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
 	<Import><![CDATA[import com.querydsl.core.group.Group;
-import java.util.EnumSet;]]></Import>
+import java.util.EnumSet;
+import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
