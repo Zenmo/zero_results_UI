@@ -2,6 +2,7 @@
 <ActiveObjectClass>
 	<Id>1714746096727</Id>
 	<Name><![CDATA[ChartNetbelasting]]></Name>
+	<Import><![CDATA[import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>

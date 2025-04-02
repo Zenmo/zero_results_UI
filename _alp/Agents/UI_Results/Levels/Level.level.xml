@@ -1125,7 +1125,7 @@ else{
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>380</Width>
-		<Height>450</Height>
+		<Height>540</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -1353,4 +1353,44 @@ else{
 			</Text>
 		</Presentation>
 	</Group>
+	<Control Type="CheckBox">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1743501981947</Id>
+		<Name><![CDATA[cb_EhubConfig]]></Name>
+		<X>520</X>
+		<Y>900</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="210" Height="30">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor/>
+			<VisibleCode>v_selectedObjectScope == OL_ResultScope.ENERGYCOOP</VisibleCode>
+			<Enabled>true</Enabled>
+			<EnableExpression>v_selectedObjectScope == OL_ResultScope.ENERGYCOOP</EnableExpression>
+			<ActionCode>if(cb_EhubConfig.isSelected()){
+	v_selectedChartType = OL_ChartTypes.GESPREKSLEIDRAAD_BEDRIJVEN;
+	f_showCorrectChart();
+	getRadioButtons().setValue(100, false);
+	chartGespreksleidraadBedrijven.getRb_gespreksleidraadBedrijvenChartType().setValue(2, true);
+}
+else{
+	if(getRadioButtons().getValue() == 100){
+		getRadioButtons().setValue(0, true);
+	}
+	f_showCorrectChart();
+}</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<LabelText>Toon groepscontract waarde</LabelText>
+			<LinkTo>true</LinkTo>
+			<Link>b_showGroupContractValues</Link>
+		</ExtendedProperties>
+	</Control>
 </Presentation>

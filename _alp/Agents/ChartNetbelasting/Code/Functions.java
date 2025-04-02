@@ -14,37 +14,8 @@ I_EnergyData data = uI_Results.f_getSelectedObjectData();
 J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
 
 f_addDataToPlots(data, loadDurationCurves);
-f_addTrafoLimits(data); 
-
-double maxDemand_kW = max(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
-double maxSupply_kW = abs(min(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin()));
-double maxDemandSupply_kW = max(maxDemand_kW, maxSupply_kW);
-/*
-if (maxDemandSupply_kW < 1 * pow(10,3)) {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
-	tx_maxSupply.setText(roundToDecimal(maxSupply_kW, 0) + " kW");
-} else if (maxDemandSupply_kW<1 * pow(10,6)) {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
-	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
-} else {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
-	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
-} */
-
-if (maxDemandSupply_kW < 1 * pow(10,3)) {
-	tx_maxDemand.setText(String.format("%.0f", maxDemand_kW) + " kW");
-	tx_maxSupply.setText(String.format("%.0f", maxSupply_kW) + " kW");
-} else if (maxDemandSupply_kW<1 * pow(10,6)) {
-	tx_maxDemand.setText(String.format("%.2f", maxDemand_kW / pow(10,3)) + " MW");
-	tx_maxSupply.setText(String.format("%.2f", maxSupply_kW / pow(10,3)) + " MW");
-	//tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
-	//tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
-} else {
-	tx_maxDemand.setText(String.format("%.2f", maxDemand_kW / pow(10,6)) + " GW");
-	tx_maxSupply.setText(String.format("%.2f", maxSupply_kW / pow(10,6)) + " GW");
-	//tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
-	//tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
-} 
+f_addConnectionLimits(data); 
+f_setMaxPeakValues(data, loadDurationCurves);
 
 
 f_setNetAverageLoad(data, loadDurationCurves);
@@ -52,13 +23,24 @@ f_setNetAverageLoad(data, loadDurationCurves);
 
 double f_setNetAverageLoad(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
 {/*ALCODESTART::1714746143911*/
-double benuttingsgraad = 0;
-double totalAbsoluteLoad_kW = 0;
-for(int i=0; i< loadDurationCurves.ds_loadDurationCurveTotal_kW.size(); i++){
-	totalAbsoluteLoad_kW += abs(loadDurationCurves.ds_loadDurationCurveTotal_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
+double simulationDuration = uI_Results.energyModel.p_runEndTime_h - uI_Results.energyModel.p_runStartTime_h;
+double benuttingsgraad_pct = 0;
+double connectionCapacity_delivery_MW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW/1000;
+double connectionCapacity_feedin_MW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW/1000;
+double totalImportElectricity_MWh = dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY);
+double totalExportElectricity_MWh = dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY);
+
+if(	connectionCapacity_delivery_MW > 0 && connectionCapacity_feedin_MW > 0){
+	benuttingsgraad_pct = ((totalImportElectricity_MWh / connectionCapacity_delivery_MW) + (totalExportElectricity_MWh / connectionCapacity_feedin_MW)) / (simulationDuration) * 100;
 }
-benuttingsgraad = totalAbsoluteLoad_kW / ((dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW + dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW) * 8760) * 100;
-t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
+else if( connectionCapacity_delivery_MW  > 0){
+	benuttingsgraad_pct = (totalImportElectricity_MWh / connectionCapacity_delivery_MW)/ (simulationDuration) * 100;
+}
+else if(connectionCapacity_feedin_MW > 0){
+	benuttingsgraad_pct = (totalExportElectricity_MWh / connectionCapacity_feedin_MW)/ (simulationDuration) * 100;
+}
+
+t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad_pct, 0) + "%");
 /*ALCODEEND*/}
 
 double f_resetPlots()
@@ -118,7 +100,7 @@ plot_week.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
 
 /*ALCODEEND*/}
 
-double f_addTrafoLimits(I_EnergyData dataObject)
+double f_addConnectionLimits(I_EnergyData dataObject)
 {/*ALCODESTART::1740584474407*/
 //Add and color grid capacities
 String deliveryCapacityLabel = "Geschatte capaciteit afname";
@@ -188,49 +170,19 @@ GridNode GN = uI_Results.v_gridNode;
 
 f_addDataToPlotsGN(GN);
 f_addTrafoLimitsGN(GN); 
-
-double maxDemand_kW = max(0, GN.data_netbelastingDuurkromme_kW.getYMax());
-double maxSupply_kW = abs(min(0, GN.data_netbelastingDuurkromme_kW.getYMin()));
-double maxDemandSupply_kW = max(maxDemand_kW, maxSupply_kW);
-/*
-if (maxDemandSupply_kW < 1 * pow(10,3)) {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW, 0) + " kW");
-	tx_maxSupply.setText(roundToDecimal(maxSupply_kW, 0) + " kW");
-} else if (maxDemandSupply_kW<1 * pow(10,6)) {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
-	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
-} else {
-	tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
-	tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
-} */
-
-if (maxDemandSupply_kW < 1 * pow(10,3)) {
-	tx_maxDemand.setText(String.format("%.0f", maxDemand_kW) + " kW");
-	tx_maxSupply.setText(String.format("%.0f", maxSupply_kW) + " kW");
-} else if (maxDemandSupply_kW<1 * pow(10,6)) {
-	tx_maxDemand.setText(String.format("%.2f", maxDemand_kW / pow(10,3)) + " MW");
-	tx_maxSupply.setText(String.format("%.2f", maxSupply_kW / pow(10,3)) + " MW");
-	//tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,3), 0) + " MW");
-	//tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,3), 0) + " MW");
-} else {
-	tx_maxDemand.setText(String.format("%.2f", maxDemand_kW / pow(10,6)) + " GW");
-	tx_maxSupply.setText(String.format("%.2f", maxSupply_kW / pow(10,6)) + " GW");
-	//tx_maxDemand.setText(roundToDecimal(maxDemand_kW / pow(10,6), 1) + " GW");
-	//tx_maxSupply.setText(roundToDecimal(maxSupply_kW / pow(10,6), 1) + " GW");
-} 
-
-
+f_setMaxPeakValuesGN(GN); 
 f_setNetAverageLoadGN(GN);
 /*ALCODEEND*/}
 
 double f_setNetAverageLoadGN(GridNode GN)
 {/*ALCODESTART::1741699130821*/
+double simulationDuration = uI_Results.energyModel.p_runEndTime_h - uI_Results.energyModel.p_runStartTime_h;
 double benuttingsgraad = 0;
 double totalAbsoluteLoad_kW = 0;
 for(int i=0; i< GN.data_netbelastingDuurkromme_kW.size(); i++){
 	totalAbsoluteLoad_kW += abs(GN.data_netbelastingDuurkromme_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
 }
-benuttingsgraad = totalAbsoluteLoad_kW / ((GN.p_capacity_kW + GN.p_capacity_kW) * 8760) * 100;
+benuttingsgraad = (totalAbsoluteLoad_kW / (GN.p_capacity_kW * simulationDuration )) * 100;
 t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
 /*ALCODEEND*/}
 
@@ -323,5 +275,126 @@ plot_seizoen.addDataSet(gridCapacityFeedin_kW, feedinCapacityLabel);
 plot_seizoen.setColor(plot_seizoen.getCount() - 2, deliveryCapacityColor);
 plot_seizoen.setColor(plot_seizoen.getCount() - 1, feedinCapacityColor);
 
+/*ALCODEEND*/}
+
+double f_setMaxPeakValues(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
+{/*ALCODESTART::1743519606875*/
+double maxDelivery_kW = max(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
+double maxFeedin_kW = abs(min(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin()));
+double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
+
+
+//Put it in a usefull unit format
+DecimalFormat df_1decimal = new DecimalFormat("0.0");
+DecimalFormat df_2decimal = new DecimalFormat("0.00");
+
+String peakLoad_unit = " kW";
+double maxDelivery_unit = maxDelivery_kW;
+double maxFeedin_unit = maxFeedin_kW;
+
+if(maxDeliveryAndFeedin_kW < 1 * pow(10,3)){
+	//Do nothing, already in right format
+}
+else if(maxDeliveryAndFeedin_kW < 1 * pow(10,6)){
+	peakLoad_unit = " MW";
+	maxDelivery_unit = maxDelivery_kW/ pow(10,3);
+	maxFeedin_unit = maxFeedin_kW/ pow(10,3);
+}
+else{
+	peakLoad_unit = " GW";
+	maxDelivery_unit = maxDelivery_kW/ pow(10,6);
+	maxFeedin_unit = maxFeedin_kW/ pow(10,6);
+}
+
+if(maxDelivery_unit > 100){
+	t_maxDelivery_MW.setText(roundToInt(maxDelivery_unit) + peakLoad_unit);
+}
+else if(maxDelivery_unit > 10){
+	t_maxDelivery_MW.setText(df_1decimal.format(maxDelivery_unit)+ peakLoad_unit);
+}
+else{
+	t_maxDelivery_MW.setText(df_2decimal.format(maxDelivery_unit)+ peakLoad_unit);
+}
+
+if(maxFeedin_unit > 100){
+	t_maxFeedin_MW.setText(roundToInt(maxFeedin_unit)+ peakLoad_unit);
+}
+else if(maxFeedin_unit > 10){
+	t_maxFeedin_MW.setText(df_1decimal.format(maxFeedin_unit)+ peakLoad_unit);
+}
+else{
+	t_maxFeedin_MW.setText(df_2decimal.format(maxFeedin_unit)+ peakLoad_unit);
+}
+
+////Max peaks in percentages
+double deliveryCapacity_kW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
+double feedinCapacity_kW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW;
+if(deliveryCapacity_kW > 0){
+	t_maxDelivery_pct.setText(roundToInt(maxDelivery_kW/dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW * 100) + " %");
+}
+else{
+	t_maxDelivery_pct.setText("-");
+}
+if(feedinCapacity_kW > 0){
+	t_maxFeedin_pct.setText(roundToInt(maxFeedin_kW/dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW * 100) + " %");
+}
+else{
+	t_maxFeedin_pct.setText("-");
+}
+/*ALCODEEND*/}
+
+double f_setMaxPeakValuesGN(GridNode GN)
+{/*ALCODESTART::1743519634438*/
+double maxDelivery_kW = max(0, GN.data_netbelastingDuurkromme_kW.getYMax());
+double maxFeedin_kW = abs(min(0, GN.data_netbelastingDuurkromme_kW.getYMin()));
+double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
+
+
+//Put it in a usefull unit format
+DecimalFormat df_1decimal = new DecimalFormat("0.0");
+DecimalFormat df_2decimal = new DecimalFormat("0.00");
+
+String peakLoad_unit = " kW";
+double maxDelivery_unit = maxDelivery_kW;
+double maxFeedin_unit = maxFeedin_kW;
+
+if(maxDeliveryAndFeedin_kW < 1 * pow(10,3)){
+	//Do nothing, already in right format
+}
+else if(maxDeliveryAndFeedin_kW < 1 * pow(10,6)){
+	peakLoad_unit = " MW";
+	maxDelivery_unit = maxDelivery_kW/ pow(10,3);
+	maxFeedin_unit = maxFeedin_kW/ pow(10,3);
+}
+else{
+	peakLoad_unit = " GW";
+	maxDelivery_unit = maxDelivery_kW/ pow(10,6);
+	maxFeedin_unit = maxFeedin_kW/ pow(10,6);
+}
+
+if(maxDelivery_unit > 100){
+	t_maxDelivery_MW.setText(roundToInt(maxDelivery_unit) + peakLoad_unit);
+}
+else if(maxDelivery_unit > 10){
+	t_maxDelivery_MW.setText(df_1decimal.format(maxDelivery_unit)+ peakLoad_unit);
+}
+else{
+	t_maxDelivery_MW.setText(df_2decimal.format(maxDelivery_unit)+ peakLoad_unit);
+}
+
+if(maxFeedin_unit > 100){
+	t_maxFeedin_MW.setText(roundToInt(maxFeedin_unit)+ peakLoad_unit);
+}
+else if(maxFeedin_unit > 10){
+	t_maxFeedin_MW.setText(df_1decimal.format(maxFeedin_unit)+ peakLoad_unit);
+}
+else{
+	t_maxFeedin_MW.setText(df_2decimal.format(maxFeedin_unit)+ peakLoad_unit);
+}
+
+
+////Max peaks in percentages
+t_maxDelivery_pct.setText(roundToInt(maxDelivery_kW/GN.p_capacity_kW * 100) + " %");
+t_maxFeedin_pct.setText(roundToInt(maxFeedin_kW/GN.p_capacity_kW * 100) + " %");
 /*ALCODEEND*/}
 
