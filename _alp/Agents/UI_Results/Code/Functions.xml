@@ -533,8 +533,8 @@
 		<ReturnType>DataSet</ReturnType>
 		<Id>1740750008518</Id>
 		<Name><![CDATA[f_createFlatDataset]]></Name>
-		<X>540</X>
-		<Y>950</Y>
+		<X>530</X>
+		<Y>930</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -649,6 +649,30 @@
 		<Parameter>
 			<Name><![CDATA[setVisible]]></Name>
 			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>DataSet</ReturnType>
+		<Id>1743689452038</Id>
+		<Name><![CDATA[f_createNewDataSetDividedByValue]]></Name>
+		<X>530</X>
+		<Y>960</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[inputDataSet]]></Name>
+			<Type><![CDATA[DataSet]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[dividedByValue]]></Name>
+			<Type><![CDATA[double]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

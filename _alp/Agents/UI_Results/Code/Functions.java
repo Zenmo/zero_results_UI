@@ -596,3 +596,21 @@ else{
 
 /*ALCODEEND*/}
 
+DataSet f_createNewDataSetDividedByValue(DataSet inputDataSet,double dividedByValue)
+{/*ALCODESTART::1743689452038*/
+if(dividedByValue == 0){
+	new RuntimeException("Can't divide a dataset by zero!");
+}
+
+if(dividedByValue == 1){
+	return inputDataSet;
+}
+
+DataSet newDataset = new DataSet(inputDataSet.size());
+for (int i = 0; i < inputDataSet.size(); i++) {
+    double newValue = inputDataSet.getY(i) / dividedByValue;
+    newDataset.add(inputDataSet.getX(i), newValue);
+}
+return newDataset;
+/*ALCODEEND*/}
+

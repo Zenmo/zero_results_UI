@@ -193,7 +193,6 @@ energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().acc_dai
 
 double maxScale = max(data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW(),data.getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW());
 //double maxScale = max(energySupplyChartYearGespreksleidraad1.getScaleY(), energyDemandChartYearGespreksleidraad1.getScaleY());
-traceln("maxScale: %s", maxScale);
 energyDemandChartYearGespreksleidraad1.setFixedVerticalScale(0, maxScale);
 energySupplyChartYearGespreksleidraad1.setFixedVerticalScale(maxScale);
 
