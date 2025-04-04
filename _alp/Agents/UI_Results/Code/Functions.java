@@ -267,10 +267,13 @@ rb_DEFAULT.setVisible(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAAD.setVisible(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.setVisible(false);
 rb_DEFAULT_AND_BATTERY.setVisible(false);
+rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN.setVisible(false);
+
 rb_DEFAULT.setEnabled(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAAD.setEnabled(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.setEnabled(false);
 rb_DEFAULT_AND_BATTERY.setEnabled(false);
+rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN.setEnabled(false);
 
 switch(v_selectedRadioButtonSetup){
 
@@ -285,6 +288,9 @@ case DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN:
 	break;
 case DEFAULT_AND_BATTERY:	
 	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY;
+	break;
+case DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN:	
+	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN;
 	break;
 case OFF:
 	f_setResultsUIHeader(null, null, false);

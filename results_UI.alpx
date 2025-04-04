@@ -86,6 +86,10 @@
 					<Name><![CDATA[DEFAULT_AND_BATTERY]]></Name>
 				</Option>
 				<Option>
+					<Id>1743787727207</Id>
+					<Name><![CDATA[DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN]]></Name>
+				</Option>
+				<Option>
 					<Id>1737555330328</Id>
 					<Name><![CDATA[OFF]]></Name>
 				</Option>
