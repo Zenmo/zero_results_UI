@@ -14,7 +14,6 @@ I_EnergyData data = uI_Results.f_getSelectedObjectData();
 J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
 
 f_addDataToPlots(data, loadDurationCurves);
-f_addConnectionLimits(data); 
 f_setMaxPeakValues(data, loadDurationCurves);
 
 
@@ -53,95 +52,133 @@ plot_seizoen.removeAll();
 
 double f_addDataToPlots(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
 {/*ALCODESTART::1714923776978*/
-double scaleMin_kW;
-double scaleMax_kW;
+double divisionAmountForCorrectUnit = 1;
+String power_unit = "kW";
 
-double gridCapacityDelivery_kW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
-double gridCapacityFeedin_kW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW;
+////Get the peaks
+double maxDelivery_kW = max(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
+double maxFeedin_kW = abs(min(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin()));
+double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
 
-//Jaar
-plot_jaar.addDataSet(loadDurationCurves.ds_loadDurationCurveTotal_kW,"Belasting jaar");
-scaleMin_kW = -1 + min(-gridCapacityFeedin_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin());
-scaleMax_kW = 1 + max(gridCapacityDelivery_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
-plot_jaar.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
-//if (area.v_dataNetbelastingDuurkrommeYearVorige_kW != null) {
-	//plot_jaar.addDataSet(area.v_dataNetbelastingDuurkrommeYearVorige_kW,"Vorige situatie");
-	//plot_jaar.setColor(3,gray);
-//}
-
-//summer/winter
-plot_seizoen.addDataSet(loadDurationCurves.ds_loadDurationCurveSummer_kW,"Belasting zomerweek");
-plot_seizoen.addDataSet(loadDurationCurves.ds_loadDurationCurveWinter_kW,"Belasting winterweek");
-plot_seizoen.setColor(0,blue);
-plot_seizoen.setColor(1,green);
-scaleMin_kW = -1 + min(-gridCapacityFeedin_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin());
-scaleMax_kW = 1 + max(gridCapacityDelivery_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
-plot_seizoen.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
-
-
-// Day/night
-plot_dagnacht.addDataSet(loadDurationCurves.ds_loadDurationCurveDaytime_kW,"Belasting overdag");
-plot_dagnacht.addDataSet(loadDurationCurves.ds_loadDurationCurveNighttime_kW,"Belasting 's nachts");
-plot_dagnacht.setColor(0,blue);
-plot_dagnacht.setColor(1,green);	
-scaleMin_kW = -1 + min(-gridCapacityFeedin_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin());
-scaleMax_kW = 1 + max(gridCapacityDelivery_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
-plot_dagnacht.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
-
-
-// Weekday/weekend
-plot_week.addDataSet(loadDurationCurves.ds_loadDurationCurveWeekday_kW,"Belasting weekdagen");
-plot_week.addDataSet(loadDurationCurves.ds_loadDurationCurveWeekend_kW,"Belasting weekenddagen");
-plot_week.setColor(0,blue);
-plot_week.setColor(1,green);
-scaleMin_kW = -1 + min(-gridCapacityFeedin_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin());
-scaleMax_kW = 1 + max(gridCapacityDelivery_kW*1.2, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
-plot_week.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
-
-/*ALCODEEND*/}
-
-double f_addConnectionLimits(I_EnergyData dataObject)
-{/*ALCODESTART::1740584474407*/
-//Add and color grid capacities
-String deliveryCapacityLabel = "Geschatte capaciteit afname";
-String feedinCapacityLabel = "Geschatte capaciteit teruglevering";
-Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-
-//Create delivery and capacity year datasets
-DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
-DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
-	
-if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
-	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
-	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-	feedinCapacityLabel = "Cumulatieve GTV teruglevering van bedrijven";
-	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-	
-	//And: add group contract values
-	DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW());
-	DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW());
-	
-	plot_jaar.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_jaar.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-	plot_week.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_week.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-	plot_dagnacht.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_dagnacht.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
-	plot_seizoen.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-	plot_seizoen.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+////Put it in a usefull unit type
+if(maxDeliveryAndFeedin_kW < 1){
+	power_unit = "W";
+	divisionAmountForCorrectUnit = 1/pow(10,3);
+}
+else if(maxDeliveryAndFeedin_kW < 1 * pow(10,3)){
+	//Do nothing, already in right format
+}
+else if(maxDeliveryAndFeedin_kW < 1 * pow(10,6)){
+	power_unit = "MW";
+	divisionAmountForCorrectUnit = pow(10,3);
 }
 else{
-	if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
-		deliveryCapacityLabel = "Capaciteit afname";
-		deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-	}
-	if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
-		feedinCapacityLabel = "Capaciteit teruglevering";
-		feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+	power_unit = "GW";
+	divisionAmountForCorrectUnit = pow(10,6);
+}
+
+//Adjust y label to selected unit type
+f_setYlabels_loadDurationCurve(power_unit);
+
+DataSet loadDurationCurveTotal = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveTotal_kW, divisionAmountForCorrectUnit);
+double minValue = loadDurationCurveTotal.getYMin();
+double maxValue = loadDurationCurveTotal.getYMax();
+
+double gridCapacityDelivery = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW / divisionAmountForCorrectUnit;
+double gridCapacityFeedin = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW / divisionAmountForCorrectUnit;
+
+double scaleMin = -1 + min(-gridCapacityFeedin*1.2, minValue);
+double scaleMax = 1 + max(gridCapacityDelivery*1.2, maxValue);
+
+
+//Jaar
+plot_jaar.addDataSet(loadDurationCurveTotal,"Belasting jaar");
+plot_jaar.setFixedVerticalScale(scaleMin, scaleMax);
+
+//summer/winter
+DataSet loadDurationCurveSummer = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveSummer_kW, divisionAmountForCorrectUnit);
+DataSet loadDurationCurveWinter = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveWinter_kW, divisionAmountForCorrectUnit);
+plot_seizoen.addDataSet(loadDurationCurveSummer,"Belasting zomerweek");
+plot_seizoen.addDataSet(loadDurationCurveWinter,"Belasting winterweek");
+plot_seizoen.setColor(0,blue);
+plot_seizoen.setColor(1,green);
+plot_seizoen.setFixedVerticalScale(scaleMin, scaleMax);
+
+// Day/night
+DataSet loadDurationCurveDaytime = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveDaytime_kW, divisionAmountForCorrectUnit);
+DataSet loadDurationCurveNighttime = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveNighttime_kW, divisionAmountForCorrectUnit);
+plot_dagnacht.addDataSet(loadDurationCurveDaytime,"Belasting overdag");
+plot_dagnacht.addDataSet(loadDurationCurveNighttime,"Belasting 's nachts");
+plot_dagnacht.setColor(0,blue);
+plot_dagnacht.setColor(1,green);	
+plot_dagnacht.setFixedVerticalScale(scaleMin, scaleMax);
+
+// Weekday/weekend
+DataSet loadDurationCurveWeekday = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveWeekday_kW, divisionAmountForCorrectUnit);
+DataSet loadDurationCurveWeekend = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveWeekend_kW, divisionAmountForCorrectUnit);
+plot_week.addDataSet(loadDurationCurveWeekday,"Belasting weekdagen");
+plot_week.addDataSet(loadDurationCurveWeekend,"Belasting weekenddagen");
+plot_week.setColor(0,blue);
+plot_week.setColor(1,green);
+plot_week.setFixedVerticalScale(scaleMin, scaleMax);
+
+//Add connection limits
+f_addConnectionLimits(dataObject, divisionAmountForCorrectUnit); 
+/*ALCODEEND*/}
+
+double f_addConnectionLimits(I_EnergyData dataObject,double divisionAmountForCorrectUnit)
+{/*ALCODESTART::1740584474407*/
+//Add and color grid capacities
+String deliveryCapacityLabel = "";
+String feedinCapacityLabel = "";
+Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+
+//Create delivery and capacity year datasets
+DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW / divisionAmountForCorrectUnit);
+DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW / divisionAmountForCorrectUnit);
+
+//Give specific capacity names based on selected scope	
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
+	deliveryCapacityLabel = "Gecontracteerde afname capaciteit";
+	feedinCapacityLabel = "Gecontracteerde terugleverings capaciteit";
+}
+
+else if(uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
+	deliveryCapacityLabel = "Cumulatieve GTV afname van de aansluitingen";
+	feedinCapacityLabel = "Cumulatieve GTV teruglevering van de aansluitingen";
+	
+	if(uI_Results.b_showGroupContractValues){
+		//And: add group contract values
+		DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW() / divisionAmountForCorrectUnit);
+		DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW() / divisionAmountForCorrectUnit);
+		
+		plot_jaar.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_jaar.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+		plot_week.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_week.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+		plot_dagnacht.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_dagnacht.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+		plot_seizoen.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_seizoen.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 	}
 }
-	
+else if(uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
+	deliveryCapacityLabel = "Fysieke afname capaciteit van het gebied";
+	feedinCapacityLabel = "Fysieke terugleverings capaciteit van het gebied";
+}
+
+//Add estimation tag and color if the capacities are not known
+if(!dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
+	deliveryCapacityLabel = "Geschatte " + deliveryCapacityLabel.substring(0, 1).toLowerCase() + deliveryCapacityLabel.substring(1);
+	deliveryCapacityColor = uI_Results.v_electricityCapacityColor_estimated;
+}
+if(!dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
+	feedinCapacityLabel = "Geschatte " + feedinCapacityLabel.substring(0, 1).toLowerCase() + feedinCapacityLabel.substring(1);
+	feedinCapacityColor	= uI_Results.v_electricityCapacityColor_estimated;
+}
+
+        	
 plot_jaar.addDataSet(gridCapacityDelivery_kW, deliveryCapacityLabel);
 plot_jaar.addDataSet(gridCapacityFeedin_kW, feedinCapacityLabel);
 plot_jaar.setColor(1, deliveryCapacityColor);
@@ -169,7 +206,7 @@ double f_setBelastingPlotsGN()
 GridNode GN = uI_Results.v_gridNode;
 
 f_addDataToPlotsGN(GN);
-f_addTrafoLimitsGN(GN); 
+
 f_setMaxPeakValuesGN(GN); 
 f_setNetAverageLoadGN(GN);
 /*ALCODEEND*/}
@@ -188,14 +225,48 @@ t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
 
 double f_addDataToPlotsGN(GridNode GN)
 {/*ALCODESTART::1741699130825*/
-double scaleMin_kW;
-double scaleMax_kW;
+double divisionAmountForCorrectUnit = 1;
+String power_unit = "kW";
+
+////Get the peaks
+double maxDelivery_kW = max(0, GN.data_netbelastingDuurkromme_kW.getYMax());
+double maxFeedin_kW = abs(min(0, GN.data_netbelastingDuurkromme_kW.getYMin()));
+double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
+
+////Put it in a usefull unit type
+if(maxDeliveryAndFeedin_kW < 1){
+	power_unit = "W";
+	divisionAmountForCorrectUnit = 1/pow(10,3);
+}
+else if(maxDeliveryAndFeedin_kW < 1 * pow(10,3)){
+	//Do nothing, already in right format
+}
+else if(maxDeliveryAndFeedin_kW < 1 * pow(10,6)){
+	power_unit = "MW";
+	divisionAmountForCorrectUnit = pow(10,3);
+}
+else{
+	power_unit = "GW";
+	divisionAmountForCorrectUnit = pow(10,6);
+}
+
+//Adjust y label to selected unit type
+f_setYlabels_loadDurationCurve(power_unit);
+
+DataSet loadDurationCurveTotal = uI_Results.f_createNewDataSetDividedByValue(GN.data_netbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+double minValue = loadDurationCurveTotal.getYMin();
+double maxValue = loadDurationCurveTotal.getYMax();
+
+double gridCapacityDelivery = GN.p_capacity_kW / divisionAmountForCorrectUnit;
+double gridCapacityFeedin = GN.p_capacity_kW / divisionAmountForCorrectUnit;
+
+double scaleMin = -1 + min(-gridCapacityFeedin*1.2, minValue);
+double scaleMax = 1 + max(gridCapacityDelivery*1.2, maxValue);
+
 
 //Jaar
-plot_jaar.addDataSet(GN.data_netbelastingDuurkromme_kW,"Belasting jaar");
-scaleMin_kW = -1 + min(-GN.p_capacity_kW*1.2, GN.data_netbelastingDuurkromme_kW.getYMin());
-scaleMax_kW = 1 + max(GN.p_capacity_kW*1.2, GN.data_netbelastingDuurkromme_kW.getYMax());
-plot_jaar.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
+plot_jaar.addDataSet(loadDurationCurveTotal,"Belasting jaar");
+plot_jaar.setFixedVerticalScale(scaleMin, scaleMax);
 if (GN.data_netbelastingDuurkrommeVorige_kW != null) {
 	//plot_jaar.addDataSet(area.v_dataNetbelastingDuurkrommeYearVorige_kW,"Vorige situatie");
 	//plot_jaar.setColor(3,gray);
@@ -203,55 +274,57 @@ if (GN.data_netbelastingDuurkrommeVorige_kW != null) {
 
 //summer/winter
 if( GN.data_summerWeekNetbelastingDuurkromme_kW != null){
-	plot_seizoen.addDataSet(GN.data_summerWeekNetbelastingDuurkromme_kW,"Belasting zomerweek");
-	plot_seizoen.addDataSet(GN.data_winterWeekNetbelastingDuurkromme_kW,"Belasting winterweek");
+	DataSet loadDurationCurveSummer = uI_Results.f_createNewDataSetDividedByValue(GN.data_summerWeekNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+	DataSet loadDurationCurveWinter = uI_Results.f_createNewDataSetDividedByValue(GN.data_winterWeekNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+	plot_seizoen.addDataSet(loadDurationCurveSummer,"Belasting zomerweek");
+	plot_seizoen.addDataSet(loadDurationCurveWinter,"Belasting winterweek");
 	plot_seizoen.setColor(0,blue);
 	plot_seizoen.setColor(1,green);
-	scaleMin_kW = -1 + min(-GN.p_capacity_kW*1.2, GN.data_netbelastingDuurkromme_kW.getYMin());
-	scaleMax_kW = 1 + max(GN.p_capacity_kW*1.2, GN.data_netbelastingDuurkromme_kW.getYMax());
-	plot_seizoen.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
+	plot_seizoen.setFixedVerticalScale(scaleMin, scaleMax);
 }
 
 // Day/night
 if( GN.data_daytimeNetbelastingDuurkromme_kW != null){
-	plot_dagnacht.addDataSet(GN.data_daytimeNetbelastingDuurkromme_kW,"Belasting overdag");
-	plot_dagnacht.addDataSet(GN.data_nighttimeNetbelastingDuurkromme_kW,"Belasting 's nachts");
+	DataSet loadDurationCurveDaytime = uI_Results.f_createNewDataSetDividedByValue(GN.data_daytimeNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+	DataSet loadDurationCurveNighttime = uI_Results.f_createNewDataSetDividedByValue(GN.data_nighttimeNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+	plot_dagnacht.addDataSet(loadDurationCurveDaytime,"Belasting overdag");
+	plot_dagnacht.addDataSet(loadDurationCurveNighttime,"Belasting 's nachts");
 	plot_dagnacht.setColor(0,blue);
 	plot_dagnacht.setColor(1,green);	
-	scaleMin_kW = -1 + min(-GN.p_capacity_kW*1.2, GN.data_netbelastingDuurkromme_kW.getYMin());
-	scaleMax_kW = 1 + max(GN.p_capacity_kW*1.2, GN.data_netbelastingDuurkromme_kW.getYMax());
-	plot_dagnacht.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
+	plot_dagnacht.setFixedVerticalScale(scaleMin, scaleMax);
 }
 
 // Weekday/weekend
 if( GN.data_weekdayNetbelastingDuurkromme_kW != null){
-	plot_week.addDataSet(GN.data_weekdayNetbelastingDuurkromme_kW,"Belasting weekdagen");
-	plot_week.addDataSet(GN.data_weekendNetbelastingDuurkromme_kW,"Belasting weekenddagen");
+	DataSet loadDurationCurveWeekday = uI_Results.f_createNewDataSetDividedByValue(GN.data_weekdayNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+	DataSet loadDurationCurveWeekend = uI_Results.f_createNewDataSetDividedByValue(GN.data_weekendNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+	plot_week.addDataSet(loadDurationCurveWeekday,"Belasting weekdagen");
+	plot_week.addDataSet(loadDurationCurveWeekend,"Belasting weekenddagen");
 	plot_week.setColor(0,blue);
 	plot_week.setColor(1,green);
-	scaleMin_kW = -1 + min(-GN.p_capacity_kW*1.2, GN.data_netbelastingDuurkromme_kW.getYMin());
-	scaleMax_kW = 1 + max(GN.p_capacity_kW*1.2, GN.data_netbelastingDuurkromme_kW.getYMax());
-	plot_week.setFixedVerticalScale(scaleMin_kW, scaleMax_kW);
+	plot_week.setFixedVerticalScale(scaleMin, scaleMax);
 }
 
+//Add trafo limits
+f_addTrafoLimitsGN(GN, divisionAmountForCorrectUnit); 
 /*ALCODEEND*/}
 
-double f_addTrafoLimitsGN(GridNode GN)
+double f_addTrafoLimitsGN(GridNode GN,double divisionAmountForCorrectUnit)
 {/*ALCODESTART::1741699130827*/
 //Add and color grid capacities
-String deliveryCapacityLabel = "Geschatte capaciteit afname";
-String feedinCapacityLabel = "Geschatte capaciteit teruglevering";
+String deliveryCapacityLabel = "Geschatte fysieke trafo capaciteit afname";
+String feedinCapacityLabel = "Geschatte fysieke trafo capaciteit teruglevering";
 Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
 //Create delivery and capacity year datasets
-DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, GN.p_capacity_kW);
-DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -GN.p_capacity_kW);
+DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, GN.p_capacity_kW / divisionAmountForCorrectUnit);
+DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -GN.p_capacity_kW / divisionAmountForCorrectUnit);
 	
 if(GN.p_realCapacityAvailable){
-		deliveryCapacityLabel = "Capaciteit afname";
+		deliveryCapacityLabel = "Fysieke trafo capaciteit afname";
 		deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-		feedinCapacityLabel = "Capaciteit teruglevering";
+		feedinCapacityLabel = "Fysieke trafo capaciteit teruglevering";
 		feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
 	
@@ -277,14 +350,15 @@ plot_seizoen.setColor(plot_seizoen.getCount() - 1, feedinCapacityColor);
 
 /*ALCODEEND*/}
 
-double f_setMaxPeakValues(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
+String f_setMaxPeakValues(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
 {/*ALCODESTART::1743519606875*/
+////Get the peaks
 double maxDelivery_kW = max(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
 double maxFeedin_kW = abs(min(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMin()));
 double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
 
 
-//Put it in a usefull unit format
+////Put it in a usefull unit format
 DecimalFormat df_1decimal = new DecimalFormat("0.0");
 DecimalFormat df_2decimal = new DecimalFormat("0.00");
 
@@ -345,12 +419,13 @@ else{
 
 double f_setMaxPeakValuesGN(GridNode GN)
 {/*ALCODESTART::1743519634438*/
+////Get the peaks
 double maxDelivery_kW = max(0, GN.data_netbelastingDuurkromme_kW.getYMax());
 double maxFeedin_kW = abs(min(0, GN.data_netbelastingDuurkromme_kW.getYMin()));
 double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
 
 
-//Put it in a usefull unit format
+////Put it in a usefull unit format
 DecimalFormat df_1decimal = new DecimalFormat("0.0");
 DecimalFormat df_2decimal = new DecimalFormat("0.00");
 
@@ -396,5 +471,13 @@ else{
 ////Max peaks in percentages
 t_maxDelivery_pct.setText(roundToInt(maxDelivery_kW/GN.p_capacity_kW * 100) + " %");
 t_maxFeedin_pct.setText(roundToInt(maxFeedin_kW/GN.p_capacity_kW * 100) + " %");
+/*ALCODEEND*/}
+
+double f_setYlabels_loadDurationCurve(String power_unit)
+{/*ALCODESTART::1743761224093*/
+t_duurkromme_ylabel.setText("Vermogen [" + power_unit + "]");
+t_duurkromme_ylabel1.setText("Vermogen [" + power_unit + "]");
+t_duurkromme_ylabel2.setText("Vermogen [" + power_unit + "]");
+t_duurkromme_ylabel3.setText("Vermogen [" + power_unit + "]");
 /*ALCODEEND*/}
 
