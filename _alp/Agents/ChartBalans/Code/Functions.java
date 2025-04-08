@@ -308,7 +308,7 @@ double totalPrimaryHeatPumpEnergyProductionSelfConsumed = dataObject.getRapidRun
 
 double remainingEnergySelfConsumed;
 //If there is no heat export: divide total energy self consumed in to self consumed energy and self consumed energy heatpump heat
-if(dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh || totalPrimaryHeatPumpEnergyProductionSelfConsumed == 0){
+if((dataObject.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) && dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh) || totalPrimaryHeatPumpEnergyProductionSelfConsumed == 0){
 	remainingEnergySelfConsumed = totalEnergySelfConsumed;
 }
 else{
@@ -372,7 +372,7 @@ double totalEnergySelfConsumed_summer = dataObject.getRapidRunData().getSummerWe
 double totalPrimaryHeatPumpEnergyProductionSelfConsumed_summer = dataObject.getRapidRunData().getSummerWeekPrimaryEnergyProductionHeatpumps_MWh();
 
 double remainingEnergySelfConsumed_summer;
-if(dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh || totalPrimaryHeatPumpEnergyProductionSelfConsumed_summer == 0){
+if((dataObject.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) && dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh) || totalPrimaryHeatPumpEnergyProductionSelfConsumed_summer == 0){
 	remainingEnergySelfConsumed_summer = totalEnergySelfConsumed_summer;
 }
 else{
@@ -399,7 +399,7 @@ double totalEnergySelfConsumed_winter = dataObject.getRapidRunData().getWinterWe
 double totalPrimaryHeatPumpEnergyProductionSelfConsumed_winter = dataObject.getRapidRunData().getWinterWeekPrimaryEnergyProductionHeatpumps_MWh();
 
 double remainingEnergySelfConsumed_winter;
-if(dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh || totalPrimaryHeatPumpEnergyProductionSelfConsumed_winter == 0){
+if((dataObject.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) && dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh) || totalPrimaryHeatPumpEnergyProductionSelfConsumed_winter == 0){
 	remainingEnergySelfConsumed_winter = totalEnergySelfConsumed_winter;
 }
 else{
@@ -488,7 +488,7 @@ double weekdayPrimaryHeatPumpEnergyProductionSelfConsumed = dataObject.getRapidR
 
 double remainingWeekdayEnergySelfConsumed;
 //If there is no heat export: divide total energy self consumed in to self consumed energy and self consumed energy heatpump heat
-if(dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh || weekdayPrimaryHeatPumpEnergyProductionSelfConsumed == 0){
+if((dataObject.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) && dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh) || weekdayPrimaryHeatPumpEnergyProductionSelfConsumed == 0){
 	remainingWeekdayEnergySelfConsumed = weekdayEnergySelfConsumed;
 }
 else{
@@ -515,7 +515,7 @@ double weekendPrimaryHeatPumpEnergyProductionSelfConsumed = dataObject.getRapidR
 
 double remainingWeekendEnergySelfConsumed;
 //If there is no heat export: divide total energy self consumed in to self consumed energy and self consumed energy heatpump heat
-if(dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh || weekendPrimaryHeatPumpEnergyProductionSelfConsumed == 0){
+if((dataObject.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) && dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh) || weekendPrimaryHeatPumpEnergyProductionSelfConsumed == 0){
 	remainingWeekendEnergySelfConsumed = weekendEnergySelfConsumed;
 }
 else{
@@ -602,7 +602,7 @@ double daytimePrimaryHeatPumpEnergyProductionSelfConsumed = dataObject.getRapidR
 
 double remainingDaytimeEnergySelfConsumed;
 //If there is no heat export: divide total energy self consumed in to self consumed energy and self consumed energy heatpump heat
-if(dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh || daytimePrimaryHeatPumpEnergyProductionSelfConsumed == 0){
+if((dataObject.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) && dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh) || daytimePrimaryHeatPumpEnergyProductionSelfConsumed == 0){
 	remainingDaytimeEnergySelfConsumed = daytimeEnergySelfConsumed;
 }
 else{
@@ -630,7 +630,7 @@ double nighttimePrimaryHeatPumpEnergyProductionSelfConsumed = dataObject.getRapi
 
 double remainingNighttimeEnergySelfConsumed;
 //If there is no heat export: divide total energy self consumed in to self consumed energy and self consumed energy heatpump heat
-if(dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh || nighttimePrimaryHeatPumpEnergyProductionSelfConsumed == 0){
+if((dataObject.getRapidRunData().activeProductionEnergyCarriers.contains(OL_EnergyCarriers.HEAT) && dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh) || nighttimePrimaryHeatPumpEnergyProductionSelfConsumed == 0){
 	remainingNighttimeEnergySelfConsumed = nighttimeEnergySelfConsumed;
 }
 else{
