@@ -20,7 +20,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1714988096086</Id>
-		<Name><![CDATA[f_setElectricityBalanceChartYear]]></Name>
+		<Name><![CDATA[f_setElectricityBalanceChartTotal]]></Name>
 		<X>70</X>
 		<Y>1060</Y>
 		<Label>
@@ -116,7 +116,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1714991716133</Id>
-		<Name><![CDATA[f_setEnergyBalanceChartYear]]></Name>
+		<Name><![CDATA[f_setEnergyBalanceChartTotal]]></Name>
 		<X>450</X>
 		<Y>1060</Y>
 		<Label>
@@ -212,7 +212,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1715003709481</Id>
-		<Name><![CDATA[f_setTrafoBalanceChartYear]]></Name>
+		<Name><![CDATA[f_setTrafoBalanceChartTotal]]></Name>
 		<X>830</X>
 		<Y>1060</Y>
 		<Label>

@@ -94,8 +94,8 @@
 			<Text>
 				<Id>1730395813981</Id>
 				<Name><![CDATA[tx_topBarplotText3]]></Name>
-				<X>-40</X>
-				<Y>-290</Y>
+				<X>-30</X>
+				<Y>-310</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -108,8 +108,8 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Hoeveel energie verbruik
-en opwek heb ik?]]></Text>
+				<Text><![CDATA[Hoeveel energieverbruik
+en opwek is er over het jaar?]]></Text>
 				<Font>
 					<Name><![CDATA[Arial]]></Name>
 					<Size>28</Size>
@@ -121,7 +121,7 @@ en opwek heb ik?]]></Text>
 				<Id>1730395813983</Id>
 				<Name><![CDATA[gr_onbalansBarplot4]]></Name>
 				<X>120</X>
-				<Y>-100</Y>
+				<Y>-120</Y>
 				<Label>
 					<X>10.122</X>
 					<Y>0</Y>
@@ -136,7 +136,7 @@ en opwek heb ik?]]></Text>
 				<Presentation>
 					<StackChart>
 						<Id>1730395813986</Id>
-						<Name><![CDATA[pl_productionChartGespreksleidraad1]]></Name>
+						<Name><![CDATA[pl_productionChartBalanceTotal]]></Name>
 						<X>-292.133</X>
 						<Y>-131.007</Y>
 						<Label>
@@ -192,9 +192,9 @@ en opwek heb ik?]]></Text>
 					</StackChart>
 					<StackChart>
 						<Id>1730395813989</Id>
-						<Name><![CDATA[pl_consumptionChartGespreksleidraad1]]></Name>
+						<Name><![CDATA[pl_consumptionChartBalanceTotal]]></Name>
 						<X>-293.04</X>
-						<Y>-20</Y>
+						<Y>-10</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -248,7 +248,7 @@ en opwek heb ik?]]></Text>
 					</StackChart>
 					<Text>
 						<Id>1730395813991</Id>
-						<Name><![CDATA[t_opwekTextGespreksleidraad1]]></Name>
+						<Name><![CDATA[t_productionTextYear]]></Name>
 						<X>-260</X>
 						<Y>-91.212</Y>
 						<Label>
@@ -273,9 +273,9 @@ en opwek heb ik?]]></Text>
 					</Text>
 					<Text>
 						<Id>1730395813993</Id>
-						<Name><![CDATA[t_gebruikTextGespreksleidraad1]]></Name>
+						<Name><![CDATA[t_consumptionTextYear]]></Name>
 						<X>-260</X>
-						<Y>20.808</Y>
+						<Y>30.808</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -296,38 +296,13 @@ en opwek heb ik?]]></Text>
 						</Font>
 						<Alignment>RIGHT</Alignment>
 					</Text>
-					<Text>
-						<Id>1730395813995</Id>
-						<Name><![CDATA[tx_topBarplotText4]]></Name>
-						<X>20</X>
-						<Y>-100</Y>
-						<Label>
-							<X>0</X>
-							<Y>-10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Rotation>0.0</Rotation>
-						<Color>-16777216</Color>
-						<Text><![CDATA[Jaar]]></Text>
-						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>20</Size>
-							<Style>0</Style>
-						</Font>
-						<Alignment>LEFT</Alignment>
-					</Text>
 				</Presentation>
 			</Group>
 			<TimeStackChart>
 				<Id>1730395813998</Id>
 				<Name><![CDATA[energySupplyChartYearGespreksleidraad1]]></Name>
 				<X>-260</X>
-				<Y>30</Y>
+				<Y>50</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -353,9 +328,9 @@ en opwek heb ik?]]></Text>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>70</XOffset>
 					<YOffset>30</YOffset>
-					<Width>380</Width>
+					<Width>360</Width>
 					<Height>120</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor/>
@@ -384,7 +359,7 @@ en opwek heb ik?]]></Text>
 				<Id>1730395814001</Id>
 				<Name><![CDATA[energyDemandChartYearGespreksleidraad1]]></Name>
 				<X>-260</X>
-				<Y>30</Y>
+				<Y>50</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -406,13 +381,13 @@ en opwek heb ik?]]></Text>
 				</RecurrenceCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>460</Width>
-				<Height>270</Height>
+				<Height>260</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>70</XOffset>
 					<YOffset>30</YOffset>
-					<Width>380</Width>
+					<Width>360</Width>
 					<Height>120</Height>
 					<BackgroundColor/>
 					<BorderColor/>
@@ -439,13 +414,13 @@ en opwek heb ik?]]></Text>
 				<SamplesToKeep>100</SamplesToKeep>
 				<TimeWindowExpression>365</TimeWindowExpression>
 				<FillAreaUnderLine>false</FillAreaUnderLine>
-				<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+				<LabelFormat>MM</LabelFormat>
 			</TimePlot>
 			<Text>
 				<Id>1730395814003</Id>
 				<Name><![CDATA[t_duurkromme_xlabel1]]></Name>
 				<X>155</X>
-				<Y>190</Y>
+				<Y>210</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -469,8 +444,8 @@ en opwek heb ik?]]></Text>
 			<Text>
 				<Id>1730395814005</Id>
 				<Name><![CDATA[t_duurkromme_ylabel1]]></Name>
-				<X>-241</X>
-				<Y>40</Y>
+				<X>-231</X>
+				<Y>60</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -483,7 +458,7 @@ en opwek heb ik?]]></Text>
 				<Z>0</Z>
 				<Rotation>90.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Gemiddeld vermogen per dag [kW]]]></Text>
+				<Text><![CDATA[Gemiddeld elektrisch vermogen [kW]]]></Text>
 				<Font>
 					<Name><![CDATA[Arial]]></Name>
 					<Size>12</Size>
@@ -1053,15 +1028,16 @@ het collectief vs individueel?]]></Text>
 	<Group>
 		<Id>1741342910318</Id>
 		<Name><![CDATA[gr_warningScreen]]></Name>
-		<X>-920</X>
-		<Y>400</Y>
+		<X>-960</X>
+		<Y>340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
 		</Label>
-		<PublicFlag>false</PublicFlag>
+		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
+		<Lock>true</Lock>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<XCode>230</XCode>
 		<YCode>410</YCode>
@@ -1118,9 +1094,9 @@ het collectief vs individueel?]]></Text>
 				<Text><![CDATA[LET OP: Het geselecteerde object wordt 
 niet ondersteund door deze grafiek!
 
-Selecteer meerdere aansluitingen 
-of het gehele gebied om deze 
-grafieken te gebruiken.]]></Text>
+Selecteer het gehele gebied 
+of maak een selectie van aansluitingen 
+om deze grafieken te gebruiken.]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>20</Size>

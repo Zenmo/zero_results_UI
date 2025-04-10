@@ -39,26 +39,6 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1730395813829</Id>
-		<Name><![CDATA[f_setEnergyBalanceChartFull]]></Name>
-		<X>80</X>
-		<Y>886</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[data]]></Name>
-			<Type><![CDATA[I_EnergyData]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
 		<Id>1730395813831</Id>
 		<Name><![CDATA[f_setChartsGespreksleidraadBedrijven2]]></Name>
 		<X>560</X>
@@ -118,7 +98,7 @@
 		<Id>1737988539936</Id>
 		<Name><![CDATA[f_setDemandAndSupplyGespreksleidraadBedrijven1]]></Name>
 		<X>80</X>
-		<Y>905</Y>
+		<Y>910</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -177,8 +157,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1741342546947</Id>
 		<Name><![CDATA[f_setWarningScreen]]></Name>
-		<X>-1100</X>
-		<Y>760</Y>
+		<X>-1140</X>
+		<Y>700</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -189,6 +169,26 @@
 		<Parameter>
 			<Name><![CDATA[showWarningScreen]]></Name>
 			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1744283648638</Id>
+		<Name><![CDATA[f_setEnergyBalanceChartTotal]]></Name>
+		<X>80</X>
+		<Y>891</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

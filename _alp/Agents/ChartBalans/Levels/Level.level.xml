@@ -90,7 +90,7 @@
 	</Control>
 	<Group>
 		<Id>1714987807051</Id>
-		<Name><![CDATA[gr_Year]]></Name>
+		<Name><![CDATA[gr_Total]]></Name>
 		<X>230</X>
 		<Y>350</Y>
 		<Label>
@@ -107,7 +107,7 @@
 		<Presentation>
 			<StackChart>
 				<Id>1714987905780</Id>
-				<Name><![CDATA[pl_productionChartYear]]></Name>
+				<Name><![CDATA[pl_productionChartBalanceTotal]]></Name>
 				<X>-160</X>
 				<Y>-210</Y>
 				<Label>
@@ -163,7 +163,7 @@
 			</StackChart>
 			<StackChart>
 				<Id>1714987905783</Id>
-				<Name><![CDATA[pl_consumptionChartYear]]></Name>
+				<Name><![CDATA[pl_consumptionChartBalanceTotal]]></Name>
 				<X>-160</X>
 				<Y>-60</Y>
 				<Label>
