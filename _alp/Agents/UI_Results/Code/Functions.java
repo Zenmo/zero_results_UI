@@ -484,11 +484,18 @@ return flatDataset;
 
 double f_updateResultsUI(I_EnergyData selectedObjectInterface)
 {/*ALCODESTART::1741337780594*/
+
+
 v_selectedObjectInterface = selectedObjectInterface;
 v_selectedObjectScope = v_selectedObjectInterface.getScope();
 f_setSelectedObjectText(null);
 
-f_showCorrectChart();
+if(b_enableGroupContractMode && v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
+	cb_EhubConfig.setSelected(false, true);
+}
+else{
+	f_showCorrectChart();
+}
 /*ALCODEEND*/}
 
 double f_setSelectedObjectText(String customSelectedObjectText)
