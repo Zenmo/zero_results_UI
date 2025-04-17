@@ -558,7 +558,7 @@ else{
 }
 
 //Limit visible length
-int maxStringLength = 36;
+int maxStringLength = 40;
 if (selectedObjectText.length() > maxStringLength){
      selectedObjectText = selectedObjectText.substring(0, maxStringLength);
 }
