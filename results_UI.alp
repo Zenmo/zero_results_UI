@@ -9740,10 +9740,10 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityBaseloadDemandYear_kW, "Electr. demand base", uI_Results.v_electricityBaseloadDemandColor);
 	}
 	if (dataObject.v_dataElectricityForHeatDemandYear_kW != null) {
-		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHeatDemandYear_kW,"Electr. demand heating/cooling", uI_Results.v_electricityForHeatDemandColor);
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHeatDemandYear_kW,"Electr. for heating/cooling", uI_Results.v_electricityForHeatDemandColor);
 	}
 	if (dataObject.v_dataElectricityForTransportDemandYear_kW != null) { 
-		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_kW, "Electr. demand transport", uI_Results.v_electricityForTransportDemandColor);
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForTransportDemandYear_kW, "Charging vehicles", uI_Results.v_electricityForTransportDemandColor);
 	}
 	if (dataObject.v_dataElectricityForCookingDemandYear_kW != null) { 
 		energyDemandChart.addDataSet(dataObject.v_dataElectricityForCookingDemandYear_kW, "Electr. cooking", uI_Results.v_electricityForCookingDemandColor);
@@ -9752,17 +9752,17 @@ if (uI_Results.c_individualGridConnections.size() == 0) {
 		//energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForHydrogenDemandYear_kW,  "Electr. demand elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
 	}
 	if (dataObject.v_dataElectricityForStorageDemandYear_kW != null) {
-		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_kW, "Electr. demand batteries", uI_Results.v_electricityForStorageDemandColor);
+		energyDemandChartYear.addDataSet(dataObject.v_dataElectricityForStorageDemandYear_kW, "Charging batteries", uI_Results.v_electricityForStorageDemandColor);
 	}
 	//Energy supply chart
 	if (dataObject.v_dataElectricityWindSupplyYear_kW != null) {
 	energySupplyChartYear.addDataSet(dataObject.v_dataElectricityWindSupplyYear_kW, "Wind", uI_Results.v_windElectricitySupplyColor);
 	}
 	if (dataObject.v_dataElectricityStorageSupplyYear_kW != null ) {
-		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_kW, "Batteries feed-in", uI_Results.v_storageElectricitySupplyColor);
+		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityStorageSupplyYear_kW, "Discharging batteries", uI_Results.v_storageElectricitySupplyColor);
 	}
 	if (dataObject.v_dataElectricityV2GSupplyYear_kW != null) {
-		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_kW, "V2G feed-in", uI_Results.v_V2GElectricitySupplyColor);
+		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityV2GSupplyYear_kW, "Discharging vehicles (V2G)", uI_Results.v_V2GElectricitySupplyColor);
 	}
 	if (dataObject.v_dataElectricityPVSupplyYear_kW != null) {
 		energySupplyChartYear.addDataSet(dataObject.v_dataElectricityPVSupplyYear_kW, "Solar PV", uI_Results.v_PVElectricitySupplyColor);
@@ -9798,13 +9798,9 @@ else {
 if (dataObject.v_dataPetroleumProductsDemandLiveWeek_kW != null) {
 	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandLiveWeek_kW, "Fuel", uI_Results.v_petroleumProductsDemandColor);
 }
-
-
-
 if (dataObject.v_dataPetroleumProductsSupplyLiveWeek_kW != null) {
 	energySupplyChart.addDataSet(dataObject.v_dataPetroleumProductsSupplyLiveWeek_kW, "Fuel production", uI_Results.v_petroleumProductsSupplyColor);
 }
-
 
 if ( uI_Results.p_legendsScope == 0){
 	if (dataObject.v_dataDistrictHeatSupplyLiveWeek_kW != null && dataObject.v_dataDistrictHeatSupplyLiveWeek_kW.getYMean() != 0  ) {
@@ -9840,11 +9836,11 @@ else if (uI_Results.p_legendsScope == 1){
 
 if (uI_Results.c_individualGridConnections.size() == 0) {
 	energyDemandChart.addDataSet(dataObject.v_dataBaseloadElectricityDemandLiveWeek_kW, "Base electr. demand", uI_Results.v_electricityBaseloadDemandColor);
-	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandLiveWeek_kW, "Electr. demand heating/cooling", uI_Results.v_electricityForHeatDemandColor);
-	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandLiveWeek_kW, "Electr. demand transport", uI_Results.v_electricityForTransportDemandColor);
-	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandLiveWeek_kW, "Electr. demand batteries", uI_Results.v_electricityForStorageDemandColor);
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForHeatDemandLiveWeek_kW, "Electr. for heating/cooling", uI_Results.v_electricityForHeatDemandColor);
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForTransportDemandLiveWeek_kW, "Charging vehicles", uI_Results.v_electricityForTransportDemandColor);
+	energyDemandChart.addDataSet(dataObject.v_dataElectricityForStorageDemandLiveWeek_kW, "Charging batteries", uI_Results.v_electricityForStorageDemandColor);
 	energySupplyChart.addDataSet(dataObject.v_dataWindElectricitySupplyLiveWeek_kW, "Wind", uI_Results.v_windElectricitySupplyColor);
-	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Batteries", uI_Results.v_storageElectricitySupplyColor);
+	energySupplyChart.addDataSet(dataObject.v_dataStorageElectricitySupplyLiveWeek_kW, "Discharging batteries", uI_Results.v_storageElectricitySupplyColor);
 		
 	if ( uI_Results.p_legendsScope == 0){
 		if( dataObject.v_dataElectricityForCookingDemandLiveWeek_kW.getYMax() > 0){
@@ -9888,7 +9884,7 @@ else {
 	energyDemandChart.addDataSet(dataObject.v_dataNaturalGasDemandSummerWeek_kW, "Gas comsuption", uI_Results.v_naturalGasDemandColor);
 }
 if (dataObject.v_dataPetroleumProductsDemandSummerWeek_kW != null) {
-	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandSummerWeek_kW, "Fue consumption", uI_Results.v_petroleumProductsDemandColor);
+	energyDemandChart.addDataSet(dataObject.v_dataPetroleumProductsDemandSummerWeek_kW, "Fuel consumption", uI_Results.v_petroleumProductsDemandColor);
 }
 
 if (dataObject.v_dataDistrictHeatDemandSummerWeek_kW != null) {
