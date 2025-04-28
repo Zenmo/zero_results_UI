@@ -513,6 +513,10 @@ else{
 			connectionDisplayName = GC.c_connectedGISObjects.get(0).p_annotation;
 		}
 		
+		if(connectionDisplayName == null){
+			connectionDisplayName = GC.p_gridConnectionID;
+		}
+		
 		if(connectionDisplayName.contains("verblijfsobject.") || connectionDisplayName.contains("pand.")){
 			selectedObjectText = "Een generieke aansluiting";
 		}
@@ -521,7 +525,7 @@ else{
 		}
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-	selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
+		selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface.getLiveData().parentAgent).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.p_batteryOperationMode == OL_BatteryOperationMode.BALANCE_COOP));
