@@ -1,7 +1,6 @@
 double f_selectGespreksleidraadCharts()
 {/*ALCODESTART::1714765506606*/
-f_setWarningScreen(true);
-
+f_setWarningScreen(false);
 gr_gespreksleidraad1.setVisible(false);
 gr_gespreksleidraad2.setVisible(false);
 gr_gespreksleidraad3.setVisible(false);
@@ -17,7 +16,7 @@ uI_Results.f_setSelectedObjectDisplay(null, null, false);
 //t_selectedObjectDisplayTextGSLD.setText(t_selectedObjectDisplayText.getText().replace("Data van: ", ""));
 
 if(data.getScope() != OL_ResultScope.ENERGYMODEL && data.getScope() != OL_ResultScope.ENERGYCOOP){
-	f_setWarningScreen(false);
+	f_setWarningScreen(true);
 	return;
 }
 
