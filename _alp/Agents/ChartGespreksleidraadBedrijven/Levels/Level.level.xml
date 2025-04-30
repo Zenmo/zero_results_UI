@@ -138,7 +138,7 @@ en opwek is er over het jaar?]]></Text>
 						<Id>1730395813986</Id>
 						<Name><![CDATA[pl_productionChartBalanceTotal]]></Name>
 						<X>-292.133</X>
-						<Y>-131.007</Y>
+						<Y>-141.007</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -194,7 +194,7 @@ en opwek is er over het jaar?]]></Text>
 						<Id>1730395813989</Id>
 						<Name><![CDATA[pl_consumptionChartBalanceTotal]]></Name>
 						<X>-293.04</X>
-						<Y>-10</Y>
+						<Y>0</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -250,7 +250,7 @@ en opwek is er over het jaar?]]></Text>
 						<Id>1730395813991</Id>
 						<Name><![CDATA[t_productionTextYear]]></Name>
 						<X>-260</X>
-						<Y>-91.212</Y>
+						<Y>-101.212</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -275,7 +275,7 @@ en opwek is er over het jaar?]]></Text>
 						<Id>1730395813993</Id>
 						<Name><![CDATA[t_consumptionTextYear]]></Name>
 						<X>-260</X>
-						<Y>30.808</Y>
+						<Y>40.808</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -302,7 +302,7 @@ en opwek is er over het jaar?]]></Text>
 				<Id>1730395813998</Id>
 				<Name><![CDATA[energySupplyChartYearGespreksleidraad1]]></Name>
 				<X>-260</X>
-				<Y>50</Y>
+				<Y>60</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -420,7 +420,7 @@ en opwek is er over het jaar?]]></Text>
 				<Id>1730395814003</Id>
 				<Name><![CDATA[t_duurkromme_xlabel1]]></Name>
 				<X>155</X>
-				<Y>210</Y>
+				<Y>220</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -445,7 +445,7 @@ en opwek is er over het jaar?]]></Text>
 				<Id>1730395814005</Id>
 				<Name><![CDATA[t_duurkromme_ylabel1]]></Name>
 				<X>-231</X>
-				<Y>60</Y>
+				<Y>70</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -797,7 +797,7 @@ zelfconsumptie
 			<Rectangle>
 				<Id>1739206591762</Id>
 				<Name><![CDATA[rect_GSLDSummary2]]></Name>
-				<X>-265.33299999999997</X>
+				<X>-265.333</X>
 				<Y>-354.667</Y>
 				<Label>
 					<X>10</X>
@@ -815,7 +815,7 @@ zelfconsumptie
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
 				<Width>460</Width>
-				<Height>660</Height>
+				<Height>669.667</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -863,7 +863,7 @@ zelfconsumptie
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
 				<Width>460</Width>
-				<Height>660</Height>
+				<Height>670</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
