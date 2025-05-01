@@ -631,3 +631,54 @@ for (int i = 0; i < inputDataSet.size(); i++) {
 return newDataset;
 /*ALCODEEND*/}
 
+double f_setInfoText(ShapeImage infoBubble,String descriptionText,double xPosition,double yPosition)
+{/*ALCODESTART::1746102339921*/
+if ( p_currentActiveInfoBubble.size() > 0 && p_currentActiveInfoBubble.get(0) == infoBubble ) {
+	// If we click a second time on the same bubble it should close the window
+	p_currentActiveInfoBubble.clear();
+	gr_infoText.setVisible(false);
+}
+else {
+	p_currentActiveInfoBubble.clear();
+	p_currentActiveInfoBubble.add(infoBubble);
+	
+	int width_ch = 50;
+	// Set Text
+	Pair<String, Integer> p = v_infoText.restrictWidth(descriptionText, width_ch);
+	t_infoTextDescription.setText(p.getFirst());
+	
+	// Set Size
+	rect_infoText.setWidth(width_ch * 7.5); // about 7.5 px per char for sans serif 14 pt
+	rect_infoText.setHeight(50 + p.getSecond() * 20); // about 50 px for title and 20 px per line for sans serif 14 pt
+	
+	// Set Position
+	// The group position is on the top left, not the centre.
+	double margin_px = 15;
+	//double posX = f_getAbsolutePosition(infoBubble).getX();
+	//double posY = f_getAbsolutePosition(infoBubble).getY();
+	if ((v_resultsUIPresentationXOffset + xPosition) < (v_interfaceViewAreaXOffset + v_interfaceViewAreaWidth/2) ) {
+		// bubble is on the left half, so text should appear to the right
+		gr_infoText.setX( v_resultsUIPresentationXOffset + xPosition + margin_px + infoBubble.getWidth()/2);
+	}
+	else {
+		// bubble is on the right half, so text should appear to the left
+		gr_infoText.setX( v_resultsUIPresentationXOffset + xPosition - margin_px + infoBubble.getWidth()/2 - rect_infoText.getWidth());
+	}
+	
+	// In AnyLogic the Y-Axis is inverted
+	if ((v_resultsUIPresentationYOffset + yPosition) > (v_interfaceViewAreaYOffset + v_interfaceViewAreaHeight/2) ) {
+		// bubble is on the bottom half, so text should appear above
+		gr_infoText.setY( v_resultsUIPresentationYOffset + yPosition - margin_px - rect_infoText.getHeight());
+	}
+	else {
+		// bubble is on the top half, so text should appear below
+		gr_infoText.setY( v_resultsUIPresentationYOffset + yPosition + margin_px);
+	}
+	
+	// Position of close button
+	gr_closeInfoText.setX( width_ch * 7.5 - 20 ); // 20 px offset from the right hand side
+
+	gr_infoText.setVisible(true);
+}
+/*ALCODEEND*/}
+
