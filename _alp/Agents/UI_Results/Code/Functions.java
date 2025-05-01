@@ -668,11 +668,11 @@ else {
 	// In AnyLogic the Y-Axis is inverted
 	if ((v_resultsUIPresentationYOffset + yPosition) > (v_interfaceViewAreaYOffset + v_interfaceViewAreaHeight/2) ) {
 		// bubble is on the bottom half, so text should appear above
-		gr_infoText.setY( v_resultsUIPresentationYOffset + yPosition - margin_px - rect_infoText.getHeight());
+		gr_infoText.setY( v_resultsUIPresentationYOffset + yPosition - margin_px  + infoBubble.getHeight()/2 - rect_infoText.getHeight());
 	}
 	else {
 		// bubble is on the top half, so text should appear below
-		gr_infoText.setY( v_resultsUIPresentationYOffset + yPosition + margin_px);
+		gr_infoText.setY( v_resultsUIPresentationYOffset + yPosition + margin_px + infoBubble.getHeight()/2);
 	}
 	
 	// Position of close button
