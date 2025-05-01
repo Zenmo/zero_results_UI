@@ -530,28 +530,33 @@ else{
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface.getLiveData().parentAgent).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.p_batteryOperationMode == OL_BatteryOperationMode.BALANCE_COOP));
 		
-		ArrayList<GIS_Object> firstMemberGCBuildings = memberGCList.get(0).c_connectedGISObjects;
-		boolean allGCInOneBuilding = false;
-		for(GIS_Object gisobject : firstMemberGCBuildings){
-			allGCInOneBuilding = true;
-			for(GridConnection memberGC : memberGCList){
-				if(!gisobject.c_containedGridConnections.contains(memberGC)){
-					allGCInOneBuilding = false;
+		if (memberGCList.size() != 0) {
+			boolean allGCInOneBuilding = false;
+			ArrayList<GIS_Object> firstMemberGCBuildings = memberGCList.get(0).c_connectedGISObjects;
+			
+			for(GIS_Object gisobject : firstMemberGCBuildings){
+				allGCInOneBuilding = true;
+				for(GridConnection memberGC : memberGCList){
+					if(!gisobject.c_containedGridConnections.contains(memberGC)){
+						allGCInOneBuilding = false;
+						break;
+					}
+				}
+				if(allGCInOneBuilding){
 					break;
 				}
 			}
-			if(allGCInOneBuilding){
-				break;
-			}
-		}
-		
-		if(allGCInOneBuilding){
-			selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
-		}
-		else{
-			selectedObjectText = "Een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
-		}
 
+			if(allGCInOneBuilding){
+				selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
+			}
+			else{
+				selectedObjectText = "Een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
+			}
+		} else {
+			selectedObjectText = "klanten van energiecoöperatie"; // Geen aansluitingen in deze selectie
+		}
+	
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
 			selectedObjectText = "Het gehele model";
