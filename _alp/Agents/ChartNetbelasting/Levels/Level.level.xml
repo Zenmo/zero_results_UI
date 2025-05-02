@@ -454,8 +454,8 @@
 	<Group>
 		<Id>1714923230147</Id>
 		<Name><![CDATA[gr_year]]></Name>
-		<X>230</X>
-		<Y>330</Y>
+		<X>0</X>
+		<Y>130</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -471,8 +471,8 @@
 			<Oval>
 				<Id>1714926452654</Id>
 				<Name><![CDATA[ovalNetbelasting2]]></Name>
-				<X>15</X>
-				<Y>200</Y>
+				<X>245</X>
+				<Y>430</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -497,8 +497,8 @@
 			<Oval>
 				<Id>1714926519243</Id>
 				<Name><![CDATA[ovalNetbelasting3]]></Name>
-				<X>155</X>
-				<Y>200</Y>
+				<X>385</X>
+				<Y>430</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -523,8 +523,8 @@
 			<Text>
 				<Id>1714746143882</Id>
 				<Name><![CDATA[tx_topBarplotText2]]></Name>
-				<X>10</X>
-				<Y>-220</Y>
+				<X>240</X>
+				<Y>10</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -548,8 +548,8 @@
 			<Plot>
 				<Id>1714746143885</Id>
 				<Name><![CDATA[plot_jaar]]></Name>
-				<X>-210</X>
-				<Y>-210</Y>
+				<X>20</X>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -607,8 +607,8 @@
 			<Text>
 				<Id>1714746143887</Id>
 				<Name><![CDATA[t_duurkromme_xlabel]]></Name>
-				<X>-15</X>
-				<Y>5</Y>
+				<X>215</X>
+				<Y>235</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -632,8 +632,8 @@
 			<Text>
 				<Id>1714746143889</Id>
 				<Name><![CDATA[t_duurkromme_ylabel]]></Name>
-				<X>-205</X>
-				<Y>-135</Y>
+				<X>25</X>
+				<Y>95</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -657,8 +657,8 @@
 			<Text>
 				<Id>1714746143901</Id>
 				<Name><![CDATA[txt_maxDelivery_MW]]></Name>
-				<X>15</X>
-				<Y>130</Y>
+				<X>245</X>
+				<Y>360</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -682,8 +682,8 @@
 			<Text>
 				<Id>1714746143903</Id>
 				<Name><![CDATA[t_maxDelivery_MW]]></Name>
-				<X>15</X>
-				<Y>190</Y>
+				<X>245</X>
+				<Y>420</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -707,8 +707,8 @@
 			<Text>
 				<Id>1714746143905</Id>
 				<Name><![CDATA[t_maxFeedin_MW]]></Name>
-				<X>155</X>
-				<Y>190</Y>
+				<X>385</X>
+				<Y>420</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -732,8 +732,8 @@
 			<Text>
 				<Id>1714746143907</Id>
 				<Name><![CDATA[txt_maxFeedin_MW]]></Name>
-				<X>155</X>
-				<Y>130</Y>
+				<X>385</X>
+				<Y>360</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -757,8 +757,8 @@
 			<Oval>
 				<Id>1714746143895</Id>
 				<Name><![CDATA[ovalNetbelasting1]]></Name>
-				<X>-145</X>
-				<Y>200</Y>
+				<X>85</X>
+				<Y>430</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -783,8 +783,8 @@
 			<Text>
 				<Id>1714746143899</Id>
 				<Name><![CDATA[t_KPIBenuttingsgraad]]></Name>
-				<X>-145</X>
-				<Y>186</Y>
+				<X>85</X>
+				<Y>416</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -809,8 +809,8 @@
 			<Text>
 				<Id>1714746143897</Id>
 				<Name><![CDATA[text1123]]></Name>
-				<X>-145</X>
-				<Y>255</Y>
+				<X>85</X>
+				<Y>485</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -834,8 +834,8 @@
 			<Text>
 				<Id>1714746143893</Id>
 				<Name><![CDATA[txt_benuttingsGraad]]></Name>
-				<X>-145</X>
-				<Y>130</Y>
+				<X>85</X>
+				<Y>360</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -859,8 +859,8 @@
 			<Oval>
 				<Id>1743519403232</Id>
 				<Name><![CDATA[ovalNetbelasting4]]></Name>
-				<X>15</X>
-				<Y>330</Y>
+				<X>245</X>
+				<Y>560</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -885,8 +885,8 @@
 			<Oval>
 				<Id>1743519403240</Id>
 				<Name><![CDATA[ovalNetbelasting5]]></Name>
-				<X>155</X>
-				<Y>330</Y>
+				<X>385</X>
+				<Y>560</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -911,8 +911,8 @@
 			<Text>
 				<Id>1743519403246</Id>
 				<Name><![CDATA[t_maxDelivery_pct]]></Name>
-				<X>15</X>
-				<Y>320</Y>
+				<X>245</X>
+				<Y>550</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -936,8 +936,8 @@
 			<Text>
 				<Id>1743519403248</Id>
 				<Name><![CDATA[t_maxFeedin_pct]]></Name>
-				<X>155</X>
-				<Y>320</Y>
+				<X>385</X>
+				<Y>550</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -961,8 +961,8 @@
 			<Text>
 				<Id>1743520021109</Id>
 				<Name><![CDATA[txt_maxFeedin_MW1]]></Name>
-				<X>155</X>
-				<Y>250</Y>
+				<X>385</X>
+				<Y>480</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -987,8 +987,8 @@ teruglever capaciteit]]></Text>
 			<Text>
 				<Id>1743520079522</Id>
 				<Name><![CDATA[txt_maxFeedin_MW2]]></Name>
-				<X>15</X>
-				<Y>250</Y>
+				<X>245</X>
+				<Y>480</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1010,6 +1010,33 @@ afname capaciteit]]></Text>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
+			<Image>
+				<Id>1746102751753</Id>
+				<Name><![CDATA[i_netLoadDurationCurve]]></Name>
+				<X>330</X>
+				<Y>10</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>uI_Results.f_setInfoText(i_netLoadDurationCurve, uI_Results.v_infoText.netLoadDurationCurve, i_netLoadDurationCurve.getX() + gr_year.getX(), i_netLoadDurationCurve.getY() + gr_year.getY());</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>20</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>icon_i.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
 		</Presentation>
 	</Group>
 	<Control Type="RadioButtons">
