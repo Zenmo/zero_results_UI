@@ -1,47 +1,3 @@
-double f_setBelastingPlots()
-{/*ALCODESTART::1714746143909*/
-f_resetPlots();
-
-//Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 50, true);
-
-if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-	f_setBelastingPlotsGN();
-	return;
-}
-
-I_EnergyData data = uI_Results.f_getSelectedObjectData();
-J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
-
-f_addDataToPlots(data, loadDurationCurves);
-f_setMaxPeakValues(data, loadDurationCurves);
-
-
-f_setNetAverageLoad(data, loadDurationCurves);
-/*ALCODEEND*/}
-
-double f_setNetAverageLoad(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
-{/*ALCODESTART::1714746143911*/
-double simulationDuration = uI_Results.energyModel.p_runEndTime_h - uI_Results.energyModel.p_runStartTime_h;
-double benuttingsgraad_pct = 0;
-double connectionCapacity_delivery_MW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW/1000;
-double connectionCapacity_feedin_MW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW/1000;
-double totalImportElectricity_MWh = dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY);
-double totalExportElectricity_MWh = dataObject.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY);
-
-if(	connectionCapacity_delivery_MW > 0 && connectionCapacity_feedin_MW > 0){
-	benuttingsgraad_pct = ((totalImportElectricity_MWh / connectionCapacity_delivery_MW) + (totalExportElectricity_MWh / connectionCapacity_feedin_MW)) / (simulationDuration) * 100;
-}
-else if( connectionCapacity_delivery_MW  > 0){
-	benuttingsgraad_pct = (totalImportElectricity_MWh / connectionCapacity_delivery_MW)/ (simulationDuration) * 100;
-}
-else if(connectionCapacity_feedin_MW > 0){
-	benuttingsgraad_pct = (totalExportElectricity_MWh / connectionCapacity_feedin_MW)/ (simulationDuration) * 100;
-}
-
-t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad_pct, 0) + "%");
-/*ALCODEEND*/}
-
 double f_resetPlots()
 {/*ALCODESTART::1714922345475*/
 plot_jaar.removeAll();
@@ -78,7 +34,7 @@ else{
 }
 
 //Adjust y label to selected unit type
-f_setYlabels_loadDurationCurve(power_unit);
+f_setYlabels(power_unit);
 
 DataSet loadDurationCurveTotal = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveTotal_kW, divisionAmountForCorrectUnit);
 double minValue = loadDurationCurveTotal.getYMin();
@@ -201,26 +157,14 @@ plot_seizoen.setColor(plot_seizoen.getCount() - 1, feedinCapacityColor);
 
 /*ALCODEEND*/}
 
-double f_setBelastingPlotsGN()
+double f_setLoadPlotsGN()
 {/*ALCODESTART::1741699130819*/
 GridNode GN = uI_Results.v_gridNode;
 
 f_addDataToPlotsGN(GN);
 
-f_setMaxPeakValuesGN(GN); 
-f_setNetAverageLoadGN(GN);
-/*ALCODEEND*/}
+f_setKPIValuesGN(GN); 
 
-double f_setNetAverageLoadGN(GridNode GN)
-{/*ALCODESTART::1741699130821*/
-double simulationDuration = uI_Results.energyModel.p_runEndTime_h - uI_Results.energyModel.p_runStartTime_h;
-double benuttingsgraad = 0;
-double totalAbsoluteLoad_kW = 0;
-for(int i=0; i< GN.data_netbelastingDuurkromme_kW.size(); i++){
-	totalAbsoluteLoad_kW += abs(GN.data_netbelastingDuurkromme_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
-}
-benuttingsgraad = (totalAbsoluteLoad_kW / (GN.p_capacity_kW * simulationDuration )) * 100;
-t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
 /*ALCODEEND*/}
 
 double f_addDataToPlotsGN(GridNode GN)
@@ -251,7 +195,7 @@ else{
 }
 
 //Adjust y label to selected unit type
-f_setYlabels_loadDurationCurve(power_unit);
+f_setYlabels(power_unit);
 
 DataSet loadDurationCurveTotal = uI_Results.f_createNewDataSetDividedByValue(GN.data_netbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
 double minValue = loadDurationCurveTotal.getYMin();
@@ -350,7 +294,7 @@ plot_seizoen.setColor(plot_seizoen.getCount() - 1, feedinCapacityColor);
 
 /*ALCODEEND*/}
 
-String f_setMaxPeakValues(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
+String f_setKPIValues(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
 {/*ALCODESTART::1743519606875*/
 ////Get the peaks
 double maxDelivery_kW = max(0, loadDurationCurves.ds_loadDurationCurveTotal_kW.getYMax());
@@ -401,23 +345,48 @@ else{
 }
 
 ////Max peaks in percentages
-double deliveryCapacity_kW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
-double feedinCapacity_kW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW;
-if(deliveryCapacity_kW > 0){
+if (dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown && dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW > 0) {
+	double deliveryCapacity_kW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
 	t_maxDelivery_pct.setText(roundToInt(maxDelivery_kW/dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW * 100) + " %");
+	gr_relativeDeliveryInfo.setVisible(true);
 }
 else{
-	t_maxDelivery_pct.setText("-");
+	gr_relativeDeliveryInfo.setVisible(false);
 }
-if(feedinCapacity_kW > 0){
+if (dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown && dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW > 0) {
+	double feedinCapacity_kW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW;
 	t_maxFeedin_pct.setText(roundToInt(maxFeedin_kW/dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW * 100) + " %");
+	gr_relativeFeedinInfo.setVisible(true);
 }
 else{
-	t_maxFeedin_pct.setText("-");
+	gr_relativeFeedinInfo.setVisible(false);
+}
+
+
+// Growth
+if (dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown && dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW > 0) {
+	Pair<Double, Double> pair = dataObject.getRapidRunData().getFlexPotential();
+	if (pair.getFirst() < 1) {
+		traceln("current highest avg daily use already above connection limit");
+	}
+	t_growthPercentage.setText(round((pair.getFirst() - 1 ) * 100) + " %") ;
+	if (pair.getSecond() < 1000) {
+		t_batterySize.setText( roundToDecimal(pair.getSecond(), 1) + " kWh" );
+	}
+	else if (pair.getSecond() < 1_000_000) {
+		t_batterySize.setText( roundToDecimal(pair.getSecond() / 1000, 1) + " MWh" );	
+	}
+	else {
+		t_batterySize.setText( roundToDecimal(pair.getSecond() / 1_000_000, 1) + " GWh" );
+	}
+	gr_flexPotential.setVisible(true);
+}
+else {
+	gr_flexPotential.setVisible(false);
 }
 /*ALCODEEND*/}
 
-double f_setMaxPeakValuesGN(GridNode GN)
+double f_setKPIValuesGN(GridNode GN)
 {/*ALCODESTART::1743519634438*/
 ////Get the peaks
 double maxDelivery_kW = max(0, GN.data_netbelastingDuurkromme_kW.getYMax());
@@ -469,15 +438,53 @@ else{
 
 
 ////Max peaks in percentages
-t_maxDelivery_pct.setText(roundToInt(maxDelivery_kW/GN.p_capacity_kW * 100) + " %");
-t_maxFeedin_pct.setText(roundToInt(maxFeedin_kW/GN.p_capacity_kW * 100) + " %");
+if (GN.p_realCapacityAvailable) {
+	t_maxDelivery_pct.setText(roundToInt(maxDelivery_kW/GN.p_capacity_kW * 100) + " %");
+	t_maxFeedin_pct.setText(roundToInt(maxFeedin_kW/GN.p_capacity_kW * 100) + " %");
+
+	gr_relativeDeliveryInfo.setVisible(true);
+	gr_relativeFeedinInfo.setVisible(true);
+}
+else {
+	gr_relativeDeliveryInfo.setVisible(false);
+	gr_relativeFeedinInfo.setVisible(false);
+}
+
+gr_flexPotential.setVisible(false);
 /*ALCODEEND*/}
 
-double f_setYlabels_loadDurationCurve(String power_unit)
+double f_setYlabels(String power_unit)
 {/*ALCODESTART::1743761224093*/
-t_duurkromme_ylabel.setText("Vermogen [" + power_unit + "]");
-t_duurkromme_ylabel1.setText("Vermogen [" + power_unit + "]");
-t_duurkromme_ylabel2.setText("Vermogen [" + power_unit + "]");
-t_duurkromme_ylabel3.setText("Vermogen [" + power_unit + "]");
+t_netLoadDurationCurve_ylabel.setText("Vermogen [" + power_unit + "]");
+t_netLoadDurationCurveSummerWinter_ylabel.setText("Vermogen [" + power_unit + "]");
+t_netLoadDurationCurveDayNight_ylabel.setText("Vermogen [" + power_unit + "]");
+t_netLoadDurationCurveWeekWeekend_ylabel.setText("Vermogen [" + power_unit + "]");
+/*ALCODEEND*/}
+
+double f_setCharts()
+{/*ALCODESTART::1746451303236*/
+f_resetPlots();
+
+//Set selected object display
+uI_Results.f_setSelectedObjectDisplay(230, 50, true);
+
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+	f_setLoadPlotsGN();
+	return;
+}
+else {
+	f_setLoadPlots();
+}
+
+
+/*ALCODEEND*/}
+
+double f_setLoadPlots()
+{/*ALCODESTART::1746451351928*/
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
+f_addDataToPlots(data, loadDurationCurves);
+f_setKPIValues(data, loadDurationCurves);
+
 /*ALCODEEND*/}
 
