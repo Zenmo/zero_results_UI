@@ -247,16 +247,16 @@ gr_week.setVisible(false);
 gr_year.setVisible(false);
 gr_day.setVisible(false);
 gr_trafoWeek.setVisible(false);
-gr_trafoYear.setVisible(false);
+//gr_trafoYear.setVisible(false);
 gr_trafoDay.setVisible(false);
 gr_netLoadWeek.setVisible(false);
-gr_netLoadYear.setVisible(false);
+//gr_netLoadYear.setVisible(false);
 gr_netLoadDay.setVisible(false);
 plot_trafo_week.removeAll();
-plot_trafo_year.removeAll();
+//plot_trafo_year.removeAll();
 plot_trafo_day.removeAll();
 plot_netload_week.removeAll();
-plot_netload_year.removeAll();
+//plot_netload_year.removeAll();
 plot_netload_day.removeAll();
 energyDemandChart.removeAll();
 energySupplyChart.removeAll();
@@ -406,15 +406,18 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 		
 		case 3: // Year
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-				f_addElectricityFlowsTrafo_Year(uI_Results.v_gridNode);
+				//f_addElectricityFlowsTrafo_Year(uI_Results.v_gridNode);
+				throw new RuntimeException("The Year Graph does not exist for GridNodes.");				
 			}
 			else {
 				//f_addElectricityNetLoad_Year(dataObject);
+				throw new RuntimeException("The Net Balance Year Graph does not exist.");				
 			}
-			break;
+			//break;
 			
 		default:
-			break;
+			throw new RuntimeException("Unrecognized option selected in Period Radio Button for Line Plots (Net Load).");
+			//break;
 	}
 }
 else { // Stack Chart
@@ -471,7 +474,9 @@ else { // Stack Chart
 			
 		case 3: // Year
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-				f_addElectricityFlowsTrafo_Year(uI_Results.v_gridNode);
+				// This graph does not exist, defaulting back to the live plot
+				radio_period.setValue(0);
+				f_setCharts();
 			} else {
 				f_addElectricityFlows_Year(dataObject);
 				if( radio_energyType.getValue() == 1){
@@ -481,7 +486,8 @@ else { // Stack Chart
 			break;
 		
 		default:
-			break;
+			throw new RuntimeException("Unrecognized option selected in Period Radio Button for Stack Charts.");	
+			//break;
 	}
 }
 /*ALCODEEND*/}

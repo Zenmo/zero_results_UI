@@ -33,7 +33,7 @@
 		<Id>1715175655981</Id>
 		<Name><![CDATA[radio_period]]></Name>
 		<X>40</X>
-		<Y>6</Y>
+		<Y>3</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -64,7 +64,7 @@
 		<Id>1714855497484</Id>
 		<Name><![CDATA[radio_energyType]]></Name>
 		<X>60</X>
-		<Y>34</Y>
+		<Y>35</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -76,6 +76,7 @@
 		<BasicProperties Width="320" Height="40">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor/>
+			<VisibleCode>uI_Results.v_selectedObjectScope != OL_ResultScope.GRIDNODE</VisibleCode>
 			<Enabled>true</Enabled>
 			<ActionCode>f_setCharts();</ActionCode>
 		</BasicProperties>
@@ -94,7 +95,7 @@
 		<Id>1739803302604</Id>
 		<Name><![CDATA[radio_periodLive]]></Name>
 		<X>180</X>
-		<Y>62</Y>
+		<Y>65</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1110,6 +1111,33 @@
 				</Font>
 				<Alignment>LEFT</Alignment>
 			</Text>
+			<Image>
+				<Id>1746696018221</Id>
+				<Name><![CDATA[i_trafoDay]]></Name>
+				<X>340</X>
+				<Y>0</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>uI_Results.f_setInfoText(i_trafoDay, uI_Results.v_infoText.trafoBalance, i_trafoDay.getX() + gr_trafoDay.getX(), i_trafoDay.getY() + gr_trafoDay.getY());</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>20</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>icon_i.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
 		</Presentation>
 	</Group>
 	<Group>
@@ -1241,11 +1269,39 @@
 				</Font>
 				<Alignment>LEFT</Alignment>
 			</Text>
+			<Image>
+				<Id>1746695969788</Id>
+				<Name><![CDATA[i_trafoWeek]]></Name>
+				<X>340</X>
+				<Y>0</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>uI_Results.f_setInfoText(i_trafoWeek, uI_Results.v_infoText.trafoBalance, i_trafoWeek.getX() + gr_trafoWeek.getX(), i_trafoWeek.getY() + gr_trafoWeek.getY());</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>20</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>icon_i.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
 		</Presentation>
 	</Group>
 	<Group>
 		<Id>1715170000511</Id>
 		<Name><![CDATA[gr_trafoYear]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>2010</X>
 		<Y>190</Y>
 		<Label>
@@ -1503,6 +1559,33 @@
 				</Font>
 				<Alignment>LEFT</Alignment>
 			</Text>
+			<Image>
+				<Id>1746695534246</Id>
+				<Name><![CDATA[i_netLoadDay]]></Name>
+				<X>290</X>
+				<Y>0</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>uI_Results.f_setInfoText(i_netLoadDay, uI_Results.v_infoText.netBalance, i_netLoadDay.getX() + gr_netLoadDay.getX(), i_netLoadDay.getY() + gr_netLoadDay.getY());</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>20</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>icon_i.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
 		</Presentation>
 	</Group>
 	<Group>
@@ -1634,11 +1717,39 @@
 				</Font>
 				<Alignment>LEFT</Alignment>
 			</Text>
+			<Image>
+				<Id>1746695610108</Id>
+				<Name><![CDATA[i_netLoadWeek]]></Name>
+				<X>290</X>
+				<Y>0</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>uI_Results.f_setInfoText(i_netLoadWeek, uI_Results.v_infoText.netBalance, i_netLoadWeek.getX() + gr_netLoadWeek.getX(), i_netLoadWeek.getY() + gr_netLoadWeek.getY());</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>20</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>icon_i.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
 		</Presentation>
 	</Group>
 	<Group>
 		<Id>1721120959534</Id>
 		<Name><![CDATA[gr_netLoadYear]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>3510</X>
 		<Y>190</Y>
 		<Label>
@@ -1798,9 +1909,9 @@
 	</Control>
 	<Rectangle>
 		<Id>1741771180123</Id>
-		<Name><![CDATA[rect_yearlyViewBlocker]]></Name>
-		<X>340</X>
-		<Y>60</Y>
+		<Name><![CDATA[rect_yearlyViewClickingBlocker]]></Name>
+		<X>324</X>
+		<Y>-90</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
@@ -1810,10 +1921,68 @@
 		<ShowLabel>false</ShowLabel>
 		<Lock>true</Lock>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>325</XCode>
-		<YCode>10</YCode>
-		<VisibleCode>radio_energyType.getValue() == 2;</VisibleCode>
-		<OnClickCode>int clickBlocker = 0;</OnClickCode>
+		<YCode>2</YCode>
+		<VisibleCode>radio_energyType.getValue() == 2 || uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE;</VisibleCode>
+		<OnClickCode>;</OnClickCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0</LineWidth>
+		<LineColor/>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<Width>110</Width>
+		<Height>40</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor>-657931</FillColor>
+		<FillMaterial>null</FillMaterial>
+	</Rectangle>
+	<Rectangle>
+		<Id>1741771467933</Id>
+		<Name><![CDATA[rect_yearlyViewHoverBlocker]]></Name>
+		<X>323</X>
+		<Y>-95</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<Lock>true</Lock>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<YCode>1</YCode>
+		<VisibleCode>radio_energyType.getValue() == 2 || uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE;</VisibleCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0</LineWidth>
+		<LineColor/>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<Width>112</Width>
+		<Height>42</Height>
+		<Rotation>0.0</Rotation>
+		<FillColor>-657931</FillColor>
+		<FillMaterial>null</FillMaterial>
+	</Rectangle>
+	<Rectangle>
+		<Id>1741790115109</Id>
+		<Name><![CDATA[rect_netBalanceViewClickingBlocker]]></Name>
+		<X>300</X>
+		<Y>-60</Y>
+		<Label>
+			<X>10</X>
+			<Y>10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<Lock>true</Lock>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<YCode>33</YCode>
+		<VisibleCode>radio_period.getValue() == 3;</VisibleCode>
+		<OnClickCode>;</OnClickCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<ZHeight>10</ZHeight>
@@ -1822,77 +1991,16 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>100</Width>
-		<Height>30</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
-	<Rectangle>
-		<Id>1741771467933</Id>
-		<Name><![CDATA[rect_yearlyViewBlocker1]]></Name>
-		<X>340</X>
-		<Y>60</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>320</XCode>
-		<YCode>5</YCode>
-		<VisibleCode>radio_energyType.getValue() == 2;</VisibleCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>0</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>110</Width>
-		<Height>40</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
-	<Rectangle>
-		<Id>1741790115109</Id>
-		<Name><![CDATA[rect_yearlyViewBlocker2]]></Name>
-		<X>360</X>
-		<Y>70</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>300</XCode>
-		<YCode>40</YCode>
-		<VisibleCode>radio_period.getValue() == 3;</VisibleCode>
-		<OnClickCode>int clickBlocker = 0;</OnClickCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>0</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>87</Width>
-		<Height>30</Height>
+		<Height>45</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
 		<FillMaterial>null</FillMaterial>
 	</Rectangle>
 	<Rectangle>
 		<Id>1741790548327</Id>
-		<Name><![CDATA[rect_yearlyViewBlocker3]]></Name>
-		<X>350</X>
-		<Y>60</Y>
+		<Name><![CDATA[rect_netBalanceViewHoverBlocker]]></Name>
+		<X>299</X>
+		<Y>-65</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
@@ -1902,8 +2010,7 @@
 		<ShowLabel>false</ShowLabel>
 		<Lock>true</Lock>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>295</XCode>
-		<YCode>35</YCode>
+		<YCode>32</YCode>
 		<VisibleCode>radio_period.getValue() == 3;</VisibleCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
@@ -1912,8 +2019,8 @@
 		<LineColor/>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>110</Width>
-		<Height>40</Height>
+		<Width>102</Width>
+		<Height>47</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
 		<FillMaterial>null</FillMaterial>

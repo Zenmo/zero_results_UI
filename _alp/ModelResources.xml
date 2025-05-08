@@ -56,12 +56,12 @@
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
-		<Path>battery.png</Path>
+		<Path>arrow.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
-		<Path>arrow.png</Path>
+		<Path>emptyBattery.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>

@@ -363,26 +363,60 @@ else{
 }
 
 
-// Growth
+/**
+* Growth KPIs
+* These KPIs are based on the day with the highest average delivery
+* We only show these KPIs if the (delivery) connection capacity is known
+* If there is room to grow, i.e. the highest average delivery is still below the capacity we also show what flex (a battery) could add
+* We do not show exact percentages above 1000%, i.e. 10x growth.
+*/
 if (dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown && dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW > 0) {
 	Pair<Double, Double> pair = dataObject.getRapidRunData().getFlexPotential();
-	if (pair.getFirst() < 1) {
-		traceln("current highest avg daily use already above connection limit");
-	}
-	t_growthPercentage.setText(round((pair.getFirst() - 1 ) * 100) + " %") ;
-	if (pair.getSecond() < 1000) {
-		t_batterySize.setText( roundToDecimal(pair.getSecond(), 1) + " kWh" );
-	}
-	else if (pair.getSecond() < 1_000_000) {
-		t_batterySize.setText( roundToDecimal(pair.getSecond() / 1000, 1) + " MWh" );	
+	double deliveryPeak_fr = maxDelivery_kW / dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
+	int growthWithoutFlex_pct = roundToInt((100 / deliveryPeak_fr) - 100);
+	if (pair.getFirst() < 1) { 
+		// The current usage is already above the capacity already, do not show flex option
+		gr_flexGrowthPotential.setVisible(false);
+		gr_growthPotential.setVisible(true);
+		if (growthWithoutFlex_pct < 1000) {
+			t_growthPercentage.setText( growthWithoutFlex_pct + " %" );
+		}
+		else {
+			t_growthPercentage.setText( " >1000%" );		
+		}
 	}
 	else {
-		t_batterySize.setText( roundToDecimal(pair.getSecond() / 1_000_000, 1) + " GWh" );
+		// Also show flex option
+		gr_growthPotential.setVisible(false);
+		gr_flexGrowthPotential.setVisible(true);
+		if (growthWithoutFlex_pct < 1000) {
+			t_flexGrowthWithoutBatteryPercentage.setText( growthWithoutFlex_pct + " %" );
+		}
+		else {
+			t_flexGrowthWithoutBatteryPercentage.setText( " >1000%" );		
+		}
+		if (pair.getSecond() < 1000) {
+			t_batterySize.setText( roundToDecimal(pair.getSecond(), 1) + " kWh" );
+		}
+		else if (pair.getSecond() < 1_000_000) {
+			t_batterySize.setText( roundToDecimal(pair.getSecond() / 1000, 1) + " MWh" );	
+		}
+		else {
+			t_batterySize.setText( roundToDecimal(pair.getSecond() / 1_000_000, 1) + " GWh" );
+		}
+		int growthWithFlex_pct = roundToInt((pair.getFirst() - 1 ) * 100);
+		if (growthWithFlex_pct < 1000) {
+			t_flexGrowthWithBatteryPercentage.setText( growthWithFlex_pct + " %" );
+		}
+		else {
+			t_flexGrowthWithBatteryPercentage.setText( " >1000%" );		
+		}
 	}
-	gr_flexPotential.setVisible(true);
 }
 else {
-	gr_flexPotential.setVisible(false);
+	// Delivery Connection Capacity Unkown, do not show these KPIs
+	gr_flexGrowthPotential.setVisible(false);
+	gr_growthPotential.setVisible(false);
 }
 /*ALCODEEND*/}
 
@@ -450,7 +484,8 @@ else {
 	gr_relativeFeedinInfo.setVisible(false);
 }
 
-gr_flexPotential.setVisible(false);
+gr_flexGrowthPotential.setVisible(false);
+//gr_growthPotential.setVisible(false);
 /*ALCODEEND*/}
 
 double f_setYlabels(String power_unit)

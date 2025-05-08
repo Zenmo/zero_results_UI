@@ -472,7 +472,7 @@
 				<Id>1714746143885</Id>
 				<Name><![CDATA[plot_jaar]]></Name>
 				<X>20</X>
-				<Y>20</Y>
+				<Y>-10</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -531,7 +531,7 @@
 				<Id>1714746143882</Id>
 				<Name><![CDATA[t_netLoadDurationCurveTitle]]></Name>
 				<X>240</X>
-				<Y>10</Y>
+				<Y>-20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -606,7 +606,7 @@
 				<Id>1746102751753</Id>
 				<Name><![CDATA[i_netLoadDurationCurve]]></Name>
 				<X>330</X>
-				<Y>10</Y>
+				<Y>-20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1066,12 +1066,12 @@ teruglever capaciteit]]></Text>
 				</Presentation>
 			</Group>
 			<Group>
-				<Id>1746446837781</Id>
-				<Name><![CDATA[gr_flexPotential]]></Name>
-				<X>8</X>
-				<Y>361</Y>
+				<Id>1746692569633</Id>
+				<Name><![CDATA[gr_growthPotential]]></Name>
+				<X>40</X>
+				<Y>360</Y>
 				<Label>
-					<X>10</X>
+					<X>7.953</X>
 					<Y>0</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
@@ -1082,10 +1082,86 @@ teruglever capaciteit]]></Text>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Presentation>
+					<Oval>
+						<Id>1746692569635</Id>
+						<Name><![CDATA[oval_growthPotential]]></Name>
+						<X>38</X>
+						<Y>71</Y>
+						<Label>
+							<X>0</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor/>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<RadiusX>40</RadiusX>
+						<RadiusY>40</RadiusY>
+						<Rotation>0.0</Rotation>
+						<FillColor>-10185235</FillColor>
+						<FillMaterial>null</FillMaterial>
+					</Oval>
+					<Text>
+						<Id>1746692569637</Id>
+						<Name><![CDATA[t_growthDescription]]></Name>
+						<X>37.835</X>
+						<Y>0.683</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[Groeiruimte]]></Text>
+						<Font>
+							<Name><![CDATA[Arial]]></Name>
+							<Size>14</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+					<Text>
+						<Id>1746692569639</Id>
+						<Name><![CDATA[t_growthPercentage]]></Name>
+						<X>40</X>
+						<Y>60.638</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-1</Color>
+						<Text><![CDATA[xx %]]></Text>
+						<Font>
+							<Name><![CDATA[Arial]]></Name>
+							<Size>18</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
 					<Image>
-						<Id>1746446837783</Id>
-						<Name><![CDATA[batteryImage]]></Name>
-						<X>0</X>
+						<Id>1746692569641</Id>
+						<Name><![CDATA[i_negativeGrowth]]></Name>
+						<X>83</X>
 						<Y>0</Y>
 						<Label>
 							<X>0</X>
@@ -1095,24 +1171,44 @@ teruglever capaciteit]]></Text>
 						<PresentationFlag>true</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<OnClickCode>uI_Results.f_setInfoText(i_negativeGrowth, uI_Results.v_infoText.negativeGrowthPotential, i_negativeGrowth.getX() + gr_growthPotential.getX() + gr_year.getX(), i_negativeGrowth.getY() + gr_growthPotential.getY() + gr_year.getY());</OnClickCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
-						<Width>116.666</Width>
-						<Height>100</Height>
+						<Width>20</Width>
+						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>battery.png</ClassName>
+								<ClassName>icon_i.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>
 					</Image>
+				</Presentation>
+			</Group>
+			<Group>
+				<Id>1746446837781</Id>
+				<Name><![CDATA[gr_flexGrowthPotential]]></Name>
+				<X>15</X>
+				<Y>290</Y>
+				<Label>
+					<X>8.031</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Presentation>
 					<Text>
 						<Id>1746446837785</Id>
 						<Name><![CDATA[t_batterySize]]></Name>
-						<X>55</X>
-						<Y>0</Y>
+						<X>47.171</X>
+						<Y>165</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1135,9 +1231,9 @@ teruglever capaciteit]]></Text>
 					</Text>
 					<Image>
 						<Id>1746446837787</Id>
-						<Name><![CDATA[arrowImage]]></Name>
-						<X>90</X>
-						<Y>70</Y>
+						<Name><![CDATA[arrowImage2]]></Name>
+						<X>77.28</X>
+						<Y>191.749</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1148,8 +1244,8 @@ teruglever capaciteit]]></Text>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
-						<Width>65.465</Width>
-						<Height>68.658</Height>
+						<Width>53.073</Width>
+						<Height>55.14</Height>
 						<Rotation>90.0</Rotation>
 						<ImageFiles>
 							<ImageResourceReference>
@@ -1161,9 +1257,9 @@ teruglever capaciteit]]></Text>
 					</Image>
 					<Oval>
 						<Id>1746446837789</Id>
-						<Name><![CDATA[ovalGrowthPotential]]></Name>
-						<X>55</X>
-						<Y>200</Y>
+						<Name><![CDATA[oval_flexGrowthWithBatteryPotential]]></Name>
+						<X>49.171</X>
+						<Y>292.14</Y>
 						<Label>
 							<X>0</X>
 							<Y>0</Y>
@@ -1179,7 +1275,7 @@ teruglever capaciteit]]></Text>
 						<LineColor/>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<RadiusX>41.25</RadiusX>
+						<RadiusX>35</RadiusX>
 						<RadiusY>40</RadiusY>
 						<Rotation>0.0</Rotation>
 						<FillColor>-10185235</FillColor>
@@ -1187,9 +1283,9 @@ teruglever capaciteit]]></Text>
 					</Oval>
 					<Text>
 						<Id>1746446837791</Id>
-						<Name><![CDATA[t_growthDescription]]></Name>
-						<X>55</X>
-						<Y>140</Y>
+						<Name><![CDATA[t_flexGrowthWithBatteryDescription]]></Name>
+						<X>49.171</X>
+						<Y>238.498</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1212,9 +1308,9 @@ teruglever capaciteit]]></Text>
 					</Text>
 					<Text>
 						<Id>1746446837793</Id>
-						<Name><![CDATA[t_growthPercentage]]></Name>
-						<X>55</X>
-						<Y>190</Y>
+						<Name><![CDATA[t_flexGrowthWithBatteryPercentage]]></Name>
+						<X>49</X>
+						<Y>284</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1238,8 +1334,8 @@ teruglever capaciteit]]></Text>
 					<Image>
 						<Id>1746449726604</Id>
 						<Name><![CDATA[i_battery]]></Name>
-						<X>95</X>
-						<Y>0</Y>
+						<X>105</X>
+						<Y>165</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1248,11 +1344,11 @@ teruglever capaciteit]]></Text>
 						<PresentationFlag>true</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<OnClickCode>uI_Results.f_setInfoText(i_battery, uI_Results.v_infoText.batterySize, i_battery.getX() + gr_flexPotential.getX() + gr_year.getX(), i_battery.getY() + gr_flexPotential.getY() + gr_year.getY());</OnClickCode>
+						<OnClickCode>uI_Results.f_setInfoText(i_battery, uI_Results.v_infoText.batterySize, i_battery.getX() + gr_flexGrowthPotential.getX() + gr_year.getX(), i_battery.getY() + gr_flexGrowthPotential.getY() + gr_year.getY());</OnClickCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
-						<Width>20</Width>
-						<Height>20</Height>
+						<Width>16.062</Width>
+						<Height>16.214</Height>
 						<Rotation>0.0</Rotation>
 						<ImageFiles>
 							<ImageResourceReference>
@@ -1264,9 +1360,9 @@ teruglever capaciteit]]></Text>
 					</Image>
 					<Image>
 						<Id>1746449727530</Id>
-						<Name><![CDATA[i_growth]]></Name>
-						<X>100</X>
-						<Y>140</Y>
+						<Name><![CDATA[i_flexGrowthWithBattery]]></Name>
+						<X>95.311</X>
+						<Y>238.498</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1275,16 +1371,171 @@ teruglever capaciteit]]></Text>
 						<PresentationFlag>true</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<OnClickCode>uI_Results.f_setInfoText(i_growth, uI_Results.v_infoText.growthPotential, i_growth.getX() + gr_flexPotential.getX() + gr_year.getX(), i_growth.getY() + gr_flexPotential.getY() + gr_year.getY());</OnClickCode>
+						<OnClickCode>uI_Results.f_setInfoText(i_flexGrowthWithBattery, uI_Results.v_infoText.flexGrowthPotential, i_flexGrowthWithBattery.getX() + gr_flexGrowthPotential.getX() + gr_year.getX(), i_flexGrowthWithBattery.getY() + gr_flexGrowthPotential.getY() + gr_year.getY());</OnClickCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
-						<Width>20</Width>
-						<Height>20</Height>
+						<Width>16.062</Width>
+						<Height>16.214</Height>
 						<Rotation>0.0</Rotation>
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
 								<ClassName>icon_i.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Image>
+						<Id>1746627313204</Id>
+						<Name><![CDATA[arrowImage1]]></Name>
+						<X>78</X>
+						<Y>99</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>54.313</Width>
+						<Height>56.956</Height>
+						<Rotation>90.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>arrow.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Oval>
+						<Id>1746628073471</Id>
+						<Name><![CDATA[oval_flexGrowthWithoutBatteryPotential]]></Name>
+						<X>48.835</X>
+						<Y>68</Y>
+						<Label>
+							<X>0</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor/>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<RadiusX>35</RadiusX>
+						<RadiusY>40</RadiusY>
+						<Rotation>0.0</Rotation>
+						<FillColor>-10185235</FillColor>
+						<FillMaterial>null</FillMaterial>
+					</Oval>
+					<Text>
+						<Id>1746628073474</Id>
+						<Name><![CDATA[t_flexGrowthWithoutBatteryDescription]]></Name>
+						<X>50</X>
+						<Y>16</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[Groeiruimte]]></Text>
+						<Font>
+							<Name><![CDATA[Arial]]></Name>
+							<Size>14</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+					<Text>
+						<Id>1746628073477</Id>
+						<Name><![CDATA[t_flexGrowthWithoutBatteryPercentage]]></Name>
+						<X>48</X>
+						<Y>59</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-1</Color>
+						<Text><![CDATA[xx %]]></Text>
+						<Font>
+							<Name><![CDATA[Arial]]></Name>
+							<Size>18</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+					<Image>
+						<Id>1746628073480</Id>
+						<Name><![CDATA[i_flexGrowthWithoutBattery]]></Name>
+						<X>95</X>
+						<Y>16</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<OnClickCode>uI_Results.f_setInfoText(i_flexGrowthWithoutBattery, uI_Results.v_infoText.positiveGrowthPotential, i_flexGrowthWithoutBattery.getX() + gr_flexGrowthPotential.getX() + gr_year.getX(), i_flexGrowthWithoutBattery.getY() + gr_flexGrowthPotential.getY() + gr_year.getY());</OnClickCode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>15.906</Width>
+						<Height>16.12</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>icon_i.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Image>
+						<Id>1746692565901</Id>
+						<Name><![CDATA[batteryImage]]></Name>
+						<X>-15</X>
+						<Y>110</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>132.813</Width>
+						<Height>125</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>emptyBattery.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>
