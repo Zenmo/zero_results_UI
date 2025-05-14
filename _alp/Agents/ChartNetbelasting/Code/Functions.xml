@@ -3,46 +3,6 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1714746143909</Id>
-		<Name><![CDATA[f_setBelastingPlots]]></Name>
-		<X>50</X>
-		<Y>770</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1714746143911</Id>
-		<Name><![CDATA[f_setNetAverageLoad]]></Name>
-		<X>60</X>
-		<Y>890</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[dataObject]]></Name>
-			<Type><![CDATA[I_EnergyData]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[loadDurationCurves]]></Name>
-			<Type><![CDATA[J_LoadDurationCurves]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
 		<Id>1714922345475</Id>
 		<Name><![CDATA[f_resetPlots]]></Name>
 		<X>60</X>
@@ -61,8 +21,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1714923776978</Id>
 		<Name><![CDATA[f_addDataToPlots]]></Name>
-		<X>60</X>
-		<Y>810</Y>
+		<X>80</X>
+		<Y>830</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -85,8 +45,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1740584474407</Id>
 		<Name><![CDATA[f_addConnectionLimits]]></Name>
-		<X>80</X>
-		<Y>830</Y>
+		<X>100</X>
+		<Y>850</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -108,9 +68,9 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1741699130819</Id>
-		<Name><![CDATA[f_setBelastingPlotsGN]]></Name>
-		<X>360</X>
-		<Y>790</Y>
+		<Name><![CDATA[f_setLoadPlotsGN]]></Name>
+		<X>280</X>
+		<Y>810</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -118,26 +78,6 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1741699130821</Id>
-		<Name><![CDATA[f_setNetAverageLoadGN]]></Name>
-		<X>370</X>
-		<Y>890</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[GN]]></Name>
-			<Type><![CDATA[GridNode]]></Type>
-		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
@@ -145,8 +85,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1741699130825</Id>
 		<Name><![CDATA[f_addDataToPlotsGN]]></Name>
-		<X>370</X>
-		<Y>810</Y>
+		<X>300</X>
+		<Y>830</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -165,8 +105,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1741699130827</Id>
 		<Name><![CDATA[f_addTrafoLimitsGN]]></Name>
-		<X>390</X>
-		<Y>830</Y>
+		<X>320</X>
+		<Y>850</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -188,8 +128,8 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>String</ReturnType>
 		<Id>1743519606875</Id>
-		<Name><![CDATA[f_setMaxPeakValues]]></Name>
-		<X>60</X>
+		<Name><![CDATA[f_setKPIValues]]></Name>
+		<X>80</X>
 		<Y>870</Y>
 		<Label>
 			<X>10</X>
@@ -212,8 +152,8 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1743519634438</Id>
-		<Name><![CDATA[f_setMaxPeakValuesGN]]></Name>
-		<X>370</X>
+		<Name><![CDATA[f_setKPIValuesGN]]></Name>
+		<X>300</X>
 		<Y>870</Y>
 		<Label>
 			<X>10</X>
@@ -232,9 +172,9 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1743761224093</Id>
-		<Name><![CDATA[f_setYlabels_loadDurationCurve]]></Name>
-		<X>50</X>
-		<Y>1000</Y>
+		<Name><![CDATA[f_setYlabels]]></Name>
+		<X>60</X>
+		<Y>900</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -246,6 +186,38 @@
 			<Name><![CDATA[power_unit]]></Name>
 			<Type><![CDATA[String]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1746451303236</Id>
+		<Name><![CDATA[f_setCharts]]></Name>
+		<X>30</X>
+		<Y>770</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1746451351928</Id>
+		<Name><![CDATA[f_setLoadPlots]]></Name>
+		<X>60</X>
+		<Y>810</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

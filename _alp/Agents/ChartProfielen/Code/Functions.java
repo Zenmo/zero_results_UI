@@ -27,7 +27,7 @@ for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 
 double f_addElectricityFlows_Year(I_EnergyData dataObject)
 {/*ALCODESTART::1714746057324*/
-group_year.setVisible(true);
+gr_year.setVisible(true);
 
 double startTime_h = 0;
 
@@ -107,7 +107,7 @@ for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 
 double f_addElectricityFlows_Live(I_EnergyData dataObject)
 {/*ALCODESTART::1714746057328*/
-group_week.setVisible(true);
+gr_week.setVisible(true);
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -186,7 +186,7 @@ for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 
 double f_addElectricityFlows_SummerWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897296536*/
-group_week.setVisible(true);
+gr_week.setVisible(true);
 
 double startTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
 if (startTime_h<0) {
@@ -243,20 +243,20 @@ else{
 
 AreaCollection f_resetCharts()
 {/*ALCODESTART::1714897512553*/
-group_week.setVisible(false);
-group_year.setVisible(false);
-group_day.setVisible(false);
-group_trafo_week.setVisible(false);
-group_trafo_year.setVisible(false);
-group_trafo_day.setVisible(false);
-group_netload_week.setVisible(false);
-group_netload_year.setVisible(false);
-group_netload_day.setVisible(false);
+gr_week.setVisible(false);
+gr_year.setVisible(false);
+gr_day.setVisible(false);
+gr_trafoWeek.setVisible(false);
+//gr_trafoYear.setVisible(false);
+gr_trafoDay.setVisible(false);
+gr_netLoadWeek.setVisible(false);
+//gr_netLoadYear.setVisible(false);
+gr_netLoadDay.setVisible(false);
 plot_trafo_week.removeAll();
-plot_trafo_year.removeAll();
+//plot_trafo_year.removeAll();
 plot_trafo_day.removeAll();
 plot_netload_week.removeAll();
-plot_netload_year.removeAll();
+//plot_netload_year.removeAll();
 plot_netload_day.removeAll();
 energyDemandChart.removeAll();
 energySupplyChart.removeAll();
@@ -298,7 +298,7 @@ for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 
 double f_addElectricityFlows_WinterWeek(I_EnergyData dataObject)
 {/*ALCODESTART::1714897923570*/
-group_week.setVisible(true);
+gr_week.setVisible(true);
 
 double startTime_h = uI_Results.energyModel.p_startOfWinterWeek_h - uI_Results.energyModel.p_runStartTime_h;
 if (startTime_h<0) {
@@ -406,15 +406,18 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 		
 		case 3: // Year
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-				f_addElectricityFlowsTrafo_Year(uI_Results.v_gridNode);
+				//f_addElectricityFlowsTrafo_Year(uI_Results.v_gridNode);
+				throw new RuntimeException("The Year Graph does not exist for GridNodes.");				
 			}
 			else {
 				//f_addElectricityNetLoad_Year(dataObject);
+				throw new RuntimeException("The Net Balance Year Graph does not exist.");				
 			}
-			break;
+			//break;
 			
 		default:
-			break;
+			throw new RuntimeException("Unrecognized option selected in Period Radio Button for Line Plots (Net Load).");
+			//break;
 	}
 }
 else { // Stack Chart
@@ -471,7 +474,9 @@ else { // Stack Chart
 			
 		case 3: // Year
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-				f_addElectricityFlowsTrafo_Year(uI_Results.v_gridNode);
+				// This graph does not exist, defaulting back to the live plot
+				radio_period.setValue(0);
+				f_setCharts();
 			} else {
 				f_addElectricityFlows_Year(dataObject);
 				if( radio_energyType.getValue() == 1){
@@ -481,7 +486,8 @@ else { // Stack Chart
 			break;
 		
 		default:
-			break;
+			throw new RuntimeException("Unrecognized option selected in Period Radio Button for Stack Charts.");	
+			//break;
 	}
 }
 /*ALCODEEND*/}
@@ -500,7 +506,7 @@ if(GN.p_realCapacityAvailable){
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
 
-group_trafo_week.setVisible(true);
+gr_trafoWeek.setVisible(true);
 plot_trafo_week.addDataSet(GN.data_liveCapacityDemand_kW, deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(GN.data_liveCapacitySupply_kW, feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(GN.data_liveLoad_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
@@ -526,7 +532,7 @@ if(GN.p_realCapacityAvailable){
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
 
-group_trafo_year.setVisible(true);
+gr_trafoYear.setVisible(true);
 plot_trafo_year.addDataSet(uI_Results.f_createFlatDataset(0, 8760, GN.p_capacity_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_year.addDataSet(uI_Results.f_createFlatDataset(0, 8760, -GN.p_capacity_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_year.addDataSet(GN.data_totalLoad_kW, "Netto vermogen afname", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 0.25, Chart.PointStyle.POINT_NONE);
@@ -552,7 +558,7 @@ if(GN.p_realCapacityAvailable){
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
 
-group_trafo_week.setVisible(true);
+gr_trafoWeek.setVisible(true);
 
 double startTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
 if (startTime_h<0) {
@@ -585,7 +591,7 @@ if(GN.p_realCapacityAvailable){
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
 
-group_trafo_week.setVisible(true);
+gr_trafoWeek.setVisible(true);
 
 double startTime_h = uI_Results.energyModel.p_startOfWinterWeek_h - uI_Results.energyModel.p_runStartTime_h;
 if (startTime_h<0) {
@@ -643,7 +649,7 @@ int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dat
 int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW.getYMin()));
 plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.3, maxValue + maxValue * 0.3);
 */
-group_netload_week.setVisible(true);
+gr_netLoadWeek.setVisible(true);
 /*ALCODEEND*/}
 
 double f_addElectricityNetLoad_Year(I_EnergyData dataObject)
@@ -702,7 +708,7 @@ int maxValue = roundToInt(max(dataObject.v_dataNetLoadSummerWeek_kW.getYMax(), d
 int minValue = roundToInt(min(dataObject.v_dataNetLoadSummerWeek_kW.getYMin(), -dataObject.v_gridCapacityFeedIn_kW));
 plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
 */
-group_netload_week.setVisible(true);
+gr_netLoadWeek.setVisible(true);
 
 /*ALCODEEND*/}
 
@@ -749,7 +755,7 @@ int maxValue = roundToInt(max(dataObject.v_dataNetLoadWinterWeek_kW.getYMax(), d
 int minValue = roundToInt(min(dataObject.v_dataNetLoadWinterWeek_kW.getYMin(), -dataObject.v_gridCapacityFeedIn_kW));
 plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
 */
-group_netload_week.setVisible(true);
+gr_netLoadWeek.setVisible(true);
 
 /*ALCODEEND*/}
 
@@ -784,7 +790,7 @@ double f_addElectricityFlows_LiveDay(I_EnergyData dataObject)
 //Set speed to slower.
 getExperimentHost().setSpeed(5);
 
-group_day.setVisible(true);
+gr_day.setVisible(true);
 
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
@@ -838,7 +844,7 @@ else{
 
 double f_addElectricityFlowsTrafo_LiveDay(GridNode GN)
 {/*ALCODESTART::1739804290051*/
-group_trafo_day.setVisible(true);
+gr_trafoDay.setVisible(true);
 
 String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
 String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
@@ -905,6 +911,6 @@ int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dat
 int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricityFeedInCapacityLiveWeek_kW.getYMin()));
 plot_netload_day.setFixedVerticalScale(minValue + minValue * 0.3, maxValue + maxValue * 0.3);
 */
-group_netload_day.setVisible(true);
+gr_netLoadDay.setVisible(true);
 /*ALCODEEND*/}
 

@@ -7,9 +7,9 @@ public ShapeRadioButtonGroup getEnergyTypeRadioButton() {
 }
 
 public ShapeGroup getChartGroupWeek() {
-	return this.group_week;
+	return this.gr_week;
 }
 
 public ShapeGroup getChartGroupYear() {
-	return this.group_year;
+	return this.gr_year;
 }

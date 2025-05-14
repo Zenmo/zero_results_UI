@@ -22,7 +22,7 @@ switch (v_selectedChartType) {
 		break;
 	case BELASTING:
 		gr_chartNetbelasting_presentation.setVisible(true);
-		chartNetbelasting.f_setBelastingPlots();
+		chartNetbelasting.f_setCharts();
 		break;
 	case SANKEY:
 		gr_chartSankey_presentation.setVisible(true);
@@ -143,7 +143,7 @@ double f_setAllCharts()
 //Function to set all charts, without changing visibilities
 chartProfielen.f_setCharts();
 chartBalans.f_setCharts();
-chartNetbelasting.f_setBelastingPlots();
+chartNetbelasting.f_setCharts();
 chartSankey.f_setSankey();
 chartGespreksleidraadBedrijven.f_setGespreksleidraadBedrijvenCharts();
 

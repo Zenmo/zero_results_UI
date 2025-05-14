@@ -217,6 +217,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1715169641896</Id>
 		<Name><![CDATA[f_addElectricityFlowsTrafo_Year]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>480</X>
 		<Y>1220</Y>
 		<Label>
