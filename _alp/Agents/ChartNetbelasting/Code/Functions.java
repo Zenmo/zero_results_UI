@@ -485,7 +485,7 @@ else {
 }
 
 gr_flexGrowthPotential.setVisible(false);
-//gr_growthPotential.setVisible(false);
+gr_growthPotential.setVisible(false);
 /*ALCODEEND*/}
 
 double f_setYlabels(String power_unit)
