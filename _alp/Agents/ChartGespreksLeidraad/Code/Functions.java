@@ -309,13 +309,13 @@ sc_transportDemandStack.setFixedScale(chartScale_MWh/1000);
 
 //Full load hours Wind
 double totalFullLoadHoursWind_hr = 0;
-for (double value : uI_Results.energyModel.tf_p_wind_e_normalized.getValues()) {
+for (double value : uI_Results.energyModel.pp_windOnshoreProduction.getAllValues()) {
     totalFullLoadHoursWind_hr += value;
 }
 
 //Full load hours Solar
 double totalFullLoadHoursSolar_hr = 0;
-for (double value : uI_Results.energyModel.tf_p_solar_e_normalized.getValues()) {
+for (double value : uI_Results.energyModel.pp_solarPVproduction_35DegSouth.getAllValues()) {
     totalFullLoadHoursSolar_hr += value;
 }
 
