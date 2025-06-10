@@ -2102,7 +2102,7 @@ f_showCorrectChart();]]></ActionCode>
 						<Orientation>VERTICAL</Orientation>
 						<Button><![CDATA[Profiles]]></Button>
 						<Button><![CDATA[Cons. vs prod. diagram]]></Button>
-						<Button><![CDATA[Net load]]></Button>
+						<Button><![CDATA[Grid load]]></Button>
 						<Button><![CDATA[Energy flows]]></Button>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
@@ -6295,7 +6295,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1726224122123</Id>
 					<Name><![CDATA[v_dataElectricityForCookingDemandLiveWeek_kW]]></Name>
-					<X>-270</X><Y>60</Y>
+					<X>-310</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6307,7 +6307,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1739105667826</Id>
 					<Name><![CDATA[v_dataElectricityForCookingDemandYear_kW]]></Name>
-					<X>-270</X><Y>80</Y>
+					<X>-310</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6319,7 +6319,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1739105681145</Id>
 					<Name><![CDATA[v_dataElectricityForCookingDemandWinter_kW]]></Name>
-					<X>-270</X><Y>100</Y>
+					<X>-310</X><Y>100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6331,7 +6331,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1739105692506</Id>
 					<Name><![CDATA[v_dataElectricityForCookingDemandSummer_kW]]></Name>
-					<X>-270</X><Y>120</Y>
+					<X>-310</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6355,7 +6355,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1746996454298</Id>
 					<Name><![CDATA[v_connectedHouses]]></Name>
-					<X>-270</X><Y>170</Y>
+					<X>-310</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6367,7 +6367,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1746996464204</Id>
 					<Name><![CDATA[v_connectedUtilities]]></Name>
-					<X>-270</X><Y>190</Y>
+					<X>-310</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6379,7 +6379,7 @@ f_showCorrectChart();]]></ActionCode>
 				<Variable Class="PlainVariable">
 					<Id>1746996470945</Id>
 					<Name><![CDATA[v_connectedChargePoints]]></Name>
-					<X>-270</X><Y>210</Y>
+					<X>-310</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
