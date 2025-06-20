@@ -487,7 +487,7 @@ if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
 	annualSelfConsumedElectricityIndividual_MWh = ((EnergyCoop)data.getRapidRunData().parentAgent).v_cumulativeIndividualSelfconsumptionElectricity_MWh;
 }
 else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
-	annualSelfConsumedElectricityIndividual_MWh = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
+	annualSelfConsumedElectricityIndividual_MWh = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
 }
 
 				
