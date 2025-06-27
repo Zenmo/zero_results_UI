@@ -1,66 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ModelResources>
 	<Resource>
+		<Id>1704197349999</Id>
 		<Path>jfreesvg-3.4.3.jar</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349998</Id>
 		<Path>jfreechart-1.5.4.jar</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349997</Id>
 		<Path>noun-electricity-3408805.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349996</Id>
 		<Path>noun-fire-2429630.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349995</Id>
 		<Path>icon_arrow_up_red.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349994</Id>
 		<Path>icon_arrow_down_green.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349993</Id>
 		<Path>noun-fuel-removebg-preview.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349992</Id>
 		<Path>icon_arrow_down_red.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349991</Id>
 		<Path>icon_arrow_up_green.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349990</Id>
 		<Path>noun-windmill.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349989</Id>
 		<Path>icon_i.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349988</Id>
 		<Path>arrow.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
+		<Id>1704197349987</Id>
 		<Path>emptyBattery.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>

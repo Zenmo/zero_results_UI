@@ -155,7 +155,7 @@
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<BasicProperties Width="180" Height="140">
 							<EmbeddedIcon>false</EmbeddedIcon>
-							<TextColor/>
+							<TextColor>-16777216</TextColor>
 							<XCode>-60</XCode>
 							<YCode>-70</YCode>
 							<Enabled>false</Enabled>
@@ -212,7 +212,7 @@ f_showCorrectChart();</ActionCode>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<BasicProperties Width="150" Height="100">
 							<EmbeddedIcon>false</EmbeddedIcon>
-							<TextColor/>
+							<TextColor>-16777216</TextColor>
 							<Enabled>false</Enabled>
 							<ActionCode>//Set correct chart
 switch(rb_DEFAULT.getValue()){
@@ -263,7 +263,7 @@ f_showCorrectChart();</ActionCode>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<BasicProperties Width="210" Height="130">
 							<EmbeddedIcon>false</EmbeddedIcon>
-							<TextColor/>
+							<TextColor>-16777216</TextColor>
 							<XCode>-80</XCode>
 							<YCode>-70</YCode>
 							<Enabled>false</Enabled>
@@ -320,7 +320,7 @@ f_showCorrectChart();</ActionCode>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<BasicProperties Width="150" Height="120">
 							<EmbeddedIcon>false</EmbeddedIcon>
-							<TextColor/>
+							<TextColor>-16777216</TextColor>
 							<XCode>-60</XCode>
 							<YCode>-70</YCode>
 							<Enabled>false</Enabled>
@@ -377,7 +377,7 @@ f_showCorrectChart();</ActionCode>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<BasicProperties Width="150" Height="140">
 							<EmbeddedIcon>false</EmbeddedIcon>
-							<TextColor/>
+							<TextColor>-16777216</TextColor>
 							<XCode>-60</XCode>
 							<YCode>-88</YCode>
 							<Enabled>false</Enabled>
@@ -1195,7 +1195,7 @@ f_showCorrectChart();</ActionCode>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<BasicProperties Width="190" Height="30">
 			<EmbeddedIcon>false</EmbeddedIcon>
-			<TextColor/>
+			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
 			<ActionCode>if(b_isCompanyUIResultsUI){
 	f_setAllCharts();
@@ -1456,7 +1456,7 @@ else{
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<BasicProperties Width="210" Height="30">
 			<EmbeddedIcon>false</EmbeddedIcon>
-			<TextColor/>
+			<TextColor>-16777216</TextColor>
 			<XCode>5</XCode>
 			<YCode>-50</YCode>
 			<VisibleCode>v_selectedObjectScope == OL_ResultScope.ENERGYCOOP &amp;&amp; b_enableGroupContractMode</VisibleCode>

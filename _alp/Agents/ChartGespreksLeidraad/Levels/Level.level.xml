@@ -467,16 +467,19 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1700640000000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731294</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1700640000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>142.133</Width>
 				<Height>225.007</Height>
@@ -523,16 +526,19 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1700640000000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731296</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1700640000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>140</Width>
 				<Height>224</Height>
@@ -1151,16 +1157,19 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1706083200000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731320</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706083200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>190</Height>
@@ -1358,16 +1367,19 @@ en vervoer]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1706083200000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731328</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706083200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>190</Height>
@@ -1414,16 +1426,19 @@ en vervoer]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1706083200000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731330</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706083200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>210</Height>
@@ -1470,16 +1485,19 @@ en vervoer]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1706083200000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731332</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706083200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>210</Height>
@@ -1526,16 +1544,19 @@ en vervoer]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1706083200000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731334</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706083200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>210</Height>
@@ -2403,16 +2424,19 @@ lokaal zelf gebruiken?]]></Text>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<AutoUpdate>false</AutoUpdate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1700640000000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</RecurrenceCode>
+						<RecurrenceProperties>
+							<Id>1751010731368</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1700640000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Width>142.133</Width>
 						<Height>195.007</Height>
@@ -2459,16 +2483,19 @@ lokaal zelf gebruiken?]]></Text>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<AutoUpdate>false</AutoUpdate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1700640000000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</RecurrenceCode>
+						<RecurrenceProperties>
+							<Id>1751010731370</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1700640000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Width>140</Width>
 						<Height>194</Height>
@@ -2821,16 +2848,19 @@ lokaal zelf opwekken?]]></Text>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<AutoUpdate>false</AutoUpdate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1700640000000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</RecurrenceCode>
+						<RecurrenceProperties>
+							<Id>1751010731384</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1700640000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Width>142.133</Width>
 						<Height>195.007</Height>
@@ -2877,16 +2907,19 @@ lokaal zelf opwekken?]]></Text>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<AutoUpdate>false</AutoUpdate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1700640000000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</RecurrenceCode>
+						<RecurrenceProperties>
+							<Id>1751010731386</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1700640000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Width>140</Width>
 						<Height>194</Height>
@@ -3197,7 +3230,7 @@ vraag per buurt]]></Text>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<BasicProperties Width="370" Height="60">
 					<EmbeddedIcon>false</EmbeddedIcon>
-					<TextColor/>
+					<TextColor>-16777216</TextColor>
 					<Enabled>true</Enabled>
 					<ActionCode>if(rb_gespreksleidraad3.getValue() == 0){
 	gr_gebruikEigenOpwek.setVisible(false);
@@ -3334,16 +3367,19 @@ seizoenen balanceren?]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1641542400000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731403</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1641542400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>460</Width>
 				<Height>210</Height>
@@ -3443,7 +3479,7 @@ seizoenen balanceren?]]></Text>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<BasicProperties Width="150" Height="50">
 					<EmbeddedIcon>false</EmbeddedIcon>
-					<TextColor/>
+					<TextColor>-16777216</TextColor>
 					<Enabled>true</Enabled>
 					<ActionCode>f_setChartsGespreksleidraad5(uI_Results.f_getSelectedObjectData());</ActionCode>
 				</BasicProperties>
@@ -3528,16 +3564,19 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>true</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1706083200000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731410</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1706083200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>460</Width>
 				<Height>270</Height>
@@ -4464,7 +4503,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<BasicProperties Width="300" Height="110">
 			<EmbeddedIcon>false</EmbeddedIcon>
-			<TextColor/>
+			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
 			<ActionCode>f_selectGespreksleidraadCharts();</ActionCode>
 		</BasicProperties>
@@ -4592,7 +4631,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<BasicProperties Width="160" Height="40">
 					<EmbeddedIcon>false</EmbeddedIcon>
-					<TextColor/>
+					<TextColor>-16777216</TextColor>
 					<Enabled>true</Enabled>
 					<ActionCode>if (rb_gespreksleidraad4.getValue() == 0){
 	gr_gespreksleidraad4_A.setVisible(true);
@@ -4790,16 +4829,19 @@ beter benutten?]]></Text>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<AutoUpdate>false</AutoUpdate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1699603200000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</RecurrenceCode>
+						<RecurrenceProperties>
+							<Id>1751010731459</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1699603200000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Width>420</Width>
 						<Height>270</Height>
@@ -5272,16 +5314,19 @@ beter benutten?]]></Text>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<AutoUpdate>false</AutoUpdate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1699603200000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</RecurrenceCode>
+						<RecurrenceProperties>
+							<Id>1751010731478</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1699603200000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Width>420</Width>
 						<Height>170.714</Height>
@@ -5356,16 +5401,19 @@ beter benutten?]]></Text>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<AutoUpdate>false</AutoUpdate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1699603200000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</RecurrenceCode>
+						<RecurrenceProperties>
+							<Id>1751010731481</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1699603200000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Width>420</Width>
 						<Height>170.714</Height>
@@ -5465,16 +5513,19 @@ beter benutten?]]></Text>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<AutoUpdate>false</AutoUpdate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1699603200000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits">HOUR</Unit>
-						</RecurrenceCode>
+						<RecurrenceProperties>
+							<Id>1751010731485</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1699603200000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Width>420</Width>
 						<Height>230</Height>
@@ -6523,16 +6574,19 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1700640000000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731525</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1700640000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>160</Width>
 				<Height>340</Height>
@@ -6580,16 +6634,19 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>false</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1700640000000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731527</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1700640000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>160</Width>
 				<Height>340</Height>
@@ -6714,16 +6771,19 @@ vraag]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>true</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1732262400000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731532</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732262400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>240</Height>
@@ -6775,16 +6835,19 @@ vraag]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>true</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1732262400000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731534</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732262400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>240</Height>
@@ -6863,16 +6926,19 @@ vraag]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>true</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1732262400000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731537</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732262400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>200</Height>
@@ -6924,16 +6990,19 @@ vraag]]></Text>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<AutoUpdate>true</AutoUpdate>
-				<OccurrenceAtTime>true</OccurrenceAtTime>
-				<OccurrenceDate>1732262400000</OccurrenceDate>
-				<OccurrenceTime Class="CodeUnitValue">
-					<Code><![CDATA[0]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</OccurrenceTime>
-				<RecurrenceCode Class="CodeUnitValue">
-					<Code><![CDATA[1]]></Code>
-					<Unit Class="TimeUnits">HOUR</Unit>
-				</RecurrenceCode>
+				<RecurrenceProperties>
+					<Id>1751010731539</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732262400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Width>200</Width>
 				<Height>200</Height>
