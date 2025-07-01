@@ -4,6 +4,15 @@ plot_jaar.removeAll();
 plot_week.removeAll();
 plot_dagnacht.removeAll();
 plot_seizoen.removeAll();
+gr_flexGrowthPotential.setVisible(false);
+gr_growthPotential.setVisible(false);
+
+gr_absoluteDeliveryInfo.setPos(175, 300);
+gr_relativeDeliveryInfo.setPos(155, 420);
+gr_absoluteFeedinInfo.setPos(305, 300);
+gr_relativeFeedinInfo.setPos(305, 420);
+
+gr_concurrencyKPI.setVisible(false);
 /*ALCODEEND*/}
 
 double f_addDataToPlots(I_EnergyData dataObject,J_LoadDurationCurves loadDurationCurves)
@@ -376,7 +385,6 @@ if (dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKn
 	int growthWithoutFlex_pct = roundToInt((100 / deliveryPeak_fr) - 100);
 	if (pair.getFirst() < 1) { 
 		// The current usage is already above the capacity already, do not show flex option
-		gr_flexGrowthPotential.setVisible(false);
 		gr_growthPotential.setVisible(true);
 		if (growthWithoutFlex_pct < 1000) {
 			t_growthPercentage.setText( growthWithoutFlex_pct + " %" );
@@ -387,7 +395,6 @@ if (dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKn
 	}
 	else {
 		// Also show flex option
-		gr_growthPotential.setVisible(false);
 		gr_flexGrowthPotential.setVisible(true);
 		if (growthWithoutFlex_pct < 1000) {
 			t_flexGrowthWithoutBatteryPercentage.setText( growthWithoutFlex_pct + " %" );
@@ -415,8 +422,6 @@ if (dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKn
 }
 else {
 	// Delivery Connection Capacity Unkown, do not show these KPIs
-	gr_flexGrowthPotential.setVisible(false);
-	gr_growthPotential.setVisible(false);
 }
 /*ALCODEEND*/}
 
@@ -486,6 +491,10 @@ else {
 
 gr_flexGrowthPotential.setVisible(false);
 gr_growthPotential.setVisible(false);
+
+
+//Concurrency KPI
+f_setGNConcurrencyKPI(GN, maxDelivery_kW);
 /*ALCODEEND*/}
 
 double f_setYlabels(String power_unit)
@@ -520,6 +529,46 @@ I_EnergyData data = uI_Results.f_getSelectedObjectData();
 J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
 f_addDataToPlots(data, loadDurationCurves);
 f_setKPIValues(data, loadDurationCurves);
+
+/*ALCODEEND*/}
+
+double f_setGNConcurrencyKPI(GridNode GN,double maxDelivery_kW)
+{/*ALCODESTART::1751374464755*/
+List<GridConnection> allLowerLevelGridConnections = GN.f_getAllLowerLVLConnectedGridConnections();
+
+int nrOfHouses = 0;
+int nrOfChargers = 0;
+int nrOfRemainingConnections = 0;
+int totalNrOfConnections = 0;
+for(GridConnection connectedGC : allLowerLevelGridConnections){
+	if(connectedGC instanceof GCHouse){
+		nrOfHouses++;
+	}
+	else if(connectedGC instanceof GCPublicCharger){
+		nrOfChargers++;
+	}
+	else{
+		nrOfRemainingConnections++;
+	}
+	totalNrOfConnections++;
+}
+
+
+t_numberOfHouses.setText("Huizen: " + nrOfHouses);
+t_numberOfChargers.setText("Laadpalen: " + nrOfChargers);
+t_numberOfRemainingConnections.setText("Overige connecties: " + nrOfRemainingConnections);
+
+//Calculate concurrency
+double concurrencyValue_kW = roundToDecimal(maxDelivery_kW/totalNrOfConnections,2);
+t_concurrencyValue.setText(concurrencyValue_kW + " kW max per aansluiting");
+
+//Set position and visiblity
+gr_concurrencyKPI.setVisible(true);
+
+gr_absoluteDeliveryInfo.setPos(105, 370);
+gr_relativeDeliveryInfo.setPos(85, 490);
+gr_absoluteFeedinInfo.setPos(235, 370);
+gr_relativeFeedinInfo.setPos(235, 490);
 
 /*ALCODEEND*/}
 
