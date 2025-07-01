@@ -534,7 +534,7 @@ f_setKPIValues(data, loadDurationCurves);
 
 double f_setGNConcurrencyKPI(GridNode GN,double maxDelivery_kW)
 {/*ALCODESTART::1751374464755*/
-List<GridConnection> allLowerLevelGridConnections = GN.f_getAllLowerLVLConnectedGridConnections();
+List<GridConnection> allLowerLevelGridConnections = findAll(GN.f_getAllLowerLVLConnectedGridConnections(), gc -> gc.v_isActive);
 
 int nrOfHouses = 0;
 int nrOfChargers = 0;
