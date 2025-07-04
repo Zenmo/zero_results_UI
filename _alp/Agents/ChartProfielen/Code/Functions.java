@@ -7,7 +7,6 @@ EnumSet<OL_EnergyCarriers> activeConsumptionEnergyCarriers = EnumSet.copyOf(data
 
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
-activeProductionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
 
 for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	if(EC_consumption != OL_EnergyCarriers.HEAT){
@@ -19,9 +18,13 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 }
 
 for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
-	energySupplyChartYear.addDataSet( dataObject.getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(EC_production).getDataSet(startTime_h), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production)); 
+	if(EC_production != OL_EnergyCarriers.HEAT){
+		energySupplyChartYear.addDataSet( dataObject.getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(EC_production).getDataSet(startTime_h), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production)); 
+	}
+	else if(dataObject.getRapidRunData().assetsMetaData.hasPT){
+		energySupplyChartYear.addDataSet( dataObject.getRapidRunData().acc_dailyAveragePTProduction_kW.getDataSet(startTime_h), "PT", uI_Results.cm_productionColors.get(EC_production)); 
+	}
 }
-
 
 /*ALCODEEND*/}
 
@@ -86,8 +89,6 @@ EnumSet<OL_EnergyCarriers> activeProductionEnergyCarriers = EnumSet.copyOf(dataO
 
 activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
-activeProductionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
-
 
 for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	if(EC_consumption != OL_EnergyCarriers.HEAT){
@@ -100,7 +101,12 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 
 
 for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
-	energySupplyChart.addDataSet( dataObject.getLiveData().dsm_liveSupply_kW.get(EC_production), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production));  
+	if(EC_production != OL_EnergyCarriers.HEAT){
+		energySupplyChart.addDataSet( dataObject.getLiveData().dsm_liveSupply_kW.get(EC_production), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production));  
+	}
+	else if(dataObject.getLiveData().assetsMetaData.hasPT){
+		energySupplyChart.addDataSet( dataObject.getLiveData().data_PTGeneration_kW, "PT", uI_Results.cm_productionColors.get(EC_production)); 
+	}
 }
 
 /*ALCODEEND*/}
@@ -180,7 +186,12 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 }
 
 for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
-	energySupplyChart.addDataSet( dataObject.getRapidRunData().am_summerWeekProductionAccumulators_kW.get(EC_production).getDataSet(startTime_h), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production));
+	if(EC_production != OL_EnergyCarriers.HEAT){
+		energySupplyChart.addDataSet( dataObject.getRapidRunData().am_summerWeekProductionAccumulators_kW.get(EC_production).getDataSet(startTime_h), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production));
+	}
+	else if(dataObject.getRapidRunData().assetsMetaData.hasPT){
+		energySupplyChart.addDataSet( dataObject.getRapidRunData().acc_summerWeekPTProduction_kW.getDataSet(startTime_h), "PT", uI_Results.cm_productionColors.get(EC_production)); 
+	}
 }
 /*ALCODEEND*/}
 
@@ -291,9 +302,13 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 }
 
 for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
-	energySupplyChart.addDataSet( dataObject.getRapidRunData().am_winterWeekProductionAccumulators_kW.get(EC_production).getDataSet(startTime_h), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production)); 
+	if(EC_production != OL_EnergyCarriers.HEAT){
+		energySupplyChart.addDataSet( dataObject.getRapidRunData().am_winterWeekProductionAccumulators_kW.get(EC_production).getDataSet(startTime_h), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production)); 
+	}
+	else if(dataObject.getRapidRunData().assetsMetaData.hasPT){
+		energySupplyChart.addDataSet( dataObject.getRapidRunData().acc_winterWeekPTProduction_kW.getDataSet(startTime_h), "PT", uI_Results.cm_productionColors.get(EC_production)); 
+	}
 }
-
 /*ALCODEEND*/}
 
 double f_addElectricityFlows_WinterWeek(I_EnergyData dataObject)
@@ -766,8 +781,6 @@ EnumSet<OL_EnergyCarriers> activeProductionEnergyCarriers = EnumSet.copyOf(dataO
 
 activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
-activeProductionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
-
 
 for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	if(EC_consumption != OL_EnergyCarriers.HEAT){
@@ -780,7 +793,12 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 
 
 for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
-	energySupplyChartDay.addDataSet( dataObject.getLiveData().dsm_liveSupply_kW.get(EC_production), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production));  
+	if(EC_production != OL_EnergyCarriers.HEAT){
+		energySupplyChartDay.addDataSet( dataObject.getLiveData().dsm_liveSupply_kW.get(EC_production), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production));  
+	}
+	else if(dataObject.getLiveData().assetsMetaData.hasPT){
+		energySupplyChartDay.addDataSet( dataObject.getLiveData().data_PTGeneration_kW, "PT", uI_Results.cm_productionColors.get(EC_production));
+	}
 }
 
 /*ALCODEEND*/}
