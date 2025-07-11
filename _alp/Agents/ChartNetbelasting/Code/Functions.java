@@ -536,6 +536,11 @@ double f_setGNConcurrencyKPI(GridNode GN,double maxDelivery_kW)
 {/*ALCODESTART::1751374464755*/
 List<GridConnection> allLowerLevelGridConnections = findAll(GN.f_getAllLowerLVLConnectedGridConnections(), gc -> gc.v_isActive);
 
+if(allLowerLevelGridConnections.size() < 10){
+	//If less than 10 GC connected to GN, KPI is not usefull to show.
+	return;
+}
+
 int nrOfHouses = 0;
 int nrOfChargers = 0;
 int nrOfRemainingConnections = 0;
