@@ -528,7 +528,7 @@ else{
 		selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
-		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface.getLiveData().parentAgent).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.p_batteryOperationMode == OL_BatteryOperationMode.BALANCE_COOP));
+		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface.getLiveData().parentAgent).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.p_batteryAlgorithm instanceof J_BatteryManagementPeakShaving && ((J_BatteryManagementPeakShaving)GC.p_batteryAlgorithm).getTargetType() == OL_ResultScope.ENERGYCOOP));
 		
 		if (memberGCList.size() != 0) {
 			boolean allGCInOneBuilding = false;
