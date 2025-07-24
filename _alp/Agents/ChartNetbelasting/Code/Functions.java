@@ -182,8 +182,9 @@ double divisionAmountForCorrectUnit = 1;
 String power_unit = "kW";
 
 ////Get the peaks
-double maxDelivery_kW = max(0, GN.data_netbelastingDuurkromme_kW.getYMax());
-double maxFeedin_kW = abs(min(0, GN.data_netbelastingDuurkromme_kW.getYMin()));
+J_LoadDurationCurves loadCurves = GN.f_getDuurkrommes();
+double maxDelivery_kW = max(0, loadCurves.ds_loadDurationCurveTotal_kW.getYMax());
+double maxFeedin_kW = abs(min(0, loadCurves.ds_loadDurationCurveTotal_kW.getYMin()));
 double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
 
 ////Put it in a usefull unit type
@@ -206,7 +207,7 @@ else{
 //Adjust y label to selected unit type
 f_setYlabels(power_unit);
 
-DataSet loadDurationCurveTotal = uI_Results.f_createNewDataSetDividedByValue(GN.data_netbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+DataSet loadDurationCurveTotal = uI_Results.f_createNewDataSetDividedByValue(loadCurves.ds_loadDurationCurveTotal_kW, divisionAmountForCorrectUnit);
 double minValue = loadDurationCurveTotal.getYMin();
 double maxValue = loadDurationCurveTotal.getYMax();
 
@@ -220,15 +221,15 @@ double scaleMax = 1 + max(gridCapacityDelivery*1.2, maxValue);
 //Jaar
 plot_jaar.addDataSet(loadDurationCurveTotal,"Belasting jaar");
 plot_jaar.setFixedVerticalScale(scaleMin, scaleMax);
-if (GN.data_netbelastingDuurkrommeVorige_kW != null) {
+if (loadCurves.ds_previousLoadDurationCurveTotal_kW != null) {
 	//plot_jaar.addDataSet(area.v_dataNetbelastingDuurkrommeYearVorige_kW,"Vorige situatie");
 	//plot_jaar.setColor(3,gray);
 }
 
 //summer/winter
-if( GN.data_summerWeekNetbelastingDuurkromme_kW != null){
-	DataSet loadDurationCurveSummer = uI_Results.f_createNewDataSetDividedByValue(GN.data_summerWeekNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
-	DataSet loadDurationCurveWinter = uI_Results.f_createNewDataSetDividedByValue(GN.data_winterWeekNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+if( loadCurves.ds_loadDurationCurveSummer_kW != null){
+	DataSet loadDurationCurveSummer = uI_Results.f_createNewDataSetDividedByValue(loadCurves.ds_loadDurationCurveSummer_kW, divisionAmountForCorrectUnit);
+	DataSet loadDurationCurveWinter = uI_Results.f_createNewDataSetDividedByValue(loadCurves.ds_loadDurationCurveWinter_kW, divisionAmountForCorrectUnit);
 	plot_seizoen.addDataSet(loadDurationCurveSummer,"Belasting zomerweek");
 	plot_seizoen.addDataSet(loadDurationCurveWinter,"Belasting winterweek");
 	plot_seizoen.setColor(0,blue);
@@ -237,9 +238,9 @@ if( GN.data_summerWeekNetbelastingDuurkromme_kW != null){
 }
 
 // Day/night
-if( GN.data_daytimeNetbelastingDuurkromme_kW != null){
-	DataSet loadDurationCurveDaytime = uI_Results.f_createNewDataSetDividedByValue(GN.data_daytimeNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
-	DataSet loadDurationCurveNighttime = uI_Results.f_createNewDataSetDividedByValue(GN.data_nighttimeNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+if( loadCurves.ds_loadDurationCurveDaytime_kW != null){
+	DataSet loadDurationCurveDaytime = uI_Results.f_createNewDataSetDividedByValue(loadCurves.ds_loadDurationCurveDaytime_kW, divisionAmountForCorrectUnit);
+	DataSet loadDurationCurveNighttime = uI_Results.f_createNewDataSetDividedByValue(loadCurves.ds_loadDurationCurveNighttime_kW, divisionAmountForCorrectUnit);
 	plot_dagnacht.addDataSet(loadDurationCurveDaytime,"Belasting overdag");
 	plot_dagnacht.addDataSet(loadDurationCurveNighttime,"Belasting 's nachts");
 	plot_dagnacht.setColor(0,blue);
@@ -248,9 +249,9 @@ if( GN.data_daytimeNetbelastingDuurkromme_kW != null){
 }
 
 // Weekday/weekend
-if( GN.data_weekdayNetbelastingDuurkromme_kW != null){
-	DataSet loadDurationCurveWeekday = uI_Results.f_createNewDataSetDividedByValue(GN.data_weekdayNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
-	DataSet loadDurationCurveWeekend = uI_Results.f_createNewDataSetDividedByValue(GN.data_weekendNetbelastingDuurkromme_kW, divisionAmountForCorrectUnit);
+if( loadCurves.ds_loadDurationCurveWeekday_kW != null){
+	DataSet loadDurationCurveWeekday = uI_Results.f_createNewDataSetDividedByValue(loadCurves.ds_loadDurationCurveWeekday_kW, divisionAmountForCorrectUnit);
+	DataSet loadDurationCurveWeekend = uI_Results.f_createNewDataSetDividedByValue(loadCurves.ds_loadDurationCurveWeekend_kW, divisionAmountForCorrectUnit);
 	plot_week.addDataSet(loadDurationCurveWeekday,"Belasting weekdagen");
 	plot_week.addDataSet(loadDurationCurveWeekend,"Belasting weekenddagen");
 	plot_week.setColor(0,blue);
@@ -428,8 +429,9 @@ else {
 double f_setKPIValuesGN(GridNode GN)
 {/*ALCODESTART::1743519634438*/
 ////Get the peaks
-double maxDelivery_kW = max(0, GN.data_netbelastingDuurkromme_kW.getYMax());
-double maxFeedin_kW = abs(min(0, GN.data_netbelastingDuurkromme_kW.getYMin()));
+J_LoadDurationCurves loadCurves = GN.f_getDuurkrommes();
+double maxDelivery_kW = max(0, loadCurves.ds_loadDurationCurveTotal_kW.getYMax());
+double maxFeedin_kW = abs(min(0, loadCurves.ds_loadDurationCurveTotal_kW.getYMin()));
 double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
 
 
