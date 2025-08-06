@@ -22,4 +22,23 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1754483589677</Id>
+		<Name><![CDATA[v_weekLabel]]></Name>
+		<X>120</X>
+		<Y>1000</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[ShapeText]]></Type>
+		</Properties>
+	</Variable>
 </Variables>

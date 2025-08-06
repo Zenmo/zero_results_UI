@@ -84,7 +84,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1714897296534</Id>
-		<Name><![CDATA[f_addOtherEnergyFlows_SummerWeek]]></Name>
+		<Name><![CDATA[f_addOtherEnergyFlows_Week]]></Name>
 		<X>150</X>
 		<Y>1290</Y>
 		<Label>
@@ -98,13 +98,17 @@
 			<Name><![CDATA[dataObject]]></Name>
 			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
+		<Parameter>
+			<Name><![CDATA[isSummerWeek]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="private" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1714897296536</Id>
-		<Name><![CDATA[f_addElectricityFlows_SummerWeek]]></Name>
+		<Name><![CDATA[f_addElectricityFlows_Week]]></Name>
 		<X>150</X>
 		<Y>1270</Y>
 		<Label>
@@ -117,6 +121,10 @@
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
 			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[isSummerWeek]]></Name>
+			<Type><![CDATA[boolean]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -141,6 +149,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1714897923568</Id>
 		<Name><![CDATA[f_addOtherEnergyFlows_WinterWeek]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>150</X>
 		<Y>1340</Y>
 		<Label>
@@ -161,6 +170,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1714897923570</Id>
 		<Name><![CDATA[f_addElectricityFlows_WinterWeek]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>150</X>
 		<Y>1320</Y>
 		<Label>
@@ -237,7 +247,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1715171161720</Id>
-		<Name><![CDATA[f_addElectricityFlowsTrafo_SummerWeek]]></Name>
+		<Name><![CDATA[f_addElectricityFlowsTrafo_Week]]></Name>
 		<X>480</X>
 		<Y>1270</Y>
 		<Label>
@@ -251,6 +261,10 @@
 			<Name><![CDATA[GN]]></Name>
 			<Type><![CDATA[GridNode]]></Type>
 		</Parameter>
+		<Parameter>
+			<Name><![CDATA[isSummerWeek]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="private" StaticFunction="false">
@@ -258,6 +272,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1715171298729</Id>
 		<Name><![CDATA[f_addElectricityFlowsTrafo_WinterWeek]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>480</X>
 		<Y>1320</Y>
 		<Label>
@@ -318,7 +333,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1736430560716</Id>
-		<Name><![CDATA[f_addElectricityNetLoad_SummerWeek]]></Name>
+		<Name><![CDATA[f_addElectricityNetLoad_Week]]></Name>
 		<X>890</X>
 		<Y>1270</Y>
 		<Label>
@@ -332,6 +347,10 @@
 			<Name><![CDATA[dataObject]]></Name>
 			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
+		<Parameter>
+			<Name><![CDATA[isSummerWeek]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
@@ -339,6 +358,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1736430560718</Id>
 		<Name><![CDATA[f_addElectricityNetLoad_WinterWeek]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>890</X>
 		<Y>1320</Y>
 		<Label>
@@ -431,6 +451,26 @@
 		<Parameter>
 			<Name><![CDATA[dataObject]]></Name>
 			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="private" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>String</ReturnType>
+		<Id>1754485454881</Id>
+		<Name><![CDATA[f_getDateTimeFromHour]]></Name>
+		<X>150</X>
+		<Y>1410</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[peakTime_h]]></Name>
+			<Type><![CDATA[double]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

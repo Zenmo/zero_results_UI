@@ -21,20 +21,20 @@ cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
 // Fill assetFlowColors:
 //cm_assetFlowColors.put(OL_)
 
-
 // Fill assetFlowLabels:
-lm_assetFlowLabels.put(OL_AssetFlowCategories.fixedConsumptionElectric_kW,"Basislast");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.fixedConsumptionElectric_kW,"Elektr. behoefte basis");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.batteriesChargingPower_kW,"Opladen batterijen");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.batteriesDischargingPower_kW,"Ontladen batterijen");
-lm_assetFlowLabels.put(OL_AssetFlowCategories.CHPProductionElectric_kW,"Opwek CHP");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.CHPProductionElectric_kW,"Elektr. Opwek WKK");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.districtHeatDelivery_kW,"Warmte uit warmtenet");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.electricHobConsumption_kW,"Elektrisch koken");
-lm_assetFlowLabels.put(OL_AssetFlowCategories.electrolyserElectricityConsumption_kW,"Electrolysers");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.electrolyserElectricityConsumption_kW,"Elektr. behoefte elektrolysers");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.evChargingPower_kW,"Opladen EVs");
-lm_assetFlowLabels.put(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW,"Warmtepompen");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW,"Elektr. behoefte warmte");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.ptProductionHeat_kW,"warmte zonnecollectoren");
-lm_assetFlowLabels.put(OL_AssetFlowCategories.pvProductionElectric_kW,"Zonneënergie");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.pvProductionElectric_kW,"Opwek zonneënergie");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.V2GPower_kW,"Vehicle to Grid");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.windProductionElectric_kW,"Opwek wind");
 
 cm_assetFlowColors.put(OL_AssetFlowCategories.fixedConsumptionElectric_kW, v_electricityBaseloadDemandColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.batteriesChargingPower_kW, v_electricityForStorageDemandColor);

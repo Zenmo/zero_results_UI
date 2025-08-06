@@ -1,7 +1,7 @@
 double f_addSOC_total(I_EnergyData dataObject)
 {/*ALCODESTART::1714746057324*/
 double startTime_h = 0;
-SOCChart_year.addDataSet(dataObject.getRapidRunData().ts_dailyAverageBatteriesSOC_fr.getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
+SOCChart_year.addDataSet(dataObject.getRapidRunData().getBatteriesSOCAcc_fr().getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
 
 /*ALCODEEND*/}
 

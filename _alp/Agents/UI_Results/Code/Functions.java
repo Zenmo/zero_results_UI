@@ -9,8 +9,6 @@ gr_chartGespreksLeidraad_presentation.setVisible(false);
 gr_chartKPISummary_presentation.setVisible(false);
 gr_chartBatteries_presentation.setVisible(false);
 
-
-
 switch (v_selectedChartType) {
 	case PROFIEL:
 		gr_chartProfielen_presentation.setVisible(true);
@@ -468,6 +466,7 @@ double f_enableNonLivePlotRadioButtons(boolean active)
 {/*ALCODESTART::1739884154258*/
 v_selectedRadioButton.setEnabled(active);
 chartProfielen.radio_period.setEnabled(active);
+//chartProfielen.radio_period_peaks.setEnabled(active);
 chartNetbelasting.radio.setEnabled(active);
 chartBalans.radio_period.setEnabled(active);
 

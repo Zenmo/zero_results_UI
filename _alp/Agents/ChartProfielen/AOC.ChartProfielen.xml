@@ -4,11 +4,23 @@
 	<Name><![CDATA[ChartProfielen]]></Name>
 	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
 	<Import><![CDATA[import com.querydsl.core.group.Group;
-import java.util.EnumSet;]]></Import>
+import java.util.EnumSet;
+import java.text.DecimalFormat;
+
+import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
+	<StartupCode><![CDATA[v_weekLabel = new ShapeText();
+v_weekLabel.setText("Zomerweek");
+v_weekLabel.setFont(new Font("Calibri", 0, 20));
+//gr_week.add(v_weekLabel);
+this.presentation.add(v_weekLabel);
+v_weekLabel.setX(210);
+v_weekLabel.setY(160);]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1714743515622</Id>
