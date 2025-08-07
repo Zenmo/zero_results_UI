@@ -53,8 +53,8 @@
 			<DefaultValueCode>0</DefaultValueCode>
 			<Orientation>HORIZONTAL</Orientation>
 			<Button>Live Simulatie</Button>
-			<Button>Zomer Week</Button>
-			<Button>Winter Week</Button>
+			<Button>Hoogste afname</Button>
+			<Button>Laagste afname</Button>
 			<Button>Jaar Overzicht</Button>
 			<LinkTo>false</LinkTo>
 		</ExtendedProperties>
