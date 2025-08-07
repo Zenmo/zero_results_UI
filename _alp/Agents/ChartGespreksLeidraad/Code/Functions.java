@@ -59,7 +59,12 @@ double importG_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.cont
 double importF_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.DIESEL) : 0; 
 double importH_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HYDROGEN) : 0; 
 double exportE_MWh = data.getRapidRunData().getTotalEnergyExport_MWh();
-double districtHeating_consumption_MWh = data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_MWh();
+double districtHeating_consumption_MWh ;
+if ( data.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.districtHeatDelivery_kW) ) {
+	districtHeating_consumption_MWh = data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getIntegral_MWh();
+} else {
+	districtHeating_consumption_MWh = 0;
+}
 StackChart pl_consumptionChart = pl_consumptionChartGespreksleidraad1; 
 StackChart pl_productionChart = pl_productionChartGespreksleidraad1; 
 ShapeText t_OpwekText = t_opwekTextGespreksleidraad1;
@@ -275,13 +280,17 @@ sc_electricityDemandStack.addDataItem(annualImport_GWh, "Invoer", uI_Results.v_i
 sc_heatDemandStack.removeAll();
 
 DataItem totalEnergyConsumptionForDistrictHeating_GWh = new DataItem();
-totalEnergyConsumptionForDistrictHeating_GWh.setValue(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_MWh()/1000);
-sc_heatDemandStack.addDataItem(totalEnergyConsumptionForDistrictHeating_GWh, "Energie voor warmtenet", v_districtHeatDemandColor);
-
+if(data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW) ) {
+	
+	totalEnergyConsumptionForDistrictHeating_GWh.setValue(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getIntegral_MWh()/1000);
+	totalEnergyConsumptionForDistrictHeating_GWh.getValue();
+	sc_heatDemandStack.addDataItem(totalEnergyConsumptionForDistrictHeating_GWh, "Energie voor warmtenet", v_districtHeatDemandColor);
+} 
 DataItem totalElectricityConsumptionHeatpumps_GWh = new DataItem();
-totalElectricityConsumptionHeatpumps_GWh.setValue(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_MWh()/1000);
-sc_heatDemandStack.addDataItem(totalElectricityConsumptionHeatpumps_GWh, "Elek. voor warmtepompen", v_heatPumpHeatSupplyColor);
-
+if(data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW) ) {	
+	totalElectricityConsumptionHeatpumps_GWh.setValue(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW).getIntegral_MWh()/1000);
+	sc_heatDemandStack.addDataItem(totalElectricityConsumptionHeatpumps_GWh, "Elek. voor warmtepompen", v_heatPumpHeatSupplyColor);
+}
 DataItem totalNaturalGasDemand_GWh = new DataItem();
 totalNaturalGasDemand_GWh.setValue(data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE)/1000);
 sc_heatDemandStack.addDataItem(totalNaturalGasDemand_GWh, "Gas", v_naturalGasSupplyColor);
@@ -294,8 +303,8 @@ sc_transportDemandStack.removeAll();
 //Set scales
 double chartScale_MWh = max(data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + 
 							data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY), 
-							(data.getRapidRunData().acc_dailyAverageDistrictHeatingConsumption_kW.getIntegral_MWh()) + 
-							(data.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getIntegral_MWh()) + 
+							(totalEnergyConsumptionForDistrictHeating_GWh.getValue()) + 
+							(totalElectricityConsumptionHeatpumps_GWh.getValue()) + 
 							data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE));
 							
 sc_electricityDemandStack.setFixedScale(chartScale_MWh/1000);
@@ -323,7 +332,11 @@ for (double value : uI_Results.energyModel.pp_PVProduction35DegSouth_fr.getAllVa
 sc_windSupplyStack.removeAll();
 
 DataItem totalWindProduction_GWh = new DataItem();
-totalWindProduction_GWh.setValue(data.getRapidRunData().acc_dailyAverageWindProduction_kW.getIntegral_MWh()/1000);
+if (data.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.windProductionElectric_kW)) {
+	totalWindProduction_GWh.setValue(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.windProductionElectric_kW).getIntegral_MWh()/1000);
+} else {
+	totalWindProduction_GWh.setValue(0.0);
+}
 sc_windSupplyStack.addDataItem(totalWindProduction_GWh, "Opwek wind", v_windElectricitySupplyColor);
 
 DataItem totalCurtailedWindEnergy_GWh = new DataItem();
@@ -338,7 +351,11 @@ sc_windSupplyStack.addDataItem(remainingWindPotential_GWh, "Resterende potentie 
 sc_PVSupplyStack.removeAll();
 
 DataItem totalSolarProduction_GWh = new DataItem();
-totalSolarProduction_GWh.setValue(data.getRapidRunData().acc_dailyAveragePVProduction_kW.getIntegral_MWh()/1000);
+if (data.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.pvProductionElectric_kW)) {
+	totalSolarProduction_GWh.setValue(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.pvProductionElectric_kW).getIntegral_MWh()/1000);
+} else {
+	totalSolarProduction_GWh.setValue(0.0);
+}
 sc_PVSupplyStack.addDataItem(totalSolarProduction_GWh, "Opwek zon", v_PVElectricitySupplyColor);
 
 
@@ -381,10 +398,18 @@ energyDemandChartYearGespreksleidraad5.setVisible(true);
 
 //Electricity supply chart
 energySupplyChartYearGespreksleidraad5.removeAll();
-energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageWindProduction_kW.getDataSet(startTime_h), v_windElectricitySupplyText, v_windElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAveragePVProduction_kW.getDataSet(startTime_h), v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageBatteriesProduction_kW.getDataSet(startTime_h), v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
-energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().acc_dailyAverageV2GProduction_kW.getDataSet(startTime_h), v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+if (data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.windProductionElectric_kW)) {
+	energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.windProductionElectric_kW).getDataSet(startTime_h), v_windElectricitySupplyText, v_windElectricitySupplyColor);
+}
+if (data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.pvProductionElectric_kW)) {
+	energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.pvProductionElectric_kW).getDataSet(startTime_h), v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
+}
+if (data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.batteriesChargingPower_kW)) {
+	energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.batteriesChargingPower_kW).getDataSet(startTime_h), v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
+}
+if (data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.V2GPower_kW)) {
+	energySupplyChartYearGespreksleidraad5.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.V2GPower_kW).getDataSet(startTime_h), v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+}
 
 
 //energySupplyChartYearGespreksleidraad1.addDataSet(area.data_petroleumProductsSupplyYear_MWh, v_petroleumProductsSupplyText, v_petroleumProductsSupplyColor);

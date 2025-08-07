@@ -63,8 +63,8 @@ plot_jaar.setFixedVerticalScale(scaleMin, scaleMax);
 //summer/winter
 DataSet loadDurationCurveSummer = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveSummer_kW, divisionAmountForCorrectUnit);
 DataSet loadDurationCurveWinter = uI_Results.f_createNewDataSetDividedByValue(loadDurationCurves.ds_loadDurationCurveWinter_kW, divisionAmountForCorrectUnit);
-plot_seizoen.addDataSet(loadDurationCurveSummer,"Belasting zomerweek");
-plot_seizoen.addDataSet(loadDurationCurveWinter,"Belasting winterweek");
+plot_seizoen.addDataSet(loadDurationCurveSummer,"Belasting week laagste afname");
+plot_seizoen.addDataSet(loadDurationCurveWinter,"Belasting week hoogste afname");
 plot_seizoen.setColor(0,blue);
 plot_seizoen.setColor(1,green);
 plot_seizoen.setFixedVerticalScale(scaleMin, scaleMax);

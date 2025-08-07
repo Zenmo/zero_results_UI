@@ -3,7 +3,8 @@
 	<Id>1704197366550</Id>
 	<Name><![CDATA[UI_Results]]></Name>
 	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
-	<Import><![CDATA[import java.util.EnumSet;]]></Import>
+	<Import><![CDATA[import java.util.EnumSet;
+import java.util.EnumMap;]]></Import>
 	<StartupCode><![CDATA[// TODO: Fill cm_consumptionColors and cm_productionColors here?
 cm_productionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricitySupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatHeatSupplyColor);
@@ -17,6 +18,56 @@ cm_consumptionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
 
+// Fill assetFlowColors:
+//cm_assetFlowColors.put(OL_)
+
+// Fill assetFlowLabels:
+lm_assetFlowLabels.put(OL_AssetFlowCategories.fixedConsumptionElectric_kW,"Elektr. behoefte basis");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.batteriesChargingPower_kW,"Opladen batterijen");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.batteriesDischargingPower_kW,"Ontladen batterijen");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.CHPProductionElectric_kW,"Elektr. Opwek WKK");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.districtHeatDelivery_kW,"Warmte uit warmtenet");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.electricHobConsumption_kW,"Elektrisch koken");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.electrolyserElectricityConsumption_kW,"Elektr. behoefte elektrolysers");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.evChargingPower_kW,"Opladen EVs");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW,"Elektr. behoefte warmte");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.ptProductionHeat_kW,"warmte zonnecollectoren");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.pvProductionElectric_kW,"Opwek zonneënergie");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.V2GPower_kW,"Vehicle to Grid");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.windProductionElectric_kW,"Opwek wind");
+
+cm_assetFlowColors.put(OL_AssetFlowCategories.fixedConsumptionElectric_kW, v_electricityBaseloadDemandColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.batteriesChargingPower_kW, v_electricityForStorageDemandColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.batteriesDischargingPower_kW, v_storageElectricitySupplyColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.CHPProductionElectric_kW, v_CHPElectricitySupplyColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.districtHeatDelivery_kW, v_districtHeatDemandColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.electricHobConsumption_kW, v_electricityForCookingDemandColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.electrolyserElectricityConsumption_kW, v_electricityForHydrogenDemandColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.evChargingPower_kW, v_electricityForTransportDemandColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW, v_electricityForHeatDemandColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.ptProductionHeat_kW, cm_productionColors.get(OL_EnergyCarriers.HEAT));
+cm_assetFlowColors.put(OL_AssetFlowCategories.pvProductionElectric_kW, v_PVElectricitySupplyColor); 
+cm_assetFlowColors.put(OL_AssetFlowCategories.windProductionElectric_kW, v_windElectricitySupplyColor);
+
+v_consumptionAssetFlows.add(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
+v_consumptionAssetFlows.add(OL_AssetFlowCategories.batteriesChargingPower_kW);
+v_consumptionAssetFlows.add(OL_AssetFlowCategories.districtHeatDelivery_kW);
+v_consumptionAssetFlows.add(OL_AssetFlowCategories.electricHobConsumption_kW);
+v_consumptionAssetFlows.add(OL_AssetFlowCategories.electrolyserElectricityConsumption_kW);
+v_consumptionAssetFlows.add(OL_AssetFlowCategories.evChargingPower_kW);
+v_consumptionAssetFlows.add(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+
+v_electricAssetFlows.add(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.batteriesChargingPower_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.batteriesDischargingPower_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.CHPProductionElectric_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.electricHobConsumption_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.electrolyserElectricityConsumption_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.evChargingPower_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.pvProductionElectric_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.V2GPower_kW);
+v_electricAssetFlows.add(OL_AssetFlowCategories.windProductionElectric_kW);
 ]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>

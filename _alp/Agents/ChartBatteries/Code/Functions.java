@@ -1,7 +1,10 @@
 double f_addSOC_total(I_EnergyData dataObject)
 {/*ALCODESTART::1714746057324*/
-double startTime_h = 0;
-SOCChart_year.addDataSet(dataObject.getRapidRunData().ts_dailyAverageBatteriesSOC_fr.getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
+
+if (dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh>0){
+	double startTime_h = 0;
+	SOCChart_year.addDataSet(dataObject.getRapidRunData().getBatteriesSOCts_fr().getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
+}
 
 /*ALCODEEND*/}
 
@@ -11,15 +14,58 @@ SOCChart_week.addDataSet(dataObject.getLiveData().data_batterySOC_fr, "Batterij 
 
 /*ALCODEEND*/}
 
-double f_addSOC_summerWeek(I_EnergyData dataObject)
+double f_addSOC_Week(I_EnergyData dataObject,boolean isSummerWeek)
 {/*ALCODESTART::1714897296536*/
-double startTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
-if (startTime_h<0) {
-	startTime_h +=8760;
+if (dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh>0){
+	if (dataObject.getRapidRunData().storesTotalAssetFlows) {
+		double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
+		double peakTime_h;
+		double peak_kW;
+		if (isSummerWeek) {
+			peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
+			peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+		} else {
+			peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
+			peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+		}
+		//traceln("Plotting peak feedin week instead of fixed summer week! Peak feedin occured at: %s hours, power was: %s", peakFeedinTime_h, peakFeedin_kW);
+		
+		// Output the result
+		/*String dateTimeString = f_getDateTimeFromHour(peakTime_h);
+	    if (isSummerWeek) {
+		    if (peak_kW > 0) {
+				v_weekLabel.setText("Hoogste invoeding op: " + dateTimeString);
+			} else {
+				v_weekLabel.setText("Laagste afname op: " + dateTimeString);
+			}
+		} else {
+			if (peak_kW > 0) {
+				v_weekLabel.setText("Hoogste afname op: " + dateTimeString);
+			} else {
+				v_weekLabel.setText("Laagste invoeding op: " + dateTimeString);
+			}
+		}*/
+		double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+		SOCChart_week.addDataSet(dataObject.getRapidRunData().getBatteriesSOCts_fr().getDataSet(dataSetStartTime_h, peakWeekStart_h, peakWeekStart_h+24*7), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
+	} else {
+		if (isSummerWeek){
+			double startTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
+			if (startTime_h<0) {
+				startTime_h +=8760;
+			}
+			
+			SOCChart_week.addDataSet(dataObject.getRapidRunData().ts_summerWeekBatteriesSOC_fr.getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
+		} else {
+			double startTime_h = uI_Results.energyModel.p_startOfWinterWeek_h - uI_Results.energyModel.p_runStartTime_h;
+			if (startTime_h<0) {
+				startTime_h +=8760;
+			}
+			
+			SOCChart_week.addDataSet(dataObject.getRapidRunData().ts_winterWeekBatteriesSOC_fr.getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
+		
+		}
+	}
 }
-
-SOCChart_week.addDataSet(dataObject.getRapidRunData().ts_summerWeekBatteriesSOC_fr.getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
-
 /*ALCODEEND*/}
 
 AreaCollection f_resetCharts()
@@ -34,17 +80,6 @@ plot_netload_year.removeAll();
 
 /*ALCODEEND*/}
 
-double f_addSOC_winterWeek(I_EnergyData dataObject)
-{/*ALCODESTART::1714897923570*/
-double startTime_h = uI_Results.energyModel.p_startOfWinterWeek_h - uI_Results.energyModel.p_runStartTime_h;
-if (startTime_h<0) {
-	startTime_h +=8760;
-}
-
-SOCChart_week.addDataSet(dataObject.getRapidRunData().ts_winterWeekBatteriesSOC_fr.getDataSet(startTime_h), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
-
-/*ALCODEEND*/}
-
 double f_setChartsBatteries()
 {/*ALCODESTART::1714899014782*/
 f_resetCharts();
@@ -56,29 +91,39 @@ uI_Results.f_setSelectedObjectDisplay(230, 60, true);
 //Set battery capacity
 f_addBatteryCapacity(data);
 
+/*
+String[] stringArray = {"live", "week 1", "week 2", "jaar"};
+ShapeRadioButtonGroup radio_period2 = new ShapeRadioButtonGroup(this.presentation.getPresentable(), true, 50, 100, 300, 50, Color.BLACK, true, new Font("Calibri", 0, 15), false, stringArray){
+	@Override
+	public void action() {
+		f_setChartsBatteries();
+	}
+};
+*/
+
 //Set correct period chart
 switch(radio_period.getValue()){
 	case 0:
 		gr_week.setVisible(true);
 		f_addSOC_live(data);
-		f_addBatteryNetLoad_live(data);
+		f_addBatteryGridLoad_live(data);
 		break;
 	case 1:
 		gr_week.setVisible(true);
-		f_addSOC_summerWeek(data);
-		f_addBatteryNetLoad_summerWeek(data);
-		f_addBatteryKPIs_summerWeek(data);
+		f_addSOC_Week(data,false);
+		f_addElectricityGridLoad_Week(data, false);//f_addBatteryNetLoad_summerWeek(data);
+		f_addBatteryKPIs_Week(data, false);
 		break;
 	case 2:
 		gr_week.setVisible(true);
-		f_addSOC_winterWeek(data);
-		f_addBatteryNetLoad_winterWeek(data);
-		f_addBatteryKPIs_winterWeek(data);
+		f_addSOC_Week(data,true);
+		f_addElectricityGridLoad_Week(data, true);
+		f_addBatteryKPIs_Week(data, true);
 		break;
 	case 3:
 		gr_year.setVisible(true);
 		f_addSOC_total(data);
-		//f_addBatteryNetLoad_total(dataObject);
+		f_addBatteryNetLoad_total(data);
 		f_addBatteryKPIs_total(data);
 		break;
 }
@@ -87,8 +132,10 @@ switch(radio_period.getValue()){
 
 /*ALCODEEND*/}
 
-double f_addBatteryNetLoad_live(I_EnergyData dataObject)
+double f_addBatteryGridLoad_live(I_EnergyData dataObject)
 {/*ALCODESTART::1736430560710*/
+txt_netload_week.setText("Netto Belasting net");
+
 String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
 String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
 Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
@@ -113,91 +160,28 @@ plot_netload_week.addDataSet(dataObject.getLiveData().data_liveElectricityBalanc
 double f_addBatteryNetLoad_total(I_EnergyData dataObject)
 {/*ALCODESTART::1736430560714*/
 group_netload_year.setVisible(true);
-plot_netload_year.addDataSet(dataObject.v_dataElectricityDemandCapacityLiveWeek_kW, "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_year.addDataSet(dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW, "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_year.addDataSet(dataObject.v_dataNetLoadLiveWeek_kW, "Netto vermogen", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
-int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDemandCapacityLiveWeek_kW.getYMax()));
-int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW.getYMin()));
-plot_netload_year.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
+//plot_netload_year.addDataSet(dataObject.getRapidRunData().acc_summerWeekDeliveryCapacity_kW.getDataSet(), "Piek leveringscapaciteit", uI_Results.v_electricityCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+//plot_netload_year.addDataSet(dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getDataSet(dataSetWeekStartTime_h), "Piek terugleveringscapaciteit", uI_Results.v_electricityCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+plot_netload_year.addDataSet(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(0), "Netto vermogen", uI_Results.v_electricityDemandColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 
-/*ALCODEEND*/}
-
-double f_addBatteryNetLoad_summerWeek(I_EnergyData dataObject)
-{/*ALCODESTART::1736430560716*/
-String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
-String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
-Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-
-if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
-	deliveryCapacityLabel = "Piek leveringscapaciteit";
-	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
-	feedinCapacityLabel = "Piek terugleveringscapaciteit";
-	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-
-double startTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
-plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekDeliveryCapacity_kW.getDataSet(startTime_h), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getDataSet(startTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
-
-int maxValue = roundToInt(max(dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW(), dataObject.getRapidRunData().acc_summerWeekDeliveryCapacity_kW.getMaxPower_kW()));
-int minValue = roundToInt(min(dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMinPower_kW(), dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getMinPower_kW()));
-plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
+//int maxValue = roundToInt(max(dataObject.v_dataNetLoadLiveWeek_kW.getYMax(), dataObject.v_dataElectricityDemandCapacityLiveWeek_kW.getYMax()));
+//int minValue = roundToInt(min(dataObject.v_dataNetLoadLiveWeek_kW.getYMin(), dataObject.v_dataElectricitySupplyCapacityLiveWeek_kW.getYMin()));
+//plot_netload_year.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
 
 /*ALCODEEND*/}
 
-double f_addBatteryNetLoad_winterWeek(I_EnergyData dataObject)
-{/*ALCODESTART::1736430560718*/
-String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
-String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
-Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
-
-if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
-	deliveryCapacityLabel = "Piek leveringscapaciteit";
-	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
-	feedinCapacityLabel = "Piek terugleveringscapaciteit";
-	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
-}
-
-double startTime_h = uI_Results.energyModel.p_startOfWinterWeek_h - uI_Results.energyModel.p_runStartTime_h;
-plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_winterWeekDeliveryCapacity_kW.getDataSet(startTime_h), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_winterWeekFeedinCapacity_kW.getDataSet(startTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-plot_netload_week.addDataSet(dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
-
-int maxValue = roundToInt(max(dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW(), dataObject.getRapidRunData().acc_winterWeekDeliveryCapacity_kW.getMaxPower_kW()));
-int minValue = roundToInt(min(dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMinPower_kW(), dataObject.getRapidRunData().acc_winterWeekFeedinCapacity_kW.getMinPower_kW()));
-plot_netload_week.setFixedVerticalScale(minValue + minValue * 0.15, maxValue + maxValue * 0.15);
-
-
-/*ALCODEEND*/}
-
-double f_addBatteryKPIs_summerWeek(I_EnergyData dataObject)
+double f_addBatteryKPIs_Week(I_EnergyData dataObject,boolean isSummerWeek)
 {/*ALCODESTART::1743417074489*/
 gr_batteryCycles.setVisible(true);
 
 DecimalFormat df_1decimal = new DecimalFormat("0.0");
 if(dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh > 0){
-	t_batteryCycles.setText(df_1decimal.format(dataObject.getRapidRunData().getSummerWeekBatteryCycles()));
-}
-else{
-	t_batteryCycles.setText("0");
-}
-/*ALCODEEND*/}
-
-double f_addBatteryKPIs_winterWeek(I_EnergyData dataObject)
-{/*ALCODESTART::1743417142841*/
-gr_batteryCycles.setVisible(true);
-
-DecimalFormat df_1decimal = new DecimalFormat("0.0");
-if(dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh > 0){
-	t_batteryCycles.setText(df_1decimal.format(dataObject.getRapidRunData().getWinterWeekBatteryCycles()));
+	if (isSummerWeek) {
+		t_batteryCycles.setText(df_1decimal.format(dataObject.getRapidRunData().getSummerWeekBatteryCycles()));
+	} else {
+		t_batteryCycles.setText(df_1decimal.format(dataObject.getRapidRunData().getWinterWeekBatteryCycles()));
+	}
 }
 else{
 	t_batteryCycles.setText("0");
@@ -257,6 +241,120 @@ else{
 }
 	
 t_batteryCapacityLabel.setText("Batterij capaciteit " + batteryStorageCapacity_unitString);
+
+/*ALCODEEND*/}
+
+String f_getDateTimeFromHour(double peakTime_h)
+{/*ALCODESTART::1754498008083*/
+int dayOfYear = (int)Math.floor(peakTime_h / 24) + 1;
+int hourOfDay = roundToInt(peakTime_h % 24);
+LocalDate date = LocalDate.ofYearDay(uI_Results.energyModel.p_year, dayOfYear);
+LocalDateTime dateTime = date.atStartOfDay().plusHours(hourOfDay);
+
+// Output the result
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+return dateTime.format(formatter);
+/*ALCODEEND*/}
+
+double f_addElectricityGridLoad_Week(I_EnergyData dataObject,boolean isSummerWeek)
+{/*ALCODESTART::1754550135509*/
+String deliveryCapacityLabel = "Geschatte piek leveringscapaciteit";
+String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
+Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
+Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
+
+if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
+	deliveryCapacityLabel = "Piek leveringscapaciteit";
+	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+}
+if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
+	feedinCapacityLabel = "Piek terugleveringscapaciteit";
+	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
+}
+
+//Add datasets to plot
+double startTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
+
+
+if (dataObject.getRapidRunData().storesTotalAssetFlows) { // 
+	double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
+	double peakTime_h;
+	double peak_kW;
+	if (isSummerWeek) {
+		peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
+		peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+	} else {
+		peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
+		peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+	}
+
+	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+	String dateTimeString = f_getDateTimeFromHour(peakTime_h);
+    if (isSummerWeek) {
+	    if (peak_kW > 0) {
+			txt_netload_week.setText("Hoogste invoeding op: " + dateTimeString);
+		} else {
+			txt_netload_week.setText("Laagste afname op: " + dateTimeString);
+		}
+	} else {
+		if (peak_kW > 0) {
+			txt_netload_week.setText("Hoogste afname op: " + dateTimeString);
+		} else {
+			txt_netload_week.setText("Laagste invoeding op: " + dateTimeString);
+		}
+	}
+	v_weekLabel.setX(80);
+	if (isSummerWeek) {
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekDeliveryCapacity_kW.getDataSet(peakWeekStart_h-uI_Results.energyModel.p_runStartTime_h), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getDataSet(peakWeekStart_h-uI_Results.energyModel.p_runStartTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	} else {
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_winterWeekDeliveryCapacity_kW.getDataSet(peakWeekStart_h-uI_Results.energyModel.p_runStartTime_h), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_winterWeekFeedinCapacity_kW.getDataSet(peakWeekStart_h-uI_Results.energyModel.p_runStartTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	}
+	plot_netload_week.addDataSet(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_runStartTime_h,peakWeekStart_h, peakWeekStart_h+24*7), "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
+} else {
+	double dataSetWeekStartTime_h;
+	if (isSummerWeek) {
+		dataSetWeekStartTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
+	} else {
+		dataSetWeekStartTime_h = uI_Results.energyModel.p_startOfWinterWeek_h - uI_Results.energyModel.p_runStartTime_h;
+	}
+	if (dataSetWeekStartTime_h<0) {
+		dataSetWeekStartTime_h +=8760;
+	}
+	if (isSummerWeek) {
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekDeliveryCapacity_kW.getDataSet(dataSetWeekStartTime_h), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getDataSet(dataSetWeekStartTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	
+		//plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getDataSet(startTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
+	} else {
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_winterWeekDeliveryCapacity_kW.getDataSet(dataSetWeekStartTime_h), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_winterWeekFeedinCapacity_kW.getDataSet(dataSetWeekStartTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+	
+		//plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getDataSet(startTime_h), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), "Netto vermogen", uI_Results.v_electricityDemandColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 4.0, Chart.PointStyle.POINT_NONE);
+	}
+}
+
+/*
+//Specific coop plot additions
+if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
+
+	if(uI_Results.b_showGroupContractValues) {
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW()), "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW()), "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+	}
+	if (b_subdivideEnergyCoopFlows) {
+		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getAllChildMemberGridConnections();
+		for (GridConnection GC : memberGridConnections) {
+			plot_netload_week.addDataSet(GC.v_rapidRunData.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startOfSummerWeek_h), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+		}
+	}
+}*/
+
+
+//gr_netLoadWeek.setVisible(true);
 
 /*ALCODEEND*/}
 

@@ -148,6 +148,11 @@
 				<Id>1746102648438</Id>
 				<Name><![CDATA[J_InfoTextResultsUI]]></Name>
 			</JavaClass>
+			<JavaClass>
+				<Id>1754553567559</Id>
+				<Name><![CDATA[radioButtonChangableOptions]]></Name>
+				<ExcludeFromBuild>true</ExcludeFromBuild>
+			</JavaClass>
 		</JavaClasses>
 		<RequiredLibraryReference>
 			<LibraryName>zero_engine</LibraryName>

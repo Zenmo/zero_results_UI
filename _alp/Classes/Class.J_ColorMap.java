@@ -3,13 +3,13 @@
  */	
 import java.util.EnumMap;
 
-public class J_ColorMap extends EnumMap<OL_EnergyCarriers, Color> {
-
+public class J_ColorMap <E extends Enum<E>> extends EnumMap<E, Color> {
+	//private final EnumSet<E> enumSet;
     /**
      * Default constructor
      */
-    public J_ColorMap() {
-    	super(OL_EnergyCarriers.class);
+    public J_ColorMap(Class<E> enumClass) {
+    	super(enumClass);
     }
 
 	@Override
