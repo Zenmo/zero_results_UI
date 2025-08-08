@@ -40,8 +40,8 @@ if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivide
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
 	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
-		energyDemandChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));
-		energySupplyChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));	
+		energyDemandChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+		energySupplyChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
 	}
 }
 else{	
@@ -55,42 +55,6 @@ else{
 			}
 		}
 	}
-	//Energy demand chart
-
-	/*
-	energyDemandChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageBaseloadElectricityConsumption_kW.getDataSet(startTime_h), "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
-	if (dataObject.getRapidRunData().assetsMetaData.hasElectricHeating) {
-		energyDemandChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageHeatPumpElectricityConsumption_kW.getDataSet(startTime_h),"Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
-	}
-	if (dataObject.getRapidRunData().assetsMetaData.hasElectricTransport) { 
-		energyDemandChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageElectricVehicleConsumption_kW.getDataSet(startTime_h), "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
-	}
-	if (dataObject.getRapidRunData().assetsMetaData.hasBattery) {
-		energyDemandChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageBatteriesConsumption_kW.getDataSet(startTime_h), "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-	}
-	if (dataObject.getRapidRunData().assetsMetaData.hasElectrolyser) {
-		energyDemandChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageElectrolyserElectricityConsumption_kW.getDataSet(startTime_h), "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
-	}
-	if (dataObject.getRapidRunData().assetsMetaData.hasElectricCooking){
-		energyDemandChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageElectricCookingConsumption_kW.getDataSet(startTime_h), "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
-	}
-	
-	//Energy supply chart
-	if (dataObject.getRapidRunData().assetsMetaData.hasWindturbine) {
-	energySupplyChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageWindProduction_kW.getDataSet(startTime_h), "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-	}
-	if (dataObject.getRapidRunData().assetsMetaData.hasPV) {
-		energySupplyChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAveragePVProduction_kW.getDataSet(startTime_h), "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-	}
-	if (dataObject.getRapidRunData().assetsMetaData.hasBattery) {
-		energySupplyChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageBatteriesProduction_kW.getDataSet(startTime_h), "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-	}
-	if (dataObject.getRapidRunData().assetsMetaData.hasV2G) {
-		energySupplyChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageV2GProduction_kW.getDataSet(startTime_h), "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-	}
-	if (dataObject.getRapidRunData().assetsMetaData.hasCHP) {
-		energySupplyChartYear.addDataSet(dataObject.getRapidRunData().acc_dailyAverageCHPElectricityProduction_kW.getDataSet(startTime_h), "Elektr. Opwek WKK", uI_Results.v_CHPElectricitySupplyColor);
-	}*/
 }
 /*ALCODEEND*/}
 
@@ -135,12 +99,11 @@ if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivide
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
 	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
-		energyDemandChart.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveDemand_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));
-		energySupplyChart.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveSupply_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));	
+		energyDemandChart.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveDemand_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+		energySupplyChart.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveSupply_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
 	}
 }
 else{
-	//for (OL_AssetFlowCategories AC : dataObject.getLiveData().dsm_liveAssetFlows_kW.keySet()) {
 	for (OL_AssetFlowCategories AC : dataObject.getLiveData().assetsMetaData.activeAssetFlows) {
 		if (uI_Results.v_electricAssetFlows.contains(AC)) {
 			if (uI_Results.v_consumptionAssetFlows.contains(AC)) {
@@ -150,43 +113,6 @@ else{
 			}
 		}
 	}
-	/*
-	//Demand
-	
-	energyDemandChart.addDataSet(dataObject.getLiveData().data_baseloadElectricityDemand_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
-	if(dataObject.getLiveData().assetsMetaData.hasElectricHeating){
-		energyDemandChart.addDataSet(dataObject.getLiveData().data_heatPumpElectricityDemand_kW, "Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasElectricTransport){
-		energyDemandChart.addDataSet(dataObject.getLiveData().data_electricVehicleDemand_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasBattery){
-		energyDemandChart.addDataSet(dataObject.getLiveData().data_batteryCharging_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-	}
-	if (dataObject.getLiveData().data_hydrogenElectricityDemand_kW != null && dataObject.getLiveData().assetsMetaData.hasElectrolyser) {
-		energyDemandChart.addDataSet(dataObject.getLiveData().data_hydrogenElectricityDemand_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
-	}
-	if (dataObject.getLiveData().data_cookingElectricityDemand_kW != null && dataObject.getLiveData().assetsMetaData.hasElectricCooking){
-		energyDemandChart.addDataSet(dataObject.getLiveData().data_cookingElectricityDemand_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
-	}
-	
-	//Supply
-	if(dataObject.getLiveData().assetsMetaData.hasWindturbine){
-		energySupplyChart.addDataSet(dataObject.getLiveData().data_windGeneration_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasPV){
-		energySupplyChart.addDataSet(dataObject.getLiveData().data_PVGeneration_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasV2G){	
-		energySupplyChart.addDataSet(dataObject.getLiveData().data_V2GSupply_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasBattery){
-		energySupplyChart.addDataSet(dataObject.getLiveData().data_batteryDischarging_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasCHP){
-		energySupplyChart.addDataSet(dataObject.getLiveData().data_CHPElectricityProductionLiveWeek_kW, "Elektr. opwek WKK", uI_Results.v_CHPElectricitySupplyColor);
-	}
-	*/
 }
 
 /*ALCODEEND*/}
@@ -201,7 +127,7 @@ activeProductionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
 
-if (dataObject.getRapidRunData().storesTotalAssetFlows) {
+if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
 	double peakTime_h;
 	double peak_kW;
@@ -280,7 +206,8 @@ double f_addElectricityFlows_Week(I_EnergyData dataObject,boolean isSummerWeek)
 gr_week.setVisible(true);
 double dataSetWeekStartTime_h;
 
-if (dataObject.getRapidRunData().storesTotalAssetFlows) {
+traceln("dataObject.getRapidRunData().getStoreTotalAssetFlows(): " + dataObject.getRapidRunData().getStoreTotalAssetFlows());;
+if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
 	double peakTime_h;
 	double peak_kW;
@@ -336,11 +263,11 @@ if (dataObject.getRapidRunData().storesTotalAssetFlows) {
 		for (int k = 0; k < memberGridConnections.size(); k++) {
 		    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
 		    if (isSummerWeek){
-				energyDemandChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_summerWeekConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));
-				energySupplyChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_summerWeekProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));	
+				energyDemandChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_summerWeekConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+				energySupplyChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_summerWeekProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
 			} else {
-				energyDemandChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_winterWeekConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));
-				energySupplyChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_winterWeekProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));	
+				energyDemandChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_winterWeekConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+				energySupplyChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_winterWeekProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
 			}
 		}
 	}
@@ -372,16 +299,13 @@ gr_week.setVisible(false);
 gr_year.setVisible(false);
 gr_day.setVisible(false);
 gr_trafoWeek.setVisible(false);
-//gr_trafoYear.setVisible(false);
 gr_trafoDay.setVisible(false);
 gr_netLoadWeek.setVisible(false);
-//gr_netLoadYear.setVisible(false);
 gr_netLoadDay.setVisible(false);
+
 plot_trafo_week.removeAll();
-//plot_trafo_year.removeAll();
 plot_trafo_day.removeAll();
 plot_netload_week.removeAll();
-//plot_netload_year.removeAll();
 plot_netload_day.removeAll();
 energyDemandChart.removeAll();
 energySupplyChart.removeAll();
@@ -391,6 +315,10 @@ energyDemandChartDay.removeAll();
 energySupplyChartDay.removeAll();
 
 radio_periodLive.setVisible(false);
+radio_period.setEnabled(false);
+radio_period.setVisible(false);
+radio_period_peaks.setEnabled(false);
+radio_period_peaks.setVisible(false);
 v_weekLabel.setText("");
 
 /*ALCODEEND*/}
@@ -407,18 +335,12 @@ if (radio_period.getValue() == 0) {
 }
 I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
 int radioValue;
-if ((dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().storesTotalAssetFlows) || !(dataObject instanceof GridConnection)) {
-	radio_period.setEnabled(false);
-	radio_period.setVisible(false);
+if (dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
+
 	radio_period_peaks.setEnabled(true);
 	radio_period_peaks.setVisible(true);
 	radioValue=radio_period_peaks.getValue();
 } else {
-	//traceln("Profile plots for dataObject without totalAssetFlow accumulators");
-	radio_period_peaks.setEnabled(false);
-	radio_period_peaks.setVisible(false);
-	//radio_period_peaks.setX(2000);
-	
 	radio_period.setVisible(true);
 	radio_period.setEnabled(true);
 	radioValue=radio_period.getValue();
@@ -724,7 +646,7 @@ if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown
 double startTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
 
 
-if (dataObject.getRapidRunData().storesTotalAssetFlows) { // 
+if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { // 
 	double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
 	double peakTime_h;
 	double peak_kW;
@@ -853,16 +775,11 @@ if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivide
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
 	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
-		energyDemandChartDay.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveDemand_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));
-		energySupplyChartDay.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveSupply_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_gridConnectionID, colorSpectrum.get(k));	
+		energyDemandChartDay.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveDemand_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+		energySupplyChartDay.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveSupply_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
 	}
 }
 else{
-	//Demand
-	/*for (OL_AssetFlowCategories AC : dataObject.getLiveData().dsm_liveAssetFlows_kW.keySet()) {
-		energyDemandChart.addDataSet(dataObject.getLiveData().dsm_liveAssetFlows_kW.get(AC), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
-	}*/
-	
 	for (OL_AssetFlowCategories AC : dataObject.getLiveData().assetsMetaData.activeAssetFlows) {
 		if (uI_Results.v_electricAssetFlows.contains(AC)) {
 			if (uI_Results.v_consumptionAssetFlows.contains(AC)) {
@@ -872,42 +789,6 @@ else{
 			}
 		}
 	}
-	
-	/*
-	energyDemandChartDay.addDataSet(dataObject.getLiveData().data_baseloadElectricityDemand_kW, "Elektr. behoefte basis", uI_Results.v_electricityBaseloadDemandColor);
-	if(dataObject.getLiveData().assetsMetaData.hasElectricHeating){
-	energyDemandChartDay.addDataSet(dataObject.getLiveData().data_heatPumpElectricityDemand_kW, "Elektr. behoefte warmte", uI_Results.v_electricityForHeatDemandColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasElectricTransport){
-		energyDemandChartDay.addDataSet(dataObject.getLiveData().data_electricVehicleDemand_kW, "Elektr. behoefte transport", uI_Results.v_electricityForTransportDemandColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasBattery){
-		energyDemandChartDay.addDataSet(dataObject.getLiveData().data_batteryCharging_kW, "Elektr. behoefte batterijen", uI_Results.v_electricityForStorageDemandColor);
-	}
-	if (dataObject.getLiveData().data_hydrogenElectricityDemand_kW != null && dataObject.getLiveData().assetsMetaData.hasElectrolyser) {
-		energyDemandChartDay.addDataSet(dataObject.getLiveData().data_hydrogenElectricityDemand_kW, "Elektr. behoefte elektrolysers", uI_Results.v_electricityForHydrogenDemandColor);
-	}
-	if (dataObject.getLiveData().data_cookingElectricityDemand_kW != null && dataObject.getLiveData().assetsMetaData.hasElectricCooking){
-		energyDemandChartDay.addDataSet(dataObject.getLiveData().data_cookingElectricityDemand_kW, "Elektr. cooking", uI_Results.v_electricityForCookingDemandColor);
-	}
-	
-	//Supply
-	if(dataObject.getLiveData().assetsMetaData.hasWindturbine){
-		energySupplyChartDay.addDataSet(dataObject.getLiveData().data_windGeneration_kW, "Opwek wind", uI_Results.v_windElectricitySupplyColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasPV){
-		energySupplyChartDay.addDataSet(dataObject.getLiveData().data_PVGeneration_kW, "Opwek zonne-pv", uI_Results.v_PVElectricitySupplyColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasV2G){	
-		energySupplyChartDay.addDataSet(dataObject.getLiveData().data_V2GSupply_kW, "Teruglevering V2G", uI_Results.v_V2GElectricitySupplyColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasBattery){
-		energySupplyChartDay.addDataSet(dataObject.getLiveData().data_batteryDischarging_kW, "Teruglevering batterijen", uI_Results.v_storageElectricitySupplyColor);
-	}
-	if(dataObject.getLiveData().assetsMetaData.hasCHP){
-		energySupplyChartDay.addDataSet(dataObject.getLiveData().data_CHPElectricityProductionLiveWeek_kW, "Elektr. opwek WKK", uI_Results.v_CHPElectricitySupplyColor);
-	}
-	*/
 }
 /*ALCODEEND*/}
 
