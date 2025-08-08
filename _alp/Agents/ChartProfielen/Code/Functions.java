@@ -832,8 +832,8 @@ for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 	if(EC_production != OL_EnergyCarriers.HEAT){
 		energySupplyChartDay.addDataSet( dataObject.getLiveData().dsm_liveSupply_kW.get(EC_production), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production));  
 	}
-	else if(dataObject.getLiveData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.pvProductionElectric_kW)){
-		energySupplyChartDay.addDataSet( dataObject.getLiveData().dsm_liveAssetFlows_kW.get(OL_AssetFlowCategories.pvProductionElectric_kW), "PT", uI_Results.cm_productionColors.get(EC_production));
+	else if(dataObject.getLiveData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.ptProductionHeat_kW)){
+		energySupplyChartDay.addDataSet( dataObject.getLiveData().dsm_liveAssetFlows_kW.get(OL_AssetFlowCategories.ptProductionHeat_kW), "PT", uI_Results.cm_productionColors.get(EC_production));
 	}
 }
 

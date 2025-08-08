@@ -46,7 +46,8 @@ cm_assetFlowColors.put(OL_AssetFlowCategories.electrolyserElectricityConsumption
 cm_assetFlowColors.put(OL_AssetFlowCategories.evChargingPower_kW, v_electricityForTransportDemandColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW, v_electricityForHeatDemandColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.ptProductionHeat_kW, cm_productionColors.get(OL_EnergyCarriers.HEAT));
-cm_assetFlowColors.put(OL_AssetFlowCategories.pvProductionElectric_kW, v_PVElectricitySupplyColor); 
+cm_assetFlowColors.put(OL_AssetFlowCategories.pvProductionElectric_kW, v_PVElectricitySupplyColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.V2GPower_kW, v_V2GElectricitySupplyColor);  
 cm_assetFlowColors.put(OL_AssetFlowCategories.windProductionElectric_kW, v_windElectricitySupplyColor);
 
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
