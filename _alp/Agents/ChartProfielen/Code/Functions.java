@@ -206,7 +206,6 @@ double f_addElectricityFlows_Week(I_EnergyData dataObject,boolean isSummerWeek)
 gr_week.setVisible(true);
 double dataSetWeekStartTime_h;
 
-traceln("dataObject.getRapidRunData().getStoreTotalAssetFlows(): " + dataObject.getRapidRunData().getStoreTotalAssetFlows());;
 if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
 	double peakTime_h;
