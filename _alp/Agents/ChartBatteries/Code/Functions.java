@@ -17,7 +17,7 @@ SOCChart_week.addDataSet(dataObject.getLiveData().data_batterySOC_fr, "Batterij 
 double f_addSOC_Week(I_EnergyData dataObject,boolean isSummerWeek)
 {/*ALCODESTART::1714897296536*/
 if (dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh>0){
-	if (dataObject.getRapidRunData().storesTotalAssetFlows) {
+	if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 		double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
 		double peakTime_h;
 		double peak_kW;
@@ -276,7 +276,7 @@ if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown
 double startTime_h = uI_Results.energyModel.p_startOfSummerWeek_h - uI_Results.energyModel.p_runStartTime_h;
 
 
-if (dataObject.getRapidRunData().storesTotalAssetFlows) { // 
+if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { // 
 	double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
 	double peakTime_h;
 	double peak_kW;
