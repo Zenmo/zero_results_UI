@@ -6,22 +6,23 @@
 	<Import><![CDATA[import java.util.EnumSet;
 import java.util.EnumMap;]]></Import>
 	<StartupCode><![CDATA[// TODO: Fill cm_consumptionColors and cm_productionColors here?
+cm_productionColors = new J_ColorMap<>(OL_EnergyCarriers.class);
 cm_productionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricitySupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatHeatSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenSupplyColor);
 
+cm_consumptionColors = new J_ColorMap<>(OL_EnergyCarriers.class);
 cm_consumptionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricityDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
 
-// Fill assetFlowColors:
-//cm_assetFlowColors.put(OL_)
 
 // Fill assetFlowLabels:
+lm_assetFlowLabels = new EnumMap<>(OL_AssetFlowCategories.class);
 lm_assetFlowLabels.put(OL_AssetFlowCategories.fixedConsumptionElectric_kW,"Elektr. behoefte basis");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.batteriesChargingPower_kW,"Opladen batterijen");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.batteriesDischargingPower_kW,"Ontladen batterijen");
@@ -36,6 +37,7 @@ lm_assetFlowLabels.put(OL_AssetFlowCategories.pvProductionElectric_kW,"Opwek zon
 lm_assetFlowLabels.put(OL_AssetFlowCategories.V2GPower_kW,"Vehicle to Grid");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.windProductionElectric_kW,"Opwek wind");
 
+cm_assetFlowColors = new J_ColorMap<>(OL_AssetFlowCategories.class);
 cm_assetFlowColors.put(OL_AssetFlowCategories.fixedConsumptionElectric_kW, v_electricityBaseloadDemandColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.batteriesChargingPower_kW, v_electricityForStorageDemandColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.batteriesDischargingPower_kW, v_storageElectricitySupplyColor);
@@ -50,6 +52,7 @@ cm_assetFlowColors.put(OL_AssetFlowCategories.pvProductionElectric_kW, v_PVElect
 cm_assetFlowColors.put(OL_AssetFlowCategories.V2GPower_kW, v_V2GElectricitySupplyColor);  
 cm_assetFlowColors.put(OL_AssetFlowCategories.windProductionElectric_kW, v_windElectricitySupplyColor);
 
+v_consumptionAssetFlows = EnumSet.noneOf(OL_AssetFlowCategories.class);
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.batteriesChargingPower_kW);
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.districtHeatDelivery_kW);
@@ -58,6 +61,7 @@ v_consumptionAssetFlows.add(OL_AssetFlowCategories.electrolyserElectricityConsum
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.evChargingPower_kW);
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
 
+v_electricAssetFlows = EnumSet.noneOf(OL_AssetFlowCategories.class);
 v_electricAssetFlows.add(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.batteriesChargingPower_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.batteriesDischargingPower_kW);

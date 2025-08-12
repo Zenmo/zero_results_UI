@@ -1027,9 +1027,6 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[J_ColorMap<OL_EnergyCarriers>]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[new J_ColorMap<>(OL_EnergyCarriers.class)]]></Code>
-			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -1049,9 +1046,6 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[J_ColorMap<OL_EnergyCarriers>]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[new J_ColorMap<>(OL_EnergyCarriers.class)]]></Code>
-			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -1443,9 +1437,6 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[J_ColorMap<OL_AssetFlowCategories>]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[new J_ColorMap<>(OL_AssetFlowCategories.class)]]></Code>
-			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -1465,9 +1456,6 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[EnumMap<OL_AssetFlowCategories, String>]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[new EnumMap<>(OL_AssetFlowCategories.class)]]></Code>
-			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -1487,9 +1475,6 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[EnumSet<OL_AssetFlowCategories>]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[EnumSet.noneOf(OL_AssetFlowCategories.class);]]></Code>
-			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
@@ -1509,9 +1494,6 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[EnumSet<OL_AssetFlowCategories>]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[EnumSet.noneOf(OL_AssetFlowCategories.class);]]></Code>
-			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="Parameter">
