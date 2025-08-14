@@ -782,9 +782,9 @@ else{
 	for (OL_AssetFlowCategories AC : dataObject.getLiveData().assetsMetaData.activeAssetFlows) {
 		if (uI_Results.v_electricAssetFlows.contains(AC)) {
 			if (uI_Results.v_consumptionAssetFlows.contains(AC)) {
-				energyDemandChart.addDataSet(dataObject.getLiveData().dsm_liveAssetFlows_kW.get(AC), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
+				energyDemandChartDay.addDataSet(dataObject.getLiveData().dsm_liveAssetFlows_kW.get(AC), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
 			} else {
-				energySupplyChart.addDataSet(dataObject.getLiveData().dsm_liveAssetFlows_kW.get(AC), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
+				energySupplyChartDay.addDataSet(dataObject.getLiveData().dsm_liveAssetFlows_kW.get(AC), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
 			}
 		}
 	}
