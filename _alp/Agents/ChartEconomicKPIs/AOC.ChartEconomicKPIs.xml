@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ActiveObjectClass>
-	<Id>1732117759404</Id>
-	<Name><![CDATA[ChartGelijktijdigheid]]></Name>
+	<Id>1726820490242</Id>
+	<Name><![CDATA[ChartEconomicKPIs]]></Name>
+	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
 	<Folder>1755764711838</Folder>
+	<Import><![CDATA[import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
+	<StartupCode><![CDATA[f_styleBackground_override(null, null, null, null);]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
-		<Id>1732117759399</Id>
-		<Name><![CDATA[1732117759399]]></Name>
+		<Id>1726820490248</Id>
+		<Name><![CDATA[1726820490248]]></Name>
 		<GenericParameterValue Class="CodeValue">
 			<Code><![CDATA[T extends Agent]]></Code>
 		</GenericParameterValue>
@@ -67,9 +70,9 @@
 	</EnvironmentProperties>
 	<DatasetsCreationProperties>
 		<AutoCreate>true</AutoCreate>
-		<Id>1704197349982</Id>
+		<Id>1704197349979</Id>
 		<OccurrenceAtTime>true</OccurrenceAtTime>
-		<OccurrenceDate>1714809600000</OccurrenceDate>
+		<OccurrenceDate>1726905600000</OccurrenceDate>
 		<OccurrenceTime Class="CodeUnitValue">
 			<Code><![CDATA[0]]></Code>
 			<Unit Class="TimeUnits">HOUR</Unit>
@@ -80,7 +83,7 @@
 		</RecurrenceCode>
 	</DatasetsCreationProperties>
 	<ScaleRuler>
-		<Id>1732117759400</Id>
+		<Id>1726820490245</Id>
 		<Name><![CDATA[scale]]></Name>
 		<X>0</X>
 		<Y>-150</Y>
@@ -96,12 +99,13 @@
 		<Scale>10</Scale>
 		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 	</ScaleRuler>
-	<CurrentLevel>1732117759448</CurrentLevel>
-	<ConnectionsId>1732117759548</ConnectionsId>
+	<CurrentLevel>1726820490249</CurrentLevel>
+	<ConnectionsId>1726820490243</ConnectionsId>
+	<Variables xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
-			<Id>1732117759548</Id>
+			<Id>1726820490243</Id>
 			<Name><![CDATA[connections]]></Name>
 			<X>50</X>
 			<Y>-50</Y>
@@ -126,7 +130,7 @@
 	</AgentLinks>
 	<ContainerLinks>
 		<ContainerLink>
-			<Id>1732117778369</Id>
+			<Id>1726828321730</Id>
 			<Name><![CDATA[uI_Results]]></Name>
 			<X>50</X>
 			<Y>-100</Y>
@@ -145,7 +149,7 @@
 	</ContainerLinks>
 	<Presentation>
 		<Level>
-			<Id>1732117759448</Id>
+			<Id>1726820490249</Id>
 			<Name><![CDATA[level]]></Name>
 			<X>0</X>
 			<Y>0</Y>
@@ -162,22 +166,4 @@
 			<Presentation xmlns:al="http://anylogic.com"/>
 		</Level>
 	</Presentation>
-	<Areas>
-		<Area>
-			<Id>1732117759546</Id>
-			<Name><![CDATA[viewArea]]></Name>
-			<X>0</X>
-			<Y>0</Y>
-			<Label>
-				<X>0</X>
-				<Y>-10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Title/>
-			<Width>1920</Width>
-			<Height>980</Height>
-		</Area>
-	</Areas>
 </ActiveObjectClass>
