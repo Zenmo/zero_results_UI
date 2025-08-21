@@ -8,6 +8,7 @@ gr_chartSummary_presentation.setVisible(false);
 gr_chartGespreksLeidraad_presentation.setVisible(false);
 gr_chartKPISummary_presentation.setVisible(false);
 gr_chartBatteries_presentation.setVisible(false);
+gr_chartEconomicKPIs_presentation.setVisible(false);
 
 switch (v_selectedChartType) {
 	case PROFIEL:
@@ -37,6 +38,10 @@ switch (v_selectedChartType) {
 	case BATTERY:
 		gr_chartBatteries_presentation.setVisible(true);
 		chartBatteries.f_setChartsBatteries();
+		break;
+	case ECONOMIC:
+		gr_chartEconomicKPIs_presentation.setVisible(true);
+		chartEconomicKPIs.f_setChartEconomicKPIs();
 		break;
 }
 
@@ -161,7 +166,7 @@ chartKPISummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineSty
 chartGespreksLeidraad.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGespreksleidraadBedrijven.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartBatteries.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
-
+chartEconomicKPIs.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 
 /*ALCODEEND*/}
 
@@ -239,6 +244,7 @@ f_setChartSummary_Presentation(location_x, location_y, visible);
 f_setChartGSLD_Presentation(location_x, location_y, visible);
 f_setChartKPISummary_Presentation(location_x, location_y, visible);
 f_setChartBatteries_presentation(location_x, location_y, visible);
+f_setChartEconomicKPI_presentation(location_x, location_y, visible);
 /*ALCODEEND*/}
 
 double f_setChartGSLD_Presentation(Integer location_x,Integer location_y,boolean visible)
@@ -266,12 +272,13 @@ rb_DEFAULT_AND_GESPREKSLEIDRAAD.setVisible(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.setVisible(false);
 rb_DEFAULT_AND_BATTERY.setVisible(false);
 rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN.setVisible(false);
-
+rb_DEFAULT_AND_BATTERY_AND_ECONOMIC.setVisible(false);
 rb_DEFAULT.setEnabled(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAAD.setEnabled(false);
 rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.setEnabled(false);
 rb_DEFAULT_AND_BATTERY.setEnabled(false);
 rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN.setEnabled(false);
+rb_DEFAULT_AND_BATTERY_AND_ECONOMIC.setEnabled(false);
 
 switch(v_selectedRadioButtonSetup){
 
@@ -289,6 +296,9 @@ case DEFAULT_AND_BATTERY:
 	break;
 case DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN:	
 	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN;
+	break;
+case DEFAULT_AND_BATTERY_AND_ECONOMIC:	
+	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY_AND_ECONOMIC;
 	break;
 case OFF:
 	f_setResultsUIHeader(null, null, false);
@@ -483,8 +493,6 @@ return flatDataset;
 
 double f_updateResultsUI(I_EnergyData selectedObjectInterface)
 {/*ALCODESTART::1741337780594*/
-
-
 v_selectedObjectInterface = selectedObjectInterface;
 v_selectedObjectScope = v_selectedObjectInterface.getScope();
 f_setSelectedObjectText(null);
@@ -684,5 +692,23 @@ else {
 
 	gr_infoText.setVisible(true);
 }
+/*ALCODEEND*/}
+
+double f_setChartEconomicKPI_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1755704458936*/
+//Set the location and visibility of the Batteries charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartEconomicKPIs_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartEconomicKPIs_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartEconomicKPIs_presentation.setVisible(visible);
 /*ALCODEEND*/}
 

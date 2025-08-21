@@ -3,6 +3,7 @@
 	<Id>1726820490242</Id>
 	<Name><![CDATA[ChartKPISummary]]></Name>
 	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
+	<Folder>1755764711838</Folder>
 	<Import><![CDATA[import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>

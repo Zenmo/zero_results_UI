@@ -3,6 +3,7 @@
 	<Id>1714743515616</Id>
 	<Name><![CDATA[ChartBatteries]]></Name>
 	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
+	<Folder>1755764711838</Folder>
 	<Import><![CDATA[import com.querydsl.core.group.Group;
 import java.util.EnumSet;
 import java.text.DecimalFormat;

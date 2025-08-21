@@ -2,6 +2,7 @@
 <ActiveObjectClass>
 	<Id>1714746482520</Id>
 	<Name><![CDATA[ChartBalans]]></Name>
+	<Folder>1755764711838</Folder>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>

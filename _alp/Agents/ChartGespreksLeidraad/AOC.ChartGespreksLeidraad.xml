@@ -2,6 +2,7 @@
 <ActiveObjectClass>
 	<Id>1714765478390</Id>
 	<Name><![CDATA[ChartGespreksLeidraad]]></Name>
+	<Folder>1755764711838</Folder>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>

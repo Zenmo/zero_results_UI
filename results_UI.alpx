@@ -45,6 +45,10 @@
 					<Id>1737554802421</Id>
 					<Name><![CDATA[BATTERY]]></Name>
 				</Option>
+				<Option>
+					<Id>1755704418943</Id>
+					<Name><![CDATA[ECONOMIC]]></Name>
+				</Option>
 			</OptionList>
 			<OptionList>
 				<Id>1714740453599</Id>
@@ -90,12 +94,21 @@
 					<Name><![CDATA[DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN]]></Name>
 				</Option>
 				<Option>
+					<Id>1755704429830</Id>
+					<Name><![CDATA[DEFAULT_AND_BATTERY_AND_ECONOMIC]]></Name>
+				</Option>
+				<Option>
 					<Id>1737555330328</Id>
 					<Name><![CDATA[OFF]]></Name>
 				</Option>
 			</OptionList>
 		</OptionLists>
-		<Folders/>
+		<Folders>
+			<Folder>
+				<Id>1755764711838</Id>
+				<Name><![CDATA[Charts]]></Name>
+			</Folder>
+		</Folders>
 		<ActiveObjectClasses/>
 		<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
 		<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
