@@ -69,21 +69,40 @@ t_totalExportRevenue_eur.setText("€ " + df.format(roundToInt(totalExportRevenu
 t_totalCapacityCosts_eur.setText("€ " + df.format(roundToInt(totalCapacityCosts_eur)));
 t_totalNetElectricityCosts_eur.setText("€ " + df.format(roundToInt(totalNetElectricityCosts_eur)));
 
-
-t_diffTotalExportRevenue_eur.setText("€ " + df.format(roundToInt(differenceExportRevenueAgainstBaseline_eur)));
-t_diffTotalCapacityCosts_eur.setText("€ " + df.format(roundToInt(differenceCapacityCostsAgainstBaseline_eur)));
-t_diffTotalNetElectricityCosts_eur.setText("€ " + df.format(roundToInt(differenceNetElectricityCostsAgainstBaseline_eur)));
-
 if (roundToInt(differenceImportCostsAgainstBaseline_eur) != 0) {
 	t_diffTotalImportCosts_eur.setVisible(true);
 	t_diffTotalImportCosts_eur.setText("€ " + df.format(roundToInt(differenceImportCostsAgainstBaseline_eur)));
-	/*if(t_totalImportCosts_eur.getText().equals(t_previousTotalImport_MWh.getText())){
-		line_import.setVisible(true);
-	}*/
 	if(roundToInt(differenceImportCostsAgainstBaseline_eur) > 0){
 		arrow_up_red_import.setVisible(true);
 	} else if(roundToInt(differenceImportCostsAgainstBaseline_eur) < 0){
 		arrow_down_green_import.setVisible(true);
+	}
+}
+if (roundToInt(differenceExportRevenueAgainstBaseline_eur) != 0) {
+	t_diffTotalExportRevenue_eur.setVisible(true);
+	t_diffTotalExportRevenue_eur.setText("€ " + df.format(roundToInt(differenceExportRevenueAgainstBaseline_eur)));
+	if(roundToInt(differenceExportRevenueAgainstBaseline_eur) > 0){
+		arrow_up_green_export.setVisible(true);
+	} else if(roundToInt(differenceExportRevenueAgainstBaseline_eur) < 0){
+		arrow_down_red_export.setVisible(true);
+	}
+}
+if (roundToInt(differenceCapacityCostsAgainstBaseline_eur) != 0) {
+	t_diffTotalCapacityCosts_eur.setVisible(true);
+	t_diffTotalCapacityCosts_eur.setText("€ " + df.format(roundToInt(differenceCapacityCostsAgainstBaseline_eur)));
+	if(roundToInt(differenceCapacityCostsAgainstBaseline_eur) > 0){
+		arrow_up_red_capacity.setVisible(true);
+	} else if(roundToInt(differenceCapacityCostsAgainstBaseline_eur) < 0){
+		arrow_down_green_capacity.setVisible(true);
+	}
+}
+if (roundToInt(differenceNetElectricityCostsAgainstBaseline_eur) != 0) {
+	t_diffTotalNetElectricityCosts_eur.setVisible(true);
+	t_diffTotalNetElectricityCosts_eur.setText("€ " + df.format(roundToInt(differenceNetElectricityCostsAgainstBaseline_eur)));
+	if(roundToInt(differenceNetElectricityCostsAgainstBaseline_eur) > 0){
+		arrow_up_red_netElectricity.setVisible(true);
+	} else if(roundToInt(differenceNetElectricityCostsAgainstBaseline_eur) < 0){
+		arrow_down_green_netElectricity.setVisible(true);
 	}
 }
 
@@ -285,12 +304,14 @@ t_diffTotalNetElectricityCosts_eur.setVisible(false);
 //t_previousKPIOverloadHours_pct.setText("");
 
 //Reset all arrow visibility
-arrow_down_green_totalconsumption.setVisible(false);
 arrow_down_green_import.setVisible(false);
-arrow_down_green_export.setVisible(false);
-arrow_up_red_totalconsumption.setVisible(false);
-arrow_up_red_export.setVisible(false);
+arrow_up_green_export.setVisible(false);
+arrow_down_green_capacity.setVisible(false);
+arrow_down_green_netElectricity.setVisible(false);
 arrow_up_red_import.setVisible(false);
+arrow_down_red_export.setVisible(false);
+arrow_up_red_capacity.setVisible(false);
+arrow_up_red_netElectricity.setVisible(false);
 line_total.setVisible(false);
 line_import.setVisible(false);
 line_export.setVisible(false);
