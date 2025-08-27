@@ -17,6 +17,8 @@ f_resetChart();
 //Set KPIs
 f_setKPIs(data);
 
+f_addChartEconomicCosts(data);
+
 //Set visible
 uI_Results.chartKPISummary_presentation.setVisible(true);
 
@@ -532,5 +534,72 @@ double costsElectricityNet_euro = 0;
 costsElectricityNet_euro = f_calculateImportCosts_eur(netLoad_kW) - f_calculateExportRevenue_eur(netLoad_kW) + f_calculateCapacityCosts_eur(netLoad_kW);
     	
 return costsElectricityNet_euro;
+/*ALCODEEND*/}
+
+double f_addChartEconomicCosts(I_EnergyData data)
+{/*ALCODESTART::1756288376916*/
+double[] netLoad_kW = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getTimeSeries_kW();
+
+double totalImportCosts_eur = f_calculateImportCosts_eur(netLoad_kW);
+double totalExportRevenue_eur = f_calculateExportRevenue_eur(netLoad_kW);
+double totalCapacityCosts_eur = f_calculateCapacityCosts_eur(netLoad_kW);
+double totalNetElectricityCosts_eur = f_calculateNetElectricityCosts_eur(netLoad_kW);
+
+double[] costs_eur = {
+    totalImportCosts_eur,			// + cost
+    -totalExportRevenue_eur,		// - revenue
+    totalCapacityCosts_eur			// + cost
+};
+String[] labels = {"Import", "Export", "Capaciteit"};
+
+
+
+
+DefaultCategoryDataset ds = new DefaultCategoryDataset();
+String series = "EUR";
+
+double cumulative = 0;
+for (int i = 0; i < costs_eur.length; i++) {
+	cumulative += costs_eur[i];
+    ds.addValue(costs_eur[i], series, labels[i]);
+    //traceln(cumulative);
+}
+ds.addValue(cumulative, series, "Netto");
+
+
+
+
+
+
+// 2) Create the waterfall chart
+JFreeChart chart = ChartFactory.createWaterfallChart("Elektriciteitskosten", "Kosten", "€", ds, PlotOrientation.VERTICAL, false, true, false);
+
+// 3) Optional styling (colors for first/+, −, last bars)
+CategoryPlot plot = (CategoryPlot) chart.getPlot();
+plot.setBackgroundPaint(Color.WHITE);
+plot.setOutlineVisible(false);
+plot.setRangeGridlinesVisible(false);
+plot.setDomainGridlinesVisible(false);
+
+CategoryAxis x = (CategoryAxis) plot.getDomainAxis();
+x.setLowerMargin(0);     // 5% on the left
+x.setUpperMargin(0.15);     // 8% on the right  ← fixes the cutoff
+x.setCategoryMargin(0);  // spacing between categories (optional)
+
+WaterfallBarRenderer r = (WaterfallBarRenderer) plot.getRenderer();
+//r.setFirstBarPaint(new Color(200, 200, 200));
+r.setPositiveBarPaint(new Color(200, 120, 120));
+r.setNegativeBarPaint(new Color(120, 180, 120));
+r.setLastBarPaint(new Color(120, 120, 200));
+r.setDrawBarOutline(false);
+
+int widthOfSVG = 460;
+int heightOfSVG = 350;
+
+chart.draw(svg2d,new Rectangle2D.Double(0, 0, widthOfSVG, heightOfSVG));
+svgImgJfree.setSVG(svg2d.getSVGElement());
+svgImgJfree.setVisible(true);
+gr_waterfallChart.setVisible(true);
+
 /*ALCODEEND*/}
 

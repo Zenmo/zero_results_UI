@@ -90,7 +90,7 @@
 		<Id>1755864693939</Id>
 		<Name><![CDATA[f_calculateBaselineNetLoad]]></Name>
 		<X>-300</X>
-		<Y>600</Y>
+		<Y>510</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -110,7 +110,7 @@
 		<Id>1755867186286</Id>
 		<Name><![CDATA[f_calculateImportCosts_eur]]></Name>
 		<X>-300</X>
-		<Y>480</Y>
+		<Y>530</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -130,7 +130,7 @@
 		<Id>1755868450603</Id>
 		<Name><![CDATA[f_calculateExportRevenue_eur]]></Name>
 		<X>-300</X>
-		<Y>500</Y>
+		<Y>550</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -150,7 +150,7 @@
 		<Id>1755868971285</Id>
 		<Name><![CDATA[f_calculateCapacityCosts_eur]]></Name>
 		<X>-300</X>
-		<Y>520</Y>
+		<Y>570</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -170,7 +170,7 @@
 		<Id>1755869067049</Id>
 		<Name><![CDATA[f_calculateMonthlyPeakDemand_kW]]></Name>
 		<X>-280</X>
-		<Y>540</Y>
+		<Y>590</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -190,7 +190,7 @@
 		<Id>1755869113668</Id>
 		<Name><![CDATA[f_calculateNetElectricityCosts_eur]]></Name>
 		<X>-300</X>
-		<Y>560</Y>
+		<Y>610</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -201,6 +201,26 @@
 		<Parameter>
 			<Name><![CDATA[netLoad_kW]]></Name>
 			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1756288376916</Id>
+		<Name><![CDATA[f_addChartEconomicCosts]]></Name>
+		<X>-280</X>
+		<Y>450</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
