@@ -314,9 +314,7 @@ energyDemandChartDay.removeAll();
 energySupplyChartDay.removeAll();
 
 radio_periodLive.setVisible(false);
-radio_period.setEnabled(false);
 radio_period.setVisible(false);
-radio_period_peaks.setEnabled(false);
 radio_period_peaks.setVisible(false);
 v_weekLabel.setText("");
 
@@ -335,13 +333,10 @@ if (radio_period.getValue() == 0) {
 I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
 int radioValue;
 if (dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
-
-	radio_period_peaks.setEnabled(true);
 	radio_period_peaks.setVisible(true);
 	radioValue=radio_period_peaks.getValue();
 } else {
 	radio_period.setVisible(true);
-	radio_period.setEnabled(true);
 	radioValue=radio_period.getValue();
 }
 
