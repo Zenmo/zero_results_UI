@@ -476,7 +476,7 @@ double f_enableNonLivePlotRadioButtons(boolean active)
 {/*ALCODESTART::1739884154258*/
 v_selectedRadioButton.setEnabled(active);
 chartProfielen.radio_period.setEnabled(active);
-//chartProfielen.radio_period_peaks.setEnabled(active);
+chartProfielen.radio_period_peaks.setEnabled(active);
 chartNetbelasting.radio.setEnabled(active);
 chartBalans.radio_period.setEnabled(active);
 
