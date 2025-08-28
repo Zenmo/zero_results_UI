@@ -668,23 +668,23 @@ else {
 	double margin_px = 15;
 	//double posX = f_getAbsolutePosition(infoBubble).getX();
 	//double posY = f_getAbsolutePosition(infoBubble).getY();
-	if ((v_resultsUIPresentationXOffset + xPosition) < (v_interfaceViewAreaXOffset + v_interfaceViewAreaWidth/2) ) {
+	if ((v_interfaceViewAreaXOffset + v_resultsUIPresentationXOffset + xPosition) < (v_interfaceViewAreaXOffset + v_interfaceViewAreaWidth/2) ) {
 		// bubble is on the left half, so text should appear to the right
-		gr_infoText.setX( v_resultsUIPresentationXOffset + xPosition + margin_px + infoBubble.getWidth()/2);
+		gr_infoText.setX( v_interfaceViewAreaXOffset + v_resultsUIPresentationXOffset + xPosition + margin_px + infoBubble.getWidth()/2);
 	}
 	else {
 		// bubble is on the right half, so text should appear to the left
-		gr_infoText.setX( v_resultsUIPresentationXOffset + xPosition - margin_px + infoBubble.getWidth()/2 - rect_infoText.getWidth());
+		gr_infoText.setX( v_interfaceViewAreaXOffset + v_resultsUIPresentationXOffset + xPosition - margin_px + infoBubble.getWidth()/2 - rect_infoText.getWidth());
 	}
 	
 	// In AnyLogic the Y-Axis is inverted
-	if ((v_resultsUIPresentationYOffset + yPosition) > (v_interfaceViewAreaYOffset + v_interfaceViewAreaHeight/2) ) {
+	if ((v_interfaceViewAreaYOffset + v_resultsUIPresentationYOffset + yPosition) > (v_interfaceViewAreaYOffset + v_interfaceViewAreaHeight/2) ) {
 		// bubble is on the bottom half, so text should appear above
-		gr_infoText.setY( v_resultsUIPresentationYOffset + yPosition - margin_px  + infoBubble.getHeight()/2 - rect_infoText.getHeight());
+		gr_infoText.setY( v_interfaceViewAreaYOffset + v_resultsUIPresentationYOffset + yPosition - margin_px  + infoBubble.getHeight()/2 - rect_infoText.getHeight());
 	}
 	else {
 		// bubble is on the top half, so text should appear below
-		gr_infoText.setY( v_resultsUIPresentationYOffset + yPosition + margin_px + infoBubble.getHeight()/2);
+		gr_infoText.setY( v_interfaceViewAreaYOffset + v_resultsUIPresentationYOffset + yPosition + margin_px + infoBubble.getHeight()/2);
 	}
 	
 	// Position of close button
