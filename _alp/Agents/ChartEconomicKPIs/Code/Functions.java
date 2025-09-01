@@ -36,6 +36,11 @@ double totalExportRevenue_eur = f_calculateExportRevenue_eur(netLoad_kW);
 double totalCapacityCosts_eur = f_calculateCapacityCosts_eur(netLoad_kW);
 double totalNetElectricityCosts_eur = f_calculateNetElectricityCosts_eur(netLoad_kW);
 
+double totalImportCosts_r = 100*(totalImportCosts_eur / totalNetElectricityCosts_eur);
+double totalExportRevenue_r = 100*(totalExportRevenue_eur / totalNetElectricityCosts_eur);
+double totalCapacityCosts_r = 100*(totalCapacityCosts_eur / totalNetElectricityCosts_eur);
+double totalNetElectricityCosts_r = 100*(totalNetElectricityCosts_eur / totalNetElectricityCosts_eur);
+
 //Calculate electricity costs without battery
 double[] netBaselineLoad_kW = f_calculateBaselineNetLoad(netLoad_kW);
 
@@ -65,11 +70,17 @@ double KPIOverloadHours_pct = (data.getRapidRunData().getTotalOverloadDurationDe
 
 //Set new values text
 DecimalFormat df = new DecimalFormat("#,###");
+DecimalFormat df_r = new DecimalFormat("#.#");
 
 t_totalImportCosts_eur.setText("€ " + df.format(roundToInt(totalImportCosts_eur)));
 t_totalExportRevenue_eur.setText("€ " + df.format(roundToInt(totalExportRevenue_eur)));
 t_totalCapacityCosts_eur.setText("€ " + df.format(roundToInt(totalCapacityCosts_eur)));
 t_totalNetElectricityCosts_eur.setText("€ " + df.format(roundToInt(totalNetElectricityCosts_eur)));
+
+t_totalImportCosts_r.setText("(" + df.format(roundToInt(totalImportCosts_r)) + "%)");
+t_totalExportRevenue_r.setText("(" + df.format(roundToInt(totalExportRevenue_r)) + "%)");
+t_totalCapacityCosts_r.setText("(" + df.format(roundToInt(totalCapacityCosts_r)) + "%)");
+t_totalNetElectricityCosts_r.setText("(" + df.format(roundToInt(totalNetElectricityCosts_r)) + "%)");
 
 if (roundToInt(differenceImportCostsAgainstBaseline_eur) != 0) {
 	t_diffTotalImportCosts_eur.setVisible(true);
@@ -582,12 +593,12 @@ plot.setRangeGridlinesVisible(false);
 plot.setDomainGridlinesVisible(false);
 
 CategoryAxis x = (CategoryAxis) plot.getDomainAxis();
-x.setLowerMargin(0);     // 5% on the left
-x.setUpperMargin(0.15);     // 8% on the right  ← fixes the cutoff
-x.setCategoryMargin(0);  // spacing between categories (optional)
+x.setLowerMargin(0);     
+x.setUpperMargin(0.15);  
+x.setCategoryMargin(0); 
 
 WaterfallBarRenderer r = (WaterfallBarRenderer) plot.getRenderer();
-//r.setFirstBarPaint(new Color(200, 200, 200));
+r.setFirstBarPaint(new Color(200, 120, 120));
 r.setPositiveBarPaint(new Color(200, 120, 120));
 r.setNegativeBarPaint(new Color(120, 180, 120));
 r.setLastBarPaint(new Color(120, 120, 200));

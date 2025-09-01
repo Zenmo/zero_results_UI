@@ -91,6 +91,9 @@ uI_Results.f_setSelectedObjectDisplay(230, 60, true);
 //Set battery capacity
 f_addBatteryCapacity(data);
 
+//Set battery lifetime
+f_addBatteryLifetime(data);
+
 /*
 String[] stringArray = {"live", "week 1", "week 2", "jaar"};
 ShapeRadioButtonGroup radio_period2 = new ShapeRadioButtonGroup(this.presentation.getPresentable(), true, 50, 100, 300, 50, Color.BLACK, true, new Font("Calibri", 0, 15), false, stringArray){
@@ -174,6 +177,7 @@ plot_netload_year.addDataSet(dataObject.getRapidRunData().am_totalBalanceAccumul
 double f_addBatteryKPIs_Week(I_EnergyData dataObject,boolean isSummerWeek)
 {/*ALCODESTART::1743417074489*/
 gr_batteryCycles.setVisible(true);
+gr_batteryLifetime.setVisible(true);
 
 DecimalFormat df_1decimal = new DecimalFormat("0.0");
 if(dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh > 0){
@@ -191,6 +195,7 @@ else{
 double f_addBatteryKPIs_total(I_EnergyData dataObject)
 {/*ALCODESTART::1743417159083*/
 gr_batteryCycles.setVisible(true);
+gr_batteryLifetime.setVisible(true);
 
 DecimalFormat df_1decimal = new DecimalFormat("0.0");
 if(dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh > 0){
@@ -356,5 +361,87 @@ if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
 
 //gr_netLoadWeek.setVisible(true);
 
+/*ALCODEEND*/}
+
+double f_addBatteryLifetime(I_EnergyData dataObject)
+{/*ALCODESTART::1756460546640*/
+DecimalFormat df_2decimal = new DecimalFormat("0.00");
+
+double lifetimeBattery_yr = f_calculateBatteryLifetime_yr(dataObject, dataObject.getRapidRunData().getBatteriesSOCts_fr().getTimeSeries());
+t_batteryLifetime.setText(df_2decimal.format(lifetimeBattery_yr));
+/*ALCODEEND*/}
+
+double f_calculateBatteryLifetime_yr(I_EnergyData dataObject,double[] arraySoC_fr)
+{/*ALCODESTART::1756460635121*/
+double averageDoD = f_calculateAverageDoD_fr(arraySoC_fr);
+    	 
+double totalYearlyCycles = dataObject.getRapidRunData().getTotalBatteryCycles(); // Defined that total annual energy charged/battery capacity
+ 
+// function and parameters (li-ion) are extracted from source:
+// https://www.researchgate.net/publication/330142356_Optimal_Operational_Planning_of_Scalable_DC_Microgrid_with_Demand_Response_Islanding_and_Battery_Degradation_Cost_Considerations
+double alpha = -5440.35;
+double beta = 1191.54;
+ 
+double batteryCycleLife_cycles = alpha * Math.log(averageDoD) + beta;
+traceln("Battery Lifetime from totalYearlyCycles is " + batteryCycleLife_cycles/totalYearlyCycles);
+double lifetimeBattery_yr = batteryCycleLife_cycles/v_cycleCount;
+return lifetimeBattery_yr;
+
+/*ALCODEEND*/}
+
+double f_calculateAverageDoD_fr(double[] arraySoC_fr)
+{/*ALCODESTART::1756461006378*/
+v_cycleCount = 0; // Cycle is NOT defined as amount of chargeEnergy/batteryCapacity; but rather as a count of activities
+double cumulativeDoD = 0;
+
+ArrayList<Double> localBatteryTurningPoints_fr = f_calculateTurningPoints(arraySoC_fr);
+
+while (localBatteryTurningPoints_fr.size() > 2) {
+	boolean hasFoundCycle = false;
+	for (int i=0; i < localBatteryTurningPoints_fr.size()-2; i++) {
+		
+		if (abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2)) <= abs(localBatteryTurningPoints_fr.get(i)-localBatteryTurningPoints_fr.get(i+1))) { //abs(Y-Z) <= abs(Z-Y)
+			cumulativeDoD += abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2));
+			localBatteryTurningPoints_fr.remove(i+2); //Remove Z first, otherwise order changes
+			localBatteryTurningPoints_fr.remove(i+1); //Remove Y
+			v_cycleCount += 1; //Remove 2 point-> 2lines -> 2 half cycles -> 1 full cycle 
+			hasFoundCycle = true;
+			break;
+			// charge or discharge is or is not included in DoD -> TBD; so amountOfCycles could be 0.5 (if we had additional while loop) or 1
+		}
+	}
+	if (!hasFoundCycle) {
+		break; //fail safe to prevent stuck in loop
+	}
+}
+
+//Add final residual half-cycle
+if (localBatteryTurningPoints_fr.size() > 1) {
+	cumulativeDoD += abs(localBatteryTurningPoints_fr.get(0)-localBatteryTurningPoints_fr.get(1));
+	v_cycleCount += 0.5;
+}
+
+double averageDoD = cumulativeDoD/v_cycleCount;
+return averageDoD;
+/*ALCODEEND*/}
+
+ArrayList<Double> f_calculateTurningPoints(double[] arraySoC_fr)
+{/*ALCODESTART::1756461059884*/
+double[] previousTwoBatterySoC_fr = new double[]{0,0};
+ArrayList<Double> batteryTurningPoints_fr = new ArrayList();
+
+for(double SoC_fr: arraySoC_fr) {
+	SoC_fr = roundToDecimal(SoC_fr,8);
+
+	if (previousTwoBatterySoC_fr[0] >= previousTwoBatterySoC_fr[1] && previousTwoBatterySoC_fr[1] < SoC_fr) {
+		batteryTurningPoints_fr.add(previousTwoBatterySoC_fr[1]);
+	}
+	else if (previousTwoBatterySoC_fr[0] <= previousTwoBatterySoC_fr[1] && previousTwoBatterySoC_fr[1] > SoC_fr) {
+		batteryTurningPoints_fr.add(previousTwoBatterySoC_fr[1]);
+	}
+	previousTwoBatterySoC_fr[0] = previousTwoBatterySoC_fr[1];
+	previousTwoBatterySoC_fr[1] = SoC_fr;
+}
+return batteryTurningPoints_fr;
 /*ALCODEEND*/}
 
