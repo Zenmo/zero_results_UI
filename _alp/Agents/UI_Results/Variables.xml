@@ -1216,7 +1216,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true"
               Constant="false"
-              AccessType="private"
+              AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[I_EnergyData]]></Type>
 			<InitialValue Class="CodeValue">
