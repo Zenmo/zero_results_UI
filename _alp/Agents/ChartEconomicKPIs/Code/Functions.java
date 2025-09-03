@@ -42,7 +42,7 @@ double totalCapacityCosts_r = 100*(totalCapacityCosts_eur / totalNetElectricityC
 double totalNetElectricityCosts_r = 100*(totalNetElectricityCosts_eur / totalNetElectricityCosts_eur);
 
 //Calculate electricity costs without battery
-double[] netBaselineLoad_kW = f_calculateBaselineNetLoad(netLoad_kW);
+double[] netBaselineLoad_kW = f_calculateBaselineNetLoad(netLoad_kW.length);
 
 double totalImportCostsBaseline_eur = f_calculateImportCosts_eur(netBaselineLoad_kW);
 double totalExportRevenueBaseline_eur = f_calculateExportRevenue_eur(netBaselineLoad_kW);
@@ -353,14 +353,13 @@ line_selfsufficiency.setVisible(false);
 line_gridload.setVisible(false);
 /*ALCODEEND*/}
 
-double[] f_calculateBaselineNetLoad(double[] nettoLoad_kW)
+double[] f_calculateBaselineNetLoad(int n)
 {/*ALCODESTART::1755864693939*/
 GridNode GN = findFirst(uI_Results.energyModel.pop_gridNodes, p -> p.p_gridNodeID.equals("T0"));
 
 double p_timeStep_h = uI_Results.energyModel.p_timeStep_h;
 
-int timeWindow_h = nettoLoad_kW.length;
-double[] netLoad_kW = new double[timeWindow_h];
+double[] netLoad_kW = new double[n];
 
 int startTimeDayIndex = 0;
 int endTimeDayIndex = 35040;
@@ -431,15 +430,12 @@ for (GridConnection GC : GN.f_getAllLowerLVLConnectedGridConnections()){
 	}
 	for(J_EAConsumption genericHeatDemandProfile : genericHeatDemandProfiles) {
 		if(genericHeatDemandProfile != null){
-									
 			double eta_r = uI_Results.energyModel.avgc_data.p_avgEfficiencyHeatpump;
 			double outputTemperature_degC = uI_Results.energyModel.avgc_data.p_avgOutputTemperatureHeatpump_degC;
 			
 			for(double time = 0; time < 8760; time += p_timeStep_h){
 			    double baseTemperature_degC = uI_Results.energyModel.pp_ambientTemperature_degC.getValue(time);
 			    double COP_r = eta_r * ( 273.15 + outputTemperature_degC ) / ( outputTemperature_degC - baseTemperature_degC );
-				
-			    //traceln(genericHeatDemandProfile.getProfilePointer().getValue(time)*genericHeatDemandProfile.yearlyDemand_kWh);
 				netLoad_kW[roundToInt(time/p_timeStep_h)] += genericHeatDemandProfile.getProfilePointer().getValue(time)*genericHeatDemandProfile.yearlyDemand_kWh*genericHeatDemandProfile.getConsumptionScaling_fr() / COP_r;
 			}
 		}

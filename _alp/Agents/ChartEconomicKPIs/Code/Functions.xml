@@ -99,8 +99,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[nettoLoad_kW]]></Name>
-			<Type><![CDATA[double[]]]></Type>
+			<Name><![CDATA[n]]></Name>
+			<Type><![CDATA[int]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
