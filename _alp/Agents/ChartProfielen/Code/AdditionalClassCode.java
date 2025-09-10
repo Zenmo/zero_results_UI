@@ -1,5 +1,9 @@
 public ShapeRadioButtonGroup getPeriodRadioButton() {
-	return this.radio_period;
+	return this.v_periodRadioButton;
+}
+
+public List<ShapeRadioButtonGroup> getAllPeriodRadioButtons() {
+	return Arrays.asList(this.rb_periodIncludingYear, this.rb_periodExcludingYear, this.rb_periodPeaksIncludingYear, this.rb_periodPeaksExcludingYear);
 }
 
 public ShapeRadioButtonGroup getEnergyTypeRadioButton() {

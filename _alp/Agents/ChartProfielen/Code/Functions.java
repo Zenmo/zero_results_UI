@@ -10,19 +10,19 @@ activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 
 for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	if(EC_consumption != OL_EnergyCarriers.HEAT){
-		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(EC_consumption).getDataSet(startTime_h), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(EC_consumption).getDataSet(startTime_h, 24.0), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 	else if(dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(startTime_h), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(startTime_h, 24.0), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
 for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 	if(EC_production != OL_EnergyCarriers.HEAT){
-		energySupplyChartYear.addDataSet( dataObject.getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(EC_production).getDataSet(startTime_h), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production)); 
+		energySupplyChartYear.addDataSet( dataObject.getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(EC_production).getDataSet(startTime_h, 24.0), uI_Results.f_getName(EC_production), uI_Results.cm_productionColors.get(EC_production)); 
 	}
 	else if(dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.ptProductionHeat_kW)){
-		energySupplyChartYear.addDataSet( dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.ptProductionHeat_kW).getDataSet(startTime_h), "PT", uI_Results.cm_productionColors.get(EC_production)); 
+		energySupplyChartYear.addDataSet( dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.ptProductionHeat_kW).getDataSet(startTime_h, 24.0), "PT", uI_Results.cm_productionColors.get(EC_production)); 
 	}
 }
 
@@ -40,8 +40,8 @@ if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivide
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
 	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
-		energyDemandChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
-		energySupplyChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+		energyDemandChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h, 24.0), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+		energySupplyChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h, 24.0), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
 	}
 }
 else{	
@@ -49,9 +49,9 @@ else{
 	for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().assetsMetaData.activeAssetFlows) {
 		if (uI_Results.v_electricAssetFlows.contains(AC)) {
 			if (uI_Results.v_consumptionAssetFlows.contains(AC)) {
-				energyDemandChartYear.addDataSet(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getDataSet(startTime_h), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
+				energyDemandChartYear.addDataSet(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getDataSet(startTime_h, 24.0), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
 			} else {
-				energySupplyChartYear.addDataSet(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getDataSet(startTime_h), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
+				energySupplyChartYear.addDataSet(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getDataSet(startTime_h, 24.0), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
 			}
 		}
 	}
@@ -314,8 +314,10 @@ energyDemandChartDay.removeAll();
 energySupplyChartDay.removeAll();
 
 radio_periodLive.setVisible(false);
-radio_period.setVisible(false);
-radio_period_peaks.setVisible(false);
+rb_periodIncludingYear.setVisible(false);
+rb_periodExcludingYear.setVisible(false);
+rb_periodPeaksIncludingYear.setVisible(false);
+rb_periodPeaksExcludingYear.setVisible(false);
 v_weekLabel.setText("");
 
 /*ALCODEEND*/}
@@ -327,18 +329,28 @@ f_resetCharts();
 //Set selected object display
 uI_Results.f_setSelectedObjectDisplay(230, 115, true);
 
-if (radio_period.getValue() == 0) {
+if (v_periodRadioButton.getValue() == 0) {
 	radio_periodLive.setVisible(true);
 }
+
 I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
-int radioValue;
+
+
 if (dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
-	radio_period_peaks.setVisible(true);
-	radioValue=radio_period_peaks.getValue();
+	if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
+		v_periodRadioButton = rb_periodPeaksExcludingYear;
+	} else {
+		v_periodRadioButton = rb_periodPeaksIncludingYear;
+	}
 } else {
-	radio_period.setVisible(true);
-	radioValue=radio_period.getValue();
+	if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
+		v_periodRadioButton = rb_periodExcludingYear;
+	} else {
+		v_periodRadioButton = rb_periodIncludingYear;
+	}
 }
+v_periodRadioButton.setVisible(true);
+int radioValue = v_periodRadioButton.getValue();
 
 if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 	switch (radioValue) {
@@ -450,8 +462,10 @@ else { // Stack Chart
 		case 3: // Year
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				// This graph does not exist, defaulting back to the live plot
-				radio_period.setValue(0);
-				f_setCharts();
+				throw new RuntimeException("The Year Graph does not exist for GridNodes.");				
+				//radio_period.setValue(0);
+				//radio_period_peaks.setValue(0);
+				//f_setCharts();
 			} else {
 				f_addElectricityFlows_Year(dataObject);
 				if( radio_energyType.getValue() == 1){
