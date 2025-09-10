@@ -41,4 +41,26 @@
 			<Type><![CDATA[ShapeText]]></Type>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1757496228764</Id>
+		<Name><![CDATA[v_periodRadioButton]]></Name>
+		<X>120</X>
+		<Y>1020</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[ShapeRadioButtonGroup]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[rb_periodIncludingYear]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 </Variables>
