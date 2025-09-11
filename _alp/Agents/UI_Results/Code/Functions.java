@@ -475,11 +475,12 @@ area.v_dataNetbelastingDuurkrommeWeekend_kW = GN.data_weekendNetbelastingDuurkro
 double f_enableNonLivePlotRadioButtons(boolean active)
 {/*ALCODESTART::1739884154258*/
 v_selectedRadioButton.setEnabled(active);
-chartProfielen.radio_period.setEnabled(active);
-chartProfielen.radio_period_peaks.setEnabled(active);
+chartProfielen.rb_periodIncludingYear.setEnabled(active);
+chartProfielen.rb_periodExcludingYear.setEnabled(active);
+chartProfielen.rb_periodPeaksIncludingYear.setEnabled(active);
+chartProfielen.rb_periodPeaksExcludingYear.setEnabled(active);
 chartNetbelasting.radio.setEnabled(active);
 chartBalans.radio_period.setEnabled(active);
-
 /*ALCODEEND*/}
 
 DataSet f_createFlatDataset(double startTime_hr,double duration_hr,double value)

@@ -31,7 +31,7 @@
 	<Control Type="RadioButtons">
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1715175655981</Id>
-		<Name><![CDATA[radio_period]]></Name>
+		<Name><![CDATA[rb_periodIncludingYear]]></Name>
 		<X>40</X>
 		<Y>3</Y>
 		<Label>
@@ -55,6 +55,39 @@
 			<Button>Live Simulatie</Button>
 			<Button>Winter Week</Button>
 			<Button>Zomer Week</Button>
+			<Button>Jaar Overzicht</Button>
+			<LinkTo>false</LinkTo>
+		</ExtendedProperties>
+	</Control>
+	<Control Type="RadioButtons">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1754395165972</Id>
+		<Name><![CDATA[rb_periodPeaksIncludingYear]]></Name>
+		<X>-440</X>
+		<Y>235</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="400" Height="40">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor>-16777216</TextColor>
+			<XCode>30</XCode>
+			<YCode>3</YCode>
+			<Enabled>true</Enabled>
+			<ActionCode>f_setCharts();</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<DefaultValueCode>0</DefaultValueCode>
+			<Orientation>HORIZONTAL</Orientation>
+			<Button>Live Simulatie</Button>
+			<Button>Hoogste afname</Button>
+			<Button>Laagste afname</Button>
 			<Button>Jaar Overzicht</Button>
 			<LinkTo>false</LinkTo>
 		</ExtendedProperties>
@@ -1943,130 +1976,12 @@
 			<Link>b_subdivideEnergyCoopFlows</Link>
 		</ExtendedProperties>
 	</Control>
-	<Rectangle>
-		<Id>1741771180123</Id>
-		<Name><![CDATA[rect_yearlyViewClickingBlocker]]></Name>
-		<X>324</X>
-		<Y>-90</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<YCode>2</YCode>
-		<VisibleCode>radio_energyType.getValue() == 2 || uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE;</VisibleCode>
-		<OnClickCode>;</OnClickCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>0</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>110</Width>
-		<Height>40</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
-	<Rectangle>
-		<Id>1741771467933</Id>
-		<Name><![CDATA[rect_yearlyViewHoverBlocker]]></Name>
-		<X>323</X>
-		<Y>-95</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<YCode>1</YCode>
-		<VisibleCode>radio_energyType.getValue() == 2 || uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE;</VisibleCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>0</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>112</Width>
-		<Height>42</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
-	<Rectangle>
-		<Id>1741790115109</Id>
-		<Name><![CDATA[rect_netBalanceViewClickingBlocker]]></Name>
-		<X>300</X>
-		<Y>-60</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<YCode>33</YCode>
-		<VisibleCode>radio_period.getValue() == 3;</VisibleCode>
-		<OnClickCode>;</OnClickCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>0</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>100</Width>
-		<Height>45</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
-	<Rectangle>
-		<Id>1741790548327</Id>
-		<Name><![CDATA[rect_netBalanceViewHoverBlocker]]></Name>
-		<X>299</X>
-		<Y>-65</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<YCode>32</YCode>
-		<VisibleCode>radio_period.getValue() == 3;</VisibleCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>0</LineWidth>
-		<LineColor/>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>102</Width>
-		<Height>47</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
 	<Control Type="RadioButtons">
 		<EmbeddedIcon>false</EmbeddedIcon>
-		<Id>1754395165972</Id>
-		<Name><![CDATA[radio_period_peaks]]></Name>
-		<X>30</X>
-		<Y>2</Y>
+		<Id>1757496308074</Id>
+		<Name><![CDATA[rb_periodExcludingYear]]></Name>
+		<X>-440</X>
+		<Y>190</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2075,9 +1990,43 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="370" Height="40">
+		<BasicProperties Width="280" Height="40">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
+			<XCode>90</XCode>
+			<YCode>3</YCode>
+			<Enabled>true</Enabled>
+			<ActionCode>f_setCharts();</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<DefaultValueCode>0</DefaultValueCode>
+			<Orientation>HORIZONTAL</Orientation>
+			<Button>Live Simulatie</Button>
+			<Button>Winter Week</Button>
+			<Button>Zomer Week</Button>
+			<LinkTo>false</LinkTo>
+		</ExtendedProperties>
+	</Control>
+	<Control Type="RadioButtons">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1757496315917</Id>
+		<Name><![CDATA[rb_periodPeaksExcludingYear]]></Name>
+		<X>-440</X>
+		<Y>280</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="300" Height="40">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor>-16777216</TextColor>
+			<XCode>80</XCode>
+			<YCode>3</YCode>
 			<Enabled>true</Enabled>
 			<ActionCode>f_setCharts();</ActionCode>
 		</BasicProperties>
@@ -2088,7 +2037,6 @@
 			<Button>Live Simulatie</Button>
 			<Button>Hoogste afname</Button>
 			<Button>Laagste afname</Button>
-			<Button>Jaar Overzicht</Button>
 			<LinkTo>false</LinkTo>
 		</ExtendedProperties>
 	</Control>
