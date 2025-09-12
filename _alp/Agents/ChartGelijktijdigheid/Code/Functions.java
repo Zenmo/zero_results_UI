@@ -486,17 +486,19 @@ else {
 
 double f_setElectricityBalanceChartYear(EnergyCoop coop)
 {/*ALCODESTART::1732117901398*/
-double production_MWh = coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + coop.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY);
-coop.getRapidRunData().getTotalElectricityProduced_MWh(); // is this the same?
+//double production_MWh = coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + coop.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY);
+double productionTotal_MWh = coop.getRapidRunData().getTotalElectricityProduced_MWh(); // is this the same?
 
-double consumption_MWh = coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + coop.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY);
-coop.getRapidRunData().getTotalElectricityConsumed_MWh(); // is this the same?
+//double consumption_MWh = coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh() + coop.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY);
+//coop.getRapidRunData().getTotalElectricityConsumed_MWh(); // is this the same?
 
 double import_MWh = coop.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY);
 double export_MWh = coop.getRapidRunData().getTotalExport_MWh(OL_EnergyCarriers.ELECTRICITY);
-double electricitySelfconsumed_MWh = coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh();
+double simultaneousDelivery_MWh = coop.v_totalCustomerDelivery_MWh - import_MWh; //coop.getRapidRunData().getTotalElectricitySelfConsumed_MWh();
+double batteryDeltaEnergy_MWh = productionTotal_MWh - export_MWh - simultaneousDelivery_MWh;
+
 DataItem annualSelfConsumed = new DataItem();
-annualSelfConsumed.setValue(electricitySelfconsumed_MWh);
+annualSelfConsumed.setValue(simultaneousDelivery_MWh + min(0,batteryDeltaEnergy_MWh));
 pl_productionChartYear.addDataItem(annualSelfConsumed, "Lokaal geleverd [MWh]", uI_Results.v_selfConsumedElectricityColor);
 pl_consumptionChartYear.addDataItem(annualSelfConsumed, "Lokaal opgewekt [MWh]", uI_Results.v_selfConsumedElectricityColor);
 
@@ -508,19 +510,34 @@ DataItem annualExport = new DataItem();
 annualExport.setValue(export_MWh);
 pl_productionChartYear.addDataItem(annualExport, "Overschotten verkocht [MWh]", uI_Results.v_exportedEnergyColor);
 
-double chartScale_MWh = max(production_MWh, consumption_MWh);
+boolean coopBattPresent = coop.v_rapidRunData.am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.batteriesChargingPower_kW);
+//traceln("Battery present: %s", coopBattPresent);
+if (coopBattPresent) {
+	if (batteryDeltaEnergy_MWh>1) {
+		DataItem batteryDelta = new DataItem();
+		batteryDelta.setValue(batteryDeltaEnergy_MWh);
+		pl_productionChartYear.addDataItem(batteryDelta, "Energie naar batterij [MWh]", uI_Results.v_electricityForStorageDemandColor);
+	} else if (batteryDeltaEnergy_MWh < -1) {
+		DataItem batteryDelta = new DataItem();
+		batteryDelta.setValue(-batteryDeltaEnergy_MWh);
+		pl_consumptionChartYear.addDataItem(batteryDelta, "Energie uit batterij [MWh]", uI_Results.v_electricityForStorageDemandColor);
+	}
+}
+//double productionTotal_MWh = simultaneousDelivery_MWh + export_MWh + batteryDeltaEnergy_MWh;
+double deliveryTotal_MWh = (simultaneousDelivery_MWh+import_MWh);
+double chartScale_MWh = max(productionTotal_MWh, deliveryTotal_MWh);
 pl_consumptionChartYear.setFixedScale(chartScale_MWh);
 pl_productionChartYear.setFixedScale(chartScale_MWh);
 
 if (chartScale_MWh<10) {
-	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToInt(production_MWh*1000) + " kWh");
-	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToInt(consumption_MWh*1000) + " kWh");
+	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToInt(productionTotal_MWh*1000) + " kWh");
+	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToInt(deliveryTotal_MWh*1000) + " kWh");
 } else if (chartScale_MWh<1000) {
-	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToInt(production_MWh) + " MWh");
-	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToInt(consumption_MWh) + " MWh");
+	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToInt(productionTotal_MWh) + " MWh");
+	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToInt(deliveryTotal_MWh) + " MWh");
 } else {
-	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToDecimal(production_MWh/1000, 1) + " GWh");
-	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToDecimal(consumption_MWh/1000,1) + " GWh");
+	t_productionTextYear.setText("Opwek + teruglevering klanten" + System.lineSeparator() + roundToDecimal(productionTotal_MWh/1000, 1) + " GWh");
+	t_consumptionTextYear.setText("Levering" + System.lineSeparator() + roundToDecimal(deliveryTotal_MWh/1000,1) + " GWh");
 }
 /*ALCODEEND*/}
 
