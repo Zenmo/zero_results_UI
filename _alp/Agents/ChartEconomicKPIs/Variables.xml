@@ -88,8 +88,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1756294118136</Id>
 		<Name><![CDATA[svg2d]]></Name>
-		<X>-300</X>
-		<Y>730</Y>
+		<X>-400</X>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -110,8 +110,8 @@
 	<Variable Class="PlainVariable">
 		<Id>1756295003624</Id>
 		<Name><![CDATA[svgImgJfree]]></Name>
-		<X>-300</X>
-		<Y>750</Y>
+		<X>-400</X>
+		<Y>410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -126,6 +126,50 @@
 			<Type><![CDATA[ShapeSVG]]></Type>
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[new ShapeSVG()]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1758404438839</Id>
+		<Name><![CDATA[v_eurpkWh]]></Name>
+		<X>-280</X>
+		<Y>670</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[int]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[750]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1758450204678</Id>
+		<Name><![CDATA[v_cycleCount]]></Name>
+		<X>-240</X>
+		<Y>760</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>

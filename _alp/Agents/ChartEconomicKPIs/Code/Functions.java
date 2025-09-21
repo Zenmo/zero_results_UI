@@ -54,6 +54,24 @@ double differenceExportRevenueAgainstBaseline_eur = totalExportRevenue_eur - tot
 double differenceCapacityCostsAgainstBaseline_eur = totalCapacityCosts_eur - totalCapacityCostsBaseline_eur;
 double differenceNetElectricityCostsAgainstBaseline_eur = totalNetElectricityCosts_eur - totalNetElectricityCostsBaseline_eur;
 
+
+//Capex
+double totalInstalledBatteryStorageCapacity_kWh = data.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh.doubleValue()*1000;
+double CAPEX_eur = 0;
+if (totalInstalledBatteryStorageCapacity_kWh > 0){
+	CAPEX_eur = totalInstalledBatteryStorageCapacity_kWh*v_eurpkWh;
+}
+
+//Economic KPI conclusion
+double paybackPeriod_yr = 0;
+double lifetimeBattery_yr = 0;
+double roiLifetimeBattery_yr = 0;
+if (totalInstalledBatteryStorageCapacity_kWh > 0){
+	paybackPeriod_yr = f_calculatePaybackPeriod(data, totalNetElectricityCosts_eur, totalNetElectricityCostsBaseline_eur);
+	lifetimeBattery_yr = f_calculateBatteryLifetime_yr(data, data.getRapidRunData().getBatteriesSOCts_fr().getTimeSeries());
+	roiLifetimeBattery_yr = f_ROI_eur(data, totalNetElectricityCosts_eur, totalNetElectricityCostsBaseline_eur, CAPEX_eur, lifetimeBattery_yr);
+}
+
 /*	
 double elecConsumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
 double gasConsumption_pct = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.METHANE).getIntegral_MWh() / totalEnergyConsumption_MWh * 100 : 0;
@@ -71,6 +89,7 @@ double KPIOverloadHours_pct = (data.getRapidRunData().getTotalOverloadDurationDe
 //Set new values text
 DecimalFormat df = new DecimalFormat("#,###");
 DecimalFormat df_r = new DecimalFormat("#.#");
+DecimalFormat df_2decimal = new DecimalFormat("0.00");
 
 t_totalImportCosts_eur.setText("€ " + df.format(roundToInt(totalImportCosts_eur)));
 t_totalExportRevenue_eur.setText("€ " + df.format(roundToInt(totalExportRevenue_eur)));
@@ -118,6 +137,14 @@ if (roundToInt(differenceNetElectricityCostsAgainstBaseline_eur) != 0) {
 		arrow_down_green_netElectricity.setVisible(true);
 	}
 }
+
+// Capex costs
+t_totalInstalledBatteryCapacityAmount.setText(df.format(roundToInt(totalInstalledBatteryStorageCapacity_kWh)));
+t_totalCapex_eur.setText("€ " + df.format(roundToInt(CAPEX_eur)));
+
+// Conclusion
+t_paybackPeriod_yr.setText(df_2decimal.format(paybackPeriod_yr));
+t_profitBatteryLifetime_eur.setText("€ " + df.format(roundToInt(roiLifetimeBattery_yr)));
 
 /*
 t_elecConsumption_pct.setText(df.format(elecConsumption_pct) + " %");
@@ -608,5 +635,111 @@ svgImgJfree.setSVG(svg2d.getSVGElement());
 svgImgJfree.setVisible(true);
 gr_waterfallChart.setVisible(true);
 
+/*ALCODEEND*/}
+
+double f_calculatePaybackPeriod(I_EnergyData data,double totalNetElectricityCosts_eur,double totalNetElectricityCostsBaseline_eur)
+{/*ALCODESTART::1758447541994*/
+double paybackPeriod_yr = 0;
+
+
+if (totalNetElectricityCosts_eur < totalNetElectricityCostsBaseline_eur) {
+	
+	double installedCapacity_kWh = data.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh.doubleValue()*1000;
+	double CAPEX_eur = installedCapacity_kWh*v_eurpkWh;
+    paybackPeriod_yr = CAPEX_eur/(totalNetElectricityCostsBaseline_eur - totalNetElectricityCosts_eur);
+    return paybackPeriod_yr;
+    		
+}
+
+paybackPeriod_yr = Double.POSITIVE_INFINITY;
+return paybackPeriod_yr;
+/*ALCODEEND*/}
+
+double f_calculateBatteryLifetime_yr(I_EnergyData dataObject,double[] arraySoC_fr)
+{/*ALCODESTART::1758450204619*/
+double averageDoD = f_calculateAverageDoD_fr(arraySoC_fr);
+    	 
+double totalYearlyCycles = dataObject.getRapidRunData().getTotalBatteryCycles(); // Defined that total annual energy charged/battery capacity
+ 
+// function and parameters (li-ion) are extracted from source:
+// https://www.researchgate.net/publication/330142356_Optimal_Operational_Planning_of_Scalable_DC_Microgrid_with_Demand_Response_Islanding_and_Battery_Degradation_Cost_Considerations
+double alpha = -5440.35;
+double beta = 1191.54;
+ 
+//double batteryCycleLife_cycles = alpha * Math.log(averageDoD) + beta;
+double lifetimeBattery_yr = batteryCycleLife_cycles/v_cycleCount;
+return lifetimeBattery_yr;
+
+/*ALCODEEND*/}
+
+double f_calculateAverageDoD_fr(double[] arraySoC_fr)
+{/*ALCODESTART::1758450204639*/
+v_cycleCount = 0; // Cycle is NOT defined as amount of chargeEnergy/batteryCapacity; but rather as a count of activities
+double cumulativeDoD = 0;
+
+ArrayList<Double> localBatteryTurningPoints_fr = f_calculateTurningPoints(arraySoC_fr);
+
+while (localBatteryTurningPoints_fr.size() > 2) {
+	boolean hasFoundCycle = false;
+	for (int i=0; i < localBatteryTurningPoints_fr.size()-2; i++) {
+		
+		if (abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2)) <= abs(localBatteryTurningPoints_fr.get(i)-localBatteryTurningPoints_fr.get(i+1))) { //abs(Y-Z) <= abs(Z-Y)
+			cumulativeDoD += abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2));
+			localBatteryTurningPoints_fr.remove(i+2); //Remove Z first, otherwise order changes
+			localBatteryTurningPoints_fr.remove(i+1); //Remove Y
+			v_cycleCount += 1; //Remove 2 point-> 2lines -> 2 half cycles -> 1 full cycle 
+			hasFoundCycle = true;
+			break;
+			// charge or discharge is or is not included in DoD -> TBD; so amountOfCycles could be 0.5 (if we had additional while loop) or 1
+		}
+	}
+	if (!hasFoundCycle) {
+		break; //fail safe to prevent stuck in loop
+	}
+}
+
+//Add final residual half-cycle
+if (localBatteryTurningPoints_fr.size() > 1) {
+	cumulativeDoD += abs(localBatteryTurningPoints_fr.get(0)-localBatteryTurningPoints_fr.get(1));
+	v_cycleCount += 0.5;
+}
+
+double averageDoD = cumulativeDoD/v_cycleCount;
+return averageDoD;
+/*ALCODEEND*/}
+
+ArrayList<Double> f_calculateTurningPoints(double[] arraySoC_fr)
+{/*ALCODESTART::1758450204658*/
+double[] previousTwoBatterySoC_fr = new double[]{0,0};
+ArrayList<Double> batteryTurningPoints_fr = new ArrayList();
+
+for(double SoC_fr: arraySoC_fr) {
+	SoC_fr = roundToDecimal(SoC_fr,8);
+
+	if (previousTwoBatterySoC_fr[0] >= previousTwoBatterySoC_fr[1] && previousTwoBatterySoC_fr[1] < SoC_fr) {
+		batteryTurningPoints_fr.add(previousTwoBatterySoC_fr[1]);
+	}
+	else if (previousTwoBatterySoC_fr[0] <= previousTwoBatterySoC_fr[1] && previousTwoBatterySoC_fr[1] > SoC_fr) {
+		batteryTurningPoints_fr.add(previousTwoBatterySoC_fr[1]);
+	}
+	previousTwoBatterySoC_fr[0] = previousTwoBatterySoC_fr[1];
+	previousTwoBatterySoC_fr[1] = SoC_fr;
+}
+return batteryTurningPoints_fr;
+/*ALCODEEND*/}
+
+double f_ROI_eur(I_EnergyData data,double totalNetElectricityCosts_eur,double totalNetElectricityCostsBaseline_eur,double CAPEX_eur,double batteryLifetime_yr)
+{/*ALCODESTART::1758452338110*/
+double ReturnOnInvestment_eur = 0;
+
+//if (totalNetElectricityCosts_eur < totalNetElectricityCostsBaseline_eur) {
+
+ReturnOnInvestment_eur = batteryLifetime_yr * (totalNetElectricityCostsBaseline_eur - totalNetElectricityCosts_eur) - CAPEX_eur;
+return ReturnOnInvestment_eur;
+	
+//}
+
+//ReturnOnInvestment_yr = Double.POSITIVE_INFINITY;
+//return ReturnOnInvestment_yr;
 /*ALCODEEND*/}
 
