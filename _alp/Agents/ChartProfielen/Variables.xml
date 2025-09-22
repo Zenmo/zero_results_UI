@@ -59,7 +59,7 @@
               StaticVariable="false">
 			<Type><![CDATA[ShapeRadioButtonGroup]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[rb_periodIncludingYear]]></Code>
+				<Code><![CDATA[rb_periodPeaksIncludingYear]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
