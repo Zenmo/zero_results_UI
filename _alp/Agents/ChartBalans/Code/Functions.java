@@ -1200,10 +1200,10 @@ String[] monthNames = new String[]{"Januari", "Februari", "Maart", "April", "Mei
 for (int i = 0; i < 12; i++) {
 	DataItem di_export = new DataItem();
 	di_export.setValue(monthlyExport_kWh[i] / 1000);
-	bc_productionMonthlyTotals.addDataItem(di_export, monthNames[i], green);
+	bc_productionMonthlyTotals.addDataItem(di_export, monthNames[i], new Color(210,255,191));
 	DataItem di_import = new DataItem();
 	di_import.setValue(monthlyImport_kWh[i] / 1000);
-	bc_consumptionMonthlyTotals.addDataItem(di_import, monthNames[i], Color.RED);
+	bc_consumptionMonthlyTotals.addDataItem(di_import, monthNames[i], new Color(210, 35, 55));
 }
 /*ALCODEEND*/}
 

@@ -277,8 +277,8 @@
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1758612613985</Id>
 				<Name><![CDATA[button_monthlyDetails]]></Name>
-				<X>110</X>
-				<Y>-220</Y>
+				<X>100</X>
+				<Y>330</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1526,8 +1526,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1758613508354</Id>
 		<Name><![CDATA[gr_monthlyTotals]]></Name>
-		<X>1940</X>
-		<Y>350</Y>
+		<X>2040</X>
+		<Y>320</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1544,8 +1544,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 			<BarChart>
 				<Id>1758613514576</Id>
 				<Name><![CDATA[bc_productionMonthlyTotals]]></Name>
-				<X>-190</X>
-				<Y>-210</Y>
+				<X>-210</X>
+				<Y>-200</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1569,14 +1569,14 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>340</Width>
+				<Width>430</Width>
 				<Height>200</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>260</Width>
+					<Width>360</Width>
 					<Height>140</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor>-16777216</BorderColor>
@@ -1604,8 +1604,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 			<BarChart>
 				<Id>1758613514581</Id>
 				<Name><![CDATA[bc_consumptionMonthlyTotals]]></Name>
-				<X>-190</X>
-				<Y>30</Y>
+				<X>-210</X>
+				<Y>80</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1629,14 +1629,14 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>340</Width>
+				<Width>430</Width>
 				<Height>200</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>260</Width>
+					<Width>360</Width>
 					<Height>140</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor>-16777216</BorderColor>
@@ -1666,7 +1666,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Id>1758613517057</Id>
 				<Name><![CDATA[button_yearTotals]]></Name>
 				<X>110</X>
-				<Y>-220</Y>
+				<Y>360</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1690,7 +1690,7 @@ gr_Total.setVisible(true);</ActionCode>
 			<Text>
 				<Id>1758621957359</Id>
 				<Name><![CDATA[t_monthlyProductionYLabel]]></Name>
-				<X>-175</X>
+				<X>-195</X>
 				<Y>-110</Y>
 				<Label>
 					<X>0</X>
@@ -1715,8 +1715,8 @@ gr_Total.setVisible(true);</ActionCode>
 			<Text>
 				<Id>1758621957361</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel]]></Name>
-				<X>-20</X>
-				<Y>-30</Y>
+				<X>-153</X>
+				<Y>-16</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1727,9 +1727,9 @@ gr_Total.setVisible(true);</ActionCode>
 				<DrawMode>SHAPE_DRAW_2D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Rotation>0.0</Rotation>
+				<Rotation>300.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Maand]]></Text>
+				<Text><![CDATA[jan]]></Text>
 				<Font>
 					<Name><![CDATA[Calibri]]></Name>
 					<Size>14</Size>
@@ -1740,8 +1740,8 @@ gr_Total.setVisible(true);</ActionCode>
 			<Text>
 				<Id>1758621957363</Id>
 				<Name><![CDATA[t_monthlyConsumptionYLabel]]></Name>
-				<X>-175</X>
-				<Y>130</Y>
+				<X>-195</X>
+				<Y>180</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1763,10 +1763,10 @@ gr_Total.setVisible(true);</ActionCode>
 				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
-				<Id>1758621957365</Id>
-				<Name><![CDATA[t_monthlyConsumptionXLabel]]></Name>
-				<X>-20</X>
-				<Y>210</Y>
+				<Id>1758631406435</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel1]]></Name>
+				<X>-123</X>
+				<Y>-16</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1777,9 +1777,559 @@ gr_Total.setVisible(true);</ActionCode>
 				<DrawMode>SHAPE_DRAW_2D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Rotation>0.0</Rotation>
+				<Rotation>300.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Maand]]></Text>
+				<Text><![CDATA[feb]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631431732</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel2]]></Name>
+				<X>-93</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[mrt]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631438558</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel3]]></Name>
+				<X>-3</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[jun]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631438560</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel4]]></Name>
+				<X>-33</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[mei]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631438562</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel5]]></Name>
+				<X>-63</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[apr]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631458671</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel6]]></Name>
+				<X>177</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[dec]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631458673</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel7]]></Name>
+				<X>57</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[aug]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631458675</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel8]]></Name>
+				<X>27</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[jul]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631458677</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel9]]></Name>
+				<X>117</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[okt]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631458679</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel10]]></Name>
+				<X>147</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[nov]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631458681</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel11]]></Name>
+				<X>87</X>
+				<Y>-16</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[sep]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742137</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel12]]></Name>
+				<X>-153</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[jan]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742139</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel13]]></Name>
+				<X>-123</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[feb]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742141</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel14]]></Name>
+				<X>-93</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[mrt]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742143</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel15]]></Name>
+				<X>-3</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[jun]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742145</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel16]]></Name>
+				<X>-33</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[mei]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742147</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel17]]></Name>
+				<X>-63</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[apr]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742149</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel18]]></Name>
+				<X>177</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[dec]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742151</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel19]]></Name>
+				<X>57</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[aug]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742153</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel20]]></Name>
+				<X>27</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[jul]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742155</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel21]]></Name>
+				<X>117</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[okt]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742157</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel22]]></Name>
+				<X>147</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[nov]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758631742159</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel23]]></Name>
+				<X>87</X>
+				<Y>264</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>300.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[sep]]></Text>
 				<Font>
 					<Name><![CDATA[Calibri]]></Name>
 					<Size>14</Size>
