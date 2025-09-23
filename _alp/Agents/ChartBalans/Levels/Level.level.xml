@@ -273,6 +273,34 @@
 				</Font>
 				<Alignment>RIGHT</Alignment>
 			</Text>
+			<Control Type="Button">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1758612613985</Id>
+				<Name><![CDATA[button_monthlyDetails]]></Name>
+				<X>110</X>
+				<Y>-220</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="115" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<VisibleCode>radio_energyType.getValue() == 0 &amp;&amp; (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE || uI_Results.f_getSelectedObjectData() instanceof EnergyModel || (uI_Results.f_getSelectedObjectData() instanceof GridConnection &amp;&amp; ((GridConnection)uI_Results.f_getSelectedObjectData()).v_hasQuarterHourlyValues))</VisibleCode>
+					<Enabled>true</Enabled>
+					<ActionCode>gr_Total.setVisible(false);
+f_setMonthlyCharts();
+gr_monthlyTotals.setVisible(true);</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>bekijk per maand</LabelText>
+				</ExtendedProperties>
+			</Control>
 		</Presentation>
 	</Group>
 	<Group>
@@ -1486,6 +1514,272 @@
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Weekenden]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1758613508354</Id>
+		<Name><![CDATA[gr_monthlyTotals]]></Name>
+		<X>1940</X>
+		<Y>350</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>230</XCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<BarChart>
+				<Id>1758613514576</Id>
+				<Name><![CDATA[bc_productionMonthlyTotals]]></Name>
+				<X>-190</X>
+				<Y>-210</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>true</AutoUpdate>
+				<RecurrenceProperties>
+					<Id>1758613514574</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1758614400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>340</Width>
+				<Height>200</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>50</XOffset>
+					<YOffset>30</YOffset>
+					<Width>260</Width>
+					<Height>140</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-16777216</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>30</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>false</ShowLegend>
+				<ScaleFromExpression>0</ScaleFromExpression>
+				<ScaleToExpression>1</ScaleToExpression>
+				<ScaleType>AUTO</ScaleType>
+				<Bars>
+					<Direction>UP</Direction>
+					<RelativeWidth>0.8</RelativeWidth>
+				</Bars>
+			</BarChart>
+			<BarChart>
+				<Id>1758613514581</Id>
+				<Name><![CDATA[bc_consumptionMonthlyTotals]]></Name>
+				<X>-190</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>true</AutoUpdate>
+				<RecurrenceProperties>
+					<Id>1758613514579</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1758614400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>340</Width>
+				<Height>200</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>50</XOffset>
+					<YOffset>30</YOffset>
+					<Width>260</Width>
+					<Height>140</Height>
+					<BackgroundColor>-1</BackgroundColor>
+					<BorderColor>-16777216</BorderColor>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>30</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>false</ShowLegend>
+				<ScaleFromExpression>0</ScaleFromExpression>
+				<ScaleToExpression>1</ScaleToExpression>
+				<ScaleType>AUTO</ScaleType>
+				<Bars>
+					<Direction>UP</Direction>
+					<RelativeWidth>0.8</RelativeWidth>
+				</Bars>
+			</BarChart>
+			<Control Type="Button">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1758613517057</Id>
+				<Name><![CDATA[button_yearTotals]]></Name>
+				<X>110</X>
+				<Y>-220</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="115" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<Enabled>true</Enabled>
+					<ActionCode>gr_monthlyTotals.setVisible(false);
+gr_Total.setVisible(true);</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>bekijk jaartotalen</LabelText>
+				</ExtendedProperties>
+			</Control>
+			<Text>
+				<Id>1758621957359</Id>
+				<Name><![CDATA[t_monthlyProductionYLabel]]></Name>
+				<X>-175</X>
+				<Y>-110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>90.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Export [MWh]]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758621957361</Id>
+				<Name><![CDATA[t_monthlyProductionXLabel]]></Name>
+				<X>-20</X>
+				<Y>-30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Maand]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758621957363</Id>
+				<Name><![CDATA[t_monthlyConsumptionYLabel]]></Name>
+				<X>-175</X>
+				<Y>130</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>90.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Import [MWh]]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1758621957365</Id>
+				<Name><![CDATA[t_monthlyConsumptionXLabel]]></Name>
+				<X>-20</X>
+				<Y>210</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Maand]]></Text>
 				<Font>
 					<Name><![CDATA[Calibri]]></Name>
 					<Size>14</Size>
