@@ -218,19 +218,7 @@ gr_chartKPISummary_presentation.setVisible(visible);
 
 I_EnergyData f_getSelectedObjectData()
 {/*ALCODESTART::1727083916594*/
-I_EnergyData objectInterface;
-
-if (v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
-	objectInterface = v_selectedObjectInterface;
-}
-else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
-		objectInterface = v_selectedObjectInterface;
-}
-else {
-	objectInterface = v_selectedObjectInterface;
-}
-
-return objectInterface;
+return v_selectedObjectInterface;
 /*ALCODEEND*/}
 
 double f_setAllChart_Presentations(Integer location_x,Integer location_y,boolean visible)

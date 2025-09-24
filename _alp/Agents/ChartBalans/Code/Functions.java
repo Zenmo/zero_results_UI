@@ -717,6 +717,7 @@ gr_Total.setVisible(false);
 gr_SummerWinter.setVisible(false);
 gr_DayNight.setVisible(false);
 gr_WeekdayWeekend.setVisible(false);
+gr_monthlyTotals.setVisible(false);
 
 if (radio_period.getValue() == 0) {
 	gr_Total.setVisible(true);
@@ -761,6 +762,7 @@ if (chartScale_MWh<10) {
 	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(GN.v_totalExport_MWh/1000, 1) + " GWh");
 	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(GN.v_totalImport_MWh/1000, 1) + " GWh");
 }
+
 /*ALCODEEND*/}
 
 double f_setTrafoBalanceChartSummerWinter(GridNode GN)
@@ -1150,6 +1152,58 @@ if (chartScale_MWh<10) {
 	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToDecimal(summerConsumption_MWh/1000,1) + " GWh");
 	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToDecimal(winterProduction_MWh/1000, 1) + " GWh");
 	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToDecimal(winterConsumption_MWh/1000,1) + " GWh");
+}
+/*ALCODEEND*/}
+
+double f_setMonthlyCharts()
+{/*ALCODESTART::1758620924581*/
+bc_productionMonthlyTotals.removeAll();
+bc_consumptionMonthlyTotals.removeAll();
+
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+
+ZeroAccumulator acc_annualElectricityBalance_kW;
+if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
+	acc_annualElectricityBalance_kW = uI_Results.v_gridNode.acc_annualElectricityBalance_kW;
+}
+else {
+	acc_annualElectricityBalance_kW = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY);
+}
+
+double[] monthlyExport_kWh = new double[12];
+double[] monthlyImport_kWh = new double[12];
+
+int[] daysPerMonth = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+if (uI_Results.energyModel.p_year % 4 == 0 && uI_Results.energyModel.p_year % 100 != 0 && uI_Results.energyModel.p_year % 400 == 0) {
+	daysPerMonth[1] += 1;
+}
+
+double signalResolution_h = acc_annualElectricityBalance_kW.getSignalResolution_h();
+double[] electricityBalance_kW = acc_annualElectricityBalance_kW.getTimeSeries_kW();
+
+int stepsInPreviousMonths = 0;
+for (int i = 0; i < 12; i++) {
+	int daysInThisMonth = daysPerMonth[i];
+	int stepsInThisMonth = roundToInt(daysInThisMonth * 24 / signalResolution_h);
+	for (int j = stepsInPreviousMonths; j < stepsInPreviousMonths + stepsInThisMonth; j++) {
+		if (electricityBalance_kW[j] < 0) {
+			monthlyExport_kWh[i] += -electricityBalance_kW[j] * signalResolution_h;
+		}
+		else {
+			monthlyImport_kWh[i] += electricityBalance_kW[j] * signalResolution_h;
+		}
+	}
+	stepsInPreviousMonths += stepsInThisMonth;
+}
+
+String[] monthNames = new String[]{"Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"};
+for (int i = 0; i < 12; i++) {
+	DataItem di_export = new DataItem();
+	di_export.setValue(monthlyExport_kWh[i] / 1000);
+	bc_productionMonthlyTotals.addDataItem(di_export, monthNames[i], new Color(210,255,191));
+	DataItem di_import = new DataItem();
+	di_import.setValue(monthlyImport_kWh[i] / 1000);
+	bc_consumptionMonthlyTotals.addDataItem(di_import, monthNames[i], new Color(210, 35, 55));
 }
 /*ALCODEEND*/}
 
