@@ -509,6 +509,7 @@
 					<FillColor>-1</FillColor>
 					<TextColor>-16777216</TextColor>
 					<Enabled>true</Enabled>
+					<ActionCode>f_setChartEconomicKPIs();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="18" Style="0"/>
