@@ -237,7 +237,8 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	}
 	v_weekLabel.setX(80);
 	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
-	for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet()) {
+	//for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet()) {
+	for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().assetsMetaData.activeAssetFlows) {
 		if (uI_Results.v_electricAssetFlows.contains(AC)) {
 			if (uI_Results.v_consumptionAssetFlows.contains(AC)) {
 				energyDemandChart.addDataSet(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getDataSet(dataSetStartTime_h,peakWeekStart_h, peakWeekStart_h + 7*24), uI_Results.lm_assetFlowLabels.get(AC), get_UI_Results().cm_assetFlowColors.get(AC));
