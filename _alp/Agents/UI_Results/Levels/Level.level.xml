@@ -88,13 +88,13 @@
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
 				<LineWidth>1</LineWidth>
-				<LineColor>-5710112</LineColor>
+				<LineColor>-3092235</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
 				<Width>460</Width>
 				<Height>145</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-5710112</FillColor>
+				<FillColor>-3092235</FillColor>
 				<FillMaterial>null</FillMaterial>
 			</Rectangle>
 			<Text>
@@ -113,7 +113,7 @@
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-16744828</Color>
+				<Color>-16777216</Color>
 				<Text><![CDATA[Wat wil je bekijken?]]></Text>
 				<Font>
 					<Name><![CDATA[Yu Gothic UI]]></Name>
