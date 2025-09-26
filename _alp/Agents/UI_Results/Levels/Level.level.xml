@@ -88,13 +88,13 @@
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
 				<LineWidth>1</LineWidth>
-				<LineColor>-3092235</LineColor>
+				<LineColor/>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
 				<Width>460</Width>
 				<Height>145</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-3092235</FillColor>
+				<FillColor>-2691089</FillColor>
 				<FillMaterial>null</FillMaterial>
 			</Rectangle>
 			<Text>
