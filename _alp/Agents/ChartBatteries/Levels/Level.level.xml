@@ -626,8 +626,8 @@
 	<Oval>
 		<Id>1743416806393</Id>
 		<Name><![CDATA[oval_totalBatteryCapacity]]></Name>
-		<X>125</X>
-		<Y>692</Y>
+		<X>600</X>
+		<Y>693</Y>
 		<Label>
 			<X>0</X>
 			<Y>0</Y>
@@ -652,8 +652,8 @@
 	<Text>
 		<Id>1743416806402</Id>
 		<Name><![CDATA[t_totalBatteryCapacity]]></Name>
-		<X>125</X>
-		<Y>675</Y>
+		<X>600</X>
+		<Y>677</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -677,7 +677,7 @@
 	<Text>
 		<Id>1743416806416</Id>
 		<Name><![CDATA[t_batteryCapacityLabel]]></Name>
-		<X>120</X>
+		<X>600</X>
 		<Y>620</Y>
 		<Label>
 			<X>0</X>
@@ -785,6 +785,101 @@
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Aantal batterij cycli]]></Text>
+				<Font>
+					<Name><![CDATA[Calibri]]></Name>
+					<Size>20</Size>
+					<Style>1</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1756460336968</Id>
+		<Name><![CDATA[gr_batteryLifetime]]></Name>
+		<X>120</X>
+		<Y>680</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<Oval>
+				<Id>1756460336970</Id>
+				<Name><![CDATA[oval_batteryLifetime]]></Name>
+				<X>0</X>
+				<Y>12</Y>
+				<Label>
+					<X>0</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<RadiusX>45</RadiusX>
+				<RadiusY>40</RadiusY>
+				<Rotation>0.0</Rotation>
+				<FillColor>-10185235</FillColor>
+				<FillMaterial>null</FillMaterial>
+			</Oval>
+			<Text>
+				<Id>1756460336972</Id>
+				<Name><![CDATA[t_batteryLifetime]]></Name>
+				<X>0</X>
+				<Y>-5</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-1</Color>
+				<Text><![CDATA[100]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>22</Size>
+					<Style>1</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1756460336974</Id>
+				<Name><![CDATA[txt_batteryLifetime]]></Name>
+				<X>0</X>
+				<Y>-60</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Levensduur [jaar]]]></Text>
 				<Font>
 					<Name><![CDATA[Calibri]]></Name>
 					<Size>20</Size>
