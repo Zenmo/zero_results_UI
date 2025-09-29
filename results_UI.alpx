@@ -49,6 +49,10 @@
 					<Id>1755704418943</Id>
 					<Name><![CDATA[ECONOMIC]]></Name>
 				</Option>
+				<Option>
+					<Id>1759139740201</Id>
+					<Name><![CDATA[GTO]]></Name>
+				</Option>
 			</OptionList>
 			<OptionList>
 				<Id>1714740453599</Id>
@@ -100,6 +104,10 @@
 				<Option>
 					<Id>1737555330328</Id>
 					<Name><![CDATA[OFF]]></Name>
+				</Option>
+				<Option>
+					<Id>1759139746659</Id>
+					<Name><![CDATA[DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN_AND_GTO]]></Name>
 				</Option>
 			</OptionList>
 		</OptionLists>
