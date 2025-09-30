@@ -132,13 +132,13 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double peakTime_h;
 	double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+		peakTime_h = dataObject.getRapidRunData().getLowestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+		peakTime_h = dataObject.getRapidRunData().getHighestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
-	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 	for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		if(EC_consumption != OL_EnergyCarriers.HEAT){
 			energyDemandChart.addDataSet( dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(EC_consumption).getDataSet(dataSetStartTime_h, peakWeekStart_h, peakWeekStart_h+24*7), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
@@ -211,13 +211,13 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double peakTime_h;
 	double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+		peakTime_h = dataObject.getRapidRunData().getLowestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+		peakTime_h = dataObject.getRapidRunData().getHighestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
-	 
+
 	//traceln("Plotting peak feedin week instead of fixed summer week! Peak feedin occured at: %s hours, power was: %s", peakFeedinTime_h, peakFeedin_kW);
 	
 	// Output the result
@@ -236,7 +236,7 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 		}
 	}
 	v_weekLabel.setX(80);
-	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 	//for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet()) {
 	for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().assetsMetaData.activeAssetFlows) {
 		if (uI_Results.v_electricAssetFlows.contains(AC)) {
@@ -660,14 +660,14 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { //
 	double peakTime_h;
 	double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+		peakTime_h = dataObject.getRapidRunData().getLowestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+		peakTime_h = dataObject.getRapidRunData().getHighestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
 
-	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 	String dateTimeString = f_getDateTimeFromHour(peakTime_h);
     if (isSummerWeek) {
 	    if (peak_kW > 0) {

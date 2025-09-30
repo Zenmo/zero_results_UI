@@ -46,23 +46,23 @@ double scenarioDeltaTotalGTV_kW = 0;
 if(rb_GTO_delivery_or_feedin.getValue() == 0){//Delivery
 	originalGTO_kW = COOP.f_getGroupContractDeliveryCapacity_kW(COOP.v_originalRapidRunData);
 	originalPeakIndividual_kW = COOP.v_cumulativeIndividualPeakDeliveryOriginal_kW;
-	originalPeakCollective_kW = max(0, COOP.v_originalRapidRunData.getPeakDelivery_kW());
+	originalPeakCollective_kW = COOP.v_originalRapidRunData.getPeakDelivery_kW();
 	originalTotalGTV_kW = COOP.v_originalRapidRunData.connectionMetaData.contractedDeliveryCapacity_kW;
 
 	scenarioDeltaGTO_kW = COOP.f_getGroupContractDeliveryCapacity_kW(COOP.v_rapidRunData)  - originalGTO_kW;
 	scenarioDeltaPeakIndividual_kW = COOP.v_cumulativeIndividualPeakDelivery_kW  - originalPeakIndividual_kW;
-	scenarioDeltaPeakCollective_kW = max(0, COOP.v_rapidRunData.getPeakDelivery_kW())  - originalPeakCollective_kW;
+	scenarioDeltaPeakCollective_kW = COOP.v_rapidRunData.getPeakDelivery_kW()  - originalPeakCollective_kW;
 	scenarioDeltaTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.contractedDeliveryCapacity_kW  - originalTotalGTV_kW;
 }
 else if(rb_GTO_delivery_or_feedin.getValue() == 1){//Feedin
 	originalGTO_kW = COOP.f_getGroupContractFeedinCapacity_kW(COOP.v_originalRapidRunData);
 	originalPeakIndividual_kW = COOP.v_cumulativeIndividualPeakFeedinOriginal_kW;
-	originalPeakCollective_kW = max(0, COOP.v_originalRapidRunData.getPeakFeedin_kW());
+	originalPeakCollective_kW = COOP.v_originalRapidRunData.getPeakFeedin_kW();
 	originalTotalGTV_kW = COOP.v_originalRapidRunData.connectionMetaData.contractedFeedinCapacity_kW;
 
 	scenarioDeltaGTO_kW = COOP.f_getGroupContractFeedinCapacity_kW(COOP.v_rapidRunData)  - originalGTO_kW;
 	scenarioDeltaPeakIndividual_kW = COOP.v_cumulativeIndividualPeakFeedin_kW  - originalPeakIndividual_kW;
-	scenarioDeltaPeakCollective_kW = max(0, COOP.v_rapidRunData.getPeakFeedin_kW())  - originalPeakCollective_kW;
+	scenarioDeltaPeakCollective_kW = COOP.v_rapidRunData.getPeakFeedin_kW()  - originalPeakCollective_kW;
 	scenarioDeltaTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.contractedFeedinCapacity_kW  - originalTotalGTV_kW;
 }
 

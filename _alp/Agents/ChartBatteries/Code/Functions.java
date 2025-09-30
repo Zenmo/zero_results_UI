@@ -21,13 +21,13 @@ if (dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapa
 		double dataSetStartTime_h = uI_Results.energyModel.p_runStartTime_h; //
 		double peakTime_h;
 		double peak_kW;
-		if (isSummerWeek) {
-			peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
-			peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
-		} else {
-			peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
-			peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
-		}
+	if (isSummerWeek) {
+		peakTime_h = dataObject.getRapidRunData().getLowestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
+	} else {
+		peakTime_h = dataObject.getRapidRunData().getHighestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
+	}
 		//traceln("Plotting peak feedin week instead of fixed summer week! Peak feedin occured at: %s hours, power was: %s", peakFeedinTime_h, peakFeedin_kW);
 		
 		// Output the result
@@ -45,7 +45,7 @@ if (dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapa
 				v_weekLabel.setText("Laagste invoeding op: " + dateTimeString);
 			}
 		}*/
-		double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+		double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 		SOCChart_week.addDataSet(dataObject.getRapidRunData().getBatteriesSOCts_fr().getDataSet(dataSetStartTime_h, peakWeekStart_h, peakWeekStart_h+24*7), "Batterij SOC", uI_Results.v_electricityBaseloadDemandColor);
 	} else {
 		if (isSummerWeek){
@@ -286,14 +286,14 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { //
 	double peakTime_h;
 	double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+		peakTime_h = dataObject.getRapidRunData().getLowestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+		peakTime_h = dataObject.getRapidRunData().getHighestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
 
-	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 	String dateTimeString = f_getDateTimeFromHour(peakTime_h);
     if (isSummerWeek) {
 	    if (peak_kW > 0) {
