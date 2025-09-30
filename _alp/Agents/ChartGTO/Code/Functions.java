@@ -22,6 +22,7 @@ f_setGTOBarChart(energyCoop);
 
 double f_resetChart()
 {/*ALCODESTART::1727107912139*/
+f_setWarningScreen(false);
 chart_GTO.removeAll();
 chart_peakIndividual.removeAll();
 chart_peakCollective.removeAll();
