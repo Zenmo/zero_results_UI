@@ -25,12 +25,7 @@ if (rb_gespreksleidraadBedrijvenChartType.getValue()==0) {
 	f_setChartsGespreksleidraadBedrijven2(data);
 } else if (rb_gespreksleidraadBedrijvenChartType.getValue()==2) {
 	gr_GSLDSummary3.setVisible(true);
-	if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
-		f_setGroupContractChart((EnergyCoop)data.getRapidRunData().parentAgent);
-	}
-	else{
-		f_setChartsGespreksleidraadBedrijven3(data);
-	}
+	f_setChartsGespreksleidraadBedrijven3(data);
 }
 
 /*ALCODEEND*/}
@@ -174,39 +169,6 @@ chart_barChartGSLDSummary3.addDataItem(totalGTV_kW,"Totaal GTV " + text_peakType
 chart_barChartGSLDSummary3.addDataItem(peakIndividual_kW,"Piek " + text_peakType + " individueel",orange);
 chart_barChartGSLDSummary3.addDataItem(peakCollective_kW,"Piek " + text_peakType + " collectief",green);
 
-/*ALCODEEND*/}
-
-double f_setGroupContractChart(EnergyCoop COOP)
-{/*ALCODESTART::1740754239000*/
-chart_barChartGSLDSummary3.removeAll();
-
-t_titleGespreksleidraadBedrijven3.setText("Groepscontract capaciteit");
-
-DataItem totalGTV_kW = new DataItem();
-DataItem totalGTVgroupcontract_kW = new DataItem();
-DataItem peakIndividual_kW = new DataItem();
-DataItem peakCollective_kW = new DataItem();
-String text_peakType = "";
-if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
-	totalGTV_kW.setValue(COOP.v_liveConnectionMetaData.contractedDeliveryCapacity_kW);
-	totalGTVgroupcontract_kW.setValue(COOP.f_getGroupContractDeliveryCapacity_kW());
-	peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakDelivery_kW);
-	peakCollective_kW.setValue(COOP.v_rapidRunData.getPeakDelivery_kW());
-	text_peakType = "levering";
-}
-else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
-	totalGTV_kW.setValue(COOP.v_liveConnectionMetaData.contractedFeedinCapacity_kW);
-	totalGTVgroupcontract_kW.setValue(COOP.f_getGroupContractFeedinCapacity_kW());
-	peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakFeedin_kW);
-	peakCollective_kW.setValue(COOP.v_rapidRunData.getPeakFeedin_kW());
-	text_peakType = "teruglevering";
-}
-
-
-chart_barChartGSLDSummary3.addDataItem(totalGTV_kW,"Totaal GTV Cumulatief " + text_peakType,darkMagenta);
-chart_barChartGSLDSummary3.addDataItem(peakIndividual_kW,"Piek " + text_peakType + " individueel",orange);
-chart_barChartGSLDSummary3.addDataItem(peakCollective_kW,"Piek " + text_peakType + " collectief",green);
-chart_barChartGSLDSummary3.addDataItem(totalGTVgroupcontract_kW,"GTV Groepscontract " + text_peakType, darkBlue);
 /*ALCODEEND*/}
 
 double f_setWarningScreen(boolean showWarningScreen)

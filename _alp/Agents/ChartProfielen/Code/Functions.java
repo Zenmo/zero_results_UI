@@ -132,13 +132,13 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double peakTime_h;
 	double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+		peakTime_h = dataObject.getRapidRunData().getLowestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+		peakTime_h = dataObject.getRapidRunData().getHighestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
-	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 	for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 		if(EC_consumption != OL_EnergyCarriers.HEAT){
 			energyDemandChart.addDataSet( dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(EC_consumption).getDataSet(dataSetStartTime_h, peakWeekStart_h, peakWeekStart_h+24*7), uI_Results.f_getName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
@@ -211,13 +211,13 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double peakTime_h;
 	double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+		peakTime_h = dataObject.getRapidRunData().getLowestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+		peakTime_h = dataObject.getRapidRunData().getHighestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
-	 
+
 	//traceln("Plotting peak feedin week instead of fixed summer week! Peak feedin occured at: %s hours, power was: %s", peakFeedinTime_h, peakFeedin_kW);
 	
 	// Output the result
@@ -236,7 +236,7 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 		}
 	}
 	v_weekLabel.setX(80);
-	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 	//for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet()) {
 	for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().assetsMetaData.activeAssetFlows) {
 		if (uI_Results.v_electricAssetFlows.contains(AC)) {
@@ -660,14 +660,14 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { //
 	double peakTime_h;
 	double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getPeakFeedinTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakFeedin_kW();
+		peakTime_h = dataObject.getRapidRunData().getLowestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getPeakDeliveryTime_h();
-		peak_kW = dataObject.getRapidRunData().getPeakDelivery_kW();
+		peakTime_h = dataObject.getRapidRunData().getHighestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
 
-	double peakWeekStart_h = dataObject.getRapidRunData().getWeekStart_h(peakTime_h);
+	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 	String dateTimeString = f_getDateTimeFromHour(peakTime_h);
     if (isSummerWeek) {
 	    if (peak_kW > 0) {
@@ -720,8 +720,8 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { //
 if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
 
 	if(uI_Results.b_showGroupContractValues) {
-		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW()), "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW()), "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData())), "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData())), "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 	}
 	if (b_subdivideEnergyCoopFlows) {
 		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getAllChildMemberGridConnections();
