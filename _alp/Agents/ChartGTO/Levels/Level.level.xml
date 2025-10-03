@@ -69,8 +69,7 @@
 				<Text><![CDATA[LET OP: Het geselecteerde object wordt 
 niet ondersteund door deze grafiek!
 
-Selecteer het gehele gebied 
-of maak een selectie van aansluitingen 
+Maak een selectie van aansluitingen 
 om deze grafieken te gebruiken.]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
@@ -746,7 +745,7 @@ GTV]]></Text>
 								<Z>0</Z>
 								<Rotation>0.0</Rotation>
 								<Color>-16777216</Color>
-								<Text><![CDATA[Na geplande investeringen]]></Text>
+								<Text><![CDATA[Ingesteld scenario]]></Text>
 								<Font>
 									<Name><![CDATA[SansSerif]]></Name>
 									<Size>12</Size>
@@ -758,6 +757,36 @@ GTV]]></Text>
 					</Group>
 				</Presentation>
 			</Group>
+			<Text>
+				<Id>1759485905572</Id>
+				<Name><![CDATA[txt_warningNoOriginalRapidRun]]></Name>
+				<X>1820</X>
+				<Y>560</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<XCode>230</XCode>
+				<YCode>580</YCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-65536</Color>
+				<Text><![CDATA[Let op: Normaal laat deze grafiek de verschillen zien tussen de huidige situatie
+en het ingestelde scenario, echter, doordat er bedrijven zijn toevoegd aan de selectie
+waar we geen data van hebben ontvangen, staat deze functionaliteit uit en zie je alleen
+de data van het ingestelde scenario.]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>10</Size>
+					<Style>1</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
 		</Presentation>
 	</Group>
 </Presentation>

@@ -28,10 +28,19 @@ chart_peakIndividual.removeAll();
 chart_peakCollective.removeAll();
 chart_GTV.removeAll();
 gr_GTOChart.setVisible(false); // Needed to refresh the graph
+gr_barChartLegend.setVisible(false);
+txt_warningNoOriginalRapidRun.setVisible(false);
 /*ALCODEEND*/}
 
 double f_setGTOBarChart(EnergyCoop COOP)
 {/*ALCODESTART::1759139695551*/
+if(COOP.v_originalRapidRunData == null){
+	f_setGTOBarChart_noOriginalRapidRun(COOP);
+	return;
+}
+
+gr_barChartLegend.setVisible(true);
+
 double originalGTO_kW = 0;
 double originalPeakIndividual_kW = 0;
 double originalPeakCollective_kW = 0;
@@ -124,8 +133,6 @@ first_DataItem_PeakCollective_kW.setValue(dataValues_chartPeakCollective_kW.getF
 second_DataItem_PeakCollective_kW.setValue(dataValues_chartPeakCollective_kW.getSecond());
 first_DataItem_GTV_kW.setValue(dataValues_chartGTV_kW.getFirst());
 second_DataItem_GTV_kW.setValue(dataValues_chartGTV_kW.getSecond());
-traceln("dataValues_chartGTV_kW.getFirst(): " + dataValues_chartGTV_kW.getFirst());
-traceln("dataValues_chartGTV_kW.getSecond(): " + dataValues_chartGTV_kW.getSecond());
 
 //Scale axis to same value for all 4 stack charts
 double[] chartHeights_kW = {dataValues_chartGTO_kW.getFirst() + dataValues_chartGTO_kW.getSecond(), 
@@ -157,5 +164,60 @@ gr_GTOChart.setVisible(true);  // Needed to refresh the graph
 double f_setWarningScreen(boolean showWarningScreen)
 {/*ALCODESTART::1759139897063*/
 gr_warningScreen.setVisible(showWarningScreen);
+/*ALCODEEND*/}
+
+double f_setGTOBarChart_noOriginalRapidRun(EnergyCoop COOP)
+{/*ALCODESTART::1759485328961*/
+txt_warningNoOriginalRapidRun.setVisible(true);
+
+double scenarioGTO_kW = 0;
+double scenarioPeakIndividual_kW = 0;
+double scenarioPeakCollective_kW = 0;
+double scenarioTotalGTV_kW = 0;
+	
+//Get the values
+if(rb_GTO_delivery_or_feedin.getValue() == 0){//Delivery
+	scenarioGTO_kW = COOP.f_getGroupContractDeliveryCapacity_kW(COOP.v_rapidRunData);
+	scenarioPeakIndividual_kW = COOP.v_cumulativeIndividualPeakDelivery_kW;
+	scenarioPeakCollective_kW = COOP.v_rapidRunData.getPeakDelivery_kW();
+	scenarioTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.contractedDeliveryCapacity_kW;
+}
+else if(rb_GTO_delivery_or_feedin.getValue() == 1){//Feedin
+	scenarioGTO_kW = COOP.f_getGroupContractFeedinCapacity_kW(COOP.v_rapidRunData);
+	scenarioPeakIndividual_kW = COOP.v_cumulativeIndividualPeakFeedin_kW;
+	scenarioPeakCollective_kW = COOP.v_rapidRunData.getPeakFeedin_kW();
+	scenarioTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.contractedFeedinCapacity_kW;
+}
+
+//Create data items
+DataItem first_DataItem_GTO_kW = new DataItem();
+DataItem first_DataItem_PeakIndividual_kW = new DataItem();
+DataItem first_DataItem_PeakCollective_kW = new DataItem();
+DataItem first_DataItem_GTV_kW = new DataItem();
+
+//Set data item values
+first_DataItem_GTO_kW.setValue(scenarioGTO_kW);
+first_DataItem_PeakIndividual_kW.setValue(scenarioPeakIndividual_kW);
+first_DataItem_PeakCollective_kW.setValue(scenarioPeakCollective_kW);
+first_DataItem_GTV_kW.setValue(scenarioTotalGTV_kW);
+
+//Scale axis to same value for all 4 stack charts
+double[] chartHeights_kW = {scenarioGTO_kW, 
+							scenarioPeakIndividual_kW,
+							scenarioPeakCollective_kW,
+							scenarioTotalGTV_kW}; 
+double chartScale_kW = max(chartHeights_kW);
+chart_GTO.setFixedScale(chartScale_kW);
+chart_peakIndividual.setFixedScale(chartScale_kW);
+chart_peakCollective.setFixedScale(chartScale_kW);
+chart_GTV.setFixedScale(chartScale_kW);
+
+
+chart_GTO.addDataItem(first_DataItem_GTO_kW, "Scenario GTO", v_scenarioDeltaValueColor);
+chart_peakIndividual.addDataItem(first_DataItem_PeakIndividual_kW, "Scenario piek individueel", v_scenarioDeltaValueColor);
+chart_peakCollective.addDataItem(first_DataItem_PeakCollective_kW, "Scenario piek collectief", v_scenarioDeltaValueColor);
+chart_GTV.addDataItem(first_DataItem_GTV_kW, "Scenario cumulatieve GTV", v_scenarioDeltaValueColor);
+
+gr_GTOChart.setVisible(true);  // Needed to refresh the graph
 /*ALCODEEND*/}
 

@@ -22,11 +22,11 @@ if (dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapa
 		double peakTime_h;
 		double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getLowestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
-		peak_kW = -1 * dataObject.getRapidRunData().getLowestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
+		peakTime_h = dataObject.getRapidRunData().getLowestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getHighestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
-		peak_kW = dataObject.getRapidRunData().getHighestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
+		peakTime_h = dataObject.getRapidRunData().getHighestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
 		//traceln("Plotting peak feedin week instead of fixed summer week! Peak feedin occured at: %s hours, power was: %s", peakFeedinTime_h, peakFeedin_kW);
 		
@@ -286,11 +286,11 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { //
 	double peakTime_h;
 	double peak_kW;
 	if (isSummerWeek) {
-		peakTime_h = dataObject.getRapidRunData().getLowestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
-		peak_kW = -1 * dataObject.getRapidRunData().getLowestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
+		peakTime_h = dataObject.getRapidRunData().getLowestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = -1 * dataObject.getRapidRunData().getLowestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	} else {
-		peakTime_h = dataObject.getRapidRunData().getHighestNetBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
-		peak_kW = dataObject.getRapidRunData().getHighestNetBalance_kW(OL_EnergyCarriers.ELECTRICITY);
+		peakTime_h = dataObject.getRapidRunData().getHighestBalanceTime_h(OL_EnergyCarriers.ELECTRICITY);
+		peak_kW = dataObject.getRapidRunData().getHighestBalance_kW(OL_EnergyCarriers.ELECTRICITY);
 	}
 
 	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
