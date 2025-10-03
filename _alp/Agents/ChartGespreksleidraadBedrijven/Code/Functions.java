@@ -97,19 +97,19 @@ energyDemandChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_dail
 //Electricity supply chart
 energySupplyChartYearGespreksleidraad1.removeAll();
 if(data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.windProductionElectric_kW)){
-	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.windProductionElectric_kW).getDataSet(startTime_h), v_windElectricitySupplyText, v_windElectricitySupplyColor);
+	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.windProductionElectric_kW).getDataSet(startTime_h, 24.0), v_windElectricitySupplyText, v_windElectricitySupplyColor);
 }
 if(data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.pvProductionElectric_kW)){
-	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.pvProductionElectric_kW).getDataSet(startTime_h), v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
+	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.pvProductionElectric_kW).getDataSet(startTime_h, 24.0), v_PVElectricitySupplyText, v_PVElectricitySupplyColor);
 }
 if(data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.batteriesDischargingPower_kW)){
-	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.batteriesDischargingPower_kW).getDataSet(startTime_h), v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
+	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.batteriesDischargingPower_kW).getDataSet(startTime_h, 24.0), v_storageElectricitySupplyText, v_storageElectricitySupplyColor);
 }
 if(data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.V2GPower_kW)){
-	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.V2GPower_kW).getDataSet(startTime_h), v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
+	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.V2GPower_kW).getDataSet(startTime_h, 24.0), v_V2GElectricitySupplyText, v_V2GElectricitySupplyColor);
 }
 if(data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.CHPProductionElectric_kW)){
-	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.CHPProductionElectric_kW).getDataSet(startTime_h), "WKK plec prod.", gray);
+	energySupplyChartYearGespreksleidraad1.addDataSet(data.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.CHPProductionElectric_kW).getDataSet(startTime_h, 24.0), "WKK plec prod.", gray);
 }
 double maxScale = max(data.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW(),data.getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getMaxPower_kW());
 //double maxScale = max(energySupplyChartYearGespreksleidraad1.getScaleY(), energyDemandChartYearGespreksleidraad1.getScaleY());
