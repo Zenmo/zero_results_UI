@@ -3,7 +3,7 @@ double f_setChartEconomicKPIs()
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 60, true);
+uI_Results.f_setSelectedObjectDisplay(230, 60, false);
 
 //At least for now grid nodes are not supported
 if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
@@ -137,6 +137,7 @@ t_totalCapex_eur.setText("€ " + df.format(roundToInt(CAPEX_eur)));
 // Conclusion
 t_paybackPeriod_yr.setText(df_2decimal.format(paybackPeriod_yr));
 t_profitBatteryLifetime_eur.setText("€ " + df.format(roundToInt(roiLifetimeBattery_yr)));
+t_totalAnnualCost_eur_p_yr.setText("€ " + df.format(roundToInt(totalAnnualCosts_eur_p_yr)) + "/jaar");
 /*ALCODEEND*/}
 
 double f_styleBackground_override(Color backgroundColor,Color lineColor,Double lineWidth,LineStyle lineStyle)
@@ -484,11 +485,16 @@ return ReturnOnInvestment_eur;
 
 double f_calculateEquivalentAnnualCostBESS(double totalNetElectricityCosts_eur,double CAPEX_eur,double lifetimeBattery_yr)
 {/*ALCODESTART::1760533200747*/
-double realDiscountRate = (1+v_discountRate)/(1+v_inflationRate) - 1;
-double capitalRecoveryFactor = (realDiscountRate*Math.pow(1+realDiscountRate,lifetimeBattery_yr))/(Math.pow(1+realDiscountRate,lifetimeBattery_yr) - 1);
+double realDiscountRate_fr = (1+v_discountRate_fr)/(1+v_inflationRate_fr) - 1;
+double capitalRecoveryFactor = (realDiscountRate_fr*Math.pow(1+realDiscountRate_fr,lifetimeBattery_yr))/(Math.pow(1+realDiscountRate_fr,lifetimeBattery_yr) - 1);
 double equivalentAnnualCostCAPEX_eur_p_yr = CAPEX_eur*capitalRecoveryFactor;
-double equivalentAnnualCostOPEX_eur_p_yr = v_operationalMaintenanceCosts_eur_p_yr * CAPEX_eur;
+double equivalentAnnualCostOPEX_eur_p_yr = v_opexRate_fr * CAPEX_eur;
 double equivalentAnnualCostBESS_eur_p_yr = equivalentAnnualCostCAPEX_eur_p_yr + equivalentAnnualCostOPEX_eur_p_yr;
+traceln("realDiscountRate: " + realDiscountRate_fr);
+traceln("capitalRecoveryFactor: " + capitalRecoveryFactor);
+traceln("equivalentAnnualCostCAPEX_eur_p_yr: " + equivalentAnnualCostCAPEX_eur_p_yr);
+traceln("equivalentAnnualCostOPEX_eur_p_yr: " + equivalentAnnualCostOPEX_eur_p_yr);
+traceln("equivalentAnnualCostBESS_eur_p_yr: " + equivalentAnnualCostBESS_eur_p_yr);
 return equivalentAnnualCostBESS_eur_p_yr;
 /*ALCODEEND*/}
 

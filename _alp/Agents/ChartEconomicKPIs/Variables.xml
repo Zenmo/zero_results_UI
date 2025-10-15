@@ -153,7 +153,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1760533459068</Id>
-		<Name><![CDATA[v_discountRate]]></Name>
+		<Name><![CDATA[v_discountRate_fr]]></Name>
 		<X>-280</X>
 		<Y>760</Y>
 		<Label>
@@ -168,11 +168,14 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0.06]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1760533476748</Id>
-		<Name><![CDATA[v_inflationRate]]></Name>
+		<Name><![CDATA[v_inflationRate_fr]]></Name>
 		<X>-280</X>
 		<Y>780</Y>
 		<Label>
@@ -187,11 +190,14 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0.02]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1760533492148</Id>
-		<Name><![CDATA[v_operationalMaintenanceCosts_eur_p_yr]]></Name>
+		<Name><![CDATA[v_opexRate_fr]]></Name>
 		<X>-280</X>
 		<Y>800</Y>
 		<Label>
@@ -206,6 +212,9 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[0.02]]></Code>
+			</InitialValue>
 		</Properties>
 	</Variable>
 </Variables>
