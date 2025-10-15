@@ -167,6 +167,14 @@
 				<Name><![CDATA[radioButtonChangableOptions]]></Name>
 				<ExcludeFromBuild>true</ExcludeFromBuild>
 			</JavaClass>
+			<JavaClass>
+				<Id>1759789183698</Id>
+				<Name><![CDATA[J_CalculateBatteryLifetime]]></Name>
+			</JavaClass>
+			<JavaClass>
+				<Id>1759789183723</Id>
+				<Name><![CDATA[J_CalculateBatteryLifetimeHelpers]]></Name>
+			</JavaClass>
 		</JavaClasses>
 		<RequiredLibraryReference>
 			<LibraryName>zero_engine</LibraryName>

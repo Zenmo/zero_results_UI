@@ -367,7 +367,14 @@ double f_addBatteryLifetime(I_EnergyData dataObject)
 {/*ALCODESTART::1756460546640*/
 DecimalFormat df_2decimal = new DecimalFormat("0.00");
 
-double lifetimeBattery_yr = f_calculateBatteryLifetime_yr(dataObject, dataObject.getRapidRunData().getBatteriesSOCts_fr().getTimeSeries());
+double[] arraySoC_fr = dataObject.getRapidRunData().getBatteriesSOCts_fr().getTimeSeries();
+
+double alpha = -15568.83;//-5440.35;
+double beta = 2239.43;//1191.54;
+
+double cycleDamage_p_yr = J_CalculateBatteryLifetime.calculateYearlyCycleDamage(arraySoC_fr, alpha, beta);
+double lifetimeBattery_yr = (cycleDamage_p_yr > 0) ? 1 / cycleDamage_p_yr : Double.POSITIVE_INFINITY;
+
 t_batteryLifetime.setText(df_2decimal.format(lifetimeBattery_yr));
 /*ALCODEEND*/}
 
@@ -383,8 +390,8 @@ double alpha = -5440.35;
 double beta = 1191.54;
  
 double batteryCycleLife_cycles = alpha * Math.log(averageDoD) + beta;
-traceln("Battery Lifetime from totalYearlyCycles is " + batteryCycleLife_cycles/totalYearlyCycles);
-double lifetimeBattery_yr = batteryCycleLife_cycles/v_cycleCount;
+traceln("Battery Lifetime from v_cycleCount is " + batteryCycleLife_cycles/v_cycleCount);
+double lifetimeBattery_yr = batteryCycleLife_cycles/totalYearlyCycles;
 return lifetimeBattery_yr;
 
 /*ALCODEEND*/}
@@ -400,7 +407,7 @@ while (localBatteryTurningPoints_fr.size() > 2) {
 	boolean hasFoundCycle = false;
 	for (int i=0; i < localBatteryTurningPoints_fr.size()-2; i++) {
 		
-		if (abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2)) <= abs(localBatteryTurningPoints_fr.get(i)-localBatteryTurningPoints_fr.get(i+1))) { //abs(Y-Z) <= abs(Z-Y)
+		if (abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2)) > 0.03 && abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2)) <= abs(localBatteryTurningPoints_fr.get(i)-localBatteryTurningPoints_fr.get(i+1))) { //abs(Y-Z) <= abs(Z-Y)
 			cumulativeDoD += abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2));
 			localBatteryTurningPoints_fr.remove(i+2); //Remove Z first, otherwise order changes
 			localBatteryTurningPoints_fr.remove(i+1); //Remove Y

@@ -59,19 +59,24 @@ double differenceNetElectricityCostsAgainstBaseline_eur = totalNetElectricityCos
 double totalInstalledBatteryStorageCapacity_kWh = data.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh.doubleValue()*1000;
 double CAPEX_eur = 0;
 if (totalInstalledBatteryStorageCapacity_kWh > 0){
-	CAPEX_eur = totalInstalledBatteryStorageCapacity_kWh*v_eurpkWh;
+	CAPEX_eur = totalInstalledBatteryStorageCapacity_kWh*v_turnkeyBatteryCost_eur_p_kWh;
 }
+
+//Economic Analysis
+
 
 //Economic KPI conclusion
 double paybackPeriod_yr = 0;
 double lifetimeBattery_yr = 0;
 double roiLifetimeBattery_yr = 0;
+double equivalentAnnualCostBattery_eur_p_yr = 0;
 if (totalInstalledBatteryStorageCapacity_kWh > 0){
 	paybackPeriod_yr = f_calculatePaybackPeriod(data, totalNetElectricityCosts_eur, totalNetElectricityCostsBaseline_eur);
-	lifetimeBattery_yr = f_calculateBatteryLifetime_yr(data, data.getRapidRunData().getBatteriesSOCts_fr().getTimeSeries());
+	lifetimeBattery_yr = f_calculateBatteryLifetime_yr(data.getRapidRunData().getBatteriesSOCts_fr().getTimeSeries());
 	roiLifetimeBattery_yr = f_ROI_eur(data, totalNetElectricityCosts_eur, totalNetElectricityCostsBaseline_eur, CAPEX_eur, lifetimeBattery_yr);
+	equivalentAnnualCostBattery_eur_p_yr = f_calculateEquivalentAnnualCostBESS(totalNetElectricityCosts_eur, CAPEX_eur, lifetimeBattery_yr);
 }
-
+double totalAnnualCosts_eur_p_yr = totalNetElectricityCosts_eur + equivalentAnnualCostBattery_eur_p_yr;
 
 //Set new values text
 DecimalFormat df = new DecimalFormat("#,###");
@@ -448,7 +453,7 @@ double paybackPeriod_yr = 0;
 if (totalNetElectricityCosts_eur < totalNetElectricityCostsBaseline_eur) {
 	
 	double installedCapacity_kWh = data.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh.doubleValue()*1000;
-	double CAPEX_eur = installedCapacity_kWh*v_eurpkWh;
+	double CAPEX_eur = installedCapacity_kWh*v_turnkeyBatteryCost_eur_p_kWh;
     paybackPeriod_yr = CAPEX_eur/(totalNetElectricityCostsBaseline_eur - totalNetElectricityCosts_eur);
     return paybackPeriod_yr;
     		
@@ -458,91 +463,32 @@ paybackPeriod_yr = Double.POSITIVE_INFINITY;
 return paybackPeriod_yr;
 /*ALCODEEND*/}
 
-double f_calculateBatteryLifetime_yr(I_EnergyData dataObject,double[] arraySoC_fr)
+double f_calculateBatteryLifetime_yr(double[] arraySoC_fr)
 {/*ALCODESTART::1758450204619*/
-double averageDoD = f_calculateAverageDoD_fr(arraySoC_fr);
-    	 
-double totalYearlyCycles = dataObject.getRapidRunData().getTotalBatteryCycles(); // Defined that total annual energy charged/battery capacity
- 
-// function and parameters (li-ion) are extracted from source:
-// https://www.researchgate.net/publication/330142356_Optimal_Operational_Planning_of_Scalable_DC_Microgrid_with_Demand_Response_Islanding_and_Battery_Degradation_Cost_Considerations
-double alpha = -5440.35;
-double beta = 1191.54;
- 
-double batteryCycleLife_cycles = alpha * Math.log(averageDoD) + beta;
-double lifetimeBattery_yr = batteryCycleLife_cycles/v_cycleCount;
+double alpha = -15568.83;//-5440.35;
+double beta = 2239.43;//1191.54;
+
+double cycleDamage_p_yr = J_CalculateBatteryLifetime.calculateYearlyCycleDamage(arraySoC_fr, alpha, beta);
+double lifetimeBattery_yr = (cycleDamage_p_yr > 0) ? 1 / cycleDamage_p_yr : Double.POSITIVE_INFINITY;
+
 return lifetimeBattery_yr;
-
-/*ALCODEEND*/}
-
-double f_calculateAverageDoD_fr(double[] arraySoC_fr)
-{/*ALCODESTART::1758450204639*/
-v_cycleCount = 0; // Cycle is NOT defined as amount of chargeEnergy/batteryCapacity; but rather as a count of activities
-double cumulativeDoD = 0;
-
-ArrayList<Double> localBatteryTurningPoints_fr = f_calculateTurningPoints(arraySoC_fr);
-
-while (localBatteryTurningPoints_fr.size() > 2) {
-	boolean hasFoundCycle = false;
-	for (int i=0; i < localBatteryTurningPoints_fr.size()-2; i++) {
-		
-		if (abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2)) <= abs(localBatteryTurningPoints_fr.get(i)-localBatteryTurningPoints_fr.get(i+1))) { //abs(Y-Z) <= abs(Z-Y)
-			cumulativeDoD += abs(localBatteryTurningPoints_fr.get(i+1)-localBatteryTurningPoints_fr.get(i+2));
-			localBatteryTurningPoints_fr.remove(i+2); //Remove Z first, otherwise order changes
-			localBatteryTurningPoints_fr.remove(i+1); //Remove Y
-			v_cycleCount += 1; //Remove 2 point-> 2lines -> 2 half cycles -> 1 full cycle 
-			hasFoundCycle = true;
-			break;
-			// charge or discharge is or is not included in DoD -> TBD; so amountOfCycles could be 0.5 (if we had additional while loop) or 1
-		}
-	}
-	if (!hasFoundCycle) {
-		break; //fail safe to prevent stuck in loop
-	}
-}
-
-//Add final residual half-cycle
-if (localBatteryTurningPoints_fr.size() > 1) {
-	cumulativeDoD += abs(localBatteryTurningPoints_fr.get(0)-localBatteryTurningPoints_fr.get(1));
-	v_cycleCount += 0.5;
-}
-
-double averageDoD = cumulativeDoD/v_cycleCount;
-return averageDoD;
-/*ALCODEEND*/}
-
-ArrayList<Double> f_calculateTurningPoints(double[] arraySoC_fr)
-{/*ALCODESTART::1758450204658*/
-double[] previousTwoBatterySoC_fr = new double[]{0,0};
-ArrayList<Double> batteryTurningPoints_fr = new ArrayList();
-
-for(double SoC_fr: arraySoC_fr) {
-	SoC_fr = roundToDecimal(SoC_fr,8);
-
-	if (previousTwoBatterySoC_fr[0] >= previousTwoBatterySoC_fr[1] && previousTwoBatterySoC_fr[1] < SoC_fr) {
-		batteryTurningPoints_fr.add(previousTwoBatterySoC_fr[1]);
-	}
-	else if (previousTwoBatterySoC_fr[0] <= previousTwoBatterySoC_fr[1] && previousTwoBatterySoC_fr[1] > SoC_fr) {
-		batteryTurningPoints_fr.add(previousTwoBatterySoC_fr[1]);
-	}
-	previousTwoBatterySoC_fr[0] = previousTwoBatterySoC_fr[1];
-	previousTwoBatterySoC_fr[1] = SoC_fr;
-}
-return batteryTurningPoints_fr;
 /*ALCODEEND*/}
 
 double f_ROI_eur(I_EnergyData data,double totalNetElectricityCosts_eur,double totalNetElectricityCostsBaseline_eur,double CAPEX_eur,double batteryLifetime_yr)
 {/*ALCODESTART::1758452338110*/
 double ReturnOnInvestment_eur = 0;
 
-//if (totalNetElectricityCosts_eur < totalNetElectricityCostsBaseline_eur) {
-
 ReturnOnInvestment_eur = batteryLifetime_yr * (totalNetElectricityCostsBaseline_eur - totalNetElectricityCosts_eur) - CAPEX_eur;
 return ReturnOnInvestment_eur;
-	
-//}
+/*ALCODEEND*/}
 
-//ReturnOnInvestment_yr = Double.POSITIVE_INFINITY;
-//return ReturnOnInvestment_yr;
+double f_calculateEquivalentAnnualCostBESS(double totalNetElectricityCosts_eur,double CAPEX_eur,double lifetimeBattery_yr)
+{/*ALCODESTART::1760533200747*/
+double realDiscountRate = (1+v_discountRate)/(1+v_inflationRate) - 1;
+capitalRecoveryFactor = (realDiscountRate*Math.pow(1+realDiscountRate,lifetimeBattery_yr))/(Math.pow(1+realDiscountRate,lifetimeBattery_yr) - 1);
+equivalentAnnualCostCAPEX_eur_p_yr = CAPEX_eur*capitalRecoveryFactor;
+equivalentAnnualCostOPEX_eur_p_yr = v_operationalMaintenanceCosts_eur_p_yr * CAPEX_eur;
+equivalentAnnualCostBESS_eur_p_yr = equivalentAnnualCostCAPEX_eur_p_yr + equivalentAnnualCostOPEX_eur_p_yr
+
 /*ALCODEEND*/}
 

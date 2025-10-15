@@ -517,7 +517,7 @@
 					<MinValue>1</MinValue>
 					<MaxValue>1000</MaxValue>
 					<LinkTo>true</LinkTo>
-					<Link>v_eurpkWh</Link>
+					<Link>v_turnkeyBatteryCost_eur_p_kWh</Link>
 				</ExtendedProperties>
 			</Control>
 			<Text>

@@ -131,7 +131,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1758404438839</Id>
-		<Name><![CDATA[v_eurpkWh]]></Name>
+		<Name><![CDATA[v_turnkeyBatteryCost_eur_p_kWh]]></Name>
 		<X>-280</X>
 		<Y>670</Y>
 		<Label>
@@ -147,14 +147,14 @@
               StaticVariable="false">
 			<Type><![CDATA[int]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[750]]></Code>
+				<Code><![CDATA[300]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
-		<Id>1758450204678</Id>
-		<Name><![CDATA[v_cycleCount]]></Name>
-		<X>-240</X>
+		<Id>1760533459068</Id>
+		<Name><![CDATA[v_discountRate]]></Name>
+		<X>-280</X>
 		<Y>760</Y>
 		<Label>
 			<X>10</X>
@@ -168,9 +168,44 @@
               AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[double]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[0]]></Code>
-			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1760533476748</Id>
+		<Name><![CDATA[v_inflationRate]]></Name>
+		<X>-280</X>
+		<Y>780</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1760533492148</Id>
+		<Name><![CDATA[v_operationalMaintenanceCosts_eur_p_yr]]></Name>
+		<X>-280</X>
+		<Y>800</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[double]]></Type>
 		</Properties>
 	</Variable>
 </Variables>
