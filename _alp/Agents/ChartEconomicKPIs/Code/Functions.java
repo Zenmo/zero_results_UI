@@ -485,10 +485,10 @@ return ReturnOnInvestment_eur;
 double f_calculateEquivalentAnnualCostBESS(double totalNetElectricityCosts_eur,double CAPEX_eur,double lifetimeBattery_yr)
 {/*ALCODESTART::1760533200747*/
 double realDiscountRate = (1+v_discountRate)/(1+v_inflationRate) - 1;
-capitalRecoveryFactor = (realDiscountRate*Math.pow(1+realDiscountRate,lifetimeBattery_yr))/(Math.pow(1+realDiscountRate,lifetimeBattery_yr) - 1);
-equivalentAnnualCostCAPEX_eur_p_yr = CAPEX_eur*capitalRecoveryFactor;
-equivalentAnnualCostOPEX_eur_p_yr = v_operationalMaintenanceCosts_eur_p_yr * CAPEX_eur;
-equivalentAnnualCostBESS_eur_p_yr = equivalentAnnualCostCAPEX_eur_p_yr + equivalentAnnualCostOPEX_eur_p_yr
-
+double capitalRecoveryFactor = (realDiscountRate*Math.pow(1+realDiscountRate,lifetimeBattery_yr))/(Math.pow(1+realDiscountRate,lifetimeBattery_yr) - 1);
+double equivalentAnnualCostCAPEX_eur_p_yr = CAPEX_eur*capitalRecoveryFactor;
+double equivalentAnnualCostOPEX_eur_p_yr = v_operationalMaintenanceCosts_eur_p_yr * CAPEX_eur;
+double equivalentAnnualCostBESS_eur_p_yr = equivalentAnnualCostCAPEX_eur_p_yr + equivalentAnnualCostOPEX_eur_p_yr;
+return equivalentAnnualCostBESS_eur_p_yr;
 /*ALCODEEND*/}
 
