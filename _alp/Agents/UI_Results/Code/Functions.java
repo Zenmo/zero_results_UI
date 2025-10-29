@@ -509,7 +509,7 @@ else{
 	if(v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
 		GridConnection GC = ((GridConnection)v_selectedObjectInterface.getLiveData().parentAgent);
 		String connectionDisplayName = GC.p_ownerID;
-		if(GC.c_connectedGISObjects.get(0).p_annotation != null && GC.c_connectedGISObjects.get(0).c_containedGridConnections.size() == 1){
+		if(GC.c_connectedGISObjects.size() > 0 && GC.c_connectedGISObjects.get(0).p_annotation != null && GC.c_connectedGISObjects.get(0).c_containedGridConnections.size() == 1){
 			connectionDisplayName = GC.c_connectedGISObjects.get(0).p_annotation;
 		}
 		
