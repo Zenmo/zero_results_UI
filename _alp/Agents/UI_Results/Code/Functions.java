@@ -10,6 +10,8 @@ gr_chartKPISummary_presentation.setVisible(false);
 gr_chartBatteries_presentation.setVisible(false);
 gr_chartEconomicKPIs_presentation.setVisible(false);
 gr_chartGTO_presentation.setVisible(false);
+gr_chartBars_presenatation.setVisible(false);
+
 
 switch (v_selectedChartType) {
 	case PROFIEL:
@@ -18,8 +20,8 @@ switch (v_selectedChartType) {
 		break;
 	case DIAGRAM:
 		//gr_chartBalans_presentation.setVisible(true);
-		gr_chartBars_presentation.setVisible(true);
-		chartBar.f_setCharts();
+		gr_chartBars_presenatation.setVisible(true);
+		chartBars.f_setCharts();
 		break;
 	case BELASTING:
 		gr_chartNetbelasting_presentation.setVisible(true);
