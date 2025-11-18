@@ -250,7 +250,7 @@ for (GridConnection GC : GN.f_getAllLowerLVLConnectedGridConnections()){
 	            heatPower_kW[i] = heatPower_kW[i] / p_timeStep_h;
 			}
 			double eta_r = uI_Results.energyModel.avgc_data.p_avgEfficiencyHeatpump_fr;
-			double outputTemperature_degC = uI_Results.energyModel.avgc_data.p_avgOutputTemperatureHeatpump_degC;
+			double outputTemperature_degC = uI_Results.energyModel.avgc_data.p_avgOutputTemperatureElectricHeatpump_degC;
 		    for(double time = 0; time < 8760; time += p_timeStep_h){
 		    	double baseTemperature_degC = uI_Results.energyModel.pp_ambientTemperature_degC.getValue(time);
 		    	double COP_r = eta_r * ( 273.15 + outputTemperature_degC ) / ( outputTemperature_degC - baseTemperature_degC );
@@ -261,7 +261,7 @@ for (GridConnection GC : GN.f_getAllLowerLVLConnectedGridConnections()){
 	for(J_EAConsumption genericHeatDemandProfile : genericHeatDemandProfiles) {
 		if(genericHeatDemandProfile != null){
 			double eta_r = uI_Results.energyModel.avgc_data.p_avgEfficiencyHeatpump_fr;
-			double outputTemperature_degC = uI_Results.energyModel.avgc_data.p_avgOutputTemperatureHeatpump_degC;
+			double outputTemperature_degC = uI_Results.energyModel.avgc_data.p_avgOutputTemperatureElectricHeatpump_degC;
 			
 			for(double time = 0; time < 8760; time += p_timeStep_h){
 			    double baseTemperature_degC = uI_Results.energyModel.pp_ambientTemperature_degC.getValue(time);
