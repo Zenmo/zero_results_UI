@@ -279,7 +279,7 @@
 				<Id>1762958101371</Id>
 				<Name><![CDATA[button_monthlyDetails]]></Name>
 				<X>100</X>
-				<Y>330</Y>
+				<Y>350</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1666,8 +1666,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1762958101473</Id>
 				<Name><![CDATA[button_yearTotals]]></Name>
-				<X>110</X>
-				<Y>360</Y>
+				<X>100</X>
+				<Y>380</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2340,4 +2340,39 @@ gr_Total.setVisible(true);</ActionCode>
 			</Text>
 		</Presentation>
 	</Group>
+	<Control Type="Button">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1763643190106</Id>
+		<Name><![CDATA[button_electricityChart]]></Name>
+		<X>20</X>
+		<Y>700</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="110" Height="30">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<TextColor>-16777216</TextColor>
+			<Enabled>true</Enabled>
+			<ActionCode>// We were showing the electricity self consumption charts before and will switch to the assets charts
+if (v_showingElectricitySelfConsumption) {
+	button_electricityChart.setText("Zelfconsumptie");
+}
+// We were showing the electricity asset charts before and will switch to the self consumption charts
+else {
+	button_electricityChart.setText("Apparaten");
+}
+
+v_showingElectricitySelfConsumption = !v_showingElectricitySelfConsumption;
+f_setCharts();</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<LabelText>Apparaten</LabelText>
+		</ExtendedProperties>
+	</Control>
 </Presentation>
