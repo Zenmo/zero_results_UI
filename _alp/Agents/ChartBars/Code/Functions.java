@@ -405,6 +405,10 @@ for (int i = 0; i < 12; i++) {
 
 double f_setHeatBarChartTotal(I_EnergyData dataObject)
 {/*ALCODESTART::1762958502278*/
+if ( !dataObject.getRapidRunData().activeEnergyCarriers.contains(OL_EnergyCarriers.HEAT) ) {
+	return;
+}
+
 double totalConsumption_MWh = 0;
 double totalProduction_MWh = 0;
 double consumption_MWh = 0;
@@ -412,44 +416,76 @@ double production_MWh= 0;
 DataItem di = null;
 
 // Consumption
+// Space heating
 
-// Profile
-// Building
 // DHW
-// export warmtenet
-
-//dataObject.getRapidRunData().acc_totalPrimaryEnergyProductionHeatpumps_kW;
-//dataObject.getRapidRunData().getTotalDistrictHeatingConsumption_MWh();
-//dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.METHANE);
-//dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.HYDROGEN);
-
-// Production
-
-// CV
-// HP
-// HP omgeving
-// import Warmtenet
-// PVT
-
-
-for (OL_AssetFlowCategories AFC : dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet()) {
-	if (uI_Results.v_electricAssetFlows.contains(AFC)) {
-		if (uI_Results.v_consumptionAssetFlows.contains(AFC)) {
-			consumption_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AFC).getIntegral_MWh();
-			totalConsumption_MWh += consumption_MWh;
-			di = new DataItem();
-			di.setValue(consumption_MWh);
-			pl_consumptionChartBalanceTotal.addDataItem(di, uI_Results.lm_assetFlowLabels.get(AFC), uI_Results.cm_assetFlowColors.get(AFC));
-		}
-		else {
-			production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AFC).getIntegral_MWh();
-			totalProduction_MWh += production_MWh;
-			di = new DataItem();
-			di.setValue(production_MWh);
-			pl_productionChartBalanceTotal.addDataItem(di, uI_Results.lm_assetFlowLabels.get(AFC), uI_Results.cm_assetFlowColors.get(AFC));	
-		}
+if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.hotWaterConsumption_kW)) {
+	consumption_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.hotWaterConsumption_kW).getIntegral_MWh();
+	if ( consumption_MWh > uI_Results.p_cutOff_MWh ) {
+		totalConsumption_MWh += consumption_MWh;
+		di = new DataItem();
+		di.setValue(consumption_MWh);
+		pl_consumptionChartBalanceTotal.addDataItem(di, "Warmwater vraag", darkSlateBlue);
 	}
 }
+
+// Production
+// Standard Heating Assets
+for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_totalHeatFromEnergyCarrier_kW.keySet()) {
+	production_MWh = dataObject.getRapidRunData().am_totalHeatFromEnergyCarrier_kW.get(EC).getIntegral_MWh();
+	if ( production_MWh > uI_Results.p_cutOff_MWh ) {
+		totalProduction_MWh += production_MWh;
+		di = new DataItem();
+		di.setValue(production_MWh);
+		pl_productionChartBalanceTotal.addDataItem(di, uI_Results.f_getName(EC), uI_Results.cm_consumptionColors.get(EC));
+	}
+}
+// Heatpumps
+if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW)) {
+	production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW).getIntegral_MWh();
+	if (production_MWh > uI_Results.p_cutOff_MWh) {
+		totalProduction_MWh += production_MWh;
+		di = new DataItem();
+		di.setValue(production_MWh);
+		pl_productionChartBalanceTotal.addDataItem(di, "Warmtepomp Electriciteit", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
+	
+		production_MWh = dataObject.getRapidRunData().acc_totalPrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
+		totalProduction_MWh += production_MWh;
+		di = new DataItem();
+		di.setValue(production_MWh);
+		pl_productionChartBalanceTotal.addDataItem(di, "Warmtepomp Omgevingswarmte", lightSkyBlue);
+	}
+}
+// PVT
+if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.ptProductionHeat_kW)) {
+	production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.ptProductionHeat_kW).getIntegral_MWh();
+	if (production_MWh > uI_Results.p_cutOff_MWh) {
+		totalProduction_MWh += production_MWh;
+		di = new DataItem();
+		di.setValue(production_MWh);
+		pl_productionChartBalanceTotal.addDataItem(di, "PT Opwek", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.ptProductionHeat_kW));
+	}
+}
+// Heatgrid
+if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.districtHeatDelivery_kW)) {
+	production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getIntegral_MWh();
+	if (production_MWh > uI_Results.p_cutOff_MWh) {
+		totalProduction_MWh += production_MWh;
+		di = new DataItem();
+		di.setValue(production_MWh);
+		pl_productionChartBalanceTotal.addDataItem(di, "Warmtenet Verbruik", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.districtHeatDelivery_kW));
+		
+		double import_MWh = dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT);
+		traceln("prod %s", production_MWh);
+		traceln("import %s", import_MWh);
+		double losses_MWh = max(0, import_MWh - production_MWh);
+		
+		di = new DataItem();
+		di.setValue(losses_MWh);
+		pl_productionChartBalanceTotal.addDataItem(di, "Warmtenet Verliezen", gray);	
+	}
+}
+
 
 double chartScale_MWh = max(totalConsumption_MWh, totalProduction_MWh);
 
