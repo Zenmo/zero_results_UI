@@ -182,6 +182,7 @@
 			<Name><![CDATA[dataObject]]></Name>
 			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
@@ -201,6 +202,7 @@
 			<Name><![CDATA[dataObject]]></Name>
 			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
@@ -220,6 +222,7 @@
 			<Name><![CDATA[dataObject]]></Name>
 			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>

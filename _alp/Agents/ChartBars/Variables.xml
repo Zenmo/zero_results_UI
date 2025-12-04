@@ -3,6 +3,7 @@
 	<Variable Class="PlainVariable">
 		<Id>1763724887270</Id>
 		<Name><![CDATA[v_showingElectricitySelfConsumption]]></Name>
+		<Description><![CDATA[When true the barchart with the selfconsumption of electricity is visible, when false it is showing the electricity use per asset type. Toggled by the button button_electricityChart]]></Description>
 		<X>50</X>
 		<Y>1220</Y>
 		<Label>

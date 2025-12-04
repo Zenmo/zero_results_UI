@@ -1333,7 +1333,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Id>1762958101451</Id>
 				<Name><![CDATA[pl_productionChartWeekend]]></Name>
 				<X>-160</X>
-				<Y>30</Y>
+				<Y>180</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1392,7 +1392,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Id>1762958101455</Id>
 				<Name><![CDATA[pl_consumptionChartWeekend]]></Name>
 				<X>-160</X>
-				<Y>180</Y>
+				<Y>30</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
