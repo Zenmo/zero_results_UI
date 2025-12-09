@@ -636,21 +636,20 @@ if (dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet().contains(OL
 }
 // Heatgrid
 if (dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet().contains(OL_AssetFlowCategories.districtHeatDelivery_kW)) {
+	double import_MWh = dataObject.getRapidRunData().getSummerWeekImport_MWh(OL_EnergyCarriers.HEAT);
 	production_MWh = dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getIntegral_MWh();
-	if (production_MWh > uI_Results.p_cutOff_MWh) {
-		totalProductionSummer_MWh += production_MWh;
+	double losses_MWh = max(0, import_MWh - production_MWh);
+	if (import_MWh > uI_Results.p_cutOff_MWh) {
+		totalProductionSummer_MWh += import_MWh;
 		DataItem heatgridDemand = new DataItem();
-		heatgridDemand.setValue(production_MWh);
+		heatgridDemand.setValue(import_MWh);
 		pl_productionChartSummer.addDataItem(heatgridDemand, "Warmte uit Warmtenet [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.districtHeatDelivery_kW));
-		
-		double import_MWh = dataObject.getRapidRunData().getSummerWeekImport_MWh(OL_EnergyCarriers.HEAT);
-		double losses_MWh = max(0, import_MWh - production_MWh);
-		if (losses_MWh > uI_Results.p_cutOff_MWh) {
-			totalProductionSummer_MWh += losses_MWh;
-			DataItem heatgridLosses = new DataItem();
-			heatgridLosses.setValue(losses_MWh);
-			pl_consumptionChartSummer.addDataItem(heatgridLosses, "Warmtenet Verliezen [MWh]", gray);
-		}
+	}
+	if (losses_MWh > uI_Results.p_cutOff_MWh) {
+		totalConsumptionSummer_MWh += losses_MWh;
+		DataItem heatgridLosses = new DataItem();
+		heatgridLosses.setValue(losses_MWh);
+		pl_consumptionChartSummer.addDataItem(heatgridLosses, "Warmtenet Verliezen [MWh]", gray);
 	}
 }
 
@@ -741,21 +740,20 @@ if (dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.keySet().contains(OL
 }
 // Heatgrid
 if (dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.keySet().contains(OL_AssetFlowCategories.districtHeatDelivery_kW)) {
+	double import_MWh = dataObject.getRapidRunData().getWinterWeekImport_MWh(OL_EnergyCarriers.HEAT);
 	production_MWh = dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getIntegral_MWh();
-	if (production_MWh > uI_Results.p_cutOff_MWh) {
-		totalProductionWinter_MWh += production_MWh;
+	double losses_MWh = max(0, import_MWh - production_MWh);
+	if (import_MWh > uI_Results.p_cutOff_MWh) {
+		totalProductionWinter_MWh += import_MWh;
 		DataItem heatgridDemand = new DataItem();
-		heatgridDemand.setValue(production_MWh);
+		heatgridDemand.setValue(import_MWh);
 		pl_productionChartWinter.addDataItem(heatgridDemand, "Warmte uit Warmtenet [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.districtHeatDelivery_kW));
-		
-		double import_MWh = dataObject.getRapidRunData().getWinterWeekImport_MWh(OL_EnergyCarriers.HEAT);
-		double losses_MWh = max(0, import_MWh - production_MWh);
-		if (losses_MWh > uI_Results.p_cutOff_MWh) {
-			totalProductionWinter_MWh += losses_MWh;
-			DataItem heatgridLosses = new DataItem();
-			heatgridLosses.setValue(losses_MWh);
-			pl_consumptionChartWinter.addDataItem(heatgridLosses, "Warmtenet Verliezen [MWh]", gray);
-		}
+	}
+	if (losses_MWh > uI_Results.p_cutOff_MWh) {
+		totalConsumptionWinter_MWh += losses_MWh;
+		DataItem heatgridLosses = new DataItem();
+		heatgridLosses.setValue(losses_MWh);
+		pl_consumptionChartWinter.addDataItem(heatgridLosses, "Warmtenet Verliezen [MWh]", gray);
 	}
 }
 
@@ -962,7 +960,7 @@ if (dataObject.getRapidRunData().am_assetFlowsDaytime_kW.keySet().contains(OL_As
 		totalConsumptionDay_MWh += lossesDay_MWh;
 		DataItem heatgridLossesDay = new DataItem();
 		heatgridLossesDay.setValue(lossesDay_MWh);
-		pl_productionChartDay.addDataItem(heatgridLossesDay, "Warmtenet Verliezen [MWh]", gray);
+		pl_consumptionChartDay.addDataItem(heatgridLossesDay, "Warmtenet Verliezen [MWh]", gray);
 	}
 	if (importNight_MWh > uI_Results.p_cutOff_MWh) {
 		totalProductionNight_MWh += importNight_MWh;
@@ -974,7 +972,7 @@ if (dataObject.getRapidRunData().am_assetFlowsDaytime_kW.keySet().contains(OL_As
 		totalConsumptionNight_MWh += lossesNight_MWh;
 		DataItem heatgridLossesNight = new DataItem();
 		heatgridLossesNight.setValue(lossesNight_MWh);
-		pl_productionChartNight.addDataItem(heatgridLossesNight, "Warmtenet Verliezen [MWh]", gray);
+		pl_consumptionChartNight.addDataItem(heatgridLossesNight, "Warmtenet Verliezen [MWh]", gray);
 	}
 }
 
@@ -1184,7 +1182,7 @@ if (dataObject.getRapidRunData().am_assetFlowsWeekend_kW.keySet().contains(OL_As
 		totalConsumptionWeekend_MWh += lossesWeekend_MWh;
 		DataItem heatgridLossesWeekend = new DataItem();
 		heatgridLossesWeekend.setValue(lossesWeekend_MWh);
-		pl_productionChartWeekend.addDataItem(heatgridLossesWeekend, "Warmtenet Verliezen [MWh]", gray);
+		pl_consumptionChartWeekend.addDataItem(heatgridLossesWeekend, "Warmtenet Verliezen [MWh]", gray);
 	}
 	if (importWeekday_MWh > uI_Results.p_cutOff_MWh) {
 		totalProductionWeekday_MWh += importWeekday_MWh;
@@ -1196,7 +1194,7 @@ if (dataObject.getRapidRunData().am_assetFlowsWeekend_kW.keySet().contains(OL_As
 		totalConsumptionWeekday_MWh += lossesWeekday_MWh;
 		DataItem heatgridLossesWeekday = new DataItem();
 		heatgridLossesWeekday.setValue(lossesWeekday_MWh);
-		pl_productionChartWeekday.addDataItem(heatgridLossesWeekday, "Warmtenet Verliezen [MWh]", gray);
+		pl_consumptionChartWeekday.addDataItem(heatgridLossesWeekday, "Warmtenet Verliezen [MWh]", gray);
 	}
 }
 
