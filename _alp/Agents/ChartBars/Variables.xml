@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Variables>
+	<Variable Class="PlainVariable">
+		<Id>1763724887270</Id>
+		<Name><![CDATA[v_showingElectricitySelfConsumption]]></Name>
+		<Description><![CDATA[When true the barchart with the selfconsumption of electricity is visible, when false it is showing the electricity use per asset type. Toggled by the button button_electricityChart]]></Description>
+		<X>50</X>
+		<Y>1220</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[boolean]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[true]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+</Variables>
