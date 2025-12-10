@@ -1333,7 +1333,7 @@ f_showCorrectChart();</ActionCode>
 	</Group>
 	<Group>
 		<Id>1762961401722</Id>
-		<Name><![CDATA[gr_chartBars_presenatation]]></Name>
+		<Name><![CDATA[gr_chartBars_presentation]]></Name>
 		<X>0</X>
 		<Y>0</Y>
 		<Label>
@@ -1341,7 +1341,7 @@ f_showCorrectChart();</ActionCode>
 			<Y>0</Y>
 		</Label>
 		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
+		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<Lock>true</Lock>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>

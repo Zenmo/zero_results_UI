@@ -50,7 +50,7 @@
 		<Id>1725371353897</Id>
 		<Name><![CDATA[f_setChartSankey_Presentation]]></Name>
 		<X>1570</X>
-		<Y>350</Y>
+		<Y>340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -78,7 +78,7 @@
 		<Id>1725371355774</Id>
 		<Name><![CDATA[f_setChartGridLoad_Presentation]]></Name>
 		<X>1570</X>
-		<Y>330</Y>
+		<Y>320</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -106,7 +106,7 @@
 		<Id>1725371358501</Id>
 		<Name><![CDATA[f_setChartBalance_Presentation]]></Name>
 		<X>1570</X>
-		<Y>310</Y>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -134,7 +134,7 @@
 		<Id>1725371361557</Id>
 		<Name><![CDATA[f_setChartProfiles_Presentation]]></Name>
 		<X>1570</X>
-		<Y>290</Y>
+		<Y>280</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -242,7 +242,7 @@
 		<Id>1727084763017</Id>
 		<Name><![CDATA[f_setChartSummary_Presentation]]></Name>
 		<X>1570</X>
-		<Y>370</Y>
+		<Y>360</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -270,7 +270,7 @@
 		<Id>1726828282517</Id>
 		<Name><![CDATA[f_setChartKPISummary_Presentation]]></Name>
 		<X>1570</X>
-		<Y>410</Y>
+		<Y>400</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -314,7 +314,7 @@
 		<Id>1729004655678</Id>
 		<Name><![CDATA[f_setAllChart_Presentations]]></Name>
 		<X>1550</X>
-		<Y>270</Y>
+		<Y>260</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -342,7 +342,7 @@
 		<Id>1730396435330</Id>
 		<Name><![CDATA[f_setChartGSLD_Presentation]]></Name>
 		<X>1570</X>
-		<Y>390</Y>
+		<Y>380</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -406,7 +406,7 @@
 		<Id>1732117856053</Id>
 		<Name><![CDATA[f_setChartGelijktijdigheid_Presentation]]></Name>
 		<X>1570</X>
-		<Y>470</Y>
+		<Y>460</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -434,7 +434,7 @@
 		<Id>1737545003506</Id>
 		<Name><![CDATA[f_setChartBatteries_presentation]]></Name>
 		<X>1570</X>
-		<Y>450</Y>
+		<Y>440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -714,7 +714,7 @@
 		<Id>1755704458936</Id>
 		<Name><![CDATA[f_setChartEconomicKPI_presentation]]></Name>
 		<X>1570</X>
-		<Y>490</Y>
+		<Y>480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -742,7 +742,35 @@
 		<Id>1759140579703</Id>
 		<Name><![CDATA[f_setChartGTO_presentation]]></Name>
 		<X>1570</X>
-		<Y>510</Y>
+		<Y>500</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[location_x]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[location_y]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[visible]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1765295944334</Id>
+		<Name><![CDATA[f_setChartBars_Presentation]]></Name>
+		<X>1570</X>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

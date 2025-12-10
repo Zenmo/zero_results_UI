@@ -10,7 +10,7 @@ gr_chartKPISummary_presentation.setVisible(false);
 gr_chartBatteries_presentation.setVisible(false);
 gr_chartEconomicKPIs_presentation.setVisible(false);
 gr_chartGTO_presentation.setVisible(false);
-gr_chartBars_presenatation.setVisible(false);
+gr_chartBars_presentation.setVisible(false);
 
 
 switch (v_selectedChartType) {
@@ -20,7 +20,7 @@ switch (v_selectedChartType) {
 		break;
 	case DIAGRAM:
 		//gr_chartBalans_presentation.setVisible(true);
-		gr_chartBars_presenatation.setVisible(true);
+		gr_chartBars_presentation.setVisible(true);
 		chartBars.f_setCharts();
 		break;
 	case BELASTING:
@@ -234,6 +234,7 @@ double f_setAllChart_Presentations(Integer location_x,Integer location_y,boolean
 //Function used to set all charts at the same place
 f_setChartProfiles_Presentation(location_x, location_y, visible);
 f_setChartBalance_Presentation(location_x, location_y, visible);
+f_setChartBars_Presentation(location_x, location_y, visible);
 f_setChartGridLoad_Presentation(location_x, location_y, visible);
 f_setChartSankey_Presentation(location_x, location_y, visible);
 f_setChartSummary_Presentation(location_x, location_y, visible);
@@ -724,5 +725,23 @@ if(location_y != null){
 
 //Set visibility
 gr_chartGTO_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setChartBars_Presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1765295944334*/
+//Set the location and visibility of the balance charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartBars_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartBars_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartBars_presentation.setVisible(visible);
 /*ALCODEEND*/}
 
