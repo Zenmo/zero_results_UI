@@ -45,6 +45,7 @@
 		<BasicProperties Width="300" Height="40">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
+			<VisibleCode>uI_Results.v_selectedObjectScope != OL_ResultScope.GRIDNODE</VisibleCode>
 			<Enabled>true</Enabled>
 			<ActionCode>f_setCharts();</ActionCode>
 		</BasicProperties>

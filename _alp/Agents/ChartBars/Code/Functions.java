@@ -7,8 +7,11 @@ f_setVisiblity();
 uI_Results.f_setSelectedObjectDisplay(230, 90, true);
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-	// ?
-	}
+	f_setTrafoBalanceChartTotal(uI_Results.v_gridNode);
+	f_setTrafoBalanceChartSummerWinter(uI_Results.v_gridNode);
+	f_setTrafoBalanceChartDayNight(uI_Results.v_gridNode);
+	f_setTrafoBalanceChartWeekdayWeekend(uI_Results.v_gridNode);
+}
 else {
 	I_EnergyData data = uI_Results.f_getSelectedObjectData();
 	if( radio_energyType.getValue() == 0){
@@ -341,7 +344,7 @@ gr_WeekdayWeekend.setVisible(false);
 gr_monthlyTotals.setVisible(false);
 
 button_electricityChart.setVisible(false);
-if (radio_energyType.getValue() == 0) {
+if (radio_energyType.getValue() == 0 && uI_Results.v_selectedObjectScope != OL_ResultScope.GRIDNODE) {
 	button_electricityChart.setVisible(true);
 }
 
@@ -1675,6 +1678,257 @@ if (chartScale_MWh<10) {
 	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToDecimal(totalWeekdayConsumption_MWh/1000,1) + " GWh");
 	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToDecimal(totalWeekendProduction_MWh/1000, 1) + " GWh");
 	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToDecimal(totalWeekendConsumption_MWh/1000,1) + " GWh");
+}
+/*ALCODEEND*/}
+
+double f_setTrafoBalanceChartTotal(GridNode GN)
+{/*ALCODESTART::1765793891160*/
+DataItem annualSelfConsumed = new DataItem();
+annualSelfConsumed.setValue(GN.v_totalImport_MWh - GN.v_annualExcessImport_MWh);
+pl_consumptionChartBalanceTotal.addDataItem(annualSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem annualSelfProduced = new DataItem();
+annualSelfProduced.setValue(GN.v_totalExport_MWh - GN.v_annualExcessExport_MWh);
+pl_productionChartBalanceTotal.addDataItem(annualSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem annualImport = new DataItem();
+annualImport.setValue(GN.v_annualExcessExport_MWh);
+pl_productionChartBalanceTotal.addDataItem(annualImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+DataItem annualExport = new DataItem();
+annualExport.setValue(GN.v_annualExcessImport_MWh);
+pl_consumptionChartBalanceTotal.addDataItem(annualExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+double chartScale_MWh = max(GN.v_totalImport_MWh, GN.v_totalExport_MWh);
+pl_consumptionChartBalanceTotal.setFixedScale(chartScale_MWh);
+pl_productionChartBalanceTotal.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(GN.v_totalExport_MWh*1000) + " kWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(GN.v_totalImport_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToInt(GN.v_totalExport_MWh) + " MWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToInt(GN.v_totalImport_MWh) + " MWh");
+} else {
+	t_productionTextYear.setText("Opwek" + System.lineSeparator() + roundToDecimal(GN.v_totalExport_MWh/1000, 1) + " GWh");
+	t_consumptionTextYear.setText("Gebruik" + System.lineSeparator() + roundToDecimal(GN.v_totalImport_MWh/1000, 1) + " GWh");
+}
+
+/*ALCODEEND*/}
+
+double f_setTrafoBalanceChartSummerWinter(GridNode GN)
+{/*ALCODESTART::1765793891196*/
+double summerWeekImport_MWh = GN.v_summerWeekImport_MWh;
+double summerWeekExport_MWh = GN.v_summerWeekExport_MWh;;
+double winterWeekImport_MWh = GN.v_winterWeekImport_MWh;
+double winterWeekExport_MWh = GN.v_winterWeekExport_MWh;;
+
+//// Summer
+// Consumption
+DataItem summerWeekSelfConsumed = new DataItem();
+summerWeekSelfConsumed.setValue(summerWeekImport_MWh - GN.v_summerWeekExcessImport_MWh);
+pl_consumptionChartSummer.addDataItem(summerWeekSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem summerWeekExport = new DataItem();
+summerWeekExport.setValue(GN.v_summerWeekExcessImport_MWh);
+pl_consumptionChartSummer.addDataItem(summerWeekExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Production
+DataItem summerWeekSelfProduced = new DataItem();
+summerWeekSelfProduced.setValue(summerWeekExport_MWh - GN.v_summerWeekExcessExport_MWh);
+pl_productionChartSummer.addDataItem(summerWeekSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem summerWeekImport = new DataItem();
+summerWeekImport.setValue(GN.v_summerWeekExcessExport_MWh);
+pl_productionChartSummer.addDataItem(summerWeekImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+
+//// Winter
+// Consumption
+DataItem winterWeekSelfConsumed = new DataItem();
+winterWeekSelfConsumed.setValue(winterWeekImport_MWh - GN.v_winterWeekExcessImport_MWh);
+pl_consumptionChartWinter.addDataItem(winterWeekSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem winterWeekExport = new DataItem();
+winterWeekExport.setValue(GN.v_winterWeekExcessImport_MWh);
+pl_consumptionChartWinter.addDataItem(winterWeekExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Production
+DataItem winterWeekSelfProduced = new DataItem();
+winterWeekSelfProduced.setValue(winterWeekExport_MWh - GN.v_winterWeekExcessExport_MWh);
+pl_productionChartWinter.addDataItem(winterWeekSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem winterWeekImport = new DataItem();
+winterWeekImport.setValue(GN.v_winterWeekExcessExport_MWh);
+pl_productionChartWinter.addDataItem(winterWeekImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+
+//// Scale & Text
+double chartScale_MWh = max( max(summerWeekImport_MWh, summerWeekExport_MWh), max(winterWeekImport_MWh, winterWeekExport_MWh) );
+pl_consumptionChartSummer.setFixedScale(chartScale_MWh);
+pl_productionChartSummer.setFixedScale(chartScale_MWh);
+pl_consumptionChartWinter.setFixedScale(chartScale_MWh);
+pl_productionChartWinter.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(summerWeekExport_MWh*1000) + " kWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(summerWeekImport_MWh*1000) + " kWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(winterWeekExport_MWh*1000) + " kWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(winterWeekImport_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToInt(summerWeekExport_MWh) + " MWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToInt(summerWeekImport_MWh) + " MWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToInt(winterWeekExport_MWh) + " MWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToInt(winterWeekImport_MWh) + " MWh");
+} else {
+	t_productionTextSummer.setText("Opwek" + System.lineSeparator() + roundToDecimal(summerWeekExport_MWh/1000, 1) + " GWh");
+	t_consumptionTextSummer.setText("Gebruik" + System.lineSeparator() + roundToDecimal(summerWeekImport_MWh/1000,1) + " GWh");
+	t_productionTextWinter.setText("Opwek" + System.lineSeparator() + roundToDecimal(winterWeekExport_MWh/1000, 1) + " GWh");
+	t_consumptionTextWinter.setText("Gebruik" + System.lineSeparator() + roundToDecimal(winterWeekImport_MWh/1000,1) + " GWh");
+}
+/*ALCODEEND*/}
+
+double f_setTrafoBalanceChartDayNight(GridNode GN)
+{/*ALCODESTART::1765793891222*/
+double daytimeImport_MWh = GN.v_daytimeImport_MWh;
+double daytimeExport_MWh = GN.v_daytimeExport_MWh;
+double nighttimeImport_MWh = GN.v_nighttimeImport_MWh;
+double nighttimeExport_MWh = GN.v_nighttimeExport_MWh;
+
+//// Day
+// Consumption
+DataItem daytimeSelfConsumed = new DataItem();
+daytimeSelfConsumed.setValue(daytimeImport_MWh - GN.v_daytimeExcessImport_MWh);
+pl_consumptionChartDay.addDataItem(daytimeSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem daytimeExport = new DataItem();
+daytimeExport.setValue(GN.v_daytimeExcessImport_MWh);
+pl_consumptionChartDay.addDataItem(daytimeExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Production
+DataItem daytimeSelfProduced = new DataItem();
+daytimeSelfProduced.setValue(daytimeExport_MWh - GN.v_daytimeExcessExport_MWh);
+pl_productionChartDay.addDataItem(daytimeSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem daytimeImport = new DataItem();
+daytimeImport.setValue(GN.v_daytimeExcessExport_MWh);
+pl_productionChartDay.addDataItem(daytimeImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+
+//// Night
+// Consumption
+DataItem nighttimeSelfConsumed = new DataItem();
+nighttimeSelfConsumed.setValue(nighttimeImport_MWh - GN.v_nighttimeExcessImport_MWh);
+pl_consumptionChartNight.addDataItem(nighttimeSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem nighttimeExport = new DataItem();
+nighttimeExport.setValue(GN.v_nighttimeExcessImport_MWh);
+pl_consumptionChartNight.addDataItem(nighttimeExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Production
+DataItem nighttimeSelfProduced = new DataItem();
+nighttimeSelfProduced.setValue(nighttimeExport_MWh - GN.v_nighttimeExcessExport_MWh);
+pl_productionChartNight.addDataItem(nighttimeSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem nighttimeImport = new DataItem();
+nighttimeImport.setValue(GN.v_nighttimeExcessExport_MWh);
+pl_productionChartNight.addDataItem(nighttimeImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+
+//// Scale & Text
+double chartScale_MWh = max( max(daytimeImport_MWh, daytimeExport_MWh), max(nighttimeImport_MWh, nighttimeExport_MWh) );
+pl_consumptionChartDay.setFixedScale(chartScale_MWh);
+pl_productionChartDay.setFixedScale(chartScale_MWh);
+pl_consumptionChartNight.setFixedScale(chartScale_MWh);
+pl_productionChartNight.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToInt(daytimeExport_MWh*1000) + " kWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToInt(daytimeImport_MWh*1000) + " kWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToInt(nighttimeExport_MWh*1000) + " kWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToInt(nighttimeImport_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToInt(daytimeExport_MWh) + " MWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToInt(daytimeImport_MWh) + " MWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToInt(nighttimeExport_MWh) + " MWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToInt(nighttimeImport_MWh) + " MWh");
+} else {
+	t_productionTextDay.setText("Opwek" + System.lineSeparator() + roundToDecimal(daytimeExport_MWh/1000, 1) + " GWh");
+	t_consumptionTextDay.setText("Gebruik" + System.lineSeparator() + roundToDecimal(daytimeImport_MWh/1000,1) + " GWh");
+	t_productionTextNight.setText("Opwek" + System.lineSeparator() + roundToDecimal(nighttimeExport_MWh/1000, 1) + " GWh");
+	t_consumptionTextNight.setText("Gebruik" + System.lineSeparator() + roundToDecimal(nighttimeImport_MWh/1000,1) + " GWh");
+}
+/*ALCODEEND*/}
+
+double f_setTrafoBalanceChartWeekdayWeekend(GridNode GN)
+{/*ALCODESTART::1765793891250*/
+double weekdayImport_MWh = GN.v_weekdayImport_MWh;
+double weekdayExport_MWh = GN.v_weekdayExport_MWh;
+double weekendImport_MWh = GN.v_weekendImport_MWh;
+double weekendExport_MWh = GN.v_weekendExport_MWh;
+
+//// Weekday
+// Consumption
+DataItem weekdaySelfConsumed = new DataItem();
+weekdaySelfConsumed.setValue(weekdayImport_MWh - GN.v_weekdayExcessImport_MWh);
+pl_consumptionChartWeekday.addDataItem(weekdaySelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem weekdayExport = new DataItem();
+weekdayExport.setValue(GN.v_weekdayExcessImport_MWh);
+pl_consumptionChartWeekday.addDataItem(weekdayExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Production
+DataItem weekdaySelfProduced = new DataItem();
+weekdaySelfProduced.setValue(weekdayExport_MWh - GN.v_weekdayExcessExport_MWh);
+pl_productionChartWeekday.addDataItem(weekdaySelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem weekdayImport = new DataItem();
+weekdayImport.setValue(GN.v_weekdayExcessExport_MWh);
+pl_productionChartWeekday.addDataItem(weekdayImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+
+//// Weekend
+// Consumption
+DataItem weekendSelfConsumed = new DataItem();
+weekendSelfConsumed.setValue(weekendImport_MWh - GN.v_weekendExcessImport_MWh);
+pl_consumptionChartWeekend.addDataItem(weekendSelfConsumed, "Geleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem weekendExport = new DataItem();
+weekendExport.setValue(GN.v_weekendExcessImport_MWh);
+pl_consumptionChartWeekend.addDataItem(weekendExport, "Over Capaciteit [MWh]", uI_Results.v_exportedEnergyColor);
+
+// Production
+DataItem weekendSelfProduced = new DataItem();
+weekendSelfProduced.setValue(weekendExport_MWh - GN.v_weekendExcessExport_MWh);
+pl_productionChartWeekend.addDataItem(weekendSelfProduced, "Teruggeleverde Stroom [MWh]", uI_Results.v_selfConsumedElectricityColor);
+
+DataItem weekendImport = new DataItem();
+weekendImport.setValue(GN.v_weekendExcessExport_MWh);
+pl_productionChartWeekend.addDataItem(weekendImport, "Over Capaciteit [MWh]", uI_Results.v_importedEnergyColor);
+
+
+//// Scale & Text
+double chartScale_MWh = max( max(weekdayImport_MWh, weekdayExport_MWh), max(weekendImport_MWh, weekendExport_MWh) );
+pl_consumptionChartWeekday.setFixedScale(chartScale_MWh);
+pl_productionChartWeekday.setFixedScale(chartScale_MWh);
+pl_consumptionChartWeekend.setFixedScale(chartScale_MWh);
+pl_productionChartWeekend.setFixedScale(chartScale_MWh);
+
+if (chartScale_MWh<10) {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToInt(weekdayExport_MWh*1000) + " kWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToInt(weekdayImport_MWh*1000) + " kWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToInt(weekendExport_MWh*1000) + " kWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToInt(weekendImport_MWh*1000) + " kWh");
+} else if (chartScale_MWh<1000) {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToInt(weekdayExport_MWh) + " MWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToInt(weekdayImport_MWh) + " MWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToInt(weekendExport_MWh) + " MWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToInt(weekendImport_MWh) + " MWh");
+} else {
+	t_productionTextWeekday.setText("Opwek" + System.lineSeparator() + roundToDecimal(weekdayExport_MWh/1000, 1) + " GWh");
+	t_consumptionTextWeekday.setText("Gebruik" + System.lineSeparator() + roundToDecimal(weekdayImport_MWh/1000,1) + " GWh");
+	t_productionTextWeekend.setText("Opwek" + System.lineSeparator() + roundToDecimal(weekendExport_MWh/1000, 1) + " GWh");
+	t_consumptionTextWeekend.setText("Gebruik" + System.lineSeparator() + roundToDecimal(weekendImport_MWh/1000,1) + " GWh");
 }
 /*ALCODEEND*/}
 
