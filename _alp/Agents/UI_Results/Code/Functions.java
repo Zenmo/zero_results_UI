@@ -320,7 +320,7 @@ switch (energyCarrier) {
 	case METHANE:
 		return "Gas";
 	case PETROLEUM_FUEL:
-		return "Voertuig Brandstof";
+		return "Diesel / Benzine";
 	case HYDROGEN:
 		return "Waterstof";
 	default:
