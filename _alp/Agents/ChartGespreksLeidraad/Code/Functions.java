@@ -56,7 +56,7 @@ double f_setChartsGespreksleidraad1(I_EnergyData data)
 double selfConsumedEnergy_MWh = data.getRapidRunData().getTotalEnergySelfConsumed_MWh();
 double importE_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.ELECTRICITY) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.ELECTRICITY) : 0; 
 double importG_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.METHANE) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.METHANE) : 0;
-double importF_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.DIESEL) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.DIESEL) : 0; 
+double importF_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.PETROLEUM_FUEL) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.PETROLEUM_FUEL) : 0; 
 double importH_MWh = data.getRapidRunData().activeConsumptionEnergyCarriers.contains(OL_EnergyCarriers.HYDROGEN) ? data.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HYDROGEN) : 0; 
 double exportE_MWh = data.getRapidRunData().getTotalEnergyExport_MWh();
 double districtHeating_consumption_MWh ;

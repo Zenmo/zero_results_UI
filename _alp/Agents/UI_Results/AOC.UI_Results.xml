@@ -10,14 +10,14 @@ cm_productionColors = new J_ColorMap<>(OL_EnergyCarriers.class);
 cm_productionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricitySupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatHeatSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasSupplyColor);
-cm_productionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsSupplyColor);
+cm_productionColors.put(OL_EnergyCarriers.PETROLEUM_FUEL, v_petroleumProductsSupplyColor);
 cm_productionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenSupplyColor);
 
 cm_consumptionColors = new J_ColorMap<>(OL_EnergyCarriers.class);
 cm_consumptionColors.put(OL_EnergyCarriers.ELECTRICITY, v_electricityDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HEAT, v_districtHeatDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.METHANE, v_naturalGasDemandColor);
-cm_consumptionColors.put(OL_EnergyCarriers.DIESEL, v_petroleumProductsDemandColor);
+cm_consumptionColors.put(OL_EnergyCarriers.PETROLEUM_FUEL, v_petroleumProductsDemandColor);
 cm_consumptionColors.put(OL_EnergyCarriers.HYDROGEN, v_hydrogenDemandColor);
 
 
