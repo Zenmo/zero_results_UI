@@ -35,8 +35,10 @@ gr_year.setVisible(true);
 double startTime_h = 0;
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
+	EnergyCoop EC = (EnergyCoop)dataObject;
+
 	List<Color> colorSpectrum = new ArrayList<>();
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getAllChildMemberGridConnections();
+	List<GridConnection> memberGridConnections = EC.f_getAllChildMemberGridConnections();
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
 	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
@@ -94,8 +96,10 @@ v_weekLabel.setX(220);
 v_weekLabel.setText("");
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
+	EnergyCoop EC = (EnergyCoop)dataObject;
+	
 	List<Color> colorSpectrum = new ArrayList<>();
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getLiveData().parentAgent).f_getAllChildMemberGridConnections();
+	List<GridConnection> memberGridConnections = EC.f_getAllChildMemberGridConnections();
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
 	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
@@ -257,8 +261,10 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 		dataSetWeekStartTime_h +=8760;
 	}
 	if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
+		EnergyCoop EC = (EnergyCoop)dataObject;
+		
 		List<Color> colorSpectrum = new ArrayList<>();
-		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getAllChildMemberGridConnections();
+		List<GridConnection> memberGridConnections = EC.f_getAllChildMemberGridConnections();
 		
 		for (int k = 0; k < memberGridConnections.size(); k++) {
 		    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
@@ -601,13 +607,14 @@ plot_netload_week.addDataSet(dataObject.getLiveData().data_liveElectricityBalanc
 
 //Specific coop plot additions
 if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
-
+	EnergyCoop EC = (EnergyCoop)dataObject;
+	
 	if(uI_Results.b_showGroupContractValues) {
 		//plot_netload_week.addDataSet(uI_Results.v_dataEHubDeliveryCapacityLiveWeek_kW, "Groeps GTV afname (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 		//plot_netload_week.addDataSet(uI_Results.v_dataEHubFeedInCapacityLiveWeek_kW, "Groeps GTV teruglevering (Rekenmethode Stedin)", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 	}
 	if (b_subdivideEnergyCoopFlows) {
-		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getLiveData().parentAgent).f_getAllChildMemberGridConnections();
+		List<GridConnection> memberGridConnections = EC.f_getAllChildMemberGridConnections();
 		for (GridConnection GC : memberGridConnections) {
 			plot_netload_week.addDataSet(GC.getLiveData().data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 		}
@@ -718,13 +725,14 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { //
 
 //Specific coop plot additions
 if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
+	EnergyCoop EC = ((EnergyCoop)dataObject);
 
 	if(uI_Results.b_showGroupContractValues) {
-		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData())), "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
-		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData())), "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, EC.f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData())), "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
+		plot_netload_week.addDataSet(uI_Results.f_createFlatDataset(startTime_h, 168, EC.f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData())), "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 	}
 	if (b_subdivideEnergyCoopFlows) {
-		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getAllChildMemberGridConnections();
+		List<GridConnection> memberGridConnections = EC.f_getAllChildMemberGridConnections();
 		for (GridConnection GC : memberGridConnections) {
 			plot_netload_week.addDataSet(GC.v_rapidRunData.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_startOfSummerWeek_h), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 		}
@@ -779,8 +787,10 @@ gr_day.setVisible(true);
 
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
+	EnergyCoop EC = (EnergyCoop)dataObject;
+	
 	List<Color> colorSpectrum = new ArrayList<>();
-	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getLiveData().parentAgent).f_getAllChildMemberGridConnections();
+	List<GridConnection> memberGridConnections = EC.f_getAllChildMemberGridConnections();
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
 	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
@@ -852,13 +862,13 @@ plot_netload_day.addDataSet(dataObject.getLiveData().data_liveElectricityBalance
 
 //Specific coop plot additions
 if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
-
+	EnergyCoop EC = (EnergyCoop)dataObject;
 	if(uI_Results.b_showGroupContractValues) {
 		//plot_netload_day.addDataSet(uI_Results.v_dataEHubDeliveryCapacityLiveWeek_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 		//plot_netload_day.addDataSet(uI_Results.v_dataEHubFeedInCapacityLiveWeek_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 	}
 	if (b_subdivideEnergyCoopFlows) {
-		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject.getLiveData().parentAgent).f_getAllChildMemberGridConnections();
+		List<GridConnection> memberGridConnections = EC.f_getAllChildMemberGridConnections();
 		for (GridConnection GC : memberGridConnections) {
 			plot_netload_day.addDataSet(GC.getLiveData().data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 		}
@@ -877,7 +887,7 @@ String f_getDateTimeFromHour(double peakTime_h)
 {/*ALCODESTART::1754485454881*/
 int dayOfYear = (int)Math.floor(peakTime_h / 24) + 1;
 int hourOfDay = roundToInt(peakTime_h % 24);
-LocalDate date = LocalDate.ofYearDay(uI_Results.energyModel.p_year, dayOfYear);
+LocalDate date = LocalDate.ofYearDay(uI_Results.energyModel.p_timeParameters.getStartYear(), dayOfYear);
 LocalDateTime dateTime = date.atStartOfDay().plusHours(hourOfDay);
 
 // Output the result

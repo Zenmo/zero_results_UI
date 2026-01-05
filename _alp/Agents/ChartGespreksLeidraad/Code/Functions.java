@@ -508,11 +508,15 @@ pl_productionChart3v2_pie.setPos(-250, -50);
 pl_consumptionChart3v2_pie.setPos(-20, -50);
 
 double annualSelfConsumedElectricityIndividual_MWh = 0;
-if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
-	annualSelfConsumedElectricityIndividual_MWh = ((EnergyCoop)data.getRapidRunData().parentAgent).v_cumulativeIndividualSelfconsumptionElectricity_MWh;
+if (data instanceof EnergyCoop){
+	EnergyCoop EC = (EnergyCoop)data;
+
+	annualSelfConsumedElectricityIndividual_MWh = EC.v_cumulativeIndividualSelfconsumptionElectricity_MWh;
 }
-else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
-	annualSelfConsumedElectricityIndividual_MWh = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
+else if(data instanceof EnergyModel){
+	EnergyModel EM = (EnergyModel)data;
+	
+	annualSelfConsumedElectricityIndividual_MWh = sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
 }
 
 				
@@ -619,7 +623,7 @@ double f_setBelastingPlots(I_EnergyData data)
 {/*ALCODESTART::1741706256154*/
 f_resetPlots();
 
-J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
+J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves();
 
 f_addDataToPlots(data, loadDurationCurves);
 f_addTrafoLimits(data); 
@@ -739,14 +743,16 @@ DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataOb
 DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
 	
 if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
+	EnergyCoop EC = (EnergyCoop)dataObject;
+
 	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	feedinCapacityLabel = "Cumulatieve GTV teruglevering van bedrijven";
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	
 	//And: add group contract values
-	DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData()));
-	DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData()));
+	DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, EC.f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData()));
+	DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -EC.f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData()));
 	
 	plot_jaar.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_jaar.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	

@@ -15,7 +15,7 @@ if(uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYCOOP){
 f_resetChart();
 
 //Set Charts
-EnergyCoop energyCoop = (EnergyCoop)data.getLiveData().parentAgent;
+EnergyCoop energyCoop = (EnergyCoop)data;
 f_setGTOBarChart(energyCoop);
 
 /*ALCODEEND*/}

@@ -511,7 +511,7 @@ if(customSelectedObjectText != null){
 }
 else{
 	if(v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
-		GridConnection GC = ((GridConnection)v_selectedObjectInterface.getLiveData().parentAgent);
+		GridConnection GC = (GridConnection)v_selectedObjectInterface;
 		String connectionDisplayName = GC.p_ownerID;
 		if(GC.c_connectedGISObjects.size() > 0 && GC.c_connectedGISObjects.get(0).p_annotation != null && GC.c_connectedGISObjects.get(0).c_containedGridConnections.size() == 1){
 			connectionDisplayName = GC.c_connectedGISObjects.get(0).p_annotation;
@@ -532,7 +532,8 @@ else{
 		selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
-		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface.getLiveData().parentAgent).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.f_getBatteryManagement() instanceof J_BatteryManagementPeakShaving && ((J_BatteryManagementPeakShaving)GC.f_getBatteryManagement()).getTargetType() == OL_ResultScope.ENERGYCOOP));
+		EnergyCoop EC = (EnergyCoop)v_selectedObjectInterface;
+		List<GridConnection> memberGCList = findAll(EC.f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.f_getBatteryManagement() instanceof J_BatteryManagementPeakShaving && ((J_BatteryManagementPeakShaving)GC.f_getBatteryManagement()).getTargetType() == OL_ResultScope.ENERGYCOOP));
 		
 		if (memberGCList.size() != 0) {
 			boolean allGCInOneBuilding = false;
@@ -563,9 +564,10 @@ else{
 	
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
-			selectedObjectText = "Het gehele model";
-		if(((EnergyModel)v_selectedObjectInterface.getLiveData().parentAgent).p_regionName != null){
-			selectedObjectText = ((EnergyModel)v_selectedObjectInterface.getLiveData().parentAgent).p_regionName;
+		EnergyModel EM = (EnergyModel)v_selectedObjectInterface;
+		selectedObjectText = "Het gehele model";
+		if(EM.p_regionName != null){
+			selectedObjectText = EM.p_regionName;
 		}
 	}
 }

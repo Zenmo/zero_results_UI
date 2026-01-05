@@ -253,7 +253,7 @@ String f_getDateTimeFromHour(double peakTime_h)
 {/*ALCODESTART::1754498008083*/
 int dayOfYear = (int)Math.floor(peakTime_h / 24) + 1;
 int hourOfDay = roundToInt(peakTime_h % 24);
-LocalDate date = LocalDate.ofYearDay(uI_Results.energyModel.p_year, dayOfYear);
+LocalDate date = LocalDate.ofYearDay(uI_Results.energyModel.p_timeParameters.getStartYear(), dayOfYear);
 LocalDateTime dateTime = date.atStartOfDay().plusHours(hourOfDay);
 
 // Output the result
