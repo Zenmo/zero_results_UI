@@ -206,15 +206,15 @@ for (GridConnection GC : GN.f_getAllLowerLVLConnectedGridConnections()){
 	List<J_EAConsumption> genericBuildingProfiles = new ArrayList<J_EAConsumption>(); //Generic inkoop builing profiles
 	List<J_EAProduction> productionAssetProfiles = new ArrayList<J_EAProduction>(); // Production profiles
 					
-	elecConsumptionProfiles.addAll(findAll(GC.c_profileAssets, profile -> profile.assetFlowCategory == OL_AssetFlowCategories.fixedConsumptionElectric_kW));
-	elecHeatPumpProfiles.addAll(findAll(GC.c_profileAssets, profile -> profile.assetFlowCategory == OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
-	elecEVProfiles.addAll(findAll(GC.c_profileAssets, profile -> profile.assetFlowCategory == OL_AssetFlowCategories.evChargingPower_kW));
+	elecConsumptionProfiles.addAll(findAll(GC.c_profileAssets, profile -> profile.getAssetFlowCategory() == OL_AssetFlowCategories.fixedConsumptionElectric_kW));
+	elecHeatPumpProfiles.addAll(findAll(GC.c_profileAssets, profile -> profile.getAssetFlowCategory() == OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
+	elecEVProfiles.addAll(findAll(GC.c_profileAssets, profile -> profile.getAssetFlowCategory() == OL_AssetFlowCategories.evChargingPower_kW));
 	if(GC.f_getCurrentHeatingType() == OL_GridConnectionHeatingType.ELECTRIC_HEATPUMP && !GC.f_getHeatingTypeIsGhost()) {
 		surveyHeatDemandProfiles.addAll(findAll(GC.c_profileAssets, profile -> profile.energyCarrier == OL_EnergyCarriers.HEAT));
-		genericHeatDemandProfiles.addAll(findAll(GC.c_consumptionAssets, cons -> cons.energyAssetType == OL_EnergyAssetType.HEAT_DEMAND));
+		genericHeatDemandProfiles.addAll(findAll(GC.c_consumptionAssets, cons -> cons.getEAType() == OL_EnergyAssetType.HEAT_DEMAND));
 	}
-	genericBuildingProfiles.addAll(findAll(GC.c_consumptionAssets, cons -> cons.energyAssetType == OL_EnergyAssetType.ELECTRICITY_DEMAND));
-	productionAssetProfiles.addAll(findAll(GC.c_productionAssets, prod -> prod.energyAssetType == OL_EnergyAssetType.PHOTOVOLTAIC));
+	genericBuildingProfiles.addAll(findAll(GC.c_consumptionAssets, cons -> cons.getEAType() == OL_EnergyAssetType.ELECTRICITY_DEMAND));
+	productionAssetProfiles.addAll(findAll(GC.c_productionAssets, prod -> prod.getEAType() == OL_EnergyAssetType.PHOTOVOLTAIC));
 				
 	for(J_EAProfile elecConsumptionProfile : elecConsumptionProfiles) {
 		if(elecConsumptionProfile != null){
