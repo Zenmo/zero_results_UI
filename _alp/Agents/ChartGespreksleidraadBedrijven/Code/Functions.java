@@ -43,14 +43,10 @@ f_setDemandAndSupplyGespreksleidraadBedrijven1(data);
 double f_setChartsGespreksleidraadBedrijven2(I_EnergyData data)
 {/*ALCODESTART::1730395813831*/
 double annualSelfConsumedElectricityIndividual_MWh = 0;
-if (data instanceof EnergyCoop){
-	EnergyCoop EC = (EnergyCoop)data;
-
-	annualSelfConsumedElectricityIndividual_MWh = EC.v_cumulativeIndividualSelfconsumptionElectricity_MWh;
+if (data instanceof EnergyCoop COOP){
+	annualSelfConsumedElectricityIndividual_MWh = COOP.v_cumulativeIndividualSelfconsumptionElectricity_MWh;
 }
-else if(data instanceof EnergyModel){
-	EnergyModel EM = (EnergyModel)data;
-
+else if(data instanceof EnergyModel EM){
 	annualSelfConsumedElectricityIndividual_MWh = sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
 }
 
@@ -137,23 +133,21 @@ DataItem peakIndividual_kW = new DataItem();
 DataItem peakCollective_kW = new DataItem();
 String text_peakType = "";
 
-if (data instanceof EnergyCoop){
-	EnergyCoop EC = (EnergyCoop)data;
+if (data instanceof EnergyCoop COOP){
 	if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
 		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
-		peakIndividual_kW.setValue(EC.v_cumulativeIndividualPeakDelivery_kW);
+		peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakDelivery_kW);
 		peakCollective_kW.setValue(data.getRapidRunData().getPeakDelivery_kW());
 		text_peakType = "levering";
 	}
 	else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
 		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
-		peakIndividual_kW.setValue(EC.v_cumulativeIndividualPeakFeedin_kW);
+		peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakFeedin_kW);
 		peakCollective_kW.setValue(data.getRapidRunData().getPeakFeedin_kW());
 		text_peakType = "teruglevering";
 	}
 }
-else if(data instanceof EnergyModel){
-	EnergyModel EM = (EnergyModel)data;
+else if(data instanceof EnergyModel EM){
 	if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
 		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
 		peakIndividual_kW.setValue(sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getPeakDelivery_kW()));

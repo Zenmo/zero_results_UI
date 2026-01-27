@@ -26,7 +26,7 @@ uI_Results.chartKPISummary_presentation.setVisible(true);
 
 double f_setKPIs(I_EnergyData data)
 {/*ALCODESTART::1726830499836*/
-double simulationLength_hr =  uI_Results.energyModel.p_runEndTime_h - uI_Results.energyModel.p_runStartTime_h;
+double simulationLength_hr =  uI_Results.energyModel.p_timeParameters.getRunEndTime_h() - uI_Results.energyModel.p_timeParameters.getRunStartTime_h();
 
 ////Calculate the values
 double[] netLoad_kW = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getTimeSeries_kW();
@@ -187,7 +187,7 @@ double[] f_calculateBaselineNetLoad(int n)
 {/*ALCODESTART::1755864693939*/
 GridNode GN = findFirst(uI_Results.energyModel.pop_gridNodes, p -> p.p_gridNodeID.equals("T0"));
 
-double p_timeStep_h = uI_Results.energyModel.p_timeStep_h;
+double p_timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double[] netLoad_kW = new double[n];
 
@@ -298,8 +298,8 @@ double costsElectricityImport_euro = 0;
 double currentElectricityPriceCharge_eurpkWh = 0;
     	
 for (int i = 0; i < netLoad_kW.length; i++) {
-    currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*uI_Results.energyModel.p_timeStep_h)] / 1000;
-    costsElectricityImport_euro += (1+VAT_fr)*((currentElectricityPriceCharge_eurpkWh + ODE_eur_p_kwh + EB_eur_p_kwh) * max(0,netLoad_kW[i]) * uI_Results.energyModel.p_timeStep_h);
+    currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*uI_Results.energyModel.p_timeParameters.getTimeStep_h())] / 1000;
+    costsElectricityImport_euro += (1+VAT_fr)*((currentElectricityPriceCharge_eurpkWh + ODE_eur_p_kwh + EB_eur_p_kwh) * max(0,netLoad_kW[i]) * uI_Results.energyModel.p_timeParameters.getTimeStep_h());
 }
     	
 return costsElectricityImport_euro;
@@ -311,8 +311,8 @@ double costsElectricityExport_euro = 0;
 double currentElectricityPriceCharge_eurpkWh = 0;
     	
 for (int i = 0; i < netLoad_kW.length; i++) {
-    currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*uI_Results.energyModel.p_timeStep_h)] / 1000;
-    costsElectricityExport_euro += currentElectricityPriceCharge_eurpkWh * max(0,-netLoad_kW[i]) * uI_Results.energyModel.p_timeStep_h;
+    currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*uI_Results.energyModel.p_timeParameters.getTimeStep_h())] / 1000;
+    costsElectricityExport_euro += currentElectricityPriceCharge_eurpkWh * max(0,-netLoad_kW[i]) * uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 }
     	
 return costsElectricityExport_euro;
