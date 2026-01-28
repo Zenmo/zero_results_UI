@@ -508,13 +508,12 @@ pl_productionChart3v2_pie.setPos(-250, -50);
 pl_consumptionChart3v2_pie.setPos(-20, -50);
 
 double annualSelfConsumedElectricityIndividual_MWh = 0;
-if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
-	annualSelfConsumedElectricityIndividual_MWh = ((EnergyCoop)data.getRapidRunData().parentAgent).v_cumulativeIndividualSelfconsumptionElectricity_MWh;
+if (data instanceof EnergyCoop COOP){
+	annualSelfConsumedElectricityIndividual_MWh = COOP.v_cumulativeIndividualSelfconsumptionElectricity_MWh;
 }
-else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
-	annualSelfConsumedElectricityIndividual_MWh = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
+else if (data instanceof EnergyModel EM) {
+	annualSelfConsumedElectricityIndividual_MWh = sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
 }
-
 				
 double selfConsumedElectricityIndividual_MWh = max(0, annualSelfConsumedElectricityIndividual_MWh);
 double additionalSelfConsumedElectricityCollective_MWh = data.getRapidRunData().getTotalElectricitySelfConsumed_MWh() - annualSelfConsumedElectricityIndividual_MWh;
@@ -619,7 +618,7 @@ double f_setBelastingPlots(I_EnergyData data)
 {/*ALCODESTART::1741706256154*/
 f_resetPlots();
 
-J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
+J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves();
 
 f_addDataToPlots(data, loadDurationCurves);
 f_addTrafoLimits(data); 
@@ -663,7 +662,7 @@ double f_setNetAverageLoad(I_EnergyData dataObject,J_LoadDurationCurves loadDura
 double benuttingsgraad = 0;
 double totalAbsoluteLoad_kW = 0;
 for(int i=0; i< loadDurationCurves.ds_loadDurationCurveTotal_kW.size(); i++){
-	totalAbsoluteLoad_kW += abs(loadDurationCurves.ds_loadDurationCurveTotal_kW.getY(i))* uI_Results.energyModel.p_timeStep_h;
+	totalAbsoluteLoad_kW += abs(loadDurationCurves.ds_loadDurationCurveTotal_kW.getY(i))* uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 }
 benuttingsgraad = totalAbsoluteLoad_kW / ((dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW + dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW) * 8760) * 100;
 t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
@@ -745,8 +744,8 @@ if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == O
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	
 	//And: add group contract values
-	DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData()));
-	DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData()));
+	DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, ((EnergyCoop)dataObject).f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData(), uI_Results.energyModel.p_timeParameters));
+	DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -((EnergyCoop)dataObject).f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData(), uI_Results.energyModel.p_timeParameters));
 	
 	plot_jaar.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 	plot_jaar.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	

@@ -43,11 +43,11 @@ f_setDemandAndSupplyGespreksleidraadBedrijven1(data);
 double f_setChartsGespreksleidraadBedrijven2(I_EnergyData data)
 {/*ALCODESTART::1730395813831*/
 double annualSelfConsumedElectricityIndividual_MWh = 0;
-if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
-	annualSelfConsumedElectricityIndividual_MWh = ((EnergyCoop)data.getRapidRunData().parentAgent).v_cumulativeIndividualSelfconsumptionElectricity_MWh;
+if (data instanceof EnergyCoop COOP){
+	annualSelfConsumedElectricityIndividual_MWh = COOP.v_cumulativeIndividualSelfconsumptionElectricity_MWh;
 }
-else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
-	annualSelfConsumedElectricityIndividual_MWh = sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
+else if(data instanceof EnergyModel EM){
+	annualSelfConsumedElectricityIndividual_MWh = sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getTotalElectricitySelfConsumed_MWh());
 }
 
 annualSelfConsumedElectricityIndividual_MWh = max(0, annualSelfConsumedElectricityIndividual_MWh);
@@ -133,8 +133,7 @@ DataItem peakIndividual_kW = new DataItem();
 DataItem peakCollective_kW = new DataItem();
 String text_peakType = "";
 
-if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
-	EnergyCoop COOP = (EnergyCoop)data.getRapidRunData().parentAgent;
+if (data instanceof EnergyCoop COOP){
 	if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
 		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
 		peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakDelivery_kW);
@@ -148,16 +147,16 @@ if (data.getRapidRunData().parentAgent instanceof EnergyCoop){
 		text_peakType = "teruglevering";
 	}
 }
-else if(data.getRapidRunData().parentAgent instanceof EnergyModel){
+else if(data instanceof EnergyModel EM){
 	if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
 		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
-		peakIndividual_kW.setValue(sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getPeakDelivery_kW()));
+		peakIndividual_kW.setValue(sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getPeakDelivery_kW()));
 		peakCollective_kW.setValue(data.getRapidRunData().getPeakDelivery_kW());
 		text_peakType = "levering";
 	}
 	else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
 		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
-		peakIndividual_kW.setValue(sum(((EnergyModel)data.getRapidRunData().parentAgent).f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getPeakFeedin_kW()));
+		peakIndividual_kW.setValue(sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getPeakFeedin_kW()));
 		peakCollective_kW.setValue(data.getRapidRunData().getPeakFeedin_kW());
 		text_peakType = "teruglevering";
 	}

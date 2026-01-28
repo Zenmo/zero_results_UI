@@ -24,7 +24,7 @@ uI_Results.chartKPISummary_presentation.setVisible(true);
 
 double f_setKPIs(I_EnergyData data)
 {/*ALCODESTART::1726830499836*/
-double simulationLength_hr =  uI_Results.energyModel.p_runEndTime_h - uI_Results.energyModel.p_runStartTime_h;
+double simulationLength_hr =  uI_Results.energyModel.p_timeParameters.getRunEndTime_h() - uI_Results.energyModel.p_timeParameters.getRunStartTime_h();
 
 ////Calculate the values
 

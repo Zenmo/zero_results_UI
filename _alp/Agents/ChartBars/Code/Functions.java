@@ -378,7 +378,7 @@ double[] monthlyExport_kWh = new double[12];
 double[] monthlyImport_kWh = new double[12];
 
 int[] daysPerMonth = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-if (uI_Results.energyModel.p_year % 4 == 0 && uI_Results.energyModel.p_year % 100 != 0 && uI_Results.energyModel.p_year % 400 == 0) {
+if (uI_Results.energyModel.p_timeParameters.getStartYear() % 4 == 0 && uI_Results.energyModel.p_timeParameters.getStartYear() % 100 != 0 && uI_Results.energyModel.p_timeParameters.getStartYear() % 400 == 0) {
 	daysPerMonth[1] += 1;
 }
 
@@ -424,18 +424,14 @@ double production_MWh = 0;
 
 // Consumption
 // Space heating
-double spaceHeating_MWh  = 0;
-if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.buildingHeating_kW)) {
-	spaceHeating_MWh += dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.buildingHeating_kW).getIntegral_MWh();
-}
 if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.spaceHeating_kW)) {
-	spaceHeating_MWh += dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.spaceHeating_kW).getIntegral_MWh();
-}
-if (spaceHeating_MWh > uI_Results.p_cutOff_MWh) {
-	totalConsumption_MWh += spaceHeating_MWh;
-	DataItem spaceHeating = new DataItem();
-	spaceHeating.setValue(spaceHeating_MWh);
-	pl_consumptionChartBalanceTotal.addDataItem(spaceHeating, "Ruimteverwarming [MWh]", orange);
+	double spaceHeating_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.spaceHeating_kW).getIntegral_MWh();
+	if (spaceHeating_MWh > uI_Results.p_cutOff_MWh) {
+		totalConsumption_MWh += spaceHeating_MWh;
+		DataItem spaceHeating = new DataItem();
+		spaceHeating.setValue(spaceHeating_MWh);
+		pl_consumptionChartBalanceTotal.addDataItem(spaceHeating, "Ruimteverwarming [MWh]", orange);
+	}
 }
 
 // DHW
@@ -452,6 +448,9 @@ if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(
 // Production
 // Standard Heating Assets
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_totalConsumptionForHeating_kW.keySet()) {
+	if(EC == OL_EnergyCarriers.HEAT){
+		continue; //-> Heat grid is calculated seperatly below.
+	}
 	if (dataObject.getRapidRunData().am_totalHeatFromEnergyCarrier_kW.keySet().contains(EC)) {
 		double ECConsumption_MWh = dataObject.getRapidRunData().am_totalConsumptionForHeating_kW.get(EC).getIntegral_MWh();
 		double heatProduction_MWh = dataObject.getRapidRunData().am_totalHeatFromEnergyCarrier_kW.get(EC).getIntegral_MWh();
@@ -470,6 +469,27 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_totalConsumptionForH
 		}
 	}
 }
+
+// Heatgrid
+//if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.districtHeatDelivery_kW)) {
+if(dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT) > uI_Results.p_cutOff_MWh){
+	double import_MWh = dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT);
+	production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getIntegral_MWh();
+	double losses_MWh = max(0, import_MWh - production_MWh);
+	if (import_MWh > uI_Results.p_cutOff_MWh) {
+		totalProduction_MWh += import_MWh;
+		DataItem heatgridImport = new DataItem();
+		heatgridImport.setValue(import_MWh);
+		pl_productionChartBalanceTotal.addDataItem(heatgridImport, "Warmte uit Warmtenet [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.districtHeatDelivery_kW));
+	}
+	if (losses_MWh > uI_Results.p_cutOff_MWh) {
+		totalConsumption_MWh += losses_MWh;
+		DataItem heatgridLosses = new DataItem();
+		heatgridLosses.setValue(losses_MWh);
+		pl_consumptionChartBalanceTotal.addDataItem(heatgridLosses, "Warmtenet Verliezen [MWh]", gray);
+	}
+}
+
 // Heatpumps
 if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW)) {
 	production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW).getIntegral_MWh();
@@ -480,13 +500,15 @@ if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(
 		pl_productionChartBalanceTotal.addDataItem(heatpumpElectricity, "Stroom voor Warmtepomp [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
 		
 		double import_MWh = dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT);
+		/*
 		if (import_MWh > uI_Results.p_cutOff_MWh) {
 			totalProduction_MWh += import_MWh;
 			DataItem heatpumpEnvironment = new DataItem();
 			heatpumpEnvironment.setValue(import_MWh);
 			pl_productionChartBalanceTotal.addDataItem(heatpumpEnvironment, "Warmte uit Warmtenet [MWh]", purple);
-		}
-		else {	
+		} else{
+		*/
+		if (import_MWh <= uI_Results.p_cutOff_MWh){	
 			production_MWh = dataObject.getRapidRunData().acc_totalPrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
 			totalProduction_MWh += production_MWh;
 			DataItem heatpumpEnvironment = new DataItem();
@@ -505,24 +527,7 @@ if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(
 		pl_productionChartBalanceTotal.addDataItem(pt, "PT [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.ptProductionHeat_kW));
 	}
 }
-// Heatgrid
-if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.districtHeatDelivery_kW)) {
-	double import_MWh = dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT);
-	production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getIntegral_MWh();
-	double losses_MWh = max(0, import_MWh - production_MWh);
-	if (import_MWh > uI_Results.p_cutOff_MWh) {
-		totalProduction_MWh += import_MWh;
-		DataItem heatgridImport = new DataItem();
-		heatgridImport.setValue(import_MWh);
-		pl_productionChartBalanceTotal.addDataItem(heatgridImport, "Warmte uit Warmtenet [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.districtHeatDelivery_kW));
-	}
-	if (losses_MWh > uI_Results.p_cutOff_MWh) {
-		totalConsumption_MWh += losses_MWh;
-		DataItem heatgridLosses = new DataItem();
-		heatgridLosses.setValue(losses_MWh);
-		pl_consumptionChartBalanceTotal.addDataItem(heatgridLosses, "Warmtenet Verliezen [MWh]", gray);
-	}
-}
+
 
 double chartScale_MWh = max(totalConsumption_MWh, totalProduction_MWh);
 pl_consumptionChartBalanceTotal.setFixedScale(chartScale_MWh);
@@ -557,9 +562,11 @@ double production_MWh= 0;
 // Consumption
 // Space heating
 double spaceHeating_MWh  = 0;
+/*
 if (dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet().contains(OL_AssetFlowCategories.buildingHeating_kW)) {
 	spaceHeating_MWh += dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.get(OL_AssetFlowCategories.buildingHeating_kW).getIntegral_MWh();
 }
+*/
 if (dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet().contains(OL_AssetFlowCategories.spaceHeating_kW)) {
 	spaceHeating_MWh += dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.get(OL_AssetFlowCategories.spaceHeating_kW).getIntegral_MWh();
 }
@@ -661,9 +668,11 @@ if (dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet().contains(OL
 // Consumption
 // Space heating
 spaceHeating_MWh  = 0;
+/*
 if (dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.keySet().contains(OL_AssetFlowCategories.buildingHeating_kW)) {
 	spaceHeating_MWh += dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.get(OL_AssetFlowCategories.buildingHeating_kW).getIntegral_MWh();
 }
+*/
 if (dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.keySet().contains(OL_AssetFlowCategories.spaceHeating_kW)) {
 	spaceHeating_MWh += dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.get(OL_AssetFlowCategories.spaceHeating_kW).getIntegral_MWh();
 }
@@ -805,12 +814,14 @@ double productionNight_MWh = 0;
 // Space heating
 double spaceHeatingDay_MWh  = 0;
 double spaceHeatingNight_MWh  = 0;
+/*
 if (dataObject.getRapidRunData().am_assetFlowsDaytime_kW.keySet().contains(OL_AssetFlowCategories.buildingHeating_kW)) {
 	double buildingHeatDay_MWh = dataObject.getRapidRunData().am_assetFlowsDaytime_kW.get(OL_AssetFlowCategories.buildingHeating_kW).getIntegral_MWh();
 	double buildingHeatTotal_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.buildingHeating_kW).getIntegral_MWh();
 	spaceHeatingDay_MWh += buildingHeatDay_MWh;
 	spaceHeatingNight_MWh += buildingHeatTotal_MWh - buildingHeatDay_MWh;
 }
+*/
 if (dataObject.getRapidRunData().am_assetFlowsDaytime_kW.keySet().contains(OL_AssetFlowCategories.spaceHeating_kW)) {
 	double profileDay_MWh = dataObject.getRapidRunData().am_assetFlowsDaytime_kW.get(OL_AssetFlowCategories.spaceHeating_kW).getIntegral_MWh();
 	double profileTotal_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.spaceHeating_kW).getIntegral_MWh();
@@ -1027,12 +1038,14 @@ double productionWeekday_MWh = 0;
 // Space heating
 double spaceHeatingWeekend_MWh  = 0;
 double spaceHeatingWeekday_MWh  = 0;
+/*
 if (dataObject.getRapidRunData().am_assetFlowsWeekend_kW.keySet().contains(OL_AssetFlowCategories.buildingHeating_kW)) {
 	double buildingHeatWeekend_MWh = dataObject.getRapidRunData().am_assetFlowsWeekend_kW.get(OL_AssetFlowCategories.buildingHeating_kW).getIntegral_MWh();
 	double buildingHeatTotal_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.buildingHeating_kW).getIntegral_MWh();
 	spaceHeatingWeekend_MWh += buildingHeatWeekend_MWh;
 	spaceHeatingWeekday_MWh += buildingHeatTotal_MWh - buildingHeatWeekend_MWh;
 }
+*/
 if (dataObject.getRapidRunData().am_assetFlowsWeekend_kW.keySet().contains(OL_AssetFlowCategories.spaceHeating_kW)) {
 	double profileWeekend_MWh = dataObject.getRapidRunData().am_assetFlowsWeekend_kW.get(OL_AssetFlowCategories.spaceHeating_kW).getIntegral_MWh();
 	double profileTotal_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.spaceHeating_kW).getIntegral_MWh();
