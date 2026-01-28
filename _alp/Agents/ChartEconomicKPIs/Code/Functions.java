@@ -254,7 +254,7 @@ plot_netElectricityCostsMonthly.setFixedHorizontalScale(0.5, 12.5);
 double[] f_calculateMonthlyElectricityImportCosts_eur(double[] netLoad_kW)
 {/*ALCODESTART::1769430055658*/
 int[] startHourPerMonth = startHourPerMonthTemporary;
-double timeStep_h = uI_Results.energyModel.p_timeStep_h;
+double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 
 double VAT_fr = 0.21;
@@ -273,14 +273,14 @@ for (int i = 0; i < netLoad_kW.length; i++) {
     double currentElectricityPriceCharge_eurpkWh =
             uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh
                     .getAllValues()[
-                        (int) Math.floor(i * uI_Results.energyModel.p_timeStep_h)
+                        (int) Math.floor(i * timeStep_h)
                     ] / 1000.0;
 
     double timestepCost =
             (1 + VAT_fr) *
             (currentElectricityPriceCharge_eurpkWh + EnergyTaxes_eur_p_kwh) *
             max(0, netLoad_kW[i]) * 
-            uI_Results.energyModel.p_timeStep_h;
+            timeStep_h;
 
     monthlyElectricityImportCosts_euro[currentMonth] += timestepCost;
 }
@@ -292,7 +292,7 @@ return monthlyElectricityImportCosts_euro;
 double[] f_calculateMonthlyElectricityExportRevenue_eur(double[] netLoad_kW)
 {/*ALCODESTART::1769432836265*/
 int[] startHourPerMonth = startHourPerMonthTemporary;
-double timeStep_h = uI_Results.energyModel.p_timeStep_h;
+double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double[] monthlyElectricityExportRevenue_euro = new double[12];
 
@@ -302,8 +302,8 @@ for (int i = 0; i < netLoad_kW.length; i++) {
 	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*timeStep_h){
 		currentMonth += 1;
 	}
-    double currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*uI_Results.energyModel.p_timeStep_h)] / 1000;
-    double timestepExportRevenue_euro = currentElectricityPriceCharge_eurpkWh * max(0,-netLoad_kW[i]) * uI_Results.energyModel.p_timeStep_h;
+    double currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*timeStep_h)] / 1000;
+    double timestepExportRevenue_euro = currentElectricityPriceCharge_eurpkWh * max(0,-netLoad_kW[i]) * timeStep_h;
 	
 	monthlyElectricityExportRevenue_euro[currentMonth] += timestepExportRevenue_euro;
 }
