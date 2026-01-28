@@ -448,8 +448,8 @@ if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(
 // Production
 // Standard Heating Assets
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_totalConsumptionForHeating_kW.keySet()) {
-	if(EC == OL_EnergyCarriers.HEAT){
-		continue; //-> Heat grid is calculated seperatly below.
+	if(EC == OL_EnergyCarriers.HEAT || EC == OL_EnergyCarriers.ELECTRICITY){
+		continue; //-> Heat grid is calculated seperatly below, for electricity we look at individual assetflowcategories
 	}
 	if (dataObject.getRapidRunData().am_totalHeatFromEnergyCarrier_kW.keySet().contains(EC)) {
 		double ECConsumption_MWh = dataObject.getRapidRunData().am_totalConsumptionForHeating_kW.get(EC).getIntegral_MWh();
@@ -498,16 +498,7 @@ if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(
 		DataItem heatpumpElectricity = new DataItem();
 		heatpumpElectricity.setValue(production_MWh);
 		pl_productionChartBalanceTotal.addDataItem(heatpumpElectricity, "Stroom voor Warmtepomp [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
-		
 		double import_MWh = dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT);
-		/*
-		if (import_MWh > uI_Results.p_cutOff_MWh) {
-			totalProduction_MWh += import_MWh;
-			DataItem heatpumpEnvironment = new DataItem();
-			heatpumpEnvironment.setValue(import_MWh);
-			pl_productionChartBalanceTotal.addDataItem(heatpumpEnvironment, "Warmte uit Warmtenet [MWh]", purple);
-		} else{
-		*/
 		if (import_MWh <= uI_Results.p_cutOff_MWh){	
 			production_MWh = dataObject.getRapidRunData().acc_totalPrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
 			totalProduction_MWh += production_MWh;
@@ -517,6 +508,17 @@ if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(
 		}
 	}
 }
+// Electric Heaters
+if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.electricHeaterElectricityConsumption_kW)) {
+	production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.electricHeaterElectricityConsumption_kW).getIntegral_MWh();
+	if (production_MWh > uI_Results.p_cutOff_MWh) {
+		totalProduction_MWh += production_MWh;
+		DataItem heatpumpElectricity = new DataItem();
+		heatpumpElectricity.setValue(production_MWh);
+		pl_productionChartBalanceTotal.addDataItem(heatpumpElectricity, "Stroom voor Electrische Kachel [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
+	}
+}
+
 // PVT
 if (dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet().contains(OL_AssetFlowCategories.ptProductionHeat_kW)) {
 	production_MWh = dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.ptProductionHeat_kW).getIntegral_MWh();
@@ -591,6 +593,9 @@ if (dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet().contains(OL
 // Production
 // Standard Heating Assets
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_summerWeekConsumptionForHeating_kW.keySet()) {
+	if(EC == OL_EnergyCarriers.HEAT || EC == OL_EnergyCarriers.ELECTRICITY){
+		continue; //-> Heat grid is calculated seperatly below, for electricity we look at individual assetflowcategories
+	}
 	if (dataObject.getRapidRunData().am_summerWeekHeatFromEnergyCarrier_kW.keySet().contains(EC)) {
 		double ECConsumption_MWh = dataObject.getRapidRunData().am_summerWeekConsumptionForHeating_kW.get(EC).getIntegral_MWh();
 		double heatProduction_MWh = dataObject.getRapidRunData().am_summerWeekHeatFromEnergyCarrier_kW.get(EC).getIntegral_MWh();
@@ -617,21 +622,24 @@ if (dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet().contains(OL
 		DataItem heatpumpElectricity = new DataItem();
 		heatpumpElectricity.setValue(production_MWh);
 		pl_productionChartSummer.addDataItem(heatpumpElectricity, "Stroom voor Warmtepomp [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
-		
 		double import_MWh = dataObject.getRapidRunData().getSummerWeekImport_MWh(OL_EnergyCarriers.HEAT);
-		if (import_MWh > uI_Results.p_cutOff_MWh) {
-			totalProductionSummer_MWh += import_MWh;
-			DataItem heatpumpEnvironment = new DataItem();
-			heatpumpEnvironment.setValue(import_MWh);
-			pl_productionChartSummer.addDataItem(heatpumpEnvironment, "Warmte uit Warmtenet [MWh]", purple);
-		}
-		else {	
+		if (import_MWh <= uI_Results.p_cutOff_MWh){	
 			production_MWh = dataObject.getRapidRunData().acc_summerWeekPrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
 			totalProductionSummer_MWh += production_MWh;
 			DataItem heatpumpEnvironment = new DataItem();
 			heatpumpEnvironment.setValue(production_MWh);
 			pl_productionChartSummer.addDataItem(heatpumpEnvironment, "Warmte uit Omgeving [MWh]", lightSkyBlue);
 		}
+	}
+}
+// Electric Heater
+if (dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.keySet().contains(OL_AssetFlowCategories.electricHeaterElectricityConsumption_kW)) {
+	production_MWh = dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.get(OL_AssetFlowCategories.electricHeaterElectricityConsumption_kW).getIntegral_MWh();
+	if (production_MWh > uI_Results.p_cutOff_MWh) {
+		totalProductionSummer_MWh += production_MWh;
+		DataItem heatpumpElectricity = new DataItem();
+		heatpumpElectricity.setValue(production_MWh);
+		pl_productionChartSummer.addDataItem(heatpumpElectricity, "Stroom voor Warmtepomp [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
 	}
 }
 // PVT
@@ -697,6 +705,9 @@ if (dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.keySet().contains(OL
 // Production
 // Standard Heating Assets
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_winterWeekConsumptionForHeating_kW.keySet()) {
+	if(EC == OL_EnergyCarriers.HEAT || EC == OL_EnergyCarriers.ELECTRICITY){
+		continue; //-> Heat grid is calculated seperatly below, for electricity we look at individual assetflowcategories
+	}
 	if (dataObject.getRapidRunData().am_winterWeekHeatFromEnergyCarrier_kW.keySet().contains(EC)) {
 		double ECConsumption_MWh = dataObject.getRapidRunData().am_winterWeekConsumptionForHeating_kW.get(EC).getIntegral_MWh();
 		double heatProduction_MWh = dataObject.getRapidRunData().am_winterWeekHeatFromEnergyCarrier_kW.get(EC).getIntegral_MWh();
@@ -725,19 +736,23 @@ if (dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.keySet().contains(OL
 		pl_productionChartWinter.addDataItem(heatpumpElectricity, "Stroom voor Warmtepomp [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
 		
 		double import_MWh = dataObject.getRapidRunData().getWinterWeekImport_MWh(OL_EnergyCarriers.HEAT);
-		if (import_MWh > uI_Results.p_cutOff_MWh) {
-			totalProductionWinter_MWh += import_MWh;
-			DataItem heatpumpEnvironment = new DataItem();
-			heatpumpEnvironment.setValue(import_MWh);
-			pl_productionChartWinter.addDataItem(heatpumpEnvironment, "Warmte uit Warmtenet [MWh]", purple);
-		}
-		else {	
+		if (import_MWh <= uI_Results.p_cutOff_MWh) {
 			production_MWh = dataObject.getRapidRunData().acc_winterWeekPrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
 			totalProductionWinter_MWh += production_MWh;
 			DataItem heatpumpEnvironment = new DataItem();
 			heatpumpEnvironment.setValue(production_MWh);
 			pl_productionChartWinter.addDataItem(heatpumpEnvironment, "Warmte uit Omgeving [MWh]", lightSkyBlue);
 		}
+	}
+}
+// Electric Heater
+if (dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.keySet().contains(OL_AssetFlowCategories.electricHeaterElectricityConsumption_kW)) {
+	production_MWh = dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.get(OL_AssetFlowCategories.electricHeaterElectricityConsumption_kW).getIntegral_MWh();
+	if (production_MWh > uI_Results.p_cutOff_MWh) {
+		totalProductionWinter_MWh += production_MWh;
+		DataItem heatpumpElectricity = new DataItem();
+		heatpumpElectricity.setValue(production_MWh);
+		pl_productionChartWinter.addDataItem(heatpumpElectricity, "Stroom voor Warmtepomp [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
 	}
 }
 // PVT
@@ -862,6 +877,9 @@ if (dataObject.getRapidRunData().am_assetFlowsDaytime_kW.keySet().contains(OL_As
 // Production
 // Standard Heating Assets
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_daytimeConsumptionForHeating_kW.keySet()) {
+	if(EC == OL_EnergyCarriers.HEAT || EC == OL_EnergyCarriers.ELECTRICITY){
+		continue; //-> Heat grid is calculated seperatly below, for electricity we look at individual assetflowcategories
+	}
 	if (dataObject.getRapidRunData().am_daytimeHeatFromEnergyCarrier_kW.keySet().contains(EC)) {
 		double ECConsumptionDay_MWh = dataObject.getRapidRunData().am_daytimeConsumptionForHeating_kW.get(EC).getIntegral_MWh();
 		double heatProductionDay_MWh = dataObject.getRapidRunData().am_daytimeHeatFromEnergyCarrier_kW.get(EC).getIntegral_MWh();
@@ -912,18 +930,7 @@ if (dataObject.getRapidRunData().am_assetFlowsDaytime_kW.keySet().contains(OL_As
 		
 		double importDay_MWh = dataObject.getRapidRunData().getDaytimeImport_MWh(OL_EnergyCarriers.HEAT);
 		double importNight_MWh = -importDay_MWh + dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT);
-		if (importDay_MWh > uI_Results.p_cutOff_MWh) {
-			totalProductionDay_MWh += importDay_MWh;
-			DataItem heatpumpEnvironmentDay = new DataItem();
-			heatpumpEnvironmentDay.setValue(importDay_MWh);
-			pl_productionChartDay.addDataItem(heatpumpEnvironmentDay, "Warmte uit Warmtenet [MWh]", purple);
-			
-			totalProductionNight_MWh += importNight_MWh;
-			DataItem heatpumpEnvironmentNight = new DataItem();
-			heatpumpEnvironmentNight.setValue(importNight_MWh);
-			pl_productionChartNight.addDataItem(heatpumpEnvironmentNight, "Warmte uit Warmtenet [MWh]", purple);
-		}
-		else {
+		if (importDay_MWh <= uI_Results.p_cutOff_MWh) {
 			productionDay_MWh = dataObject.getRapidRunData().acc_daytimePrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
 			productionNight_MWh = -productionDay_MWh + dataObject.getRapidRunData().acc_totalPrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
 			
@@ -937,6 +944,22 @@ if (dataObject.getRapidRunData().am_assetFlowsDaytime_kW.keySet().contains(OL_As
 			heatpumpEnvironmentNight.setValue(totalProductionNight_MWh);
 			pl_productionChartNight.addDataItem(heatpumpEnvironmentNight, "Warmte uit Omgeving [MWh]", lightSkyBlue);
 		}
+	}
+}
+// Electric Heater
+if (dataObject.getRapidRunData().am_assetFlowsDaytime_kW.keySet().contains(OL_AssetFlowCategories.electricHeaterElectricityConsumption_kW)) {
+	productionDay_MWh = dataObject.getRapidRunData().am_assetFlowsDaytime_kW.get(OL_AssetFlowCategories.electricHeaterElectricityConsumption_kW).getIntegral_MWh();
+	productionNight_MWh = -productionDay_MWh + dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW).getIntegral_MWh();
+	if (productionDay_MWh > uI_Results.p_cutOff_MWh) {
+		totalProductionDay_MWh += productionDay_MWh;
+		DataItem heatpumpElectricityDay = new DataItem();
+		heatpumpElectricityDay.setValue(productionDay_MWh);
+		pl_productionChartDay.addDataItem(heatpumpElectricityDay, "Stroom voor Warmtepomp [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));
+		
+		totalProductionNight_MWh += productionNight_MWh;
+		DataItem heatpumpElectricityNight = new DataItem();
+		heatpumpElectricityNight.setValue(productionNight_MWh);
+		pl_productionChartNight.addDataItem(heatpumpElectricityNight, "Stroom voor Warmtepomp [MWh]", uI_Results.cm_assetFlowColors.get(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW));	
 	}
 }
 // PVT
@@ -1086,6 +1109,9 @@ if (dataObject.getRapidRunData().am_assetFlowsWeekend_kW.keySet().contains(OL_As
 // Production
 // Standard Heating Assets
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_weekendConsumptionForHeating_kW.keySet()) {
+	if(EC == OL_EnergyCarriers.HEAT || EC == OL_EnergyCarriers.ELECTRICITY){
+		continue; //-> Heat grid is calculated seperatly below, for electricity we look at individual assetflowcategories
+	}
 	if (dataObject.getRapidRunData().am_weekendHeatFromEnergyCarrier_kW.keySet().contains(EC)) {
 		double ECConsumptionWeekend_MWh = dataObject.getRapidRunData().am_weekendConsumptionForHeating_kW.get(EC).getIntegral_MWh();
 		double heatProductionWeekend_MWh = dataObject.getRapidRunData().am_weekendHeatFromEnergyCarrier_kW.get(EC).getIntegral_MWh();
@@ -1136,18 +1162,7 @@ if (dataObject.getRapidRunData().am_assetFlowsWeekend_kW.keySet().contains(OL_As
 		
 		double importWeekend_MWh = dataObject.getRapidRunData().getWeekendImport_MWh(OL_EnergyCarriers.HEAT);
 		double importWeekday_MWh = -importWeekend_MWh + dataObject.getRapidRunData().getTotalImport_MWh(OL_EnergyCarriers.HEAT);
-		if (importWeekend_MWh > uI_Results.p_cutOff_MWh) {
-			totalProductionWeekend_MWh += importWeekend_MWh;
-			DataItem heatpumpEnvironmentWeekend = new DataItem();
-			heatpumpEnvironmentWeekend.setValue(importWeekend_MWh);
-			pl_productionChartWeekend.addDataItem(heatpumpEnvironmentWeekend, "Warmte uit Warmtenet [MWh]", purple);
-			
-			totalProductionWeekday_MWh += importWeekday_MWh;
-			DataItem heatpumpEnvironmentWeekday = new DataItem();
-			heatpumpEnvironmentWeekday.setValue(importWeekday_MWh);
-			pl_productionChartWeekday.addDataItem(heatpumpEnvironmentWeekday, "Warmte uit Warmtenet [MWh]", purple);
-		}
-		else {
+		if (importWeekend_MWh <= uI_Results.p_cutOff_MWh){
 			productionWeekend_MWh = dataObject.getRapidRunData().acc_weekendPrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
 			productionWeekday_MWh = -productionWeekend_MWh + dataObject.getRapidRunData().acc_totalPrimaryEnergyProductionHeatpumps_kW.getIntegral_MWh();
 			
