@@ -26,6 +26,8 @@ public class J_InfoTextResultsUI implements Serializable {
 	public String peakFeedin = "Analoog aan de Max afname is de Max teruglevering het hoogste gemiddelde vermogen dat aan het net geleverd wordt.";
 	// sankey
 	
+	//Economic
+	public String economicKPIs = "In deze 'Economische KPI' chart kun je inzien hoeveel stroom kosten je zou hebben aan import, hoeveel de export van stroom je zou opleveren, en waar dat netto op uit zou komen. Dit kun je inzien per maand of voor het hele jaar. Deze kosten zijn berekend aan de hand van de EPEX prijs per kwartier (+ 21% BTW en 3.87 cent/kWh energie belasting voor de import van stroom). Aansluitings en capaciteits kosten zijn dus niet meegenomen.";
 	
 	
 	public String x = "Met deze slider kun je instellen ... De minimum waarde van de slider is gezet op de hoveelheid die al in het huidige scenario aanwezig is.";
