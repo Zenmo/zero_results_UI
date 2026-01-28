@@ -115,8 +115,8 @@ else if(uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 	
 	if(uI_Results.b_showGroupContractValues){
 		//And: add group contract values
-		DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, ((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData()) / divisionAmountForCorrectUnit);
-		DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -((EnergyCoop)dataObject.getRapidRunData().parentAgent).f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData()) / divisionAmountForCorrectUnit);
+		DataSet groupContractCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, ((EnergyCoop)dataObject).f_getGroupContractDeliveryCapacity_kW(dataObject.getRapidRunData(), uI_Results.energyModel.p_timeParameters) / divisionAmountForCorrectUnit);
+		DataSet groupContractCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -((EnergyCoop)dataObject).f_getGroupContractFeedinCapacity_kW(dataObject.getRapidRunData(), uI_Results.energyModel.p_timeParameters) / divisionAmountForCorrectUnit);
 		
 		plot_jaar.addDataSet(groupContractCapacityDelivery_kW, "Groeps GTV afname", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 		plot_jaar.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
@@ -182,7 +182,7 @@ double divisionAmountForCorrectUnit = 1;
 String power_unit = "kW";
 
 ////Get the peaks
-J_LoadDurationCurves loadCurves = GN.f_getDuurkrommes();
+J_LoadDurationCurves loadCurves = GN.f_getDuurkrommes(uI_Results.energyModel.p_timeParameters);
 double maxDelivery_kW = max(0, loadCurves.ds_loadDurationCurveTotal_kW.getYMax());
 double maxFeedin_kW = abs(min(0, loadCurves.ds_loadDurationCurveTotal_kW.getYMin()));
 double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
@@ -429,7 +429,7 @@ else {
 double f_setKPIValuesGN(GridNode GN)
 {/*ALCODESTART::1743519634438*/
 ////Get the peaks
-J_LoadDurationCurves loadCurves = GN.f_getDuurkrommes();
+J_LoadDurationCurves loadCurves = GN.f_getDuurkrommes(uI_Results.energyModel.p_timeParameters);
 double maxDelivery_kW = max(0, loadCurves.ds_loadDurationCurveTotal_kW.getYMax());
 double maxFeedin_kW = abs(min(0, loadCurves.ds_loadDurationCurveTotal_kW.getYMin()));
 double maxDeliveryAndFeedin_kW = max(maxDelivery_kW, maxFeedin_kW);
@@ -528,7 +528,7 @@ else {
 double f_setLoadPlots()
 {/*ALCODESTART::1746451351928*/
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
-J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves(uI_Results.energyModel);
+J_LoadDurationCurves loadDurationCurves = data.getRapidRunData().getLoadDurationCurves();
 f_addDataToPlots(data, loadDurationCurves);
 f_setKPIValues(data, loadDurationCurves);
 

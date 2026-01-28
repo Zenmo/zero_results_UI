@@ -1174,7 +1174,7 @@ double[] monthlyExport_kWh = new double[12];
 double[] monthlyImport_kWh = new double[12];
 
 int[] daysPerMonth = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-if (uI_Results.energyModel.p_year % 4 == 0 && uI_Results.energyModel.p_year % 100 != 0 && uI_Results.energyModel.p_year % 400 == 0) {
+if (uI_Results.energyModel.p_timeParameters.getStartYear() % 4 == 0 && uI_Results.energyModel.p_timeParameters.getStartYear() % 100 != 0 && uI_Results.energyModel.p_timeParameters.getStartYear() % 400 == 0) {
 	daysPerMonth[1] += 1;
 }
 
