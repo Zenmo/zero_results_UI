@@ -26,7 +26,7 @@
 		<Id>1704365431636</Id>
 		<Name><![CDATA[v_ElektrischeWPColor]]></Name>
 		<X>80</X>
-		<Y>1610</Y>
+		<Y>1650</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -48,7 +48,7 @@
 		<Id>1704365431638</Id>
 		<Name><![CDATA[v_HybrideWPColor]]></Name>
 		<X>81</X>
-		<Y>1630</Y>
+		<Y>1670</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -70,7 +70,7 @@
 		<Id>1704365431640</Id>
 		<Name><![CDATA[v_MTDistrictHeatingColor]]></Name>
 		<X>80</X>
-		<Y>1670</Y>
+		<Y>1710</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -92,7 +92,7 @@
 		<Id>1704365431642</Id>
 		<Name><![CDATA[v_LTDistrictHeatingColor]]></Name>
 		<X>80.5</X>
-		<Y>1689</Y>
+		<Y>1729</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -114,7 +114,7 @@
 		<Id>1704365431644</Id>
 		<Name><![CDATA[v_GreenGasBoilerColor]]></Name>
 		<X>81.5</X>
-		<Y>1709</Y>
+		<Y>1749</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -136,7 +136,7 @@
 		<Id>1704365431646</Id>
 		<Name><![CDATA[v_uitgeslotenColor]]></Name>
 		<X>81.5</X>
-		<Y>1729</Y>
+		<Y>1769</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -158,7 +158,7 @@
 		<Id>1704365431648</Id>
 		<Name><![CDATA[v_energieLabelAColor]]></Name>
 		<X>81.5</X>
-		<Y>1755.5</Y>
+		<Y>1795.5</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -180,7 +180,7 @@
 		<Id>1704365431650</Id>
 		<Name><![CDATA[v_energieLabelBColor]]></Name>
 		<X>81.5</X>
-		<Y>1775.5</Y>
+		<Y>1815.5</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -202,7 +202,7 @@
 		<Id>1704365431652</Id>
 		<Name><![CDATA[v_energieLabelCColor]]></Name>
 		<X>82.5</X>
-		<Y>1795.5</Y>
+		<Y>1835.5</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -224,7 +224,7 @@
 		<Id>1704365431654</Id>
 		<Name><![CDATA[v_energieLabelDColor]]></Name>
 		<X>82.5</X>
-		<Y>1815.5</Y>
+		<Y>1855.5</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -246,7 +246,7 @@
 		<Id>1704365431656</Id>
 		<Name><![CDATA[v_energieLabelEColor]]></Name>
 		<X>82</X>
-		<Y>1834.5</Y>
+		<Y>1874.5</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -268,7 +268,7 @@
 		<Id>1704365431658</Id>
 		<Name><![CDATA[v_energieLabelFColor]]></Name>
 		<X>83</X>
-		<Y>1854.5</Y>
+		<Y>1894.5</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -290,7 +290,7 @@
 		<Id>1704365431660</Id>
 		<Name><![CDATA[v_energieLabelOnbekendColor]]></Name>
 		<X>83</X>
-		<Y>1906.5</Y>
+		<Y>1946.5</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -312,7 +312,7 @@
 		<Id>1704365431662</Id>
 		<Name><![CDATA[v_energieLabelGColor]]></Name>
 		<X>83</X>
-		<Y>1875</Y>
+		<Y>1915</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -356,7 +356,7 @@
 		<Id>1704365431666</Id>
 		<Name><![CDATA[v_highlightParticipantsColor]]></Name>
 		<X>83</X>
-		<Y>1930</Y>
+		<Y>1970</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -664,7 +664,7 @@
 		<Id>1706006311653</Id>
 		<Name><![CDATA[v_energyDemandColor]]></Name>
 		<X>80</X>
-		<Y>1420</Y>
+		<Y>1460</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -686,7 +686,7 @@
 		<Id>1706294259689</Id>
 		<Name><![CDATA[v_heatPumpHeatSupplyColor]]></Name>
 		<X>80</X>
-		<Y>1520</Y>
+		<Y>1560</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -708,7 +708,7 @@
 		<Id>1706294446635</Id>
 		<Name><![CDATA[v_electricityDemandColor]]></Name>
 		<X>80</X>
-		<Y>1440</Y>
+		<Y>1480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -730,7 +730,7 @@
 		<Id>1706294463694</Id>
 		<Name><![CDATA[v_hydrogenDemandColor]]></Name>
 		<X>80</X>
-		<Y>1480</Y>
+		<Y>1520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -771,7 +771,7 @@
 		<Id>1712656923734</Id>
 		<Name><![CDATA[v_electricitySupplyColor]]></Name>
 		<X>80</X>
-		<Y>1460</Y>
+		<Y>1500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -794,7 +794,7 @@
 		<Name><![CDATA[v_electricityCapacityColor_known]]></Name>
 		<Description><![CDATA[used to be: salmon]]></Description>
 		<X>80</X>
-		<Y>1550</Y>
+		<Y>1590</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -860,7 +860,7 @@
 		<Id>1714990064174</Id>
 		<Name><![CDATA[v_selfConsumedElectricityColor]]></Name>
 		<X>83</X>
-		<Y>1970</Y>
+		<Y>2010</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -882,7 +882,7 @@
 		<Id>1714990067397</Id>
 		<Name><![CDATA[v_importedEnergyColor]]></Name>
 		<X>83</X>
-		<Y>2010</Y>
+		<Y>2050</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -904,7 +904,7 @@
 		<Id>1714990072472</Id>
 		<Name><![CDATA[v_exportedEnergyColor]]></Name>
 		<X>83</X>
-		<Y>2030</Y>
+		<Y>2070</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -926,7 +926,7 @@
 		<Id>1714992076893</Id>
 		<Name><![CDATA[v_selfConsumedEnergyColor]]></Name>
 		<X>83</X>
-		<Y>1990</Y>
+		<Y>2030</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -948,7 +948,7 @@
 		<Id>1715676160870</Id>
 		<Name><![CDATA[v_hydrogenSupplyColor]]></Name>
 		<X>80</X>
-		<Y>1500</Y>
+		<Y>1540</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1074,7 +1074,7 @@
 		<Id>1733493134212</Id>
 		<Name><![CDATA[v_electricityCapacityColor_estimated]]></Name>
 		<X>80</X>
-		<Y>1570</Y>
+		<Y>1610</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1140,7 +1140,7 @@
 		<Id>1736430624184</Id>
 		<Name><![CDATA[v_cumulativeGTVColor]]></Name>
 		<X>83</X>
-		<Y>2065</Y>
+		<Y>2105</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1162,7 +1162,7 @@
 		<Id>1736430624188</Id>
 		<Name><![CDATA[v_groupGTVColor]]></Name>
 		<X>83</X>
-		<Y>2085</Y>
+		<Y>2125</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1515,6 +1515,50 @@
 			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
 				<Code><![CDATA[indianRed]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1770132281783</Id>
+		<Name><![CDATA[v_methaneElectricitySupplyColor]]></Name>
+		<X>80</X>
+		<Y>1410</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Color]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new Color(212, 186, 157)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1770132298095</Id>
+		<Name><![CDATA[v_petroleumProductsElectricitySupplyColor]]></Name>
+		<X>80</X>
+		<Y>1430</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Color]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new Color(132, 132, 132)]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
