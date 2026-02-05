@@ -1562,6 +1562,50 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1770301135920</Id>
+		<Name><![CDATA[v_ironPowderDemandColor]]></Name>
+		<X>80</X>
+		<Y>2170</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Color]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new Color(170, 39, 4)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1770301179006</Id>
+		<Name><![CDATA[v_ironPowderSupplyColor]]></Name>
+		<X>80</X>
+		<Y>2190</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Color]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new Color(170, 39, 4)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 	<Variable Class="Parameter">
 		<Id>1715851154621</Id>
 		<Name><![CDATA[energyModel]]></Name>
