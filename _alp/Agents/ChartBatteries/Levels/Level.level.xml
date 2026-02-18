@@ -172,7 +172,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[State of charge van de batterij]]></Text>
+						<Text><![CDATA[State of charge van de batterij(en)]]></Text>
 						<Font>
 							<Name><![CDATA[Calibri]]></Name>
 							<Size>18</Size>
@@ -453,7 +453,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[State of charge van de batterij]]></Text>
+						<Text><![CDATA[State of charge van de batterij(en)]]></Text>
 						<Font>
 							<Name><![CDATA[Calibri]]></Name>
 							<Size>18</Size>
@@ -626,7 +626,7 @@
 	<Oval>
 		<Id>1743416806393</Id>
 		<Name><![CDATA[oval_totalBatteryCapacity]]></Name>
-		<X>600</X>
+		<X>130</X>
 		<Y>693</Y>
 		<Label>
 			<X>0</X>
@@ -652,7 +652,7 @@
 	<Text>
 		<Id>1743416806402</Id>
 		<Name><![CDATA[t_totalBatteryCapacity]]></Name>
-		<X>600</X>
+		<X>130</X>
 		<Y>677</Y>
 		<Label>
 			<X>0</X>
@@ -677,7 +677,7 @@
 	<Text>
 		<Id>1743416806416</Id>
 		<Name><![CDATA[t_batteryCapacityLabel]]></Name>
-		<X>600</X>
+		<X>130</X>
 		<Y>620</Y>
 		<Label>
 			<X>0</X>
@@ -797,7 +797,7 @@
 	<Group>
 		<Id>1756460336968</Id>
 		<Name><![CDATA[gr_batteryLifetime]]></Name>
-		<X>120</X>
+		<X>630</X>
 		<Y>680</Y>
 		<Label>
 			<X>10</X>
