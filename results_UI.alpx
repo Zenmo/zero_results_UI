@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AnyLogicWorkspace splitVersion="1"
                    WorkspaceVersion="1.9"
-                   AnyLogicVersion="8.9.7.202512010504"
+                   AnyLogicVersion="8.9.7.202512121156"
                    AlpVersion="8.9.7">
 	<Model>
 		<Id>1704197366547</Id>
@@ -46,12 +46,24 @@
 					<Name><![CDATA[BATTERY]]></Name>
 				</Option>
 				<Option>
-					<Id>1755704418943</Id>
-					<Name><![CDATA[ECONOMIC]]></Name>
-				</Option>
-				<Option>
 					<Id>1759139740201</Id>
 					<Name><![CDATA[GTO]]></Name>
+				</Option>
+				<Option>
+					<Id>1755704418943</Id>
+					<Name><![CDATA[ENERGY_COSTS]]></Name>
+				</Option>
+				<Option>
+					<Id>1772203583669</Id>
+					<Name><![CDATA[CONNECTION_COSTS]]></Name>
+				</Option>
+				<Option>
+					<Id>1772203559493</Id>
+					<Name><![CDATA[OPEX_AND_CAPEX]]></Name>
+				</Option>
+				<Option>
+					<Id>1772203580124</Id>
+					<Name><![CDATA[TOTAL_COSTS]]></Name>
 				</Option>
 			</OptionList>
 			<OptionList>
