@@ -2,6 +2,10 @@
 <ActiveObjectClass>
 	<Id>1772440768543</Id>
 	<Name><![CDATA[ChartConnectionCosts]]></Name>
+	<ExtendsReference>
+		<PackageName>digital_twin_results</PackageName>
+		<ClassName>ChartArea</ClassName>
+	</ExtendsReference>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1772440768548</Id>

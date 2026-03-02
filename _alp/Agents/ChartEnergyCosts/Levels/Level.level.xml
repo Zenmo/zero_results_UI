@@ -30,7 +30,7 @@
 	</Rectangle>
 	<Text>
 		<Id>1726825366299</Id>
-		<Name><![CDATA[txt_EconomicKPIs]]></Name>
+		<Name><![CDATA[txt_EnergyCosts]]></Name>
 		<X>235</X>
 		<Y>10</Y>
 		<Label>
@@ -45,7 +45,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Economische KPIs]]></Text>
+		<Text><![CDATA[Energie kosten]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>26</Size>

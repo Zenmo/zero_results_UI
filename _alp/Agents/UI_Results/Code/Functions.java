@@ -49,19 +49,19 @@ switch (v_selectedChartType) {
 		break;
 	case ENERGY_COSTS:
 		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEconomicKPIs.f_setChartEconomicKPIs();
+		chartEnergyCosts.f_setChartEconomicKPIs();
 		break;
 	case CONNECTION_COSTS:
 		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEconomicKPIs.f_setChartEconomicKPIs();
+		chartEnergyCosts.f_setChartEconomicKPIs();
 		break;
 	case OPEX_AND_CAPEX:
 		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEconomicKPIs.f_setChartEconomicKPIs();
+		chartEnergyCosts.f_setChartEconomicKPIs();
 		break;
 	case TOTAL_COSTS:
 		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEconomicKPIs.f_setChartEconomicKPIs();
+		chartEnergyCosts.f_setChartEconomicKPIs();
 		break;
 }
 
@@ -186,7 +186,7 @@ chartKPISummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineSty
 chartGespreksLeidraad.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGespreksleidraadBedrijven.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartBatteries.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
-chartEconomicKPIs.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartEnergyCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGTO.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 /*ALCODEEND*/}
 
