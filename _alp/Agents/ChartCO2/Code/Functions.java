@@ -1,4 +1,4 @@
-double f_setChartEconomicKPIs()
+double f_setChartCO2()
 {/*ALCODESTART::1772441389067*/
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
@@ -23,7 +23,7 @@ else{
 }
 
 ////Calculate the values
-
+/*
 //Current values
 double[] monthlyElectricityImportCosts_eur = f_calculateMonthlyElectricityImportCosts_eur(netLoad_kW);
 double[] monthlyElectricityExportRevenue_eur = f_calculateMonthlyElectricityExportRevenue_eur(netLoad_kW);
@@ -54,7 +54,7 @@ f_setYearlyKPIs(totalImportCosts_eur, totalExportRevenue_eur, totalNetElectricit
 
 //Set monthly chart
 f_setMonthlyChart(monthlyElectricityImportCosts_eur, monthlyElectricityExportRevenue_eur, monthlyNetElectricityCosts_eur);
-
+*/
 
 /*ALCODEEND*/}
 
@@ -136,20 +136,16 @@ if(lineStyle != null){
 double f_resetChart()
 {/*ALCODESTART::1772441389073*/
 //Reset all arrow visibility
-arrow_down_green_import.setVisible(false);
-arrow_up_green_export.setVisible(false);
-arrow_down_green_netElectricity.setVisible(false);
-arrow_up_red_import.setVisible(false);
-arrow_down_red_export.setVisible(false);
-arrow_up_red_netElectricity.setVisible(false);
-line_total.setVisible(false);
-line_import.setVisible(false);
-line_export.setVisible(false);
+arrow_up_green_CO2Consumption.setVisible(false);
+arrow_down_red_CO2Consumption.setVisible(false);
+line_CO2Consumption.setVisible(false);
+
+//Reset KPIS
+t_totalCO2Consumption_kg.setText("-");
+t_previousTotalCO2Consumption_kg.setText("-");
 
 //Clear monthly chart
-bar_importElectricityCostsMonthly.removeAll();
-bar_exportElectricityRevenueMonthly.removeAll();
-plot_netElectricityCostsMonthly.removeAll();
+bar_CO2ConsumptionMonthly.removeAll();
 /*ALCODEEND*/}
 
 double f_calculateCapacityCosts_eur(double[] netLoad_kW)

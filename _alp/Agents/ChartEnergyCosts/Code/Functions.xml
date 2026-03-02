@@ -4,7 +4,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1726830495435</Id>
-		<Name><![CDATA[f_setChartEconomicKPIs]]></Name>
+		<Name><![CDATA[f_setChartEnergyCosts]]></Name>
 		<X>-410</X>
 		<Y>420</Y>
 		<Label>

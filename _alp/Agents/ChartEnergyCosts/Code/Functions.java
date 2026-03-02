@@ -1,4 +1,4 @@
-double f_setChartEconomicKPIs()
+double f_setChartEnergyCosts()
 {/*ALCODESTART::1726830495435*/
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 

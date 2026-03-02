@@ -50,6 +50,10 @@
 					<Name><![CDATA[GTO]]></Name>
 				</Option>
 				<Option>
+					<Id>1772471918770</Id>
+					<Name><![CDATA[CO2]]></Name>
+				</Option>
+				<Option>
 					<Id>1755704418943</Id>
 					<Name><![CDATA[ENERGY_COSTS]]></Name>
 				</Option>
@@ -59,7 +63,7 @@
 				</Option>
 				<Option>
 					<Id>1772203559493</Id>
-					<Name><![CDATA[OPEX_AND_CAPEX]]></Name>
+					<Name><![CDATA[CAPEX_AND_OPEX]]></Name>
 				</Option>
 				<Option>
 					<Id>1772203580124</Id>

@@ -141,7 +141,7 @@
 				<Presentation>
 					<Image>
 						<Id>1772441388941</Id>
-						<Name><![CDATA[arrow_up_red_CO2Consumption]]></Name>
+						<Name><![CDATA[arrow_down_red_CO2Consumption]]></Name>
 						<X>-12</X>
 						<Y>-10</Y>
 						<Label>
@@ -160,14 +160,14 @@
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_arrow_up_red.png</ClassName>
+								<ClassName>icon_arrow_down_red.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>
 					</Image>
 					<Image>
 						<Id>1772441388943</Id>
-						<Name><![CDATA[arrow_down_green_CO2Consumption]]></Name>
+						<Name><![CDATA[arrow_up_green_CO2Consumption]]></Name>
 						<X>-12</X>
 						<Y>-10</Y>
 						<Label>
@@ -186,7 +186,7 @@
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_arrow_down_green.png</ClassName>
+								<ClassName>icon_arrow_up_green.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>

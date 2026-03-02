@@ -2,6 +2,7 @@
 <ActiveObjectClass>
 	<Id>1772440754208</Id>
 	<Name><![CDATA[ChartTotalCosts]]></Name>
+	<Folder>1755764711838</Folder>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
@@ -97,6 +98,7 @@
 	</ScaleRuler>
 	<CurrentLevel>1772440754214</CurrentLevel>
 	<ConnectionsId>1772440754209</ConnectionsId>
+	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
 			<Id>1772440754209</Id>
@@ -157,6 +159,7 @@
 			<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 			<Z>0</Z>
 			<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+			<Presentation xmlns:al="http://anylogic.com"/>
 		</Level>
 	</Presentation>
 </ActiveObjectClass>

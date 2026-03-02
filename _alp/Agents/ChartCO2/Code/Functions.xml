@@ -4,7 +4,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1772441389067</Id>
-		<Name><![CDATA[f_setChartEconomicKPIs]]></Name>
+		<Name><![CDATA[f_setChartCO2]]></Name>
 		<X>-410</X>
 		<Y>420</Y>
 		<Label>
@@ -21,6 +21,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772441389069</Id>
 		<Name><![CDATA[f_setYearlyKPIs]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-390</X>
 		<Y>460</Y>
 		<Label>
@@ -151,6 +152,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772441389081</Id>
 		<Name><![CDATA[f_setMonthlyChart]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-390</X>
 		<Y>480</Y>
 		<Label>
@@ -179,6 +181,7 @@
 		<ReturnType>double[]</ReturnType>
 		<Id>1772441389083</Id>
 		<Name><![CDATA[f_calculateMonthlyElectricityImportCosts_eur]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-390</X>
 		<Y>560</Y>
 		<Label>
@@ -199,6 +202,7 @@
 		<ReturnType>double[]</ReturnType>
 		<Id>1772441389085</Id>
 		<Name><![CDATA[f_calculateMonthlyElectricityExportRevenue_eur]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-390</X>
 		<Y>580</Y>
 		<Label>

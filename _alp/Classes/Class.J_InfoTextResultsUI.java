@@ -26,10 +26,14 @@ public class J_InfoTextResultsUI implements Serializable {
 	public String peakFeedin = "Analoog aan de Max afname is de Max teruglevering het hoogste gemiddelde vermogen dat aan het net geleverd wordt.";
 	// sankey
 	
+	//CO2
+	public String chartCO2 = "Deze chart geeft je inzicht in de totale CO2 uitstoot. Dit is indirect en directe uitstoot. Voor stroomverbruik van het net (Indirect) wordt elk kwartier gekeken hoeveel CO2 er geproduceert wordt voor het net. En dus hoeveel CO2 er (indirect) vrij komt per afgenomen kWh aan stroom. Alles is uitgedrukt in kg CO2.";
 	//Economic
-	public String economicKPIs = "In deze 'Economische KPI' chart kun je inzien hoeveel stroom kosten je zou hebben aan import, hoeveel de export van stroom je zou opleveren, en waar dat netto op uit zou komen. Dit kun je inzien per maand of voor het hele jaar. Deze kosten zijn berekend aan de hand van de EPEX prijs per kwartier (+ 21% BTW en 3.87 cent/kWh energie belasting voor de import van stroom). Aansluitings en capaciteits kosten zijn dus niet meegenomen.";
-	
-	
+	public String economicKPIs = "Deze 'Energie kosten' chart geeft je inzicht in hoeveel kosten en verdiensten je zou hebben aan de import en export van energie, en waar dat netto op uit zou komen. Dit kun je inzien per maand of voor het hele jaar. Voor stroom zijn deze kosten berekend aan de hand van de EPEX prijs per kwartier (+ 21% BTW en 3.87 cent/kWh energie belasting voor de import van stroom). Voor andere energiedragers is dit een vast getal keer de hoeveelheid import en export.";
+	public String chartConnectionCosts = "In deze 'Aansluit kosten' chart kun je inzien wat de kosten zijn voor je aansluiting op het stroomnet, en hoe die zijn opgebouwd. Dit betekent onder andere de kosten voor het gecontracteerde vermogen, maar ook kosten voor maximaal piek/capaciteits verbruik per maand en andere zaken die relevant zijn voor de net aansluiting. (Prijzen van transformatoren en kabels zijn niet meegenomen in deze berekeningen.)";
+	public String chartCAPEXAndOPEX = "In deze 'CAPEX & OPEX chart' kun je zien wat de CAPEX (Aanschaf) en OPEX (Onderhouds/gebruiks kosten (Dit is exclusief energie verbruiks kosten! Die zijn te vinden in de 'Energie Kosten' chart!)) kosten van de aanwezige assets zijn. Uiteindelijk ook uitgedrukt in een totale kosten per jaar door de CAPEX te delen door de levensduur van de assets en op te tellen bij de OPEX. Let op: Inflatie en rente percentages zijn (nog) niet meegenomen in deze berekeningen.";
+	public String chartTotalCosts = "Deze chart geeft de totalen kosten van je energie balans weer. Dit betekent de opgetelde kosten van je energie verbruik, je netaansluiting en je CAPEX & OPEX samen. De waardes zijn allemaal in kosten per jaar. De precieze berekeningen en kosten opbouw van de subcategorieën kun je vinden in de bijbehorende sub charts.";
+		
 	public String x = "Met deze slider kun je instellen ... De minimum waarde van de slider is gezet op de hoveelheid die al in het huidige scenario aanwezig is.";
 
 	/**

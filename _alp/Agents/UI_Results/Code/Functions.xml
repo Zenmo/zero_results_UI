@@ -178,7 +178,7 @@
 		<Id>1725374888930</Id>
 		<Name><![CDATA[f_styleAllCharts]]></Name>
 		<X>1560</X>
-		<Y>560</Y>
+		<Y>740</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -210,7 +210,7 @@
 		<Id>1725375062400</Id>
 		<Name><![CDATA[f_styleResultsUIHeader]]></Name>
 		<X>1560</X>
-		<Y>540</Y>
+		<Y>720</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -602,7 +602,7 @@
 		<Id>1742218383411</Id>
 		<Name><![CDATA[f_setCB_KPISummary_Presentation]]></Name>
 		<X>1560</X>
-		<Y>590</Y>
+		<Y>770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -630,7 +630,7 @@
 		<Id>1742221943777</Id>
 		<Name><![CDATA[f_setSelectedObjectDisplay]]></Name>
 		<X>1560</X>
-		<Y>630</Y>
+		<Y>810</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -712,9 +712,9 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1755704458936</Id>
-		<Name><![CDATA[f_setChartEconomicKPI_presentation]]></Name>
+		<Name><![CDATA[f_setChartEnergyCosts_presentation]]></Name>
 		<X>1570</X>
-		<Y>480</Y>
+		<Y>550</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -742,7 +742,7 @@
 		<Id>1759140579703</Id>
 		<Name><![CDATA[f_setChartGTO_presentation]]></Name>
 		<X>1570</X>
-		<Y>500</Y>
+		<Y>480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -770,7 +770,7 @@
 		<Id>1765295944334</Id>
 		<Name><![CDATA[f_setChartBars_Presentation]]></Name>
 		<X>1570</X>
-		<Y>520</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -886,6 +886,118 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1772472237697</Id>
+		<Name><![CDATA[f_setChartCO2_presentation]]></Name>
+		<X>1570</X>
+		<Y>520</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[location_x]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[location_y]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[visible]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1772472253934</Id>
+		<Name><![CDATA[f_setChartConnectionCosts_presentation]]></Name>
+		<X>1570</X>
+		<Y>570</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[location_x]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[location_y]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[visible]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1772472255353</Id>
+		<Name><![CDATA[f_setChartCAPEXAndOPEX_presentation]]></Name>
+		<X>1570</X>
+		<Y>590</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[location_x]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[location_y]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[visible]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1772472257080</Id>
+		<Name><![CDATA[f_setChartTotalCosts_presentation]]></Name>
+		<X>1570</X>
+		<Y>610</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[location_x]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[location_y]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[visible]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

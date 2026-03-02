@@ -8,10 +8,13 @@ gr_chartSummary_presentation.setVisible(false);
 gr_chartGespreksLeidraad_presentation.setVisible(false);
 gr_chartKPISummary_presentation.setVisible(false);
 gr_chartBatteries_presentation.setVisible(false);
-gr_chartEconomicKPIs_presentation.setVisible(false);
 gr_chartGTO_presentation.setVisible(false);
 gr_chartBars_presentation.setVisible(false);
-
+gr_chartCO2_presentation.setVisible(false);
+gr_chartEnergyCosts_presentation.setVisible(false);
+gr_chartConnectionCosts_presentation.setVisible(false);
+gr_chartCAPEXAndOPEX_presentation.setVisible(false);
+gr_chartTotalCosts_presentation.setVisible(false);
 
 switch (v_selectedChartType) {
 	case PROFIEL:
@@ -47,21 +50,25 @@ switch (v_selectedChartType) {
 		gr_chartGTO_presentation.setVisible(true);
 		chartGTO.f_setChartGTO();
 		break;
+	case CO2:
+		gr_chartCO2_presentation.setVisible(true);
+		chartCO2.f_setChartCO2();
+		break;
 	case ENERGY_COSTS:
-		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEnergyCosts.f_setChartEconomicKPIs();
+		gr_chartEnergyCosts_presentation.setVisible(true);
+		chartEnergyCosts.f_setChartEnergyCosts();
 		break;
 	case CONNECTION_COSTS:
-		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEnergyCosts.f_setChartEconomicKPIs();
+		gr_chartConnectionCosts_presentation.setVisible(true);
+		chartConnectionCosts.f_setChartConnectionCosts();
 		break;
-	case OPEX_AND_CAPEX:
-		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEnergyCosts.f_setChartEconomicKPIs();
+	case CAPEX_AND_OPEX:
+		gr_chartCAPEXAndOPEX_presentation.setVisible(true);
+		chartCAPEXAndOPEX.f_setChartCAPEXAndOPEX();
 		break;
 	case TOTAL_COSTS:
-		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEnergyCosts.f_setChartEconomicKPIs();
+		gr_chartTotalCosts_presentation.setVisible(true);
+		chartTotalCosts.f_setChartTotalCosts();
 		break;
 }
 
@@ -253,7 +260,11 @@ f_setChartSummary_Presentation(location_x, location_y, visible);
 f_setChartGSLD_Presentation(location_x, location_y, visible);
 f_setChartKPISummary_Presentation(location_x, location_y, visible);
 f_setChartBatteries_presentation(location_x, location_y, visible);
-f_setChartEconomicKPI_presentation(location_x, location_y, visible);
+f_setChartCO2_presentation(location_x, location_y, visible);
+f_setChartEnergyCosts_presentation(location_x, location_y, visible);
+f_setChartConnectionCosts_presentation(location_x, location_y, visible);
+f_setChartCAPEXAndOPEX_presentation(location_x, location_y, visible);
+f_setChartTotalCosts_presentation(location_x, location_y, visible);
 /*ALCODEEND*/}
 
 double f_setChartGSLD_Presentation(Integer location_x,Integer location_y,boolean visible)
@@ -393,7 +404,7 @@ List<OL_ChartTypes> selectedChartTypes_Energy = f_getSelectedChartTypes_Energy()
 List<OL_ChartTypes> selectedChartTypes_Economic = new ArrayList<>();
 selectedChartTypes_Economic.add(OL_ChartTypes.ENERGY_COSTS);
 selectedChartTypes_Economic.add(OL_ChartTypes.CONNECTION_COSTS);
-selectedChartTypes_Economic.add(OL_ChartTypes.OPEX_AND_CAPEX);
+selectedChartTypes_Economic.add(OL_ChartTypes.CAPEX_AND_OPEX);
 selectedChartTypes_Economic.add(OL_ChartTypes.TOTAL_COSTS);
 
 //Set the selected radiobutton setup
@@ -708,22 +719,22 @@ else {
 }
 /*ALCODEEND*/}
 
-double f_setChartEconomicKPI_presentation(Integer location_x,Integer location_y,boolean visible)
+double f_setChartEnergyCosts_presentation(Integer location_x,Integer location_y,boolean visible)
 {/*ALCODESTART::1755704458936*/
-//Set the location and visibility of the Batteries charts presentation
+//Set the location and visibility of the EnergyCosts charts presentation
 
 //Set x axis
 if(location_x != null){
-	gr_chartEconomicKPIs_presentation.setX(location_x);
+	gr_chartEnergyCosts_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_y != null){
-	gr_chartEconomicKPIs_presentation.setY(location_y);
+	gr_chartEnergyCosts_presentation.setY(location_y);
 }
 
 //Set visibility
-gr_chartEconomicKPIs_presentation.setVisible(visible);
+gr_chartEnergyCosts_presentation.setVisible(visible);
 /*ALCODEEND*/}
 
 double f_setChartGTO_presentation(Integer location_x,Integer location_y,boolean visible)
@@ -882,8 +893,8 @@ for(OL_ChartTypes chartType : c_loadedChartTypes_Economic){
 		case CONNECTION_COSTS:
 			RadioButtonOptions_list.add("Aansluitings kosten");
 			break;
-		case OPEX_AND_CAPEX:
-			RadioButtonOptions_list.add("OPEX & CAPEX");
+		case CAPEX_AND_OPEX:
+			RadioButtonOptions_list.add("CAPEX & OPEX");
 			break;
 		case TOTAL_COSTS:
 			RadioButtonOptions_list.add("Totale kosten");
@@ -970,5 +981,77 @@ if(b_showKPISummary){
 }
 
 f_showCorrectChart();
+/*ALCODEEND*/}
+
+double f_setChartCO2_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1772472237697*/
+//Set the location and visibility of the Batteries charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartCO2_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartCO2_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartCO2_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setChartConnectionCosts_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1772472253934*/
+//Set the location and visibility of the ConnectionCosts charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartConnectionCosts_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartConnectionCosts_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartConnectionCosts_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setChartCAPEXAndOPEX_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1772472255353*/
+//Set the location and visibility of the CAPEXAndOPEX charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartCAPEXAndOPEX_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartCAPEXAndOPEX_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartCAPEXAndOPEX_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setChartTotalCosts_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1772472257080*/
+//Set the location and visibility of the TotalCosts charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartTotalCosts_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartTotalCosts_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartTotalCosts_presentation.setVisible(visible);
 /*ALCODEEND*/}
 

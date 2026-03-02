@@ -635,9 +635,9 @@
 	</EmbeddedObject>
 	<EmbeddedObject>
 		<Id>1772440739231</Id>
-		<Name><![CDATA[chartOPEXAndCAPEX]]></Name>
+		<Name><![CDATA[chartCAPEXAndOPEX]]></Name>
 		<X>820</X>
-		<Y>500</Y>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -645,14 +645,15 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<PresentationId>1772465951783</PresentationId>
 		<ActiveObjectClass>
 			<PackageName>digital_twin_results</PackageName>
-			<ClassName>ChartOPEXAndCAPEX</ClassName>
+			<ClassName>ChartCAPEXAndOPEX</ClassName>
 		</ActiveObjectClass>
 		<GenericParameterSubstitute>
 			<GenericParameterSubstituteReference>
 				<PackageName>digital_twin_results</PackageName>
-				<ClassName>ChartOPEXAndCAPEX</ClassName>
+				<ClassName>ChartCAPEXAndOPEX</ClassName>
 				<ItemName>1772440739223</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
@@ -685,7 +686,7 @@
 		<Id>1772440754219</Id>
 		<Name><![CDATA[chartTotalCosts]]></Name>
 		<X>820</X>
-		<Y>520</Y>
+		<Y>540</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -693,6 +694,7 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<PresentationId>1772465954243</PresentationId>
 		<ActiveObjectClass>
 			<PackageName>digital_twin_results</PackageName>
 			<ClassName>ChartTotalCosts</ClassName>
@@ -733,7 +735,7 @@
 		<Id>1772440768554</Id>
 		<Name><![CDATA[chartConnectionCosts]]></Name>
 		<X>820</X>
-		<Y>540</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -741,6 +743,7 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<PresentationId>1772465955903</PresentationId>
 		<ActiveObjectClass>
 			<PackageName>digital_twin_results</PackageName>
 			<ClassName>ChartConnectionCosts</ClassName>
@@ -789,6 +792,7 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<PresentationId>1772465943769</PresentationId>
 		<ActiveObjectClass>
 			<PackageName>digital_twin_results</PackageName>
 			<ClassName>ChartCO2</ClassName>
