@@ -21,7 +21,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772441389069</Id>
 		<Name><![CDATA[f_setYearlyKPIs]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-390</X>
 		<Y>460</Y>
 		<Label>
@@ -32,27 +31,11 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[totalImportCosts_eur]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[totalExportRevenue_eur]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[totalNetElectricityCosts_eur]]></Name>
-			<Type><![CDATA[double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[previousTotalImportCosts_eur]]></Name>
+			<Name><![CDATA[totalCO2Emission_kg]]></Name>
 			<Type><![CDATA[Double]]></Type>
 		</Parameter>
 		<Parameter>
-			<Name><![CDATA[previousTotalExportRevenue_eur]]></Name>
-			<Type><![CDATA[Double]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[previousTotalNetElectricityCosts_eur]]></Name>
+			<Name><![CDATA[previousTotalCO2Emission_kg]]></Name>
 			<Type><![CDATA[Double]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
@@ -152,7 +135,6 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772441389081</Id>
 		<Name><![CDATA[f_setMonthlyChart]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-390</X>
 		<Y>480</Y>
 		<Label>
@@ -163,15 +145,7 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[monthlyElectricityImportCosts_eur]]></Name>
-			<Type><![CDATA[double[]]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[monthlyElectricityExportRevenue_eur]]></Name>
-			<Type><![CDATA[double[]]]></Type>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[monthlyNetElectricityCosts_eur]]></Name>
+			<Name><![CDATA[monthlyCO2Emission_kg]]></Name>
 			<Type><![CDATA[double[]]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
@@ -180,8 +154,7 @@
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>double[]</ReturnType>
 		<Id>1772441389083</Id>
-		<Name><![CDATA[f_calculateMonthlyElectricityImportCosts_eur]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<Name><![CDATA[f_calculateMonthlyElectricityImportCO2Emission_kg]]></Name>
 		<X>-390</X>
 		<Y>560</Y>
 		<Label>
@@ -198,13 +171,12 @@
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>double[]</ReturnType>
-		<Id>1772441389085</Id>
-		<Name><![CDATA[f_calculateMonthlyElectricityExportRevenue_eur]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1772643915089</Id>
+		<Name><![CDATA[f_calculateMonthlyECFixedCO2Emission_kg]]></Name>
 		<X>-390</X>
-		<Y>580</Y>
+		<Y>585</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -213,9 +185,12 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[netLoad_kW]]></Name>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[OL_EnergyCarriers]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[ECTotalBalance_kWh]]></Name>
 			<Type><![CDATA[double[]]]></Type>
 		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

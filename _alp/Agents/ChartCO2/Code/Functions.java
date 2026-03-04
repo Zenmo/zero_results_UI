@@ -23,95 +23,54 @@ else{
 }
 
 ////Calculate the values
-/*
-//Current values
-double[] monthlyElectricityImportCosts_eur = f_calculateMonthlyElectricityImportCosts_eur(netLoad_kW);
-double[] monthlyElectricityExportRevenue_eur = f_calculateMonthlyElectricityExportRevenue_eur(netLoad_kW);
-double[] monthlyNetElectricityCosts_eur = f_calculateMonthlyNetElectricityCosts_eur(monthlyElectricityImportCosts_eur, monthlyElectricityExportRevenue_eur);
 
-double totalImportCosts_eur = ZeroMath.arraySum(monthlyElectricityImportCosts_eur);
-double totalExportRevenue_eur = ZeroMath.arraySum(monthlyElectricityExportRevenue_eur);
-double totalNetElectricityCosts_eur = ZeroMath.arraySum(monthlyNetElectricityCosts_eur);
+//Current values
+double[] monthlyElectricityImportCO2Emissions_kg = f_calculateMonthlyElectricityImportCO2Emission_kg(netLoad_kW);
+
+double totalElectricityImportCO2Emissions_kg = ZeroMath.arraySum(monthlyElectricityImportCO2Emissions_kg);
 
 //Previous values
-Double previousTotalImportCosts_eur = null;
-Double previousTotalExportRevenue_eur = null;
-Double previousTotalNetElectricityCosts_eur = null;
+Double previousTotalElectricityImportCO2Emissions_kg = null;
 
 if(previousNetLoad_kW != null){
-	double[] previousMonthlyElectricityImportCosts_eur = f_calculateMonthlyElectricityImportCosts_eur(previousNetLoad_kW);
-	double[] previousMonthlyElectricityExportRevenue_eur = f_calculateMonthlyElectricityExportRevenue_eur(previousNetLoad_kW);
-	double[] previousMonthlyNetElectricityCosts_eur = f_calculateMonthlyNetElectricityCosts_eur(previousMonthlyElectricityImportCosts_eur, previousMonthlyElectricityExportRevenue_eur);
-	
-	previousTotalImportCosts_eur = ZeroMath.arraySum(previousMonthlyElectricityImportCosts_eur);
-	previousTotalExportRevenue_eur = ZeroMath.arraySum(previousMonthlyElectricityExportRevenue_eur);
-	previousTotalNetElectricityCosts_eur = ZeroMath.arraySum(previousMonthlyNetElectricityCosts_eur);
+	double[] previousMonthlyElectricityImportCO2Emissions_kg = f_calculateMonthlyElectricityImportCO2Emission_kg(previousNetLoad_kW);
+
+	previousTotalElectricityImportCO2Emissions_kg = ZeroMath.arraySum(previousMonthlyElectricityImportCO2Emissions_kg);
 }
 
 
 //Set yearly kpis
-f_setYearlyKPIs(totalImportCosts_eur, totalExportRevenue_eur, totalNetElectricityCosts_eur, previousTotalImportCosts_eur, previousTotalExportRevenue_eur, previousTotalNetElectricityCosts_eur);
+f_setYearlyKPIs(totalElectricityImportCO2Emissions_kg, previousTotalElectricityImportCO2Emissions_kg);
 
 //Set monthly chart
-f_setMonthlyChart(monthlyElectricityImportCosts_eur, monthlyElectricityExportRevenue_eur, monthlyNetElectricityCosts_eur);
-*/
+f_setMonthlyChart(monthlyElectricityImportCO2Emissions_kg);
+
 
 /*ALCODEEND*/}
 
-double f_setYearlyKPIs(double totalImportCosts_eur,double totalExportRevenue_eur,double totalNetElectricityCosts_eur,Double previousTotalImportCosts_eur,Double previousTotalExportRevenue_eur,Double previousTotalNetElectricityCosts_eur)
+double f_setYearlyKPIs(Double totalCO2Emission_kg,Double previousTotalCO2Emission_kg)
 {/*ALCODESTART::1772441389069*/
 //Set new values text
-DecimalFormat df = new DecimalFormat("#,###");
-DecimalFormat df_r = new DecimalFormat("#.#");
-DecimalFormat df_2decimal = new DecimalFormat("0.00");
+DecimalFormat df = new DecimalFormat("0.00");
 
-t_totalImportCosts_eur.setText("€ " + df.format(roundToInt(totalImportCosts_eur)));
-t_totalExportRevenue_eur.setText("€ " + df.format(roundToInt(totalExportRevenue_eur)));
-t_totalNetElectricityCosts_eur.setText("€ " + df.format(roundToInt(totalNetElectricityCosts_eur)));
+t_totalCO2Emission_kg.setText("€ " + df.format(roundToInt(totalCO2Emission_kg)));
 
-if(previousTotalImportCosts_eur != null){
-	t_previousTotalImportCosts_eur.setText("€ " + df.format(roundToInt(previousTotalImportCosts_eur)));
-	t_previousTotalExportRevenue_eur.setText("€ " + df.format(roundToInt(previousTotalExportRevenue_eur)));
-	t_previousTotalNetElectricityCosts_eur.setText("€ " + df.format(roundToInt(previousTotalNetElectricityCosts_eur)));
+if(previousTotalCO2Emission_kg != null){
+	t_previousTotalCO2Emission_kg.setText("€ " + df.format(roundToInt(previousTotalCO2Emission_kg)));
 	
 	////Set arrows
-	//Import
-	if(previousTotalImportCosts_eur > totalImportCosts_eur){
-		arrow_down_green_import.setVisible(true);
+	if(previousTotalCO2Emission_kg > totalCO2Emission_kg){
+		arrow_down_green_CO2Emission.setVisible(true);
 	}
-	else if(totalImportCosts_eur > previousTotalImportCosts_eur){
-		arrow_up_red_import.setVisible(true);
-	}
-	else{
-		line_import.setVisible(true);
-	}
-	
-	//Export
-	if(previousTotalExportRevenue_eur > totalExportRevenue_eur){
-		arrow_down_red_export.setVisible(true);
-	}
-	else if(totalExportRevenue_eur > previousTotalExportRevenue_eur){
-		arrow_up_green_export.setVisible(true);
+	else if(totalCO2Emission_kg > previousTotalCO2Emission_kg){
+		arrow_up_red_CO2Emission.setVisible(true);
 	}
 	else{
-		line_export.setVisible(true);
-	}
-	
-	//Net
-	if(previousTotalNetElectricityCosts_eur > totalNetElectricityCosts_eur){
-		arrow_down_green_netElectricity.setVisible(true);
-	}
-	else if(totalNetElectricityCosts_eur > previousTotalNetElectricityCosts_eur){
-		arrow_up_red_netElectricity.setVisible(true);
-	}
-	else{
-		line_total.setVisible(true);
+		line_CO2Emission.setVisible(true);
 	}
 }
 else{ // No previous rapid data -> dont show previous values
-	t_previousTotalImportCosts_eur.setText("-");
-	t_previousTotalExportRevenue_eur.setText("-");
-	t_previousTotalNetElectricityCosts_eur.setText("-");
+	t_previousTotalCO2Emission_kg.setText("-");
 }
 /*ALCODEEND*/}
 
@@ -136,16 +95,16 @@ if(lineStyle != null){
 double f_resetChart()
 {/*ALCODESTART::1772441389073*/
 //Reset all arrow visibility
-arrow_up_green_CO2Consumption.setVisible(false);
-arrow_down_red_CO2Consumption.setVisible(false);
-line_CO2Consumption.setVisible(false);
+arrow_down_green_CO2Emission.setVisible(false);
+arrow_up_red_CO2Emission.setVisible(false);
+line_CO2Emission.setVisible(false);
 
 //Reset KPIS
-t_totalCO2Consumption_kg.setText("-");
-t_previousTotalCO2Consumption_kg.setText("-");
+t_totalCO2Emission_kg.setText("-");
+t_previousTotalCO2Emission_kg.setText("-");
 
 //Clear monthly chart
-bar_CO2ConsumptionMonthly.removeAll();
+bar_CO2EmissionMonthly.removeAll();
 /*ALCODEEND*/}
 
 double f_calculateCapacityCosts_eur(double[] netLoad_kW)
@@ -194,7 +153,7 @@ for(int month=0; month < daysInMonth.length; month++) {
 return monthlyPeakDemand_kW;
 /*ALCODEEND*/}
 
-double f_setMonthlyChart(double[] monthlyElectricityImportCosts_eur,double[] monthlyElectricityExportRevenue_eur,double[] monthlyNetElectricityCosts_eur)
+double f_setMonthlyChart(double[] monthlyCO2Emission_kg)
 {/*ALCODESTART::1772441389081*/
 DataSet netCosts_eur = new DataSet(12);
 
@@ -202,46 +161,25 @@ double maxChartValue_eur = 0;
 
 for (int i = 0; i < 12; i++) {
 	//Import cost
-	DataItem importCosts_eur = new DataItem();
-	importCosts_eur.setValue(monthlyElectricityImportCosts_eur[i]);
-	bar_importElectricityCostsMonthly.addDataItem(importCosts_eur, "", uI_Results.v_electricityDemandColor);
-
-	//Export revenue
-	DataItem exportRevenue_eur = new DataItem();
-	exportRevenue_eur.setValue(monthlyElectricityExportRevenue_eur[i]);
-	bar_exportElectricityRevenueMonthly.addDataItem(exportRevenue_eur, "", uI_Results.v_electricitySupplyColor);
+	DataItem CO2Emission_kg = new DataItem();
+	CO2Emission_kg.setValue(monthlyCO2Emission_kg[i]);
+	bar_CO2EmissionMonthly.addDataItem(CO2Emission_kg, "", uI_Results.v_electricityDemandColor);
 	
-	//Net balance
-	netCosts_eur.add(i+1, monthlyNetElectricityCosts_eur[i]);
-	
-	//Determine max value of the bars 
-	maxChartValue_eur = max(maxChartValue_eur, max(monthlyElectricityImportCosts_eur[i], monthlyElectricityExportRevenue_eur[i]));
+	maxChartValue_eur = max(maxChartValue_eur, monthlyCO2Emission_kg[i]);
 }
-
-//Net costs
-plot_netElectricityCostsMonthly.addDataSet(netCosts_eur, "", v_netElectricityCostColor, true, Chart.InterpolationType.INTERPOLATION_LINEAR, v_netElectricityCostLineWidth, Chart.PointStyle.POINT_CIRCLE);
 
 //Set fixed scale
 maxChartValue_eur *=1.2;
-bar_importElectricityCostsMonthly.setFixedScale(0, maxChartValue_eur);
-bar_exportElectricityRevenueMonthly.setFixedScale(0, maxChartValue_eur);
-plot_netElectricityCostsMonthly.setFixedVerticalScale(-maxChartValue_eur, maxChartValue_eur);
-plot_netElectricityCostsMonthly.setFixedHorizontalScale(0.5, 12.5);
-
-
+bar_CO2EmissionMonthly.setFixedScale(0, maxChartValue_eur);
 
 /*ALCODEEND*/}
 
-double[] f_calculateMonthlyElectricityImportCosts_eur(double[] netLoad_kW)
+double[] f_calculateMonthlyElectricityImportCO2Emission_kg(double[] netLoad_kW)
 {/*ALCODESTART::1772441389083*/
 int[] startHourPerMonth = startHourPerMonthTemporary;
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
-
-double VAT_fr = 0.21;
-double EnergyTaxes_eur_p_kwh = 0.03868;
-
-double[] monthlyElectricityImportCosts_euro = new double[12];
+double[] monthlyElectricityImportCO2Emission_kg = new double[12];
 
 int currentMonth = 0;
 
@@ -251,44 +189,21 @@ for (int i = 0; i < netLoad_kW.length; i++) {
 		currentMonth += 1;
 	}
 
-    double currentElectricityPriceCharge_eurpkWh =
-            uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh
-                    .getAllValues()[
-                        (int) Math.floor(i * timeStep_h)
-                    ] / 1000.0;
+    double currentCO2EmissionFactor_kgpkWh =
+            uI_Results.energyModel.pp_CO2EmissionFactorElectricityImport_kgpkWh.getAllValues()[(int) Math.floor(i * timeStep_h)];
 
-    double timestepCost =
-            (1 + VAT_fr) *
-            (currentElectricityPriceCharge_eurpkWh + EnergyTaxes_eur_p_kwh) *
-            max(0, netLoad_kW[i]) * 
-            timeStep_h;
+    double timestepCO2Emission_kg =
+            currentCO2EmissionFactor_kgpkWh * max(0, netLoad_kW[i]) * timeStep_h;
 
-    monthlyElectricityImportCosts_euro[currentMonth] += timestepCost;
+    monthlyElectricityImportCO2Emission_kg[currentMonth] += timestepCO2Emission_kg;
 }
 
-return monthlyElectricityImportCosts_euro;
+return monthlyElectricityImportCO2Emission_kg;
 
 /*ALCODEEND*/}
 
-double[] f_calculateMonthlyElectricityExportRevenue_eur(double[] netLoad_kW)
-{/*ALCODESTART::1772441389085*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
-double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
+double f_calculateMonthlyECFixedCO2Emission_kg(OL_EnergyCarriers EC,double[] ECTotalBalance_kWh)
+{/*ALCODESTART::1772643915089*/
 
-double[] monthlyElectricityExportRevenue_euro = new double[12];
-
-int currentMonth = 0;
-
-for (int i = 0; i < netLoad_kW.length; i++) {
-	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*timeStep_h){
-		currentMonth += 1;
-	}
-    double currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*timeStep_h)] / 1000;
-    double timestepExportRevenue_euro = currentElectricityPriceCharge_eurpkWh * max(0,-netLoad_kW[i]) * timeStep_h;
-	
-	monthlyElectricityExportRevenue_euro[currentMonth] += timestepExportRevenue_euro;
-}
- 	
-return monthlyElectricityExportRevenue_euro;
 /*ALCODEEND*/}
 

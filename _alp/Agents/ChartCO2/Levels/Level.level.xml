@@ -55,7 +55,7 @@
 	</Text>
 	<Text>
 		<Id>1772441388927</Id>
-		<Name><![CDATA[txt_CO2Consumption]]></Name>
+		<Name><![CDATA[txt_CO2EmissionChart]]></Name>
 		<X>235</X>
 		<Y>10</Y>
 		<Label>
@@ -70,7 +70,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[CO2 Verbruik]]></Text>
+		<Text><![CDATA[CO2 Uitstoot]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>26</Size>
@@ -80,7 +80,7 @@
 	</Text>
 	<Image>
 		<Id>1772441388929</Id>
-		<Name><![CDATA[i_chartCO2Consumption]]></Name>
+		<Name><![CDATA[i_chartCO2Emission]]></Name>
 		<X>360</X>
 		<Y>10</Y>
 		<Label>
@@ -91,7 +91,7 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<OnClickCode>uI_Results.f_setInfoText(i_chartCO2Consumption, uI_Results.v_infoText.chartCO2, i_chartCO2Consumption.getX(), i_chartCO2Consumption.getY());</OnClickCode>
+		<OnClickCode>uI_Results.f_setInfoText(i_chartCO2Emission, uI_Results.v_infoText.chartCO2, i_chartCO2Emission.getX(), i_chartCO2Emission.getY());</OnClickCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Width>30</Width>
@@ -124,7 +124,7 @@
 		<Presentation>
 			<Group>
 				<Id>1772441388939</Id>
-				<Name><![CDATA[arrows_diffTotalCO2Consumption]]></Name>
+				<Name><![CDATA[arrows_diffTotalCO2Emission]]></Name>
 				<X>-65</X>
 				<Y>-33</Y>
 				<Label>
@@ -141,7 +141,7 @@
 				<Presentation>
 					<Image>
 						<Id>1772441388941</Id>
-						<Name><![CDATA[arrow_down_red_CO2Consumption]]></Name>
+						<Name><![CDATA[arrow_up_red_CO2Emission]]></Name>
 						<X>-12</X>
 						<Y>-10</Y>
 						<Label>
@@ -160,14 +160,14 @@
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_arrow_down_red.png</ClassName>
+								<ClassName>icon_arrow_up_red.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>
 					</Image>
 					<Image>
 						<Id>1772441388943</Id>
-						<Name><![CDATA[arrow_up_green_CO2Consumption]]></Name>
+						<Name><![CDATA[arrow_down_green_CO2Emission]]></Name>
 						<X>-12</X>
 						<Y>-10</Y>
 						<Label>
@@ -186,14 +186,14 @@
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_arrow_up_green.png</ClassName>
+								<ClassName>icon_arrow_down_green.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>
 					</Image>
 					<Line>
 						<Id>1772441388945</Id>
-						<Name><![CDATA[line_CO2Consumption]]></Name>
+						<Name><![CDATA[line_CO2Emission]]></Name>
 						<X>-11</X>
 						<Y>-1</Y>
 						<Label>
@@ -223,7 +223,7 @@
 			</Group>
 			<Text>
 				<Id>1772441388955</Id>
-				<Name><![CDATA[t_totalCO2Consumption_kg]]></Name>
+				<Name><![CDATA[t_totalCO2Emission_kg]]></Name>
 				<X>0</X>
 				<Y>-50</Y>
 				<Label>
@@ -248,7 +248,7 @@
 			</Text>
 			<Text>
 				<Id>1772441388957</Id>
-				<Name><![CDATA[t_previousTotalCO2Consumption_kg]]></Name>
+				<Name><![CDATA[t_previousTotalCO2Emission_kg]]></Name>
 				<X>0</X>
 				<Y>30</Y>
 				<Label>
@@ -273,7 +273,7 @@
 			</Text>
 			<Text>
 				<Id>1772441388975</Id>
-				<Name><![CDATA[txt_yearlyElectricityCosts]]></Name>
+				<Name><![CDATA[txt_yearlyCO2Emission]]></Name>
 				<X>0</X>
 				<Y>-100</Y>
 				<Label>
@@ -288,7 +288,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Jaarlijks CO2 Verbruik:]]></Text>
+				<Text><![CDATA[Jaarlijks CO2 Uitstoot:]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>22</Size>
@@ -298,7 +298,7 @@
 			</Text>
 			<Text>
 				<Id>1772441809775</Id>
-				<Name><![CDATA[txt_previousTotalCO2Consumption]]></Name>
+				<Name><![CDATA[txt_previousTotalCO2Emission]]></Name>
 				<X>0</X>
 				<Y>0</Y>
 				<Label>
@@ -325,7 +325,7 @@
 	</Group>
 	<Group>
 		<Id>1772441388987</Id>
-		<Name><![CDATA[gr_monthlyElectricityCostCharts]]></Name>
+		<Name><![CDATA[gr_monthlyCO2EmissionCharts]]></Name>
 		<X>225</X>
 		<Y>520</Y>
 		<Label>
@@ -342,7 +342,7 @@
 		<Presentation>
 			<Text>
 				<Id>1772441388989</Id>
-				<Name><![CDATA[txt_CO2ConsumptionMonthly]]></Name>
+				<Name><![CDATA[txt_CO2EmissionMonthly]]></Name>
 				<X>10</X>
 				<Y>-140</Y>
 				<Label>
@@ -357,7 +357,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Maandelijks CO2 Verbruik]]></Text>
+				<Text><![CDATA[Maandelijkse CO2 uitstoot]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>22</Size>
@@ -367,7 +367,7 @@
 			</Text>
 			<BarChart>
 				<Id>1772441389005</Id>
-				<Name><![CDATA[bar_CO2ConsumptionMonthly]]></Name>
+				<Name><![CDATA[bar_CO2EmissionMonthly]]></Name>
 				<X>-220</X>
 				<Y>-120</Y>
 				<Label>
@@ -818,7 +818,7 @@
 			</Group>
 			<Group>
 				<Id>1772441389053</Id>
-				<Name><![CDATA[gr_CO2ConsumptionMonthly]]></Name>
+				<Name><![CDATA[gr_CO2EmissionMonthly]]></Name>
 				<X>-70</X>
 				<Y>195</Y>
 				<Label>
@@ -835,7 +835,7 @@
 				<Presentation>
 					<Rectangle>
 						<Id>1772441389057</Id>
-						<Name><![CDATA[rect_legendCO2ConsumptionMonthly]]></Name>
+						<Name><![CDATA[rect_legendCO2EmissionMonthly]]></Name>
 						<X>-100</X>
 						<Y>-30</Y>
 						<Label>
@@ -862,7 +862,7 @@
 					</Rectangle>
 					<Text>
 						<Id>1772441389061</Id>
-						<Name><![CDATA[txt_barChartConsumption]]></Name>
+						<Name><![CDATA[txt_barChartCO2EmissionLegend]]></Name>
 						<X>-80</X>
 						<Y>-30</Y>
 						<Label>
@@ -877,7 +877,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[CO2 verbruik per maand [kg]]]></Text>
+						<Text><![CDATA[CO2 uitstoot per maand [kg]]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
