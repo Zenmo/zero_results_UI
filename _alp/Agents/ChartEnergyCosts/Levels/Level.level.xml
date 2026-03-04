@@ -31,7 +31,7 @@
 	<Text>
 		<Id>1726825366299</Id>
 		<Name><![CDATA[txt_EnergyCosts]]></Name>
-		<X>235</X>
+		<X>230</X>
 		<Y>10</Y>
 		<Label>
 			<X>0</X>
@@ -57,7 +57,7 @@
 		<Id>1758551343397</Id>
 		<Name><![CDATA[gr_yearlyElectricityCosts]]></Name>
 		<X>235</X>
-		<Y>220</Y>
+		<Y>230</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1542,7 +1542,7 @@
 	<Image>
 		<Id>1769444876124</Id>
 		<Name><![CDATA[i_chartEconomicKPIs]]></Name>
-		<X>360</X>
+		<X>350</X>
 		<Y>10</Y>
 		<Label>
 			<X>0</X>
@@ -1566,4 +1566,35 @@
 		</ImageFiles>
 		<OriginalSize>false</OriginalSize>
 	</Image>
+	<Control Type="ComboBox">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1772618293594</Id>
+		<Name><![CDATA[cb_energyCarrierSelection]]></Name>
+		<X>160</X>
+		<Y>100</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="140" Height="20">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<FillColor>-1</FillColor>
+			<TextColor>-16777216</TextColor>
+			<Enabled>true</Enabled>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<Editable>false</Editable>
+			<Button>Stroom</Button>
+			<Button>Gas</Button>
+			<Button>Diesel &amp; Benzine</Button>
+			<Button>Waterstof</Button>
+			<Button>Totaal</Button>
+			<LinkTo>false</LinkTo>
+		</ExtendedProperties>
+	</Control>
 </Presentation>
