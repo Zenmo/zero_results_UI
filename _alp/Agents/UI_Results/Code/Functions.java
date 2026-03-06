@@ -293,6 +293,7 @@ loadedChartTypes_Energy.add(OL_ChartTypes.PROFIEL);
 loadedChartTypes_Energy.add(OL_ChartTypes.DIAGRAM);
 loadedChartTypes_Energy.add(OL_ChartTypes.BELASTING);
 loadedChartTypes_Energy.add(OL_ChartTypes.SANKEY);
+loadedChartTypes_Energy.add(OL_ChartTypes.CO2);
 
 //Aditional charts selected:
 switch(v_selectedRadioButtonSetup){
@@ -829,8 +830,11 @@ for(OL_ChartTypes chartType : c_loadedChartTypes_Energy){
 		case GTO:
 			RadioButtonOptions_list.add("GTO");
 			break;
+		case CO2:
+			RadioButtonOptions_list.add("CO2 uitstoot");
+			break;
 		default:
-						throw new RuntimeException("chartType '" + chartType + "' is not supported for the Economic options.");
+						throw new RuntimeException("chartType '" + chartType + "' is not supported for the Energy options.");
 	}
 } 
 
@@ -942,10 +946,10 @@ boolean ispublic = true;
 double x = 50;
 double y =  -120;
 double width = 130;
-double height = 0;//Not needed, automatically adjust by adding options
+double height = 10;
 Color textColor = Color.BLACK;
 boolean enabled = true;
-Font font = new Font("Dialog", Font.PLAIN, 11);
+Font font = new Font("Dialog", Font.PLAIN, 12);
 boolean vertical = false;
 
 //Convert radio button option list to string[]

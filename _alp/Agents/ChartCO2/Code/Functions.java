@@ -53,10 +53,10 @@ double f_setYearlyKPIs(Double totalCO2Emission_kg,Double previousTotalCO2Emissio
 //Set new values text
 DecimalFormat df = new DecimalFormat("0.00");
 
-t_totalCO2Emission_kg.setText("€ " + df.format(roundToInt(totalCO2Emission_kg)));
+t_totalCO2Emission_kg.setText(df.format(roundToInt(totalCO2Emission_kg)) + " kg");
 
 if(previousTotalCO2Emission_kg != null){
-	t_previousTotalCO2Emission_kg.setText("€ " + df.format(roundToInt(previousTotalCO2Emission_kg)));
+	t_previousTotalCO2Emission_kg.setText(df.format(roundToInt(previousTotalCO2Emission_kg)) + " kg");
 	
 	////Set arrows
 	if(previousTotalCO2Emission_kg > totalCO2Emission_kg){
