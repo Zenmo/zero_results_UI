@@ -21,8 +21,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772472093328</Id>
 		<Name><![CDATA[f_resetChart]]></Name>
-		<X>-220</X>
-		<Y>360</Y>
+		<X>-250</X>
+		<Y>340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -37,8 +37,8 @@
 		<Id>1772615497109</Id>
 		<Name><![CDATA[f_calculateCapacityCosts_eur]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>-370</X>
-		<Y>460</Y>
+		<X>-440</X>
+		<Y>780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -58,8 +58,8 @@
 		<Id>1772615497113</Id>
 		<Name><![CDATA[f_calculateMonthlyPeakDemand_kW]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>-350</X>
-		<Y>480</Y>
+		<X>-420</X>
+		<Y>800</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -71,6 +71,247 @@
 			<Name><![CDATA[netLoad_kW]]></Name>
 			<Type><![CDATA[double[]]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double[]</ReturnType>
+		<Id>1773160205274</Id>
+		<Name><![CDATA[f_calculateMonthlyPeakElectricityBalance_kW]]></Name>
+		<X>-400</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[netLoad_kW]]></Name>
+			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double[]</ReturnType>
+		<Id>1773160205294</Id>
+		<Name><![CDATA[f_calculateMonthlyPeakElectricityDelivery_kW]]></Name>
+		<X>-400</X>
+		<Y>560</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[netLoad_kW]]></Name>
+			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double[]</ReturnType>
+		<Id>1773160205312</Id>
+		<Name><![CDATA[f_calculateMonthlyPeakElectricityFeedin_kW]]></Name>
+		<X>-400</X>
+		<Y>580</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[netLoad_kW]]></Name>
+			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double[]</ReturnType>
+		<Id>1773160925451</Id>
+		<Name><![CDATA[f_calculateMonthlyTotalElectricityTransport_kWh]]></Name>
+		<X>-400</X>
+		<Y>700</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[netLoad_kW]]></Name>
+			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double[]</ReturnType>
+		<Id>1773160925453</Id>
+		<Name><![CDATA[f_calculateMonthlyElectricityDelivery_kWh]]></Name>
+		<X>-400</X>
+		<Y>660</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[netLoad_kW]]></Name>
+			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double[]</ReturnType>
+		<Id>1773160925455</Id>
+		<Name><![CDATA[f_calculateMonthlyElectricityFeedin_kWh]]></Name>
+		<X>-400</X>
+		<Y>680</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[netLoad_kW]]></Name>
+			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1773161385166</Id>
+		<Name><![CDATA[f_setMonthlyChart]]></Name>
+		<X>-250</X>
+		<Y>380</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[yearlyPhysicalConnectionCosts_eur]]></Name>
+			<Type><![CDATA[double]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[yearlyContractConnectionCosts_eur]]></Name>
+			<Type><![CDATA[double]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[monthlyTransportCosts_eur]]></Name>
+			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[monthlyPeakCosts_eur]]></Name>
+			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1773161419537</Id>
+		<Name><![CDATA[f_setYearlyKPIs]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
+		<X>-250</X>
+		<Y>360</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1773162212251</Id>
+		<Name><![CDATA[f_calculatePhysicalConnectionCosts_eurpyr]]></Name>
+		<X>-400</X>
+		<Y>440</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1773162241728</Id>
+		<Name><![CDATA[f_calculateContractConnectionCosts_eurpyr]]></Name>
+		<X>-400</X>
+		<Y>460</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1773162256135</Id>
+		<Name><![CDATA[f_calculateTotalTransportCosts_eurpyr]]></Name>
+		<X>-400</X>
+		<Y>480</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1773162293336</Id>
+		<Name><![CDATA[f_calculateTotalPeakCosts_eurpyr]]></Name>
+		<X>-400</X>
+		<Y>500</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

@@ -7,6 +7,17 @@
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
+	<StartupCode><![CDATA[c_stackCharts.add(chart_monthlyConnectionCosts_jan);
+c_stackCharts.add(chart_monthlyConnectionCosts_feb);
+c_stackCharts.add(chart_monthlyConnectionCosts_mar);
+c_stackCharts.add(chart_monthlyConnectionCosts_apr);
+c_stackCharts.add(chart_monthlyConnectionCosts_may);
+c_stackCharts.add(chart_monthlyConnectionCosts_jun);
+c_stackCharts.add(chart_monthlyConnectionCosts_jul);
+c_stackCharts.add(chart_monthlyConnectionCosts_aug);
+c_stackCharts.add(chart_monthlyConnectionCosts_sep);
+c_stackCharts.add(chart_monthlyConnectionCosts_nov);
+]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1772440768548</Id>
@@ -98,6 +109,7 @@
 	</ScaleRuler>
 	<CurrentLevel>1772440768549</CurrentLevel>
 	<ConnectionsId>1772440768544</ConnectionsId>
+	<Variables xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
