@@ -3,20 +3,24 @@
 	<Id>1772440768543</Id>
 	<Name><![CDATA[ChartConnectionCosts]]></Name>
 	<Folder>1755764711838</Folder>
+	<Import><![CDATA[import zeroPackage.ZeroMath;
+import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
-	<StartupCode><![CDATA[c_stackCharts.add(chart_monthlyConnectionCosts_jan);
-c_stackCharts.add(chart_monthlyConnectionCosts_feb);
-c_stackCharts.add(chart_monthlyConnectionCosts_mar);
-c_stackCharts.add(chart_monthlyConnectionCosts_apr);
-c_stackCharts.add(chart_monthlyConnectionCosts_may);
-c_stackCharts.add(chart_monthlyConnectionCosts_jun);
-c_stackCharts.add(chart_monthlyConnectionCosts_jul);
-c_stackCharts.add(chart_monthlyConnectionCosts_aug);
-c_stackCharts.add(chart_monthlyConnectionCosts_sep);
-c_stackCharts.add(chart_monthlyConnectionCosts_nov);
+	<StartupCode><![CDATA[c_orderedStackCharts.add(chart_monthlyConnectionCosts_jan);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_feb);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_mar);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_apr);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_may);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_jun);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_jul);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_aug);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_sep);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_okt);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_nov);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_dec);
 ]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>

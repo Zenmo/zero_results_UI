@@ -22,59 +22,15 @@ else{
 	}
 }
 
+f_setYearlyKPIs(data, netLoad_kW, previousNetLoad_kW);
 
+f_setMonthlyChart(data, netLoad_kW);
 
 /*ALCODEEND*/}
 
 double f_resetChart()
 {/*ALCODESTART::1772472093328*/
-
-/*ALCODEEND*/}
-
-double f_calculateCapacityCosts_eur(double[] netLoad_kW)
-{/*ALCODESTART::1772615497109*/
-double costsCapacityRate_euro = 0;
-
-GridNode GN_T0 = findFirst(uI_Results.energyModel.pop_gridNodes, p -> p.p_gridNodeID.equals("T0"));
-double contractedCapacity_kW = GN_T0.p_capacity_kW;
-double VAT_fr = 0.21;
-double annualConnectionRate_euro_p_yr = 5351;
-double annualFixedTransportRate_euro_p_yr = 2760;
-double annualContractCapacityRate_euro_p_kW_yr = 42.10;
-double monthlyPeakPowerRate_euro_p_kW_month = 4.48;
-    	
-double[] monthlyPeakDemand_kW = f_calculateMonthlyPeakDemand_kW(netLoad_kW);
-    
-costsCapacityRate_euro = (1+VAT_fr)*(annualConnectionRate_euro_p_yr + annualFixedTransportRate_euro_p_yr + annualContractCapacityRate_euro_p_kW_yr * contractedCapacity_kW + monthlyPeakPowerRate_euro_p_kW_month * Arrays.stream(monthlyPeakDemand_kW).sum());
-
-return costsCapacityRate_euro;
-/*ALCODEEND*/}
-
-double[] f_calculateMonthlyPeakDemand_kW(double[] netLoad_kW)
-{/*ALCODESTART::1772615497113*/
-double[] monthlyPeakDemand_kW = new double[12];
-int[] daysInMonth = {31,28,31,30,31,30,31,31,30,31,30,31};
-int sampleCounter = 0;
-    	
-for(int month=0; month < daysInMonth.length; month++) {
-    
-    double maxLoad_kW = 0;
-    
-    int samplesInMonth = daysInMonth[month] * 96;
-    int startMonthIndex = sampleCounter;
-    int endMonthIndex = sampleCounter + samplesInMonth;
-    		
-	for (int i = startMonthIndex; i < endMonthIndex && i < netLoad_kW.length; i++) {
-    	double absLoad_kW = Math.abs(netLoad_kW[i]);
-        if (absLoad_kW > maxLoad_kW) {
-        	maxLoad_kW = absLoad_kW;
-        }
-    }
-    monthlyPeakDemand_kW[month] = maxLoad_kW;
-   	sampleCounter += samplesInMonth;
-}
-	
-return monthlyPeakDemand_kW;
+c_orderedStackCharts.forEach(chart -> chart.removeAll());
 /*ALCODEEND*/}
 
 double[] f_calculateMonthlyPeakElectricityBalance_kW(double[] netLoad_kW)
@@ -193,23 +149,30 @@ for (int i = 0; i < netLoad_kW.length; i++) {
 return monthlyElectricityFeedin_kWh;
 /*ALCODEEND*/}
 
-double f_setMonthlyChart(double yearlyPhysicalConnectionCosts_eur,double yearlyContractConnectionCosts_eur,double[] monthlyTransportCosts_eur,double[] monthlyPeakCosts_eur)
+double f_setMonthlyChart(I_EnergyData data,double[] netLoad_kW)
 {/*ALCODESTART::1773161385166*/
 DataSet netCosts_eur = new DataSet(12);
 
 double maxChartValue_eur = 0;
 
+//Get monthly values
+double monthlyPhysicalConnectionCosts_eur = f_calculatePhysicalConnectionCosts_eurpyr(data)/12.0;
+double monthlyContractConnectionCosts_eur = f_calculateContractConnectionCosts_eurpyr(data)/12.0;
+double[] monthlyTransportCosts_eur = ZeroMath.arrayMultiply(f_calculateMonthlyTotalElectricityTransport_kWh(netLoad_kW), 0.01);
+double[] monthlyPeakCosts_eur = ZeroMath.arrayMultiply(f_calculateMonthlyPeakElectricityBalance_kW(netLoad_kW), 0.01);
+
+
 for (int i = 0; i < 12; i++) {
-	StackChart chart_monthlyConnectionCosts = c_stackCharts.get(i);
+	StackChart chart_monthlyConnectionCosts = c_orderedStackCharts.get(i);
 	
 	//Physical connection cost
 	DataItem physicalConnectionCosts_eur = new DataItem();
-	physicalConnectionCosts_eur.setValue(yearlyPhysicalConnectionCosts_eur/12.0);
+	physicalConnectionCosts_eur.setValue(monthlyPhysicalConnectionCosts_eur);
 	chart_monthlyConnectionCosts.addDataItem(physicalConnectionCosts_eur, "Fysieke aansluitings kosten", purple);
 	
 	//Contract connection cost
 	DataItem contractConnectionCosts_eur = new DataItem();
-	contractConnectionCosts_eur.setValue(yearlyContractConnectionCosts_eur/12.0);
+	contractConnectionCosts_eur.setValue(monthlyContractConnectionCosts_eur);
 	chart_monthlyConnectionCosts.addDataItem(contractConnectionCosts_eur, "Vaste contract kosten", red);
 		
 	//Transport cost
@@ -224,37 +187,61 @@ for (int i = 0; i < 12; i++) {
 			
 	//Determine max value of the bars 
 	maxChartValue_eur = max(maxChartValue_eur, 
-							yearlyPhysicalConnectionCosts_eur/12.0 + 
-							yearlyContractConnectionCosts_eur/12.0 +
-							monthlyTransportCosts_eur[0] +
-							monthlyPeakCosts_eur[0]
+							monthlyPhysicalConnectionCosts_eur + 
+							monthlyContractConnectionCosts_eur +
+							monthlyTransportCosts_eur[i] +
+							monthlyPeakCosts_eur[i]
 							);
 }
 
 //Set fixed scale
 maxChartValue_eur *=1.2;
 for (int i = 0; i < 12; i++) {
-	c_stackCharts.get(i).setFixedScale(maxChartValue_eur);
+	c_orderedStackCharts.get(i).setFixedScale(maxChartValue_eur);
 }
 chart_layout.setFixedScale(maxChartValue_eur);
 /*ALCODEEND*/}
 
-double f_setYearlyKPIs()
+double f_setYearlyKPIs(I_EnergyData data,double[] netLoad_kW,double[] previousNetLoad_kW)
 {/*ALCODESTART::1773161419537*/
 //Set new values text
 DecimalFormat df = new DecimalFormat("#,###");
 DecimalFormat df_r = new DecimalFormat("#.#");
 DecimalFormat df_2decimal = new DecimalFormat("0.00");
 
-t_totalImportCosts_eur.setText("€ " + df.format(roundToInt(totalImportCosts_eur)));
-t_totalExportRevenue_eur.setText("€ " + df.format(roundToInt(totalExportRevenue_eur)));
-t_totalNetElectricityCosts_eur.setText("€ " + df.format(roundToInt(totalNetElectricityCosts_eur)));
 
-if(previousTotalImportCosts_eur != null){
+double physicalConnectionCosts_eur = f_calculatePhysicalConnectionCosts_eurpyr(data);
+double contractConnectionCosts_eur = f_calculateContractConnectionCosts_eurpyr(data);
+double totalTransportCosts_eur = f_calculateTotalTransportCosts_eurpyr(netLoad_kW);
+double totalPeakCosts_eur = f_calculateTotalPeakCosts_eurpyr(netLoad_kW);
+double totalConnectionCosts_eur = physicalConnectionCosts_eur + contractConnectionCosts_eur + 
+								  totalTransportCosts_eur + totalPeakCosts_eur; 
+
+
+
+t_physicalConnectionCosts.setText("€ " + df.format(roundToInt(physicalConnectionCosts_eur)));
+t_defaultContractCosts.setText("€ " + df.format(roundToInt(contractConnectionCosts_eur)));
+t_energyTransportCosts.setText("€ " + df.format(roundToInt(totalTransportCosts_eur)));
+t_peakConsumptionCosts.setText("€ " + df.format(roundToInt(totalPeakCosts_eur)));
+t_totalConnectionCosts.setText("€ " + df.format(roundToInt(totalConnectionCosts_eur)));
+
+
+if(previousNetLoad_kW != null){
+
+	double previousPhysicalConnectionCosts_eur = f_calculatePhysicalConnectionCosts_eurpyr(data);
+	double previousContractConnectionCosts_eur = f_calculateContractConnectionCosts_eurpyr(data);
+	double previousTotalTransportCosts_eur = f_calculateTotalTransportCosts_eurpyr(previousNetLoad_kW);
+	double previousTotalPeakCosts_eur = f_calculateTotalPeakCosts_eurpyr(previousNetLoad_kW);
+	double previousTotalConnectionCosts_eur = previousPhysicalConnectionCosts_eur + previousContractConnectionCosts_eur + 
+									  previousTotalTransportCosts_eur + previousTotalPeakCosts_eur; 
+
+
+	/*
 	t_previousTotalImportCosts_eur.setText("€ " + df.format(roundToInt(previousTotalImportCosts_eur)));
 	t_previousTotalExportRevenue_eur.setText("€ " + df.format(roundToInt(previousTotalExportRevenue_eur)));
 	t_previousTotalNetElectricityCosts_eur.setText("€ " + df.format(roundToInt(previousTotalNetElectricityCosts_eur)));
 	
+
 	////Set arrows
 	//Import
 	if(previousTotalImportCosts_eur > totalImportCosts_eur){
@@ -288,31 +275,41 @@ if(previousTotalImportCosts_eur != null){
 	else{
 		line_total.setVisible(true);
 	}
+	*/
 }
 else{ // No previous rapid data -> dont show previous values
-	t_previousTotalImportCosts_eur.setText("-");
-	t_previousTotalExportRevenue_eur.setText("-");
-	t_previousTotalNetElectricityCosts_eur.setText("-");
+	//t_previousTotalImportCosts_eur.setText("-");
+	//t_previousTotalExportRevenue_eur.setText("-");
+	//t_previousTotalNetElectricityCosts_eur.setText("-");
 }
+
 /*ALCODEEND*/}
 
 double f_calculatePhysicalConnectionCosts_eurpyr(I_EnergyData data)
 {/*ALCODESTART::1773162212251*/
-return 0;
+return 10000;
 /*ALCODEEND*/}
 
 double f_calculateContractConnectionCosts_eurpyr(I_EnergyData data)
 {/*ALCODESTART::1773162241728*/
-return 0;
+return 15000;
 /*ALCODEEND*/}
 
-double f_calculateTotalTransportCosts_eurpyr()
+double f_calculateTotalTransportCosts_eurpyr(double[] netLoad_kW)
 {/*ALCODESTART::1773162256135*/
-return 0;
+return ZeroMath.arraySum(f_calculateMonthlyTotalElectricityTransport_kWh(netLoad_kW));
 /*ALCODEEND*/}
 
-double f_calculateTotalPeakCosts_eurpyr()
+double f_calculateTotalPeakCosts_eurpyr(double[] netLoad_kW)
 {/*ALCODESTART::1773162293336*/
-return 0;
+return ZeroMath.arraySum(f_calculateMonthlyPeakElectricityBalance_kW(netLoad_kW));
+/*ALCODEEND*/}
+
+double f_calculateTotalConnectionCosts_eurpyr(I_EnergyData data,double[] netLoad_kW)
+{/*ALCODESTART::1773219333056*/
+return f_calculatePhysicalConnectionCosts_eurpyr(data)+
+	   f_calculateContractConnectionCosts_eurpyr(data)+
+	   f_calculateTotalTransportCosts_eurpyr(netLoad_kW)+
+	   f_calculateTotalPeakCosts_eurpyr(netLoad_kW);
 /*ALCODEEND*/}
 

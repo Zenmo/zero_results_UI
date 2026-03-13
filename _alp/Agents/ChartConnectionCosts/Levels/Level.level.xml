@@ -669,7 +669,7 @@
 	</Group>
 	<Text>
 		<Id>1772618115445</Id>
-		<Name><![CDATA[t_physicalConnectionCosts1]]></Name>
+		<Name><![CDATA[t_physicalConnectionCosts]]></Name>
 		<X>320</X>
 		<Y>120</Y>
 		<Label>
@@ -684,7 +684,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €]]></Text>
+		<Text><![CDATA[€ 210.56]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>20</Size>
@@ -709,7 +709,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €]]></Text>
+		<Text><![CDATA[€ 210.56]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>20</Size>
@@ -734,7 +734,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €]]></Text>
+		<Text><![CDATA[€ 210.56]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>20</Size>
@@ -759,7 +759,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €]]></Text>
+		<Text><![CDATA[€ 210.56]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>20</Size>
@@ -784,7 +784,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €]]></Text>
+		<Text><![CDATA[€ 210.56]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>20</Size>
