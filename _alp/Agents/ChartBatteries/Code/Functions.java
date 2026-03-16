@@ -73,6 +73,7 @@ AreaCollection f_resetCharts()
 gr_week.setVisible(false);
 gr_year.setVisible(false);
 gr_batteryCycles.setVisible(false);
+gr_batteryLifetime.setVisible(false);
 SOCChart_week.removeAll();
 SOCChart_year.removeAll();
 plot_netload_week.removeAll();
@@ -90,9 +91,6 @@ uI_Results.f_setSelectedObjectDisplay(230, 60, true);
 
 //Set battery capacity
 f_addBatteryCapacity(data);
-
-//Set battery lifetime
-f_addBatteryLifetime(data);
 
 /*
 String[] stringArray = {"live", "week 1", "week 2", "jaar"};
@@ -177,7 +175,6 @@ plot_netload_year.addDataSet(dataObject.getRapidRunData().am_totalBalanceAccumul
 double f_addBatteryKPIs_Week(I_EnergyData dataObject,boolean isSummerWeek)
 {/*ALCODESTART::1743417074489*/
 gr_batteryCycles.setVisible(true);
-gr_batteryLifetime.setVisible(true);
 
 DecimalFormat df_1decimal = new DecimalFormat("0.0");
 if(dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh > 0){
@@ -190,12 +187,14 @@ if(dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapac
 else{
 	t_batteryCycles.setText("0");
 }
+
+//Add battery lifetime
+f_addBatteryLifetime(dataObject);
 /*ALCODEEND*/}
 
 double f_addBatteryKPIs_total(I_EnergyData dataObject)
 {/*ALCODESTART::1743417159083*/
 gr_batteryCycles.setVisible(true);
-gr_batteryLifetime.setVisible(true);
 
 DecimalFormat df_1decimal = new DecimalFormat("0.0");
 if(dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh > 0){
@@ -204,6 +203,9 @@ if(dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapac
 else{
 	t_batteryCycles.setText("0");
 }
+
+//Add battery lifetime
+f_addBatteryLifetime(dataObject);
 /*ALCODEEND*/}
 
 double f_addBatteryCapacity(I_EnergyData dataObject)
@@ -365,10 +367,16 @@ if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
 
 double f_addBatteryLifetime(I_EnergyData dataObject)
 {/*ALCODESTART::1756460546640*/
-DecimalFormat df_2decimal = new DecimalFormat("0.00");
-
-double lifetimeBattery_yr = f_calculateBatteryLifetime_yr(dataObject, dataObject.getRapidRunData().getBatteriesSOCts_fr().getTimeSeries());
-t_batteryLifetime.setText(df_2decimal.format(lifetimeBattery_yr));
+if (dataObject.getRapidRunData().assetsMetaData.totalInstalledBatteryStorageCapacity_MWh>0){
+	gr_batteryLifetime.setVisible(true);
+	DecimalFormat df_2decimal = new DecimalFormat("0.00");
+	
+	double lifetimeBattery_yr = f_calculateBatteryLifetime_yr(dataObject, dataObject.getRapidRunData().getBatteriesSOCts_fr().getTimeSeries());
+	t_batteryLifetime.setText(df_2decimal.format(lifetimeBattery_yr));
+}
+else{
+	t_batteryLifetime.setText("-");
+}
 /*ALCODEEND*/}
 
 double f_calculateBatteryLifetime_yr(I_EnergyData dataObject,double[] arraySoC_fr)
@@ -383,7 +391,7 @@ double alpha = -5440.35;
 double beta = 1191.54;
  
 double batteryCycleLife_cycles = alpha * Math.log(averageDoD) + beta;
-traceln("Battery Lifetime from totalYearlyCycles is " + batteryCycleLife_cycles/totalYearlyCycles);
+//traceln("Battery Lifetime from totalYearlyCycles is " + batteryCycleLife_cycles/totalYearlyCycles);
 double lifetimeBattery_yr = batteryCycleLife_cycles/v_cycleCount;
 return lifetimeBattery_yr;
 

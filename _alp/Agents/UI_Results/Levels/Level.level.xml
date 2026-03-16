@@ -832,7 +832,7 @@ f_showCorrectChart();</ActionCode>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>460</Width>
-		<Height>1120</Height>
+		<Height>1170</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -1457,7 +1457,7 @@ f_showCorrectChart();</ActionCode>
 		<Id>1726338589371</Id>
 		<Name><![CDATA[rectangle]]></Name>
 		<X>360</X>
-		<Y>1480</Y>
+		<Y>1520</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
