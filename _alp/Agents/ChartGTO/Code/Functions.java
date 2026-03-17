@@ -56,23 +56,23 @@ if(rb_GTO_delivery_or_feedin.getValue() == 0){//Delivery
 	originalGTO_kW = COOP.f_getGroupContractDeliveryCapacity_kW(COOP.v_originalRapidRunData, uI_Results.energyModel.p_timeParameters);
 	originalPeakIndividual_kW = COOP.v_cumulativeIndividualPeakDeliveryOriginal_kW;
 	originalPeakCollective_kW = COOP.v_originalRapidRunData.getPeakDelivery_kW();
-	originalTotalGTV_kW = COOP.v_originalRapidRunData.connectionMetaData.contractedDeliveryCapacity_kW;
+	originalTotalGTV_kW = COOP.v_originalRapidRunData.connectionMetaData.getContractedDeliveryCapacity_kW();
 
 	scenarioDeltaGTO_kW = COOP.f_getGroupContractDeliveryCapacity_kW(COOP.v_rapidRunData, uI_Results.energyModel.p_timeParameters)  - originalGTO_kW;
 	scenarioDeltaPeakIndividual_kW = COOP.v_cumulativeIndividualPeakDelivery_kW  - originalPeakIndividual_kW;
 	scenarioDeltaPeakCollective_kW = COOP.v_rapidRunData.getPeakDelivery_kW()  - originalPeakCollective_kW;
-	scenarioDeltaTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.contractedDeliveryCapacity_kW  - originalTotalGTV_kW;
+	scenarioDeltaTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.getContractedDeliveryCapacity_kW()  - originalTotalGTV_kW;
 }
 else if(rb_GTO_delivery_or_feedin.getValue() == 1){//Feedin
 	originalGTO_kW = COOP.f_getGroupContractFeedinCapacity_kW(COOP.v_originalRapidRunData, uI_Results.energyModel.p_timeParameters);
 	originalPeakIndividual_kW = COOP.v_cumulativeIndividualPeakFeedinOriginal_kW;
 	originalPeakCollective_kW = COOP.v_originalRapidRunData.getPeakFeedin_kW();
-	originalTotalGTV_kW = COOP.v_originalRapidRunData.connectionMetaData.contractedFeedinCapacity_kW;
+	originalTotalGTV_kW = COOP.v_originalRapidRunData.connectionMetaData.getContractedFeedinCapacity_kW();
 
 	scenarioDeltaGTO_kW = COOP.f_getGroupContractFeedinCapacity_kW(COOP.v_rapidRunData, uI_Results.energyModel.p_timeParameters)  - originalGTO_kW;
 	scenarioDeltaPeakIndividual_kW = COOP.v_cumulativeIndividualPeakFeedin_kW  - originalPeakIndividual_kW;
 	scenarioDeltaPeakCollective_kW = COOP.v_rapidRunData.getPeakFeedin_kW()  - originalPeakCollective_kW;
-	scenarioDeltaTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.contractedFeedinCapacity_kW  - originalTotalGTV_kW;
+	scenarioDeltaTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.getContractedFeedinCapacity_kW()  - originalTotalGTV_kW;
 }
 
 
@@ -180,13 +180,13 @@ if(rb_GTO_delivery_or_feedin.getValue() == 0){//Delivery
 	scenarioGTO_kW = COOP.f_getGroupContractDeliveryCapacity_kW(COOP.v_rapidRunData, uI_Results.energyModel.p_timeParameters);
 	scenarioPeakIndividual_kW = COOP.v_cumulativeIndividualPeakDelivery_kW;
 	scenarioPeakCollective_kW = COOP.v_rapidRunData.getPeakDelivery_kW();
-	scenarioTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.contractedDeliveryCapacity_kW;
+	scenarioTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.getContractedDeliveryCapacity_kW();
 }
 else if(rb_GTO_delivery_or_feedin.getValue() == 1){//Feedin
 	scenarioGTO_kW = COOP.f_getGroupContractFeedinCapacity_kW(COOP.v_rapidRunData, uI_Results.energyModel.p_timeParameters);
 	scenarioPeakIndividual_kW = COOP.v_cumulativeIndividualPeakFeedin_kW;
 	scenarioPeakCollective_kW = COOP.v_rapidRunData.getPeakFeedin_kW();
-	scenarioTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.contractedFeedinCapacity_kW;
+	scenarioTotalGTV_kW = COOP.v_rapidRunData.connectionMetaData.getContractedFeedinCapacity_kW();
 }
 
 //Create data items

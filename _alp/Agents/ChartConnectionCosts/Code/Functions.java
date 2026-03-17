@@ -168,22 +168,22 @@ for (int i = 0; i < 12; i++) {
 	//Physical connection cost
 	DataItem physicalConnectionCosts_eur = new DataItem();
 	physicalConnectionCosts_eur.setValue(monthlyPhysicalConnectionCosts_eur);
-	chart_monthlyConnectionCosts.addDataItem(physicalConnectionCosts_eur, "Fysieke aansluitings kosten", purple);
+	chart_monthlyConnectionCosts.addDataItem(physicalConnectionCosts_eur, "Fysieke aansluitings kosten", color_physicalConnectionCosts);
 	
 	//Contract connection cost
 	DataItem contractConnectionCosts_eur = new DataItem();
 	contractConnectionCosts_eur.setValue(monthlyContractConnectionCosts_eur);
-	chart_monthlyConnectionCosts.addDataItem(contractConnectionCosts_eur, "Vaste contract kosten", red);
+	chart_monthlyConnectionCosts.addDataItem(contractConnectionCosts_eur, "Vaste contract kosten", color_contractConnectionCosts);
 		
 	//Transport cost
 	DataItem transportCosts_eur = new DataItem();
 	transportCosts_eur.setValue(monthlyTransportCosts_eur[i]);
-	chart_monthlyConnectionCosts.addDataItem(transportCosts_eur, "Transport kosten", orange);
+	chart_monthlyConnectionCosts.addDataItem(transportCosts_eur, "Transport kosten", color_transportConnectionCosts);
 		
 	//Peak costs
 	DataItem peakCosts_eur = new DataItem();
 	peakCosts_eur.setValue(monthlyPeakCosts_eur[i]);
-	chart_monthlyConnectionCosts.addDataItem(peakCosts_eur, "Fysieke aansluitings kosten", green);
+	chart_monthlyConnectionCosts.addDataItem(peakCosts_eur, "Fysieke aansluitings kosten", color_monthlyPeakConnectionCosts);
 			
 	//Determine max value of the bars 
 	maxChartValue_eur = max(maxChartValue_eur, 
@@ -302,7 +302,7 @@ return ZeroMath.arraySum(f_calculateMonthlyTotalElectricityTransport_kWh(netLoad
 
 double f_calculateTotalPeakCosts_eurpyr(double[] netLoad_kW)
 {/*ALCODESTART::1773162293336*/
-return ZeroMath.arraySum(f_calculateMonthlyPeakElectricityBalance_kW(netLoad_kW));
+return ZeroMath.arraySum(f_calculateMonthlyPeakElectricityBalance_kW(netLoad_kW)) * 0.01;
 /*ALCODEEND*/}
 
 double f_calculateTotalConnectionCosts_eurpyr(I_EnergyData data,double[] netLoad_kW)

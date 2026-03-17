@@ -135,13 +135,13 @@ String text_peakType = "";
 
 if (data instanceof EnergyCoop COOP){
 	if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
-		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
+		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW());
 		peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakDelivery_kW);
 		peakCollective_kW.setValue(data.getRapidRunData().getPeakDelivery_kW());
 		text_peakType = "levering";
 	}
 	else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
-		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
+		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW());
 		peakIndividual_kW.setValue(COOP.v_cumulativeIndividualPeakFeedin_kW);
 		peakCollective_kW.setValue(data.getRapidRunData().getPeakFeedin_kW());
 		text_peakType = "teruglevering";
@@ -149,13 +149,13 @@ if (data instanceof EnergyCoop COOP){
 }
 else if(data instanceof EnergyModel EM){
 	if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 0){//Delivery
-		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
+		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW());
 		peakIndividual_kW.setValue(sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getPeakDelivery_kW()));
 		peakCollective_kW.setValue(data.getRapidRunData().getPeakDelivery_kW());
 		text_peakType = "levering";
 	}
 	else if(rb_GSLDSummary3_delivery_or_feedin.getValue() == 1){//Feedin
-		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
+		totalGTV_kW.setValue(data.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW());
 		peakIndividual_kW.setValue(sum(EM.f_getActiveGridConnections(), GC -> GC.v_rapidRunData.getPeakFeedin_kW()));
 		peakCollective_kW.setValue(data.getRapidRunData().getPeakFeedin_kW());
 		text_peakType = "teruglevering";

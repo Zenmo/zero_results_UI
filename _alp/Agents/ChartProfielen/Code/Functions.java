@@ -585,11 +585,11 @@ String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
 Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
-if(dataObject.getLiveData().connectionMetaData.contractedDeliveryCapacityKnown){
+if(dataObject.getLiveData().connectionMetaData.getContractedDeliveryCapacityKnown()){
 	deliveryCapacityLabel = "Piek leveringscapaciteit";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
-if(dataObject.getLiveData().connectionMetaData.contractedFeedinCapacityKnown){
+if(dataObject.getLiveData().connectionMetaData.getContractedFeedinCapacityKnown()){
 	feedinCapacityLabel = "Piek terugleveringscapaciteit";
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
@@ -642,11 +642,11 @@ String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
 Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
-if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
+if(dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacityKnown()){
 	deliveryCapacityLabel = "Piek leveringscapaciteit";
 	deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
-if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
+if(dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacityKnown()){
 	feedinCapacityLabel = "Piek terugleveringscapaciteit";
 	feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 }
@@ -836,11 +836,11 @@ String feedinCapacityLabel = "Geschatte piek terugleveringscapaciteit";
 Color  deliveryCapacityColor = uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor = uI_Results.v_electricityCapacityColor_estimated;
 
-if(dataObject.getLiveData().connectionMetaData.contractedDeliveryCapacityKnown){
+if(dataObject.getLiveData().connectionMetaData.getContractedDeliveryCapacityKnown()){
 	deliveryCapacityLabel = "Piek leveringscapaciteit";
 	deliveryCapacityColor = uI_Results.v_electricityCapacityColor_known;
 }
-if(dataObject.getLiveData().connectionMetaData.contractedFeedinCapacityKnown){
+if(dataObject.getLiveData().connectionMetaData.getContractedFeedinCapacityKnown()){
 	feedinCapacityLabel = "Piek terugleveringscapaciteit";
 	feedinCapacityColor	= uI_Results.v_electricityCapacityColor_known;
 }

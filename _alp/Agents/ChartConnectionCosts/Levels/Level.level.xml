@@ -45,7 +45,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Aansluitings kosten]]></Text>
+		<Text><![CDATA[Aansluitingskosten]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>26</Size>
@@ -172,7 +172,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Fysieke aansluitings kosten:]]></Text>
+		<Text><![CDATA[Fysieke aansluitingskosten:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>20</Size>
@@ -237,7 +237,7 @@
 		<Id>1772617184418</Id>
 		<Name><![CDATA[gr_monthlyConnectionCostCharts]]></Name>
 		<X>230</X>
-		<Y>560</Y>
+		<Y>540</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -254,7 +254,7 @@
 				<Id>1772617184420</Id>
 				<Name><![CDATA[txt_MonthlyConnectionCosts]]></Name>
 				<X>0</X>
-				<Y>-140</Y>
+				<Y>-130</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -267,7 +267,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Maandelijkse Aansluitings kosten]]></Text>
+				<Text><![CDATA[Maandelijkse Aansluitingskosten]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>22</Size>
@@ -596,7 +596,7 @@
 			</Group>
 			<Group>
 				<Id>1772617184464</Id>
-				<Name><![CDATA[gr_connectionCostsMonthly]]></Name>
+				<Name><![CDATA[gr_connectionCostsMonthlyLegend]]></Name>
 				<X>-70</X>
 				<Y>195</Y>
 				<Label>
@@ -613,9 +613,9 @@
 				<Presentation>
 					<Rectangle>
 						<Id>1772617184466</Id>
-						<Name><![CDATA[rect_legendConnectionCostsMonthly]]></Name>
-						<X>-100</X>
-						<Y>-30</Y>
+						<Name><![CDATA[rect_legendPhysicalConnectionCosts]]></Name>
+						<X>-90</X>
+						<Y>-25</Y>
 						<Label>
 							<X>10</X>
 							<Y>10</Y>
@@ -628,21 +628,21 @@
 						<Z>0</Z>
 						<ZHeight>10</ZHeight>
 						<LineWidth>1</LineWidth>
-						<LineColor>-16777216</LineColor>
+						<LineColor/>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<Width>10</Width>
 						<Height>10</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-65536</FillColor>
-						<FillColorCode>uI_Results.v_electricityDemandColor</FillColorCode>
+						<FillColorCode>color_physicalConnectionCosts</FillColorCode>
 						<FillMaterial>null</FillMaterial>
 					</Rectangle>
 					<Text>
 						<Id>1772617184468</Id>
-						<Name><![CDATA[txt_barChartConnectionCosts]]></Name>
-						<X>-80</X>
-						<Y>-30</Y>
+						<Name><![CDATA[txt_legendPhysicalConnectionCosts]]></Name>
+						<X>-70</X>
+						<Y>-25</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -655,7 +655,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Totale kosten per maand [€]]]></Text>
+						<Text><![CDATA[Fysieke aansluitingskosten]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
@@ -663,6 +663,1236 @@
 						</Font>
 						<Alignment>LEFT</Alignment>
 					</Text>
+					<Rectangle>
+						<Id>1773762981248</Id>
+						<Name><![CDATA[rect_legendContractCosts]]></Name>
+						<X>-90</X>
+						<Y>-5</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor/>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>10</Width>
+						<Height>10</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>-65536</FillColor>
+						<FillColorCode>color_contractConnectionCosts</FillColorCode>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1773762981255</Id>
+						<Name><![CDATA[txt_legendContractCosts]]></Name>
+						<X>-70</X>
+						<Y>-5</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[Vaste contract kosten]]></Text>
+						<Font>
+							<Name><![CDATA[SansSerif]]></Name>
+							<Size>10</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+					<Rectangle>
+						<Id>1773762981261</Id>
+						<Name><![CDATA[rect_legendTransportCosts]]></Name>
+						<X>120</X>
+						<Y>-25</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor/>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>10</Width>
+						<Height>10</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>-65536</FillColor>
+						<FillColorCode>color_transportConnectionCosts</FillColorCode>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1773762981268</Id>
+						<Name><![CDATA[txt_legendTransportCosts]]></Name>
+						<X>140</X>
+						<Y>-25</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[Transport kosten]]></Text>
+						<Font>
+							<Name><![CDATA[SansSerif]]></Name>
+							<Size>10</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+					<Rectangle>
+						<Id>1773762981275</Id>
+						<Name><![CDATA[rect_legendMonthlyPeakCosts]]></Name>
+						<X>120</X>
+						<Y>-5</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor/>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>10</Width>
+						<Height>10</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>-65536</FillColor>
+						<FillColorCode>color_monthlyPeakConnectionCosts</FillColorCode>
+						<FillMaterial>null</FillMaterial>
+					</Rectangle>
+					<Text>
+						<Id>1773762981281</Id>
+						<Name><![CDATA[txt_legendMonthlyPeakCosts]]></Name>
+						<X>140</X>
+						<Y>-5</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[Maandelijkse piek kosten]]></Text>
+						<Font>
+							<Name><![CDATA[SansSerif]]></Name>
+							<Size>10</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+				</Presentation>
+			</Group>
+			<Group>
+				<Id>1773762881746</Id>
+				<Name><![CDATA[gr_stackedBarChartMonthlyConnectionCosts]]></Name>
+				<X>-160</X>
+				<Y>30</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<StackChart>
+						<Id>1773762881750</Id>
+						<Name><![CDATA[chart_layout]]></Name>
+						<X>-50</X>
+						<Y>-140</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881748</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>430</Width>
+						<Height>300</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>40</XOffset>
+							<YOffset>30</YOffset>
+							<Width>360</Width>
+							<Height>210</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor>-16777216</BorderColor>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+							<TextColor>-12566464</TextColor>
+						</Labels>
+						<ShowLegend>true</ShowLegend>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881758</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_jan]]></Name>
+						<X>-55</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881756</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor>-12566464</GridColor>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor>-12566464</TextColor>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881752</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881753</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881754</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881755</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881766</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_apr]]></Name>
+						<X>35</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881764</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881760</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881761</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881762</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881763</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881774</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_jul]]></Name>
+						<X>125</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881772</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881768</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881769</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881770</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881771</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881782</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_sep]]></Name>
+						<X>185</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881780</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881776</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881777</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881778</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881779</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881790</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_dec]]></Name>
+						<X>275</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881788</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881784</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881785</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881786</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881787</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881798</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_nov]]></Name>
+						<X>245</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881796</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881792</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881793</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881794</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881795</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881806</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_aug]]></Name>
+						<X>155</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881804</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881800</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881801</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881802</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881803</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881814</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_jun]]></Name>
+						<X>95</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881812</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881808</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881809</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881810</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881811</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881822</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_may]]></Name>
+						<X>65</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881820</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881816</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881817</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881818</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881819</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881830</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_mar]]></Name>
+						<X>5</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881828</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881824</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881825</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881826</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881827</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881838</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_feb]]></Name>
+						<X>-25</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881836</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881832</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881833</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881834</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881835</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
+					<StackChart>
+						<Id>1773762881846</Id>
+						<Name><![CDATA[chart_monthlyConnectionCosts_okt]]></Name>
+						<X>215</X>
+						<Y>-135</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<AutoUpdate>true</AutoUpdate>
+						<RecurrenceProperties>
+							<Id>1773762881844</Id>
+							<OccurrenceAtTime>true</OccurrenceAtTime>
+							<OccurrenceDate>1773216000000</OccurrenceDate>
+							<OccurrenceTime Class="CodeUnitValue">
+								<Code><![CDATA[0]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</OccurrenceTime>
+							<RecurrenceCode Class="CodeUnitValue">
+								<Code><![CDATA[1]]></Code>
+								<Unit Class="TimeUnits">HOUR</Unit>
+							</RecurrenceCode>
+						</RecurrenceProperties>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Width>110</Width>
+						<Height>265</Height>
+						<BackgroundColor/>
+						<BorderColor/>
+						<ChartArea>
+							<XOffset>50</XOffset>
+							<YOffset>30</YOffset>
+							<Width>20</Width>
+							<Height>205</Height>
+							<BackgroundColor>-1</BackgroundColor>
+							<BorderColor/>
+							<GridColor/>
+						</ChartArea>
+						<Legend>
+							<Place>SOUTH</Place>
+							<TextColor>-16777216</TextColor>
+							<Size>30</Size>
+						</Legend>
+						<Labels>
+							<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+							<VerLabelsPosition>NONE</VerLabelsPosition>
+							<TextColor/>
+						</Labels>
+						<ShowLegend>false</ShowLegend>
+						<DataItem>
+							<Id>1773762881840</Id>
+							<Expression>0</Expression>
+							<Color>-8097537</Color>
+							<Title>Title</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881841</Id>
+							<Expression>0</Expression>
+							<Color>-60269</Color>
+							<Title>Title 1</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881842</Id>
+							<Expression>0</Expression>
+							<Color>-29696</Color>
+							<Title>Title 2</Title>
+						</DataItem>
+						<DataItem>
+							<Id>1773762881843</Id>
+							<Expression>0</Expression>
+							<Color>-12799119</Color>
+							<Title>Title 3</Title>
+						</DataItem>
+						<ScaleToExpression>1</ScaleToExpression>
+						<ScaleType>AUTO</ScaleType>
+						<Bars>
+							<Direction>UP</Direction>
+							<RelativeWidth>0.8</RelativeWidth>
+						</Bars>
+					</StackChart>
 				</Presentation>
 			</Group>
 		</Presentation>
@@ -792,1078 +2022,4 @@
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
-	<Group>
-		<Id>1773163425139</Id>
-		<Name><![CDATA[gr_stackedBarChartMonthlyConnectionCosts]]></Name>
-		<X>70</X>
-		<Y>590</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Presentation>
-			<StackChart>
-				<Id>1773163599761</Id>
-				<Name><![CDATA[chart_layout]]></Name>
-				<X>-50</X>
-				<Y>-140</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163599759</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>430</Width>
-				<Height>300</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>40</XOffset>
-					<YOffset>30</YOffset>
-					<Width>360</Width>
-					<Height>210</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor>-16777216</BorderColor>
-					<GridColor>-12566464</GridColor>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
-					<TextColor>-12566464</TextColor>
-				</Labels>
-				<ShowLegend>true</ShowLegend>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773162620565</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_jan]]></Name>
-				<X>-55</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773162620563</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor>-12566464</GridColor>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor>-12566464</TextColor>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773162622614</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773162625019</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163681670</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163683342</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163061620</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_apr]]></Name>
-				<X>35</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163061618</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163061616</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163061617</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163686091</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163686831</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163067004</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_jul]]></Name>
-				<X>125</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163067002</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163067000</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163067001</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163688926</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163689561</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163070264</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_sep]]></Name>
-				<X>185</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163070262</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163070260</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163070261</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163691456</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163692201</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163076226</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_dec]]></Name>
-				<X>275</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163076224</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163076222</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163076223</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163694179</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163694850</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163074649</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_nov]]></Name>
-				<X>245</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163074647</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163074645</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163074646</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163696708</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163697473</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163068381</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_aug]]></Name>
-				<X>155</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163068379</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163068377</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163068378</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163699527</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163700159</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163065382</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_jun]]></Name>
-				<X>95</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163065380</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163065378</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163065379</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163702030</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163702723</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163063747</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_may]]></Name>
-				<X>65</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163063745</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163063743</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163063744</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163704692</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163705286</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163056234</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_mar]]></Name>
-				<X>5</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163056232</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163056230</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163056231</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163707038</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163707669</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773162999982</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_feb]]></Name>
-				<X>-25</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773162999980</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773162999978</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773162999979</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163709563</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163710107</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-			<StackChart>
-				<Id>1773163072111</Id>
-				<Name><![CDATA[chart_monthlyConnectionCosts_okt]]></Name>
-				<X>215</X>
-				<Y>-135</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1773163072109</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1773216000000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>110</Width>
-				<Height>265</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>50</XOffset>
-					<YOffset>30</YOffset>
-					<Width>20</Width>
-					<Height>205</Height>
-					<BackgroundColor>-1</BackgroundColor>
-					<BorderColor/>
-					<GridColor/>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>30</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
-					<TextColor/>
-				</Labels>
-				<ShowLegend>false</ShowLegend>
-				<DataItem>
-					<Id>1773163072107</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163072108</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163712134</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1773163712725</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-				<ScaleToExpression>1</ScaleToExpression>
-				<ScaleType>AUTO</ScaleType>
-				<Bars>
-					<Direction>UP</Direction>
-					<RelativeWidth>0.8</RelativeWidth>
-				</Bars>
-			</StackChart>
-		</Presentation>
-	</Group>
 </Presentation>
