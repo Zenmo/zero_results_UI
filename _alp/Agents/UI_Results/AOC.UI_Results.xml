@@ -37,6 +37,7 @@ lm_assetFlowLabels.put(OL_AssetFlowCategories.ptProductionHeat_kW,"warmte zonnec
 lm_assetFlowLabels.put(OL_AssetFlowCategories.pvProductionElectric_kW,"Opwek zonneënergie");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.V2GPower_kW,"Vehicle to Grid");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.windProductionElectric_kW,"Opwek wind");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.airConditionersElectricPower_kW,"Elektr. behoefte Airco's");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW, "Elektr. Opwek Diesel Gen.");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW, "Elektr. Opwek Gas Gen.");
 
@@ -54,6 +55,7 @@ cm_assetFlowColors.put(OL_AssetFlowCategories.ptProductionHeat_kW, v_ptProductio
 cm_assetFlowColors.put(OL_AssetFlowCategories.pvProductionElectric_kW, v_PVElectricitySupplyColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.V2GPower_kW, v_V2GElectricitySupplyColor);  
 cm_assetFlowColors.put(OL_AssetFlowCategories.windProductionElectric_kW, v_windElectricitySupplyColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.airConditionersElectricPower_kW, v_PVElectricitySupplyColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW, v_petroleumProductsElectricitySupplyColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW, v_methaneElectricitySupplyColor);
 
@@ -65,6 +67,7 @@ v_consumptionAssetFlows.add(OL_AssetFlowCategories.electricHobConsumption_kW);
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.electrolyserElectricityConsumption_kW);
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.evChargingPower_kW);
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+v_consumptionAssetFlows.add(OL_AssetFlowCategories.airConditionersElectricPower_kW);
 
 v_electricAssetFlows = EnumSet.noneOf(OL_AssetFlowCategories.class);
 v_electricAssetFlows.add(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
@@ -78,8 +81,8 @@ v_electricAssetFlows.add(OL_AssetFlowCategories.heatPumpElectricityConsumption_k
 v_electricAssetFlows.add(OL_AssetFlowCategories.pvProductionElectric_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.V2GPower_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.windProductionElectric_kW);
-v_electricAssetFlows.add(OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW);
-v_electricAssetFlows.add(OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW);]]></StartupCode>
+v_electricAssetFlows.add(OL_AssetFlowCategories.airConditionersElectricPower_kW);
+]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1704197366556</Id>
