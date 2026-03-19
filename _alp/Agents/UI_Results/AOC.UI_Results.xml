@@ -83,8 +83,6 @@ v_electricAssetFlows.add(OL_AssetFlowCategories.V2GPower_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.windProductionElectric_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.airConditionersElectricPower_kW);
 ]]></StartupCode>
-v_electricAssetFlows.add(OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW);
-v_electricAssetFlows.add(OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW);]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1704197366556</Id>
