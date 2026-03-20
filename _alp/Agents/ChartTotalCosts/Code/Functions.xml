@@ -6,7 +6,7 @@
 		<Id>1772471828102</Id>
 		<Name><![CDATA[f_setChartTotalCosts]]></Name>
 		<X>-290</X>
-		<Y>350</Y>
+		<Y>210</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -22,7 +22,7 @@
 		<Id>1772472124331</Id>
 		<Name><![CDATA[f_resetChart]]></Name>
 		<X>-250</X>
-		<Y>380</Y>
+		<Y>240</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -30,5 +30,6 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

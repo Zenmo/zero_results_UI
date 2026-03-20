@@ -5,8 +5,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772471760319</Id>
 		<Name><![CDATA[f_setChartConnectionCosts]]></Name>
-		<X>-270</X>
-		<Y>320</Y>
+		<X>-400</X>
+		<Y>250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -21,8 +21,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772472093328</Id>
 		<Name><![CDATA[f_resetChart]]></Name>
-		<X>-250</X>
-		<Y>340</Y>
+		<X>-380</X>
+		<Y>270</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -38,7 +38,7 @@
 		<Id>1773160205274</Id>
 		<Name><![CDATA[f_calculateMonthlyPeakElectricityBalance_kW]]></Name>
 		<X>-400</X>
-		<Y>600</Y>
+		<Y>550</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -58,7 +58,7 @@
 		<Id>1773160205294</Id>
 		<Name><![CDATA[f_calculateMonthlyPeakElectricityDelivery_kW]]></Name>
 		<X>-400</X>
-		<Y>560</Y>
+		<Y>510</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -78,7 +78,7 @@
 		<Id>1773160205312</Id>
 		<Name><![CDATA[f_calculateMonthlyPeakElectricityFeedin_kW]]></Name>
 		<X>-400</X>
-		<Y>580</Y>
+		<Y>530</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -98,7 +98,7 @@
 		<Id>1773160925451</Id>
 		<Name><![CDATA[f_calculateMonthlyTotalElectricityTransport_kWh]]></Name>
 		<X>-400</X>
-		<Y>670</Y>
+		<Y>620</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -118,7 +118,7 @@
 		<Id>1773160925453</Id>
 		<Name><![CDATA[f_calculateMonthlyElectricityDelivery_kWh]]></Name>
 		<X>-400</X>
-		<Y>630</Y>
+		<Y>580</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -138,7 +138,7 @@
 		<Id>1773160925455</Id>
 		<Name><![CDATA[f_calculateMonthlyElectricityFeedin_kWh]]></Name>
 		<X>-400</X>
-		<Y>650</Y>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -157,8 +157,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1773161385166</Id>
 		<Name><![CDATA[f_setMonthlyChart]]></Name>
-		<X>-250</X>
-		<Y>380</Y>
+		<X>-380</X>
+		<Y>310</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -181,8 +181,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1773161419537</Id>
 		<Name><![CDATA[f_setYearlyKPIs]]></Name>
-		<X>-250</X>
-		<Y>360</Y>
+		<X>-380</X>
+		<Y>290</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -210,7 +210,7 @@
 		<Id>1773162212251</Id>
 		<Name><![CDATA[f_calculatePhysicalConnectionCosts_eurpyr]]></Name>
 		<X>-400</X>
-		<Y>440</Y>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -219,8 +219,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[data]]></Name>
-			<Type><![CDATA[I_EnergyData]]></Type>
+			<Name><![CDATA[connectionMetaData]]></Name>
+			<Type><![CDATA[J_ConnectionMetaData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -230,7 +230,7 @@
 		<Id>1773162241728</Id>
 		<Name><![CDATA[f_calculateContractConnectionCosts_eurpyr]]></Name>
 		<X>-400</X>
-		<Y>460</Y>
+		<Y>410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -239,8 +239,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[data]]></Name>
-			<Type><![CDATA[I_EnergyData]]></Type>
+			<Name><![CDATA[connectionMetaData]]></Name>
+			<Type><![CDATA[J_ConnectionMetaData]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -250,7 +250,7 @@
 		<Id>1773162256135</Id>
 		<Name><![CDATA[f_calculateTotalTransportCosts_eurpyr]]></Name>
 		<X>-400</X>
-		<Y>480</Y>
+		<Y>430</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -258,6 +258,10 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[connectionMetaData]]></Name>
+			<Type><![CDATA[J_ConnectionMetaData]]></Type>
+		</Parameter>
 		<Parameter>
 			<Name><![CDATA[netLoad_kW]]></Name>
 			<Type><![CDATA[double[]]]></Type>
@@ -270,7 +274,7 @@
 		<Id>1773162293336</Id>
 		<Name><![CDATA[f_calculateTotalPeakCosts_eurpyr]]></Name>
 		<X>-400</X>
-		<Y>500</Y>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -278,6 +282,10 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[connectionMetaData]]></Name>
+			<Type><![CDATA[J_ConnectionMetaData]]></Type>
+		</Parameter>
 		<Parameter>
 			<Name><![CDATA[netLoad_kW]]></Name>
 			<Type><![CDATA[double[]]]></Type>
@@ -290,7 +298,7 @@
 		<Id>1773219333056</Id>
 		<Name><![CDATA[f_calculateTotalConnectionCosts_eurpyr]]></Name>
 		<X>-400</X>
-		<Y>520</Y>
+		<Y>470</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -299,8 +307,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[data]]></Name>
-			<Type><![CDATA[I_EnergyData]]></Type>
+			<Name><![CDATA[connectionMetaData]]></Name>
+			<Type><![CDATA[J_ConnectionMetaData]]></Type>
 		</Parameter>
 		<Parameter>
 			<Name><![CDATA[netLoad_kW]]></Name>
