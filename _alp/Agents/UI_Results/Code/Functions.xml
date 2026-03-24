@@ -384,7 +384,7 @@
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>String</ReturnType>
 		<Id>1731578318216</Id>
-		<Name><![CDATA[f_getName]]></Name>
+		<Name><![CDATA[f_getECName]]></Name>
 		<X>550</X>
 		<Y>640</Y>
 		<Label>
@@ -997,6 +997,26 @@
 		<Parameter>
 			<Name><![CDATA[visible]]></Name>
 			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>String</ReturnType>
+		<Id>1774279163769</Id>
+		<Name><![CDATA[f_getAssetName]]></Name>
+		<X>550</X>
+		<Y>620</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[assetType]]></Name>
+			<Type><![CDATA[OL_EnergyAssetType]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

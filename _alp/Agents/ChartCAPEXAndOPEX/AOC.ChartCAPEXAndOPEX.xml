@@ -3,6 +3,7 @@
 	<Id>1772440739218</Id>
 	<Name><![CDATA[ChartCAPEXAndOPEX]]></Name>
 	<Folder>1755764711838</Folder>
+	<Import><![CDATA[import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
@@ -98,6 +99,7 @@
 	</ScaleRuler>
 	<CurrentLevel>1772440739224</CurrentLevel>
 	<ConnectionsId>1772440739219</ConnectionsId>
+	<Variables xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>

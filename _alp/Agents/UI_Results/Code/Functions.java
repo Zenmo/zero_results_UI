@@ -325,17 +325,17 @@ switch(v_selectedRadioButtonSetup){
 return loadedChartTypes_Energy;
 /*ALCODEEND*/}
 
-String f_getName(OL_EnergyCarriers energyCarrier)
+String f_getECName(OL_EnergyCarriers energyCarrier)
 {/*ALCODESTART::1731578318216*/
 switch (energyCarrier) {
 	case ELECTRICITY:
-		return "Electriciteit";
+		return "Elektriciteit";
 	case HEAT:
 		return "Warmte";
 	case METHANE:
 		return "Gas";
 	case PETROLEUM_FUEL:
-		return "Voertuig Brandstof";
+		return "Diesel & Benzine";
 	case HYDROGEN:
 		return "Waterstof";
 	case IRON_POWDER:
@@ -1063,5 +1063,47 @@ if(location_y != null){
 
 //Set visibility
 gr_chartTotalCosts_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+String f_getAssetName(OL_EnergyAssetType assetType)
+{/*ALCODESTART::1774279163769*/
+switch (assetType) {
+	case STORAGE_ELECTRIC:
+		return "Batterij";
+	case PHOTOVOLTAIC:
+		return "PV";
+	case HEAT_PUMP_AIR:
+		return "Warmtepomp";
+	case PHOTOTHERMAL:
+		return "PT-Panelen";
+	case WINDMILL:
+		return "Windturbine";
+	case ELECTROLYSER:
+		return "Electrolyser";
+	case DIESEL_GENERATOR:
+		return "Diesel generator";
+	case METHANE_GENERATOR:
+		return "Gas generator";
+	case GAS_BURNER:
+		return "Gasbrander";
+	case ELECTRIC_VEHICLE:
+		return "Elektrische autos";
+	case ELECTRIC_VAN:
+		return "Elektrische busjes";
+	case ELECTRIC_TRUCK:
+		return "Elektrische trucks";
+	case HYDROGEN_TRUCK:
+		return "Waterstof trucks";
+		default:
+			throw new RuntimeException("Onbekende assetType, kan niet vertaald worden.");
+}
+
+
+
+// The code below return the name in English
+/*
+String s = energyCarrier.toString();
+return s.substring(0, 1) + s.substring(1).toLowerCase();
+*/
 /*ALCODEEND*/}
 

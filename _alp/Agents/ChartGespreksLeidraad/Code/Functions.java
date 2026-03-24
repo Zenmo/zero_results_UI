@@ -90,7 +90,7 @@ pl_productionChart.addDataItem(d2,"Teruggeleverde elektriciteit [MWh]",v_exporte
 if (importE_MWh > 0) {
 	DataItem d3 = new DataItem();
 	d3.setValue(importE_MWh/1000);
-	pl_consumptionChart.addDataItem(d3,"Electriciteit uit het net [MWh]",v_importedElectricityColor);
+	pl_consumptionChart.addDataItem(d3,"Elektriciteit uit het net [MWh]",v_importedElectricityColor);
 }
 if (importG_MWh > 0 ) {
 	DataItem d4 = new DataItem();

@@ -214,7 +214,7 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergy
 	if (dataObject.getRapidRunData().getTotalImport_MWh(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem totalImport = new DataItem();
 		totalImport.setValue(dataObject.getRapidRunData().getTotalImport_MWh(EC));
-		pl_consumptionChartBalanceTotal.addDataItem(totalImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_consumptionColors.get(EC));
+		pl_consumptionChartBalanceTotal.addDataItem(totalImport, uI_Results.f_getECName(EC) + " Import [MWh]", uI_Results.cm_consumptionColors.get(EC));
 	}
 }
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
@@ -222,7 +222,7 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyC
 	if (dataObject.getRapidRunData().getTotalExport_MWh(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem totalExport = new DataItem();
 		totalExport.setValue(dataObject.getRapidRunData().getTotalExport_MWh(EC));
-		pl_productionChartBalanceTotal.addDataItem(totalExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_productionChartBalanceTotal.addDataItem(totalExport, uI_Results.f_getECName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
 
