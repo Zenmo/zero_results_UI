@@ -1587,28 +1587,15 @@
 			<FillColor>-1</FillColor>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
-			<ActionCode>switch(cb_energyCarrierSelection.getValue()){
-	case "Elektriciteit":
-		v_selectedEnergyCarrier = "ELECTRICITY";
-		break;
-	case "Gas":
-		v_selectedEnergyCarrier = "METHANE";
-		break;
-	case "Diesel &amp; Benzine":
-		v_selectedEnergyCarrier = "PETROLEUM_FUEL";
-		break;
-	case "Waterstof":
-		v_selectedEnergyCarrier = "HYDROGEN";
-		break;
-	case "Warmte":
-		v_selectedEnergyCarrier = "HEAT";
-		break;
-	case "IJzerpoeder":
-		v_selectedEnergyCarrier = "IRON_POWDER";
-		break;
-	case "Totaal":
-		v_selectedEnergyCarrier = p_totalName;
-		break;
+			<ActionCode>if(cb_energyCarrierSelection.getValue().equals(p_totalName)){
+	v_selectedEnergyCarrier = p_totalName;
+}
+else{
+	for(OL_EnergyCarriers EC : c_defaultOrderEC){
+		if(cb_energyCarrierSelection.getValue().equals(uI_Results.f_getECName(EC))){
+			v_selectedEnergyCarrier = EC.toString();
+		}
+	}
 }
 
 f_setChartEnergyCostsValues();

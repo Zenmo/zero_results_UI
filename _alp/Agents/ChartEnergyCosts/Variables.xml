@@ -168,6 +168,16 @@
 			<CollectionClass>ArrayList</CollectionClass>
 			<ElementClass>OL_EnergyCarriers</ElementClass>
 			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+OL_EnergyCarriers.ELECTRICITY,
+OL_EnergyCarriers.METHANE,
+OL_EnergyCarriers.PETROLEUM_FUEL,
+OL_EnergyCarriers.HEAT,
+OL_EnergyCarriers.HYDROGEN,
+OL_EnergyCarriers.IRON_POWDER
+}]]></Code>
+			</CollectionInitializer>
 		</Properties>
 	</Variable>
 </Variables>

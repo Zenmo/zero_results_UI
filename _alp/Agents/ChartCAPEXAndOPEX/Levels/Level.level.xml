@@ -201,7 +201,7 @@
 else{
 	for(OL_EnergyAssetType EAType : c_defaultOrderAssets){
 		if(cb_assetSelection.getValue().equals(uI_Results.f_getAssetName(EAType))){
-			v_selectedAsset = uI_Results.f_getAssetName(EAType);
+			v_selectedAsset = EAType.toString();
 		}
 	}
 }
@@ -836,7 +836,9 @@ f_setChartCAPEXAndOPEXValues();</ActionCode>
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.STORAGE_ELECTRIC);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -919,7 +921,9 @@ worden in de totaal berekening?]]></Text>
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.ELECTRIC_VEHICLE);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -951,7 +955,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.ELECTRIC_VAN);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -983,7 +989,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.ELECTRIC_TRUCK);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1015,7 +1023,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.HEAT_PUMP_AIR);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1047,7 +1057,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.GAS_BURNER);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1079,7 +1091,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.ELECTROLYSER);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1111,7 +1125,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.DIESEL_GENERATOR);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1143,7 +1159,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.METHANE_GENERATOR);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1175,7 +1193,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.PHOTOVOLTAIC);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1207,7 +1227,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.WINDMILL);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1239,7 +1261,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.HYDROGEN_TRUCK);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -1271,7 +1295,9 @@ else{
 }
 else{
 	c_includeAssetSelection.add(OL_EnergyAssetType.PHOTOTHERMAL);
-}</ActionCode>
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>

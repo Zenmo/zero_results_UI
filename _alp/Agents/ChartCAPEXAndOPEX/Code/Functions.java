@@ -41,9 +41,30 @@ t_previousCAPEXAndOPEXPerYear.setText("-");
 double f_getTotalCAPEXAndOPEXCosts_eurpyr(J_RapidRunData rapidRunData)
 {/*ALCODESTART::1774272795145*/
 double totalCAPEXAndOPEXCosts_eur = 0;
-return totalCAPEXAndOPEXCosts_eur;
 
+//Initialize variables
+double CAPEX_eurpyr = 0;
+double OPEX_eurpyr = 0;
 
+//Get only the assets that should be included in calculation
+List<OL_EnergyAssetType> selectedAssetList = new ArrayList<>(rapidRunData.assetsMetaData.getActiveAssets());
+selectedAssetList.retainAll(c_includeAssetSelection); //Only keep 'included' asset types
+
+for(OL_EnergyAssetType assetType : selectedAssetList){
+	//Get economicAVGC values
+	double assetExpectedLifeTime_yr = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetLifeTime_yr.get(assetType);
+	double assetCAPEX_eurpkW = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetCAPEX_eurpkW.get(assetType);
+	double assetOPEX_eurpkWpyr = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetOPEX_eurpkWpyr.get(assetType);
+	//Get Current asset capacity
+	double assetCapacity_kW = rapidRunData.assetsMetaData.getActiveAssetCapacity_kW(assetType);
+	if(assetCapacity_kW > 0){
+		CAPEX_eurpyr += assetCapacity_kW * assetCAPEX_eurpkW / assetExpectedLifeTime_yr;
+		OPEX_eurpyr += assetCapacity_kW * assetOPEX_eurpkWpyr;
+	}
+}
+
+//Return values
+return CAPEX_eurpyr + OPEX_eurpyr;
 /*ALCODEEND*/}
 
 double f_initializeAssetSelectionComboBox(I_EnergyData data)
@@ -55,6 +76,8 @@ assets.addAll(data.getRapidRunData().assetsMetaData.getActiveAssets());
 if(data.getPreviousRapidRunData() != null){
 	assets.addAll(data.getPreviousRapidRunData().assetsMetaData.getActiveAssets());
 }
+
+assets.retainAll(c_includeAssetSelection); //Only keep 'included' asset types
 
 //Order the list to always have the same order
 List<OL_EnergyAssetType> orderedAssets = new ArrayList<>();
@@ -149,7 +172,7 @@ f_setYearlyKPIs(lifeTime_yr, CAPEX_eurpyr, OPEX_eurpyr, previousLifeTime_yr, pre
 double f_setYearlyKPIs(double lifeTime_yr,double CAPEX_eurpyr,double OPEX_eurpyr,Double previousLifeTime_yr,Double previousCAPEX_eurpyr,Double previousOPEX_eurpyr)
 {/*ALCODESTART::1774279941226*/
 //Set new values text
-DecimalFormat df = new DecimalFormat("#,###0.00");
+DecimalFormat df = new DecimalFormat("#,##0.00");
 
 double CAPEXLifeTimeTotal_eur = CAPEX_eurpyr * lifeTime_yr;
 double OPEXLifeTimeTotal_eur = OPEX_eurpyr * lifeTime_yr;

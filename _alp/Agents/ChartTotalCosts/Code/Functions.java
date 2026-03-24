@@ -10,7 +10,7 @@ f_resetChart();
 
 
 ////Get and set the values with help from the economic charts
-DecimalFormat df = new DecimalFormat("#,###0.00");
+DecimalFormat df = new DecimalFormat("#,##0.00");
 
 double totalEnergyCosts_eurpyr = uI_Results.chartEnergyCosts.f_getTotalEnergyCosts_eurpyr(data.getRapidRunData());
 t_totalEnergyCosts.setText(" € " + df.format(roundToInt(totalEnergyCosts_eurpyr)));

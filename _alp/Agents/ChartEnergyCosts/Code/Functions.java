@@ -22,7 +22,7 @@ else{
 double f_setYearlyKPIs(double totalImportCosts_eur,double totalExportRevenue_eur,double totalNetElectricityCosts_eur,Double previousTotalImportCosts_eur,Double previousTotalExportRevenue_eur,Double previousTotalNetElectricityCosts_eur)
 {/*ALCODESTART::1726830499836*/
 //Set new values text
-DecimalFormat df = new DecimalFormat("#,###0.00");
+DecimalFormat df = new DecimalFormat("#,##0.00");
 
 t_totalImportCosts_eur.setText("€ " + df.format(totalImportCosts_eur));
 t_totalExportRevenue_eur.setText("€ " + df.format(totalExportRevenue_eur));

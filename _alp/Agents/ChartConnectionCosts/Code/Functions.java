@@ -219,7 +219,7 @@ chart_layout.setFixedScale(maxChartValue_eur);
 double f_setYearlyKPIs(I_EnergyData data,double[] netLoad_kW,double[] previousNetLoad_kW)
 {/*ALCODESTART::1773161419537*/
 //Set new values text
-DecimalFormat df = new DecimalFormat("#,###0.00");
+DecimalFormat df = new DecimalFormat("#,##0.00");
 
 double physicalConnectionCosts_eur = f_calculatePhysicalConnectionCosts_eurpyr(data.getRapidRunData().connectionMetaData);
 double contractConnectionCosts_eur = f_calculateContractConnectionCosts_eurpyr(data.getRapidRunData().connectionMetaData);
