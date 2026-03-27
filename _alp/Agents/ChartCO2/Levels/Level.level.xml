@@ -963,8 +963,8 @@ f_setChartCO2Values();
 	<PieChart>
 		<Id>1774623611036</Id>
 		<Name><![CDATA[pieChart_yearlyTotalSubdivision]]></Name>
-		<X>590</X>
-		<Y>360</Y>
+		<X>510</X>
+		<Y>270</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>

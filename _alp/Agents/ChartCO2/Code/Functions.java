@@ -56,7 +56,6 @@ t_previousTotalCO2Emission_kg.setText("-");
 //Clear monthly chart
 bar_CO2EmissionMonthly.removeAll();
 gr_monthlyCO2EmissionCharts.setVisible(false);//Needed to refresh chart
-gr_monthlyCO2EmissionCharts.setVisible(true);
 /*ALCODEEND*/}
 
 double f_setMonthlyChart(double[] monthlyCO2Emission_kg)
@@ -77,7 +76,7 @@ for (int i = 0; i < 12; i++) {
 //Set fixed scale
 maxChartValue_eur *=1.2;
 bar_CO2EmissionMonthly.setFixedScale(0, maxChartValue_eur);
-
+gr_monthlyCO2EmissionCharts.setVisible(true);
 /*ALCODEEND*/}
 
 double[] f_calculateMonthlyECCO2Emission_kg(double[] ECBalance_kW,double signalResolution_h,OL_EnergyCarriers EC)
@@ -190,7 +189,14 @@ for(OL_EnergyCarriers EC : selectedECList){
 	}	
 }
 
+//Calculate total CO2 emissions due EC import
 double totalCO2Emissions_kg = ZeroMath.arraySum(monthlyCO2Emissions_kg);
+
+
+//Add custom co2 additions
+if(map_customCO2Additions_kg != null && map_customCO2Additions_kg.size()>0){
+	totalCO2Emissions_kg += sum(map_customCO2Additions_kg.values(), value -> max(0, value.doubleValue()));
+}
 
 
 //Previous values
@@ -220,7 +226,13 @@ if(data.getPreviousRapidRunData() != null){
 	
 		previoustotalCO2Emissions_kg += ZeroMath.arraySum(previousMonthlyECCO2Emissions_kg);
 	}
+	
+	//Add custom co2 additions previous run to previous total
+	if(map_customCO2Additions_previous_kg != null && map_customCO2Additions_previous_kg.size()>0){
+		previoustotalCO2Emissions_kg += sum(map_customCO2Additions_previous_kg.values(), value -> max(0, value.doubleValue()));
+	}
 }
+
 
 
 //Set yearly kpis
