@@ -9,17 +9,6 @@ import java.text.DecimalFormat;]]></Import>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
-	<Parameters>
-		<Parameter>
-			<Name><![CDATA[map_customCO2Additions_kg]]></Name>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[p_totalName]]></Name>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[map_customCO2Additions_previous_kg]]></Name>
-		</Parameter>
-	</Parameters>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1772440782736</Id>
