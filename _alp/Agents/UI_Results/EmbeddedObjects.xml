@@ -812,7 +812,17 @@
 				<ItemName>1772440782736</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
-		<Parameters/>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[map_customCO2Additions_kg]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[p_totalName]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[map_customCO2Additions_previous_kg]]></Name>
+			</Parameter>
+		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
 			<Code><![CDATA[100]]></Code>

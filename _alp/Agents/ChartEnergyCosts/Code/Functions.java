@@ -113,21 +113,6 @@ gr_monthlyECCostCharts.setVisible(false);//Needed to refresh chart
 gr_monthlyECCostCharts.setVisible(true);
 /*ALCODEEND*/}
 
-double[] f_calculateMonthlyNetElectricityCosts_eur(double[] monthlyElectricityImportCosts_euro,double[] monthlyElectricityExportRevenue_euro)
-{/*ALCODESTART::1755869113668*/
-if(monthlyElectricityImportCosts_euro.length != monthlyElectricityExportRevenue_euro.length){
-	throw new RuntimeException("Trying to calculate the net electricity cost per month for a monthly import and export array that is not the same size!");
-}
-
-double[] monthlyNetElectricityCost_euro = new double[monthlyElectricityImportCosts_euro.length];
-
-for (int i = 0; i < monthlyElectricityImportCosts_euro.length; i++) {
-    monthlyNetElectricityCost_euro[i] = monthlyElectricityImportCosts_euro[i] - monthlyElectricityExportRevenue_euro[i];
-}
-
-return monthlyNetElectricityCost_euro;
-/*ALCODEEND*/}
-
 double f_setMonthlyChart(double[] monthlyElectricityImportCosts_eur,double[] monthlyElectricityExportRevenue_eur,double[] monthlyNetElectricityCosts_eur)
 {/*ALCODESTART::1769429961370*/
 DataSet netCosts_eur = new DataSet(12);
@@ -165,57 +150,6 @@ plot_netEnergyCostsMonthly.setFixedHorizontalScale(0.5, 12.5);
 
 
 
-/*ALCODEEND*/}
-
-double[] f_calculateMonthlyElectricityImportCosts_eur(double[] netLoad_kW)
-{/*ALCODESTART::1769430055658*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
-double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
-
-
-double VAT_fr = 0.21;
-double EnergyTaxes_eur_p_kwh = 0.03868;
-
-double[] monthlyElectricityImportCosts_euro = new double[12];
-
-int currentMonth = 0;
-
-
-for (int i = 0; i < netLoad_kW.length; i++) {
-	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*timeStep_h){
-		currentMonth += 1;
-	}
-
-    double currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i * timeStep_h)] / 1000.0;
-    double timestepCost = (1 + VAT_fr)*(currentElectricityPriceCharge_eurpkWh + EnergyTaxes_eur_p_kwh) * max(0, netLoad_kW[i]) * timeStep_h;
-
-    monthlyElectricityImportCosts_euro[currentMonth] += timestepCost;
-}
-
-return monthlyElectricityImportCosts_euro;
-
-/*ALCODEEND*/}
-
-double[] f_calculateMonthlyElectricityExportRevenue_eur(double[] netLoad_kW)
-{/*ALCODESTART::1769432836265*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
-double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
-
-double[] monthlyElectricityExportRevenue_euro = new double[12];
-
-int currentMonth = 0;
-
-for (int i = 0; i < netLoad_kW.length; i++) {
-	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*timeStep_h){
-		currentMonth += 1;
-	}
-    double currentElectricityPriceCharge_eurpkWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*timeStep_h)] / 1000.0;
-    double timestepExportRevenue_euro = currentElectricityPriceCharge_eurpkWh * max(0,-netLoad_kW[i]) * timeStep_h;
-	
-	monthlyElectricityExportRevenue_euro[currentMonth] += timestepExportRevenue_euro;
-}
- 	
-return monthlyElectricityExportRevenue_euro;
 /*ALCODEEND*/}
 
 double[] f_calculateMonthlyEnergyImportCosts_eur(double[] ECBalance_kW,double signalResolution_h,OL_EnergyCarriers EC)
@@ -378,11 +312,6 @@ if(data.getPreviousRapidRunData() != null){
 	for(OL_EnergyCarriers EC : selectedECList_previousRapidRun){
 		if(EC == OL_EnergyCarriers.HEAT && !data.getPreviousRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){
 			continue;
-		}
-		if(previousTotalImportCosts_eur == null){
-			previousTotalImportCosts_eur = 0.0;
-			previousTotalExportRevenue_eur = 0.0;
-			previousTotalNetCosts_eur = 0.0;		
 		}
 		
 		double[] previousECBalance_kW = data.getPreviousRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW();

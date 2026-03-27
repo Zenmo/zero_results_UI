@@ -32,7 +32,7 @@
 		<Id>1772441388925</Id>
 		<Name><![CDATA[txt_monthlyChartYAxis]]></Name>
 		<X>15</X>
-		<Y>524</Y>
+		<Y>534</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -45,7 +45,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[[kg]]]></Text>
+		<Text><![CDATA[[ton]]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>12</Size>
@@ -109,7 +109,7 @@
 		<Id>1772441388931</Id>
 		<Name><![CDATA[gr_yearlyCO2Consumption]]></Name>
 		<X>235</X>
-		<Y>240</Y>
+		<Y>290</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -238,7 +238,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[150.5 kg]]></Text>
+				<Text><![CDATA[150.5 ton]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>24</Size>
@@ -263,7 +263,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[150.5 kg]]></Text>
+				<Text><![CDATA[150.5 ton]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>16</Size>
@@ -404,7 +404,7 @@
 					<Height>220</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor>-16777216</BorderColor>
-					<GridColor>-12566464</GridColor>
+					<GridColor>-4144960</GridColor>
 				</ChartArea>
 				<Legend>
 					<Place>SOUTH</Place>
@@ -413,7 +413,7 @@
 				</Legend>
 				<Labels>
 					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>NONE</VerLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
 					<TextColor>-12566464</TextColor>
 				</Labels>
 				<ShowLegend>false</ShowLegend>
@@ -877,7 +877,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[CO2 uitstoot per maand [kg]]]></Text>
+						<Text><![CDATA[CO2 uitstoot per maand]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
@@ -889,4 +889,151 @@
 			</Group>
 		</Presentation>
 	</Group>
+	<Text>
+		<Id>1774620072613</Id>
+		<Name><![CDATA[txt_selectedEnergyCarrier]]></Name>
+		<X>50</X>
+		<Y>130</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[Geselecteerde Energiedrager:]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>18</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Control Type="ComboBox">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1774620072617</Id>
+		<Name><![CDATA[cb_energyCarrierSelection]]></Name>
+		<X>300</X>
+		<Y>130</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="130" Height="20">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<FillColor>-1</FillColor>
+			<TextColor>-16777216</TextColor>
+			<Enabled>true</Enabled>
+			<ActionCode>if(cb_energyCarrierSelection.getValue().equals(p_totalName)){
+	v_selectedEnergyCarrier = p_totalName;
+}
+else{
+	for(OL_EnergyCarriers EC : c_defaultOrderEC){
+		if(cb_energyCarrierSelection.getValue().equals(uI_Results.f_getECName(EC))){
+			v_selectedEnergyCarrier = EC.toString();
+		}
+	}
+}
+
+f_setChartCO2Values();
+</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<Editable>false</Editable>
+			<Button>Elektriciteit</Button>
+			<Button>Gas</Button>
+			<Button>Diesel &amp; Benzine</Button>
+			<Button>Waterstof</Button>
+			<Button>Warmte</Button>
+			<Button>IJzerpoeder</Button>
+			<Button>Totaal</Button>
+			<LinkTo>false</LinkTo>
+		</ExtendedProperties>
+	</Control>
+	<PieChart>
+		<Id>1774623611036</Id>
+		<Name><![CDATA[pieChart_yearlyTotalSubdivision]]></Name>
+		<X>590</X>
+		<Y>360</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<AutoUpdate>true</AutoUpdate>
+		<RecurrenceProperties>
+			<Id>1774623611034</Id>
+			<OccurrenceAtTime>true</OccurrenceAtTime>
+			<OccurrenceDate>1774684800000</OccurrenceDate>
+			<OccurrenceTime Class="CodeUnitValue">
+				<Code><![CDATA[0]]></Code>
+				<Unit Class="TimeUnits">HOUR</Unit>
+			</OccurrenceTime>
+			<RecurrenceCode Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">HOUR</Unit>
+			</RecurrenceCode>
+		</RecurrenceProperties>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Width>260</Width>
+		<Height>210</Height>
+		<BackgroundColor/>
+		<BorderColor/>
+		<ChartArea>
+			<XOffset>50</XOffset>
+			<YOffset>10</YOffset>
+			<Width>140</Width>
+			<Height>140</Height>
+			<BorderColor/>
+			<GridColor>-12566464</GridColor>
+		</ChartArea>
+		<Legend>
+			<Place>SOUTH</Place>
+			<TextColor>-16777216</TextColor>
+			<Size>40</Size>
+		</Legend>
+		<Labels>
+			<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+			<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+			<TextColor>-12566464</TextColor>
+		</Labels>
+		<ShowLegend>true</ShowLegend>
+		<DataItem>
+			<Id>1774623611552</Id>
+			<Expression>0</Expression>
+			<Color>-8097537</Color>
+			<Title>Title</Title>
+		</DataItem>
+		<DataItem>
+			<Id>1774623611553</Id>
+			<Expression>0</Expression>
+			<Color>-60269</Color>
+			<Title>Title 1</Title>
+		</DataItem>
+		<DataItem>
+			<Id>1774623616571</Id>
+			<Expression>0</Expression>
+			<Color>-29696</Color>
+			<Title>Title 2</Title>
+		</DataItem>
+		<DataItem>
+			<Id>1774623618171</Id>
+			<Expression>0</Expression>
+			<Color>-12799119</Color>
+			<Title>Title 3</Title>
+		</DataItem>
+	</PieChart>
 </Presentation>

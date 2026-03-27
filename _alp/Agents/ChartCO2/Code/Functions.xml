@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Functions>
-	<Function AccessType="public" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1772441389067</Id>
-		<Name><![CDATA[f_setChartCO2]]></Name>
-		<X>-410</X>
-		<Y>420</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1772441389069</Id>
 		<Name><![CDATA[f_setYearlyKPIs]]></Name>
-		<X>-390</X>
-		<Y>460</Y>
+		<X>-420</X>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -77,8 +61,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772441389073</Id>
 		<Name><![CDATA[f_resetChart]]></Name>
-		<X>-390</X>
-		<Y>440</Y>
+		<X>-420</X>
+		<Y>480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -86,48 +70,6 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>double</ReturnType>
-		<Id>1772441389075</Id>
-		<Name><![CDATA[f_calculateCapacityCosts_eur]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>-390</X>
-		<Y>780</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[netLoad_kW]]></Name>
-			<Type><![CDATA[double[]]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>double[]</ReturnType>
-		<Id>1772441389077</Id>
-		<Name><![CDATA[f_calculateMonthlyPeakDemand_kW]]></Name>
-		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>-370</X>
-		<Y>800</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[netLoad_kW]]></Name>
-			<Type><![CDATA[double[]]]></Type>
-		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
@@ -135,8 +77,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772441389081</Id>
 		<Name><![CDATA[f_setMonthlyChart]]></Name>
-		<X>-390</X>
-		<Y>480</Y>
+		<X>-420</X>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -153,10 +95,10 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>double[]</ReturnType>
-		<Id>1772441389083</Id>
-		<Name><![CDATA[f_calculateMonthlyElectricityImportCO2Emission_kg]]></Name>
-		<X>-390</X>
-		<Y>560</Y>
+		<Id>1772643915089</Id>
+		<Name><![CDATA[f_calculateMonthlyECCO2Emission_kg]]></Name>
+		<X>-420</X>
+		<Y>570</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -165,18 +107,26 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[netLoad_kW]]></Name>
+			<Name><![CDATA[ECBalance_kW]]></Name>
 			<Type><![CDATA[double[]]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[signalResolution_h]]></Name>
+			<Type><![CDATA[double]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[EC]]></Name>
+			<Type><![CDATA[OL_EnergyCarriers]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1772643915089</Id>
-		<Name><![CDATA[f_calculateMonthlyECFixedCO2Emission_kg]]></Name>
-		<X>-390</X>
-		<Y>585</Y>
+		<Id>1774608778627</Id>
+		<Name><![CDATA[f_setCustomCO2Map]]></Name>
+		<X>-440</X>
+		<Y>700</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -185,12 +135,77 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[EC]]></Name>
-			<Type><![CDATA[OL_EnergyCarriers]]></Type>
+			<Name><![CDATA[customCO2AdditionsMap]]></Name>
+			<Type><![CDATA[Map<String, Double>]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1774618389588</Id>
+		<Name><![CDATA[f_setChartCO2]]></Name>
+		<X>-440</X>
+		<Y>400</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1774618389602</Id>
+		<Name><![CDATA[f_setChartCO2Values]]></Name>
+		<X>-430</X>
+		<Y>460</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1774618389606</Id>
+		<Name><![CDATA[f_initializeECSelectionComboBox]]></Name>
+		<X>-430</X>
+		<Y>420</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
 		<Parameter>
-			<Name><![CDATA[ECTotalBalance_kWh]]></Name>
-			<Type><![CDATA[double[]]]></Type>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1774623387767</Id>
+		<Name><![CDATA[f_storePreviousCustomCO2AdditionsMap]]></Name>
+		<X>-440</X>
+		<Y>720</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

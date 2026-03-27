@@ -2,6 +2,7 @@
 <ActiveObjectClass>
 	<Id>1762958101311</Id>
 	<Name><![CDATA[ChartBars]]></Name>
+	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
 	<Folder>1755764711838</Folder>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>

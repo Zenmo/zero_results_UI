@@ -1,62 +1,12 @@
-double f_setChartCO2()
-{/*ALCODESTART::1772441389067*/
-I_EnergyData data = uI_Results.f_getSelectedObjectData();
-
-//Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 60, true);
-
-//Reset chart
-f_resetChart();
-
-
-////Get the netload values
-double[] netLoad_kW;
-double[] previousNetLoad_kW = null;
-if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-	netLoad_kW = uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getTimeSeries_kW();
-}
-else{
-	netLoad_kW = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getTimeSeries_kW();
-	if(data.getPreviousRapidRunData() != null){
-		previousNetLoad_kW = data.getPreviousRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getTimeSeries_kW();
-	}
-}
-
-////Calculate the values
-
-//Current values
-double[] monthlyElectricityImportCO2Emissions_kg = f_calculateMonthlyElectricityImportCO2Emission_kg(netLoad_kW);
-
-double totalElectricityImportCO2Emissions_kg = ZeroMath.arraySum(monthlyElectricityImportCO2Emissions_kg);
-
-//Previous values
-Double previousTotalElectricityImportCO2Emissions_kg = null;
-
-if(previousNetLoad_kW != null){
-	double[] previousMonthlyElectricityImportCO2Emissions_kg = f_calculateMonthlyElectricityImportCO2Emission_kg(previousNetLoad_kW);
-
-	previousTotalElectricityImportCO2Emissions_kg = ZeroMath.arraySum(previousMonthlyElectricityImportCO2Emissions_kg);
-}
-
-
-//Set yearly kpis
-f_setYearlyKPIs(totalElectricityImportCO2Emissions_kg, previousTotalElectricityImportCO2Emissions_kg);
-
-//Set monthly chart
-f_setMonthlyChart(monthlyElectricityImportCO2Emissions_kg);
-
-
-/*ALCODEEND*/}
-
 double f_setYearlyKPIs(Double totalCO2Emission_kg,Double previousTotalCO2Emission_kg)
 {/*ALCODESTART::1772441389069*/
 //Set new values text
 DecimalFormat df = new DecimalFormat("0.00");
 
-t_totalCO2Emission_kg.setText(df.format(roundToInt(totalCO2Emission_kg)) + " kg");
+t_totalCO2Emission_kg.setText(df.format(totalCO2Emission_kg/1000.0) + " ton");
 
 if(previousTotalCO2Emission_kg != null){
-	t_previousTotalCO2Emission_kg.setText(df.format(roundToInt(previousTotalCO2Emission_kg)) + " kg");
+	t_previousTotalCO2Emission_kg.setText(df.format(previousTotalCO2Emission_kg/1000.0) + " ton");
 	
 	////Set arrows
 	if(previousTotalCO2Emission_kg > totalCO2Emission_kg){
@@ -105,52 +55,8 @@ t_previousTotalCO2Emission_kg.setText("-");
 
 //Clear monthly chart
 bar_CO2EmissionMonthly.removeAll();
-/*ALCODEEND*/}
-
-double f_calculateCapacityCosts_eur(double[] netLoad_kW)
-{/*ALCODESTART::1772441389075*/
-double costsCapacityRate_euro = 0;
-
-GridNode GN_T0 = findFirst(uI_Results.energyModel.pop_gridNodes, p -> p.p_gridNodeID.equals("T0"));
-double contractedCapacity_kW = GN_T0.p_capacity_kW;
-double VAT_fr = 0.21;
-double annualConnectionRate_euro_p_yr = 5351;
-double annualFixedTransportRate_euro_p_yr = 2760;
-double annualContractCapacityRate_euro_p_kW_yr = 42.10;
-double monthlyPeakPowerRate_euro_p_kW_month = 4.48;
-    	
-double[] monthlyPeakDemand_kW = f_calculateMonthlyPeakDemand_kW(netLoad_kW);
-    
-costsCapacityRate_euro = (1+VAT_fr)*(annualConnectionRate_euro_p_yr + annualFixedTransportRate_euro_p_yr + annualContractCapacityRate_euro_p_kW_yr * contractedCapacity_kW + monthlyPeakPowerRate_euro_p_kW_month * Arrays.stream(monthlyPeakDemand_kW).sum());
-
-return costsCapacityRate_euro;
-/*ALCODEEND*/}
-
-double[] f_calculateMonthlyPeakDemand_kW(double[] netLoad_kW)
-{/*ALCODESTART::1772441389077*/
-double[] monthlyPeakDemand_kW = new double[12];
-int[] daysInMonth = {31,28,31,30,31,30,31,31,30,31,30,31};
-int sampleCounter = 0;
-    	
-for(int month=0; month < daysInMonth.length; month++) {
-    
-    double maxLoad_kW = 0;
-    
-    int samplesInMonth = daysInMonth[month] * 96;
-    int startMonthIndex = sampleCounter;
-    int endMonthIndex = sampleCounter + samplesInMonth;
-    		
-	for (int i = startMonthIndex; i < endMonthIndex && i < netLoad_kW.length; i++) {
-    	double absLoad_kW = Math.abs(netLoad_kW[i]);
-        if (absLoad_kW > maxLoad_kW) {
-        	maxLoad_kW = absLoad_kW;
-        }
-    }
-    monthlyPeakDemand_kW[month] = maxLoad_kW;
-   	sampleCounter += samplesInMonth;
-}
-	
-return monthlyPeakDemand_kW;
+gr_monthlyCO2EmissionCharts.setVisible(false);//Needed to refresh chart
+gr_monthlyCO2EmissionCharts.setVisible(true);
 /*ALCODEEND*/}
 
 double f_setMonthlyChart(double[] monthlyCO2Emission_kg)
@@ -162,10 +68,10 @@ double maxChartValue_eur = 0;
 for (int i = 0; i < 12; i++) {
 	//Import cost
 	DataItem CO2Emission_kg = new DataItem();
-	CO2Emission_kg.setValue(monthlyCO2Emission_kg[i]);
-	bar_CO2EmissionMonthly.addDataItem(CO2Emission_kg, "", uI_Results.v_electricityDemandColor);
+	CO2Emission_kg.setValue(monthlyCO2Emission_kg[i]/1000.0);
+	bar_CO2EmissionMonthly.addDataItem(CO2Emission_kg, c_monthsOfTheYear.get(i), uI_Results.v_electricityDemandColor);
 	
-	maxChartValue_eur = max(maxChartValue_eur, monthlyCO2Emission_kg[i]);
+	maxChartValue_eur = max(maxChartValue_eur, monthlyCO2Emission_kg[i]/1000.0);
 }
 
 //Set fixed scale
@@ -174,36 +80,205 @@ bar_CO2EmissionMonthly.setFixedScale(0, maxChartValue_eur);
 
 /*ALCODEEND*/}
 
-double[] f_calculateMonthlyElectricityImportCO2Emission_kg(double[] netLoad_kW)
-{/*ALCODESTART::1772441389083*/
+double[] f_calculateMonthlyECCO2Emission_kg(double[] ECBalance_kW,double signalResolution_h,OL_EnergyCarriers EC)
+{/*ALCODESTART::1772643915089*/
 int[] startHourPerMonth = startHourPerMonthTemporary;
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
+
+double energyCarrierCO2Emission_kg_p_kWh = uI_Results.energyModel.avgc_data.map_avgCO2EmissionOfEnergyCarrier_kgpkWh.get(EC);
 
 double[] monthlyElectricityImportCO2Emission_kg = new double[12];
 
 int currentMonth = 0;
 
-
-for (int i = 0; i < netLoad_kW.length; i++) {
-	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*timeStep_h){
+for (int i = 0; i < ECBalance_kW.length; i++) {
+	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*signalResolution_h){
 		currentMonth += 1;
 	}
-
-    double currentCO2EmissionFactor_kgpkWh =
-            uI_Results.energyModel.pp_CO2EmissionFactorElectricityImport_kgpkWh.getAllValues()[(int) Math.floor(i * timeStep_h)];
-
-    double timestepCO2Emission_kg =
-            currentCO2EmissionFactor_kgpkWh * max(0, netLoad_kW[i]) * timeStep_h;
-
+	
+	if(EC == OL_EnergyCarriers.ELECTRICITY){
+		energyCarrierCO2Emission_kg_p_kWh = uI_Results.energyModel.pp_CO2EmissionFactorElectricityImport_kgpkWh.getAllValues()[(int) Math.floor(i * signalResolution_h)];
+	}
+	
+    double timestepCO2Emission_kg = energyCarrierCO2Emission_kg_p_kWh * max(0, ECBalance_kW[i] ) * signalResolution_h;
+    
     monthlyElectricityImportCO2Emission_kg[currentMonth] += timestepCO2Emission_kg;
 }
 
 return monthlyElectricityImportCO2Emission_kg;
+/*ALCODEEND*/}
+
+double f_setCustomCO2Map(Map<String, Double> customCO2AdditionsMap)
+{/*ALCODESTART::1774608778627*/
+map_customCO2Additions_kg = customCO2AdditionsMap;
+/*ALCODEEND*/}
+
+double f_setChartCO2()
+{/*ALCODESTART::1774618389588*/
+//Initialization of data object.
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+
+//Set selected object display
+uI_Results.f_setSelectedObjectDisplay(230, 60, true);
+
+//Initialize the EnergyCarrier selection ComboBox
+f_initializeECSelectionComboBox(data);
+
+//Set the actual values of the chart (while trying to maintain the previous selected EC)
+String currentSelectedECReadableName = v_selectedEnergyCarrier.equals(p_totalName) ? p_totalName : uI_Results.f_getECName(OL_EnergyCarriers.valueOf(v_selectedEnergyCarrier));
+if (Arrays.asList(cb_energyCarrierSelection.getItems()).contains(currentSelectedECReadableName)) {
+	cb_energyCarrierSelection.setValue(currentSelectedECReadableName, true);
+}
+else{
+	cb_energyCarrierSelection.setValue(uI_Results.f_getECName(OL_EnergyCarriers.ELECTRICITY), true);
+}
+/*ALCODEEND*/}
+
+double f_setChartCO2Values()
+{/*ALCODESTART::1774618389602*/
+I_EnergyData data = uI_Results.f_getSelectedObjectData();
+
+//Reset chart
+f_resetChart();
+
+
+//Get selected List
+List<OL_EnergyCarriers> selectedECList;
+if(v_selectedEnergyCarrier.equals(p_totalName)){
+	if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+		selectedECList = new ArrayList<>(List.of(uI_Results.v_gridNode.p_energyCarrier));
+	}
+	else{
+		selectedECList = new ArrayList<>(data.getRapidRunData().activeEnergyCarriers);
+	}
+}
+else{
+	selectedECList = new ArrayList<>(List.of(OL_EnergyCarriers.valueOf(v_selectedEnergyCarrier)));
+}
+
+
+double[] monthlyCO2Emissions_kg = new double[12];
+
+for(OL_EnergyCarriers EC : selectedECList){
+	//Get the ECBalance values
+	double[] ECBalance_kW;
+	double signalResolution_h;
+	if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+		if(EC == OL_EnergyCarriers.ELECTRICITY){
+			ECBalance_kW = uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getTimeSeries_kW();
+			signalResolution_h = uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getSignalResolution_h();
+		}
+		else{ //if(EC == OL_EnergyCarriers.HEAT){
+			ECBalance_kW = uI_Results.v_gridNode.acc_annualHeatBalance_kW.getTimeSeries_kW();
+			signalResolution_h = uI_Results.v_gridNode.acc_annualHeatBalance_kW.getSignalResolution_h();
+		}
+	}
+	else{
+		if(EC == OL_EnergyCarriers.HEAT && !data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){
+			continue;
+		}
+		ECBalance_kW = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW();
+		signalResolution_h = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getSignalResolution_h();
+	}
+	
+	//Calculate values
+	double[] monthlyECCO2Emissions_kg = f_calculateMonthlyECCO2Emission_kg(ECBalance_kW, signalResolution_h, EC);
+
+	//Add values of this EC to the total
+	for(int i = 0; i < 12; i++){
+		monthlyCO2Emissions_kg[i] += monthlyECCO2Emissions_kg[i];
+	}	
+}
+
+double totalCO2Emissions_kg = ZeroMath.arraySum(monthlyCO2Emissions_kg);
+
+
+//Previous values
+Double previoustotalCO2Emissions_kg = null;
+
+if(data.getPreviousRapidRunData() != null){
+	//It is possible that previous rapid run has other set of EC than current rapid run, so list needs to be recreated.
+	List<OL_EnergyCarriers> selectedECList_previousRapidRun =new ArrayList<>();
+	if(v_selectedEnergyCarrier.equals("Totaal")){ 
+		selectedECList_previousRapidRun.addAll(data.getPreviousRapidRunData().activeEnergyCarriers);
+	}
+	else if(data.getPreviousRapidRunData().activeEnergyCarriers.contains(selectedECList.get(0))){
+		selectedECList_previousRapidRun = selectedECList;
+	}
+	//Initialize previous values with 0. (Even if selectedECList_previousRapidRun remains empty due to diff in EC between rapid runs this makes sense!)
+	previoustotalCO2Emissions_kg = 0.0;		
+
+	for(OL_EnergyCarriers EC : selectedECList_previousRapidRun){
+		if(EC == OL_EnergyCarriers.HEAT && !data.getPreviousRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){
+			continue;
+		}
+		
+		double[] previousECBalance_kW = data.getPreviousRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW();
+		double previousSignalResolution_h = data.getPreviousRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getSignalResolution_h();
+		
+		double[] previousMonthlyECCO2Emissions_kg = f_calculateMonthlyECCO2Emission_kg(previousECBalance_kW, previousSignalResolution_h, EC);
+	
+		previoustotalCO2Emissions_kg += ZeroMath.arraySum(previousMonthlyECCO2Emissions_kg);
+	}
+}
+
+
+//Set yearly kpis
+f_setYearlyKPIs(totalCO2Emissions_kg, previoustotalCO2Emissions_kg);
+
+//Set monthly chart
+f_setMonthlyChart(monthlyCO2Emissions_kg);
+
 
 /*ALCODEEND*/}
 
-double f_calculateMonthlyECFixedCO2Emission_kg(OL_EnergyCarriers EC,double[] ECTotalBalance_kWh)
-{/*ALCODESTART::1772643915089*/
+double f_initializeECSelectionComboBox(I_EnergyData data)
+{/*ALCODESTART::1774618389606*/
+//Get energy carrier options (also previous run EC that are not in current).
+Set<OL_EnergyCarriers> energyCarriers = new HashSet<>();
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+	energyCarriers.add(uI_Results.v_gridNode.p_energyCarrier);
+}
+else{
+	energyCarriers.addAll(data.getRapidRunData().activeConsumptionEnergyCarriers);
+	boolean hasHadDistrictHeating = data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW);
+	
+	if(data.getPreviousRapidRunData() != null){
+		energyCarriers.addAll(data.getPreviousRapidRunData().activeConsumptionEnergyCarriers);
+		if(!hasHadDistrictHeating){
+			hasHadDistrictHeating = data.getPreviousRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW);
+		}
+	}
+	
+	if(energyCarriers.contains(OL_EnergyCarriers.HEAT) && !hasHadDistrictHeating){
+		energyCarriers.remove(OL_EnergyCarriers.HEAT);
+	}
+}
 
+//Order the list to always have the same order
+List<OL_EnergyCarriers> orderedEnergyCarriers = new ArrayList<>();
+for(OL_EnergyCarriers EC : c_defaultOrderEC){
+	if(energyCarriers.contains(EC)){
+		orderedEnergyCarriers.add(EC);
+	}
+}
+
+
+//Convert to the readable combobox options
+String[] comboBoxOptions = new String[orderedEnergyCarriers.size() + 1];
+int i = 0;
+for(OL_EnergyCarriers EC : orderedEnergyCarriers){
+	comboBoxOptions[i] = uI_Results.f_getECName(EC);
+	i++;
+}
+comboBoxOptions[i] = p_totalName;
+
+cb_energyCarrierSelection.setItems(comboBoxOptions);
+
+/*ALCODEEND*/}
+
+double f_storePreviousCustomCO2AdditionsMap()
+{/*ALCODESTART::1774623387767*/
+map_customCO2Additions_previous_kg = map_customCO2Additions_kg;
 /*ALCODEEND*/}
 
