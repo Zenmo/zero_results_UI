@@ -109,8 +109,7 @@ line_export.setVisible(false);
 bar_importEnergyCostsMonthly.removeAll();
 bar_exportEnergyRevenueMonthly.removeAll();
 plot_netEnergyCostsMonthly.removeAll();
-gr_monthlyECCostCharts.setVisible(false);//Needed to refresh chart
-gr_monthlyECCostCharts.setVisible(true);
+gr_monthlyECCostCharts.setVisible(false);
 /*ALCODEEND*/}
 
 double f_setMonthlyChart(double[] monthlyElectricityImportCosts_eur,double[] monthlyElectricityExportRevenue_eur,double[] monthlyNetElectricityCosts_eur)
@@ -148,13 +147,13 @@ bar_exportEnergyRevenueMonthly.setFixedScale(0, maxChartValue_eur);
 plot_netEnergyCostsMonthly.setFixedVerticalScale(-maxChartValue_eur, maxChartValue_eur);
 plot_netEnergyCostsMonthly.setFixedHorizontalScale(0.5, 12.5);
 
-
+gr_monthlyECCostCharts.setVisible(true);
 
 /*ALCODEEND*/}
 
 double[] f_calculateMonthlyEnergyImportCosts_eur(double[] ECBalance_kW,double signalResolution_h,OL_EnergyCarriers EC)
 {/*ALCODESTART::1774021264167*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.map_avgCostOfEnergyCarrier_eurpkWh.get(EC);
@@ -183,7 +182,7 @@ return monthlyECImportCosts_euro;
 
 double[] f_calculateMonthlyEnergyExportRevenue_eur(double[] ECBalance_kW,double signalResolution_h,OL_EnergyCarriers EC)
 {/*ALCODESTART::1774023398668*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.map_avgCostOfEnergyCarrier_eurpkWh.get(EC);
@@ -333,8 +332,9 @@ if(data.getPreviousRapidRunData() != null){
 f_setYearlyKPIs(totalImportCosts_eur, totalExportRevenue_eur, totalNetCosts_eur, previousTotalImportCosts_eur, previousTotalExportRevenue_eur, previousTotalNetCosts_eur);
 
 //Set monthly chart
-f_setMonthlyChart(monthlyImportCosts_eur, monthlyExportRevenue_eur, monthlyNetCosts_eur);
-
+if(uI_Results.energyModel.p_timeParameters.getRunDuration_h() >= 8760){
+	f_setMonthlyChart(monthlyImportCosts_eur, monthlyExportRevenue_eur, monthlyNetCosts_eur);
+}
 
 /*ALCODEEND*/}
 

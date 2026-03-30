@@ -22,16 +22,19 @@ else{
 	}
 }
 
-
+//Set yearly chart
 f_setYearlyKPIs(data, netLoad_kW, previousNetLoad_kW);
 
-f_setMonthlyChart(data, netLoad_kW);
-
+//Set monthly chart
+if(uI_Results.energyModel.p_timeParameters.getRunDuration_h() >= 8760){
+	f_setMonthlyChart(data, netLoad_kW);
+}
 /*ALCODEEND*/}
 
 double f_resetChart()
 {/*ALCODESTART::1772472093328*/
 c_orderedStackCharts.forEach(chart -> chart.removeAll());
+gr_monthlyConnectionCostCharts.setVisible(false);
 
 t_previousPhysicalConnectionCosts.setText("-");
 t_previousDefaultContractCosts.setText("-");
@@ -42,7 +45,7 @@ t_previousTotalConnectionCosts.setText("-");
 
 double[] f_calculateMonthlyPeakElectricityBalance_kW(double[] netLoad_kW)
 {/*ALCODESTART::1773160205274*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double[] monthlyPeakElectricityBalance_kW = new double[12];
@@ -61,7 +64,7 @@ return monthlyPeakElectricityBalance_kW;
 
 double[] f_calculateMonthlyPeakElectricityDelivery_kW(double[] netLoad_kW)
 {/*ALCODESTART::1773160205294*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double[] monthlyPeakElectricityDelivery_kW = new double[12];
@@ -81,7 +84,7 @@ return monthlyPeakElectricityDelivery_kW;
 
 double[] f_calculateMonthlyPeakElectricityFeedin_kW(double[] netLoad_kW)
 {/*ALCODESTART::1773160205312*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double[] monthlyPeakElectricityFeedin_kW = new double[12];
@@ -100,7 +103,7 @@ return monthlyPeakElectricityFeedin_kW;
 
 double[] f_calculateMonthlyTotalElectricityTransport_kWh(double[] netLoad_kW)
 {/*ALCODESTART::1773160925451*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double[] monthlyTotalElectricityTransport_kWh = new double[12];
@@ -119,7 +122,7 @@ return monthlyTotalElectricityTransport_kWh;
 
 double[] f_calculateMonthlyElectricityDelivery_kWh(double[] netLoad_kW)
 {/*ALCODESTART::1773160925453*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double[] monthlyElectricityDelivery_kWh = new double[12];
@@ -139,7 +142,7 @@ return monthlyElectricityDelivery_kWh;
 
 double[] f_calculateMonthlyElectricityFeedin_kWh(double[] netLoad_kW)
 {/*ALCODESTART::1773160925455*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double[] monthlyElectricityFeedin_kWh = new double[12];
@@ -214,6 +217,8 @@ for (int i = 0; i < 12; i++) {
 	c_orderedStackCharts.get(i).setFixedScale(maxChartValue_eur);
 }
 chart_layout.setFixedScale(maxChartValue_eur);
+
+gr_monthlyConnectionCostCharts.setVisible(true);
 /*ALCODEEND*/}
 
 double f_setYearlyKPIs(I_EnergyData data,double[] netLoad_kW,double[] previousNetLoad_kW)

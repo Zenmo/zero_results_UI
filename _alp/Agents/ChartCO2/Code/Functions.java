@@ -55,7 +55,11 @@ t_previousTotalCO2Emission_kg.setText("-");
 
 //Clear monthly chart
 bar_CO2EmissionMonthly.removeAll();
-gr_monthlyCO2EmissionCharts.setVisible(false);//Needed to refresh chart
+gr_monthlyCO2EmissionCharts.setVisible(false);
+
+//Clear pie chart
+pieChart_totalSubdivision.removeAll();
+gr_subChart_totalSubdivision.setVisible(false);
 /*ALCODEEND*/}
 
 double f_setMonthlyChart(double[] monthlyCO2Emission_kg)
@@ -81,7 +85,7 @@ gr_monthlyCO2EmissionCharts.setVisible(true);
 
 double[] f_calculateMonthlyECCO2Emission_kg(double[] ECBalance_kW,double signalResolution_h,OL_EnergyCarriers EC)
 {/*ALCODESTART::1772643915089*/
-int[] startHourPerMonth = startHourPerMonthTemporary;
+double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double energyCarrierCO2Emission_kg_p_kWh = uI_Results.energyModel.avgc_data.map_avgCO2EmissionOfEnergyCarrier_kgpkWh.get(EC);
@@ -107,7 +111,7 @@ for (int i = 0; i < ECBalance_kW.length; i++) {
 return monthlyElectricityImportCO2Emission_kg;
 /*ALCODEEND*/}
 
-double f_setCustomCO2Map(Map<String, Double> customCO2AdditionsMap)
+double f_setCustomCO2Map(Map<String, Pair<Double, Color>> customCO2AdditionsMap)
 {/*ALCODESTART::1774608778627*/
 map_customCO2Additions_kg = customCO2AdditionsMap;
 /*ALCODEEND*/}
@@ -122,6 +126,9 @@ uI_Results.f_setSelectedObjectDisplay(230, 60, true);
 
 //Initialize the EnergyCarrier selection ComboBox
 f_initializeECSelectionComboBox(data);
+
+//Set support chart defauls as monthly
+v_selectedSupportChart = "Monthly";
 
 //Set the actual values of the chart (while trying to maintain the previous selected EC)
 String currentSelectedECReadableName = v_selectedEnergyCarrier.equals(p_totalName) ? p_totalName : uI_Results.f_getECName(OL_EnergyCarriers.valueOf(v_selectedEnergyCarrier));
@@ -157,6 +164,7 @@ else{
 
 
 double[] monthlyCO2Emissions_kg = new double[12];
+Map<OL_EnergyCarriers, double[]> map_monthlyCO2EmissionsPerEC_kg = new HashMap<>();
 
 for(OL_EnergyCarriers EC : selectedECList){
 	//Get the ECBalance values
@@ -182,7 +190,10 @@ for(OL_EnergyCarriers EC : selectedECList){
 	
 	//Calculate values
 	double[] monthlyECCO2Emissions_kg = f_calculateMonthlyECCO2Emission_kg(ECBalance_kW, signalResolution_h, EC);
-
+	
+	//Save totals also per EC
+	map_monthlyCO2EmissionsPerEC_kg.put(EC, monthlyECCO2Emissions_kg);
+	
 	//Add values of this EC to the total
 	for(int i = 0; i < 12; i++){
 		monthlyCO2Emissions_kg[i] += monthlyECCO2Emissions_kg[i];
@@ -195,7 +206,7 @@ double totalCO2Emissions_kg = ZeroMath.arraySum(monthlyCO2Emissions_kg);
 
 //Add custom co2 additions
 if(map_customCO2Additions_kg != null && map_customCO2Additions_kg.size()>0){
-	totalCO2Emissions_kg += sum(map_customCO2Additions_kg.values(), value -> max(0, value.doubleValue()));
+	totalCO2Emissions_kg += sum(map_customCO2Additions_kg.values(), value -> max(0, value.getFirst().doubleValue()));
 }
 
 
@@ -229,7 +240,7 @@ if(data.getPreviousRapidRunData() != null){
 	
 	//Add custom co2 additions previous run to previous total
 	if(map_customCO2Additions_previous_kg != null && map_customCO2Additions_previous_kg.size()>0){
-		previoustotalCO2Emissions_kg += sum(map_customCO2Additions_previous_kg.values(), value -> max(0, value.doubleValue()));
+		previoustotalCO2Emissions_kg += sum(map_customCO2Additions_previous_kg.values(), value -> max(0, value.getFirst().doubleValue()));
 	}
 }
 
@@ -239,8 +250,11 @@ if(data.getPreviousRapidRunData() != null){
 f_setYearlyKPIs(totalCO2Emissions_kg, previoustotalCO2Emissions_kg);
 
 //Set monthly chart
-if(uI_Results.energyModel.p_timeParameters.getRunDuration() >= 8760){
+if(uI_Results.energyModel.p_timeParameters.getRunDuration_h() >= 8760 && v_selectedSupportChart.equals("Monthly")){
 	f_setMonthlyChart(monthlyCO2Emissions_kg);
+}
+else if(v_selectedEnergyCarrier.equals(p_totalName)){
+	f_setPieChart(map_monthlyCO2EmissionsPerEC_kg);
 }
 
 /*ALCODEEND*/}
@@ -293,5 +307,25 @@ cb_energyCarrierSelection.setItems(comboBoxOptions);
 double f_storePreviousCustomCO2AdditionsMap()
 {/*ALCODESTART::1774623387767*/
 map_customCO2Additions_previous_kg = map_customCO2Additions_kg;
+/*ALCODEEND*/}
+
+double f_setPieChart(Map<OL_EnergyCarriers, double[]> map_totalCO2EmissionsPerEC_kg)
+{/*ALCODESTART::1774888957180*/
+for(OL_EnergyCarriers EC : map_totalCO2EmissionsPerEC_kg.keySet()){
+	DataItem CO2Emission_ton = new DataItem();
+	CO2Emission_ton.setValue(ZeroMath.arraySum(map_totalCO2EmissionsPerEC_kg.get(EC))/1000.0);
+	pieChart_totalSubdivision.addDataItem(CO2Emission_ton, uI_Results.f_getECName(EC), uI_Results.cm_consumptionColors.get(EC));
+}
+
+if(map_customCO2Additions_kg != null){
+	for(String customEntry : map_customCO2Additions_kg.keySet()){
+		DataItem CO2Emission_ton = new DataItem();
+		CO2Emission_ton.setValue(map_customCO2Additions_kg.get(customEntry).getFirst()/1000.0);
+		pieChart_totalSubdivision.addDataItem(CO2Emission_ton, customEntry, map_customCO2Additions_kg.get(customEntry).getSecond());
+	}
+}
+
+v_selectedSupportChart = "Pie";
+gr_subChart_totalSubdivision.setVisible(true);
 /*ALCODEEND*/}
 

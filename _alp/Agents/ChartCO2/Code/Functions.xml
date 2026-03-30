@@ -98,7 +98,7 @@
 		<Id>1772643915089</Id>
 		<Name><![CDATA[f_calculateMonthlyECCO2Emission_kg]]></Name>
 		<X>-420</X>
-		<Y>570</Y>
+		<Y>610</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -125,8 +125,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1774608778627</Id>
 		<Name><![CDATA[f_setCustomCO2Map]]></Name>
-		<X>-440</X>
-		<Y>700</Y>
+		<X>-420</X>
+		<Y>750</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -136,7 +136,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Parameter>
 			<Name><![CDATA[customCO2AdditionsMap]]></Name>
-			<Type><![CDATA[Map<String, Double>]]></Type>
+			<Type><![CDATA[Map<String, Pair<Double, Color>>]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
@@ -197,8 +197,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1774623387767</Id>
 		<Name><![CDATA[f_storePreviousCustomCO2AdditionsMap]]></Name>
-		<X>-440</X>
-		<Y>720</Y>
+		<X>-420</X>
+		<Y>770</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -206,6 +206,26 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1774888957180</Id>
+		<Name><![CDATA[f_setPieChart]]></Name>
+		<X>-420</X>
+		<Y>570</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[map_totalCO2EmissionsPerEC_kg]]></Name>
+			<Type><![CDATA[Map<OL_EnergyCarriers, double[]>]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>
