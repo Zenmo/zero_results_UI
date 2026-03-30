@@ -15,15 +15,15 @@
 				<Name><![CDATA[OL_ChartTypes]]></Name>
 				<Option>
 					<Id>1714740441861</Id>
-					<Name><![CDATA[PROFIEL]]></Name>
+					<Name><![CDATA[PROFILES]]></Name>
 				</Option>
 				<Option>
 					<Id>1714740441862</Id>
-					<Name><![CDATA[DIAGRAM]]></Name>
+					<Name><![CDATA[BAR_TOTALS]]></Name>
 				</Option>
 				<Option>
 					<Id>1714740441863</Id>
-					<Name><![CDATA[BELASTING]]></Name>
+					<Name><![CDATA[LOAD_DURATION_CURVES]]></Name>
 				</Option>
 				<Option>
 					<Id>1714740441864</Id>

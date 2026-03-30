@@ -17,16 +17,16 @@ gr_chartCAPEXAndOPEX_presentation.setVisible(false);
 gr_chartTotalCosts_presentation.setVisible(false);
 
 switch (v_selectedChartType) {
-	case PROFIEL:
+	case PROFILES:
 		gr_chartProfielen_presentation.setVisible(true);
 		chartProfielen.f_setCharts();
 		break;
-	case DIAGRAM:
+	case BAR_TOTALS:
 		//gr_chartBalans_presentation.setVisible(true);
 		gr_chartBars_presentation.setVisible(true);
 		chartBars.f_setCharts();
 		break;
-	case BELASTING:
+	case LOAD_DURATION_CURVES:
 		gr_chartNetbelasting_presentation.setVisible(true);
 		chartNetbelasting.f_setCharts();
 		break;
@@ -285,45 +285,6 @@ if(location_y != null){
 gr_chartGespreksLeidraad_presentation.setVisible(visible);
 /*ALCODEEND*/}
 
-List<OL_ChartTypes> f_getSelectedChartTypes_Energy()
-{/*ALCODESTART::1732015499114*/
-////TEMPORARY FUNCTION TO LET ALL CURRENT PROJECTS FUNCTION STILL!
-List<OL_ChartTypes> loadedChartTypes_Energy = new ArrayList<>();
-loadedChartTypes_Energy.add(OL_ChartTypes.PROFIEL);
-loadedChartTypes_Energy.add(OL_ChartTypes.DIAGRAM);
-loadedChartTypes_Energy.add(OL_ChartTypes.BELASTING);
-loadedChartTypes_Energy.add(OL_ChartTypes.SANKEY);
-
-//Aditional charts selected:
-switch(v_selectedRadioButtonSetup){
-	case DEFAULT_AND_GESPREKSLEIDRAAD:
-		loadedChartTypes_Energy.add(OL_ChartTypes.GESPREKSLEIDRAAD);
-		break;
-	case DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN:
-		loadedChartTypes_Energy.add(OL_ChartTypes.GESPREKSLEIDRAAD_BEDRIJVEN);
-		break;
-	case DEFAULT_AND_BATTERY:	
-		loadedChartTypes_Energy.add(OL_ChartTypes.BATTERY);
-		break;
-	case DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN:	
-		loadedChartTypes_Energy.add(OL_ChartTypes.BATTERY);
-		loadedChartTypes_Energy.add(OL_ChartTypes.GESPREKSLEIDRAAD_BEDRIJVEN);
-		break;
-	case DEFAULT_AND_BATTERY_AND_ECONOMIC:	
-		loadedChartTypes_Energy.add(OL_ChartTypes.BATTERY);
-		break;
-	case DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN_AND_GTO:	
-		loadedChartTypes_Energy.add(OL_ChartTypes.GESPREKSLEIDRAAD_BEDRIJVEN);
-		loadedChartTypes_Energy.add(OL_ChartTypes.GTO);
-		break;
-	case OFF:
-		loadedChartTypes_Energy.clear();
-		break;
-}
-
-return loadedChartTypes_Energy;
-/*ALCODEEND*/}
-
 String f_getECName(OL_EnergyCarriers energyCarrier)
 {/*ALCODESTART::1731578318216*/
 switch (energyCarrier) {
@@ -393,19 +354,9 @@ double f_setChartsBatteries()
 chartBatteries.f_setChartsBatteries();
 /*ALCODEEND*/}
 
-double f_initializeResultsUI()
+double f_initializeResultsUI(List<OL_ChartTypes> selectedChartTypes_Energy,List<OL_ChartTypes> selectedChartTypes_Economic)
 {/*ALCODESTART::1739364390433*/
 f_updateResultsUI(energyModel);
-
-//Get the selected radiobutton setup Energy(Temporary);
-List<OL_ChartTypes> selectedChartTypes_Energy = f_getSelectedChartTypes_Energy();
-
-//Get the selected radiobutton setup Economic(Temporary);
-List<OL_ChartTypes> selectedChartTypes_Economic = new ArrayList<>();
-selectedChartTypes_Economic.add(OL_ChartTypes.ENERGY_COSTS);
-selectedChartTypes_Economic.add(OL_ChartTypes.CONNECTION_COSTS);
-selectedChartTypes_Economic.add(OL_ChartTypes.CAPEX_AND_OPEX);
-selectedChartTypes_Economic.add(OL_ChartTypes.TOTAL_COSTS);
 
 //Set the selected radiobutton setup
 f_initializeResultsUIMainRB(selectedChartTypes_Energy, selectedChartTypes_Economic);
@@ -784,21 +735,26 @@ double f_initializeChartSelectionRB_Energy(List<OL_ChartTypes> selectedCharts_En
 //Set active map overlay types if they are set in the project settings
 if(selectedCharts_Energy != null && selectedCharts_Energy.size() > 0){
 	c_loadedChartTypes_Energy = new ArrayList<OL_ChartTypes>(selectedCharts_Energy);
-	if(c_loadedChartTypes_Energy.contains(OL_ChartTypes.PROFIEL)){
-		c_loadedChartTypes_Energy.remove(OL_ChartTypes.PROFIEL);
+	if(c_loadedChartTypes_Energy.contains(OL_ChartTypes.PROFILES)){
+		c_loadedChartTypes_Energy.remove(OL_ChartTypes.PROFILES);
 	}
-	c_loadedChartTypes_Energy.add(0, OL_ChartTypes.PROFIEL); // Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
+	c_loadedChartTypes_Energy.add(0, OL_ChartTypes.PROFILES); // Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
 }
 else{//No chart types loaded but profiles is required.
-	c_loadedChartTypes_Energy.add(OL_ChartTypes.PROFIEL); // Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
+	c_loadedChartTypes_Energy = new ArrayList<OL_ChartTypes>();
+	c_loadedChartTypes_Energy.add(OL_ChartTypes.PROFILES); // Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
 }
 
+//Never allow more than 6 chart types (for now) (does not fit in rb location) -> If more than 6, remove final option(s)
+while(c_loadedChartTypes_Energy.size()>6){
+	c_loadedChartTypes_Energy.remove(c_loadedChartTypes_Energy.get(6));
+}
 
 //Adjust the visualisation of the radiobuttons
 Presentable presentable = gr_mainRadioButtons.getPresentable();
 boolean ispublic = true;
 double x = 300;
-double y = c_loadedChartTypes_Energy.size() > 4 ? -140 : -140 - (c_loadedChartTypes_Economic.size() - 4) * 18;
+double y = -147 + (6 - c_loadedChartTypes_Energy.size()) * 11;
 double width = 130;
 double height = 0;//Not needed, automatically adjust by adding options
 Color textColor = Color.BLACK;
@@ -811,13 +767,13 @@ boolean vertical = true;
 List<String> RadioButtonOptions_list = new ArrayList<String>();
 for(OL_ChartTypes chartType : c_loadedChartTypes_Energy){
 	switch(chartType){
-		case PROFIEL:
+		case PROFILES:
 			RadioButtonOptions_list.add("Profielen");
 			break;
-		case DIAGRAM:
+		case BAR_TOTALS:
 			RadioButtonOptions_list.add("Opwek/Verbruik diagram");
 			break;
-		case BELASTING:
+		case LOAD_DURATION_CURVES:
 			RadioButtonOptions_list.add("Netbelasting");
 			break;
 		case SANKEY:
@@ -839,7 +795,7 @@ for(OL_ChartTypes chartType : c_loadedChartTypes_Energy){
 			RadioButtonOptions_list.add("CO2 uitstoot");
 			break;
 		default:
-						throw new RuntimeException("chartType '" + chartType + "' is not supported for the Energy options.");
+			throw new RuntimeException("chartType '" + chartType + "' is not supported for the Energy options.");
 	}
 } 
 
@@ -883,7 +839,8 @@ else{//No chart types loaded in: return.
 Presentable presentable = gr_mainRadioButtons.getPresentable();
 boolean ispublic = true;
 double x = 300;
-double y = c_loadedChartTypes_Economic.size() > 4 ? -140 : -140 - (c_loadedChartTypes_Economic.size() - 4) * 18;
+double y = -147 + (6 - c_loadedChartTypes_Economic.size()) * 11;
+traceln("y: " + y);
 double width = 130;
 double height = 0;//Not needed, automatically adjust by adding options
 Color textColor = Color.BLACK;
@@ -936,7 +893,7 @@ RadioButtonOptions_list.add("Energie");
 f_initializeChartSelectionRB_Energy(selectedCharts_Energy);
 
 //Add economic rb option and create the economic charts rb if selected.
-if(b_activateEconomicCharts && selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
+if(selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
 	f_initializeChartSelectionRB_Economic(selectedCharts_Economic);
 	RadioButtonOptions_list.add("Financieel");
 	rb_chartType_Economic.setVisible(false);

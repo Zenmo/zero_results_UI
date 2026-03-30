@@ -22,7 +22,7 @@
 		<Id>1725370602118</Id>
 		<Name><![CDATA[f_setResultsUIHeader]]></Name>
 		<X>1550</X>
-		<Y>230</Y>
+		<Y>70</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -50,7 +50,7 @@
 		<Id>1725371353897</Id>
 		<Name><![CDATA[f_setChartSankey_Presentation]]></Name>
 		<X>1570</X>
-		<Y>340</Y>
+		<Y>180</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -78,7 +78,7 @@
 		<Id>1725371355774</Id>
 		<Name><![CDATA[f_setChartGridLoad_Presentation]]></Name>
 		<X>1570</X>
-		<Y>320</Y>
+		<Y>160</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -106,7 +106,7 @@
 		<Id>1725371358501</Id>
 		<Name><![CDATA[f_setChartBalance_Presentation]]></Name>
 		<X>1570</X>
-		<Y>300</Y>
+		<Y>140</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -134,7 +134,7 @@
 		<Id>1725371361557</Id>
 		<Name><![CDATA[f_setChartProfiles_Presentation]]></Name>
 		<X>1570</X>
-		<Y>280</Y>
+		<Y>120</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -178,7 +178,7 @@
 		<Id>1725374888930</Id>
 		<Name><![CDATA[f_styleAllCharts]]></Name>
 		<X>1560</X>
-		<Y>740</Y>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -210,7 +210,7 @@
 		<Id>1725375062400</Id>
 		<Name><![CDATA[f_styleResultsUIHeader]]></Name>
 		<X>1560</X>
-		<Y>720</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -242,7 +242,7 @@
 		<Id>1727084763017</Id>
 		<Name><![CDATA[f_setChartSummary_Presentation]]></Name>
 		<X>1570</X>
-		<Y>360</Y>
+		<Y>200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -270,7 +270,7 @@
 		<Id>1726828282517</Id>
 		<Name><![CDATA[f_setChartKPISummary_Presentation]]></Name>
 		<X>1570</X>
-		<Y>400</Y>
+		<Y>240</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -314,7 +314,7 @@
 		<Id>1729004655678</Id>
 		<Name><![CDATA[f_setAllChart_Presentations]]></Name>
 		<X>1550</X>
-		<Y>260</Y>
+		<Y>100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -342,7 +342,7 @@
 		<Id>1730396435330</Id>
 		<Name><![CDATA[f_setChartGSLD_Presentation]]></Name>
 		<X>1570</X>
-		<Y>380</Y>
+		<Y>220</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -366,26 +366,10 @@
 	</Function>
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-		<ReturnType>List&lt;OL_ChartTypes&gt;</ReturnType>
-		<Id>1732015499114</Id>
-		<Name><![CDATA[f_getSelectedChartTypes_Energy]]></Name>
-		<X>1550</X>
-		<Y>170</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>String</ReturnType>
 		<Id>1731578318216</Id>
 		<Name><![CDATA[f_getECName]]></Name>
-		<X>550</X>
+		<X>540</X>
 		<Y>640</Y>
 		<Label>
 			<X>10</X>
@@ -406,7 +390,7 @@
 		<Id>1732117856053</Id>
 		<Name><![CDATA[f_setChartGelijktijdigheid_Presentation]]></Name>
 		<X>1570</X>
-		<Y>460</Y>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -434,7 +418,7 @@
 		<Id>1737545003506</Id>
 		<Name><![CDATA[f_setChartBatteries_presentation]]></Name>
 		<X>1570</X>
-		<Y>440</Y>
+		<Y>280</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -477,7 +461,7 @@
 		<ReturnType>double</ReturnType>
 		<Id>1739364390433</Id>
 		<Name><![CDATA[f_initializeResultsUI]]></Name>
-		<X>1290</X>
+		<X>1150</X>
 		<Y>70</Y>
 		<Label>
 			<X>10</X>
@@ -486,6 +470,14 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[selectedChartTypes_Energy]]></Name>
+			<Type><![CDATA[List<OL_ChartTypes>]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[selectedChartTypes_Economic]]></Name>
+			<Type><![CDATA[List<OL_ChartTypes>]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 	<Function AccessType="public" StaticFunction="false">
@@ -494,7 +486,7 @@
 		<Id>1739364390441</Id>
 		<Name><![CDATA[f_updateUIresultsGridNode]]></Name>
 		<X>1150</X>
-		<Y>190</Y>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -533,7 +525,7 @@
 		<ReturnType>DataSet</ReturnType>
 		<Id>1740750008518</Id>
 		<Name><![CDATA[f_createFlatDataset]]></Name>
-		<X>530</X>
+		<X>540</X>
 		<Y>930</Y>
 		<Label>
 			<X>10</X>
@@ -562,7 +554,7 @@
 		<Id>1741337780594</Id>
 		<Name><![CDATA[f_updateResultsUI]]></Name>
 		<X>1150</X>
-		<Y>170</Y>
+		<Y>370</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -602,7 +594,7 @@
 		<Id>1742218383411</Id>
 		<Name><![CDATA[f_setCB_KPISummary_Presentation]]></Name>
 		<X>1560</X>
-		<Y>770</Y>
+		<Y>550</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -630,7 +622,7 @@
 		<Id>1742221943777</Id>
 		<Name><![CDATA[f_setSelectedObjectDisplay]]></Name>
 		<X>1560</X>
-		<Y>810</Y>
+		<Y>590</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -657,8 +649,8 @@
 		<ReturnType>DataSet</ReturnType>
 		<Id>1743689452038</Id>
 		<Name><![CDATA[f_createNewDataSetDividedByValue]]></Name>
-		<X>530</X>
-		<Y>960</Y>
+		<X>540</X>
+		<Y>950</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -714,7 +706,7 @@
 		<Id>1755704458936</Id>
 		<Name><![CDATA[f_setChartEnergyCosts_presentation]]></Name>
 		<X>1570</X>
-		<Y>550</Y>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -742,7 +734,7 @@
 		<Id>1759140579703</Id>
 		<Name><![CDATA[f_setChartGTO_presentation]]></Name>
 		<X>1570</X>
-		<Y>480</Y>
+		<Y>320</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -770,7 +762,7 @@
 		<Id>1765295944334</Id>
 		<Name><![CDATA[f_setChartBars_Presentation]]></Name>
 		<X>1570</X>
-		<Y>500</Y>
+		<Y>340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -797,8 +789,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772200290396</Id>
 		<Name><![CDATA[f_initializeChartSelectionRB_Energy]]></Name>
-		<X>1290</X>
-		<Y>-170</Y>
+		<X>1180</X>
+		<Y>130</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -817,8 +809,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772200290406</Id>
 		<Name><![CDATA[f_setChart_Energy]]></Name>
-		<X>1290</X>
-		<Y>-90</Y>
+		<X>1190</X>
+		<Y>190</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -833,8 +825,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772200450868</Id>
 		<Name><![CDATA[f_initializeChartSelectionRB_Economic]]></Name>
-		<X>1600</X>
-		<Y>-170</Y>
+		<X>1180</X>
+		<Y>210</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -853,8 +845,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772200556889</Id>
 		<Name><![CDATA[f_initializeResultsUIMainRB]]></Name>
-		<X>1450</X>
-		<Y>-230</Y>
+		<X>1160</X>
+		<Y>90</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -877,8 +869,8 @@
 		<ReturnType>double</ReturnType>
 		<Id>1772203048742</Id>
 		<Name><![CDATA[f_setChart_Economic]]></Name>
-		<X>1600</X>
-		<Y>-90</Y>
+		<X>1190</X>
+		<Y>270</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -894,7 +886,7 @@
 		<Id>1772472237697</Id>
 		<Name><![CDATA[f_setChartCO2_presentation]]></Name>
 		<X>1570</X>
-		<Y>520</Y>
+		<Y>360</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -922,7 +914,7 @@
 		<Id>1772472253934</Id>
 		<Name><![CDATA[f_setChartConnectionCosts_presentation]]></Name>
 		<X>1570</X>
-		<Y>570</Y>
+		<Y>410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -950,7 +942,7 @@
 		<Id>1772472255353</Id>
 		<Name><![CDATA[f_setChartCAPEXAndOPEX_presentation]]></Name>
 		<X>1570</X>
-		<Y>590</Y>
+		<Y>430</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -978,7 +970,7 @@
 		<Id>1772472257080</Id>
 		<Name><![CDATA[f_setChartTotalCosts_presentation]]></Name>
 		<X>1570</X>
-		<Y>610</Y>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1005,7 +997,7 @@
 		<ReturnType>String</ReturnType>
 		<Id>1774279163769</Id>
 		<Name><![CDATA[f_getAssetName]]></Name>
-		<X>550</X>
+		<X>540</X>
 		<Y>620</Y>
 		<Label>
 			<X>10</X>

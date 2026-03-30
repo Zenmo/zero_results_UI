@@ -239,8 +239,9 @@ if(data.getPreviousRapidRunData() != null){
 f_setYearlyKPIs(totalCO2Emissions_kg, previoustotalCO2Emissions_kg);
 
 //Set monthly chart
-f_setMonthlyChart(monthlyCO2Emissions_kg);
-
+if(uI_Results.energyModel.p_timeParameters.getRunDuration() >= 8760){
+	f_setMonthlyChart(monthlyCO2Emissions_kg);
+}
 
 /*ALCODEEND*/}
 
