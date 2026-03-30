@@ -293,7 +293,6 @@ loadedChartTypes_Energy.add(OL_ChartTypes.PROFIEL);
 loadedChartTypes_Energy.add(OL_ChartTypes.DIAGRAM);
 loadedChartTypes_Energy.add(OL_ChartTypes.BELASTING);
 loadedChartTypes_Energy.add(OL_ChartTypes.SANKEY);
-loadedChartTypes_Energy.add(OL_ChartTypes.CO2);
 
 //Aditional charts selected:
 switch(v_selectedRadioButtonSetup){
@@ -937,7 +936,7 @@ RadioButtonOptions_list.add("Energie");
 f_initializeChartSelectionRB_Energy(selectedCharts_Energy);
 
 //Add economic rb option and create the economic charts rb if selected.
-if(selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
+if(b_activateEconomicCharts && selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
 	f_initializeChartSelectionRB_Economic(selectedCharts_Economic);
 	RadioButtonOptions_list.add("Financieel");
 	rb_chartType_Economic.setVisible(false);
