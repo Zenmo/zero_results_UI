@@ -155,7 +155,7 @@ if(v_selectedEnergyCarrier.equals(p_totalName)){
 		selectedECList = new ArrayList<>(List.of(uI_Results.v_gridNode.p_energyCarrier));
 	}
 	else{
-		selectedECList = new ArrayList<>(data.getRapidRunData().activeEnergyCarriers);
+		selectedECList = new ArrayList<>(data.getRapidRunData().activeConsumptionEnergyCarriers);
 	}
 }
 else{

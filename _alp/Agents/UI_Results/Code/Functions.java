@@ -840,7 +840,6 @@ Presentable presentable = gr_mainRadioButtons.getPresentable();
 boolean ispublic = true;
 double x = 300;
 double y = -147 + (6 - c_loadedChartTypes_Economic.size()) * 11;
-traceln("y: " + y);
 double width = 130;
 double height = 0;//Not needed, automatically adjust by adding options
 Color textColor = Color.BLACK;
