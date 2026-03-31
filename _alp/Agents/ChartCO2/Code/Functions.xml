@@ -226,6 +226,10 @@
 			<Name><![CDATA[map_totalCO2EmissionsPerEC_kg]]></Name>
 			<Type><![CDATA[Map<OL_EnergyCarriers, double[]>]]></Type>
 		</Parameter>
+		<Parameter>
+			<Name><![CDATA[data]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

@@ -205,7 +205,7 @@ double totalCO2Emissions_kg = ZeroMath.arraySum(monthlyCO2Emissions_kg);
 
 
 //Add custom co2 additions
-if(map_customCO2Additions_kg != null && map_customCO2Additions_kg.size()>0){
+if(map_customCO2Additions_kg != null && map_customCO2Additions_kg.size()>0 && data instanceof EnergyModel){
 	totalCO2Emissions_kg += sum(map_customCO2Additions_kg.values(), value -> max(0, value.getFirst().doubleValue()));
 }
 
@@ -239,22 +239,20 @@ if(data.getPreviousRapidRunData() != null){
 	}
 	
 	//Add custom co2 additions previous run to previous total
-	if(map_customCO2Additions_previous_kg != null && map_customCO2Additions_previous_kg.size()>0){
+	if(map_customCO2Additions_previous_kg != null && map_customCO2Additions_previous_kg.size()>0 && data instanceof EnergyModel){
 		previoustotalCO2Emissions_kg += sum(map_customCO2Additions_previous_kg.values(), value -> max(0, value.getFirst().doubleValue()));
 	}
 }
 
-
-
 //Set yearly kpis
 f_setYearlyKPIs(totalCO2Emissions_kg, previoustotalCO2Emissions_kg);
 
-//Set monthly chart
+//Set sub chart
 if(uI_Results.energyModel.p_timeParameters.getRunDuration_h() >= 8760 && v_selectedSupportChart.equals("Monthly")){
 	f_setMonthlyChart(monthlyCO2Emissions_kg);
 }
 else if(v_selectedEnergyCarrier.equals(p_totalName)){
-	f_setPieChart(map_monthlyCO2EmissionsPerEC_kg);
+	f_setPieChart(map_monthlyCO2EmissionsPerEC_kg, data);
 }
 
 /*ALCODEEND*/}
@@ -309,7 +307,7 @@ double f_storePreviousCustomCO2AdditionsMap()
 map_customCO2Additions_previous_kg = map_customCO2Additions_kg;
 /*ALCODEEND*/}
 
-double f_setPieChart(Map<OL_EnergyCarriers, double[]> map_totalCO2EmissionsPerEC_kg)
+double f_setPieChart(Map<OL_EnergyCarriers, double[]> map_totalCO2EmissionsPerEC_kg,I_EnergyData data)
 {/*ALCODESTART::1774888957180*/
 for(OL_EnergyCarriers EC : map_totalCO2EmissionsPerEC_kg.keySet()){
 	DataItem CO2Emission_ton = new DataItem();
@@ -317,7 +315,7 @@ for(OL_EnergyCarriers EC : map_totalCO2EmissionsPerEC_kg.keySet()){
 	pieChart_totalSubdivision.addDataItem(CO2Emission_ton, uI_Results.f_getECName(EC), uI_Results.cm_consumptionColors.get(EC));
 }
 
-if(map_customCO2Additions_kg != null){
+if(map_customCO2Additions_kg != null && data instanceof EnergyModel){
 	for(String customEntry : map_customCO2Additions_kg.keySet()){
 		DataItem CO2Emission_ton = new DataItem();
 		CO2Emission_ton.setValue(map_customCO2Additions_kg.get(customEntry).getFirst()/1000.0);
