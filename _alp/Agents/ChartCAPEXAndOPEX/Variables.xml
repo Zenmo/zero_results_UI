@@ -50,6 +50,48 @@
 			</ParameterEditor>
 		</Properties>
 	</Variable>
+	<Variable Class="Parameter">
+		<Id>1775483709934</Id>
+		<Name><![CDATA[map_assetToCheckBox]]></Name>
+		<X>620</X>
+		<Y>440</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+			<Type><![CDATA[Map<OL_EnergyAssetType, ShapeCheckBox>]]></Type>
+			<UnitType>NONE</UnitType>
+			<SdArray>false</SdArray>
+			<DefaultValue Class="CodeValue">
+				<Code><![CDATA[Map.ofEntries(
+Map.entry(OL_EnergyAssetType.STORAGE_ELECTRIC, cb_includeAssetBattery),
+Map.entry(OL_EnergyAssetType.PHOTOVOLTAIC, cb_includeAssetPV),
+Map.entry(OL_EnergyAssetType.HEAT_PUMP_AIR, cb_includeAssetHeatpump),
+Map.entry(OL_EnergyAssetType.PHOTOTHERMAL, cb_includeAssetPT),
+Map.entry(OL_EnergyAssetType.WINDMILL, cb_includeAssetWindTurbine),
+Map.entry(OL_EnergyAssetType.ELECTROLYSER, cb_includeAssetElectrolyser),
+Map.entry(OL_EnergyAssetType.DIESEL_GENERATOR, cb_includeAssetDieselGenerator),
+Map.entry(OL_EnergyAssetType.METHANE_GENERATOR, cb_includeAssetGasGenerator),
+Map.entry(OL_EnergyAssetType.GAS_BURNER, cb_includeAssetGasburner),
+Map.entry(OL_EnergyAssetType.ELECTRIC_VEHICLE, cb_includeAssetECar),
+Map.entry(OL_EnergyAssetType.ELECTRIC_VAN, cb_includeAssetEVan),
+Map.entry(OL_EnergyAssetType.ELECTRIC_TRUCK, cb_includeAssetETruck),
+Map.entry(OL_EnergyAssetType.HYDROGEN_TRUCK, cb_includeAssetH2Truck)
+)]]></Code>
+			</DefaultValue>
+			<ParameterEditor>
+				<Id>1775483709932</Id>
+				<EditorContolType>TEXT_BOX</EditorContolType>
+				<MinSliderValue>0</MinSliderValue>
+				<MaxSliderValue>100</MaxSliderValue>
+				<DelimeterType>NO_DELIMETER</DelimeterType>
+			</ParameterEditor>
+		</Properties>
+	</Variable>
 	<Variable Class="CollectionVariable">
 		<Id>1774273657533</Id>
 		<Name><![CDATA[c_includeAssetSelection]]></Name>
@@ -77,10 +119,10 @@ OL_EnergyAssetType.ELECTROLYSER,
 OL_EnergyAssetType.DIESEL_GENERATOR,
 OL_EnergyAssetType.METHANE_GENERATOR,
 OL_EnergyAssetType.GAS_BURNER,
-//OL_EnergyAssetType.ELECTRIC_VEHICLE,
-//OL_EnergyAssetType.ELECTRIC_VAN,
-//OL_EnergyAssetType.ELECTRIC_TRUCK,
-//OL_EnergyAssetType.HYDROGEN_TRUCK
+OL_EnergyAssetType.ELECTRIC_VEHICLE,
+OL_EnergyAssetType.ELECTRIC_VAN,
+OL_EnergyAssetType.ELECTRIC_TRUCK,
+OL_EnergyAssetType.HYDROGEN_TRUCK
 }]]></Code>
 			</CollectionInitializer>
 		</Properties>

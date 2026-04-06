@@ -56,7 +56,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1774277754383</Id>
-		<Name><![CDATA[f_initializeAssetSelectionComboBox]]></Name>
+		<Name><![CDATA[f_initializeAssetSelectionButtons]]></Name>
 		<X>-330</X>
 		<Y>340</Y>
 		<Label>

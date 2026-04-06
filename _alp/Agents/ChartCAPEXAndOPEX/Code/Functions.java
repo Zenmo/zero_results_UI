@@ -10,7 +10,7 @@ f_resetChart();
 
 
 ////Get the netload values
-f_initializeAssetSelectionComboBox(data);
+f_initializeAssetSelectionButtons(data);
 
 //Set the actual values of the chart (while trying to maintain the previous selected EC)
 String currentSelectedAssetReadableName = v_selectedAsset.equals(p_totalName) ? p_totalName : uI_Results.f_getAssetName(OL_EnergyAssetType.valueOf(v_selectedAsset));
@@ -25,8 +25,6 @@ else{
 
 double f_resetChart()
 {/*ALCODESTART::1772472111433*/
-gr_includeAssetSelection.setVisible(false);
-
 //Previous values
 t_previousEstimatedLifeTime.setText("-");
 t_previousCAPEXTotal.setText("-");
@@ -58,11 +56,13 @@ for(OL_EnergyAssetType assetType : selectedAssetList){
 	double assetSizeDependentCAPEX_eurpkW = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetSizeDependentCAPEX_eurpkW(assetType);
 	double assetSizeDependentOPEX_eurpkWpyr = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetSizeDependentOPEX_eurpkWpyr(assetType);
 
-	//Get Current asset capacity
+	//Get Current number of assets and their total capacity
+	double numberOfAssets = rapidRunData.assetsMetaData.getNumberOfActiveAssets(assetType);
 	double assetCapacity_kW = rapidRunData.assetsMetaData.getActiveAssetCapacity_kW(assetType);
+	
 	if(assetCapacity_kW > 0){
-		CAPEX_eurpyr += (assetCapacity_kW * assetSizeDependentCAPEX_eurpkW + assetBaseCAPEX_eur)/ assetExpectedLifeTime_yr;
-		OPEX_eurpyr += assetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr + assetBaseOPEX_eurpyr;
+		CAPEX_eurpyr += (assetCapacity_kW * assetSizeDependentCAPEX_eurpkW + numberOfAssets*assetBaseCAPEX_eur)/ assetExpectedLifeTime_yr;
+		OPEX_eurpyr += assetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr + numberOfAssets*assetBaseOPEX_eurpyr;
 	}
 }
 
@@ -70,7 +70,7 @@ for(OL_EnergyAssetType assetType : selectedAssetList){
 return CAPEX_eurpyr + OPEX_eurpyr;
 /*ALCODEEND*/}
 
-double f_initializeAssetSelectionComboBox(I_EnergyData data)
+double f_initializeAssetSelectionButtons(I_EnergyData data)
 {/*ALCODESTART::1774277754383*/
 //Get energy carrier options (also previous run EC that are not in current).
 Set<OL_EnergyAssetType> assets = new HashSet<>();
@@ -80,9 +80,22 @@ if(data.getPreviousRapidRunData() != null){
 	assets.addAll(data.getPreviousRapidRunData().assetsMetaData.getActiveAssets());
 }
 
-assets.retainAll(c_includeAssetSelection); //Only keep 'included' asset types
+//Activate the check box buttons that are relevant 
+for(OL_EnergyAssetType EAType : c_includeAssetSelection){ // Set all current 'includedAssetSelection' to true, without calling action.
+	map_assetToCheckBox.get(EAType).setSelected(true, false);	
+}
+//EA type is not present: disable and deselect the checkbox (without calling action).
+for(OL_EnergyAssetType EAType : c_defaultOrderAssets){
+	if(!assets.contains(EAType)){ 
+		map_assetToCheckBox.get(EAType).setEnabled(false);
+		map_assetToCheckBox.get(EAType).setSelected(false, false);	
+	}
+}
 
-//Order the list to always have the same order
+//Only keep 'included' asset types for the drop down menu
+assets.retainAll(c_includeAssetSelection); 
+
+//Order the list to always have the same order in the drop down menu
 List<OL_EnergyAssetType> orderedAssets = new ArrayList<>();
 for(OL_EnergyAssetType EAType : c_defaultOrderAssets){
 	if(assets.contains(EAType)){
@@ -137,12 +150,15 @@ for(OL_EnergyAssetType assetType : selectedAssetList){
 	double assetSizeDependentCAPEX_eurpkW = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetSizeDependentCAPEX_eurpkW(assetType);
 	double assetSizeDependentOPEX_eurpkWpyr = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetSizeDependentOPEX_eurpkWpyr(assetType);
 
-	//Get Current asset capacity
+	//Get Current number of assets and their total capacity
+	double numberOfAssets = data.getRapidRunData().assetsMetaData.getNumberOfActiveAssets(assetType);
 	double assetCapacity_kW = data.getRapidRunData().assetsMetaData.getActiveAssetCapacity_kW(assetType);
+
+	//Calculate the values
 	if(assetCapacity_kW > 0){
 		lifeTime_yr = assetExpectedLifeTime_yr;
-		CAPEX_eurpyr += (assetCapacity_kW * assetSizeDependentCAPEX_eurpkW +  assetBaseCAPEX_eur)/ assetExpectedLifeTime_yr;
-		OPEX_eurpyr += assetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr  +  assetBaseOPEX_eurpyr;
+		CAPEX_eurpyr += (assetCapacity_kW * assetSizeDependentCAPEX_eurpkW +  numberOfAssets*assetBaseCAPEX_eur)/ assetExpectedLifeTime_yr;
+		OPEX_eurpyr += assetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr  +  numberOfAssets*assetBaseOPEX_eurpyr;
 	}
 	
 	//Get previous values, if previous rapid is available
@@ -152,12 +168,14 @@ for(OL_EnergyAssetType assetType : selectedAssetList){
 			previousCAPEX_eurpyr = 0.0;
 			previousOPEX_eurpyr = 0.0;
 		}
-		//Get previous asset capacity		
+		//Get previous number of assets and their total capacity	
+		double previousNumberOfAssets = data.getPreviousRapidRunData().assetsMetaData.getNumberOfActiveAssets(assetType);
 		double previousAssetCapacity_kW = data.getPreviousRapidRunData().assetsMetaData.getActiveAssetCapacity_kW(assetType);
+		
 		if(previousAssetCapacity_kW > 0){
 			previousLifeTime_yr = assetExpectedLifeTime_yr;
-			previousCAPEX_eurpyr += (previousAssetCapacity_kW * assetSizeDependentCAPEX_eurpkW +  assetBaseCAPEX_eur) / assetExpectedLifeTime_yr;
-			previousOPEX_eurpyr += previousAssetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr +  assetBaseOPEX_eurpyr;
+			previousCAPEX_eurpyr += (previousAssetCapacity_kW * assetSizeDependentCAPEX_eurpkW +  previousNumberOfAssets*assetBaseCAPEX_eur) / assetExpectedLifeTime_yr;
+			previousOPEX_eurpyr += previousAssetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr +  previousNumberOfAssets*assetBaseOPEX_eurpyr;
 		}
 	}
 }

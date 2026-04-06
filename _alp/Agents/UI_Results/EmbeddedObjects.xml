@@ -665,6 +665,9 @@
 			<Parameter>
 				<Name><![CDATA[p_totalName]]></Name>
 			</Parameter>
+			<Parameter>
+				<Name><![CDATA[map_assetToCheckBox]]></Name>
+			</Parameter>
 		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
