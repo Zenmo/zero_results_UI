@@ -156,9 +156,9 @@ double[] f_calculateMonthlyEnergyImportCosts_eur(double[] ECBalance_kW,double si
 double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
-double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.map_avgCostOfEnergyCarrier_eurpkWh.get(EC);
-double energyTaxes_eur_p_kwh = uI_Results.energyModel.avgc_data.economicAVGC.map_energyTaxesECImport_eurpkWh.get(EC);
-double VAT_fr = uI_Results.energyModel.avgc_data.economicAVGC.VAT_energy_fr;
+double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.getAvgCostOfEnergyCarrier_eurpkWh(EC);
+double energyTaxes_eur_p_kwh = uI_Results.energyModel.avgc_data.economicAVGC.getEnergyTaxesECImport_eurpkWh(EC, ZeroMath.arraySumPos(ECBalance_kW.clone())*signalResolution_h);
+double VAT_fr = uI_Results.energyModel.avgc_data.economicAVGC.getVAT_energy_fr();
 
 double[] monthlyECImportCosts_euro = new double[12];
 
@@ -185,7 +185,7 @@ double[] f_calculateMonthlyEnergyExportRevenue_eur(double[] ECBalance_kW,double 
 double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
-double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.map_avgCostOfEnergyCarrier_eurpkWh.get(EC);
+double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.getAvgCostOfEnergyCarrier_eurpkWh(EC);
 
 double[] monthlyECExportCosts_euro = new double[12];
 

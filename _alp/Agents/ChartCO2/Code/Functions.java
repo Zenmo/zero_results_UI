@@ -88,7 +88,7 @@ double[] f_calculateMonthlyECCO2Emission_kg(double[] ECBalance_kW,double signalR
 double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
-double energyCarrierCO2Emission_kg_p_kWh = uI_Results.energyModel.avgc_data.map_avgCO2EmissionOfEnergyCarrier_kgpkWh.get(EC);
+double energyCarrierCO2Emission_kg_p_kWh = uI_Results.energyModel.avgc_data.map_avgLifeCycleCO2EmissionOfEnergyCarrier_kgpkWh.get(EC);
 
 double[] monthlyElectricityImportCO2Emission_kg = new double[12];
 

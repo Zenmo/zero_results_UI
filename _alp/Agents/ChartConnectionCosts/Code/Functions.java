@@ -164,7 +164,7 @@ double f_setMonthlyChart(I_EnergyData data,double[] netLoad_kW)
 DataSet netCosts_eur = new DataSet(12);
 
 double maxChartValue_eur = 0;
-I_GridOperatorTariffs gridOperatorTariffs = uI_Results.energyModel.avgc_data.economicAVGC.gridOperatorTariffs;
+I_GridOperatorTariffs gridOperatorTariffs = uI_Results.energyModel.avgc_data.economicAVGC.getGridOperatorTariffs();
 
 //Get monthly values
 double monthlyPhysicalConnectionCosts_eur = f_calculatePhysicalConnectionCosts_eurpyr(data.getRapidRunData().connectionMetaData)/12.0;
@@ -305,24 +305,24 @@ else{ // No previous rapid data -> dont show previous values
 
 double f_calculatePhysicalConnectionCosts_eurpyr(J_ConnectionMetaData connectionMetaData)
 {/*ALCODESTART::1773162212251*/
-return uI_Results.energyModel.avgc_data.economicAVGC.gridOperatorTariffs.getPhysicalCapacityCost_eurpyr(connectionMetaData);
+return uI_Results.energyModel.avgc_data.economicAVGC.getGridOperatorTariffs().getPhysicalCapacityCost_eurpyr(connectionMetaData);
 /*ALCODEEND*/}
 
 double f_calculateContractConnectionCosts_eurpyr(J_ConnectionMetaData connectionMetaData)
 {/*ALCODESTART::1773162241728*/
-return uI_Results.energyModel.avgc_data.economicAVGC.gridOperatorTariffs.getContractCapacityCost_eurpyr(connectionMetaData);
+return uI_Results.energyModel.avgc_data.economicAVGC.getGridOperatorTariffs().getContractCapacityCost_eurpyr(connectionMetaData);
 /*ALCODEEND*/}
 
 double f_calculateTotalTransportCosts_eurpyr(J_ConnectionMetaData connectionMetaData,double[] netLoad_kW)
 {/*ALCODESTART::1773162256135*/
 double yearlyTransportedElectricity_kWh = ZeroMath.arraySum(f_calculateMonthlyTotalElectricityTransport_kWh(netLoad_kW));
-return uI_Results.energyModel.avgc_data.economicAVGC.gridOperatorTariffs.getTransportCost_eur(connectionMetaData, yearlyTransportedElectricity_kWh);
+return uI_Results.energyModel.avgc_data.economicAVGC.getGridOperatorTariffs().getTransportCost_eur(connectionMetaData, yearlyTransportedElectricity_kWh);
 /*ALCODEEND*/}
 
 double f_calculateTotalPeakCosts_eurpyr(J_ConnectionMetaData connectionMetaData,double[] netLoad_kW)
 {/*ALCODESTART::1773162293336*/
 double yearTotalMonthlyPeakLoad_kW = ZeroMath.arraySum(f_calculateMonthlyPeakElectricityBalance_kW(netLoad_kW));
-return uI_Results.energyModel.avgc_data.economicAVGC.gridOperatorTariffs.getMonthlyPeakCost_eur(connectionMetaData, yearTotalMonthlyPeakLoad_kW);
+return uI_Results.energyModel.avgc_data.economicAVGC.getGridOperatorTariffs().getMonthlyPeakCost_eur(connectionMetaData, yearTotalMonthlyPeakLoad_kW);
 /*ALCODEEND*/}
 
 double f_calculateTotalConnectionCosts_eurpyr(J_ConnectionMetaData connectionMetaData,double[] netLoad_kW)

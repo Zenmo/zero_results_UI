@@ -52,14 +52,17 @@ selectedAssetList.retainAll(c_includeAssetSelection); //Only keep 'included' ass
 
 for(OL_EnergyAssetType assetType : selectedAssetList){
 	//Get economicAVGC values
-	double assetExpectedLifeTime_yr = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetLifeTime_yr.get(assetType);
-	double assetCAPEX_eurpkW = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetCAPEX_eurpkW.get(assetType);
-	double assetOPEX_eurpkWpyr = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetOPEX_eurpkWpyr.get(assetType);
+	double assetExpectedLifeTime_yr = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetLifeTime_yr(assetType);
+	double assetBaseCAPEX_eur = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetBaseCAPEX_eur(assetType);
+	double assetBaseOPEX_eurpyr = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetBaseOPEX_eurpyr(assetType);
+	double assetSizeDependentCAPEX_eurpkW = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetSizeDependentCAPEX_eurpkW(assetType);
+	double assetSizeDependentOPEX_eurpkWpyr = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetSizeDependentOPEX_eurpkWpyr(assetType);
+
 	//Get Current asset capacity
 	double assetCapacity_kW = rapidRunData.assetsMetaData.getActiveAssetCapacity_kW(assetType);
 	if(assetCapacity_kW > 0){
-		CAPEX_eurpyr += assetCapacity_kW * assetCAPEX_eurpkW / assetExpectedLifeTime_yr;
-		OPEX_eurpyr += assetCapacity_kW * assetOPEX_eurpkWpyr;
+		CAPEX_eurpyr += (assetCapacity_kW * assetSizeDependentCAPEX_eurpkW + assetBaseCAPEX_eur)/ assetExpectedLifeTime_yr;
+		OPEX_eurpyr += assetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr + assetBaseOPEX_eurpyr;
 	}
 }
 
@@ -128,15 +131,18 @@ else{
 
 for(OL_EnergyAssetType assetType : selectedAssetList){
 	//Get economicAVGC values
-	double assetExpectedLifeTime_yr = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetLifeTime_yr.get(assetType);
-	double assetCAPEX_eurpkW = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetCAPEX_eurpkW.get(assetType);
-	double assetOPEX_eurpkWpyr = uI_Results.energyModel.avgc_data.economicAVGC.map_avgAssetOPEX_eurpkWpyr.get(assetType);
+	double assetExpectedLifeTime_yr = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetLifeTime_yr(assetType);
+	double assetBaseCAPEX_eur = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetBaseCAPEX_eur(assetType);
+	double assetBaseOPEX_eurpyr = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetBaseOPEX_eurpyr(assetType);
+	double assetSizeDependentCAPEX_eurpkW = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetSizeDependentCAPEX_eurpkW(assetType);
+	double assetSizeDependentOPEX_eurpkWpyr = uI_Results.energyModel.avgc_data.economicAVGC.getAvgAssetSizeDependentOPEX_eurpkWpyr(assetType);
+
 	//Get Current asset capacity
 	double assetCapacity_kW = data.getRapidRunData().assetsMetaData.getActiveAssetCapacity_kW(assetType);
 	if(assetCapacity_kW > 0){
 		lifeTime_yr = assetExpectedLifeTime_yr;
-		CAPEX_eurpyr += assetCapacity_kW * assetCAPEX_eurpkW / assetExpectedLifeTime_yr;
-		OPEX_eurpyr += assetCapacity_kW * assetOPEX_eurpkWpyr;
+		CAPEX_eurpyr += (assetCapacity_kW * assetSizeDependentCAPEX_eurpkW +  assetBaseCAPEX_eur)/ assetExpectedLifeTime_yr;
+		OPEX_eurpyr += assetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr  +  assetBaseOPEX_eurpyr;
 	}
 	
 	//Get previous values, if previous rapid is available
@@ -150,8 +156,8 @@ for(OL_EnergyAssetType assetType : selectedAssetList){
 		double previousAssetCapacity_kW = data.getPreviousRapidRunData().assetsMetaData.getActiveAssetCapacity_kW(assetType);
 		if(previousAssetCapacity_kW > 0){
 			previousLifeTime_yr = assetExpectedLifeTime_yr;
-			previousCAPEX_eurpyr += previousAssetCapacity_kW * assetCAPEX_eurpkW / assetExpectedLifeTime_yr;
-			previousOPEX_eurpyr += previousAssetCapacity_kW * assetOPEX_eurpkWpyr;
+			previousCAPEX_eurpyr += (previousAssetCapacity_kW * assetSizeDependentCAPEX_eurpkW +  assetBaseCAPEX_eur) / assetExpectedLifeTime_yr;
+			previousOPEX_eurpyr += previousAssetCapacity_kW * assetSizeDependentOPEX_eurpkWpyr +  assetBaseOPEX_eurpyr;
 		}
 	}
 }
