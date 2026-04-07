@@ -37,6 +37,7 @@
 		<ReturnType>double[]</ReturnType>
 		<Id>1773160205274</Id>
 		<Name><![CDATA[f_calculateMonthlyPeakElectricityBalance_kW]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-400</X>
 		<Y>550</Y>
 		<Label>
@@ -77,6 +78,7 @@
 		<ReturnType>double[]</ReturnType>
 		<Id>1773160205312</Id>
 		<Name><![CDATA[f_calculateMonthlyPeakElectricityFeedin_kW]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-400</X>
 		<Y>530</Y>
 		<Label>
@@ -97,6 +99,7 @@
 		<ReturnType>double[]</ReturnType>
 		<Id>1773160925451</Id>
 		<Name><![CDATA[f_calculateMonthlyTotalElectricityTransport_kWh]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-400</X>
 		<Y>620</Y>
 		<Label>
@@ -137,6 +140,7 @@
 		<ReturnType>double[]</ReturnType>
 		<Id>1773160925455</Id>
 		<Name><![CDATA[f_calculateMonthlyElectricityFeedin_kWh]]></Name>
+		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>-400</X>
 		<Y>600</Y>
 		<Label>
@@ -248,7 +252,7 @@
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1773162256135</Id>
-		<Name><![CDATA[f_calculateTotalTransportCosts_eurpyr]]></Name>
+		<Name><![CDATA[f_calculateTotalTransportCosts_eur]]></Name>
 		<X>-400</X>
 		<Y>430</Y>
 		<Label>
@@ -272,7 +276,7 @@
 		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1773162293336</Id>
-		<Name><![CDATA[f_calculateTotalPeakCosts_eurpyr]]></Name>
+		<Name><![CDATA[f_calculateTotalPeakCosts_eur]]></Name>
 		<X>-400</X>
 		<Y>450</Y>
 		<Label>
@@ -311,7 +315,7 @@
 			<Type><![CDATA[J_ConnectionMetaData]]></Type>
 		</Parameter>
 		<Parameter>
-			<Name><![CDATA[netLoad_kW]]></Name>
+			<Name><![CDATA[yearlyNetLoad_kW]]></Name>
 			<Type><![CDATA[double[]]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
