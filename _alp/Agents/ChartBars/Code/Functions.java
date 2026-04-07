@@ -459,13 +459,13 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_totalConsumptionForH
 			totalProduction_MWh += ECConsumption_MWh;
 			DataItem heatProduction = new DataItem();
 			heatProduction.setValue(ECConsumption_MWh);
-			pl_productionChartBalanceTotal.addDataItem(heatProduction, uI_Results.f_getName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_productionChartBalanceTotal.addDataItem(heatProduction, uI_Results.f_getECName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if (losses_MWh > uI_Results.p_cutOff_MWh ) {
 			totalConsumption_MWh += losses_MWh;
 			DataItem ECLosses = new DataItem();
 			ECLosses.setValue(losses_MWh);
-			pl_consumptionChartBalanceTotal.addDataItem(ECLosses, uI_Results.f_getName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_consumptionChartBalanceTotal.addDataItem(ECLosses, uI_Results.f_getECName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 	}
 }
@@ -604,13 +604,13 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_summerWeekConsumptio
 			totalProductionSummer_MWh += ECConsumption_MWh;
 			DataItem heatProduction = new DataItem();
 			heatProduction.setValue(ECConsumption_MWh);
-			pl_productionChartSummer.addDataItem(heatProduction, uI_Results.f_getName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_productionChartSummer.addDataItem(heatProduction, uI_Results.f_getECName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if (losses_MWh > uI_Results.p_cutOff_MWh ) {
 			totalConsumptionSummer_MWh += losses_MWh;
 			DataItem ECLosses = new DataItem();
 			ECLosses.setValue(losses_MWh);
-			pl_consumptionChartSummer.addDataItem(ECLosses, uI_Results.f_getName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_consumptionChartSummer.addDataItem(ECLosses, uI_Results.f_getECName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 	}
 }
@@ -716,13 +716,13 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_winterWeekConsumptio
 			totalProductionWinter_MWh += ECConsumption_MWh;
 			DataItem heatProduction = new DataItem();
 			heatProduction.setValue(ECConsumption_MWh);
-			pl_productionChartWinter.addDataItem(heatProduction, uI_Results.f_getName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_productionChartWinter.addDataItem(heatProduction, uI_Results.f_getECName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if (losses_MWh > uI_Results.p_cutOff_MWh ) {
 			totalConsumptionWinter_MWh += losses_MWh;
 			DataItem ECLosses = new DataItem();
 			ECLosses.setValue(losses_MWh);
-			pl_consumptionChartWinter.addDataItem(ECLosses, uI_Results.f_getName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_consumptionChartWinter.addDataItem(ECLosses, uI_Results.f_getECName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 	}
 }
@@ -891,25 +891,25 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_daytimeConsumptionFo
 			totalProductionDay_MWh += ECConsumptionDay_MWh;
 			DataItem heatProductionDay = new DataItem();
 			heatProductionDay.setValue(ECConsumptionDay_MWh);
-			pl_productionChartDay.addDataItem(heatProductionDay, uI_Results.f_getName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_productionChartDay.addDataItem(heatProductionDay, uI_Results.f_getECName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if (lossesDay_MWh > uI_Results.p_cutOff_MWh ) {
 			totalConsumptionDay_MWh += lossesDay_MWh;
 			DataItem ECLossesDay = new DataItem();
 			ECLossesDay.setValue(lossesDay_MWh);
-			pl_consumptionChartDay.addDataItem(ECLossesDay, uI_Results.f_getName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_consumptionChartDay.addDataItem(ECLossesDay, uI_Results.f_getECName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if ( ECConsumptionNight_MWh > uI_Results.p_cutOff_MWh ) {
 			totalProductionNight_MWh += ECConsumptionNight_MWh;
 			DataItem heatProductionNight = new DataItem();
 			heatProductionNight.setValue(ECConsumptionNight_MWh);
-			pl_productionChartNight.addDataItem(heatProductionNight, uI_Results.f_getName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_productionChartNight.addDataItem(heatProductionNight, uI_Results.f_getECName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if (lossesNight_MWh > uI_Results.p_cutOff_MWh ) {
 			totalConsumptionNight_MWh += lossesNight_MWh;
 			DataItem ECLossesNight = new DataItem();
 			ECLossesNight.setValue(lossesNight_MWh);
-			pl_consumptionChartNight.addDataItem(ECLossesNight, uI_Results.f_getName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_consumptionChartNight.addDataItem(ECLossesNight, uI_Results.f_getECName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 	}
 }
@@ -1123,25 +1123,25 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().am_weekendConsumptionFo
 			totalProductionWeekend_MWh += ECConsumptionWeekend_MWh;
 			DataItem heatProductionWeekend = new DataItem();
 			heatProductionWeekend.setValue(ECConsumptionWeekend_MWh);
-			pl_productionChartWeekend.addDataItem(heatProductionWeekend, uI_Results.f_getName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_productionChartWeekend.addDataItem(heatProductionWeekend, uI_Results.f_getECName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if (lossesWeekend_MWh > uI_Results.p_cutOff_MWh ) {
 			totalConsumptionWeekend_MWh += lossesWeekend_MWh;
 			DataItem ECLossesWeekend = new DataItem();
 			ECLossesWeekend.setValue(lossesWeekend_MWh);
-			pl_consumptionChartWeekend.addDataItem(ECLossesWeekend, uI_Results.f_getName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_consumptionChartWeekend.addDataItem(ECLossesWeekend, uI_Results.f_getECName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if ( ECConsumptionWeekday_MWh > uI_Results.p_cutOff_MWh ) {
 			totalProductionWeekday_MWh += ECConsumptionWeekday_MWh;
 			DataItem heatProductionWeekday = new DataItem();
 			heatProductionWeekday.setValue(ECConsumptionWeekday_MWh);
-			pl_productionChartWeekday.addDataItem(heatProductionWeekday, uI_Results.f_getName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_productionChartWeekday.addDataItem(heatProductionWeekday, uI_Results.f_getECName(EC) + " [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 		if (lossesWeekday_MWh > uI_Results.p_cutOff_MWh ) {
 			totalConsumptionWeekday_MWh += lossesWeekday_MWh;
 			DataItem ECLossesWeekday = new DataItem();
 			ECLossesWeekday.setValue(lossesWeekday_MWh);
-			pl_consumptionChartWeekday.addDataItem(ECLossesWeekday, uI_Results.f_getName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
+			pl_consumptionChartWeekday.addDataItem(ECLossesWeekday, uI_Results.f_getECName(EC) + " verliezen [MWh]", uI_Results.cm_consumptionColors.get(EC));
 		}
 	}
 }
@@ -1264,14 +1264,14 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergy
 	if (dataObject.getRapidRunData().getTotalImport_MWh(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem totalImport = new DataItem();
 		totalImport.setValue(dataObject.getRapidRunData().getTotalImport_MWh(EC));
-		pl_consumptionChartBalanceTotal.addDataItem(totalImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_consumptionColors.get(EC));
+		pl_consumptionChartBalanceTotal.addDataItem(totalImport, uI_Results.f_getECName(EC) + " Import [MWh]", uI_Results.cm_consumptionColors.get(EC));
 	}
 }
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
 	if (dataObject.getRapidRunData().getTotalExport_MWh(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem totalExport = new DataItem();
 		totalExport.setValue(dataObject.getRapidRunData().getTotalExport_MWh(EC));
-		pl_productionChartBalanceTotal.addDataItem(totalExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_productionChartBalanceTotal.addDataItem(totalExport, uI_Results.f_getECName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
 
@@ -1300,24 +1300,24 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergy
 	if (dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(EC).getIntegralPos_MWh() > uI_Results.p_cutOff_MWh) {
 		DataItem summerImport = new DataItem();
 		summerImport.setValue(dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(EC).getIntegralPos_MWh());
-		pl_consumptionChartSummer.addDataItem(summerImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_consumptionChartSummer.addDataItem(summerImport, uI_Results.f_getECName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 	if (dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(EC).getIntegralPos_MWh() > uI_Results.p_cutOff_MWh) {
 		DataItem winterImport = new DataItem();
 		winterImport.setValue(dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(EC).getIntegralPos_MWh());
-		pl_consumptionChartWinter.addDataItem(winterImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_consumptionChartWinter.addDataItem(winterImport, uI_Results.f_getECName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
 	if (-dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(EC).getIntegralNeg_MWh() > uI_Results.p_cutOff_MWh) {
 		DataItem summerExport = new DataItem();
 		summerExport.setValue(-dataObject.getRapidRunData().am_summerWeekBalanceAccumulators_kW.get(EC).getIntegralNeg_MWh());
-		pl_productionChartSummer.addDataItem(summerExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_productionChartSummer.addDataItem(summerExport, uI_Results.f_getECName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 	if (-dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(EC).getIntegralNeg_MWh() > uI_Results.p_cutOff_MWh) {
 		DataItem winterExport = new DataItem();
 		winterExport.setValue(-dataObject.getRapidRunData().am_winterWeekBalanceAccumulators_kW.get(EC).getIntegralNeg_MWh());
-		pl_productionChartWinter.addDataItem(winterExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_productionChartWinter.addDataItem(winterExport, uI_Results.f_getECName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
 
@@ -1355,24 +1355,24 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergy
 	if (dataObject.getRapidRunData().getDaytimeImport_MWh(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem daytimeImport = new DataItem();
 		daytimeImport.setValue(dataObject.getRapidRunData().getDaytimeImport_MWh(EC));
-		pl_consumptionChartDay.addDataItem(daytimeImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_consumptionChartDay.addDataItem(daytimeImport, uI_Results.f_getECName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 	if (dataObject.getRapidRunData().getNighttimeImport_MWh(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem nighttimeImport = new DataItem();
 		nighttimeImport.setValue(dataObject.getRapidRunData().getNighttimeImport_MWh(EC));
-		pl_consumptionChartNight.addDataItem(nighttimeImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_consumptionChartNight.addDataItem(nighttimeImport, uI_Results.f_getECName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}	
 }
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
 	if (dataObject.getRapidRunData().getDaytimeExport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
 		DataItem daytimeExport = new DataItem();
 		daytimeExport.setValue(dataObject.getRapidRunData().getDaytimeExport_MWh(EC));
-		pl_productionChartDay.addDataItem(daytimeExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_productionChartDay.addDataItem(daytimeExport, uI_Results.f_getECName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}	
 	if (dataObject.getRapidRunData().getNighttimeExport_MWh(EC) > uI_Results.p_cutOff_MWh) {
 		DataItem nighttimeExport = new DataItem();
 		nighttimeExport.setValue(dataObject.getRapidRunData().getNighttimeExport_MWh(EC));
-		pl_productionChartNight.addDataItem(nighttimeExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_productionChartNight.addDataItem(nighttimeExport, uI_Results.f_getECName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
 
@@ -1411,24 +1411,24 @@ for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeConsumptionEnergy
 	if (dataObject.getRapidRunData().getWeekdayImport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
 		DataItem weekdayImport = new DataItem();
 		weekdayImport.setValue(dataObject.getRapidRunData().getWeekdayImport_MWh(EC));
-		pl_consumptionChartWeekday.addDataItem(weekdayImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_consumptionChartWeekday.addDataItem(weekdayImport, uI_Results.f_getECName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 	if (dataObject.getRapidRunData().getWeekendImport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
 		DataItem weekendImport = new DataItem();
 		weekendImport.setValue(dataObject.getRapidRunData().getWeekendImport_MWh(EC));
-		pl_consumptionChartWeekend.addDataItem(weekendImport, uI_Results.f_getName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_consumptionChartWeekend.addDataItem(weekendImport, uI_Results.f_getECName(EC) + " Import [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
 for (OL_EnergyCarriers EC : dataObject.getRapidRunData().activeProductionEnergyCarriers) {
 	if (dataObject.getRapidRunData().getWeekdayExport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
 		DataItem weekdayExport = new DataItem();
 		weekdayExport.setValue(dataObject.getRapidRunData().getWeekdayExport_MWh(EC));
-		pl_productionChartWeekday.addDataItem(weekdayExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_productionChartWeekday.addDataItem(weekdayExport, uI_Results.f_getECName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 	if (dataObject.getRapidRunData().getWeekendExport_MWh(EC) > uI_Results.p_cutOff_MWh) {	
 		DataItem weekendExport = new DataItem();
 		weekendExport.setValue(dataObject.getRapidRunData().getWeekendExport_MWh(EC));
-		pl_productionChartWeekend.addDataItem(weekendExport, uI_Results.f_getName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
+		pl_productionChartWeekend.addDataItem(weekendExport, uI_Results.f_getECName(EC) + " Export [MWh]", uI_Results.cm_productionColors.get(EC));
 	}
 }
 

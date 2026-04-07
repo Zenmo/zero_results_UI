@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AnyLogicWorkspace splitVersion="1"
                    WorkspaceVersion="1.9"
-                   AnyLogicVersion="8.9.7.202512010504"
+                   AnyLogicVersion="8.9.7.202512121156"
                    AlpVersion="8.9.7">
 	<Model>
 		<Id>1704197366547</Id>
@@ -15,15 +15,15 @@
 				<Name><![CDATA[OL_ChartTypes]]></Name>
 				<Option>
 					<Id>1714740441861</Id>
-					<Name><![CDATA[PROFIEL]]></Name>
+					<Name><![CDATA[PROFILES]]></Name>
 				</Option>
 				<Option>
 					<Id>1714740441862</Id>
-					<Name><![CDATA[DIAGRAM]]></Name>
+					<Name><![CDATA[BAR_TOTALS]]></Name>
 				</Option>
 				<Option>
 					<Id>1714740441863</Id>
-					<Name><![CDATA[BELASTING]]></Name>
+					<Name><![CDATA[LOAD_DURATION_CURVES]]></Name>
 				</Option>
 				<Option>
 					<Id>1714740441864</Id>
@@ -46,12 +46,28 @@
 					<Name><![CDATA[BATTERY]]></Name>
 				</Option>
 				<Option>
-					<Id>1755704418943</Id>
-					<Name><![CDATA[ECONOMIC]]></Name>
-				</Option>
-				<Option>
 					<Id>1759139740201</Id>
 					<Name><![CDATA[GTO]]></Name>
+				</Option>
+				<Option>
+					<Id>1772471918770</Id>
+					<Name><![CDATA[CO2]]></Name>
+				</Option>
+				<Option>
+					<Id>1755704418943</Id>
+					<Name><![CDATA[ENERGY_COSTS]]></Name>
+				</Option>
+				<Option>
+					<Id>1772203583669</Id>
+					<Name><![CDATA[CONNECTION_COSTS]]></Name>
+				</Option>
+				<Option>
+					<Id>1772203559493</Id>
+					<Name><![CDATA[CAPEX_AND_OPEX]]></Name>
+				</Option>
+				<Option>
+					<Id>1772203580124</Id>
+					<Name><![CDATA[TOTAL_COSTS]]></Name>
 				</Option>
 			</OptionList>
 			<OptionList>
@@ -170,17 +186,24 @@
 				<Id>1746102648438</Id>
 				<Name><![CDATA[J_InfoTextResultsUI]]></Name>
 			</JavaClass>
-			<JavaClass>
-				<Id>1754553567559</Id>
-				<Name><![CDATA[radioButtonChangableOptions]]></Name>
-				<ExcludeFromBuild>true</ExcludeFromBuild>
-			</JavaClass>
 		</JavaClasses>
 		<RequiredLibraryReference>
 			<LibraryName>zero_engine</LibraryName>
 			<VersionMajor>0</VersionMajor>
 			<VersionMinor>0</VersionMinor>
 			<VersionBuild>0</VersionBuild>
+		</RequiredLibraryReference>
+		<RequiredLibraryReference>
+			<LibraryName>com.anylogic.libraries.processmodeling</LibraryName>
+			<VersionMajor>8</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<VersionBuild>5</VersionBuild>
+		</RequiredLibraryReference>
+		<RequiredLibraryReference>
+			<LibraryName>com.anylogic.libraries.processmodeling</LibraryName>
+			<VersionMajor>8</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<VersionBuild>5</VersionBuild>
 		</RequiredLibraryReference>
 		<ClassPathEntry>
 			<ResourceReference>

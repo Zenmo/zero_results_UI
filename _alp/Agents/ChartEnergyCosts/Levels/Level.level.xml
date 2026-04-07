@@ -30,8 +30,8 @@
 	</Rectangle>
 	<Text>
 		<Id>1726825366299</Id>
-		<Name><![CDATA[txt_EconomicKPIs]]></Name>
-		<X>235</X>
+		<Name><![CDATA[txt_EnergyCosts]]></Name>
+		<X>230</X>
 		<Y>10</Y>
 		<Label>
 			<X>0</X>
@@ -45,7 +45,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Economische KPIs]]></Text>
+		<Text><![CDATA[Energie kosten]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>26</Size>
@@ -55,9 +55,9 @@
 	</Text>
 	<Group>
 		<Id>1758551343397</Id>
-		<Name><![CDATA[gr_yearlyElectricityCosts]]></Name>
+		<Name><![CDATA[gr_totalEnergyCosts]]></Name>
 		<X>235</X>
-		<Y>220</Y>
+		<Y>250</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -72,7 +72,7 @@
 		<Presentation>
 			<Text>
 				<Id>1755865439568</Id>
-				<Name><![CDATA[txt_totalSubGroups3]]></Name>
+				<Name><![CDATA[txt_netEnergyCosts]]></Name>
 				<X>-180</X>
 				<Y>60</Y>
 				<Label>
@@ -87,7 +87,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Netto elektriciteitskosten:]]></Text>
+				<Text><![CDATA[Netto kosten:]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>16</Size>
@@ -97,7 +97,7 @@
 			</Text>
 			<Text>
 				<Id>1728289186016</Id>
-				<Name><![CDATA[txt_totalSubGroups1]]></Name>
+				<Name><![CDATA[txt_totalExportCosts]]></Name>
 				<X>-180</X>
 				<Y>-10</Y>
 				<Label>
@@ -122,7 +122,7 @@
 			</Text>
 			<Text>
 				<Id>1726836045104</Id>
-				<Name><![CDATA[txt_totalSubGroups]]></Name>
+				<Name><![CDATA[txt_totalImportCosts]]></Name>
 				<X>-180</X>
 				<Y>-50</Y>
 				<Label>
@@ -445,7 +445,7 @@
 			</Text>
 			<Text>
 				<Id>1755872483508</Id>
-				<Name><![CDATA[t_totalNetElectricityCosts_eur]]></Name>
+				<Name><![CDATA[t_totalNetEnergyCosts_eur]]></Name>
 				<X>160</X>
 				<Y>60</Y>
 				<Label>
@@ -470,7 +470,7 @@
 			</Text>
 			<Text>
 				<Id>1755879759168</Id>
-				<Name><![CDATA[t_previousTotalNetElectricityCosts_eur]]></Name>
+				<Name><![CDATA[t_previousTotalNetEnergyCosts_eur]]></Name>
 				<X>160</X>
 				<Y>82</Y>
 				<Label>
@@ -495,7 +495,7 @@
 			</Text>
 			<Group>
 				<Id>1755881660648</Id>
-				<Name><![CDATA[arrows_diffTotalNetElectricityCosts]]></Name>
+				<Name><![CDATA[arrows_diffTotalNetEnergyCosts]]></Name>
 				<X>182</X>
 				<Y>89</Y>
 				<Label>
@@ -512,7 +512,7 @@
 				<Presentation>
 					<Image>
 						<Id>1755881660650</Id>
-						<Name><![CDATA[arrow_up_red_netElectricity]]></Name>
+						<Name><![CDATA[arrow_up_red_netEnergy]]></Name>
 						<X>-12</X>
 						<Y>-10</Y>
 						<Label>
@@ -538,7 +538,7 @@
 					</Image>
 					<Image>
 						<Id>1755881660652</Id>
-						<Name><![CDATA[arrow_down_green_netElectricity]]></Name>
+						<Name><![CDATA[arrow_down_green_netEnergy]]></Name>
 						<X>-12</X>
 						<Y>-10</Y>
 						<Label>
@@ -594,7 +594,7 @@
 			</Group>
 			<Text>
 				<Id>1758404047020</Id>
-				<Name><![CDATA[txt_yearlyElectricityCosts]]></Name>
+				<Name><![CDATA[txt_yearlyEnergyCosts]]></Name>
 				<X>0</X>
 				<Y>-100</Y>
 				<Label>
@@ -609,7 +609,8 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Jaarlijkse Stroom Kosten]]></Text>
+				<Text><![CDATA[Jaarlijkse Kosten Stroom]]></Text>
+				<TextCode>"Jaarlijkse Kosten " + cb_energyCarrierSelection.getValue()</TextCode>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>22</Size>
@@ -649,7 +650,7 @@
 	</Group>
 	<Group>
 		<Id>1769435150400</Id>
-		<Name><![CDATA[gr_monthlyElectricityCostCharts]]></Name>
+		<Name><![CDATA[gr_monthlyECCostCharts]]></Name>
 		<X>225</X>
 		<Y>520</Y>
 		<Label>
@@ -666,7 +667,7 @@
 		<Presentation>
 			<Text>
 				<Id>1769428874839</Id>
-				<Name><![CDATA[txt_monthlyElectricityCosts]]></Name>
+				<Name><![CDATA[txt_monthlyEnergyCosts]]></Name>
 				<X>10</X>
 				<Y>-150</Y>
 				<Label>
@@ -681,7 +682,8 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Maandelijkse Stroom Kosten]]></Text>
+				<Text><![CDATA[Maandelijkse Kosten Stroom]]></Text>
+				<TextCode>"Maandelijkse Kosten " + cb_energyCarrierSelection.getValue()</TextCode>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>22</Size>
@@ -691,7 +693,7 @@
 			</Text>
 			<BarChart>
 				<Id>1769428900205</Id>
-				<Name><![CDATA[bar_importElectricityCostsMonthly]]></Name>
+				<Name><![CDATA[bar_importEnergyCostsMonthly]]></Name>
 				<X>-220</X>
 				<Y>-140</Y>
 				<Label>
@@ -823,7 +825,7 @@
 			</BarChart>
 			<BarChart>
 				<Id>1769428994283</Id>
-				<Name><![CDATA[bar_exportElectricityRevenueMonthly]]></Name>
+				<Name><![CDATA[bar_exportEnergyRevenueMonthly]]></Name>
 				<X>-220</X>
 				<Y>-20</Y>
 				<Label>
@@ -955,7 +957,7 @@
 			</BarChart>
 			<Plot>
 				<Id>1769429152452</Id>
-				<Name><![CDATA[plot_netElectricityCostsMonthly]]></Name>
+				<Name><![CDATA[plot_netEnergyCostsMonthly]]></Name>
 				<X>-220</X>
 				<Y>-140</Y>
 				<Label>
@@ -1422,9 +1424,9 @@
 						<Z>0</Z>
 						<ZHeight>10</ZHeight>
 						<LineWidth>2</LineWidth>
-						<LineWidthCode>v_netElectricityCostLineWidth</LineWidthCode>
+						<LineWidthCode>v_netECCostLineWidth</LineWidthCode>
 						<LineColor>-16777216</LineColor>
-						<LineColorCode>v_netElectricityCostColor</LineColorCode>
+						<LineColorCode>v_netECCostColor</LineColorCode>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<BeginArrowSize>1</BeginArrowSize>
@@ -1437,7 +1439,7 @@
 					</Line>
 					<Text>
 						<Id>1769440839415</Id>
-						<Name><![CDATA[txt_barChartConsumption]]></Name>
+						<Name><![CDATA[txt_barChartLegendImport]]></Name>
 						<X>-80</X>
 						<Y>-30</Y>
 						<Label>
@@ -1452,7 +1454,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Stroom Import kosten per maand [€]]]></Text>
+						<Text><![CDATA[Import kosten per maand [€]]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
@@ -1462,7 +1464,7 @@
 					</Text>
 					<Text>
 						<Id>1769440892733</Id>
-						<Name><![CDATA[txt_barChartConsumption1]]></Name>
+						<Name><![CDATA[txt_barChartLegendExport]]></Name>
 						<X>-80</X>
 						<Y>-10</Y>
 						<Label>
@@ -1477,7 +1479,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Stroom export opbrengst per maand [€]]]></Text>
+						<Text><![CDATA[Export opbrengst per maand [€]]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
@@ -1487,7 +1489,7 @@
 					</Text>
 					<Text>
 						<Id>1769440894076</Id>
-						<Name><![CDATA[txt_barChartConsumption2]]></Name>
+						<Name><![CDATA[txt_barChartLegendNet]]></Name>
 						<X>-80</X>
 						<Y>10</Y>
 						<Label>
@@ -1502,7 +1504,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Netto stroom kosten per maand [€]]]></Text>
+						<Text><![CDATA[Netto kosten per maand [€]]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
@@ -1518,7 +1520,7 @@
 		<Id>1769443448117</Id>
 		<Name><![CDATA[txt_monthlyChartYAxis]]></Name>
 		<X>15</X>
-		<Y>524</Y>
+		<Y>520</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1542,7 +1544,7 @@
 	<Image>
 		<Id>1769444876124</Id>
 		<Name><![CDATA[i_chartEconomicKPIs]]></Name>
-		<X>360</X>
+		<X>350</X>
 		<Y>10</Y>
 		<Label>
 			<X>0</X>
@@ -1566,4 +1568,75 @@
 		</ImageFiles>
 		<OriginalSize>false</OriginalSize>
 	</Image>
+	<Control Type="ComboBox">
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Id>1772618293594</Id>
+		<Name><![CDATA[cb_energyCarrierSelection]]></Name>
+		<X>290</X>
+		<Y>110</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<BasicProperties Width="130" Height="20">
+			<EmbeddedIcon>false</EmbeddedIcon>
+			<FillColor>-1</FillColor>
+			<TextColor>-16777216</TextColor>
+			<Enabled>true</Enabled>
+			<ActionCode>if(cb_energyCarrierSelection.getValue().equals(p_totalName)){
+	v_selectedEnergyCarrier = p_totalName;
+}
+else{
+	for(OL_EnergyCarriers EC : c_defaultOrderEC){
+		if(cb_energyCarrierSelection.getValue().equals(uI_Results.f_getECName(EC))){
+			v_selectedEnergyCarrier = EC.toString();
+		}
+	}
+}
+
+f_setChartEnergyCostsValues();
+</ActionCode>
+		</BasicProperties>
+		<ExtendedProperties>
+			<Font Name="Dialog" Size="11" Style="0"/>
+			<Editable>false</Editable>
+			<Button>Elektriciteit</Button>
+			<Button>Gas</Button>
+			<Button>Diesel &amp; Benzine</Button>
+			<Button>Waterstof</Button>
+			<Button>Warmte</Button>
+			<Button>IJzerpoeder</Button>
+			<Button>Totaal</Button>
+			<LinkTo>false</LinkTo>
+		</ExtendedProperties>
+	</Control>
+	<Text>
+		<Id>1774275853196</Id>
+		<Name><![CDATA[txt_selectedEnergyCarrier]]></Name>
+		<X>40</X>
+		<Y>110</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[Geselecteerde Energiedrager:]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>18</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
 </Presentation>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Variables>
 	<Variable Class="PlainVariable">
-		<Id>1726834339918</Id>
-		<Name><![CDATA[v_backgroundColor_override]]></Name>
-		<X>-300</X>
-		<Y>190</Y>
+		<Id>1773762641839</Id>
+		<Name><![CDATA[color_physicalConnectionCosts]]></Name>
+		<X>-400</X>
+		<Y>740</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -18,51 +18,15 @@
               StaticVariable="false">
 			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[white]]></Code>
+				<Code><![CDATA[purple]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
-		<Id>1769431784429</Id>
-		<Name><![CDATA[startHourPerMonthTemporary]]></Name>
-		<Description><![CDATA[Temporary variable, until it can be replaced by value from J_TimeParameters]]></Description>
-		<X>-390</X>
-		<Y>650</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[int[]]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[new int[] {
-    0,    // Jan
-    744,  // Feb
-    1416, // Mar
-    2160, // Apr
-    2880, // May
-    3624, // Jun
-    4344, // Jul
-    5088, // Aug
-    5832, // Sep
-    6552, // Oct
-    7296, // Nov
-    8016  // Dec
-}]]></Code>
-			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1769441396968</Id>
-		<Name><![CDATA[v_netElectricityCostColor]]></Name>
-		<X>-390</X>
-		<Y>690</Y>
+		<Id>1773762667224</Id>
+		<Name><![CDATA[color_contractConnectionCosts]]></Name>
+		<X>-400</X>
+		<Y>760</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -76,15 +40,15 @@
               StaticVariable="false">
 			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[black]]></Code>
+				<Code><![CDATA[red]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
 	<Variable Class="PlainVariable">
-		<Id>1769441532541</Id>
-		<Name><![CDATA[v_netElectricityCostLineWidth]]></Name>
-		<X>-390</X>
-		<Y>710</Y>
+		<Id>1773762668244</Id>
+		<Name><![CDATA[color_transportConnectionCosts]]></Name>
+		<X>-400</X>
+		<Y>780</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -96,10 +60,50 @@
               Constant="false"
               AccessType="public"
               StaticVariable="false">
-			<Type><![CDATA[double]]></Type>
+			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[2]]></Code>
+				<Code><![CDATA[orange]]></Code>
 			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1773762669272</Id>
+		<Name><![CDATA[color_monthlyPeakConnectionCosts]]></Name>
+		<X>-400</X>
+		<Y>800</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[Color]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[green]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1773163912398</Id>
+		<Name><![CDATA[c_orderedStackCharts]]></Name>
+		<X>-400</X>
+		<Y>360</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>StackChart</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
 		</Properties>
 	</Variable>
 </Variables>

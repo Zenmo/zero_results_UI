@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ActiveObjectClass>
-	<Id>1726820490242</Id>
-	<Name><![CDATA[ChartEconomicKPIs]]></Name>
-	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
+	<Id>1772440739218</Id>
+	<Name><![CDATA[ChartCAPEXAndOPEX]]></Name>
 	<Folder>1755764711838</Folder>
-	<Import><![CDATA[import java.text.DecimalFormat;
-import org.jfree.graphics2d.svg.SVGGraphics2D;
-import org.jfree.data.flow.NodeKey;
-import org.jfree.graphics2d.svg.SVGUnits;
-import java.awt.geom.Rectangle2D;
-
-import org.jfree.chart.renderer.category.WaterfallBarRenderer;
-import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.axis.CategoryAxis;
-import zeroPackage.ZeroMath;]]></Import>
+	<Import><![CDATA[import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
 	<Generic>false</Generic>
 	<GenericParameter>
-		<Id>1726820490248</Id>
-		<Name><![CDATA[1726820490248]]></Name>
+		<Id>1772440739223</Id>
+		<Name><![CDATA[1772440739223]]></Name>
 		<GenericParameterValue Class="CodeValue">
 			<Code><![CDATA[T extends Agent]]></Code>
 		</GenericParameterValue>
@@ -82,9 +68,9 @@ import zeroPackage.ZeroMath;]]></Import>
 	</EnvironmentProperties>
 	<DatasetsCreationProperties>
 		<AutoCreate>true</AutoCreate>
-		<Id>1704197349979</Id>
+		<Id>1772440739217</Id>
 		<OccurrenceAtTime>true</OccurrenceAtTime>
-		<OccurrenceDate>1726905600000</OccurrenceDate>
+		<OccurrenceDate>1772524800000</OccurrenceDate>
 		<OccurrenceTime Class="CodeUnitValue">
 			<Code><![CDATA[0]]></Code>
 			<Unit Class="TimeUnits">HOUR</Unit>
@@ -95,7 +81,7 @@ import zeroPackage.ZeroMath;]]></Import>
 		</RecurrenceCode>
 	</DatasetsCreationProperties>
 	<ScaleRuler>
-		<Id>1726820490245</Id>
+		<Id>1772440739221</Id>
 		<Name><![CDATA[scale]]></Name>
 		<X>0</X>
 		<Y>-150</Y>
@@ -111,13 +97,13 @@ import zeroPackage.ZeroMath;]]></Import>
 		<Scale>10</Scale>
 		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 	</ScaleRuler>
-	<CurrentLevel>1726820490249</CurrentLevel>
-	<ConnectionsId>1726820490243</ConnectionsId>
+	<CurrentLevel>1772440739224</CurrentLevel>
+	<ConnectionsId>1772440739219</ConnectionsId>
 	<Variables xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
-			<Id>1726820490243</Id>
+			<Id>1772440739219</Id>
 			<Name><![CDATA[connections]]></Name>
 			<X>50</X>
 			<Y>-50</Y>
@@ -142,7 +128,7 @@ import zeroPackage.ZeroMath;]]></Import>
 	</AgentLinks>
 	<ContainerLinks>
 		<ContainerLink>
-			<Id>1726828321730</Id>
+			<Id>1772440739304</Id>
 			<Name><![CDATA[uI_Results]]></Name>
 			<X>50</X>
 			<Y>-100</Y>
@@ -161,7 +147,7 @@ import zeroPackage.ZeroMath;]]></Import>
 	</ContainerLinks>
 	<Presentation>
 		<Level>
-			<Id>1726820490249</Id>
+			<Id>1772440739224</Id>
 			<Name><![CDATA[level]]></Name>
 			<X>0</X>
 			<Y>0</Y>

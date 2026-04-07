@@ -49,11 +49,12 @@ DataSet loadDurationCurveTotal = uI_Results.f_createNewDataSetDividedByValue(loa
 double minValue = loadDurationCurveTotal.getYMin();
 double maxValue = loadDurationCurveTotal.getYMax();
 
-double gridCapacityDelivery = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW / divisionAmountForCorrectUnit;
-double gridCapacityFeedin = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW / divisionAmountForCorrectUnit;
+double gridCapacityDelivery_kW = dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW() / divisionAmountForCorrectUnit;
+double gridCapacityFeedin_kW = dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW() / divisionAmountForCorrectUnit;
 
-double scaleMin = -1 + min(-gridCapacityFeedin*1.2, minValue);
-double scaleMax = 1 + max(gridCapacityDelivery*1.2, maxValue);
+double scaleMax = 1 + max(gridCapacityDelivery_kW*1.2, maxValue);
+double scaleMin = -1 + min(-gridCapacityFeedin_kW*1.2, minValue);
+
 
 
 //Jaar
@@ -100,8 +101,8 @@ Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 
 //Create delivery and capacity year datasets
-DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW / divisionAmountForCorrectUnit);
-DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW / divisionAmountForCorrectUnit);
+DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW() / divisionAmountForCorrectUnit);
+DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW() / divisionAmountForCorrectUnit);
 
 //Give specific capacity names based on selected scope	
 if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
@@ -134,11 +135,11 @@ else if(uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
 }
 
 //Add estimation tag and color if the capacities are not known
-if(!dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
+if(!dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacityKnown()){
 	deliveryCapacityLabel = "Geschatte " + deliveryCapacityLabel.substring(0, 1).toLowerCase() + deliveryCapacityLabel.substring(1);
 	deliveryCapacityColor = uI_Results.v_electricityCapacityColor_estimated;
 }
-if(!dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
+if(!dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacityKnown()){
 	feedinCapacityLabel = "Geschatte " + feedinCapacityLabel.substring(0, 1).toLowerCase() + feedinCapacityLabel.substring(1);
 	feedinCapacityColor	= uI_Results.v_electricityCapacityColor_estimated;
 }
@@ -355,17 +356,17 @@ else{
 }
 
 ////Max peaks in percentages
-if (dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown && dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW > 0) {
-	double deliveryCapacity_kW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
-	t_maxDelivery_pct.setText(roundToInt(maxDelivery_kW/dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW * 100) + " %");
+if (dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacityKnown() && dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW() > 0) {
+	double deliveryCapacity_kW = dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW();
+	t_maxDelivery_pct.setText(roundToInt(maxDelivery_kW/dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW() * 100) + " %");
 	gr_relativeDeliveryInfo.setVisible(true);
 }
 else{
 	gr_relativeDeliveryInfo.setVisible(false);
 }
-if (dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown && dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW > 0) {
-	double feedinCapacity_kW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW;
-	t_maxFeedin_pct.setText(roundToInt(maxFeedin_kW/dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW * 100) + " %");
+if (dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacityKnown() && dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW() > 0) {
+	double feedinCapacity_kW = dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW();
+	t_maxFeedin_pct.setText(roundToInt(maxFeedin_kW/dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW() * 100) + " %");
 	gr_relativeFeedinInfo.setVisible(true);
 }
 else{
@@ -380,9 +381,9 @@ else{
 * If there is room to grow, i.e. the highest average delivery is still below the capacity we also show what flex (a battery) could add
 * We do not show exact percentages above 1000%, i.e. 10x growth.
 */
-if (dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown && dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW > 0) {
+if (dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacityKnown() && dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW() > 0) {
 	Pair<Double, Double> pair = dataObject.getRapidRunData().getFlexPotential();
-	double deliveryPeak_fr = maxDelivery_kW / dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
+	double deliveryPeak_fr = maxDelivery_kW / dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW();
 	int growthWithoutFlex_pct = roundToInt((100 / deliveryPeak_fr) - 100);
 	if (pair.getFirst() < 1) { 
 		// The current usage is already above the capacity already, do not show flex option

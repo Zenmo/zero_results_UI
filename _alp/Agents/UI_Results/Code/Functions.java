@@ -8,22 +8,25 @@ gr_chartSummary_presentation.setVisible(false);
 gr_chartGespreksLeidraad_presentation.setVisible(false);
 gr_chartKPISummary_presentation.setVisible(false);
 gr_chartBatteries_presentation.setVisible(false);
-gr_chartEconomicKPIs_presentation.setVisible(false);
 gr_chartGTO_presentation.setVisible(false);
 gr_chartBars_presentation.setVisible(false);
-
+gr_chartCO2_presentation.setVisible(false);
+gr_chartEnergyCosts_presentation.setVisible(false);
+gr_chartConnectionCosts_presentation.setVisible(false);
+gr_chartCAPEXAndOPEX_presentation.setVisible(false);
+gr_chartTotalCosts_presentation.setVisible(false);
 
 switch (v_selectedChartType) {
-	case PROFIEL:
+	case PROFILES:
 		gr_chartProfielen_presentation.setVisible(true);
 		chartProfielen.f_setCharts();
 		break;
-	case DIAGRAM:
+	case BAR_TOTALS:
 		//gr_chartBalans_presentation.setVisible(true);
 		gr_chartBars_presentation.setVisible(true);
 		chartBars.f_setCharts();
 		break;
-	case BELASTING:
+	case LOAD_DURATION_CURVES:
 		gr_chartNetbelasting_presentation.setVisible(true);
 		chartNetbelasting.f_setCharts();
 		break;
@@ -43,13 +46,29 @@ switch (v_selectedChartType) {
 		gr_chartBatteries_presentation.setVisible(true);
 		chartBatteries.f_setChartsBatteries();
 		break;
-	case ECONOMIC:
-		gr_chartEconomicKPIs_presentation.setVisible(true);
-		chartEconomicKPIs.f_setChartEconomicKPIs();
-		break;
 	case GTO:
 		gr_chartGTO_presentation.setVisible(true);
 		chartGTO.f_setChartGTO();
+		break;
+	case CO2:
+		gr_chartCO2_presentation.setVisible(true);
+		chartCO2.f_setChartCO2();
+		break;
+	case ENERGY_COSTS:
+		gr_chartEnergyCosts_presentation.setVisible(true);
+		chartEnergyCosts.f_setChartEnergyCosts();
+		break;
+	case CONNECTION_COSTS:
+		gr_chartConnectionCosts_presentation.setVisible(true);
+		chartConnectionCosts.f_setChartConnectionCosts();
+		break;
+	case CAPEX_AND_OPEX:
+		gr_chartCAPEXAndOPEX_presentation.setVisible(true);
+		chartCAPEXAndOPEX.f_setChartCAPEXAndOPEX();
+		break;
+	case TOTAL_COSTS:
+		gr_chartTotalCosts_presentation.setVisible(true);
+		chartTotalCosts.f_setChartTotalCosts();
 		break;
 }
 
@@ -174,7 +193,7 @@ chartKPISummary.f_styleBackground(backgroundColor, lineColor, lineWidth, lineSty
 chartGespreksLeidraad.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGespreksleidraadBedrijven.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartBatteries.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
-chartEconomicKPIs.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartEnergyCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGTO.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 /*ALCODEEND*/}
 
@@ -241,7 +260,11 @@ f_setChartSummary_Presentation(location_x, location_y, visible);
 f_setChartGSLD_Presentation(location_x, location_y, visible);
 f_setChartKPISummary_Presentation(location_x, location_y, visible);
 f_setChartBatteries_presentation(location_x, location_y, visible);
-f_setChartEconomicKPI_presentation(location_x, location_y, visible);
+f_setChartCO2_presentation(location_x, location_y, visible);
+f_setChartEnergyCosts_presentation(location_x, location_y, visible);
+f_setChartConnectionCosts_presentation(location_x, location_y, visible);
+f_setChartCAPEXAndOPEX_presentation(location_x, location_y, visible);
+f_setChartTotalCosts_presentation(location_x, location_y, visible);
 /*ALCODEEND*/}
 
 double f_setChartGSLD_Presentation(Integer location_x,Integer location_y,boolean visible)
@@ -262,65 +285,17 @@ if(location_y != null){
 gr_chartGespreksLeidraad_presentation.setVisible(visible);
 /*ALCODEEND*/}
 
-double f_setSelectedRadioButton()
-{/*ALCODESTART::1732015499114*/
-rb_DEFAULT.setVisible(false);
-rb_DEFAULT_AND_GESPREKSLEIDRAAD.setVisible(false);
-rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.setVisible(false);
-rb_DEFAULT_AND_BATTERY.setVisible(false);
-rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN.setVisible(false);
-rb_DEFAULT_AND_BATTERY_AND_ECONOMIC.setVisible(false);
-rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN_AND_GTO.setVisible(false);
-rb_DEFAULT.setEnabled(false);
-rb_DEFAULT_AND_GESPREKSLEIDRAAD.setEnabled(false);
-rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN.setEnabled(false);
-rb_DEFAULT_AND_BATTERY.setEnabled(false);
-rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN.setEnabled(false);
-rb_DEFAULT_AND_BATTERY_AND_ECONOMIC.setEnabled(false);
-rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN_AND_GTO.setEnabled(false);
-switch(v_selectedRadioButtonSetup){
-
-case DEFAULT:
-	v_selectedRadioButton = rb_DEFAULT;
-	break;
-case DEFAULT_AND_GESPREKSLEIDRAAD:
-	v_selectedRadioButton = rb_DEFAULT_AND_GESPREKSLEIDRAAD;
-	break;
-case DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN:
-	v_selectedRadioButton = rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN;
-	break;
-case DEFAULT_AND_BATTERY:	
-	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY;
-	break;
-case DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN:	
-	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY_AND_GESPREKSLEIDRAADBEDRIJVEN;
-	break;
-case DEFAULT_AND_BATTERY_AND_ECONOMIC:	
-	v_selectedRadioButton = rb_DEFAULT_AND_BATTERY_AND_ECONOMIC;
-	break;
-case DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN_AND_GTO:	
-	v_selectedRadioButton = rb_DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN_AND_GTO;
-	break;
-case OFF:
-	f_setResultsUIHeader(null, null, false);
-	break;
-}
-
-v_selectedRadioButton.setVisible(true);
-v_selectedRadioButton.setEnabled(true);
-/*ALCODEEND*/}
-
-String f_getName(OL_EnergyCarriers energyCarrier)
+String f_getECName(OL_EnergyCarriers energyCarrier)
 {/*ALCODESTART::1731578318216*/
 switch (energyCarrier) {
 	case ELECTRICITY:
-		return "Electriciteit";
+		return "Elektriciteit";
 	case HEAT:
 		return "Warmte";
 	case METHANE:
 		return "Gas";
 	case PETROLEUM_FUEL:
-		return "Voertuig Brandstof";
+		return "Diesel & Benzine";
 	case HYDROGEN:
 		return "Waterstof";
 	case IRON_POWDER:
@@ -379,12 +354,12 @@ double f_setChartsBatteries()
 chartBatteries.f_setChartsBatteries();
 /*ALCODEEND*/}
 
-double f_initializeResultsUI()
+double f_initializeResultsUI(List<OL_ChartTypes> selectedChartTypes_Energy,List<OL_ChartTypes> selectedChartTypes_Economic)
 {/*ALCODESTART::1739364390433*/
 f_updateResultsUI(energyModel);
 
 //Set the selected radiobutton setup
-f_setSelectedRadioButton();
+f_initializeResultsUIMainRB(selectedChartTypes_Energy, selectedChartTypes_Economic);
 
 //Initialize profiles graph (starting chart)
 chartProfielen.f_setCharts();
@@ -477,7 +452,15 @@ area.v_dataNetbelastingDuurkrommeWeekend_kW = GN.data_weekendNetbelastingDuurkro
 
 double f_enableNonLivePlotRadioButtons(boolean active)
 {/*ALCODESTART::1739884154258*/
-v_selectedRadioButton.setEnabled(active);
+if(rb_resultsUIMode != null){
+	rb_resultsUIMode.setEnabled(active);
+}
+if(rb_chartType_Energy != null){
+	rb_chartType_Energy.setEnabled(active);
+}
+if(rb_chartType_Economic != null){
+	rb_chartType_Economic.setEnabled(active);
+}
 chartProfielen.rb_periodIncludingYear.setEnabled(active);
 chartProfielen.rb_periodExcludingYear.setEnabled(active);
 chartProfielen.rb_periodPeaksIncludingYear.setEnabled(active);
@@ -693,22 +676,22 @@ else {
 }
 /*ALCODEEND*/}
 
-double f_setChartEconomicKPI_presentation(Integer location_x,Integer location_y,boolean visible)
+double f_setChartEnergyCosts_presentation(Integer location_x,Integer location_y,boolean visible)
 {/*ALCODESTART::1755704458936*/
-//Set the location and visibility of the Batteries charts presentation
+//Set the location and visibility of the EnergyCosts charts presentation
 
 //Set x axis
 if(location_x != null){
-	gr_chartEconomicKPIs_presentation.setX(location_x);
+	gr_chartEnergyCosts_presentation.setX(location_x);
 }
 
 //Set y axis
 if(location_y != null){
-	gr_chartEconomicKPIs_presentation.setY(location_y);
+	gr_chartEnergyCosts_presentation.setY(location_y);
 }
 
 //Set visibility
-gr_chartEconomicKPIs_presentation.setVisible(visible);
+gr_chartEnergyCosts_presentation.setVisible(visible);
 /*ALCODEEND*/}
 
 double f_setChartGTO_presentation(Integer location_x,Integer location_y,boolean visible)
@@ -745,5 +728,337 @@ if(location_y != null){
 
 //Set visibility
 gr_chartBars_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_initializeChartSelectionRB_Energy(List<OL_ChartTypes> selectedCharts_Energy)
+{/*ALCODESTART::1772200290396*/
+//Set active map overlay types if they are set in the project settings
+if(selectedCharts_Energy != null && selectedCharts_Energy.size() > 0){
+	c_loadedChartTypes_Energy = new ArrayList<OL_ChartTypes>(selectedCharts_Energy);
+	if(c_loadedChartTypes_Energy.contains(OL_ChartTypes.PROFILES)){
+		c_loadedChartTypes_Energy.remove(OL_ChartTypes.PROFILES);
+	}
+	c_loadedChartTypes_Energy.add(0, OL_ChartTypes.PROFILES); // Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
+}
+else{//No chart types loaded but profiles is required.
+	c_loadedChartTypes_Energy = new ArrayList<OL_ChartTypes>();
+	c_loadedChartTypes_Energy.add(OL_ChartTypes.PROFILES); // Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
+}
+
+//Never allow more than 6 chart types (for now) (does not fit in rb location) -> If more than 6, remove final option(s)
+while(c_loadedChartTypes_Energy.size()>6){
+	c_loadedChartTypes_Energy.remove(c_loadedChartTypes_Energy.get(6));
+}
+
+//Adjust the visualisation of the radiobuttons
+Presentable presentable = gr_mainRadioButtons.getPresentable();
+boolean ispublic = true;
+double x = 300;
+double y = -147 + (6 - c_loadedChartTypes_Energy.size()) * 11;
+double width = 130;
+double height = 0;//Not needed, automatically adjust by adding options
+Color textColor = Color.BLACK;
+boolean enabled = true;
+Font font = new Font("Dialog", Font.PLAIN, 11);
+boolean vertical = true;
+
+
+//Set words for the radiobutton options
+List<String> RadioButtonOptions_list = new ArrayList<String>();
+for(OL_ChartTypes chartType : c_loadedChartTypes_Energy){
+	switch(chartType){
+		case PROFILES:
+			RadioButtonOptions_list.add("Profielen");
+			break;
+		case BAR_TOTALS:
+			RadioButtonOptions_list.add("Opwek/Verbruik diagram");
+			break;
+		case LOAD_DURATION_CURVES:
+			RadioButtonOptions_list.add("Netbelasting");
+			break;
+		case SANKEY:
+			RadioButtonOptions_list.add("Energiestromen");
+			break;
+		case GESPREKSLEIDRAAD_BEDRIJVEN:
+			RadioButtonOptions_list.add("Gespreksleidraad Bedrijven");
+			break;
+		case GESPREKSLEIDRAAD:
+			RadioButtonOptions_list.add("Gespreksleidraad");
+			break;
+		case BATTERY:
+			RadioButtonOptions_list.add("Batterij");
+			break;
+		case GTO:
+			RadioButtonOptions_list.add("GTO");
+			break;
+		case CO2:
+			RadioButtonOptions_list.add("CO2 uitstoot");
+			break;
+		default:
+			throw new RuntimeException("chartType '" + chartType + "' is not supported for the Energy options.");
+	}
+} 
+
+String[] RadioButtonOptions = RadioButtonOptions_list.toArray(String[]::new);
+
+//Create the radiobutton and set the correct action.
+rb_chartType_Energy = new ShapeRadioButtonGroup(presentable, ispublic, x ,y, width, height, textColor, enabled, font, vertical, RadioButtonOptions){
+	@Override
+	public void action() {
+		f_setChart_Energy();
+	}
+};
+
+presentation.add(rb_chartType_Energy);
+/*ALCODEEND*/}
+
+double f_setChart_Energy()
+{/*ALCODESTART::1772200290406*/
+//Get chart type, based on loaded order of the radio buttons
+v_selectedChartType = c_loadedChartTypes_Energy.get(rb_chartType_Energy.getValue());
+
+if(b_showKPISummary){
+	checkbox_KPISummary.setSelected(false, true);
+}
+
+f_showCorrectChart();
+/*ALCODEEND*/}
+
+double f_initializeChartSelectionRB_Economic(List<OL_ChartTypes> selectedCharts_Economic)
+{/*ALCODESTART::1772200450868*/
+//Set active map overlay types if they are set in the project settings
+if(selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
+	c_loadedChartTypes_Economic = new ArrayList<OL_ChartTypes>(selectedCharts_Economic);
+}
+else{//No chart types loaded in: return.
+	return;
+}
+
+
+//Adjust the visualisation of the radiobuttons
+Presentable presentable = gr_mainRadioButtons.getPresentable();
+boolean ispublic = true;
+double x = 300;
+double y = -147 + (6 - c_loadedChartTypes_Economic.size()) * 11;
+double width = 130;
+double height = 0;//Not needed, automatically adjust by adding options
+Color textColor = Color.BLACK;
+boolean enabled = true;
+Font font = new Font("Dialog", Font.PLAIN, 11);
+boolean vertical = true;
+
+
+//Set words for the radiobutton options
+List<String> RadioButtonOptions_list = new ArrayList<String>();
+for(OL_ChartTypes chartType : c_loadedChartTypes_Economic){
+	switch(chartType){
+		case ENERGY_COSTS:
+			RadioButtonOptions_list.add("Energie kosten");
+			break;
+		case CONNECTION_COSTS:
+			RadioButtonOptions_list.add("Aansluitings kosten");
+			break;
+		case CAPEX_AND_OPEX:
+			RadioButtonOptions_list.add("CAPEX & OPEX");
+			break;
+		case TOTAL_COSTS:
+			RadioButtonOptions_list.add("Totale kosten");
+			break;
+		default:
+			throw new RuntimeException("chartType '" + chartType + "' is not supported for the Economic options.");
+	}
+} 
+
+String[] RadioButtonOptions = RadioButtonOptions_list.toArray(String[]::new);
+
+//Create the radiobutton and set the correct action.
+rb_chartType_Economic = new ShapeRadioButtonGroup(presentable, ispublic, x ,y, width, height, textColor, enabled, font, vertical, RadioButtonOptions){
+	@Override
+	public void action() {
+		f_setChart_Economic();
+	}
+};
+
+presentation.add(rb_chartType_Economic);
+/*ALCODEEND*/}
+
+double f_initializeResultsUIMainRB(List<OL_ChartTypes> selectedCharts_Energy,List<OL_ChartTypes> selectedCharts_Economic)
+{/*ALCODESTART::1772200556889*/
+//Set words for the radiobutton options
+List<String> RadioButtonOptions_list = new ArrayList<String>();
+
+//Add energy rb option and create the energy charts rb
+RadioButtonOptions_list.add("Energie");
+f_initializeChartSelectionRB_Energy(selectedCharts_Energy);
+
+//Add economic rb option and create the economic charts rb if selected.
+if(selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
+	f_initializeChartSelectionRB_Economic(selectedCharts_Economic);
+	RadioButtonOptions_list.add("Financieel");
+	rb_chartType_Economic.setVisible(false);
+}
+else{ //No economic charts: no subdivisions: only energy rb/charts. -> No rb for mode switch needed.
+	return;
+}
+
+//Adjust the visualisation of the radiobuttons
+Presentable presentable = gr_resultsUIHeader.getPresentable();
+boolean ispublic = true;
+double x = 50;
+double y =  -120;
+double width = 130;
+double height = 10;
+Color textColor = Color.BLACK;
+boolean enabled = true;
+Font font = new Font("Dialog", Font.PLAIN, 12);
+boolean vertical = false;
+
+//Convert radio button option list to string[]
+String[] RadioButtonOptions = RadioButtonOptions_list.toArray(String[]::new);
+
+//Create the radiobutton and set the correct action.
+rb_resultsUIMode = new ShapeRadioButtonGroup(presentable, ispublic, x ,y, width, height, textColor, enabled, font, vertical, RadioButtonOptions){
+	@Override
+	public void action() {
+		if(rb_resultsUIMode.getValue() == 0){
+			rb_chartType_Economic.setVisible(false);
+			rb_chartType_Energy.setVisible(true);
+			rb_chartType_Energy.setValue(rb_chartType_Energy.getValue(), true);
+		}
+		else{
+			rb_chartType_Energy.setVisible(false);
+			rb_chartType_Economic.setVisible(true);
+			rb_chartType_Economic.setValue(rb_chartType_Economic.getValue(), true);		
+		}
+	}
+};
+
+presentation.add(rb_resultsUIMode);
+/*ALCODEEND*/}
+
+double f_setChart_Economic()
+{/*ALCODESTART::1772203048742*/
+//Get chart type, based on loaded order of the radio buttons
+v_selectedChartType = c_loadedChartTypes_Economic.get(rb_chartType_Economic.getValue());
+
+if(b_showKPISummary){
+	checkbox_KPISummary.setSelected(false, true);
+}
+
+f_showCorrectChart();
+/*ALCODEEND*/}
+
+double f_setChartCO2_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1772472237697*/
+//Set the location and visibility of the Batteries charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartCO2_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartCO2_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartCO2_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setChartConnectionCosts_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1772472253934*/
+//Set the location and visibility of the ConnectionCosts charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartConnectionCosts_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartConnectionCosts_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartConnectionCosts_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setChartCAPEXAndOPEX_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1772472255353*/
+//Set the location and visibility of the CAPEXAndOPEX charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartCAPEXAndOPEX_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartCAPEXAndOPEX_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartCAPEXAndOPEX_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+double f_setChartTotalCosts_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1772472257080*/
+//Set the location and visibility of the TotalCosts charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartTotalCosts_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartTotalCosts_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartTotalCosts_presentation.setVisible(visible);
+/*ALCODEEND*/}
+
+String f_getAssetName(OL_EnergyAssetType assetType)
+{/*ALCODESTART::1774279163769*/
+switch (assetType) {
+	case STORAGE_ELECTRIC:
+		return "Batterij";
+	case PHOTOVOLTAIC:
+		return "PV";
+	case HEAT_PUMP_AIR:
+		return "Warmtepomp";
+	case PHOTOTHERMAL:
+		return "PT-Panelen";
+	case WINDMILL:
+		return "Windturbine";
+	case ELECTROLYSER:
+		return "Electrolyser";
+	case DIESEL_GENERATOR:
+		return "Diesel generator";
+	case METHANE_GENERATOR:
+		return "Gas generator";
+	case GAS_BURNER:
+		return "Gasbrander";
+	case ELECTRIC_VEHICLE:
+		return "Elektrische autos";
+	case ELECTRIC_VAN:
+		return "Elektrische busjes";
+	case ELECTRIC_TRUCK:
+		return "Elektrische trucks";
+	case HYDROGEN_TRUCK:
+		return "Waterstof trucks";
+		default:
+			throw new RuntimeException("Onbekende assetType, kan niet vertaald worden.");
+}
+
+
+
+// The code below return the name in English
+/*
+String s = energyCarrier.toString();
+return s.substring(0, 1) + s.substring(1).toLowerCase();
+*/
 /*ALCODEEND*/}
 

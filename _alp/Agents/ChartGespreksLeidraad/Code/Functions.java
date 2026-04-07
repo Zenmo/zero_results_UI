@@ -90,7 +90,7 @@ pl_productionChart.addDataItem(d2,"Teruggeleverde elektriciteit [MWh]",v_exporte
 if (importE_MWh > 0) {
 	DataItem d3 = new DataItem();
 	d3.setValue(importE_MWh/1000);
-	pl_consumptionChart.addDataItem(d3,"Electriciteit uit het net [MWh]",v_importedElectricityColor);
+	pl_consumptionChart.addDataItem(d3,"Elektriciteit uit het net [MWh]",v_importedElectricityColor);
 }
 if (importG_MWh > 0 ) {
 	DataItem d4 = new DataItem();
@@ -664,7 +664,7 @@ double totalAbsoluteLoad_kW = 0;
 for(int i=0; i< loadDurationCurves.ds_loadDurationCurveTotal_kW.size(); i++){
 	totalAbsoluteLoad_kW += abs(loadDurationCurves.ds_loadDurationCurveTotal_kW.getY(i))* uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 }
-benuttingsgraad = totalAbsoluteLoad_kW / ((dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW + dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW) * 8760) * 100;
+benuttingsgraad = totalAbsoluteLoad_kW / ((dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW() + dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW()) * 8760) * 100;
 t_KPIBenuttingsgraad.setText(roundToDecimal(benuttingsgraad, 0) + "%");
 /*ALCODEEND*/}
 
@@ -681,8 +681,8 @@ double f_addDataToPlots(I_EnergyData dataObject,J_LoadDurationCurves loadDuratio
 double scaleMin_kW;
 double scaleMax_kW;
 
-double gridCapacityDelivery_kW = dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW;
-double gridCapacityFeedin_kW = dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW;
+double gridCapacityDelivery_kW = dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW();
+double gridCapacityFeedin_kW = dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW();
 
 //Jaar
 plot_jaar.addDataSet(loadDurationCurves.ds_loadDurationCurveTotal_kW,"Belasting jaar");
@@ -734,8 +734,8 @@ Color  deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 Color  feedinCapacityColor		= uI_Results.v_electricityCapacityColor_estimated;
 
 //Create delivery and capacity year datasets
-DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacity_kW);
-DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacity_kW);
+DataSet gridCapacityDelivery_kW = uI_Results.f_createFlatDataset(0, 8760, dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacity_kW());
+DataSet gridCapacityFeedin_kW = uI_Results.f_createFlatDataset(0, 8760, -dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacity_kW());
 	
 if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 	deliveryCapacityLabel = "Cumulatieve GTV afname van bedrijven";
@@ -757,11 +757,11 @@ if(uI_Results.b_showGroupContractValues && uI_Results.v_selectedObjectScope == O
 	plot_seizoen.addDataSet(groupContractCapacityFeedin_kW, "Groeps GTV teruglevering", uI_Results.v_groupGTVColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
 }
 else{
-	if(dataObject.getRapidRunData().connectionMetaData.contractedDeliveryCapacityKnown){
+	if(dataObject.getRapidRunData().connectionMetaData.getContractedDeliveryCapacityKnown()){
 		deliveryCapacityLabel = "Capaciteit afname";
 		deliveryCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	}
-	if(dataObject.getRapidRunData().connectionMetaData.contractedFeedinCapacityKnown){
+	if(dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacityKnown()){
 		feedinCapacityLabel = "Capaciteit teruglevering";
 		feedinCapacityColor		= uI_Results.v_electricityCapacityColor_known;
 	}

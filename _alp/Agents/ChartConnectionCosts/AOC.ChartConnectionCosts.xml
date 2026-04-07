@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ActiveObjectClass>
-	<Id>1762958101311</Id>
-	<Name><![CDATA[ChartBars]]></Name>
-	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
+	<Id>1772440768543</Id>
+	<Name><![CDATA[ChartConnectionCosts]]></Name>
 	<Folder>1755764711838</Folder>
+	<Import><![CDATA[import zeroPackage.ZeroMath;
+import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
+	<StartupCode><![CDATA[c_orderedStackCharts.add(chart_monthlyConnectionCosts_jan);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_feb);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_mar);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_apr);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_may);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_jun);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_jul);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_aug);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_sep);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_okt);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_nov);
+c_orderedStackCharts.add(chart_monthlyConnectionCosts_dec);
+]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
-		<Id>1762958101306</Id>
-		<Name><![CDATA[1762958101306]]></Name>
+		<Id>1772440768548</Id>
+		<Name><![CDATA[1772440768548]]></Name>
 		<GenericParameterValue Class="CodeValue">
 			<Code><![CDATA[T extends Agent]]></Code>
 		</GenericParameterValue>
@@ -68,9 +82,9 @@
 	</EnvironmentProperties>
 	<DatasetsCreationProperties>
 		<AutoCreate>true</AutoCreate>
-		<Id>1762958101308</Id>
+		<Id>1772440768542</Id>
 		<OccurrenceAtTime>true</OccurrenceAtTime>
-		<OccurrenceDate>1714809600000</OccurrenceDate>
+		<OccurrenceDate>1772524800000</OccurrenceDate>
 		<OccurrenceTime Class="CodeUnitValue">
 			<Code><![CDATA[0]]></Code>
 			<Unit Class="TimeUnits">HOUR</Unit>
@@ -81,7 +95,7 @@
 		</RecurrenceCode>
 	</DatasetsCreationProperties>
 	<ScaleRuler>
-		<Id>1762958101307</Id>
+		<Id>1772440768546</Id>
 		<Name><![CDATA[scale]]></Name>
 		<X>0</X>
 		<Y>-150</Y>
@@ -97,13 +111,13 @@
 		<Scale>10</Scale>
 		<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 	</ScaleRuler>
-	<CurrentLevel>1762958101349</CurrentLevel>
-	<ConnectionsId>1762958101529</ConnectionsId>
+	<CurrentLevel>1772440768549</CurrentLevel>
+	<ConnectionsId>1772440768544</ConnectionsId>
 	<Variables xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>
-			<Id>1762958101529</Id>
+			<Id>1772440768544</Id>
 			<Name><![CDATA[connections]]></Name>
 			<X>50</X>
 			<Y>-50</Y>
@@ -128,7 +142,7 @@
 	</AgentLinks>
 	<ContainerLinks>
 		<ContainerLink>
-			<Id>1762960904360</Id>
+			<Id>1772440768577</Id>
 			<Name><![CDATA[uI_Results]]></Name>
 			<X>50</X>
 			<Y>-100</Y>
@@ -147,7 +161,7 @@
 	</ContainerLinks>
 	<Presentation>
 		<Level>
-			<Id>1762958101349</Id>
+			<Id>1772440768549</Id>
 			<Name><![CDATA[level]]></Name>
 			<X>0</X>
 			<Y>0</Y>
@@ -164,22 +178,4 @@
 			<Presentation xmlns:al="http://anylogic.com"/>
 		</Level>
 	</Presentation>
-	<Areas>
-		<Area>
-			<Id>1762958101527</Id>
-			<Name><![CDATA[viewArea]]></Name>
-			<X>0</X>
-			<Y>0</Y>
-			<Label>
-				<X>0</X>
-				<Y>-10</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>false</ShowLabel>
-			<Title/>
-			<Width>1920</Width>
-			<Height>980</Height>
-		</Area>
-	</Areas>
 </ActiveObjectClass>
