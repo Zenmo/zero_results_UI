@@ -157,23 +157,44 @@ double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthSta
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.getAvgCostOfEnergyCarrier_eurpkWh(EC);
-double energyTaxes_eur_p_kwh = uI_Results.energyModel.avgc_data.economicAVGC.getEnergyTaxesECImport_eurpkWh(EC, ZeroMath.arraySumPos(ECBalance_kW.clone())*signalResolution_h);
+double[] values_dayAheadElectricityPricing_eurpMWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues();
+double energyTaxes_eur_p_kwh = uI_Results.energyModel.avgc_data.economicAVGC.getEnergyTaxesECImport_eurpkWh(EC, ZeroMath.arraySumPos(ECBalance_kW)*signalResolution_h);
 double VAT_fr = uI_Results.energyModel.avgc_data.economicAVGC.getVAT_energy_fr();
+
 
 double[] monthlyECImportCosts_euro = new double[12];
 
-int currentMonth = 0;
+int hoursInYear = 8760;
+double modelStartTime_h = uI_Results.energyModel.p_timeParameters.getRunStartTime_h();
+int currentMonth = 11;
+for(int i = 0; i< 11;i++){
+	if(startHourPerMonth[i+1]>= modelStartTime_h){
+		currentMonth = i; 
+		break;
+	}
+}
 
 for (int i = 0; i < ECBalance_kW.length; i++) {
-	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*signalResolution_h){
+	if(currentMonth == 11){
+		if ((i*signalResolution_h + modelStartTime_h) > hoursInYear){
+			currentMonth = 0;
+		}
+	}
+	else if(startHourPerMonth[currentMonth+1] < (i*signalResolution_h + modelStartTime_h) % hoursInYear){
 		currentMonth += 1;
 	}
 	
-	if(EC == OL_EnergyCarriers.ELECTRICITY){
-		energyCarrierCost_eur_p_kWh = energyTaxes_eur_p_kwh + uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i * signalResolution_h)] / 1000.0;
+	double currentECImport_kW = max(0, ECBalance_kW[i]);
+	if(currentECImport_kW == 0){
+		continue;
 	}
-
-    monthlyECImportCosts_euro[currentMonth] += (1 + VAT_fr)*((energyCarrierCost_eur_p_kWh + energyTaxes_eur_p_kwh) * max(0, ECBalance_kW[i] * signalResolution_h));
+	
+	
+	if(EC == OL_EnergyCarriers.ELECTRICITY){
+		energyCarrierCost_eur_p_kWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getValue((i*signalResolution_h + modelStartTime_h) % hoursInYear)/1000.0;
+	}
+	
+    monthlyECImportCosts_euro[currentMonth] += (1 + VAT_fr)*((energyCarrierCost_eur_p_kWh + energyTaxes_eur_p_kwh) * currentECImport_kW * signalResolution_h);
 }
 
 return monthlyECImportCosts_euro;
@@ -186,24 +207,43 @@ double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthSta
 double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.getAvgCostOfEnergyCarrier_eurpkWh(EC);
+double[] values_dayAheadElectricityPricing_eurpMWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues();
 
-double[] monthlyECExportCosts_euro = new double[12];
+double[] monthlyECExportRevenue_euro = new double[12];
 
-int currentMonth = 0;
 
+int hoursInYear = 8760;
+double modelStartTime_h = uI_Results.energyModel.p_timeParameters.getRunStartTime_h();
+int currentMonth = 11;
+for(int i = 0; i< 11;i++){
+	if(startHourPerMonth[i+1]>= modelStartTime_h){
+		currentMonth = i; 
+		break;
+	}
+}
 for (int i = 0; i < ECBalance_kW.length; i++) {
-	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*signalResolution_h){
+	if(currentMonth == 11){
+		if ((i*signalResolution_h + modelStartTime_h) > hoursInYear){
+			currentMonth = 0;
+		}
+	}
+	else if(startHourPerMonth[currentMonth+1] < (i*signalResolution_h + modelStartTime_h) % hoursInYear){
 		currentMonth += 1;
 	}
 	
-	if(EC == OL_EnergyCarriers.ELECTRICITY){	
-		energyCarrierCost_eur_p_kWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i*signalResolution_h)] / 1000.0;
-   	}
+	double currentECExport_kW = max(0, -ECBalance_kW[i]);
+	if(currentECExport_kW == 0){
+		continue;
+	}
 
-    monthlyECExportCosts_euro[currentMonth] += energyCarrierCost_eur_p_kWh* max(0, -ECBalance_kW[i] * signalResolution_h);
+	if(EC == OL_EnergyCarriers.ELECTRICITY){
+		energyCarrierCost_eur_p_kWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getValue((i*signalResolution_h + modelStartTime_h) % hoursInYear)/1000.0;
+	}
+
+    monthlyECExportRevenue_euro[currentMonth] += energyCarrierCost_eur_p_kWh * currentECExport_kW * signalResolution_h;
 }
 
-return monthlyECExportCosts_euro;
+return monthlyECExportRevenue_euro;
 
 /*ALCODEEND*/}
 
@@ -413,154 +453,6 @@ for(OL_EnergyCarriers EC : orderedEnergyCarriers){
 comboBoxOptions[i] = p_totalName;
 
 cb_energyCarrierSelection.setItems(comboBoxOptions);
-
-/*ALCODEEND*/}
-
-Pair<double[], double[]> f_calculateMonthlyEnergyCosts_eur_FasterTEST(double[] ECBalance_kW,double signalResolution_h,OL_EnergyCarriers EC)
-{/*ALCODESTART::1775548547650*/
-double[] startHourPerMonth = uI_Results.energyModel.p_timeParameters.getMonthStartHours();
-double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
-
-double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.getAvgCostOfEnergyCarrier_eurpkWh(EC);
-double energyTaxes_eur_p_kwh = uI_Results.energyModel.avgc_data.economicAVGC.getEnergyTaxesECImport_eurpkWh(EC, ZeroMath.arraySumPos(ECBalance_kW.clone())*signalResolution_h);
-double VAT_fr = uI_Results.energyModel.avgc_data.economicAVGC.getVAT_energy_fr();
-
-double[] monthlyECImportCosts_euro = new double[12];
-double[] monthlyECExportCosts_euro = new double[12];
-
-int currentMonth = 0;
-
-for (int i = 0; i < ECBalance_kW.length; i++) {
-	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*signalResolution_h){
-		currentMonth += 1;
-	}
-	
-	if(EC == OL_EnergyCarriers.ELECTRICITY){
-		energyCarrierCost_eur_p_kWh = energyTaxes_eur_p_kwh + uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues()[(int) Math.floor(i * signalResolution_h)] / 1000.0;
-	}
-
-    monthlyECImportCosts_euro[currentMonth] += (1 + VAT_fr)*((energyCarrierCost_eur_p_kWh + energyTaxes_eur_p_kwh) * max(0, ECBalance_kW[i] * signalResolution_h));
-	monthlyECExportCosts_euro[currentMonth] += energyCarrierCost_eur_p_kWh* max(0, -ECBalance_kW[i] * signalResolution_h);
-}
-
-return new Pair<double[], double[]>(monthlyECImportCosts_euro, monthlyECExportCosts_euro);
-
-/*ALCODEEND*/}
-
-double f_setChartEnergyCostsValues_FasterTEST()
-{/*ALCODESTART::1775548722225*/
-I_EnergyData data = uI_Results.f_getSelectedObjectData();
-
-//Reset chart
-f_resetChart();
-
-
-//Get selected List
-List<OL_EnergyCarriers> selectedECList;
-if(v_selectedEnergyCarrier.equals(p_totalName)){
-	if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-		selectedECList = new ArrayList<>(List.of(uI_Results.v_gridNode.p_energyCarrier));
-	}
-	else{
-		selectedECList = new ArrayList<>(data.getRapidRunData().activeEnergyCarriers);
-	}
-}
-else{
-	selectedECList = new ArrayList<>(List.of(OL_EnergyCarriers.valueOf(v_selectedEnergyCarrier)));
-}
-
-
-double[] monthlyImportCosts_eur = new double[12];
-double[] monthlyExportRevenue_eur = new double[12];
-
-for(OL_EnergyCarriers EC : selectedECList){
-	//Get the ECBalance values
-	double[] ECBalance_kW;
-	double signalResolution_h;
-	if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-		if(EC == OL_EnergyCarriers.ELECTRICITY){
-			ECBalance_kW = uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getTimeSeries_kW();
-			signalResolution_h = uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getSignalResolution_h();
-		}
-		else{ //if(EC == OL_EnergyCarriers.HEAT){
-			ECBalance_kW = uI_Results.v_gridNode.acc_annualHeatBalance_kW.getTimeSeries_kW();
-			signalResolution_h = uI_Results.v_gridNode.acc_annualHeatBalance_kW.getSignalResolution_h();
-		}
-	}
-	else{
-		if(EC == OL_EnergyCarriers.HEAT && !data.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){
-			continue;
-		}
-		ECBalance_kW = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW();
-		signalResolution_h = data.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getSignalResolution_h();
-	}
-	
-	//Calculate values
-	Pair<double[], double[]> monthlyImportAndExportCostsPair_eur = f_calculateMonthlyEnergyCosts_eur_TEST(ECBalance_kW, signalResolution_h, EC);
-	double[] monthlyECImportCosts_eur = monthlyImportAndExportCostsPair_eur.getFirst();
-	double[] monthlyECExportRevenue_eur = monthlyImportAndExportCostsPair_eur.getSecond();
-	
-	//Add values of this EC to the total
-	for(int i = 0; i < 12; i++){
-		monthlyImportCosts_eur[i] += monthlyECImportCosts_eur[i];
-		monthlyExportRevenue_eur[i] += monthlyECExportRevenue_eur[i];
-	}	
-}
-
-double[] monthlyNetCosts_eur = f_calculateMonthlyNetEnergyCosts_eur(monthlyImportCosts_eur, monthlyExportRevenue_eur);
-	
-double totalImportCosts_eur = ZeroMath.arraySum(monthlyImportCosts_eur);
-double totalExportRevenue_eur = ZeroMath.arraySum(monthlyExportRevenue_eur);
-double totalNetCosts_eur = ZeroMath.arraySum(monthlyNetCosts_eur);
-
-
-//Previous values
-Double previousTotalImportCosts_eur = null;
-Double previousTotalExportRevenue_eur = null;
-Double previousTotalNetCosts_eur = null;
-
-if(data.getPreviousRapidRunData() != null){
-	//It is possible that previous rapid run has other set of EC than current rapid run, so list needs to be recreated.
-	List<OL_EnergyCarriers> selectedECList_previousRapidRun =new ArrayList<>();
-	if(v_selectedEnergyCarrier.equals("Totaal")){ 
-		selectedECList_previousRapidRun.addAll(data.getPreviousRapidRunData().activeEnergyCarriers);
-	}
-	else if(data.getPreviousRapidRunData().activeEnergyCarriers.contains(selectedECList.get(0))){
-		selectedECList_previousRapidRun = selectedECList;
-	}
-	//Initialize previous values with 0. (Even if selectedECList_previousRapidRun remains empty due to diff in EC between rapid runs this makes sense!)
-	previousTotalImportCosts_eur = 0.0;
-	previousTotalExportRevenue_eur = 0.0;
-	previousTotalNetCosts_eur = 0.0;		
-
-	for(OL_EnergyCarriers EC : selectedECList_previousRapidRun){
-		if(EC == OL_EnergyCarriers.HEAT && !data.getPreviousRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){
-			continue;
-		}
-		
-		double[] previousECBalance_kW = data.getPreviousRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW();
-		double previousSignalResolution_h = data.getPreviousRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getSignalResolution_h();
-		
-		//Calculate values
-		Pair<double[], double[]> monthlyImportAndExportCostsPair_eur = f_calculateMonthlyEnergyCosts_eur_TEST(previousECBalance_kW, previousSignalResolution_h, EC);
-		double[] previousMonthlyECImportCosts_eur = monthlyImportAndExportCostsPair_eur.getFirst();
-		double[] previousMonthlyECExportRevenue_eur = monthlyImportAndExportCostsPair_eur.getSecond();
-		double[] previousMonthlyNetECCosts_eur = f_calculateMonthlyNetEnergyCosts_eur(previousMonthlyECImportCosts_eur, previousMonthlyECExportRevenue_eur);
-		
-		previousTotalImportCosts_eur += ZeroMath.arraySum(previousMonthlyECImportCosts_eur);
-		previousTotalExportRevenue_eur += ZeroMath.arraySum(previousMonthlyECExportRevenue_eur);
-		previousTotalNetCosts_eur += ZeroMath.arraySum(previousMonthlyNetECCosts_eur);
-	}
-}
-
-
-//Set yearly kpis
-f_setYearlyKPIs(totalImportCosts_eur, totalExportRevenue_eur, totalNetCosts_eur, previousTotalImportCosts_eur, previousTotalExportRevenue_eur, previousTotalNetCosts_eur);
-
-//Set monthly chart
-if(uI_Results.energyModel.p_timeParameters.getRunDuration_h() >= 8760){
-	f_setMonthlyChart(monthlyImportCosts_eur, monthlyExportRevenue_eur, monthlyNetCosts_eur);
-}
 
 /*ALCODEEND*/}
 

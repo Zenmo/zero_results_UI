@@ -92,18 +92,36 @@ double energyCarrierCO2Emission_kg_p_kWh = uI_Results.energyModel.avgc_data.map_
 
 double[] monthlyElectricityImportCO2Emission_kg = new double[12];
 
-int currentMonth = 0;
 
+int hoursInYear = 8760;
+double modelStartTime_h = uI_Results.energyModel.p_timeParameters.getRunStartTime_h();
+int currentMonth = 11;
+for(int i = 0; i< 11;i++){
+	if(startHourPerMonth[i+1]>= modelStartTime_h){
+		currentMonth = i; 
+		break;
+	}
+}
 for (int i = 0; i < ECBalance_kW.length; i++) {
-	if(currentMonth != 11 && startHourPerMonth[currentMonth+1] < i*signalResolution_h){
+	if(currentMonth == 11){
+		if ((i*signalResolution_h + modelStartTime_h) > hoursInYear){
+			currentMonth = 0;
+		}
+	}
+	else if(startHourPerMonth[currentMonth+1] < (i*signalResolution_h + modelStartTime_h) % hoursInYear){
 		currentMonth += 1;
 	}
 	
-	if(EC == OL_EnergyCarriers.ELECTRICITY){
-		energyCarrierCO2Emission_kg_p_kWh = uI_Results.energyModel.pp_CO2EmissionFactorElectricityImport_kgpkWh.getAllValues()[(int) Math.floor(i * signalResolution_h)];
+	double currentECImport_kW = max(0, ECBalance_kW[i]);
+	if(currentECImport_kW == 0){
+		continue;
 	}
 	
-    double timestepCO2Emission_kg = energyCarrierCO2Emission_kg_p_kWh * max(0, ECBalance_kW[i] ) * signalResolution_h;
+	if(EC == OL_EnergyCarriers.ELECTRICITY){
+		energyCarrierCO2Emission_kg_p_kWh = uI_Results.energyModel.pp_CO2EmissionFactorElectricityImport_kgpkWh.getValue((i*signalResolution_h + modelStartTime_h) % hoursInYear);
+	}
+	
+    double timestepCO2Emission_kg = energyCarrierCO2Emission_kg_p_kWh * currentECImport_kW * signalResolution_h;
     
     monthlyElectricityImportCO2Emission_kg[currentMonth] += timestepCO2Emission_kg;
 }
