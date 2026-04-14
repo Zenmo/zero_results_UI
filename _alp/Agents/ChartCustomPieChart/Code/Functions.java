@@ -3,10 +3,10 @@ double f_setYearlyKPIs(Double totalPieChartValues,Double totalPieChartValuesPrev
 //Set new values text
 DecimalFormat df = new DecimalFormat("0.00");
 
-t_totalCustomPieChartValues.setText(df.format(totalPieChartValues) + p_unit);
+t_totalCustomPieChartValues.setText(df.format(totalPieChartValues) + " " + p_unit);
 
 if(totalPieChartValuesPrevious != null){
-	t_previousTotalCustomPieChartValues.setText(df.format(totalPieChartValuesPrevious) + p_unit);
+	t_previousTotalCustomPieChartValues.setText(df.format(totalPieChartValuesPrevious) + " " + p_unit);
 	
 	////Set arrows
 	if(totalPieChartValuesPrevious > totalPieChartValues){
