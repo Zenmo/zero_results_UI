@@ -58,6 +58,7 @@ switch (v_selectedChartType) {
 	case CUSTOM_PIE_CHART:
 		gr_chartCustomPieChart_presentation.setVisible(true);
 		chartCustomPieChart.f_setChartCustomPieChart();
+		break;
 	case ENERGY_COSTS:
 		gr_chartEnergyCosts_presentation.setVisible(true);
 		chartEnergyCosts.f_setChartEnergyCosts();
