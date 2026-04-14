@@ -58,7 +58,7 @@ pieChart_totalSubdivision.removeAll();
 pieChart_totalSubdivision.setVisible(false);
 /*ALCODEEND*/}
 
-double f_setCustomcustomPieChartValuesMap(Map<String, Pair<Double, Color>> customPieChartValuesMap)
+double f_setCustomPieChartValuesMap(Map<String, Pair<Double, Color>> customPieChartValuesMap)
 {/*ALCODESTART::1774608778627*/
 map_customPieChartValues = customPieChartValuesMap;
 /*ALCODEEND*/}
@@ -98,7 +98,7 @@ f_setPieChart(map_customPieChartValues, data);
 
 /*ALCODEEND*/}
 
-double f_storePreviousCustomCO2AdditionsMap()
+double f_storePreviousCustomPieChartMap()
 {/*ALCODESTART::1774623387767*/
 map_customPieChartValues_previous = map_customPieChartValues;
 /*ALCODEEND*/}
@@ -113,5 +113,15 @@ if(map_customPieChartValues != null && data instanceof EnergyModel){
 	}
 }
 pieChart_totalSubdivision.setVisible(true);
+/*ALCODEEND*/}
+
+double f_setCustomPieChartName(String customPieChartName)
+{/*ALCODESTART::1776181214243*/
+p_chartName = customPieChartName;
+/*ALCODEEND*/}
+
+double f_setCustomPieChartUnit(String customPieChartUnit)
+{/*ALCODESTART::1776181243825*/
+p_unit = customPieChartUnit;
 /*ALCODEEND*/}
 

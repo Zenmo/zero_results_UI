@@ -76,7 +76,7 @@
 		<Id>1776178567979</Id>
 		<Name><![CDATA[p_unit]]></Name>
 		<X>-420</X>
-		<Y>620</Y>
+		<Y>730</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -101,7 +101,7 @@
 		<Id>1776179088318</Id>
 		<Name><![CDATA[p_chartName]]></Name>
 		<X>-420</X>
-		<Y>660</Y>
+		<Y>680</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

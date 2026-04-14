@@ -798,6 +798,9 @@ for(OL_ChartTypes chartType : c_loadedChartTypes_Energy){
 		case CO2:
 			RadioButtonOptions_list.add("CO2 uitstoot");
 			break;
+		case CUSTOM_PIE_CHART:
+			RadioButtonOptions_list.add(chartCustomPieChart.p_chartName);
+			break;
 		default:
 			throw new RuntimeException("chartType '" + chartType + "' is not supported for the Energy options.");
 	}
