@@ -55,7 +55,7 @@ t_previousTotalCustomPieChartValues.setText("-");
 
 //Clear pie chart
 pieChart_totalSubdivision.removeAll();
-gr_subChart_totalSubdivision.setVisible(false);
+pieChart_totalSubdivision.setVisible(false);
 /*ALCODEEND*/}
 
 double f_setCustomcustomPieChartValuesMap(Map<String, Pair<Double, Color>> customPieChartValuesMap)
@@ -112,5 +112,6 @@ if(map_customPieChartValues != null && data instanceof EnergyModel){
 		pieChart_totalSubdivision.addDataItem(customPieChartValue, customEntry, map_customPieChartValues.get(customEntry).getSecond());
 	}
 }
+pieChart_totalSubdivision.setVisible(true);
 /*ALCODEEND*/}
 

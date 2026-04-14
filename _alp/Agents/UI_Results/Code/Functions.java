@@ -11,6 +11,7 @@ gr_chartBatteries_presentation.setVisible(false);
 gr_chartGTO_presentation.setVisible(false);
 gr_chartBars_presentation.setVisible(false);
 gr_chartCO2_presentation.setVisible(false);
+gr_chartCustomPieChart_presentation.setVisible(false);
 gr_chartEnergyCosts_presentation.setVisible(false);
 gr_chartConnectionCosts_presentation.setVisible(false);
 gr_chartCAPEXAndOPEX_presentation.setVisible(false);
@@ -54,6 +55,9 @@ switch (v_selectedChartType) {
 		gr_chartCO2_presentation.setVisible(true);
 		chartCO2.f_setChartCO2();
 		break;
+	case CUSTOM_PIE_CHART:
+		gr_chartCustomPieChart_presentation.setVisible(true);
+		chartCustomPieChart.f_setChartCustomPieChart();
 	case ENERGY_COSTS:
 		gr_chartEnergyCosts_presentation.setVisible(true);
 		chartEnergyCosts.f_setChartEnergyCosts();
@@ -1060,5 +1064,23 @@ switch (assetType) {
 String s = energyCarrier.toString();
 return s.substring(0, 1) + s.substring(1).toLowerCase();
 */
+/*ALCODEEND*/}
+
+double f_setChartCustomPieChart_presentation(Integer location_x,Integer location_y,boolean visible)
+{/*ALCODESTART::1776180223657*/
+//Set the location and visibility of the Batteries charts presentation
+
+//Set x axis
+if(location_x != null){
+	gr_chartCustomPieChart_presentation.setX(location_x);
+}
+
+//Set y axis
+if(location_y != null){
+	gr_chartCustomPieChart_presentation.setY(location_y);
+}
+
+//Set visibility
+gr_chartCustomPieChart_presentation.setVisible(visible);
 /*ALCODEEND*/}
 

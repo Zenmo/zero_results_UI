@@ -9,14 +9,6 @@ import java.text.DecimalFormat;]]></Import>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
-	<Parameters>
-		<Parameter>
-			<Name><![CDATA[p_unit]]></Name>
-		</Parameter>
-		<Parameter>
-			<Name><![CDATA[p_chartName]]></Name>
-		</Parameter>
-	</Parameters>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1772440782736</Id>

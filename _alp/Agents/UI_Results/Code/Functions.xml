@@ -178,7 +178,7 @@
 		<Id>1725374888930</Id>
 		<Name><![CDATA[f_styleAllCharts]]></Name>
 		<X>1560</X>
-		<Y>520</Y>
+		<Y>540</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -210,7 +210,7 @@
 		<Id>1725375062400</Id>
 		<Name><![CDATA[f_styleResultsUIHeader]]></Name>
 		<X>1560</X>
-		<Y>500</Y>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -594,7 +594,7 @@
 		<Id>1742218383411</Id>
 		<Name><![CDATA[f_setCB_KPISummary_Presentation]]></Name>
 		<X>1560</X>
-		<Y>550</Y>
+		<Y>570</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -622,7 +622,7 @@
 		<Id>1742221943777</Id>
 		<Name><![CDATA[f_setSelectedObjectDisplay]]></Name>
 		<X>1560</X>
-		<Y>590</Y>
+		<Y>610</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -706,7 +706,7 @@
 		<Id>1755704458936</Id>
 		<Name><![CDATA[f_setChartEnergyCosts_presentation]]></Name>
 		<X>1570</X>
-		<Y>390</Y>
+		<Y>410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -914,7 +914,7 @@
 		<Id>1772472253934</Id>
 		<Name><![CDATA[f_setChartConnectionCosts_presentation]]></Name>
 		<X>1570</X>
-		<Y>410</Y>
+		<Y>430</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -942,7 +942,7 @@
 		<Id>1772472255353</Id>
 		<Name><![CDATA[f_setChartCAPEXAndOPEX_presentation]]></Name>
 		<X>1570</X>
-		<Y>430</Y>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -970,7 +970,7 @@
 		<Id>1772472257080</Id>
 		<Name><![CDATA[f_setChartTotalCosts_presentation]]></Name>
 		<X>1570</X>
-		<Y>450</Y>
+		<Y>470</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1009,6 +1009,34 @@
 		<Parameter>
 			<Name><![CDATA[assetType]]></Name>
 			<Type><![CDATA[OL_EnergyAssetType]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1776180223657</Id>
+		<Name><![CDATA[f_setChartCustomPieChart_presentation]]></Name>
+		<X>1570</X>
+		<Y>380</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[location_x]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[location_y]]></Name>
+			<Type><![CDATA[Integer]]></Type>
+		</Parameter>
+		<Parameter>
+			<Name><![CDATA[visible]]></Name>
+			<Type><![CDATA[boolean]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

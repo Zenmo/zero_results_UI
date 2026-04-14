@@ -56,7 +56,7 @@
 	</Text>
 	<Group>
 		<Id>1772441388931</Id>
-		<Name><![CDATA[gr_yearlyCO2Consumption]]></Name>
+		<Name><![CDATA[gr_customPieChartTotal]]></Name>
 		<X>235</X>
 		<Y>270</Y>
 		<Label>
@@ -273,126 +273,105 @@
 			</Text>
 		</Presentation>
 	</Group>
-	<Group>
-		<Id>1774890342444</Id>
-		<Name><![CDATA[gr_subChart_totalSubdivision]]></Name>
-		<X>230</X>
-		<Y>550</Y>
+	<PieChart>
+		<Id>1774623611036</Id>
+		<Name><![CDATA[pieChart_totalSubdivision]]></Name>
+		<X>70</X>
+		<Y>420</Y>
 		<Label>
-			<X>10</X>
-			<Y>0</Y>
+			<X>0</X>
+			<Y>-10</Y>
 		</Label>
 		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>235</XCode>
-		<YCode>540</YCode>
+		<AutoUpdate>true</AutoUpdate>
+		<RecurrenceProperties>
+			<Id>1774623611034</Id>
+			<OccurrenceAtTime>true</OccurrenceAtTime>
+			<OccurrenceDate>1774684800000</OccurrenceDate>
+			<OccurrenceTime Class="CodeUnitValue">
+				<Code><![CDATA[0]]></Code>
+				<Unit Class="TimeUnits">HOUR</Unit>
+			</OccurrenceTime>
+			<RecurrenceCode Class="CodeUnitValue">
+				<Code><![CDATA[1]]></Code>
+				<Unit Class="TimeUnits">HOUR</Unit>
+			</RecurrenceCode>
+		</RecurrenceProperties>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Width>320</Width>
+		<Height>284.444</Height>
+		<BackgroundColor/>
+		<BorderColor/>
+		<ChartArea>
+			<XOffset>60</XOffset>
+			<YOffset>10</YOffset>
+			<Width>200</Width>
+			<Height>200</Height>
+			<BorderColor/>
+			<GridColor>-12566464</GridColor>
+		</ChartArea>
+		<Legend>
+			<Place>SOUTH</Place>
+			<TextColor>-16777216</TextColor>
+			<Size>60</Size>
+		</Legend>
+		<Labels>
+			<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+			<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+			<TextColor>-12566464</TextColor>
+		</Labels>
+		<ShowLegend>true</ShowLegend>
+		<DataItem>
+			<Id>1774623611552</Id>
+			<Expression>0</Expression>
+			<Color>-8097537</Color>
+			<Title>Title</Title>
+		</DataItem>
+		<DataItem>
+			<Id>1774623611553</Id>
+			<Expression>0</Expression>
+			<Color>-60269</Color>
+			<Title>Title 1</Title>
+		</DataItem>
+		<DataItem>
+			<Id>1774623616571</Id>
+			<Expression>0</Expression>
+			<Color>-29696</Color>
+			<Title>Title 2</Title>
+		</DataItem>
+		<DataItem>
+			<Id>1774623618171</Id>
+			<Expression>0</Expression>
+			<Color>-12799119</Color>
+			<Title>Title 3</Title>
+		</DataItem>
+	</PieChart>
+	<Text>
+		<Id>1774890288060</Id>
+		<Name><![CDATA[txt_totalSubdivision]]></Name>
+		<X>230</X>
+		<Y>390</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
-		<Presentation>
-			<PieChart>
-				<Id>1774623611036</Id>
-				<Name><![CDATA[pieChart_totalSubdivision]]></Name>
-				<X>-160</X>
-				<Y>-130</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<AutoUpdate>true</AutoUpdate>
-				<RecurrenceProperties>
-					<Id>1774623611034</Id>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1774684800000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits">HOUR</Unit>
-					</RecurrenceCode>
-				</RecurrenceProperties>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>320</Width>
-				<Height>284.444</Height>
-				<BackgroundColor/>
-				<BorderColor/>
-				<ChartArea>
-					<XOffset>60</XOffset>
-					<YOffset>10</YOffset>
-					<Width>200</Width>
-					<Height>200</Height>
-					<BorderColor/>
-					<GridColor>-12566464</GridColor>
-				</ChartArea>
-				<Legend>
-					<Place>SOUTH</Place>
-					<TextColor>-16777216</TextColor>
-					<Size>60</Size>
-				</Legend>
-				<Labels>
-					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
-					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
-					<TextColor>-12566464</TextColor>
-				</Labels>
-				<ShowLegend>true</ShowLegend>
-				<DataItem>
-					<Id>1774623611552</Id>
-					<Expression>0</Expression>
-					<Color>-8097537</Color>
-					<Title>Title</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1774623611553</Id>
-					<Expression>0</Expression>
-					<Color>-60269</Color>
-					<Title>Title 1</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1774623616571</Id>
-					<Expression>0</Expression>
-					<Color>-29696</Color>
-					<Title>Title 2</Title>
-				</DataItem>
-				<DataItem>
-					<Id>1774623618171</Id>
-					<Expression>0</Expression>
-					<Color>-12799119</Color>
-					<Title>Title 3</Title>
-				</DataItem>
-			</PieChart>
-			<Text>
-				<Id>1774890288060</Id>
-				<Name><![CDATA[txt_totalSubdivision]]></Name>
-				<X>0</X>
-				<Y>-160</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Rotation>0.0</Rotation>
-				<Color>-16777216</Color>
-				<Text><![CDATA[Totaal verdeling]]></Text>
-				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>22</Size>
-					<Style>0</Style>
-				</Font>
-				<Alignment>CENTER</Alignment>
-			</Text>
-		</Presentation>
-	</Group>
+		<Color>-16777216</Color>
+		<Text><![CDATA[Totaal verdeling]]></Text>
+		<Font>
+			<Name><![CDATA[SansSerif]]></Name>
+			<Size>22</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>CENTER</Alignment>
+	</Text>
 </Presentation>

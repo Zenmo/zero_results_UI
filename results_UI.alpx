@@ -69,6 +69,10 @@
 					<Id>1772203580124</Id>
 					<Name><![CDATA[TOTAL_COSTS]]></Name>
 				</Option>
+				<Option>
+					<Id>1776180141582</Id>
+					<Name><![CDATA[CUSTOM_PIE_CHART]]></Name>
+				</Option>
 			</OptionList>
 			<OptionList>
 				<Id>1714740453599</Id>
