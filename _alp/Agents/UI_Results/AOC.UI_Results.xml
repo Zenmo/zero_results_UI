@@ -40,6 +40,7 @@ lm_assetFlowLabels.put(OL_AssetFlowCategories.windProductionElectric_kW,"Opwek w
 lm_assetFlowLabels.put(OL_AssetFlowCategories.airConditionersElectricPower_kW,"Elektr. behoefte Airco's");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW, "Elektr. Opwek Diesel Gen.");
 lm_assetFlowLabels.put(OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW, "Elektr. Opwek Gas Gen.");
+lm_assetFlowLabels.put(OL_AssetFlowCategories.hydrogenFuelCellProductionElectric_kW, "Elektr. Opwek H2 Fuel Cell");
 
 cm_assetFlowColors = new J_ColorMap<>(OL_AssetFlowCategories.class);
 cm_assetFlowColors.put(OL_AssetFlowCategories.fixedConsumptionElectric_kW, v_electricityBaseloadDemandColor);
@@ -58,6 +59,7 @@ cm_assetFlowColors.put(OL_AssetFlowCategories.windProductionElectric_kW, v_windE
 cm_assetFlowColors.put(OL_AssetFlowCategories.airConditionersElectricPower_kW, v_PVElectricitySupplyColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW, v_petroleumProductsElectricitySupplyColor);
 cm_assetFlowColors.put(OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW, v_methaneElectricitySupplyColor);
+cm_assetFlowColors.put(OL_AssetFlowCategories.hydrogenFuelCellProductionElectric_kW, v_electricityForHydrogenDemandColor);
 
 v_consumptionAssetFlows = EnumSet.noneOf(OL_AssetFlowCategories.class);
 v_consumptionAssetFlows.add(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
@@ -82,7 +84,7 @@ v_electricAssetFlows.add(OL_AssetFlowCategories.pvProductionElectric_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.V2GPower_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.windProductionElectric_kW);
 v_electricAssetFlows.add(OL_AssetFlowCategories.airConditionersElectricPower_kW);
-]]></StartupCode>
+v_electricAssetFlows.add(OL_AssetFlowCategories.hydrogenFuelCellProductionElectric_kW);]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1704197366556</Id>
