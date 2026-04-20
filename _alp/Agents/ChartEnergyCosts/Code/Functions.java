@@ -3,6 +3,12 @@ double f_setChartEnergyCosts()
 //Initialization of data object.
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+	List<OL_ResultScope> supportedResultScopes = new ArrayList<>(List.of(OL_ResultScope.GRIDCONNECTION, OL_ResultScope.ENERGYMODEL, OL_ResultScope.ENERGYCOOP));
+	uI_Results.f_activateChartBlocker(supportedResultScopes);
+	return;
+}
+
 //Set selected object display
 uI_Results.f_setSelectedObjectDisplay(230, 60, true);
 
@@ -22,16 +28,16 @@ else{
 double f_setYearlyKPIs(double totalImportCosts_eur,double totalExportRevenue_eur,double totalNetElectricityCosts_eur,Double previousTotalImportCosts_eur,Double previousTotalExportRevenue_eur,Double previousTotalNetElectricityCosts_eur)
 {/*ALCODESTART::1726830499836*/
 //Set new values text
-DecimalFormat df = new DecimalFormat("#,##0.00");
+DecimalFormat df = new DecimalFormat("#,##0");
 
-t_totalImportCosts_eur.setText("€ " + df.format(totalImportCosts_eur));
-t_totalExportRevenue_eur.setText("€ " + df.format(totalExportRevenue_eur));
-t_totalNetEnergyCosts_eur.setText("€ " + df.format(totalNetElectricityCosts_eur));
+t_totalImportCosts_eur.setText("€ " + df.format(roundToInt(totalImportCosts_eur)));
+t_totalExportRevenue_eur.setText("€ " + df.format(roundToInt(totalExportRevenue_eur)));
+t_totalNetEnergyCosts_eur.setText("€ " + df.format(roundToInt(totalNetElectricityCosts_eur)));
 
 if(previousTotalImportCosts_eur != null){
-	t_previousTotalImportCosts_eur.setText("€ " + df.format(previousTotalImportCosts_eur));
-	t_previousTotalExportRevenue_eur.setText("€ " + df.format(previousTotalExportRevenue_eur));
-	t_previousTotalNetEnergyCosts_eur.setText("€ " + df.format(previousTotalNetElectricityCosts_eur));
+	t_previousTotalImportCosts_eur.setText("€ " + df.format(roundToInt(previousTotalImportCosts_eur)));
+	t_previousTotalExportRevenue_eur.setText("€ " + df.format(roundToInt(previousTotalExportRevenue_eur)));
+	t_previousTotalNetEnergyCosts_eur.setText("€ " + df.format(roundToInt(previousTotalNetElectricityCosts_eur)));
 	
 	////Set arrows
 	//Import
@@ -68,9 +74,9 @@ if(previousTotalImportCosts_eur != null){
 	}
 }
 else{ // No previous rapid data -> dont show previous values
-	t_previousTotalImportCosts_eur.setText("-");
-	t_previousTotalExportRevenue_eur.setText("-");
-	t_previousTotalNetEnergyCosts_eur.setText("-");
+	t_previousTotalImportCosts_eur.setText("");
+	t_previousTotalExportRevenue_eur.setText("");
+	t_previousTotalNetEnergyCosts_eur.setText("");
 }
 /*ALCODEEND*/}
 

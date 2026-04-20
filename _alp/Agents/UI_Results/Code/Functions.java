@@ -15,6 +15,7 @@ gr_chartEnergyCosts_presentation.setVisible(false);
 gr_chartConnectionCosts_presentation.setVisible(false);
 gr_chartCAPEXAndOPEX_presentation.setVisible(false);
 gr_chartTotalCosts_presentation.setVisible(false);
+gr_chartBlocker.setVisible(false);
 
 switch (v_selectedChartType) {
 	case PROFILES:
@@ -483,7 +484,6 @@ double f_updateResultsUI(I_EnergyData selectedObjectInterface)
 v_selectedObjectInterface = selectedObjectInterface;
 v_selectedObjectScope = v_selectedObjectInterface.getScope();
 f_setSelectedObjectText(null);
-
 f_showCorrectChart();
 /*ALCODEEND*/}
 
@@ -1060,5 +1060,29 @@ switch (assetType) {
 String s = energyCarrier.toString();
 return s.substring(0, 1) + s.substring(1).toLowerCase();
 */
+/*ALCODEEND*/}
+
+double f_activateChartBlocker(List<OL_ResultScope> supportedResultScopes)
+{/*ALCODESTART::1776688304615*/
+gr_chartBlocker.setVisible(true);
+String warningScreenMessage = "";
+for(OL_ResultScope supportedScope : supportedResultScopes){
+	switch(supportedScope){
+		case GRIDCONNECTION:
+			warningScreenMessage += "- één aansluiting";
+			break;
+		case ENERGYMODEL:
+			warningScreenMessage += "- het hele gebied";
+			break;
+		case ENERGYCOOP:
+			warningScreenMessage += "- een groep van aansluitingen";
+			break;
+		case GRIDNODE:
+			warningScreenMessage += "- één trafo";
+			break;
+	}
+	warningScreenMessage += "\n"; 
+}
+t_chartBlockerMessage.setText(warningScreenMessage);
 /*ALCODEEND*/}
 

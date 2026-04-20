@@ -101,7 +101,7 @@
 			<Rectangle>
 				<Id>1774274815595</Id>
 				<Name><![CDATA[rect_openIncludeAssetSelection]]></Name>
-				<X>-210</X>
+				<X>-200</X>
 				<Y>-20</Y>
 				<Label>
 					<X>10</X>
@@ -118,7 +118,7 @@
 				<LineColor>-4144960</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>420</Width>
+				<Width>400</Width>
 				<Height>40</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor>-1</FillColor>
@@ -155,7 +155,7 @@
 		<Id>1774279482488</Id>
 		<Name><![CDATA[txt_CAPEXTotal]]></Name>
 		<X>40</X>
-		<Y>320</Y>
+		<Y>324</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -171,8 +171,8 @@
 		<Text><![CDATA[CAPEX totaal:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -180,7 +180,7 @@
 		<Id>1774279520448</Id>
 		<Name><![CDATA[txt_OPEXTotal]]></Name>
 		<X>40</X>
-		<Y>450</Y>
+		<Y>454</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -196,8 +196,8 @@
 		<Text><![CDATA[OPEX totaal:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -205,7 +205,7 @@
 		<Id>1774279551846</Id>
 		<Name><![CDATA[line]]></Name>
 		<X>30</X>
-		<Y>570</Y>
+		<Y>571</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -233,7 +233,7 @@
 		<Id>1774279565069</Id>
 		<Name><![CDATA[txt_CAPEXAndOPEXTotal]]></Name>
 		<X>40</X>
-		<Y>600</Y>
+		<Y>604</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -249,8 +249,8 @@
 		<Text><![CDATA[CAPEX & OPEX totaal:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -258,7 +258,7 @@
 		<Id>1774279577198</Id>
 		<Name><![CDATA[txt_CAPEXAndOPEXPerYear]]></Name>
 		<X>40</X>
-		<Y>670</Y>
+		<Y>674</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -274,8 +274,8 @@
 		<Text><![CDATA[CAPEX & OPEX per jaar:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -283,7 +283,7 @@
 		<Id>1774279624285</Id>
 		<Name><![CDATA[txt_estimatedLifeTime]]></Name>
 		<X>40</X>
-		<Y>250</Y>
+		<Y>254</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -297,11 +297,11 @@
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
 		<Text><![CDATA[Verwachte levensduur:]]></Text>
-		<TextCode>v_selectedAsset.equals(p_totalName) ? "Berekend voor levensduur van:" : "Verwachte levensduur:"</TextCode>
+		<TextCode>v_selectedAsset.equals(p_totalName) ? "Berekend voor een duur van:" : "Verwachte levensduur:"</TextCode>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -309,7 +309,7 @@
 		<Id>1774279703212</Id>
 		<Name><![CDATA[txt_OPEXPerYear]]></Name>
 		<X>40</X>
-		<Y>510</Y>
+		<Y>514</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -325,8 +325,8 @@
 		<Text><![CDATA[OPEX per jaar:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -334,7 +334,7 @@
 		<Id>1774279727414</Id>
 		<Name><![CDATA[txt_CAPEXPerYear]]></Name>
 		<X>40</X>
-		<Y>380</Y>
+		<Y>384</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -350,8 +350,8 @@
 		<Text><![CDATA[CAPEX per jaar:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -359,7 +359,7 @@
 		<Id>1774279745383</Id>
 		<Name><![CDATA[t_estimatedLifeTime]]></Name>
 		<X>420</X>
-		<Y>250</Y>
+		<Y>251</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -375,7 +375,7 @@
 		<Text><![CDATA[20.5 jaar]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -384,7 +384,7 @@
 		<Id>1774279770694</Id>
 		<Name><![CDATA[t_CAPEXTotal]]></Name>
 		<X>420</X>
-		<Y>320</Y>
+		<Y>321</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -397,10 +397,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -409,7 +409,7 @@
 		<Id>1774279770696</Id>
 		<Name><![CDATA[t_OPEXTotal]]></Name>
 		<X>420</X>
-		<Y>450</Y>
+		<Y>451</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -422,10 +422,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -434,7 +434,7 @@
 		<Id>1774279770698</Id>
 		<Name><![CDATA[t_CAPEXAndOPEXTotal]]></Name>
 		<X>420</X>
-		<Y>600</Y>
+		<Y>601</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -447,10 +447,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -459,7 +459,7 @@
 		<Id>1774279770700</Id>
 		<Name><![CDATA[t_CAPEXAndOPEXPerYear]]></Name>
 		<X>420</X>
-		<Y>670</Y>
+		<Y>671</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -472,10 +472,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -484,7 +484,7 @@
 		<Id>1774279770702</Id>
 		<Name><![CDATA[t_OPEXPerYear]]></Name>
 		<X>420</X>
-		<Y>510</Y>
+		<Y>511</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -497,10 +497,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -509,7 +509,7 @@
 		<Id>1774279770704</Id>
 		<Name><![CDATA[t_CAPEXPerYear]]></Name>
 		<X>420</X>
-		<Y>380</Y>
+		<Y>381</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -522,10 +522,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -534,7 +534,7 @@
 		<Id>1774349289328</Id>
 		<Name><![CDATA[t_previousEstimatedLifeTime]]></Name>
 		<X>419.5</X>
-		<Y>279.5</Y>
+		<Y>280.5</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -550,8 +550,8 @@
 		<Text><![CDATA[20.5 jaar]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
-			<Style>0</Style>
+			<Size>14</Size>
+			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
 	</Text>
@@ -559,7 +559,7 @@
 		<Id>1774349289330</Id>
 		<Name><![CDATA[t_previousCAPEXTotal]]></Name>
 		<X>419.5</X>
-		<Y>349.5</Y>
+		<Y>350.5</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -572,11 +572,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
-			<Style>0</Style>
+			<Size>14</Size>
+			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
 	</Text>
@@ -584,7 +584,7 @@
 		<Id>1774349289332</Id>
 		<Name><![CDATA[t_previousOPEXTotal]]></Name>
 		<X>419.5</X>
-		<Y>479.5</Y>
+		<Y>480.5</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -597,11 +597,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
-			<Style>0</Style>
+			<Size>14</Size>
+			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
 	</Text>
@@ -609,7 +609,7 @@
 		<Id>1774349289334</Id>
 		<Name><![CDATA[t_previousCAPEXAndOPEXTotal]]></Name>
 		<X>419.5</X>
-		<Y>629.5</Y>
+		<Y>630.5</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -622,11 +622,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
-			<Style>0</Style>
+			<Size>14</Size>
+			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
 	</Text>
@@ -634,7 +634,7 @@
 		<Id>1774349289336</Id>
 		<Name><![CDATA[t_previousCAPEXAndOPEXPerYear]]></Name>
 		<X>419.5</X>
-		<Y>699.5</Y>
+		<Y>700.5</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -647,11 +647,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
-			<Style>0</Style>
+			<Size>14</Size>
+			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
 	</Text>
@@ -659,7 +659,7 @@
 		<Id>1774349289338</Id>
 		<Name><![CDATA[t_previousOPEXPerYear]]></Name>
 		<X>419.5</X>
-		<Y>539.5</Y>
+		<Y>540.5</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -672,11 +672,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
-			<Style>0</Style>
+			<Size>14</Size>
+			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
 	</Text>
@@ -684,7 +684,7 @@
 		<Id>1774349289340</Id>
 		<Name><![CDATA[t_previousCAPEXPerYear]]></Name>
 		<X>419.5</X>
-		<Y>409.5</Y>
+		<Y>410.5</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -697,11 +697,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[€ 3,200,000.00]]></Text>
+		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
-			<Style>0</Style>
+			<Size>14</Size>
+			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
 	</Text>
@@ -739,7 +739,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Geselecteerde Asset:]]></Text>
+				<Text><![CDATA[Geselecteerde asset:]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>18</Size>

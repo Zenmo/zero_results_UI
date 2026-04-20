@@ -84,7 +84,7 @@
 		<Id>1772618534819</Id>
 		<Name><![CDATA[t_totalCosts]]></Name>
 		<X>420</X>
-		<Y>400</Y>
+		<Y>352</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -97,10 +97,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €/yr]]></Text>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -109,7 +109,7 @@
 		<Id>1772618534821</Id>
 		<Name><![CDATA[txt_totalEnergyCosts]]></Name>
 		<X>40</X>
-		<Y>150</Y>
+		<Y>134</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -122,11 +122,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Totale energie kosten:]]></Text>
+		<Text><![CDATA[Totale energiekosten:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -134,7 +134,7 @@
 		<Id>1772618534825</Id>
 		<Name><![CDATA[txt_CAPEXAndOPEXCosts]]></Name>
 		<X>40</X>
-		<Y>310</Y>
+		<Y>274</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -150,8 +150,8 @@
 		<Text><![CDATA[CAPEX & OPEX]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -159,7 +159,7 @@
 		<Id>1772618534829</Id>
 		<Name><![CDATA[t_totalEnergyCosts]]></Name>
 		<X>420</X>
-		<Y>150</Y>
+		<Y>132</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -172,10 +172,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €/yr]]></Text>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -184,7 +184,7 @@
 		<Id>1772618534831</Id>
 		<Name><![CDATA[line_total]]></Name>
 		<X>20</X>
-		<Y>370</Y>
+		<Y>330</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -212,7 +212,7 @@
 		<Id>1772618534833</Id>
 		<Name><![CDATA[t_CAPEXAndOPEXCosts]]></Name>
 		<X>420</X>
-		<Y>305</Y>
+		<Y>267</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -225,10 +225,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €/yr]]></Text>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -237,7 +237,7 @@
 		<Id>1772618534835</Id>
 		<Name><![CDATA[txt_totalConnectionCosts]]></Name>
 		<X>40</X>
-		<Y>230</Y>
+		<Y>204</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -250,11 +250,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Totale aansluitings kosten:]]></Text>
+		<Text><![CDATA[Totale netaansluitingskosten:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -262,7 +262,7 @@
 		<Id>1772618534837</Id>
 		<Name><![CDATA[t_totalConnectionCosts]]></Name>
 		<X>420</X>
-		<Y>230</Y>
+		<Y>202</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -275,10 +275,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €/yr]]></Text>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
+			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -287,7 +287,7 @@
 		<Id>1772618534839</Id>
 		<Name><![CDATA[txt_totalCosts]]></Name>
 		<X>40</X>
-		<Y>400</Y>
+		<Y>354</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -303,8 +303,8 @@
 		<Text><![CDATA[Totale kosten:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
+			<Size>16</Size>
+			<Style>1</Style>
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
@@ -312,7 +312,7 @@
 		<Id>1773835943371</Id>
 		<Name><![CDATA[t_previousTotalConnectionCosts]]></Name>
 		<X>420</X>
-		<Y>260</Y>
+		<Y>232</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -325,10 +325,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €/yr]]></Text>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
+			<Size>14</Size>
 			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -337,7 +337,7 @@
 		<Id>1773836009592</Id>
 		<Name><![CDATA[t_previousTotalEnergyCosts]]></Name>
 		<X>420</X>
-		<Y>180</Y>
+		<Y>162</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -350,10 +350,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €/yr]]></Text>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
+			<Size>14</Size>
 			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -362,7 +362,7 @@
 		<Id>1773836028676</Id>
 		<Name><![CDATA[t_previousCAPEXAndOPEXCosts]]></Name>
 		<X>420</X>
-		<Y>335</Y>
+		<Y>297</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -375,10 +375,10 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €/yr]]></Text>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
+			<Size>14</Size>
 			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -387,7 +387,7 @@
 		<Id>1773836047199</Id>
 		<Name><![CDATA[t_previousTotalCosts]]></Name>
 		<X>420</X>
-		<Y>430</Y>
+		<Y>382</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -400,12 +400,132 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[210.56 €/yr]]></Text>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
+			<Size>14</Size>
 			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
 	</Text>
+	<Group>
+		<Id>1776685383205</Id>
+		<Name><![CDATA[gr_chartTotalSubdivision]]></Name>
+		<X>230</X>
+		<Y>600</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<PieChart>
+				<Id>1776685383213</Id>
+				<Name><![CDATA[pieChart_totalSubdivision]]></Name>
+				<X>-160</X>
+				<Y>-140</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<AutoUpdate>true</AutoUpdate>
+				<RecurrenceProperties>
+					<Id>1776685383211</Id>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1774684800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits">HOUR</Unit>
+					</RecurrenceCode>
+				</RecurrenceProperties>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Width>320</Width>
+				<Height>274.444</Height>
+				<BackgroundColor/>
+				<BorderColor/>
+				<ChartArea>
+					<XOffset>60</XOffset>
+					<YOffset>10</YOffset>
+					<Width>200</Width>
+					<Height>200</Height>
+					<BorderColor/>
+					<GridColor>-12566464</GridColor>
+				</ChartArea>
+				<Legend>
+					<Place>SOUTH</Place>
+					<TextColor>-16777216</TextColor>
+					<Size>50</Size>
+				</Legend>
+				<Labels>
+					<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+					<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+					<TextColor>-12566464</TextColor>
+				</Labels>
+				<ShowLegend>true</ShowLegend>
+				<DataItem>
+					<Id>1776685383207</Id>
+					<Expression>0</Expression>
+					<Color>-8097537</Color>
+					<Title>Title</Title>
+				</DataItem>
+				<DataItem>
+					<Id>1776685383208</Id>
+					<Expression>0</Expression>
+					<Color>-60269</Color>
+					<Title>Title 1</Title>
+				</DataItem>
+				<DataItem>
+					<Id>1776685383209</Id>
+					<Expression>0</Expression>
+					<Color>-29696</Color>
+					<Title>Title 2</Title>
+				</DataItem>
+				<DataItem>
+					<Id>1776685383210</Id>
+					<Expression>0</Expression>
+					<Color>-12799119</Color>
+					<Title>Title 3</Title>
+				</DataItem>
+			</PieChart>
+			<Text>
+				<Id>1776685383215</Id>
+				<Name><![CDATA[txt_totalSubdivision]]></Name>
+				<X>0</X>
+				<Y>-170</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Totaal verdeling]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>22</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+		</Presentation>
+	</Group>
 </Presentation>

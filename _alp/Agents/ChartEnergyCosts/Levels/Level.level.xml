@@ -45,7 +45,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Energie kosten]]></Text>
+		<Text><![CDATA[Energiekosten]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>26</Size>
@@ -87,7 +87,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Netto kosten:]]></Text>
+				<Text><![CDATA[Nettokosten:]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>16</Size>
@@ -389,7 +389,7 @@
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>12</Size>
-					<Style>0</Style>
+					<Style>2</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
 			</Text>
@@ -439,7 +439,7 @@
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>12</Size>
-					<Style>0</Style>
+					<Style>2</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
 			</Text>
@@ -489,7 +489,7 @@
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>12</Size>
-					<Style>0</Style>
+					<Style>2</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
 			</Text>
@@ -609,8 +609,8 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Jaarlijkse Kosten Stroom]]></Text>
-				<TextCode>"Jaarlijkse Kosten " + cb_energyCarrierSelection.getValue()</TextCode>
+				<Text><![CDATA[Jaarlijkse kosten Elektriciteit]]></Text>
+				<TextCode>"Jaarlijkse kosten " + cb_energyCarrierSelection.getValue()</TextCode>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>22</Size>
@@ -682,8 +682,8 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Maandelijkse Kosten Stroom]]></Text>
-				<TextCode>"Maandelijkse Kosten " + cb_energyCarrierSelection.getValue()</TextCode>
+				<Text><![CDATA[Maandelijkse kosten elektriciteit]]></Text>
+				<TextCode>"Maandelijkse kosten " + cb_energyCarrierSelection.getValue()</TextCode>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>22</Size>
@@ -1454,7 +1454,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Import kosten per maand [€]]]></Text>
+						<Text><![CDATA[Importkosten per maand [€]]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
@@ -1479,7 +1479,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Export opbrengst per maand [€]]]></Text>
+						<Text><![CDATA[Exportopbrengsten per maand [€]]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
@@ -1504,7 +1504,7 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Netto kosten per maand [€]]]></Text>
+						<Text><![CDATA[Nettokosten per maand [€]]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
 							<Size>10</Size>
@@ -1514,36 +1514,36 @@
 					</Text>
 				</Presentation>
 			</Group>
+			<Text>
+				<Id>1769443448117</Id>
+				<Name><![CDATA[txt_monthlyChartYAxis]]></Name>
+				<X>-210</X>
+				<Y>0</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[[€]]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
 		</Presentation>
 	</Group>
-	<Text>
-		<Id>1769443448117</Id>
-		<Name><![CDATA[txt_monthlyChartYAxis]]></Name>
-		<X>15</X>
-		<Y>520</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[[€]]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>12</Size>
-			<Style>1</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
 	<Image>
 		<Id>1769444876124</Id>
-		<Name><![CDATA[i_chartEconomicKPIs]]></Name>
+		<Name><![CDATA[i_chartEnergyCosts]]></Name>
 		<X>350</X>
 		<Y>10</Y>
 		<Label>
@@ -1554,7 +1554,7 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<OnClickCode>uI_Results.f_setInfoText(i_chartEconomicKPIs, uI_Results.v_infoText.economicKPIs, i_chartEconomicKPIs.getX(), i_chartEconomicKPIs.getY());</OnClickCode>
+		<OnClickCode>uI_Results.f_setInfoText(i_chartEnergyCosts, uI_Results.v_infoText.economicKPIs, i_chartEnergyCosts.getX(), i_chartEnergyCosts.getY());</OnClickCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Width>30</Width>
@@ -1631,7 +1631,7 @@ f_setChartEnergyCostsValues();
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Geselecteerde Energiedrager:]]></Text>
+		<Text><![CDATA[Geselecteerde energiedrager:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>18</Size>

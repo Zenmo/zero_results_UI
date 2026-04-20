@@ -2,6 +2,12 @@ double f_setChartCAPEXAndOPEX()
 {/*ALCODESTART::1772471794038*/
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
+if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+	List<OL_ResultScope> supportedResultScopes = new ArrayList<>(List.of(OL_ResultScope.GRIDCONNECTION, OL_ResultScope.ENERGYMODEL, OL_ResultScope.ENERGYCOOP));
+	uI_Results.f_activateChartBlocker(supportedResultScopes);
+	return;
+}
+
 //Set selected object display
 uI_Results.f_setSelectedObjectDisplay(230, 60, true);
 
@@ -26,13 +32,13 @@ else{
 double f_resetChart()
 {/*ALCODESTART::1772472111433*/
 //Previous values
-t_previousEstimatedLifeTime.setText("-");
-t_previousCAPEXTotal.setText("-");
-t_previousCAPEXPerYear.setText("-");
-t_previousOPEXTotal.setText("-");
-t_previousOPEXPerYear.setText("-");
-t_previousCAPEXAndOPEXTotal.setText("-");
-t_previousCAPEXAndOPEXPerYear.setText("-");
+t_previousEstimatedLifeTime.setText("");
+t_previousCAPEXTotal.setText("");
+t_previousCAPEXPerYear.setText("");
+t_previousOPEXTotal.setText("");
+t_previousOPEXPerYear.setText("");
+t_previousCAPEXAndOPEXTotal.setText("");
+t_previousCAPEXAndOPEXPerYear.setText("");
 
 /*ALCODEEND*/}
 
@@ -198,7 +204,7 @@ f_setYearlyKPIs(lifeTime_yr, CAPEX_eurpyr, OPEX_eurpyr, previousLifeTime_yr, pre
 double f_setYearlyKPIs(double lifeTime_yr,double CAPEX_eurpyr,double OPEX_eurpyr,Double previousLifeTime_yr,Double previousCAPEX_eurpyr,Double previousOPEX_eurpyr)
 {/*ALCODESTART::1774279941226*/
 //Set new values text
-DecimalFormat df = new DecimalFormat("#,##0.00");
+DecimalFormat df = new DecimalFormat("#,##0");
 
 double CAPEXLifeTimeTotal_eur = CAPEX_eurpyr * lifeTime_yr;
 double OPEXLifeTimeTotal_eur = OPEX_eurpyr * lifeTime_yr;

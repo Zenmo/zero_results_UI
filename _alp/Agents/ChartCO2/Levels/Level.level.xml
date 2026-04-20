@@ -45,7 +45,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[CO2 Uitstoot]]></Text>
+		<Text><![CDATA[CO2 uitstoot]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>26</Size>
@@ -263,7 +263,7 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Jaarlijks CO2 Uitstoot:]]></Text>
+				<Text><![CDATA[Jaarlijkse CO2 uitstoot:]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
 					<Size>22</Size>
@@ -881,7 +881,7 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Geselecteerde Energiedrager:]]></Text>
+		<Text><![CDATA[Geselecteerde energiedrager:]]></Text>
 		<Font>
 			<Name><![CDATA[SansSerif]]></Name>
 			<Size>18</Size>
@@ -916,6 +916,7 @@ else{
 		if(cb_energyCarrierSelection.getValue().equals(uI_Results.f_getECName(EC))){
 			v_selectedEnergyCarrier = EC.toString();
 		}
+		v_selectedSupportChart = "Monthly";
 	}
 }
 
