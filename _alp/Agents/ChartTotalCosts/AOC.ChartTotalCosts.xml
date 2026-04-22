@@ -8,6 +8,11 @@
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
+	<Parameters>
+		<Parameter>
+			<Name><![CDATA[map_catagoryToColor]]></Name>
+		</Parameter>
+	</Parameters>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1772440754213</Id>
@@ -99,6 +104,7 @@
 	</ScaleRuler>
 	<CurrentLevel>1772440754214</CurrentLevel>
 	<ConnectionsId>1772440754209</ConnectionsId>
+	<Variables xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
 	<AgentLinks>
 		<AgentLink>

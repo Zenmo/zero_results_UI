@@ -2,6 +2,12 @@ double f_setChartConnectionCosts()
 {/*ALCODESTART::1772471760319*/
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
+if(uI_Results.v_selectedObjectScope != OL_ResultScope.GRIDCONNECTION){
+	List<OL_ResultScope> supportedResultScopes = new ArrayList<>(List.of(OL_ResultScope.GRIDCONNECTION));
+	uI_Results.f_activateChartBlocker(supportedResultScopes);
+	return;
+}
+
 //Set selected object display
 uI_Results.f_setSelectedObjectDisplay(230, 60, true);
 
@@ -224,7 +230,7 @@ gr_monthlyConnectionCostCharts.setVisible(true);
 double f_setYearlyKPIs(I_EnergyData data,double[] netLoad_kW,double[] previousNetLoad_kW)
 {/*ALCODESTART::1773161419537*/
 //Set new values text
-DecimalFormat df = new DecimalFormat("#,##0.00");
+DecimalFormat df = new DecimalFormat("#,##0");
 
 double physicalConnectionCosts_eur = f_calculatePhysicalConnectionCosts_eurpyr(data.getRapidRunData().connectionMetaData);
 double contractConnectionCosts_eur = f_calculateContractConnectionCosts_eurpyr(data.getRapidRunData().connectionMetaData);

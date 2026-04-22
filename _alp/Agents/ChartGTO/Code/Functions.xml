@@ -55,26 +55,6 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1759139897063</Id>
-		<Name><![CDATA[f_setWarningScreen]]></Name>
-		<X>1180</X>
-		<Y>760</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Parameter>
-			<Name><![CDATA[showWarningScreen]]></Name>
-			<Type><![CDATA[boolean]]></Type>
-		</Parameter>
-		<Body xmlns:al="http://anylogic.com"/>
-	</Function>
-	<Function AccessType="default" StaticFunction="false">
-		<ReturnModificator>VOID</ReturnModificator>
-		<ReturnType>double</ReturnType>
 		<Id>1759485328961</Id>
 		<Name><![CDATA[f_setGTOBarChart_noOriginalRapidRun]]></Name>
 		<X>-320</X>

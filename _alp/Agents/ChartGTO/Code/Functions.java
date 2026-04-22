@@ -5,9 +5,9 @@ I_EnergyData data = uI_Results.f_getSelectedObjectData();
 //Set selected object display
 uI_Results.f_setSelectedObjectDisplay(230, 60, true);
 
-//At least for now grid nodes are not supported
 if(uI_Results.v_selectedObjectScope != OL_ResultScope.ENERGYCOOP){
-	f_setWarningScreen(true);
+	List<OL_ResultScope> supportedResultScopes = new ArrayList<>(List.of(OL_ResultScope.ENERGYCOOP));
+	uI_Results.f_activateChartBlocker(supportedResultScopes);
 	return;
 }
 
@@ -22,7 +22,6 @@ f_setGTOBarChart(energyCoop);
 
 double f_resetChart()
 {/*ALCODESTART::1727107912139*/
-f_setWarningScreen(false);
 chart_GTO.removeAll();
 chart_peakIndividual.removeAll();
 chart_peakCollective.removeAll();
@@ -159,11 +158,6 @@ chart_GTV.addDataItem(first_DataItem_GTV_kW, legendLabels_chartGTV.getFirst(), c
 chart_GTV.addDataItem(second_DataItem_GTV_kW, legendLabels_chartGTV.getSecond(), colors_chartGTV.getSecond());
 
 gr_GTOChart.setVisible(true);  // Needed to refresh the graph
-/*ALCODEEND*/}
-
-double f_setWarningScreen(boolean showWarningScreen)
-{/*ALCODESTART::1759139897063*/
-gr_warningScreen.setVisible(showWarningScreen);
 /*ALCODEEND*/}
 
 double f_setGTOBarChart_noOriginalRapidRun(EnergyCoop COOP)
