@@ -78,4 +78,22 @@
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
+	<Resource>
+		<Id>1776930491921</Id>
+		<Path>Export_ModelData.xlsx</Path>
+		<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		<Location>FILE_SYSTEM</Location>
+	</Resource>
+	<Resource>
+		<Id>1776931761518</Id>
+		<Path>uplux-4.jar</Path>
+		<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		<Location>FILE_SYSTEM</Location>
+	</Resource>
+	<Resource>
+		<Id>1776937955565</Id>
+		<Path>load_icon_white.png</Path>
+		<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		<Location>FILE_SYSTEM</Location>
+	</Resource>
 </ModelResources>

@@ -193,18 +193,6 @@
 			<VersionMinor>0</VersionMinor>
 			<VersionBuild>0</VersionBuild>
 		</RequiredLibraryReference>
-		<RequiredLibraryReference>
-			<LibraryName>com.anylogic.libraries.processmodeling</LibraryName>
-			<VersionMajor>8</VersionMajor>
-			<VersionMinor>0</VersionMinor>
-			<VersionBuild>5</VersionBuild>
-		</RequiredLibraryReference>
-		<RequiredLibraryReference>
-			<LibraryName>com.anylogic.libraries.processmodeling</LibraryName>
-			<VersionMajor>8</VersionMajor>
-			<VersionMinor>0</VersionMinor>
-			<VersionBuild>5</VersionBuild>
-		</RequiredLibraryReference>
 		<ClassPathEntry>
 			<ResourceReference>
 				<PackageName>digital_twin_results</PackageName>
@@ -217,6 +205,14 @@
 			<ResourceReference>
 				<PackageName>digital_twin_results</PackageName>
 				<ClassName>jfreesvg-3.4.3.jar</ClassName>
+			</ResourceReference>
+			<Imported>true</Imported>
+			<Folder>false</Folder>
+		</ClassPathEntry>
+		<ClassPathEntry>
+			<ResourceReference>
+				<PackageName>digital_twin_results</PackageName>
+				<ClassName>uplux-4.jar</ClassName>
 			</ResourceReference>
 			<Imported>true</Imported>
 			<Folder>false</Folder>

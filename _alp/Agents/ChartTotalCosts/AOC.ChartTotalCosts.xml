@@ -8,11 +8,6 @@
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
-	<Parameters>
-		<Parameter>
-			<Name><![CDATA[map_catagoryToColor]]></Name>
-		</Parameter>
-	</Parameters>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1772440754213</Id>
