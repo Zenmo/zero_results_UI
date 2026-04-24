@@ -223,10 +223,10 @@ t_CAPEXAndOPEXPerYear.setText("€ " + df.format(CAPEXAndOPEX_eurpyr));
 //If previous values are known, set them as well
 if(previousCAPEX_eurpyr != null){
 
-	double previousCAPEXLifeTimeTotal_eur = CAPEX_eurpyr * lifeTime_yr;
-	double previousOPEXLifeTimeTotal_eur = OPEX_eurpyr * lifeTime_yr;
-	double previousCAPEXAndOPEXLifeTimeTotal_eur = CAPEXLifeTimeTotal_eur + OPEXLifeTimeTotal_eur;
-	double previousCAPEXAndOPEX_eurpyr = CAPEX_eurpyr + OPEX_eurpyr;
+	double previousCAPEXLifeTimeTotal_eur = previousCAPEX_eurpyr * lifeTime_yr;
+	double previousOPEXLifeTimeTotal_eur = previousOPEX_eurpyr * lifeTime_yr;
+	double previousCAPEXAndOPEXLifeTimeTotal_eur = previousCAPEXLifeTimeTotal_eur + previousOPEXLifeTimeTotal_eur;
+	double previousCAPEXAndOPEX_eurpyr = previousCAPEX_eurpyr + previousOPEX_eurpyr;
 	
 	t_previousEstimatedLifeTime.setText(roundToDecimal(previousLifeTime_yr, 2) + " jaar");
 	t_previousCAPEXTotal.setText("€ " + df.format(previousCAPEXLifeTimeTotal_eur));
