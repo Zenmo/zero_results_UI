@@ -13,7 +13,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import energy.lux.uplux.TemporaryFileRepository;
-import java.nio.file.Path;]]></Import>
+import java.nio.file.Path;
+import org.apache.poi.xssf.usermodel.*;
+import java.io.FileOutputStream;
+import java.io.File;
+import zeroPackage.ZeroMath;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
@@ -118,28 +122,6 @@ v_weekLabel.setY(160);]]></StartupCode>
 	<ConnectionsId>1714743515617</ConnectionsId>
 	<Variables xmlns:al="http://anylogic.com"/>
 	<Functions xmlns:al="http://anylogic.com"/>
-	<Connectivity>
-		<ExcelFile>
-			<Id>1776930491804</Id>
-			<Name><![CDATA[excel_exportBalanceLoadData]]></Name>
-			<X>1314</X>
-			<Y>1200</Y>
-			<Label>
-				<X>10</X>
-				<Y>0</Y>
-			</Label>
-			<PublicFlag>false</PublicFlag>
-			<PresentationFlag>true</PresentationFlag>
-			<ShowLabel>true</ShowLabel>
-			<ResourceReference>
-				<PackageName>digital_twin_results</PackageName>
-				<ClassName>Export_ModelData.xlsx</ClassName>
-			</ResourceReference>
-			<SaveInSnapshot>false</SaveInSnapshot>
-			<LoadOnStartup>true</LoadOnStartup>
-			<SaveOnDispose>true</SaveOnDispose>
-		</ExcelFile>
-	</Connectivity>
 	<AgentLinks>
 		<AgentLink>
 			<Id>1714743515617</Id>

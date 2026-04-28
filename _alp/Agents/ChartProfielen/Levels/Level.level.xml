@@ -2061,7 +2061,7 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>450</Width>
-		<Height>190</Height>
+		<Height>210</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -2092,10 +2092,10 @@
 		<Alignment>LEFT</Alignment>
 	</Text>
 	<Group>
-		<Id>1776937267257</Id>
-		<Name><![CDATA[gr_exportButton]]></Name>
-		<X>340</X>
-		<Y>720</Y>
+		<Id>1777381386494</Id>
+		<Name><![CDATA[gr_exportMenu]]></Name>
+		<X>1280</X>
+		<Y>1760</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2104,16 +2104,698 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<OnClickCode>f_harvestSelectedObjectLoad();</OnClickCode>
+		<XCode>220</XCode>
+		<YCode>465</YCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<Rectangle>
+				<Id>1777381316144</Id>
+				<Name><![CDATA[rect_exportMenu]]></Name>
+				<X>-220</X>
+				<Y>-360</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineWidthCode>v_lineWidth</LineWidthCode>
+				<LineColor>-16777216</LineColor>
+				<LineColorCode>v_lineColor</LineColorCode>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<LineStyleCode>v_lineStyle</LineStyleCode>
+				<Width>460</Width>
+				<Height>645</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-1</FillColor>
+				<FillMaterial>null</FillMaterial>
+			</Rectangle>
+			<Group>
+				<Id>1776937267257</Id>
+				<Name><![CDATA[gr_exportButtons]]></Name>
+				<X>0</X>
+				<Y>220</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<OnClickCode>f_createExport();</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<RoundedRectangle>
+						<Id>1776937028710</Id>
+						<Name><![CDATA[rect_exportButton]]></Name>
+						<X>-110</X>
+						<Y>-30</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor>-4069658</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>220</Width>
+						<Height>50</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>-16744828</FillColor>
+						<FillMaterial>null</FillMaterial>
+						<ArcRadius>10</ArcRadius>
+					</RoundedRectangle>
+					<Text>
+						<Id>1776937022083</Id>
+						<Name><![CDATA[txt_exportButton]]></Name>
+						<X>-75</X>
+						<Y>-19</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-1</Color>
+						<Text><![CDATA[Exporteer]]></Text>
+						<Font>
+							<Name><![CDATA[SansSerif]]></Name>
+							<Size>22</Size>
+							<Style>1</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+					<Image>
+						<Id>1776937101556</Id>
+						<Name><![CDATA[image_exportButton]]></Name>
+						<X>48</X>
+						<Y>-17.654</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>27</Width>
+						<Height>23.884</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>load_icon_white.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+				</Presentation>
+			</Group>
+			<Control Type="CheckBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1777378284760</Id>
+				<Name><![CDATA[checkbox_electricity]]></Name>
+				<X>-120</X>
+				<Y>-150</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="100" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<Enabled>true</Enabled>
+					<ActionCode>if(checkbox_electricity.isSelected()){
+	c_selectedExportEC.add(OL_EnergyCarriers.ELECTRICITY);
+	gr_exportAssetFlows.setVisible(true);
+}
+else{
+	c_selectedExportEC.remove(OL_EnergyCarriers.ELECTRICITY);
+	gr_exportAssetFlows.setVisible(false);
+}
+
+f_reorderSelectedExportEC();</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>Stroom</LabelText>
+					<DefaultValueCode>true</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Control Type="CheckBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1777378313167</Id>
+				<Name><![CDATA[checkbox_hydrogen]]></Name>
+				<X>-120</X>
+				<Y>-110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="100" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<Enabled>true</Enabled>
+					<ActionCode>if(checkbox_hydrogen.isSelected()){
+	c_selectedExportEC.add(OL_EnergyCarriers.HYDROGEN);
+}
+else{
+	c_selectedExportEC.remove(OL_EnergyCarriers.HYDROGEN);
+}
+
+f_reorderSelectedExportEC();</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>Waterstof</LabelText>
+					<DefaultValueCode>false</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Control Type="CheckBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1777378313171</Id>
+				<Name><![CDATA[checkbox_fuel]]></Name>
+				<X>-120</X>
+				<Y>-90</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="100" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<Enabled>true</Enabled>
+					<ActionCode>if(checkbox_fuel.isSelected()){
+	c_selectedExportEC.add(OL_EnergyCarriers.PETROLEUM_FUEL);
+}
+else{
+	c_selectedExportEC.remove(OL_EnergyCarriers.PETROLEUM_FUEL);
+}
+
+f_reorderSelectedExportEC();</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>Brandstof</LabelText>
+					<DefaultValueCode>false</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Control Type="CheckBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1777378313173</Id>
+				<Name><![CDATA[checkbox_heat]]></Name>
+				<X>-120</X>
+				<Y>-70</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="100" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<Enabled>true</Enabled>
+					<ActionCode>if(checkbox_heat.isSelected()){
+	c_selectedExportEC.add(OL_EnergyCarriers.HEAT);
+}
+else{
+	c_selectedExportEC.remove(OL_EnergyCarriers.HEAT);
+}
+
+f_reorderSelectedExportEC();</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>Warmte</LabelText>
+					<DefaultValueCode>false</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Control Type="CheckBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1777378313175</Id>
+				<Name><![CDATA[checkbox_methane]]></Name>
+				<X>-120</X>
+				<Y>-130</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="100" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<Enabled>true</Enabled>
+					<ActionCode>if(checkbox_methane.isSelected()){
+	c_selectedExportEC.add(OL_EnergyCarriers.METHANE);
+}
+else{
+	c_selectedExportEC.remove(OL_EnergyCarriers.METHANE);
+}
+
+f_reorderSelectedExportEC();</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>Gas</LabelText>
+					<DefaultValueCode>false</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Control Type="CheckBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1777378315927</Id>
+				<Name><![CDATA[checkbox_exportPerGCCoop]]></Name>
+				<X>-130</X>
+				<Y>130</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="330" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<VisibleCode>uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP</VisibleCode>
+					<Enabled>true</Enabled>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>Exporteer appart voor elke aansluiting in de coop</LabelText>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Text>
+				<Id>1777381039479</Id>
+				<Name><![CDATA[txt_exportEC]]></Name>
+				<X>-80</X>
+				<Y>-180</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Welke energiedragers 
+wil je exporteren?]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Group>
+				<Id>1777381054012</Id>
+				<Name><![CDATA[gr_exportAssetFlows]]></Name>
+				<X>80</X>
+				<Y>-40</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<Control Type="CheckBox">
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Id>1777378288372</Id>
+						<Name><![CDATA[checkbox_baseLoad]]></Name>
+						<X>-60</X>
+						<Y>-110</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<BasicProperties Width="100" Height="30">
+							<EmbeddedIcon>false</EmbeddedIcon>
+							<TextColor>-16777216</TextColor>
+							<Enabled>true</Enabled>
+							<ActionCode>if(checkbox_baseLoad.isSelected()){
+	c_selectedExportAC.add(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
+}
+else{
+	c_selectedExportAC.remove(OL_AssetFlowCategories.fixedConsumptionElectric_kW);
+}
+
+f_reorderSelectedExportAC();</ActionCode>
+						</BasicProperties>
+						<ExtendedProperties>
+							<Font Name="Dialog" Size="11" Style="0"/>
+							<LabelText>Basis last</LabelText>
+							<DefaultValueCode>false</DefaultValueCode>
+							<LinkTo>false</LinkTo>
+						</ExtendedProperties>
+					</Control>
+					<Control Type="CheckBox">
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Id>1777378291441</Id>
+						<Name><![CDATA[checkbox_PV]]></Name>
+						<X>-60</X>
+						<Y>-70</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<BasicProperties Width="100" Height="30">
+							<EmbeddedIcon>false</EmbeddedIcon>
+							<TextColor>-16777216</TextColor>
+							<Enabled>true</Enabled>
+							<ActionCode>if(checkbox_PV.isSelected()){
+	c_selectedExportAC.add(OL_AssetFlowCategories.pvProductionElectric_kW);
+}
+else{
+	c_selectedExportAC.remove(OL_AssetFlowCategories.pvProductionElectric_kW);
+}
+
+f_reorderSelectedExportAC();</ActionCode>
+						</BasicProperties>
+						<ExtendedProperties>
+							<Font Name="Dialog" Size="11" Style="0"/>
+							<LabelText>PV</LabelText>
+							<DefaultValueCode>false</DefaultValueCode>
+							<LinkTo>false</LinkTo>
+						</ExtendedProperties>
+					</Control>
+					<Control Type="CheckBox">
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Id>1777378294170</Id>
+						<Name><![CDATA[checkbox_vehicleCharging]]></Name>
+						<X>-60</X>
+						<Y>-50</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<BasicProperties Width="100" Height="30">
+							<EmbeddedIcon>false</EmbeddedIcon>
+							<TextColor>-16777216</TextColor>
+							<Enabled>true</Enabled>
+							<ActionCode>if(checkbox_vehicleCharging.isSelected()){
+	c_selectedExportAC.add(OL_AssetFlowCategories.evChargingPower_kW);
+}
+else{
+	c_selectedExportAC.remove(OL_AssetFlowCategories.evChargingPower_kW);
+}
+
+f_reorderSelectedExportAC();</ActionCode>
+						</BasicProperties>
+						<ExtendedProperties>
+							<Font Name="Dialog" Size="11" Style="0"/>
+							<LabelText>EV laders</LabelText>
+							<DefaultValueCode>false</DefaultValueCode>
+							<LinkTo>false</LinkTo>
+						</ExtendedProperties>
+					</Control>
+					<Control Type="CheckBox">
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Id>1777378304554</Id>
+						<Name><![CDATA[checkbox_wind]]></Name>
+						<X>-60</X>
+						<Y>-30</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<BasicProperties Width="100" Height="30">
+							<EmbeddedIcon>false</EmbeddedIcon>
+							<TextColor>-16777216</TextColor>
+							<Enabled>true</Enabled>
+							<ActionCode>if(checkbox_wind.isSelected()){
+	c_selectedExportAC.add(OL_AssetFlowCategories.windProductionElectric_kW);
+}
+else{
+	c_selectedExportAC.remove(OL_AssetFlowCategories.windProductionElectric_kW);
+}
+
+f_reorderSelectedExportAC();</ActionCode>
+						</BasicProperties>
+						<ExtendedProperties>
+							<Font Name="Dialog" Size="11" Style="0"/>
+							<LabelText>Wind</LabelText>
+							<DefaultValueCode>false</DefaultValueCode>
+							<LinkTo>false</LinkTo>
+						</ExtendedProperties>
+					</Control>
+					<Control Type="CheckBox">
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Id>1777378313169</Id>
+						<Name><![CDATA[checkbox_battery]]></Name>
+						<X>-60</X>
+						<Y>-90</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<BasicProperties Width="100" Height="30">
+							<EmbeddedIcon>false</EmbeddedIcon>
+							<TextColor>-16777216</TextColor>
+							<Enabled>true</Enabled>
+							<ActionCode>if(checkbox_battery.isSelected()){
+	c_selectedExportAC.add(OL_AssetFlowCategories.batteriesChargingPower_kW);
+	c_selectedExportAC.add(OL_AssetFlowCategories.batteriesDischargingPower_kW);
+}
+else{
+	c_selectedExportAC.remove(OL_AssetFlowCategories.batteriesChargingPower_kW);
+	c_selectedExportAC.remove(OL_AssetFlowCategories.batteriesDischargingPower_kW);
+}
+
+f_reorderSelectedExportAC();</ActionCode>
+						</BasicProperties>
+						<ExtendedProperties>
+							<Font Name="Dialog" Size="11" Style="0"/>
+							<LabelText>Batterij</LabelText>
+							<DefaultValueCode>false</DefaultValueCode>
+							<LinkTo>false</LinkTo>
+						</ExtendedProperties>
+					</Control>
+					<Control Type="CheckBox">
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Id>1777378315921</Id>
+						<Name><![CDATA[checkbox_elecCooking]]></Name>
+						<X>-60</X>
+						<Y>10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<BasicProperties Width="100" Height="30">
+							<EmbeddedIcon>false</EmbeddedIcon>
+							<TextColor>-16777216</TextColor>
+							<Enabled>true</Enabled>
+							<ActionCode>if(checkbox_elecCooking.isSelected()){
+	c_selectedExportAC.add(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+}
+else{
+	c_selectedExportAC.remove(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+}
+
+f_reorderSelectedExportAC();</ActionCode>
+						</BasicProperties>
+						<ExtendedProperties>
+							<Font Name="Dialog" Size="11" Style="0"/>
+							<LabelText>Elek. koken</LabelText>
+							<DefaultValueCode>false</DefaultValueCode>
+							<LinkTo>false</LinkTo>
+						</ExtendedProperties>
+					</Control>
+					<Control Type="CheckBox">
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Id>1777378315925</Id>
+						<Name><![CDATA[checkbox_electricityForHeating]]></Name>
+						<X>-60</X>
+						<Y>-10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<BasicProperties Width="120" Height="30">
+							<EmbeddedIcon>false</EmbeddedIcon>
+							<TextColor>-16777216</TextColor>
+							<Enabled>true</Enabled>
+							<ActionCode>if(checkbox_electricityForHeating.isSelected()){
+	c_selectedExportAC.add(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+}
+else{
+	c_selectedExportAC.remove(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+}
+
+f_reorderSelectedExportAC();</ActionCode>
+						</BasicProperties>
+						<ExtendedProperties>
+							<Font Name="Dialog" Size="11" Style="0"/>
+							<LabelText>Elek. voor warmte</LabelText>
+							<DefaultValueCode>false</DefaultValueCode>
+							<LinkTo>false</LinkTo>
+						</ExtendedProperties>
+					</Control>
+					<Text>
+						<Id>1777381151078</Id>
+						<Name><![CDATA[txt_exportAC]]></Name>
+						<X>-10</X>
+						<Y>-140</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[Welke elektrische asset profielen 
+wil je exporteren?]]></Text>
+						<Font>
+							<Name><![CDATA[SansSerif]]></Name>
+							<Size>10</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+				</Presentation>
+			</Group>
+			<Text>
+				<Id>1777381286178</Id>
+				<Name><![CDATA[txt_configureExport]]></Name>
+				<X>0</X>
+				<Y>-240</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Wat wil je exporteren?]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>20</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1777381475525</Id>
+		<Name><![CDATA[gr_exportMenuButton]]></Name>
+		<X>425</X>
+		<Y>80</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<OnClickCode>gr_exportMenu.setVisible(!gr_exportMenu.isVisible());</OnClickCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Presentation>
 			<RoundedRectangle>
-				<Id>1776937028710</Id>
-				<Name><![CDATA[rect_exportButton]]></Name>
-				<X>-110</X>
-				<Y>-30</Y>
+				<Id>1777381401133</Id>
+				<Name><![CDATA[rect_exportMenuButton]]></Name>
+				<X>-30</X>
+				<Y>-25</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -2129,44 +2811,18 @@
 				<LineColor>-4069658</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>220</Width>
-				<Height>50</Height>
+				<Width>55</Width>
+				<Height>45</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor>-16744828</FillColor>
 				<FillMaterial>null</FillMaterial>
 				<ArcRadius>10</ArcRadius>
 			</RoundedRectangle>
-			<Text>
-				<Id>1776937022083</Id>
-				<Name><![CDATA[txt_exportButton]]></Name>
-				<X>-95</X>
-				<Y>-19</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Rotation>0.0</Rotation>
-				<Color>-1</Color>
-				<Text><![CDATA[Exporteer netto balans van 
-geselecteerd object naar excel]]></Text>
-				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>11</Size>
-					<Style>0</Style>
-				</Font>
-				<Alignment>LEFT</Alignment>
-			</Text>
 			<Image>
-				<Id>1776937101556</Id>
-				<Name><![CDATA[image_exportButton]]></Name>
-				<X>68</X>
-				<Y>-17.654</Y>
+				<Id>1777381401142</Id>
+				<Name><![CDATA[image_exportMenuButton]]></Name>
+				<X>-15</X>
+				<Y>-15</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2188,6 +2844,104 @@ geselecteerd object naar excel]]></Text>
 				</ImageFiles>
 				<OriginalSize>false</OriginalSize>
 			</Image>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1777384072266</Id>
+		<Name><![CDATA[gr_loadingScreen]]></Name>
+		<X>1760</X>
+		<Y>1720</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>false</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>210</XCode>
+		<YCode>425</YCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<Rectangle>
+				<Id>1777384024311</Id>
+				<Name><![CDATA[rect_loadingScreen]]></Name>
+				<X>-210</X>
+				<Y>-320</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>0</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>460</Width>
+				<Height>645</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-1</FillColor>
+				<FillMaterial>null</FillMaterial>
+			</Rectangle>
+			<Image>
+				<Id>1777384246558</Id>
+				<Name><![CDATA[image_loadIcon]]></Name>
+				<X>-65</X>
+				<Y>-110</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>170</Width>
+				<Height>170</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>icon_loading.gif</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
+			<Text>
+				<Id>1777384344339</Id>
+				<Name><![CDATA[txt_exportExcelIsCreated]]></Name>
+				<X>30</X>
+				<Y>-180</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Excel export wordt gemaakt...]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>20</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
 		</Presentation>
 	</Group>
 </Presentation>

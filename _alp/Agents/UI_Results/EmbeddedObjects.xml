@@ -24,11 +24,7 @@
 				<ItemName>1714743515622</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
-		<Parameters>
-			<Parameter>
-				<Name><![CDATA[p_maxNrSelectedGCForExport]]></Name>
-			</Parameter>
-		</Parameters>
+		<Parameters/>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
 			<Code><![CDATA[100]]></Code>

@@ -302,7 +302,7 @@ gr_trafoWeek.setVisible(false);
 gr_trafoDay.setVisible(false);
 gr_netLoadWeek.setVisible(false);
 gr_netLoadDay.setVisible(false);
-gr_exportButton.setVisible(false);
+gr_exportMenu.setVisible(false);
 
 plot_trafo_week.removeAll();
 plot_trafo_day.removeAll();
@@ -337,7 +337,6 @@ if (v_periodRadioButton.getValue() == 0) {
 
 I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
 
-
 if (dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 		v_periodRadioButton = rb_periodPeaksExcludingYear;
@@ -355,9 +354,6 @@ v_periodRadioButton.setVisible(true);
 int radioValue = v_periodRadioButton.getValue();
 
 if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
-	if(uI_Results.v_selectedObjectScope != OL_ResultScope.GRIDNODE || uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.ELECTRICITY){
-		gr_exportButton.setVisible(true);
-	}
 	switch (radioValue) {
 		case 0: // Live
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
@@ -437,9 +433,6 @@ else { // Stack Chart
 						f_addOtherEnergyCarriers_LiveDay(dataObject);
 					}
 				}
-				else{
-					gr_exportButton.setVisible(true);
-				}
 			}
 			break;
 		
@@ -452,9 +445,6 @@ else { // Stack Chart
 				if( radio_energyType.getValue() == 1){
 					f_addOtherEnergyFlows_Week(dataObject, true);
 				}
-				else{
-					gr_exportButton.setVisible(true);
-				}
 			}
 			break;
 			
@@ -465,9 +455,6 @@ else { // Stack Chart
 				f_addElectricityFlows_Week(dataObject, false);
 				if( radio_energyType.getValue() == 1){
 					f_addOtherEnergyFlows_Week(dataObject, false);
-				}
-				else{
-					gr_exportButton.setVisible(true);
 				}
 			}
 			break;
@@ -483,9 +470,6 @@ else { // Stack Chart
 				f_addElectricityFlows_Year(dataObject);
 				if( radio_energyType.getValue() == 1){
 					f_addOtherEnergyFlows_Year(dataObject);
-				}
-				else{
-					gr_exportButton.setVisible(true);
 				}
 			}
 			break;
@@ -900,8 +884,83 @@ DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
 return dateTime.format(formatter);
 /*ALCODEEND*/}
 
-double f_harvestSelectedObjectLoad()
+double f_createExport()
 {/*ALCODESTART::1776930491679*/
+traceln("Start writing Electricity Load Balance data to excel!");
+pauseSimulation();
+gr_loadingScreen.setVisible(true);
+
+new Thread( () -> {
+	f_deletePreviousExcel();
+	
+	try {
+	    // 1. Generate unique filename
+	    String newFilename = "Export_ModelData_" +
+	        new java.text.SimpleDateFormat("yyyyMMdd_HHmmss").format(new java.util.Date()) + ".xlsx";
+		
+	    // 2. Get data
+	    Map<String, Map<String, double[]>> map_exportData =  new HashMap<>();
+	    if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
+			map_exportData = f_getGridNodeExportMap();
+	    }
+	    else{
+			map_exportData = f_getEnergyDataExportMap();
+	    }
+	
+	    // 4. Create workbook and sheet
+	    XSSFWorkbook wb = new XSSFWorkbook();
+
+	
+	    // 5. Create sheet for each object and write data rows
+	    for(String objectName : map_exportData.keySet()){
+	    	XSSFSheet sheet = wb.createSheet("Export van " + objectName);
+	    	XSSFRow header = sheet.createRow(0);
+			
+		    //Create date column
+		    int totalRows = roundToInt(uI_Results.energyModel.p_timeParameters.getRunDuration_h()/uI_Results.energyModel.p_timeParameters.getTimeStep_h());
+		    header.createCell(0).setCellValue("Datum");
+    		for (int i = 0; i < totalRows; i++) {
+		        XSSFRow row = sheet.createRow(i + 1);
+		        row.createCell(0).setCellValue((i) * uI_Results.energyModel.p_timeParameters.getTimeStep_h());
+	        }
+	        //Create data columns
+	        int dataColumnNumber = 1; //Starts at index 1 (0 is for date column)
+		    for(String dataArrayName : map_exportData.get(objectName).keySet() ){
+			    header.createCell(dataColumnNumber).setCellValue(dataArrayName);
+			    double[] dataArray = map_exportData.get(objectName).get(dataArrayName);
+			    for (int i = 0; i < dataArray.length; i++) {
+			        XSSFRow row = sheet.getRow(i + 1);
+			        row.createCell(dataColumnNumber).setCellValue(dataArray[i]);
+			    }
+				dataColumnNumber++;
+			}
+	    }
+	
+	    // 6. Save file
+	    FileOutputStream fos = new FileOutputStream(newFilename);
+	    wb.write(fos);
+	    fos.close();
+	    wb.close();
+	    traceln("Finished writing Electricity Load Balance data to excel!");
+	
+	    // 7. Create download link
+	    traceln("Creating download link for the excel...");
+	    String urlForExcelDownload = TemporaryFileRepository.builder().build().createTemporaryDownloadLink(Path.of(newFilename));
+	    this.getExperimentHost().openWebSite(urlForExcelDownload);
+	    traceln("Finished creating download link for the excel.");
+	
+	} catch(Exception e){
+	    traceln("Failed writing file: " + e.getMessage());
+	    e.printStackTrace();
+	}
+	gr_loadingScreen.setVisible(false);
+}).start();
+
+runSimulation();
+/*ALCODEEND*/}
+
+double f_harvestSelectedObjectLoad_OLD()
+{/*ALCODESTART::1777375926804*/
 traceln("Start writing Electricity Load Balance data to excel!");
 
 //Clear the sheet first
@@ -959,68 +1018,96 @@ this.getExperimentHost().openWebSite(urlForExcelDownload);
 traceln("Finished creating download link for the excel.");
 /*ALCODEEND*/}
 
-double f_harvestSelectedGCLoadData()
-{/*ALCODESTART::1776930491705*/
-traceln("Start writing Electricity Load Balance data to excel!");
+double f_deletePreviousExcel()
+{/*ALCODESTART::1777387045344*/
 
-//Clear the sheet first
-f_clearExportSheet();
+File folder = new File(".");
+for(File f : folder.listFiles()){
+    if(f.getName().startsWith("Export_ModelData_") && f.getName().endsWith(".xlsx")){
+        f.delete();
+        traceln("Deleted old file: " + f.getName());
+    }
+}
+/*ALCODEEND*/}
 
-//Initialize column index
-int columnIndex = 2;
+Map<String, Map<String, double[]>> f_getEnergyDataExportMap()
+{/*ALCODESTART::1777388164676*/
+Map<String, Map<String, double[]>> map_exportData =  new HashMap<>();
+I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
+String selectedObjectName;
+if(dataObject instanceof GridConnection gc){
+    selectedObjectName = "Aansluiting: " + gc.p_gridConnectionID + " van eigenaar: " + gc.p_ownerID;
+    map_exportData.put(selectedObjectName, f_getEnergyDataObjectExportMap(dataObject));
+}
+else if(dataObject instanceof EnergyCoop coop){
+    selectedObjectName = "Totaal van Groep Aansluitingen";
+    map_exportData.put(selectedObjectName, f_getEnergyDataObjectExportMap(dataObject));
+    if(checkbox_exportPerGCCoop.isSelected()){
+	    for(GridConnection memberGC : coop.f_getAllChildMemberGridConnections()){
+	    	String memberGCName = "Aansluiting: " + memberGC.p_gridConnectionID + " van eigenaar: " + memberGC.p_ownerID;
+	    	map_exportData.put(memberGCName, f_getEnergyDataObjectExportMap(dataObject));
+	    }
+    }
+}
+else{
+    selectedObjectName = "Totaal van Gebied";
+    map_exportData.put(selectedObjectName, f_getEnergyDataObjectExportMap(dataObject));
+}
 
-//Initialize total balance flow for all selected GC
-double[] cumulativeLoadArray_kW = new double[energyModel.v_rapidRunData.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getTimeSeries_kW().length];
+return map_exportData;
+/*ALCODEEND*/}
 
-//Loop over gc and add the data
-for(GridConnection GC : c_selectedGridConnections){
+Map<String, Map<String, double[]>> f_getGridNodeExportMap()
+{/*ALCODESTART::1777388177684*/
+Map<String, Map<String, double[]>> map_exportData =  new HashMap<>();
+String selectedObjectName = "Trafo: " + uI_Results.v_gridNode.p_gridNodeID;
+Map<String, double[]> map_ObjectExportData =  new HashMap<>();
 
-	//Add gc data
-	excel_exportBalanceLoadData.setCellValue(GC.p_ownerID, "Electricity Load Balance", 1, columnIndex);
-	
-	double[] loadArray_kW = GC.v_rapidRunData.am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getTimeSeries_kW();
+double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
+if(c_selectedExportEC.contains(OL_EnergyCarriers.ELECTRICITY) && uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.ELECTRICITY){
+	map_ObjectExportData.put("Netto" + uI_Results.f_getECName(OL_EnergyCarriers.ELECTRICITY) + " profiel [kWh]", ZeroMath.arrayMultiply(uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getTimeSeries_kW(), timeStep_h));
+}
+if(c_selectedExportEC.contains(OL_EnergyCarriers.HEAT) && uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.HEAT){
+	map_ObjectExportData.put("Netto" + uI_Results.f_getECName(OL_EnergyCarriers.HEAT) + " profiel [kWh]", ZeroMath.arrayMultiply(uI_Results.v_gridNode.acc_annualHeatBalance_kW.getTimeSeries_kW(), timeStep_h));
+}
 
-	for (int i = 0; i < loadArray_kW.length; i++ ) {		
-		excel_exportBalanceLoadData.setCellValue( loadArray_kW[i] * energyModel.p_timeParameters.getTimeStep_h(), "Electricity Load Balance", i+2, columnIndex);
-		
-		//Add to cumulative load array
-		cumulativeLoadArray_kW[i] += loadArray_kW[i];
-	}
-	
-	//Add timestep column (only the first time)
-	if (columnIndex == 2) {
-		excel_exportBalanceLoadData.setCellValue("Tijd [u]", "Electricity Load Balance", 1, 1);
-		traceln("ArraySize: %s", loadArray_kW.length);
-		for (int i = 0; i < loadArray_kW.length ; i++) {
-			excel_exportBalanceLoadData.setCellValue((i) * energyModel.p_timeParameters.getTimeStep_h(), "Electricity Load Balance", i+2, 1);
+
+map_exportData.put(selectedObjectName, map_ObjectExportData);
+return map_exportData;
+/*ALCODEEND*/}
+
+Map<String, double[]> f_getEnergyDataObjectExportMap(I_EnergyData dataObject)
+{/*ALCODESTART::1777388399427*/
+Map<String, double[]> map_ObjectExportData =  new HashMap<>();
+double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
+
+for(OL_EnergyCarriers EC : c_selectedExportEC){
+	if(EC == OL_EnergyCarriers.ELECTRICITY){ // First do all the assetFlow categories
+		for(OL_AssetFlowCategories AC : c_selectedExportAC){
+			if(uI_Results.v_electricAssetFlows.contains(AC) || ){
+				map_ObjectExportData.put("Netto" + uI_Results.lm_assetFlowLabels.get(AC) + " profiel [kWh]", ZeroMath.arrayMultiply(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getTimeSeries_kW().clone(), timeStep_h));
+			}
 		}
 	}
 	
-	//Increase columnIndex
-	columnIndex++;
+	map_ObjectExportData.put("Netto" + uI_Results.f_getECName(EC) + " profiel [kWh]", ZeroMath.arrayMultiply(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW().clone(), timeStep_h));
+
 }
 
-//Cumulative data column
-if(c_selectedGridConnections.size() > 1){
-	excel_exportBalanceLoadData.setCellValue("Totale load [kWh]", "Electricity Load Balance", 1, columnIndex);
-	for (int i = 0; i < cumulativeLoadArray_kW.length ; i++) {
-		excel_exportBalanceLoadData.setCellValue( cumulativeLoadArray_kW[i] * energyModel.p_timeParameters.getTimeStep_h(), "Electricity Load Balance", i+2, columnIndex);
-	}
-}
-
-//Write the file
-excel_exportBalanceLoadData.writeFile();
-
-traceln("Finished writing Electricity Load Balance data to excel!");
+return map_ObjectExportData;
 /*ALCODEEND*/}
 
-double f_clearExportSheet()
-{/*ALCODESTART::1776930491781*/
-//Clear the sheet first
-for (int row = 1; row <= 35137; row++) {
-    for (int col = 1; col <= 3; col++) {
-        excel_exportBalanceLoadData.setCellValue("", "Electricity Load Balance", row, col);
-    }
-}
+double f_reorderSelectedExportEC()
+{/*ALCODESTART::1777393104728*/
+c_selectedExportEC.sort((a, b) -> 
+    uI_Results.c_defaultOrderEC.indexOf(a) - uI_Results.c_defaultOrderEC.indexOf(b)
+);
+/*ALCODEEND*/}
+
+double f_reorderSelectedExportAC()
+{/*ALCODESTART::1777393129235*/
+c_selectedExportAC.sort((a, b) -> 
+    uI_Results.c_defaultOrderAC.indexOf(a) - uI_Results.c_defaultOrderAC.indexOf(b)
+);
 /*ALCODEEND*/}
 

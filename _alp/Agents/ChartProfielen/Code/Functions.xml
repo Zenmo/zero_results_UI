@@ -394,7 +394,7 @@
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
 		<Id>1776930491679</Id>
-		<Name><![CDATA[f_harvestSelectedObjectLoad]]></Name>
+		<Name><![CDATA[f_createExport]]></Name>
 		<X>1314</X>
 		<Y>1160</Y>
 		<Label>
@@ -409,11 +409,11 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1776930491705</Id>
-		<Name><![CDATA[f_harvestSelectedGCLoadData]]></Name>
+		<Id>1777375926804</Id>
+		<Name><![CDATA[f_harvestSelectedObjectLoad_OLD]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1314</X>
-		<Y>1230</Y>
+		<X>1300</X>
+		<Y>1340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -426,10 +426,94 @@
 	<Function AccessType="default" StaticFunction="false">
 		<ReturnModificator>VOID</ReturnModificator>
 		<ReturnType>double</ReturnType>
-		<Id>1776930491781</Id>
-		<Name><![CDATA[f_clearExportSheet]]></Name>
-		<X>1324</X>
+		<Id>1777387045344</Id>
+		<Name><![CDATA[f_deletePreviousExcel]]></Name>
+		<X>1340</X>
 		<Y>1180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>Map&lt;String, Map&lt;String, double[]&gt;&gt;</ReturnType>
+		<Id>1777388164676</Id>
+		<Name><![CDATA[f_getEnergyDataExportMap]]></Name>
+		<X>1340</X>
+		<Y>1220</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>Map&lt;String, Map&lt;String, double[]&gt;&gt;</ReturnType>
+		<Id>1777388177684</Id>
+		<Name><![CDATA[f_getGridNodeExportMap]]></Name>
+		<X>1340</X>
+		<Y>1200</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>Map&lt;String, double[]&gt;</ReturnType>
+		<Id>1777388399427</Id>
+		<Name><![CDATA[f_getEnergyDataObjectExportMap]]></Name>
+		<X>1360</X>
+		<Y>1240</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataObject]]></Name>
+			<Type><![CDATA[I_EnergyData]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1777393104728</Id>
+		<Name><![CDATA[f_reorderSelectedExportEC]]></Name>
+		<X>1760</X>
+		<Y>1180</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1777393129235</Id>
+		<Name><![CDATA[f_reorderSelectedExportAC]]></Name>
+		<X>1760</X>
+		<Y>1200</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
