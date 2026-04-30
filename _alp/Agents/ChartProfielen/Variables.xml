@@ -63,6 +63,34 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="Parameter">
+		<Id>1777468088389</Id>
+		<Name><![CDATA[p_selectedExportUnit]]></Name>
+		<X>1340</X>
+		<Y>1340</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+			<Type><![CDATA[String]]></Type>
+			<UnitType>NONE</UnitType>
+			<SdArray>false</SdArray>
+			<DefaultValue Class="CodeValue">
+				<Code><![CDATA["kWh"]]></Code>
+			</DefaultValue>
+			<ParameterEditor>
+				<Id>1777468088387</Id>
+				<EditorContolType>TEXT_BOX</EditorContolType>
+				<MinSliderValue>0</MinSliderValue>
+				<MaxSliderValue>100</MaxSliderValue>
+				<DelimeterType>NO_DELIMETER</DelimeterType>
+			</ParameterEditor>
+		</Properties>
+	</Variable>
 	<Variable Class="CollectionVariable">
 		<Id>1777391207152</Id>
 		<Name><![CDATA[c_selectedExportEC]]></Name>
