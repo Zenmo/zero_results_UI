@@ -940,7 +940,7 @@ new Thread( () -> {
 				
 			    header.createCell(dataColumnNumber).setCellValue("Datum");
 	    		for (int i = 0; i < totalRowsBalance; i++) {
-			        XSSFRow row = sheet.getRow(i + 1);
+			        XSSFRow row = sheet.createRow(i + 1);
 			        row.createCell(dataColumnNumber).setCellValue(f_getDate_ISO8601(i));
 		        }
 		        //Increase data column number
@@ -1045,7 +1045,8 @@ I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
 String selectedObjectName;
 if(dataObject instanceof GridConnection gc){
 	int connectionOwnerGCNumber =  gc.p_owner.f_getOwnedGridConnections().indexOf(gc) + 1;
-    selectedObjectName = gc.p_ownerID + " aansluiting " + connectionOwnerGCNumber;
+	String objectAddress = gc.p_address != null ? gc.p_address.getAddress() : "";
+    selectedObjectName = gc.p_ownerID + ", " + objectAddress;
     map_exportData.put(selectedObjectName, f_getEnergyDataObjectExportMap(dataObject));
 }
 else if(dataObject instanceof EnergyCoop coop){
@@ -1053,8 +1054,8 @@ else if(dataObject instanceof EnergyCoop coop){
     map_exportData.put(selectedObjectName, f_getEnergyDataObjectExportMap(dataObject));
     if(checkbox_exportPerGCCoop.isSelected()){
 	    for(GridConnection memberGC : coop.f_getAllChildMemberGridConnections()){
-	    	int connectionOwnerGCNumber =  memberGC.p_owner.f_getOwnedGridConnections().indexOf(memberGC) + 1;
-	    	String memberGCName = memberGC.p_ownerID + " aansluiting " + connectionOwnerGCNumber;
+			String objectAddress = memberGC.p_address != null ? memberGC.p_address.getAddress() : "";
+	    	String memberGCName = memberGC.p_ownerID + ", " + objectAddress;
 	    	map_exportData.put(memberGCName, f_getEnergyDataObjectExportMap(dataObject));
 	    }
     }
@@ -1074,12 +1075,13 @@ String selectedObjectName = "Trafo " + uI_Results.v_gridNode.p_gridNodeID;
 Map<String, double[]> map_ObjectExportData =  new LinkedHashMap<>();
 
 //GridNode data is always in timesteps of p_timeStep_h!
+String profileTypeName = f_getProfileTypeName(uI_Results.energyModel.p_timeParameters.getTimeStep_h()); 
 double arrayUnitScalingFactor = p_selectedExportUnit.equals("kWh") ? uI_Results.energyModel.p_timeParameters.getTimeStep_h() : 1;
 if(c_selectedExportEC.contains(OL_EnergyCarriers.ELECTRICITY) && uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.ELECTRICITY){
-	map_ObjectExportData.put("Netto " + uI_Results.f_getECName(OL_EnergyCarriers.ELECTRICITY) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getTimeSeries_kW(), arrayUnitScalingFactor));
+	map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(OL_EnergyCarriers.ELECTRICITY) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getTimeSeries_kW(), arrayUnitScalingFactor));
 }
 if(c_selectedExportEC.contains(OL_EnergyCarriers.HEAT) && uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.HEAT){
-	map_ObjectExportData.put("Netto " + uI_Results.f_getECName(OL_EnergyCarriers.HEAT) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(uI_Results.v_gridNode.acc_annualHeatBalance_kW.getTimeSeries_kW(), arrayUnitScalingFactor));
+	map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(OL_EnergyCarriers.HEAT) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(uI_Results.v_gridNode.acc_annualHeatBalance_kW.getTimeSeries_kW(), arrayUnitScalingFactor));
 }
 
 
@@ -1104,10 +1106,16 @@ for(OL_EnergyCarriers EC : c_selectedExportEC){
 				}
 			}
 		}
-		String profileTypeName = f_getProfileTypeName(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getSignalResolution_h()); 
-		
-		map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(EC) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW().clone(), arrayUnitScalingFactor));
-		
+		if(EC == OL_EnergyCarriers.HEAT){ //Only export district heat delivery
+			if(uI_Results.v_electricAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW) && dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){
+				String profileTypeNameAC = f_getProfileTypeName(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getSignalResolution_h()); 
+				map_ObjectExportData.put(profileTypeNameAC + uI_Results.lm_assetFlowLabels.get(OL_AssetFlowCategories.districtHeatDelivery_kW) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getTimeSeries_kW().clone(), arrayUnitScalingFactor));
+			}
+		}
+		else{
+			String profileTypeName = f_getProfileTypeName(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getSignalResolution_h()); 
+			map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(EC) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW().clone(), arrayUnitScalingFactor));
+		}
 	}
 }
 
@@ -1170,5 +1178,64 @@ else if(profileSignalResolution_h == 24){
 else{
 	throw new RuntimeException("Unsupported profile size found!!");
 }
+/*ALCODEEND*/}
+
+double f_initializeExportButtons()
+{/*ALCODESTART::1777884130519*/
+//Get EC and AC options
+Set<OL_EnergyCarriers> energyCarriers = new HashSet<>();
+Set<OL_AssetFlowCategories> assetFlows = new HashSet<>();
+
+if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
+	if(uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.ELECTRICITY){
+		energyCarriers.add(OL_EnergyCarriers.ELECTRICITY);		
+	}
+	else if(uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.HEAT){
+		energyCarriers.add(OL_EnergyCarriers.HEAT);
+	}
+}
+else{
+	I_EnergyData data = uI_Results.f_getSelectedObjectData();
+	energyCarriers.addAll(data.getRapidRunData().activeEnergyCarriers);
+	assetFlows.addAll(data.getRapidRunData().assetsMetaData.activeAssetFlows);
+	
+	if(energyCarriers.contains(OL_EnergyCarriers.HEAT)){
+		energyCarriers.remove(OL_EnergyCarriers.HEAT); // Heat can only be exported if district heating, which is flow in AC.
+	}
+}
+
+//Activate all check box buttons initially, and select the ones that are selected according to the c_includeAssetSelection
+map_ECToCheckBox.values().forEach(cb -> cb.setEnabled(true));	
+for(OL_EnergyCarriers EC : c_selectedExportEC){ // Set all current 'includedAssetSelection' to 'checked', without calling action.
+	map_ECToCheckBox.get(EC).setSelected(true, false);
+}
+
+//EC is not present: disable and deselect the checkbox (without calling action).
+for(OL_EnergyCarriers EC : map_ECToCheckBox.keySet()){
+	if(!energyCarriers.contains(EC)){ 
+		map_ECToCheckBox.get(EC).setEnabled(false);
+		map_ECToCheckBox.get(EC).setSelected(false, false);	
+	}
+}
+
+//Activate all check box buttons initially, and select the ones that are selected according to the c_includeAssetSelection
+map_ACToCheckBox.values().forEach(cb -> cb.setEnabled(true));	
+for(OL_AssetFlowCategories AC : c_selectedExportAC){ // Set all current 'includedAssetSelection' to 'checked', without calling action.
+	map_ACToCheckBox.get(AC).setSelected(true, false);
+}
+
+//AC is not present: disable and deselect the checkbox (without calling action).
+for(OL_AssetFlowCategories AC : map_ACToCheckBox.keySet()){
+	if(!assetFlows.contains(AC)){ 
+		map_ACToCheckBox.get(AC).setEnabled(false);
+		map_ACToCheckBox.get(AC).setSelected(false, false);	
+	}
+}
+/*ALCODEEND*/}
+
+double f_enableExportButton(boolean enable)
+{/*ALCODESTART::1777885248795*/
+gr_exportMenuButton.setVisible(enable);
+gr_exportMenuButtonDisabled.setVisible(!enable);
 /*ALCODEEND*/}
 

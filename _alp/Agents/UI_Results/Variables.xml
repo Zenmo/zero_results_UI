@@ -1888,14 +1888,15 @@ OL_AssetFlowCategories.electricHobConsumption_kW,
 OL_AssetFlowCategories.electrolyserElectricityConsumption_kW,
 OL_AssetFlowCategories.evChargingPower_kW,
 OL_AssetFlowCategories.heatPumpElectricityConsumption_kW,
-OL_AssetFlowCategories.ptProductionHeat_kW,
 OL_AssetFlowCategories.pvProductionElectric_kW,
 OL_AssetFlowCategories.V2GPower_kW,
 OL_AssetFlowCategories.windProductionElectric_kW,
 OL_AssetFlowCategories.airConditionersElectricPower_kW,
 OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW,
 OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW,
-OL_AssetFlowCategories.hydrogenFuelCellProductionElectric_kW
+OL_AssetFlowCategories.hydrogenFuelCellProductionElectric_kW,
+OL_AssetFlowCategories.districtHeatDelivery_kW,
+OL_AssetFlowCategories.ptProductionHeat_kW
 }]]></Code>
 			</CollectionInitializer>
 		</Properties>

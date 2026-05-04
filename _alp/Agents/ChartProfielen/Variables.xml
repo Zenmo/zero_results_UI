@@ -91,6 +91,86 @@
 			</ParameterEditor>
 		</Properties>
 	</Variable>
+	<Variable Class="Parameter">
+		<Id>1777884467284</Id>
+		<Name><![CDATA[map_ACToCheckBox]]></Name>
+		<X>1590</X>
+		<Y>1310</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+			<Type><![CDATA[Map<OL_AssetFlowCategories, ShapeCheckBox>]]></Type>
+			<UnitType>NONE</UnitType>
+			<SdArray>false</SdArray>
+			<DefaultValue Class="CodeValue">
+				<Code><![CDATA[Map.ofEntries(
+Map.entry(OL_AssetFlowCategories.fixedConsumptionElectric_kW, checkbox_baseLoad),
+Map.entry(OL_AssetFlowCategories.batteriesChargingPower_kW, checkbox_battery),
+Map.entry(OL_AssetFlowCategories.batteriesDischargingPower_kW, checkbox_battery),
+Map.entry(OL_AssetFlowCategories.CHPProductionElectric_kW, checkbox_exportCHP),
+Map.entry(OL_AssetFlowCategories.districtHeatDelivery_kW, checkbox_heat),
+Map.entry(OL_AssetFlowCategories.electricHobConsumption_kW, checkbox_elecCooking),
+Map.entry(OL_AssetFlowCategories.electrolyserElectricityConsumption_kW, checkbox_electricityForH2),
+Map.entry(OL_AssetFlowCategories.evChargingPower_kW, checkbox_vehicleCharging),
+Map.entry(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW, checkbox_electricityForHeating),
+//Map.entry(OL_AssetFlowCategories.ptProductionHeat_kW, checkbox_PT),
+Map.entry(OL_AssetFlowCategories.pvProductionElectric_kW, checkbox_PV),
+Map.entry(OL_AssetFlowCategories.V2GPower_kW, checkbox_v2g),
+Map.entry(OL_AssetFlowCategories.windProductionElectric_kW, checkbox_wind),
+Map.entry(OL_AssetFlowCategories.airConditionersElectricPower_kW, checkbox_aircos),
+Map.entry(OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW, checkbox_exportDieselGen),
+Map.entry(OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW, checkbox_exportMethaneGen),
+Map.entry(OL_AssetFlowCategories.hydrogenFuelCellProductionElectric_kW, checkbox_exportFuelCell)
+)]]></Code>
+			</DefaultValue>
+			<ParameterEditor>
+				<Id>1777884467282</Id>
+				<EditorContolType>TEXT_BOX</EditorContolType>
+				<MinSliderValue>0</MinSliderValue>
+				<MaxSliderValue>100</MaxSliderValue>
+				<DelimeterType>NO_DELIMETER</DelimeterType>
+			</ParameterEditor>
+		</Properties>
+	</Variable>
+	<Variable Class="Parameter">
+		<Id>1777884471301</Id>
+		<Name><![CDATA[map_ECToCheckBox]]></Name>
+		<X>1590</X>
+		<Y>1330</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+			<Type><![CDATA[Map<OL_EnergyCarriers, ShapeCheckBox>]]></Type>
+			<UnitType>NONE</UnitType>
+			<SdArray>false</SdArray>
+			<DefaultValue Class="CodeValue">
+				<Code><![CDATA[Map.ofEntries(
+Map.entry(OL_EnergyCarriers.ELECTRICITY, checkbox_electricity),
+Map.entry(OL_EnergyCarriers.METHANE, checkbox_methane),
+Map.entry(OL_EnergyCarriers.HYDROGEN, checkbox_hydrogen),
+Map.entry(OL_EnergyCarriers.PETROLEUM_FUEL, checkbox_fuel)//,
+//Map.entry(OL_EnergyCarriers.HEAT, checkbox_heat),
+)]]></Code>
+			</DefaultValue>
+			<ParameterEditor>
+				<Id>1777884471299</Id>
+				<EditorContolType>TEXT_BOX</EditorContolType>
+				<MinSliderValue>0</MinSliderValue>
+				<MaxSliderValue>100</MaxSliderValue>
+				<DelimeterType>NO_DELIMETER</DelimeterType>
+			</ParameterEditor>
+		</Properties>
+	</Variable>
 	<Variable Class="CollectionVariable">
 		<Id>1777391207152</Id>
 		<Name><![CDATA[c_selectedExportEC]]></Name>

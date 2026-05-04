@@ -551,8 +551,8 @@
 		<ReturnType>String</ReturnType>
 		<Id>1777471617390</Id>
 		<Name><![CDATA[f_getProfileTypeName]]></Name>
-		<X>1570</X>
-		<Y>1350</Y>
+		<X>1360</X>
+		<Y>1360</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -563,6 +563,42 @@
 		<Parameter>
 			<Name><![CDATA[profileSignalResolution_h]]></Name>
 			<Type><![CDATA[double]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1777884130519</Id>
+		<Name><![CDATA[f_initializeExportButtons]]></Name>
+		<X>1314</X>
+		<Y>1140</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1777885248795</Id>
+		<Name><![CDATA[f_enableExportButton]]></Name>
+		<X>1880</X>
+		<Y>1170</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[enable]]></Name>
+			<Type><![CDATA[boolean]]></Type>
 		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>

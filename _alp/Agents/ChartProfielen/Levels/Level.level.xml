@@ -2044,7 +2044,7 @@
 		<Id>1776930491478</Id>
 		<Name><![CDATA[rect_exportToExcelFunctions]]></Name>
 		<X>1260</X>
-		<Y>1100</Y>
+		<Y>1080</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
@@ -2061,7 +2061,7 @@
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>570</Width>
-		<Height>280</Height>
+		<Height>310</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -2070,7 +2070,7 @@
 		<Id>1776930491484</Id>
 		<Name><![CDATA[txt_writeToExcelFunctions]]></Name>
 		<X>1300</X>
-		<Y>1120</Y>
+		<Y>1100</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -2360,13 +2360,13 @@ f_reorderSelectedExportEC();</ActionCode>
 					<TextColor>-16777216</TextColor>
 					<Enabled>true</Enabled>
 					<ActionCode>if(checkbox_heat.isSelected()){
-	c_selectedExportEC.add(OL_EnergyCarriers.HEAT);
+	c_selectedExportAC.add(OL_AssetFlowCategories.districtHeatDelivery_kW);
 }
 else{
-	c_selectedExportEC.remove(OL_EnergyCarriers.HEAT);
+	c_selectedExportAC.remove(OL_AssetFlowCategories.districtHeatDelivery_kW);
 }
 
-f_reorderSelectedExportEC();</ActionCode>
+f_reorderSelectedExportAC();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
@@ -2431,7 +2431,7 @@ f_reorderSelectedExportEC();</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
 					<Font Name="Dialog" Size="11" Style="0"/>
-					<LabelText>Exporteer appart voor elke aansluiting in de coop</LabelText>
+					<LabelText>Exporteer apart voor elke aansluiting in de groep</LabelText>
 					<LinkTo>false</LinkTo>
 				</ExtendedProperties>
 			</Control>
@@ -3093,79 +3093,6 @@ f_reorderSelectedExportAC();</ActionCode>
 		</Presentation>
 	</Group>
 	<Group>
-		<Id>1777381475525</Id>
-		<Name><![CDATA[gr_exportMenuButton]]></Name>
-		<X>425</X>
-		<Y>80</Y>
-		<Label>
-			<X>7.482</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<OnClickCode>gr_exportMenu.setVisible(!gr_exportMenu.isVisible());</OnClickCode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Presentation>
-			<RoundedRectangle>
-				<Id>1777381401133</Id>
-				<Name><![CDATA[rect_exportMenuButton]]></Name>
-				<X>-22.442</X>
-				<Y>-17.682</Y>
-				<Label>
-					<X>10</X>
-					<Y>10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor>-4069658</LineColor>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<Width>41.147</Width>
-				<Height>31.829</Height>
-				<Rotation>0.0</Rotation>
-				<FillColor>-16744828</FillColor>
-				<FillMaterial>null</FillMaterial>
-				<ArcRadius>10</ArcRadius>
-			</RoundedRectangle>
-			<Image>
-				<Id>1777381401142</Id>
-				<Name><![CDATA[image_exportMenuButton]]></Name>
-				<X>-11.223</X>
-				<Y>-10.607</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>20.199</Width>
-				<Height>16.892</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>load_icon_white.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-		</Presentation>
-	</Group>
-	<Group>
 		<Id>1777384072266</Id>
 		<Name><![CDATA[gr_loadingScreen]]></Name>
 		<X>1760</X>
@@ -3261,6 +3188,158 @@ f_reorderSelectedExportAC();</ActionCode>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1777885127612</Id>
+		<Name><![CDATA[gr_exportMenuButtonDisabled]]></Name>
+		<X>1930</X>
+		<Y>1200</Y>
+		<Label>
+			<X>7.482</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>gr_exportMenuButton.getX()</XCode>
+		<YCode>gr_exportMenuButton.getY()</YCode>
+		<OnClickCode>String clickableButDoesNothing = "";</OnClickCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<RoundedRectangle>
+				<Id>1777885127614</Id>
+				<Name><![CDATA[rect_exportMenuButton1]]></Name>
+				<X>-22.442</X>
+				<Y>-17.682</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor>-1644806</LineColor>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>41.147</Width>
+				<Height>31.829</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-4144960</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Image>
+				<Id>1777885127616</Id>
+				<Name><![CDATA[image_exportMenuButton1]]></Name>
+				<X>-11.223</X>
+				<Y>-10.607</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>20.199</Width>
+				<Height>16.892</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>load_icon_white.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1777381475525</Id>
+		<Name><![CDATA[gr_exportMenuButton]]></Name>
+		<X>425</X>
+		<Y>80</Y>
+		<Label>
+			<X>7.482</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<OnClickCode>gr_exportMenu.setVisible(!gr_exportMenu.isVisible());
+
+if(gr_exportMenu.isVisible()){
+	f_initializeExportButtons();
+}</OnClickCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<RoundedRectangle>
+				<Id>1777381401133</Id>
+				<Name><![CDATA[rect_exportMenuButton]]></Name>
+				<X>-22.442</X>
+				<Y>-17.682</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor>-4069658</LineColor>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>41.147</Width>
+				<Height>31.829</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-16744828</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Image>
+				<Id>1777381401142</Id>
+				<Name><![CDATA[image_exportMenuButton]]></Name>
+				<X>-11.223</X>
+				<Y>-10.607</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>20.199</Width>
+				<Height>16.892</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>load_icon_white.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
 		</Presentation>
 	</Group>
 </Presentation>
