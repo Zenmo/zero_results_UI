@@ -2669,10 +2669,10 @@ f_reorderSelectedExportAC();</ActionCode>
 							<TextColor>-16777216</TextColor>
 							<Enabled>true</Enabled>
 							<ActionCode>if(checkbox_elecCooking.isSelected()){
-	c_selectedExportAC.add(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+	c_selectedExportAC.add(OL_AssetFlowCategories.electricHobConsumption_kW);
 }
 else{
-	c_selectedExportAC.remove(OL_AssetFlowCategories.heatPumpElectricityConsumption_kW);
+	c_selectedExportAC.remove(OL_AssetFlowCategories.electricHobConsumption_kW);
 }
 
 f_reorderSelectedExportAC();</ActionCode>
