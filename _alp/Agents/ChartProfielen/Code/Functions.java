@@ -1053,10 +1053,18 @@ else if(dataObject instanceof EnergyCoop coop){
     selectedObjectName = "Totaal van groep aansluitingen";
     map_exportData.put(selectedObjectName, f_getEnergyDataObjectExportMap(dataObject));
     if(checkbox_exportPerGCCoop.isSelected()){
+    	List<String> currentSheetNames = new ArrayList<>();//No duplicate (sheets max length 31 char) allowed! : So to keep track, and prevent duplicates this list is used
 	    for(GridConnection memberGC : coop.f_getAllChildMemberGridConnections()){
 			String objectAddress = memberGC.p_address != null ? memberGC.p_address.getAddress() : "";
-	    	String memberGCName = memberGC.p_ownerID + ", " + objectAddress;
-	    	map_exportData.put(memberGCName, f_getEnergyDataObjectExportMap(dataObject));
+	    	String prefferedMemberGCName = memberGC.p_ownerID + ", " + objectAddress;
+	    	String actualMemberGCName = prefferedMemberGCName.length() > 28 ? prefferedMemberGCName.substring(0, 28) : prefferedMemberGCName; // Cut off at 28 char always.
+	    	if(currentSheetNames.contains(actualMemberGCName)){
+	    		String defaultActualMemberGCName = actualMemberGCName;
+	    		int currentNrOfSheetsWithSameName = findAll(currentSheetNames, str -> str.startsWith(defaultActualMemberGCName)).size();
+	    		actualMemberGCName += "(" + currentNrOfSheetsWithSameName + ")"; // Adds three more char -> 28 + 3 = 31 total = limit sheet name length
+	    	}
+	    	currentSheetNames.add(actualMemberGCName);
+	    	map_exportData.put(actualMemberGCName, f_getEnergyDataObjectExportMap(memberGC));
 	    }
     }
 }
