@@ -10,7 +10,15 @@ import java.text.DecimalFormat;
 
 import java.time.LocalDateTime;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;]]></Import>
+import java.time.format.DateTimeFormatter;
+
+import energy.lux.uplux.TemporaryFileRepository;
+import java.nio.file.Path;
+import org.apache.poi.xssf.usermodel.*;
+import java.io.FileOutputStream;
+import java.io.File;
+import zeroPackage.ZeroMath;
+import java.text.SimpleDateFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>

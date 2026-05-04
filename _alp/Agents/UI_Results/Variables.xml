@@ -1833,4 +1833,72 @@
 			<ValueElementClass>String</ValueElementClass>
 		</Properties>
 	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1777393063412</Id>
+		<Name><![CDATA[c_defaultOrderEC]]></Name>
+		<X>540</X>
+		<Y>880</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>OL_EnergyCarriers</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+OL_EnergyCarriers.ELECTRICITY,
+OL_EnergyCarriers.METHANE,
+OL_EnergyCarriers.PETROLEUM_FUEL,
+OL_EnergyCarriers.HEAT,
+OL_EnergyCarriers.HYDROGEN,
+OL_EnergyCarriers.IRON_POWDER
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
+	<Variable Class="CollectionVariable">
+		<Id>1777393241837</Id>
+		<Name><![CDATA[c_defaultOrderAC]]></Name>
+		<X>540</X>
+		<Y>900</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+			<CollectionClass>ArrayList</CollectionClass>
+			<ElementClass>OL_AssetFlowCategories</ElementClass>
+			<ValueElementClass>String</ValueElementClass>
+			<CollectionInitializer Class="CodeValue">
+				<Code><![CDATA[{
+OL_AssetFlowCategories.fixedConsumptionElectric_kW,
+OL_AssetFlowCategories.batteriesChargingPower_kW,
+OL_AssetFlowCategories.batteriesDischargingPower_kW,
+OL_AssetFlowCategories.CHPProductionElectric_kW,
+OL_AssetFlowCategories.districtHeatDelivery_kW,
+OL_AssetFlowCategories.electricHobConsumption_kW,
+OL_AssetFlowCategories.electrolyserElectricityConsumption_kW,
+OL_AssetFlowCategories.evChargingPower_kW,
+OL_AssetFlowCategories.heatPumpElectricityConsumption_kW,
+OL_AssetFlowCategories.pvProductionElectric_kW,
+OL_AssetFlowCategories.V2GPower_kW,
+OL_AssetFlowCategories.windProductionElectric_kW,
+OL_AssetFlowCategories.airConditionersElectricPower_kW,
+OL_AssetFlowCategories.dieselGeneratorProductionElectric_kW,
+OL_AssetFlowCategories.methaneGeneratorProductionElectric_kW,
+OL_AssetFlowCategories.hydrogenFuelCellProductionElectric_kW,
+OL_AssetFlowCategories.districtHeatDelivery_kW,
+OL_AssetFlowCategories.ptProductionHeat_kW
+}]]></Code>
+			</CollectionInitializer>
+		</Properties>
+	</Variable>
 </Variables>

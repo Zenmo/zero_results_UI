@@ -22,7 +22,7 @@
 		<Id>1726830499836</Id>
 		<Name><![CDATA[f_setYearlyKPIs]]></Name>
 		<X>-390</X>
-		<Y>500</Y>
+		<Y>480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -94,7 +94,7 @@
 		<Id>1727107912139</Id>
 		<Name><![CDATA[f_resetChart]]></Name>
 		<X>-390</X>
-		<Y>480</Y>
+		<Y>460</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -110,7 +110,7 @@
 		<Id>1769429961370</Id>
 		<Name><![CDATA[f_setMonthlyChart]]></Name>
 		<X>-390</X>
-		<Y>520</Y>
+		<Y>500</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -138,7 +138,7 @@
 		<Id>1774021264167</Id>
 		<Name><![CDATA[f_calculateMonthlyEnergyImportCosts_eur]]></Name>
 		<X>-390</X>
-		<Y>560</Y>
+		<Y>540</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -166,7 +166,7 @@
 		<Id>1774023398668</Id>
 		<Name><![CDATA[f_calculateMonthlyEnergyExportRevenue_eur]]></Name>
 		<X>-390</X>
-		<Y>580</Y>
+		<Y>560</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -194,7 +194,7 @@
 		<Id>1774023455637</Id>
 		<Name><![CDATA[f_calculateMonthlyNetEnergyCosts_eur]]></Name>
 		<X>-390</X>
-		<Y>600</Y>
+		<Y>580</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -218,7 +218,7 @@
 		<Id>1774259541182</Id>
 		<Name><![CDATA[f_setChartEnergyCostsValues]]></Name>
 		<X>-400</X>
-		<Y>460</Y>
+		<Y>440</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

@@ -466,6 +466,7 @@ chartProfielen.rb_periodIncludingYear.setEnabled(active);
 chartProfielen.rb_periodExcludingYear.setEnabled(active);
 chartProfielen.rb_periodPeaksIncludingYear.setEnabled(active);
 chartProfielen.rb_periodPeaksExcludingYear.setEnabled(active);
+chartProfielen.f_enableExportButton(active);
 chartNetbelasting.radio.setEnabled(active);
 chartBalans.radio_period.setEnabled(active);
 /*ALCODEEND*/}

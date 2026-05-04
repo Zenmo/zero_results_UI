@@ -24,7 +24,17 @@
 				<ItemName>1714743515622</ItemName>
 			</GenericParameterSubstituteReference>
 		</GenericParameterSubstitute>
-		<Parameters/>
+		<Parameters>
+			<Parameter>
+				<Name><![CDATA[p_selectedExportUnit]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[map_ACToCheckBox]]></Name>
+			</Parameter>
+			<Parameter>
+				<Name><![CDATA[map_ECToCheckBox]]></Name>
+			</Parameter>
+		</Parameters>
 		<ReplicationFlag>false</ReplicationFlag>
 		<Replication Class="CodeValue">
 			<Code><![CDATA[100]]></Code>

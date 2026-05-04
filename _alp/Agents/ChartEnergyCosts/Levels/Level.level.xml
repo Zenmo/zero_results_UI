@@ -1591,7 +1591,7 @@
 	v_selectedEnergyCarrier = p_totalName;
 }
 else{
-	for(OL_EnergyCarriers EC : c_defaultOrderEC){
+	for(OL_EnergyCarriers EC : uI_Results.c_defaultOrderEC){
 		if(cb_energyCarrierSelection.getValue().equals(uI_Results.f_getECName(EC))){
 			v_selectedEnergyCarrier = EC.toString();
 		}

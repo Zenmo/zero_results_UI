@@ -442,7 +442,7 @@ else{
 
 //Order the list to always have the same order
 List<OL_EnergyCarriers> orderedEnergyCarriers = new ArrayList<>();
-for(OL_EnergyCarriers EC : c_defaultOrderEC){
+for(OL_EnergyCarriers EC : uI_Results.c_defaultOrderEC){
 	if(energyCarriers.contains(EC)){
 		orderedEnergyCarriers.add(EC);
 	}
