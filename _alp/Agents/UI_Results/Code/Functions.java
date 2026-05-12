@@ -1036,6 +1036,10 @@ switch (assetType) {
 		return "Windturbine";
 	case ELECTROLYSER:
 		return "Electrolyser";
+	case HYDROGEN_STORAGE:
+		return "Waterstof tank";
+	case FUEL_CELL:
+		return "Fuelcell";
 	case DIESEL_GENERATOR:
 		return "Diesel generator";
 	case METHANE_GENERATOR:

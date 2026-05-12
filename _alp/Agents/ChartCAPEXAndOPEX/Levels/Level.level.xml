@@ -922,7 +922,7 @@ worden in de totaal berekening?]]></Text>
 				<Id>1774273353293</Id>
 				<Name><![CDATA[cb_includeAssetECar]]></Name>
 				<X>40</X>
-				<Y>-20</Y>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -956,7 +956,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<Id>1774273354856</Id>
 				<Name><![CDATA[cb_includeAssetEVan]]></Name>
 				<X>40</X>
-				<Y>0</Y>
+				<Y>40</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -990,7 +990,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<Id>1774273355972</Id>
 				<Name><![CDATA[cb_includeAssetETruck]]></Name>
 				<X>40</X>
-				<Y>20</Y>
+				<Y>60</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1058,7 +1058,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<Id>1774273357454</Id>
 				<Name><![CDATA[cb_includeAssetGasburner]]></Name>
 				<X>40</X>
-				<Y>-40</Y>
+				<Y>0</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1125,8 +1125,8 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273358959</Id>
 				<Name><![CDATA[cb_includeAssetDieselGenerator]]></Name>
-				<X>-140</X>
-				<Y>80</Y>
+				<X>40</X>
+				<Y>-40</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1159,8 +1159,8 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273359721</Id>
 				<Name><![CDATA[cb_includeAssetGasGenerator]]></Name>
-				<X>-140</X>
-				<Y>100</Y>
+				<X>40</X>
+				<Y>-20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1262,7 +1262,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<Id>1774273592097</Id>
 				<Name><![CDATA[cb_includeAssetH2Truck]]></Name>
 				<X>40</X>
-				<Y>40</Y>
+				<Y>80</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1427,6 +1427,74 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 					</Line>
 				</Presentation>
 			</Group>
+			<Control Type="CheckBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1778522835780</Id>
+				<Name><![CDATA[cb_includeAssetHydrogenFuelCell]]></Name>
+				<X>-140</X>
+				<Y>100</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="135" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<Enabled>true</Enabled>
+					<ActionCode>if(!cb_includeAssetHydrogenFuelCell.isSelected()){
+	c_includeAssetSelection.remove(OL_EnergyAssetType.FUEL_CELL);
+}
+else{
+	c_includeAssetSelection.add(OL_EnergyAssetType.FUEL_CELL);
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>Waterstof Fuelcell</LabelText>
+					<DefaultValueCode>true</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
+			<Control Type="CheckBox">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1778522836981</Id>
+				<Name><![CDATA[cb_includeAssetHydrogenStorage]]></Name>
+				<X>-140</X>
+				<Y>80</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="125" Height="30">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<Enabled>true</Enabled>
+					<ActionCode>if(!cb_includeAssetHydrogenStorage.isSelected()){
+	c_includeAssetSelection.remove(OL_EnergyAssetType.HYDROGEN_STORAGE);
+}
+else{
+	c_includeAssetSelection.add(OL_EnergyAssetType.HYDROGEN_STORAGE);
+}
+
+f_setChartCAPEXAndOPEX();</ActionCode>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<LabelText>Waterstof tank</LabelText>
+					<DefaultValueCode>true</DefaultValueCode>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
 		</Presentation>
 	</Group>
 </Presentation>
