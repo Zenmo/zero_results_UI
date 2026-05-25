@@ -12,8 +12,8 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	if(EC_consumption != OL_EnergyCarriers.HEAT){
 		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(EC_consumption).getDataSet(startTime_h, 24.0), uI_Results.f_getECName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
-	else if(dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(startTime_h, 24.0), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+	else if(dataObject.getScope() != OL_ResultScope.ENERGYMODEL && dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
+		energyDemandChartYear.addDataSet( dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(startTime_h, 24.0), "Warmtenet", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
@@ -70,8 +70,8 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	if(EC_consumption != OL_EnergyCarriers.HEAT){
 		energyDemandChart.addDataSet( dataObject.getLiveData().dsm_liveDemand_kW.get(EC_consumption), uI_Results.f_getECName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
-	else if(dataObject.getLiveData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChart.addDataSet( dataObject.getLiveData().dsm_liveAssetFlows_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+	else if(dataObject.getScope() != OL_ResultScope.ENERGYMODEL && dataObject.getLiveData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
+		energyDemandChart.addDataSet( dataObject.getLiveData().dsm_liveAssetFlows_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW), "Warmtenet", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
@@ -143,8 +143,8 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 		if(EC_consumption != OL_EnergyCarriers.HEAT){
 			energyDemandChart.addDataSet( dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(EC_consumption).getDataSet(dataSetStartTime_h, peakWeekStart_h, peakWeekStart_h+24*7), uI_Results.f_getECName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
 			//dataObject.getRapidRunData().am_dailyAverageConsumptionAccumulators_kW
-		} else if(dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
-			energyDemandChart.addDataSet( dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(dataSetStartTime_h, peakWeekStart_h, peakWeekStart_h+24*7), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+		} else if(dataObject.getScope() != OL_ResultScope.ENERGYMODEL && dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
+			energyDemandChart.addDataSet( dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(dataSetStartTime_h, peakWeekStart_h, peakWeekStart_h+24*7), "Warmtenet", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 		}
 	}
 	
@@ -173,11 +173,11 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 				energyDemandChart.addDataSet( dataObject.getRapidRunData().am_winterWeekConsumptionAccumulators_kW.get(EC_consumption).getDataSet(startTime_h), uI_Results.f_getECName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption));
 			}
 		}
-		else if(dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
+		else if(dataObject.getScope() != OL_ResultScope.ENERGYMODEL && dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
 			if (isSummerWeek) {
-				energyDemandChart.addDataSet( dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(startTime_h), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+				energyDemandChart.addDataSet( dataObject.getRapidRunData().am_assetFlowsSummerWeek_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(startTime_h), "Warmtenet", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 			} else {
-				energyDemandChart.addDataSet( dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(startTime_h), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+				energyDemandChart.addDataSet( dataObject.getRapidRunData().am_assetFlowsWinterWeek_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getDataSet(startTime_h), "Warmtenet", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 			}
 		}
 	}
@@ -568,8 +568,6 @@ plot_trafo_week.addDataSet(ds, "Netto vermogen afname", uI_Results.v_electricity
 plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(ds.getXMin(), 168, GN.p_capacity_kW), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 plot_trafo_week.addDataSet(uI_Results.f_createFlatDataset(ds.getXMin(), 168, -GN.p_capacity_kW), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 
-
-
 /*
 int maxValue = roundToInt(max(GN.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMax(), GN.p_capacity_kW));
 int minValue = roundToInt(min(GN.v_dataElectricityBaseloadConsumptionSummerWeek_kW.getYMin(), -GN.p_capacity_kW));
@@ -752,8 +750,8 @@ for (OL_EnergyCarriers EC_consumption : activeConsumptionEnergyCarriers) {
 	if(EC_consumption != OL_EnergyCarriers.HEAT){
 		energyDemandChartDay.addDataSet( dataObject.getLiveData().dsm_liveDemand_kW.get(EC_consumption), uI_Results.f_getECName(EC_consumption), uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
-	else if(dataObject.getLiveData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
-		energyDemandChartDay.addDataSet( dataObject.getLiveData().dsm_liveAssetFlows_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW), "Warmte net", uI_Results.cm_consumptionColors.get(EC_consumption)); 
+	else if(dataObject.getScope() != OL_ResultScope.ENERGYMODEL && dataObject.getLiveData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){//Only heat import, not all consumption (part of gas, elec, etc. already)
+		energyDemandChartDay.addDataSet( dataObject.getLiveData().dsm_liveAssetFlows_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW), "Warmtenet", uI_Results.cm_consumptionColors.get(EC_consumption)); 
 	}
 }
 
