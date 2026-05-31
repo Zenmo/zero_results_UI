@@ -30,8 +30,8 @@
 	<Group>
 		<Id>1704296286211</Id>
 		<Name><![CDATA[gr_resultsUIHeader]]></Name>
-		<X>250</X>
-		<Y>20</Y>
+		<X>245</X>
+		<Y>-310</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -40,15 +40,17 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>245</XCode>
+		<YCode>-25</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Presentation>
 			<Rectangle>
-				<Id>1704197996677</Id>
-				<Name><![CDATA[rect_resultsMenuLarge]]></Name>
-				<X>-250</X>
-				<Y>-165</Y>
+				<Id>1780251698157</Id>
+				<Name><![CDATA[rectangle3]]></Name>
+				<X>-340</X>
+				<Y>-90</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -64,17 +66,122 @@
 				<LineColor/>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>145</Height>
+				<Width>555</Width>
+				<Height>35</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-2691089</FillColor>
+				<FillColor>-986896</FillColor>
 				<FillMaterial>null</FillMaterial>
 			</Rectangle>
+			<RoundedRectangle>
+				<Id>1780248818335</Id>
+				<Name><![CDATA[roundRectangle]]></Name>
+				<X>-340</X>
+				<Y>-120</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>0.5</LineWidth>
+				<LineColor>-16744320</LineColor>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>555</Width>
+				<Height>145</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor/>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Rectangle>
+				<Id>1780251606642</Id>
+				<Name><![CDATA[rectangle1]]></Name>
+				<X>-340</X>
+				<Y>-120</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>0.5</LineWidth>
+				<LineColor>-16744320</LineColor>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>278</Width>
+				<Height>30</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-4069658</FillColor>
+				<FillMaterial>null</FillMaterial>
+			</Rectangle>
+			<Rectangle>
+				<Id>1780251618706</Id>
+				<Name><![CDATA[rectangle2]]></Name>
+				<X>-62</X>
+				<Y>-120</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>0.5</LineWidth>
+				<LineColor>-16744320</LineColor>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>277</Width>
+				<Height>30</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-1</FillColor>
+				<FillMaterial>null</FillMaterial>
+			</Rectangle>
+			<Image>
+				<Id>1780251981071</Id>
+				<Name><![CDATA[image]]></Name>
+				<X>-243</X>
+				<Y>-114</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Width>20</Width>
+				<Height>18</Height>
+				<Rotation>0.0</Rotation>
+				<ImageFiles>
+					<ImageResourceReference>
+						<PackageName>digital_twin_results</PackageName>
+						<ClassName>noun-electricity-3408805.png</ClassName>
+					</ImageResourceReference>
+				</ImageFiles>
+				<OriginalSize>false</OriginalSize>
+			</Image>
 			<Text>
-				<Id>1713190835374</Id>
-				<Name><![CDATA[txt_whatDoYouWantToLookAt]]></Name>
-				<X>-125</X>
-				<Y>-110</Y>
+				<Id>1780252033523</Id>
+				<Name><![CDATA[text]]></Name>
+				<X>-217</X>
+				<Y>-115</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -87,63 +194,376 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Wat wil je bekijken?]]></Text>
+				<Text><![CDATA[Energie]]></Text>
 				<Font>
-					<Name><![CDATA[Yu Gothic UI]]></Name>
-					<Size>18</Size>
-					<Style>1</Style>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>16</Size>
+					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>LEFT</Alignment>
 			</Text>
-			<Group>
-				<Id>1732012080093</Id>
-				<Name><![CDATA[gr_mainRadioButtons]]></Name>
-				<X>90</X>
-				<Y>-80</Y>
+			<Text>
+				<Id>1780252077116</Id>
+				<Name><![CDATA[text1]]></Name>
+				<X>51</X>
+				<Y>-115</Y>
 				<Label>
-					<X>10</X>
-					<Y>0</Y>
+					<X>0</X>
+					<Y>-10</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Presentation>
-					<Control Type="RadioButtons">
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Id>1732012080097</Id>
-						<Name><![CDATA[rb_locationTemplate]]></Name>
-						<X>-60</X>
-						<Y>-60</Y>
-						<Label>
-							<X>0</X>
-							<Y>-10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<BasicProperties Width="150" Height="100">
-							<EmbeddedIcon>false</EmbeddedIcon>
-							<TextColor>-16777216</TextColor>
-							<VisibleCode>false;</VisibleCode>
-							<Enabled>false</Enabled>
-						</BasicProperties>
-						<ExtendedProperties>
-							<Font Name="Dialog" Size="11" Style="0"/>
-							<Orientation>VERTICAL</Orientation>
-							<Button>Profielen</Button>
-							<Button>Opwek/verbruik diagram</Button>
-							<Button>Netbelasting</Button>
-							<Button>Energiestromen</Button>
-							<LinkTo>false</LinkTo>
-						</ExtendedProperties>
-					</Control>
-				</Presentation>
-			</Group>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Financieel]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>16</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<Text>
+				<Id>1780252115132</Id>
+				<Name><![CDATA[text2]]></Name>
+				<X>30</X>
+				<Y>-116</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[€]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>18</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>LEFT</Alignment>
+			</Text>
+			<RoundedRectangle>
+				<Id>1780252288462</Id>
+				<Name><![CDATA[roundRectangle1]]></Name>
+				<X>-330</X>
+				<Y>-83</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>85</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-16744320</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Text>
+				<Id>1780252298124</Id>
+				<Name><![CDATA[text3]]></Name>
+				<X>-288</X>
+				<Y>-80</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-1</Color>
+				<Text><![CDATA[Profielen]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<RoundedRectangle>
+				<Id>1780252442202</Id>
+				<Name><![CDATA[roundRectangle2]]></Name>
+				<X>-241</X>
+				<Y>-83</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>85</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-16744320</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Text>
+				<Id>1780252442212</Id>
+				<Name><![CDATA[text4]]></Name>
+				<X>-199</X>
+				<Y>-80</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-1</Color>
+				<Text><![CDATA[Diagrammen]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<RoundedRectangle>
+				<Id>1780252447746</Id>
+				<Name><![CDATA[roundRectangle3]]></Name>
+				<X>-151</X>
+				<Y>-83</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>85</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-16744320</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Text>
+				<Id>1780252447757</Id>
+				<Name><![CDATA[text5]]></Name>
+				<X>-109</X>
+				<Y>-80</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-1</Color>
+				<Text><![CDATA[Netbelasting]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<RoundedRectangle>
+				<Id>1780252461591</Id>
+				<Name><![CDATA[roundRectangle4]]></Name>
+				<X>-60</X>
+				<Y>-84</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>85</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-16744320</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Text>
+				<Id>1780252461609</Id>
+				<Name><![CDATA[text8]]></Name>
+				<X>-18</X>
+				<Y>-81</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-1</Color>
+				<Text><![CDATA[Energiestromen]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<RoundedRectangle>
+				<Id>1780252461619</Id>
+				<Name><![CDATA[roundRectangle5]]></Name>
+				<X>119</X>
+				<Y>-84</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>85</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-16744320</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<RoundedRectangle>
+				<Id>1780252461630</Id>
+				<Name><![CDATA[roundRectangle6]]></Name>
+				<X>29</X>
+				<Y>-84</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>85</Width>
+				<Height>20</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-16744320</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Text>
+				<Id>1780252461600</Id>
+				<Name><![CDATA[text7]]></Name>
+				<X>161</X>
+				<Y>-81</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-1</Color>
+				<Text><![CDATA[ntb]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1780252461580</Id>
+				<Name><![CDATA[text6]]></Name>
+				<X>71</X>
+				<Y>-81</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-1</Color>
+				<Text><![CDATA[leidraad]]></Text>
+				<Font>
+					<Name><![CDATA[SansSerif]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
 		</Presentation>
 	</Group>
 	<Rectangle>
@@ -1067,7 +1487,7 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1727707192290</Id>
 		<Name><![CDATA[checkbox_KPISummary]]></Name>
-		<X>5</X>
+		<X>-95</X>
 		<Y>-30</Y>
 		<Label>
 			<X>0</X>
@@ -1077,7 +1497,7 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="190" Height="30">
+		<BasicProperties Width="145" Height="30">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
@@ -1096,7 +1516,7 @@ else{
 		</BasicProperties>
 		<ExtendedProperties>
 			<Font Name="Dialog" Size="11" Style="0"/>
-			<LabelText>Toon simulatie samenvatting</LabelText>
+			<LabelText>Toon jaarcijfers energie</LabelText>
 			<LinkTo>true</LinkTo>
 			<Link>b_showKPISummary</Link>
 		</ExtendedProperties>
@@ -1500,6 +1920,55 @@ niet ondersteund door deze grafiek!]]></Text>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1732012080093</Id>
+		<Name><![CDATA[gr_mainRadioButtons]]></Name>
+		<X>305</X>
+		<Y>-320</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<Control Type="RadioButtons">
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Id>1732012080097</Id>
+				<Name><![CDATA[rb_locationTemplate]]></Name>
+				<X>-15</X>
+				<Y>-230</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<BasicProperties Width="150" Height="100">
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<TextColor>-16777216</TextColor>
+					<VisibleCode>false;</VisibleCode>
+					<Enabled>false</Enabled>
+				</BasicProperties>
+				<ExtendedProperties>
+					<Font Name="Dialog" Size="11" Style="0"/>
+					<Orientation>VERTICAL</Orientation>
+					<Button>Profielen</Button>
+					<Button>Opwek/verbruik diagram</Button>
+					<Button>Netbelasting</Button>
+					<Button>Energiestromen</Button>
+					<LinkTo>false</LinkTo>
+				</ExtendedProperties>
+			</Control>
 		</Presentation>
 	</Group>
 </Presentation>

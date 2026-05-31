@@ -198,16 +198,6 @@ chartEnergyCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineSt
 chartGTO.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 /*ALCODEEND*/}
 
-double f_styleResultsUIHeader(Color backgroundColor,Color lineColor,double lineWidth,LineStyle lineStyle)
-{/*ALCODESTART::1725375062400*/
-//Function to style all chart (backgrounds)
-rect_resultsMenuLarge.setFillColor(backgroundColor);
-rect_resultsMenuLarge.setLineColor(lineColor);
-rect_resultsMenuLarge.setLineWidth(lineWidth);
-rect_resultsMenuLarge.setLineStyle(lineStyle);
-
-/*ALCODEEND*/}
-
 double f_setChartSummary_Presentation(Integer location_x,Integer location_y,boolean visible)
 {/*ALCODESTART::1727084763017*/
 //Set the location and visibility of the GSLD Summary charts presentation
@@ -754,7 +744,7 @@ while(c_loadedChartTypes_Energy.size()>6){
 //Adjust the visualisation of the radiobuttons
 Presentable presentable = gr_mainRadioButtons.getPresentable();
 boolean ispublic = true;
-double x = 300;
+double x = 3000;
 double y = -147 + (6 - c_loadedChartTypes_Energy.size()) * 11;
 double width = 130;
 double height = 0;//Not needed, automatically adjust by adding options
@@ -839,7 +829,7 @@ else{//No chart types loaded in: return.
 //Adjust the visualisation of the radiobuttons
 Presentable presentable = gr_mainRadioButtons.getPresentable();
 boolean ispublic = true;
-double x = 300;
+double x = 3000;
 double y = -147 + (6 - c_loadedChartTypes_Economic.size()) * 11;
 double width = 130;
 double height = 0;//Not needed, automatically adjust by adding options
