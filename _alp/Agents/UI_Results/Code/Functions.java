@@ -1,21 +1,6 @@
 double f_showCorrectChart()
 {/*ALCODESTART::1714902615653*/
-gr_chartProfielen_presentation.setVisible(false);
-gr_chartBalans_presentation.setVisible(false);
-gr_chartNetbelasting_presentation.setVisible(false);
-gr_chartSankey_presentation.setVisible(false);
-gr_chartSummary_presentation.setVisible(false);
-gr_chartGespreksLeidraad_presentation.setVisible(false);
-gr_chartKPISummary_presentation.setVisible(false);
-gr_chartBatteries_presentation.setVisible(false);
-gr_chartGTO_presentation.setVisible(false);
-gr_chartBars_presentation.setVisible(false);
-gr_chartCO2_presentation.setVisible(false);
-gr_chartEnergyCosts_presentation.setVisible(false);
-gr_chartConnectionCosts_presentation.setVisible(false);
-gr_chartCAPEXAndOPEX_presentation.setVisible(false);
-gr_chartTotalCosts_presentation.setVisible(false);
-gr_chartBlocker.setVisible(false);
+f_resetChartVisibility();
 
 switch (v_selectedChartType) {
 	case PROFILES:
@@ -579,12 +564,12 @@ double f_setSelectedObjectDisplay(Integer location_x,Integer location_y,boolean 
 
 //Set x axis
 if(location_x != null){
-	gr_selectedObjectDisplay.setX(location_x);
+	//gr_selectedObjectDisplay.setX(location_x);
 }
 
 //Set y axis
 if(location_y != null){
-	gr_selectedObjectDisplay.setY(location_y);
+	//gr_selectedObjectDisplay.setY(location_y);
 }
 
 
@@ -1079,5 +1064,42 @@ for(OL_ResultScope supportedScope : supportedResultScopes){
 	warningScreenMessage += "\n"; 
 }
 t_chartBlockerMessage.setText(warningScreenMessage);
+/*ALCODEEND*/}
+
+double f_resetChartVisibility()
+{/*ALCODESTART::1780332589329*/
+gr_chartProfielen_presentation.setVisible(false);
+gr_chartBalans_presentation.setVisible(false);
+gr_chartNetbelasting_presentation.setVisible(false);
+gr_chartSankey_presentation.setVisible(false);
+gr_chartSummary_presentation.setVisible(false);
+gr_chartGespreksLeidraad_presentation.setVisible(false);
+gr_chartKPISummary_presentation.setVisible(false);
+gr_chartBatteries_presentation.setVisible(false);
+gr_chartGTO_presentation.setVisible(false);
+gr_chartBars_presentation.setVisible(false);
+gr_chartCO2_presentation.setVisible(false);
+gr_chartEnergyCosts_presentation.setVisible(false);
+gr_chartConnectionCosts_presentation.setVisible(false);
+gr_chartCAPEXAndOPEX_presentation.setVisible(false);
+gr_chartTotalCosts_presentation.setVisible(false);
+gr_chartBlocker.setVisible(false);
+/*ALCODEEND*/}
+
+double f_resetButtonColors()
+{/*ALCODESTART::1780340074084*/
+button_1.setFillColor( v_chartButtonBaseColor);
+button_2.setFillColor( v_chartButtonBaseColor);
+button_3.setFillColor( v_chartButtonBaseColor);
+button_4.setFillColor( v_chartButtonBaseColor);
+button_5.setFillColor( v_chartButtonBaseColor);
+button_6.setFillColor( v_chartButtonBaseColor);
+
+text_button1.setColor(darkGray);
+text_button2.setColor(darkGray);
+text_button3.setColor(darkGray);
+text_button4.setColor(darkGray);
+text_button5.setColor(darkGray);
+text_button6.setColor(darkGray);
 /*ALCODEEND*/}
 

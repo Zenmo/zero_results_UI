@@ -1,37 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Presentation>
-	<Rectangle>
-		<Id>1714923264964</Id>
-		<Name><![CDATA[rectangle]]></Name>
-		<X>0</X>
-		<Y>0</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineWidthCode>v_lineWidth</LineWidthCode>
-		<LineColor>-1644806</LineColor>
-		<LineColorCode>v_lineColor</LineColorCode>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>460</Width>
-		<Height>40</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
 	<Group>
 		<Id>1714923210771</Id>
 		<Name><![CDATA[gr_details]]></Name>
-		<X>680</X>
+		<X>830</X>
 		<Y>380</Y>
 		<Label>
 			<X>10</X>
@@ -480,7 +452,7 @@
 			<Plot>
 				<Id>1714746143885</Id>
 				<Name><![CDATA[plot_jaar]]></Name>
-				<X>10</X>
+				<X>30</X>
 				<Y>-40</Y>
 				<Label>
 					<X>0</X>
@@ -505,15 +477,15 @@
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>420</Width>
-				<Height>270</Height>
+				<Width>520</Width>
+				<Height>300</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>340</Width>
-					<Height>160.714</Height>
+					<Width>440</Width>
+					<Height>190.714</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -542,8 +514,8 @@
 			<Text>
 				<Id>1714746143882</Id>
 				<Name><![CDATA[t_netLoadDurationCurveTitle]]></Name>
-				<X>230</X>
-				<Y>-40</Y>
+				<X>260</X>
+				<Y>-70</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -567,8 +539,8 @@
 			<Text>
 				<Id>1714746143887</Id>
 				<Name><![CDATA[t_netLoadDurationCurve_xlabel]]></Name>
-				<X>205</X>
-				<Y>180</Y>
+				<X>480</X>
+				<Y>220</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -592,8 +564,8 @@
 			<Text>
 				<Id>1714746143889</Id>
 				<Name><![CDATA[t_netLoadDurationCurve_ylabel]]></Name>
-				<X>30</X>
-				<Y>30</Y>
+				<X>40</X>
+				<Y>-10</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -617,8 +589,8 @@
 			<Image>
 				<Id>1746102751753</Id>
 				<Name><![CDATA[i_netLoadDurationCurve]]></Name>
-				<X>320</X>
-				<Y>-40</Y>
+				<X>350</X>
+				<Y>-70</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1202,7 +1174,7 @@ teruglever capaciteit]]></Text>
 			<Group>
 				<Id>1746446837781</Id>
 				<Name><![CDATA[gr_flexGrowthPotential]]></Name>
-				<X>1100</X>
+				<X>1200</X>
 				<Y>210</Y>
 				<Label>
 					<X>8.031</X>
@@ -1561,7 +1533,7 @@ zonder batterij]]></Text>
 			<Group>
 				<Id>1751372196431</Id>
 				<Name><![CDATA[gr_concurrencyKPI]]></Name>
-				<X>1140</X>
+				<X>1240</X>
 				<Y>30</Y>
 				<Label>
 					<X>10</X>
@@ -1762,8 +1734,8 @@ zonder batterij]]></Text>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1714923264961</Id>
 		<Name><![CDATA[radio]]></Name>
-		<X>160</X>
-		<Y>0</Y>
+		<X>30</X>
+		<Y>-90</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1772,7 +1744,7 @@ zonder batterij]]></Text>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="160" Height="40">
+		<BasicProperties Width="160" Height="30">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
@@ -1786,7 +1758,7 @@ else {
 }</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
-			<Font Name="Dialog" Size="11" Style="0"/>
+			<Font Name="Dialog" Size="10" Style="0"/>
 			<DefaultValueCode>0</DefaultValueCode>
 			<Orientation>HORIZONTAL</Orientation>
 			<Button>Jaar overzicht</Button>

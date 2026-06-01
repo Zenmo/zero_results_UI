@@ -152,8 +152,8 @@ v_weekLabel.setY(160);]]></StartupCode>
 		<ContainerLink>
 			<Id>1714769685825</Id>
 			<Name><![CDATA[uI_Results]]></Name>
-			<X>50</X>
-			<Y>-100</Y>
+			<X>-100</X>
+			<Y>-30</Y>
 			<Label>
 				<X>10</X>
 				<Y>0</Y>

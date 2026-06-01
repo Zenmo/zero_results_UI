@@ -22,7 +22,7 @@
 		<LineColorCode>v_lineColor</LineColorCode>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>460</Width>
+		<Width>550</Width>
 		<Height>80</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
@@ -32,8 +32,8 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1714932495122</Id>
 		<Name><![CDATA[radio_energyType]]></Name>
-		<X>110</X>
-		<Y>5</Y>
+		<X>20</X>
+		<Y>-90</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -42,14 +42,14 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="230" Height="40">
+		<BasicProperties Width="230" Height="20">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
 			<ActionCode>f_setCharts();</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
-			<Font Name="Dialog" Size="11" Style="0"/>
+			<Font Name="Dialog" Size="10" Style="0"/>
 			<DefaultValueCode>0</DefaultValueCode>
 			<Orientation>HORIZONTAL</Orientation>
 			<Button>Alleen elektriciteit</Button>
@@ -62,7 +62,7 @@
 		<Id>1714932534594</Id>
 		<Name><![CDATA[radio_period]]></Name>
 		<X>20</X>
-		<Y>35</Y>
+		<Y>-62</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -71,14 +71,14 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="440" Height="40">
+		<BasicProperties Width="440" Height="20">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
 			<ActionCode>f_setCharts();</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
-			<Font Name="Dialog" Size="11" Style="0"/>
+			<Font Name="Dialog" Size="10" Style="0"/>
 			<DefaultValueCode>0</DefaultValueCode>
 			<Orientation>HORIZONTAL</Orientation>
 			<Button>Jaar overzicht</Button>
@@ -133,14 +133,14 @@
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>322.133</Width>
+				<Width>420</Width>
 				<Height>121.007</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>242.133</Width>
+					<Width>340</Width>
 					<Height>41.007000000000005</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -192,14 +192,14 @@
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>323.04</Width>
+				<Width>420</Width>
 				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>243.04000000000002</Width>
+					<Width>340</Width>
 					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -226,7 +226,7 @@
 			<Text>
 				<Id>1714987905785</Id>
 				<Name><![CDATA[t_productionTextYear]]></Name>
-				<X>-120</X>
+				<X>-160</X>
 				<Y>-170</Y>
 				<Label>
 					<X>0</X>
@@ -251,7 +251,7 @@
 			<Text>
 				<Id>1714987905787</Id>
 				<Name><![CDATA[t_consumptionTextYear]]></Name>
-				<X>-120</X>
+				<X>-160</X>
 				<Y>-20</Y>
 				<Label>
 					<X>0</X>
@@ -277,8 +277,8 @@
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1758612613985</Id>
 				<Name><![CDATA[button_monthlyDetails]]></Name>
-				<X>100</X>
-				<Y>330</Y>
+				<X>170</X>
+				<Y>320</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -306,7 +306,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1714987913828</Id>
 		<Name><![CDATA[gr_SummerWinter]]></Name>
-		<X>690</X>
+		<X>810</X>
 		<Y>380</Y>
 		<Label>
 			<X>10</X>
@@ -712,8 +712,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1715002556479</Id>
 		<Name><![CDATA[gr_DayNight]]></Name>
-		<X>1120</X>
-		<Y>380</Y>
+		<X>1230</X>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1119,7 +1119,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1715002718103</Id>
 		<Name><![CDATA[gr_WeekdayWeekend]]></Name>
-		<X>1550</X>
+		<X>1760</X>
 		<Y>380</Y>
 		<Label>
 			<X>10</X>
@@ -1526,8 +1526,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1758613508354</Id>
 		<Name><![CDATA[gr_monthlyTotals]]></Name>
-		<X>2040</X>
-		<Y>320</Y>
+		<X>2300</X>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

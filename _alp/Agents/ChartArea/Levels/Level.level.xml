@@ -10,9 +10,8 @@
 			<Y>10</Y>
 		</Label>
 		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
+		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
@@ -23,8 +22,8 @@
 		<LineColorCode>v_lineColor</LineColorCode>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>460</Width>
-		<Height>750</Height>
+		<Width>555</Width>
+		<Height>720</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor/>
 		<FillColorCode>v_backgroundColor</FillColorCode>
