@@ -1091,3 +1091,8 @@ for(OL_ResultScope supportedScope : supportedResultScopes){
 t_chartBlockerMessage.setText(warningScreenMessage);
 /*ALCODEEND*/}
 
+double f_enablePublicVersion(boolean enable)
+{/*ALCODESTART::1780405232709*/
+chartProfielen.f_enableExportFunctionality(!enable);
+/*ALCODEEND*/}
+
