@@ -1095,11 +1095,11 @@ button_4.setFillColor( v_chartButtonBaseColor);
 button_5.setFillColor( v_chartButtonBaseColor);
 button_6.setFillColor( v_chartButtonBaseColor);
 
-text_button1.setColor(darkGray);
-text_button2.setColor(darkGray);
-text_button3.setColor(darkGray);
-text_button4.setColor(darkGray);
-text_button5.setColor(darkGray);
-text_button6.setColor(darkGray);
+text_button1.setColor(white);
+text_button2.setColor(white);
+text_button3.setColor(white);
+text_button4.setColor(white);
+text_button5.setColor(white);
+text_button6.setColor(white);
 /*ALCODEEND*/}
 

@@ -46,10 +46,10 @@
 		<Rotation>0.0</Rotation>
 		<Presentation>
 			<Rectangle>
-				<Id>1780251698157</Id>
-				<Name><![CDATA[rectangle3]]></Name>
-				<X>-340</X>
-				<Y>-90</Y>
+				<Id>1780408808303</Id>
+				<Name><![CDATA[rectangle5]]></Name>
+				<X>-346</X>
+				<Y>-105</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -65,12 +65,39 @@
 				<LineColor/>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>555</Width>
-				<Height>40</Height>
+				<Width>80</Width>
+				<Height>70</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-986896</FillColor>
+				<FillColor>-1052689</FillColor>
 				<FillMaterial>null</FillMaterial>
 			</Rectangle>
+			<RoundedRectangle>
+				<Id>1780408755674</Id>
+				<Name><![CDATA[roundRectangle1]]></Name>
+				<X>-346</X>
+				<Y>-78</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>544</Width>
+				<Height>135</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-1052689</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
 			<RoundedRectangle>
 				<Id>1780248818335</Id>
 				<Name><![CDATA[roundRectangle]]></Name>
@@ -94,10 +121,36 @@
 				<Width>555</Width>
 				<Height>170</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor/>
+				<FillColor>-1</FillColor>
 				<FillMaterial>null</FillMaterial>
 				<ArcRadius>10</ArcRadius>
 			</RoundedRectangle>
+			<Rectangle>
+				<Id>1780251698157</Id>
+				<Name><![CDATA[rectangle3]]></Name>
+				<X>-339</X>
+				<Y>-90</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>553</Width>
+				<Height>40</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-986896</FillColor>
+				<FillMaterial>null</FillMaterial>
+			</Rectangle>
 			<Rectangle>
 				<Id>1780251606642</Id>
 				<Name><![CDATA[rectangle1]]></Name>
@@ -222,7 +275,7 @@ gr_chartProfielen_presentation.setVisible(true);
 chartProfielen.f_setCharts();
 
 f_resetButtonColors();
-text_button1.setColor(white);
+text_button1.setColor(darkGray);
 button_1.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
@@ -282,7 +335,7 @@ gr_chartBars_presentation.setVisible(true);
 chartBars.f_setCharts();
 
 f_resetButtonColors();
-text_button2.setColor(white);
+text_button2.setColor(darkGray);
 button_2.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
@@ -342,7 +395,7 @@ gr_chartNetbelasting_presentation.setVisible(true);
 chartNetbelasting.f_setCharts();
 
 f_resetButtonColors();
-text_button3.setColor(white);
+text_button3.setColor(darkGray);
 button_3.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
@@ -402,7 +455,7 @@ gr_chartSankey_presentation.setVisible(true);
 chartSankey.f_setSankey();
 
 f_resetButtonColors();
-text_button4.setColor(white);
+text_button4.setColor(darkGray);
 button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
@@ -467,7 +520,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Width>85</Width>
 				<Height>20</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-1</FillColor>
+				<FillColor>-16744320</FillColor>
 				<FillMaterial>null</FillMaterial>
 				<ArcRadius>10</ArcRadius>
 			</RoundedRectangle>
@@ -495,7 +548,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Width>85</Width>
 				<Height>20</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-1</FillColor>
+				<FillColor>-16744320</FillColor>
 				<FillMaterial>null</FillMaterial>
 				<ArcRadius>10</ArcRadius>
 			</RoundedRectangle>
@@ -515,7 +568,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-12566464</Color>
+				<Color>-1</Color>
 				<Text><![CDATA[Batterij]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>
@@ -540,7 +593,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-12566464</Color>
+				<Color>-1</Color>
 				<Text><![CDATA[leidraad]]></Text>
 				<Font>
 					<Name><![CDATA[SansSerif]]></Name>

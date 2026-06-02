@@ -1637,7 +1637,7 @@
               StaticVariable="false">
 			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[white]]></Code>
+				<Code><![CDATA[teal]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -1659,7 +1659,7 @@
               StaticVariable="false">
 			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[teal]]></Code>
+				<Code><![CDATA[white]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
