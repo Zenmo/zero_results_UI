@@ -483,14 +483,14 @@ else{
 		}
 		
 		if(connectionDisplayName.contains("verblijfsobject.") || connectionDisplayName.contains("pand.")){
-			selectedObjectText = "Een generieke aansluiting";
+			selectedObjectText = "een generieke aansluiting";
 		}
 		else{
 			selectedObjectText = connectionDisplayName;
 		}
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-		selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
+		selectedObjectText = "transformatorstation : " + v_gridNode.p_gridNodeID;
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.f_getBatteryManagement() instanceof J_BatteryManagementPeakShaving && ((J_BatteryManagementPeakShaving)GC.f_getBatteryManagement()).getTargetType() == OL_ResultScope.ENERGYCOOP));
@@ -516,7 +516,7 @@ else{
 				selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
 			}
 			else{
-				selectedObjectText = "Een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
+				selectedObjectText = "een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
 			}
 		} else {
 			selectedObjectText = "klanten van energiecoöperatie"; // Geen aansluitingen in deze selectie
@@ -524,7 +524,7 @@ else{
 	
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
-			selectedObjectText = "Het gehele model";
+			selectedObjectText = "het hele model";
 		if(((EnergyModel)v_selectedObjectInterface).p_regionName != null){
 			selectedObjectText = ((EnergyModel)v_selectedObjectInterface).p_regionName;
 		}
@@ -537,7 +537,7 @@ if (selectedObjectText.length() > maxStringLength){
      selectedObjectText = selectedObjectText.substring(0, maxStringLength);
 }
 
-t_selectedObjectDisplayText.setText("Data van: " + selectedObjectText);
+t_selectedObjectDisplayText.setText("Je bekijkt nu gegevens van: " + selectedObjectText);
 /*ALCODEEND*/}
 
 double f_setCB_KPISummary_Presentation(Integer location_x,Integer location_y,boolean visible)
