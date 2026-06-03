@@ -465,10 +465,8 @@ f_showCorrectChart();
 
 double f_setSelectedObjectText(String customSelectedObjectText)
 {/*ALCODESTART::1742210371105*/
-String selectedObjectText = "";
-
 if(customSelectedObjectText != null){
-	selectedObjectText = customSelectedObjectText;
+	v_selectedObjectText = customSelectedObjectText;
 }
 else{
 	if(v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
@@ -483,14 +481,14 @@ else{
 		}
 		
 		if(connectionDisplayName.contains("verblijfsobject.") || connectionDisplayName.contains("pand.")){
-			selectedObjectText = "een generieke aansluiting";
+			v_selectedObjectText = "een generieke aansluiting";
 		}
 		else{
-			selectedObjectText = connectionDisplayName;
+			v_selectedObjectText = connectionDisplayName;
 		}
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-		selectedObjectText = "transformatorstation : " + v_gridNode.p_gridNodeID;
+		v_selectedObjectText = "transformatorstation : " + v_gridNode.p_gridNodeID;
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.f_getBatteryManagement() instanceof J_BatteryManagementPeakShaving && ((J_BatteryManagementPeakShaving)GC.f_getBatteryManagement()).getTargetType() == OL_ResultScope.ENERGYCOOP));
@@ -513,31 +511,31 @@ else{
 			}
 
 			if(allGCInOneBuilding){
-				selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
+				v_selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
 			}
 			else{
-				selectedObjectText = "een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
+				v_selectedObjectText = "een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
 			}
 		} else {
-			selectedObjectText = "klanten van energiecoöperatie"; // Geen aansluitingen in deze selectie
+			v_selectedObjectText = "klanten van energiecoöperatie"; // Geen aansluitingen in deze selectie
 		}
 	
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
-			selectedObjectText = "het hele model";
+			v_selectedObjectText = "het hele model";
 		if(((EnergyModel)v_selectedObjectInterface).p_regionName != null){
-			selectedObjectText = ((EnergyModel)v_selectedObjectInterface).p_regionName;
+			v_selectedObjectText = ((EnergyModel)v_selectedObjectInterface).p_regionName;
 		}
 	}
 }
 
 //Limit visible length
 int maxStringLength = 40;
-if (selectedObjectText.length() > maxStringLength){
-     selectedObjectText = selectedObjectText.substring(0, maxStringLength);
+if (v_selectedObjectText.length() > maxStringLength){
+     v_selectedObjectText = v_selectedObjectText.substring(0, maxStringLength);
 }
 
-t_selectedObjectDisplayText.setText("Je bekijkt nu gegevens van: " + selectedObjectText);
+//t_selectedObjectDisplayText.setText("Je bekijkt nu gegevens van: " + selectedObjectText);
 /*ALCODEEND*/}
 
 double f_setCB_KPISummary_Presentation(Integer location_x,Integer location_y,boolean visible)

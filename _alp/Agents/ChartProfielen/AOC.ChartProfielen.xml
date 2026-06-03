@@ -23,13 +23,6 @@ import java.text.SimpleDateFormat;]]></Import>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>
 	</ExtendsReference>
-	<StartupCode><![CDATA[v_weekLabel = new ShapeText();
-v_weekLabel.setText("Zomerweek");
-v_weekLabel.setFont(new Font("Calibri", 0, 20));
-//gr_week.add(v_weekLabel);
-this.presentation.add(v_weekLabel);
-v_weekLabel.setX(210);
-v_weekLabel.setY(160);]]></StartupCode>
 	<Generic>false</Generic>
 	<GenericParameter>
 		<Id>1714743515622</Id>

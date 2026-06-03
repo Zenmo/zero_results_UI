@@ -376,7 +376,7 @@
 		<Id>1754485454881</Id>
 		<Name><![CDATA[f_getDateTimeFromHour]]></Name>
 		<X>150</X>
-		<Y>1410</Y>
+		<Y>1470</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -600,6 +600,62 @@
 			<Name><![CDATA[enable]]></Name>
 			<Type><![CDATA[boolean]]></Type>
 		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1780507177462</Id>
+		<Name><![CDATA[f_makeHeatmap]]></Name>
+		<X>150</X>
+		<Y>1340</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[dataset]]></Name>
+			<Type><![CDATA[J_AccumulatorMap<OL_AssetFlowCategories>]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+		<ReturnType>Color</ReturnType>
+		<Id>1780507703608</Id>
+		<Name><![CDATA[f_heatmapColor]]></Name>
+		<X>150</X>
+		<Y>1360</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[t]]></Name>
+			<Type><![CDATA[double]]></Type>
+		</Parameter>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="default" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1780508128250</Id>
+		<Name><![CDATA[f_initHeatmap]]></Name>
+		<X>150</X>
+		<Y>1320</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

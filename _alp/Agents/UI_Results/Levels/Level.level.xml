@@ -273,6 +273,7 @@
 f_resetChartVisibility();
 gr_chartProfielen_presentation.setVisible(true);
 chartProfielen.f_setCharts();
+v_selectedChartText = "elektriciteitsprofielen";
 
 f_resetButtonColors();
 text_button1.setColor(darkGray);
@@ -333,6 +334,7 @@ button_1.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 f_resetChartVisibility();
 gr_chartBars_presentation.setVisible(true);
 chartBars.f_setCharts();
+v_selectedChartText = "jaarlijkse diagrammen";
 
 f_resetButtonColors();
 text_button2.setColor(darkGray);
@@ -393,6 +395,7 @@ button_2.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 f_resetChartVisibility();
 gr_chartNetbelasting_presentation.setVisible(true);
 chartNetbelasting.f_setCharts();
+v_selectedChartText = "netbelasting";
 
 f_resetButtonColors();
 text_button3.setColor(darkGray);
@@ -453,6 +456,7 @@ button_3.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 f_resetChartVisibility();
 gr_chartSankey_presentation.setVisible(true);
 chartSankey.f_setSankey();
+v_selectedChartText = "sankey diagram";
 
 f_resetButtonColors();
 text_button4.setColor(darkGray);
@@ -1901,6 +1905,7 @@ else{
 				<Rotation>0.0</Rotation>
 				<Color>-16754600</Color>
 				<Text><![CDATA[Je bekijkt nu: profielen van het volledige gebied]]></Text>
+				<TextCode>"Je bekijkt nu " + v_selectedChartText + " van: " + v_selectedObjectText</TextCode>
 				<Font>
 					<Name><![CDATA[Centaur]]></Name>
 					<Size>20</Size>
