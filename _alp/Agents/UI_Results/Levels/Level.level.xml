@@ -235,7 +235,7 @@
 				<Id>1780252033523</Id>
 				<Name><![CDATA[text]]></Name>
 				<X>-261</X>
-				<Y>-115</Y>
+				<Y>-112</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -250,8 +250,8 @@
 				<Color>-1</Color>
 				<Text><![CDATA[Energie]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>16</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>18</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>LEFT</Alignment>
@@ -296,7 +296,7 @@ button_1.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Id>1780252298124</Id>
 				<Name><![CDATA[text_button1]]></Name>
 				<X>-288</X>
-				<Y>-76</Y>
+				<Y>-74</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -311,8 +311,8 @@ button_1.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Color>-12566464</Color>
 				<Text><![CDATA[Profielen]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>10</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -357,7 +357,7 @@ button_2.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Id>1780252442212</Id>
 				<Name><![CDATA[text_button2]]></Name>
 				<X>-199</X>
-				<Y>-76</Y>
+				<Y>-74</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -372,8 +372,8 @@ button_2.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Color>-1</Color>
 				<Text><![CDATA[Diagrammen]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>10</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -418,7 +418,7 @@ button_3.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Id>1780252447757</Id>
 				<Name><![CDATA[text_button3]]></Name>
 				<X>-109</X>
-				<Y>-76</Y>
+				<Y>-74</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -433,8 +433,8 @@ button_3.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Color>-1</Color>
 				<Text><![CDATA[Netbelasting]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>10</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -479,7 +479,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Id>1780252461609</Id>
 				<Name><![CDATA[text_button4]]></Name>
 				<X>-18</X>
-				<Y>-77</Y>
+				<Y>-74</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -494,8 +494,8 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Color>-1</Color>
 				<Text><![CDATA[Energiestromen]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>10</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -560,7 +560,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Id>1780252461600</Id>
 				<Name><![CDATA[text_button6]]></Name>
 				<X>161</X>
-				<Y>-77</Y>
+				<Y>-74</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -575,8 +575,8 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Color>-1</Color>
 				<Text><![CDATA[Batterij]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>10</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -585,7 +585,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Id>1780252461580</Id>
 				<Name><![CDATA[text_button5]]></Name>
 				<X>71</X>
-				<Y>-77</Y>
+				<Y>-74</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -600,8 +600,8 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Color>-1</Color>
 				<Text><![CDATA[leidraad]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>10</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -610,7 +610,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Id>1780252077116</Id>
 				<Name><![CDATA[text1]]></Name>
 				<X>72</X>
-				<Y>-114</Y>
+				<Y>-111</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -625,8 +625,8 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Duurzaamheid]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>16</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>18</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>LEFT</Alignment>
@@ -662,7 +662,7 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Id>1780298300093</Id>
 				<Name><![CDATA[text9]]></Name>
 				<X>-89</X>
-				<Y>-114</Y>
+				<Y>-111</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -677,8 +677,8 @@ button_4.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Financieel]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>16</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>18</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>LEFT</Alignment>
