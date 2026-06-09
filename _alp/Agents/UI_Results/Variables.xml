@@ -1066,7 +1066,7 @@
               StaticVariable="false">
 			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[gray]]></Code>
+				<Code><![CDATA[brown]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>

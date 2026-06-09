@@ -126,6 +126,22 @@
 					<Name><![CDATA[DEFAULT_AND_GESPREKSLEIDRAADBEDRIJVEN_AND_GTO]]></Name>
 				</Option>
 			</OptionList>
+			<OptionList>
+				<Id>1781000611371</Id>
+				<Name><![CDATA[OL_heatmapColorSetting]]></Name>
+				<Option>
+					<Id>1781000611372</Id>
+					<Name><![CDATA[MAX]]></Name>
+				</Option>
+				<Option>
+					<Id>1781000611373</Id>
+					<Name><![CDATA[TRAFO]]></Name>
+				</Option>
+				<Option>
+					<Id>1781000611374</Id>
+					<Name><![CDATA[FIVEKW]]></Name>
+				</Option>
+			</OptionList>
 		</OptionLists>
 		<Folders>
 			<Folder>
