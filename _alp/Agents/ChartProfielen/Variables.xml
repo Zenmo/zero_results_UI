@@ -63,11 +63,33 @@
 			</InitialValue>
 		</Properties>
 	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780404863994</Id>
+		<Name><![CDATA[b_exportFunctionalityEnabled]]></Name>
+		<X>1340</X>
+		<Y>1130</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="private"
+              StaticVariable="false">
+			<Type><![CDATA[boolean]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[true]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
 	<Variable Class="Parameter">
 		<Id>1777468088389</Id>
 		<Name><![CDATA[p_selectedExportUnit]]></Name>
 		<X>1340</X>
-		<Y>1340</Y>
+		<Y>1350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -95,7 +117,7 @@
 		<Id>1777884467284</Id>
 		<Name><![CDATA[map_ACToCheckBox]]></Name>
 		<X>1590</X>
-		<Y>1310</Y>
+		<Y>1320</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -141,7 +163,7 @@ Map.entry(OL_AssetFlowCategories.hydrogenFuelCellProductionElectric_kW, checkbox
 		<Id>1777884471301</Id>
 		<Name><![CDATA[map_ECToCheckBox]]></Name>
 		<X>1590</X>
-		<Y>1330</Y>
+		<Y>1340</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -175,7 +197,7 @@ Map.entry(OL_EnergyCarriers.PETROLEUM_FUEL, checkbox_fuel)//,
 		<Id>1777391207152</Id>
 		<Name><![CDATA[c_selectedExportEC]]></Name>
 		<X>1390</X>
-		<Y>1260</Y>
+		<Y>1270</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -196,7 +218,7 @@ Map.entry(OL_EnergyCarriers.PETROLEUM_FUEL, checkbox_fuel)//,
 		<Id>1777391219600</Id>
 		<Name><![CDATA[c_selectedExportAC]]></Name>
 		<X>1390</X>
-		<Y>1280</Y>
+		<Y>1290</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>

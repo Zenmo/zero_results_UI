@@ -1243,6 +1243,15 @@ for(OL_AssetFlowCategories AC : map_ACToCheckBox.keySet()){
 
 double f_enableExportButton(boolean enable)
 {/*ALCODESTART::1777885248795*/
+if(b_exportFunctionalityEnabled){
+	gr_exportMenuButton.setVisible(enable);
+	gr_exportMenuButtonDisabled.setVisible(!enable);
+}
+/*ALCODEEND*/}
+
+double f_enableExportFunctionality(boolean enable)
+{/*ALCODESTART::1780404922462*/
+b_exportFunctionalityEnabled = enable;
 gr_exportMenuButton.setVisible(enable);
 gr_exportMenuButtonDisabled.setVisible(!enable);
 /*ALCODEEND*/}
