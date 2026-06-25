@@ -1086,10 +1086,10 @@ Map<String, double[]> map_ObjectExportData =  new LinkedHashMap<>();
 String profileTypeName = f_getProfileTypeName(uI_Results.energyModel.p_timeParameters.getTimeStep_h()); 
 double arrayUnitScalingFactor = p_selectedExportUnit.equals("kWh") ? uI_Results.energyModel.p_timeParameters.getTimeStep_h() : 1;
 if(c_selectedExportEC.contains(OL_EnergyCarriers.ELECTRICITY) && uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.ELECTRICITY){
-	map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(OL_EnergyCarriers.ELECTRICITY) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getTimeSeries_kW(), arrayUnitScalingFactor));
+	map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(OL_EnergyCarriers.ELECTRICITY) + " profiel [" + p_selectedExportUnit + "]", LUXMath.multiplyArray(uI_Results.v_gridNode.acc_annualElectricityBalance_kW.getTimeSeries_kW(), arrayUnitScalingFactor));
 }
 if(c_selectedExportEC.contains(OL_EnergyCarriers.HEAT) && uI_Results.v_gridNode.p_energyCarrier == OL_EnergyCarriers.HEAT){
-	map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(OL_EnergyCarriers.HEAT) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(uI_Results.v_gridNode.acc_annualHeatBalance_kW.getTimeSeries_kW(), arrayUnitScalingFactor));
+	map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(OL_EnergyCarriers.HEAT) + " profiel [" + p_selectedExportUnit + "]", LUXMath.multiplyArray(uI_Results.v_gridNode.acc_annualHeatBalance_kW.getTimeSeries_kW(), arrayUnitScalingFactor));
 }
 
 
@@ -1110,19 +1110,19 @@ for(OL_EnergyCarriers EC : c_selectedExportEC){
 			for(OL_AssetFlowCategories AC : c_selectedExportAC){
 				if(uI_Results.v_electricAssetFlows.contains(AC) && dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(AC)){
 					String profileTypeNameAC = f_getProfileTypeName(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getSignalResolution_h()); 
-					map_ObjectExportData.put(profileTypeNameAC + uI_Results.lm_assetFlowLabels.get(AC) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getTimeSeries_kW().clone(), arrayUnitScalingFactor));
+					map_ObjectExportData.put(profileTypeNameAC + uI_Results.lm_assetFlowLabels.get(AC) + " profiel [" + p_selectedExportUnit + "]", LUXMath.multiplyArray(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(AC).getTimeSeries_kW(), arrayUnitScalingFactor));
 				}
 			}
 		}
 		if(EC == OL_EnergyCarriers.HEAT){ //Only export district heat delivery
 			if(uI_Results.v_electricAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW) && dataObject.getRapidRunData().assetsMetaData.activeAssetFlows.contains(OL_AssetFlowCategories.districtHeatDelivery_kW)){
 				String profileTypeNameAC = f_getProfileTypeName(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getSignalResolution_h()); 
-				map_ObjectExportData.put(profileTypeNameAC + uI_Results.lm_assetFlowLabels.get(OL_AssetFlowCategories.districtHeatDelivery_kW) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getTimeSeries_kW().clone(), arrayUnitScalingFactor));
+				map_ObjectExportData.put(profileTypeNameAC + uI_Results.lm_assetFlowLabels.get(OL_AssetFlowCategories.districtHeatDelivery_kW) + " profiel [" + p_selectedExportUnit + "]", LUXMath.multiplyArray(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.get(OL_AssetFlowCategories.districtHeatDelivery_kW).getTimeSeries_kW(), arrayUnitScalingFactor));
 			}
 		}
 		else{
 			String profileTypeName = f_getProfileTypeName(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getSignalResolution_h()); 
-			map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(EC) + " profiel [" + p_selectedExportUnit + "]", ZeroMath.arrayMultiply(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW().clone(), arrayUnitScalingFactor));
+			map_ObjectExportData.put(profileTypeName + uI_Results.f_getECName(EC) + " profiel [" + p_selectedExportUnit + "]", LUXMath.multiplyArray(dataObject.getRapidRunData().am_totalBalanceAccumulators_kW.get(EC).getTimeSeries_kW(), arrayUnitScalingFactor));
 		}
 	}
 }

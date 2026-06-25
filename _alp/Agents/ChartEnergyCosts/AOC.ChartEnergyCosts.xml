@@ -4,20 +4,7 @@
 	<Name><![CDATA[ChartEnergyCosts]]></Name>
 	<AdditionalClassCode xmlns:al="http://anylogic.com"/>
 	<Folder>1755764711838</Folder>
-	<Import><![CDATA[import java.text.DecimalFormat;
-import org.jfree.graphics2d.svg.SVGGraphics2D;
-import org.jfree.data.flow.NodeKey;
-import org.jfree.graphics2d.svg.SVGUnits;
-import java.awt.geom.Rectangle2D;
-
-import org.jfree.chart.renderer.category.WaterfallBarRenderer;
-import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.axis.CategoryAxis;
-import zeroPackage.ZeroMath;]]></Import>
+	<Import><![CDATA[import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>

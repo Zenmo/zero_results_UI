@@ -321,13 +321,13 @@ return uI_Results.energyModel.avgc_data.economicAVGC.getGridOperatorTariffs().ge
 
 double f_calculateTotalTransportCosts_eur(J_ConnectionMetaData connectionMetaData,double[] netLoad_kW)
 {/*ALCODESTART::1773162256135*/
-double yearlyTransportedElectricity_kWh = ZeroMath.arraySum(f_calculateMonthlyElectricityDelivery_kWh(netLoad_kW));
+double yearlyTransportedElectricity_kWh = LUXMath.sumArray(f_calculateMonthlyElectricityDelivery_kWh(netLoad_kW));
 return uI_Results.energyModel.avgc_data.economicAVGC.getGridOperatorTariffs().getTransportCost_eur(connectionMetaData, yearlyTransportedElectricity_kWh);
 /*ALCODEEND*/}
 
 double f_calculateTotalPeakCosts_eur(J_ConnectionMetaData connectionMetaData,double[] netLoad_kW)
 {/*ALCODESTART::1773162293336*/
-double yearTotalMonthlyPeakLoad_kW = ZeroMath.arraySum(f_calculateMonthlyPeakElectricityDelivery_kW(netLoad_kW));
+double yearTotalMonthlyPeakLoad_kW = LUXMath.sumArray(f_calculateMonthlyPeakElectricityDelivery_kW(netLoad_kW));
 return uI_Results.energyModel.avgc_data.economicAVGC.getGridOperatorTariffs().getMonthlyPeakCost_eur(connectionMetaData, yearTotalMonthlyPeakLoad_kW);
 /*ALCODEEND*/}
 
