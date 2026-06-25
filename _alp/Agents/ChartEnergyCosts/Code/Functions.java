@@ -164,7 +164,7 @@ double timeStep_h = uI_Results.energyModel.p_timeParameters.getTimeStep_h();
 
 double energyCarrierCost_eur_p_kWh = uI_Results.energyModel.avgc_data.economicAVGC.getAvgCostOfEnergyCarrier_eurpkWh(EC);
 double[] values_dayAheadElectricityPricing_eurpMWh = uI_Results.energyModel.pp_dayAheadElectricityPricing_eurpMWh.getAllValues();
-double energyTaxes_eur_p_kwh = uI_Results.energyModel.avgc_data.economicAVGC.getEnergyTaxesECImport_eurpkWh(EC, ZeroMath.arraySumPos(ECBalance_kW)*signalResolution_h);
+double energyTaxes_eur_p_kwh = uI_Results.energyModel.avgc_data.economicAVGC.getEnergyTaxesECImport_eurpkWh(EC, LUXMath.sumArrayPos(ECBalance_kW)*signalResolution_h);
 double VAT_fr = uI_Results.energyModel.avgc_data.economicAVGC.getVAT_energy_fr();
 
 
@@ -330,9 +330,9 @@ for(OL_EnergyCarriers EC : selectedECList){
 
 double[] monthlyNetCosts_eur = f_calculateMonthlyNetEnergyCosts_eur(monthlyImportCosts_eur, monthlyExportRevenue_eur);
 	
-double totalImportCosts_eur = ZeroMath.arraySum(monthlyImportCosts_eur);
-double totalExportRevenue_eur = ZeroMath.arraySum(monthlyExportRevenue_eur);
-double totalNetCosts_eur = ZeroMath.arraySum(monthlyNetCosts_eur);
+double totalImportCosts_eur = LUXMath.sumArray(monthlyImportCosts_eur);
+double totalExportRevenue_eur = LUXMath.sumArray(monthlyExportRevenue_eur);
+double totalNetCosts_eur = LUXMath.sumArray(monthlyNetCosts_eur);
 
 
 //Previous values
@@ -367,9 +367,9 @@ if(data.getPreviousRapidRunData() != null){
 		double[] previousMonthlyNetECCosts_eur = f_calculateMonthlyNetEnergyCosts_eur(previousMonthlyECImportCosts_eur, previousMonthlyECExportRevenue_eur);
 		
 	
-		previousTotalImportCosts_eur += ZeroMath.arraySum(previousMonthlyECImportCosts_eur);
-		previousTotalExportRevenue_eur += ZeroMath.arraySum(previousMonthlyECExportRevenue_eur);
-		previousTotalNetCosts_eur += ZeroMath.arraySum(previousMonthlyNetECCosts_eur);
+		previousTotalImportCosts_eur += LUXMath.sumArray(previousMonthlyECImportCosts_eur);
+		previousTotalExportRevenue_eur += LUXMath.sumArray(previousMonthlyECExportRevenue_eur);
+		previousTotalNetCosts_eur += LUXMath.sumArray(previousMonthlyNetECCosts_eur);
 	}
 }
 
@@ -412,7 +412,7 @@ for(OL_EnergyCarriers EC : rapidRunData.activeEnergyCarriers){
 
 double[] monthlyNetCosts_eur = f_calculateMonthlyNetEnergyCosts_eur(monthlyImportCosts_eur, monthlyExportRevenue_eur);
 
-double totalNetCosts_eur = ZeroMath.arraySum(monthlyNetCosts_eur);
+double totalNetCosts_eur = LUXMath.sumArray(monthlyNetCosts_eur);
 
 return totalNetCosts_eur;
 /*ALCODEEND*/}
