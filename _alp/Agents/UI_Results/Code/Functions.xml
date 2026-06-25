@@ -454,7 +454,7 @@
 		<Id>1739364390441</Id>
 		<Name><![CDATA[f_updateUIresultsGridNode]]></Name>
 		<X>1150</X>
-		<Y>390</Y>
+		<Y>410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -522,7 +522,7 @@
 		<Id>1741337780594</Id>
 		<Name><![CDATA[f_updateResultsUI]]></Name>
 		<X>1150</X>
-		<Y>370</Y>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1030,6 +1030,26 @@
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
+		<Body xmlns:al="http://anylogic.com"/>
+	</Function>
+	<Function AccessType="public" StaticFunction="false">
+		<ReturnModificator>VOID</ReturnModificator>
+		<ReturnType>double</ReturnType>
+		<Id>1780405232709</Id>
+		<Name><![CDATA[f_enablePublicVersion]]></Name>
+		<X>1160</X>
+		<Y>300</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Parameter>
+			<Name><![CDATA[enable]]></Name>
+			<Type><![CDATA[boolean]]></Type>
+		</Parameter>
 		<Body xmlns:al="http://anylogic.com"/>
 	</Function>
 </Functions>

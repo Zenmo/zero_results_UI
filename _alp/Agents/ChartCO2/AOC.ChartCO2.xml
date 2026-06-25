@@ -3,8 +3,7 @@
 	<Id>1772440782731</Id>
 	<Name><![CDATA[ChartCO2]]></Name>
 	<Folder>1755764711838</Folder>
-	<Import><![CDATA[import zeroPackage.ZeroMath;
-import java.text.DecimalFormat;]]></Import>
+	<Import><![CDATA[import java.text.DecimalFormat;]]></Import>
 	<ExtendsReference>
 		<PackageName>digital_twin_results</PackageName>
 		<ClassName>ChartArea</ClassName>

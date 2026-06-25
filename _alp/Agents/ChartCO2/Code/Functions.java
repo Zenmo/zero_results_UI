@@ -219,7 +219,7 @@ for(OL_EnergyCarriers EC : selectedECList){
 }
 
 //Calculate total CO2 emissions due EC import
-double totalCO2Emissions_kg = ZeroMath.arraySum(monthlyCO2Emissions_kg);
+double totalCO2Emissions_kg = LUXMath.sumArray(monthlyCO2Emissions_kg);
 
 
 //Add custom co2 additions
@@ -253,7 +253,7 @@ if(data.getPreviousRapidRunData() != null){
 		
 		double[] previousMonthlyECCO2Emissions_kg = f_calculateMonthlyECCO2Emission_kg(previousECBalance_kW, previousSignalResolution_h, EC);
 	
-		previoustotalCO2Emissions_kg += ZeroMath.arraySum(previousMonthlyECCO2Emissions_kg);
+		previoustotalCO2Emissions_kg += LUXMath.sumArray(previousMonthlyECCO2Emissions_kg);
 	}
 	
 	//Add custom co2 additions previous run to previous total
@@ -329,7 +329,7 @@ double f_setPieChart(Map<OL_EnergyCarriers, double[]> map_totalCO2EmissionsPerEC
 {/*ALCODESTART::1774888957180*/
 for(OL_EnergyCarriers EC : map_totalCO2EmissionsPerEC_kg.keySet()){
 	DataItem CO2Emission_ton = new DataItem();
-	CO2Emission_ton.setValue(ZeroMath.arraySum(map_totalCO2EmissionsPerEC_kg.get(EC))/1000.0);
+	CO2Emission_ton.setValue(LUXMath.sumArray(map_totalCO2EmissionsPerEC_kg.get(EC))/1000.0);
 	pieChart_totalSubdivision.addDataItem(CO2Emission_ton, uI_Results.f_getECName(EC), uI_Results.cm_consumptionColors.get(EC));
 }
 

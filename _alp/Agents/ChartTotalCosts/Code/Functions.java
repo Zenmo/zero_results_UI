@@ -39,7 +39,7 @@ if(data.getPreviousRapidRunData() != null){
 	t_previousTotalEnergyCosts.setText("€ " + df.format(roundToInt(previousTotalEnergyCosts_eurpyr)) + " /yr");
 	
 	double previousNetLoad_kW[] = data.getPreviousRapidRunData().am_totalBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getTimeSeries_kW();
-	double previousTotalConnectionCosts_eurpyr = uI_Results.chartConnectionCosts.f_calculateTotalConnectionCosts_eurpyr(data.getPreviousRapidRunData().connectionMetaData, netLoad_kW);
+	double previousTotalConnectionCosts_eurpyr = uI_Results.chartConnectionCosts.f_calculateTotalConnectionCosts_eurpyr(data.getPreviousRapidRunData().connectionMetaData, previousNetLoad_kW);
 	t_previousTotalConnectionCosts.setText("€ " + df.format(roundToInt(previousTotalConnectionCosts_eurpyr)) + " /yr");
 	
 	double previousTotalCAPEXAndOPEXCosts_eurpyr = uI_Results.chartCAPEXAndOPEX.f_getTotalCAPEXAndOPEXCosts_eurpyr(data.getPreviousRapidRunData());

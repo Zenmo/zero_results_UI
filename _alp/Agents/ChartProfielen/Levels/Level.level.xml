@@ -10507,7 +10507,7 @@ else{
 		<Id>1776930491478</Id>
 		<Name><![CDATA[rect_exportToExcelFunctions]]></Name>
 		<X>1260</X>
-		<Y>1080</Y>
+		<Y>1060</Y>
 		<Label>
 			<X>10</X>
 			<Y>10</Y>
@@ -10524,7 +10524,7 @@ else{
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
 		<Width>570</Width>
-		<Height>310</Height>
+		<Height>330</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>
@@ -10533,7 +10533,7 @@ else{
 		<Id>1776930491484</Id>
 		<Name><![CDATA[txt_writeToExcelFunctions]]></Name>
 		<X>1300</X>
-		<Y>1100</Y>
+		<Y>1080</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -11654,8 +11654,8 @@ f_reorderSelectedExportAC();</ActionCode>
 	<Group>
 		<Id>1777885127612</Id>
 		<Name><![CDATA[gr_exportMenuButtonDisabled]]></Name>
-		<X>1930</X>
-		<Y>1200</Y>
+		<X>1730</X>
+		<Y>1150</Y>
 		<Label>
 			<X>7.482</X>
 			<Y>0</Y>

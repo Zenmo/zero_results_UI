@@ -1101,3 +1101,8 @@ text_button5.setColor(white);
 text_button6.setColor(white);
 /*ALCODEEND*/}
 
+double f_enablePublicVersion(boolean enable)
+{/*ALCODESTART::1780405232709*/
+chartProfielen.f_enableExportFunctionality(!enable);
+/*ALCODEEND*/}
+
