@@ -333,7 +333,7 @@ double f_setCharts()
 f_resetCharts();
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 115, true);
+uI_Results.f_setSelectedObjectDisplay(null, 115, true);
 
 if (v_periodRadioButton.getValue() == 0) {
 	radio_periodLive.setVisible(true);

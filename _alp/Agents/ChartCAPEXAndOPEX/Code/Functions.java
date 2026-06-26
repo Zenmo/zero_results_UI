@@ -9,7 +9,7 @@ if(uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE){
 }
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 60, true);
+uI_Results.f_setSelectedObjectDisplay(null, 60, true);
 
 //Reset chart
 f_resetChart();

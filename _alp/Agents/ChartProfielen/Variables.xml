@@ -58,7 +58,7 @@
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true"
               Constant="false"
-			  AccessType="public"
+              AccessType="public"
               StaticVariable="false">
 			<Type><![CDATA[ShapeRectangle[][]]]></Type>
 		</Properties>
