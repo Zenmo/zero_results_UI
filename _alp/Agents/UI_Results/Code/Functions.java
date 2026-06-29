@@ -330,15 +330,17 @@ double f_setChartsBatteries()
 chartBatteries.f_setChartsBatteries();
 /*ALCODEEND*/}
 
-double f_initializeResultsUI(List<OL_ChartTypes> selectedChartTypes_Energy,List<OL_ChartTypes> selectedChartTypes_Economic)
+double f_initializeResultsUI(List<OL_ChartTypes> selectedChartTypes_Energy,List<OL_ChartTypes> selectedChartTypes_Economic,List<OL_ChartTypes> selectedCharts_Sustainability,boolean enablePublicVersion)
 {/*ALCODESTART::1739364390433*/
 f_updateResultsUI(energyModel);
 
-//Temporary:
-List<OL_ChartTypes> selectedCharts_Sustainability = List.of(OL_ChartTypes.CO2);
-
 //Set the selected button setup
 f_initializeResultsUIHeaderButtons(selectedChartTypes_Energy, selectedChartTypes_Economic, selectedCharts_Sustainability);
+
+//Enable public version if requested
+if(enablePublicVersion){
+	f_enablePublicVersion(true);
+}
 /*ALCODEEND*/}
 
 double f_updateUIresultsGridNode(GridNode GN)
