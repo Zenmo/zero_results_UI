@@ -3,7 +3,7 @@
 	<EmbeddedObject>
 		<Id>1714769685819</Id>
 		<Name><![CDATA[chartProfielen]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>250</Y>
 		<Label>
 			<X>10</X>
@@ -62,7 +62,7 @@
 	<EmbeddedObject>
 		<Id>1714769685819</Id>
 		<Name><![CDATA[chartBatteries]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>410</Y>
 		<Label>
 			<X>10</X>
@@ -111,7 +111,7 @@
 	<EmbeddedObject>
 		<Id>1714770450269</Id>
 		<Name><![CDATA[chartNetbelasting]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>270</Y>
 		<Label>
 			<X>10</X>
@@ -169,7 +169,7 @@
 	<EmbeddedObject>
 		<Id>1714770566604</Id>
 		<Name><![CDATA[chartBalans]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>290</Y>
 		<Label>
 			<X>10</X>
@@ -227,7 +227,7 @@
 	<EmbeddedObject>
 		<Id>1714770566604</Id>
 		<Name><![CDATA[chartBars]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>230</Y>
 		<Label>
 			<X>10</X>
@@ -285,7 +285,7 @@
 	<EmbeddedObject>
 		<Id>1714770587436</Id>
 		<Name><![CDATA[chartSankey]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>310</Y>
 		<Label>
 			<X>10</X>
@@ -343,7 +343,7 @@
 	<EmbeddedObject>
 		<Id>1726828320023</Id>
 		<Name><![CDATA[chartKPISummary]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>370</Y>
 		<Label>
 			<X>10</X>
@@ -401,7 +401,7 @@
 	<EmbeddedObject>
 		<Id>1726828320023</Id>
 		<Name><![CDATA[chartGTO]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>430</Y>
 		<Label>
 			<X>10</X>
@@ -450,7 +450,7 @@
 	<EmbeddedObject>
 		<Id>1726828320023</Id>
 		<Name><![CDATA[chartEnergyCosts]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>500</Y>
 		<Label>
 			<X>10</X>
@@ -503,7 +503,7 @@
 	<EmbeddedObject>
 		<Id>1730395151413</Id>
 		<Name><![CDATA[chartGespreksLeidraad]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>350</Y>
 		<Label>
 			<X>10</X>
@@ -552,7 +552,7 @@
 	<EmbeddedObject>
 		<Id>1730395817716</Id>
 		<Name><![CDATA[chartGespreksleidraadBedrijven]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>330</Y>
 		<Label>
 			<X>10</X>
@@ -601,7 +601,7 @@
 	<EmbeddedObject>
 		<Id>1732117774421</Id>
 		<Name><![CDATA[chartGelijktijdigheid]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>390</Y>
 		<Label>
 			<X>10</X>
@@ -650,7 +650,7 @@
 	<EmbeddedObject>
 		<Id>1772440739231</Id>
 		<Name><![CDATA[chartCAPEXAndOPEX]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>540</Y>
 		<Label>
 			<X>10</X>
@@ -706,7 +706,7 @@
 	<EmbeddedObject>
 		<Id>1772440754219</Id>
 		<Name><![CDATA[chartTotalCosts]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>560</Y>
 		<Label>
 			<X>10</X>
@@ -759,7 +759,7 @@
 	<EmbeddedObject>
 		<Id>1772440768554</Id>
 		<Name><![CDATA[chartConnectionCosts]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>520</Y>
 		<Label>
 			<X>10</X>
@@ -808,7 +808,7 @@
 	<EmbeddedObject>
 		<Id>1772440782742</Id>
 		<Name><![CDATA[chartCO2]]></Name>
-		<X>820</X>
+		<X>800</X>
 		<Y>450</Y>
 		<Label>
 			<X>10</X>
