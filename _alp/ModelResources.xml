@@ -79,12 +79,6 @@
 		<Location>FILE_SYSTEM</Location>
 	</Resource>
 	<Resource>
-		<Id>1776931761518</Id>
-		<Path>uplux-4.jar</Path>
-		<ReferencedFromUserCode>false</ReferencedFromUserCode>
-		<Location>FILE_SYSTEM</Location>
-	</Resource>
-	<Resource>
 		<Id>1776937955565</Id>
 		<Path>load_icon_white.png</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
@@ -129,6 +123,12 @@
 	<Resource>
 		<Id>1782478102723</Id>
 		<Path>icon_earth_white.png</Path>
+		<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		<Location>FILE_SYSTEM</Location>
+	</Resource>
+	<Resource>	
+		<Id>1783605462584</Id>
+		<Path>uplux-5.jar</Path>
 		<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		<Location>FILE_SYSTEM</Location>
 	</Resource>

@@ -247,7 +247,7 @@
 		<ClassPathEntry>
 			<ResourceReference>
 				<PackageName>digital_twin_results</PackageName>
-				<ClassName>uplux-4.jar</ClassName>
+				<ClassName>uplux-5.jar</ClassName>
 			</ResourceReference>
 			<Imported>true</Imported>
 			<Folder>false</Folder>
