@@ -306,7 +306,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1714987913828</Id>
 		<Name><![CDATA[gr_SummerWinter]]></Name>
-		<X>810</X>
+		<X>830</X>
 		<Y>380</Y>
 		<Label>
 			<X>10</X>
@@ -316,7 +316,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>230</XCode>
+		<XCode>310</XCode>
+		<YCode>380</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -712,8 +713,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1715002556479</Id>
 		<Name><![CDATA[gr_DayNight]]></Name>
-		<X>1230</X>
-		<Y>390</Y>
+		<X>1260</X>
+		<Y>370</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -722,7 +723,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>230</XCode>
+		<XCode>280</XCode>
+		<YCode>380</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>

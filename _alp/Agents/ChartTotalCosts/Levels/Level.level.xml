@@ -22,7 +22,7 @@
 		<LineColorCode>v_lineColor</LineColorCode>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>460</Width>
+		<Width>550</Width>
 		<Height>50</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
@@ -31,7 +31,7 @@
 	<Text>
 		<Id>1772468484134</Id>
 		<Name><![CDATA[txt_totalCostsChart]]></Name>
-		<X>235</X>
+		<X>275</X>
 		<Y>10</Y>
 		<Label>
 			<X>0</X>
@@ -56,7 +56,7 @@
 	<Image>
 		<Id>1772468484137</Id>
 		<Name><![CDATA[i_chartTotalCosts]]></Name>
-		<X>360</X>
+		<X>373</X>
 		<Y>10</Y>
 		<Label>
 			<X>0</X>
@@ -83,7 +83,7 @@
 	<Text>
 		<Id>1772618534819</Id>
 		<Name><![CDATA[t_totalCosts]]></Name>
-		<X>420</X>
+		<X>500</X>
 		<Y>352</Y>
 		<Label>
 			<X>0</X>
@@ -108,7 +108,7 @@
 	<Text>
 		<Id>1772618534821</Id>
 		<Name><![CDATA[txt_totalEnergyCosts]]></Name>
-		<X>40</X>
+		<X>50</X>
 		<Y>134</Y>
 		<Label>
 			<X>0</X>
@@ -133,7 +133,7 @@
 	<Text>
 		<Id>1772618534825</Id>
 		<Name><![CDATA[txt_CAPEXAndOPEXCosts]]></Name>
-		<X>40</X>
+		<X>50</X>
 		<Y>274</Y>
 		<Label>
 			<X>0</X>
@@ -158,7 +158,7 @@
 	<Text>
 		<Id>1772618534829</Id>
 		<Name><![CDATA[t_totalEnergyCosts]]></Name>
-		<X>420</X>
+		<X>500</X>
 		<Y>132</Y>
 		<Label>
 			<X>0</X>
@@ -204,14 +204,14 @@
 		<BeginArrowStyle>0</BeginArrowStyle>
 		<EndArrowSize>1</EndArrowSize>
 		<EndArrowStyle>0</EndArrowStyle>
-		<Dx>420</Dx>
+		<Dx>510</Dx>
 		<Dy>0</Dy>
 		<Dz>0</Dz>
 	</Line>
 	<Text>
 		<Id>1772618534833</Id>
 		<Name><![CDATA[t_CAPEXAndOPEXCosts]]></Name>
-		<X>420</X>
+		<X>500</X>
 		<Y>267</Y>
 		<Label>
 			<X>0</X>
@@ -236,7 +236,7 @@
 	<Text>
 		<Id>1772618534835</Id>
 		<Name><![CDATA[txt_totalConnectionCosts]]></Name>
-		<X>40</X>
+		<X>50</X>
 		<Y>204</Y>
 		<Label>
 			<X>0</X>
@@ -261,7 +261,7 @@
 	<Text>
 		<Id>1772618534837</Id>
 		<Name><![CDATA[t_totalConnectionCosts]]></Name>
-		<X>420</X>
+		<X>500</X>
 		<Y>202</Y>
 		<Label>
 			<X>0</X>
@@ -286,7 +286,7 @@
 	<Text>
 		<Id>1772618534839</Id>
 		<Name><![CDATA[txt_totalCosts]]></Name>
-		<X>40</X>
+		<X>50</X>
 		<Y>354</Y>
 		<Label>
 			<X>0</X>
@@ -311,7 +311,7 @@
 	<Text>
 		<Id>1773835943371</Id>
 		<Name><![CDATA[t_previousTotalConnectionCosts]]></Name>
-		<X>420</X>
+		<X>500</X>
 		<Y>232</Y>
 		<Label>
 			<X>0</X>
@@ -336,7 +336,7 @@
 	<Text>
 		<Id>1773836009592</Id>
 		<Name><![CDATA[t_previousTotalEnergyCosts]]></Name>
-		<X>420</X>
+		<X>500</X>
 		<Y>162</Y>
 		<Label>
 			<X>0</X>
@@ -361,7 +361,7 @@
 	<Text>
 		<Id>1773836028676</Id>
 		<Name><![CDATA[t_previousCAPEXAndOPEXCosts]]></Name>
-		<X>420</X>
+		<X>500</X>
 		<Y>297</Y>
 		<Label>
 			<X>0</X>
@@ -386,7 +386,7 @@
 	<Text>
 		<Id>1773836047199</Id>
 		<Name><![CDATA[t_previousTotalCosts]]></Name>
-		<X>420</X>
+		<X>500</X>
 		<Y>382</Y>
 		<Label>
 			<X>0</X>
@@ -411,8 +411,8 @@
 	<Group>
 		<Id>1776685383205</Id>
 		<Name><![CDATA[gr_chartTotalSubdivision]]></Name>
-		<X>230</X>
-		<Y>600</Y>
+		<X>275</X>
+		<Y>590</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
