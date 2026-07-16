@@ -50,7 +50,7 @@
 	<Group>
 		<Id>1730395813977</Id>
 		<Name><![CDATA[gr_GSLDSummary1]]></Name>
-		<X>260</X>
+		<X>295</X>
 		<Y>440</Y>
 		<Label>
 			<X>9.957</X>
@@ -67,7 +67,7 @@
 			<Rectangle>
 				<Id>1730395813979</Id>
 				<Name><![CDATA[rect_resultsSmall3]]></Name>
-				<X>-260</X>
+				<X>-295</X>
 				<Y>-360</Y>
 				<Label>
 					<X>10</X>
@@ -84,8 +84,8 @@
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>660</Height>
+				<Width>550</Width>
+				<Height>640</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -94,7 +94,7 @@
 			<Text>
 				<Id>1730395813981</Id>
 				<Name><![CDATA[tx_topBarplotText3]]></Name>
-				<X>-30</X>
+				<X>-20</X>
 				<Y>-310</Y>
 				<Label>
 					<X>0</X>
@@ -120,7 +120,7 @@ en opwek is er over het jaar?]]></Text>
 			<Group>
 				<Id>1730395813983</Id>
 				<Name><![CDATA[gr_onbalansBarplot4]]></Name>
-				<X>120</X>
+				<X>130</X>
 				<Y>-120</Y>
 				<Label>
 					<X>10.122</X>
@@ -431,7 +431,7 @@ en opwek is er over het jaar?]]></Text>
 			<Text>
 				<Id>1730395814003</Id>
 				<Name><![CDATA[t_duurkromme_xlabel1]]></Name>
-				<X>155</X>
+				<X>185</X>
 				<Y>220</Y>
 				<Label>
 					<X>0</X>
@@ -502,7 +502,7 @@ en opwek is er over het jaar?]]></Text>
 		<LineColorCode>v_lineColor</LineColorCode>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>460</Width>
+		<Width>550</Width>
 		<Height>80</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
@@ -512,7 +512,7 @@ en opwek is er over het jaar?]]></Text>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1730395814011</Id>
 		<Name><![CDATA[rb_gespreksleidraadBedrijvenChartType]]></Name>
-		<X>120</X>
+		<X>165</X>
 		<Y>5</Y>
 		<Label>
 			<X>0</X>
@@ -541,7 +541,7 @@ en opwek is er over het jaar?]]></Text>
 	<Group>
 		<Id>1730395814013</Id>
 		<Name><![CDATA[gr_GSLDSummary2]]></Name>
-		<X>750</X>
+		<X>860</X>
 		<Y>435</Y>
 		<Label>
 			<X>9.957</X>
@@ -551,8 +551,8 @@ en opwek is er over het jaar?]]></Text>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>265</XCode>
-		<YCode>435</YCode>
+		<XCode>270</XCode>
+		<YCode>440</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -560,7 +560,7 @@ en opwek is er over het jaar?]]></Text>
 			<Text>
 				<Id>1730395814015</Id>
 				<Name><![CDATA[tx_topBarplotText7]]></Name>
-				<X>-40</X>
+				<X>0</X>
 				<Y>-290</Y>
 				<Label>
 					<X>0</X>
@@ -586,7 +586,7 @@ op elkaar afstemmen?]]></Text>
 			<Group>
 				<Id>1730395814017</Id>
 				<Name><![CDATA[gr_KPIzelfvoorzienendheid1]]></Name>
-				<X>-150</X>
+				<X>-110</X>
 				<Y>-120</Y>
 				<Label>
 					<X>10</X>
@@ -632,7 +632,7 @@ zelfconsumptie
 			<Group>
 				<Id>1730395814027</Id>
 				<Name><![CDATA[gr_KPIzelfvoorzienendheid2]]></Name>
-				<X>50</X>
+				<X>90</X>
 				<Y>-120</Y>
 				<Label>
 					<X>10</X>
@@ -678,7 +678,7 @@ zelfconsumptie
 			<Group>
 				<Id>1730395814039</Id>
 				<Name><![CDATA[gr_zelfconsumptieBarplots]]></Name>
-				<X>90</X>
+				<X>130</X>
 				<Y>-20</Y>
 				<Label>
 					<X>9.468</X>
@@ -815,7 +815,7 @@ zelfconsumptie
 			<Rectangle>
 				<Id>1739206591762</Id>
 				<Name><![CDATA[rect_GSLDSummary2]]></Name>
-				<X>-265.333</X>
+				<X>-270</X>
 				<Y>-354.667</Y>
 				<Label>
 					<X>10</X>
@@ -832,8 +832,8 @@ zelfconsumptie
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>669.667</Height>
+				<Width>550</Width>
+				<Height>640</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -844,8 +844,8 @@ zelfconsumptie
 	<Group>
 		<Id>1739207315482</Id>
 		<Name><![CDATA[gr_GSLDSummary3]]></Name>
-		<X>1210</X>
-		<Y>420</Y>
+		<X>1420</X>
+		<Y>390</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -854,8 +854,8 @@ zelfconsumptie
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>240</XCode>
-		<YCode>420</YCode>
+		<XCode>270</XCode>
+		<YCode>440</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -864,7 +864,7 @@ zelfconsumptie
 				<Id>1739206568253</Id>
 				<Name><![CDATA[rect_GSLDSummary3]]></Name>
 				<X>-240</X>
-				<Y>-340</Y>
+				<Y>-310</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -880,8 +880,8 @@ zelfconsumptie
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>670</Height>
+				<Width>550</Width>
+				<Height>640</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -890,7 +890,7 @@ zelfconsumptie
 			<Text>
 				<Id>1739206645169</Id>
 				<Name><![CDATA[t_titleGespreksleidraadBedrijven3]]></Name>
-				<X>-10</X>
+				<X>35</X>
 				<Y>-230</Y>
 				<Label>
 					<X>0</X>
@@ -916,7 +916,7 @@ het collectief vs individueel?]]></Text>
 			<BarChart>
 				<Id>1739206746434</Id>
 				<Name><![CDATA[chart_barChartGSLDSummary3]]></Name>
-				<X>-190</X>
+				<X>-145</X>
 				<Y>-110</Y>
 				<Label>
 					<X>0</X>
@@ -994,7 +994,7 @@ het collectief vs individueel?]]></Text>
 			<Text>
 				<Id>1739206867221</Id>
 				<Name><![CDATA[t_duurkromme_ylabel2]]></Name>
-				<X>-200</X>
+				<X>-155</X>
 				<Y>20</Y>
 				<Label>
 					<X>0</X>
@@ -1020,7 +1020,7 @@ het collectief vs individueel?]]></Text>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1739207750702</Id>
 				<Name><![CDATA[rb_GSLDSummary3_delivery_or_feedin]]></Name>
-				<X>-80</X>
+				<X>-35</X>
 				<Y>-300</Y>
 				<Label>
 					<X>0</X>
@@ -1049,7 +1049,7 @@ het collectief vs individueel?]]></Text>
 	<Group>
 		<Id>1741342910318</Id>
 		<Name><![CDATA[gr_warningScreen]]></Name>
-		<X>1680</X>
+		<X>2060</X>
 		<Y>420</Y>
 		<Label>
 			<X>10</X>
@@ -1058,7 +1058,6 @@ het collectief vs individueel?]]></Text>
 		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<XCode>230</XCode>
 		<YCode>410</YCode>
@@ -1089,8 +1088,8 @@ het collectief vs individueel?]]></Text>
 				<LineColorCode>v_lineColor</LineColorCode>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>660</Height>
+				<Width>550</Width>
+				<Height>640</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor>-1644806</FillColor>
 				<FillMaterial>null</FillMaterial>
@@ -1098,7 +1097,7 @@ het collectief vs individueel?]]></Text>
 			<Text>
 				<Id>1741342722870</Id>
 				<Name><![CDATA[txt_WarningScreenMessage]]></Name>
-				<X>10</X>
+				<X>50</X>
 				<Y>-110</Y>
 				<Label>
 					<X>0</X>

@@ -429,7 +429,12 @@ area.v_dataNetbelastingDuurkrommeWeekend_kW = GN.data_weekendNetbelastingDuurkro
 
 double f_enableNonLivePlotRadioButtons(boolean active)
 {/*ALCODESTART::1739884154258*/
-traceln("DONT FORGET TO DISABLE RESULTSUI HEADER BUTTONS IN f_enableNonLivePlotRadioButtons ");
+for(CustomButton resultsUIModeButton : c_resultsUIModeButtons){
+	resultsUIModeButton.setEnabled(active);
+}
+for(CustomButton chartButton : c_chartButtons){
+	chartButton.setEnabled(active);
+}
 chartProfielen.rb_periodIncludingYear.setEnabled(active);
 chartProfielen.rb_periodExcludingYear.setEnabled(active);
 chartProfielen.rb_periodPeaksIncludingYear.setEnabled(active);
@@ -769,6 +774,7 @@ f_initializeChartSelection_Energy(selectedCharts_Energy);
 currentResultsUIModeButton = c_resultsUIModeButtons.get(currentResultsUIModeButtonIndex);
 map_resultsUIModeButtonToResultsUIMode.put(currentResultsUIModeButton, OL_ResultsUIMode.ENERGY);
 currentResultsUIModeButton.setText(map_resultsUIModeToName.get(OL_ResultsUIMode.ENERGY));
+currentResultsUIModeButton.reConfigureImageIndexes(map_ResultsUIModeToDefaultImageIndex.get(OL_ResultsUIMode.ENERGY));
 currentResultsUIModeButton.setVisible(true);
 currentResultsUIModeButtonIndex++;
 
@@ -778,6 +784,7 @@ if(selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
 	currentResultsUIModeButton = c_resultsUIModeButtons.get(currentResultsUIModeButtonIndex);
 	map_resultsUIModeButtonToResultsUIMode.put(currentResultsUIModeButton, OL_ResultsUIMode.ECONOMIC);
 	currentResultsUIModeButton.setText(map_resultsUIModeToName.get(OL_ResultsUIMode.ECONOMIC));
+	currentResultsUIModeButton.reConfigureImageIndexes(map_ResultsUIModeToDefaultImageIndex.get(OL_ResultsUIMode.ECONOMIC));
 	currentResultsUIModeButton.setVisible(true);
 	currentResultsUIModeButtonIndex++;
 }
@@ -788,12 +795,13 @@ if(selectedCharts_Sustainability != null && selectedCharts_Sustainability.size()
 	currentResultsUIModeButton = c_resultsUIModeButtons.get(currentResultsUIModeButtonIndex);
 	map_resultsUIModeButtonToResultsUIMode.put(currentResultsUIModeButton, OL_ResultsUIMode.SUSTAINABILITY);
 	currentResultsUIModeButton.setText(map_resultsUIModeToName.get(OL_ResultsUIMode.SUSTAINABILITY));
+	currentResultsUIModeButton.reConfigureImageIndexes(map_ResultsUIModeToDefaultImageIndex.get(OL_ResultsUIMode.SUSTAINABILITY));
 	currentResultsUIModeButton.setVisible(true);
 	currentResultsUIModeButtonIndex++;
 }
 
 //Start model on Energy mode
-f_selectResultsUIMode(0);
+f_selectResultsUIMode(c_resultsUIModeButtons.get(0));
 /*ALCODEEND*/}
 
 double f_setChartCO2_presentation(Integer location_x,Integer location_y,boolean visible)
@@ -963,41 +971,37 @@ double f_enablePublicVersion(boolean enable)
 chartProfielen.f_enableExportFunctionality(!enable);
 /*ALCODEEND*/}
 
-double f_selectResultsUIMode(int selectedResultsUIModeButtonIndex)
+double f_selectResultsUIMode(CustomButton selectedButton)
 {/*ALCODESTART::1782394255448*/
-//Get selected resultsUIMode button
-CustomButton selectedButton = c_resultsUIModeButtons.get(selectedResultsUIModeButtonIndex);
-
-//Find selected resultsUIMode
-OL_ResultsUIMode selectedResultsUIMode = map_resultsUIModeButtonToResultsUIMode.get(selectedButton);
-
-//Color selected button
-selectedButton.setFillColor(v_headerButtonSelectedColor);
-selectedButton.setTextColor(v_headerButtonSelectedTextColor);
-selectedButton.setImageIndex(map_ResultsUIModeToSelectedImageIndex.get(selectedResultsUIMode));
-				
-//Deselect other mode buttons
-for(CustomButton customButton : c_resultsUIModeButtons){
-	if(customButton != selectedButton && customButton.isVisible()){
-		customButton.setFillColor(v_headerButtonDefaultColor);
-		customButton.setTextColor(v_headerButtonDefaultTextColor);
-		customButton.setImageIndex(map_ResultsUIModeToDefaultImageIndex.get(map_resultsUIModeButtonToResultsUIMode.get(customButton)));
+if(selectedButton.isEnabled()){
+	//Find selected resultsUIMode
+	OL_ResultsUIMode selectedResultsUIMode = map_resultsUIModeButtonToResultsUIMode.get(selectedButton);
+	
+	
+	//Select button
+	selectedButton.setSelected(true, false);
+			
+	//Deselect other mode buttons
+	for(CustomButton customButton : c_resultsUIModeButtons){
+		if(customButton != selectedButton && customButton.isVisible()){
+			customButton.setSelected(false, false);
+		}
 	}
+	
+	//Reconfigure the chart Buttons to the selected resultsUIMode
+	c_chartButtons.forEach(customButton -> customButton.setVisible(false));
+	map_chartButtonToCurrentChartType = new HashMap<>();
+	int currentButtonIndex = 0;
+	for(OL_ChartTypes loadedChartType : map_ResultsUIModeToLoadedChartTypes.get(selectedResultsUIMode)){
+		map_chartButtonToCurrentChartType.put(c_chartButtons.get(currentButtonIndex), loadedChartType);
+		c_chartButtons.get(currentButtonIndex).setVisible(true);
+		c_chartButtons.get(currentButtonIndex).setText(map_chartTypeToName.get(loadedChartType));
+		currentButtonIndex++;
+	}
+	
+	//Select the first button
+	f_selectChart(0);
 }
-
-//Reconfigure the chart Buttons to the selected resultsUIMode
-c_chartButtons.forEach(customButton -> customButton.setVisible(false));
-map_chartButtonToCurrentChartType = new HashMap<>();
-int currentButtonIndex = 0;
-for(OL_ChartTypes loadedChartType : map_ResultsUIModeToLoadedChartTypes.get(selectedResultsUIMode)){
-	map_chartButtonToCurrentChartType.put(c_chartButtons.get(currentButtonIndex), loadedChartType);
-	c_chartButtons.get(currentButtonIndex).setVisible(true);
-	c_chartButtons.get(currentButtonIndex).setText(map_chartTypeToName.get(loadedChartType));
-	currentButtonIndex++;
-}
-
-//Select the first button
-f_selectChart(0);
 /*ALCODEEND*/}
 
 double f_selectChart(int selectedChartButtonIndex)
@@ -1005,28 +1009,28 @@ double f_selectChart(int selectedChartButtonIndex)
 //Get selected button
 CustomButton selectedButton = c_chartButtons.get(selectedChartButtonIndex);
 
-//Find selected chart type
-v_selectedChartType = map_chartButtonToCurrentChartType.get(selectedButton);
-
-//Color selected button
-selectedButton.setFillColor(v_headerButtonSelectedColor);
-selectedButton.setTextColor(v_headerButtonSelectedTextColor);
-
-//Deselect other chart buttons
-for(CustomButton customButton : c_chartButtons){
-	if(customButton != selectedButton){
-		customButton.setFillColor(v_headerButtonDefaultColor);
-		customButton.setTextColor(v_headerButtonDefaultTextColor);
+if(selectedButton.isEnabled()){
+	//Find selected chart type
+	v_selectedChartType = map_chartButtonToCurrentChartType.get(selectedButton);
+	
+	//Select button
+	selectedButton.setSelected(true, false);
+	
+	//Deselect other chart buttons
+	for(CustomButton customButton : c_chartButtons){
+		if(customButton != selectedButton){
+			customButton.setSelected(false, false);
+		}
 	}
+	
+	//Always disable kpi summary after clicking other chart
+	if(b_showKPISummary){
+		checkbox_KPISummary.setSelected(false, true);
+	}
+	
+	//Show correct chart
+	f_showCorrectChart();
 }
-
-//Always disable kpi summary after clicking other chart
-if(b_showKPISummary){
-	checkbox_KPISummary.setSelected(false, true);
-}
-
-//Show correct chart
-f_showCorrectChart();
 /*ALCODEEND*/}
 
 double f_initializeChartSelection_Sustainability(List<OL_ChartTypes> selectedCharts_Sustainability)
@@ -1056,7 +1060,11 @@ double f_enableLivePlotsOnly()
 {/*ALCODESTART::1782402066582*/
 if (f_getSelectedObjectData() != null) {
 	if(getGr_resultsUIHeader().isVisible()){
-		traceln("DONT FORGET TO DISABLE RESULTSUI HEADER BUTTONS IN f_enableLivePlotsOnly ");
+		for(CustomButton resultsUIModeButton : c_resultsUIModeButtons){
+			if(map_resultsUIModeButtonToResultsUIMode.get(resultsUIModeButton) == OL_ResultsUIMode.ENERGY){
+				f_selectResultsUIMode(resultsUIModeButton); // Also selects the profile chart!
+			}
+		}
 	}
 	chartProfielen.getPeriodRadioButton().setValue(0, true);
 	f_enableNonLivePlotRadioButtons(false);

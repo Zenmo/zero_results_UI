@@ -109,7 +109,7 @@
 						<ZHeight>10</ZHeight>
 						<LineWidth>0.5</LineWidth>
 						<LineColor>-16744320</LineColor>
-						<LineColorCode>v_headerButtonDefaultColor</LineColorCode>
+						<LineColorCode>v_UIModeButtonDefaultStyling.lineColor()</LineColorCode>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<Width>555</Width>
@@ -163,7 +163,7 @@
 						<ZHeight>10</ZHeight>
 						<LineWidth>0.5</LineWidth>
 						<LineColor>-16744320</LineColor>
-						<LineColorCode>v_headerButtonDefaultColor</LineColorCode>
+						<LineColorCode>v_UIModeButtonDefaultStyling.lineColor()</LineColorCode>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<Width>555</Width>
@@ -541,13 +541,12 @@
 						<PresentationFlag>true</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<OnClickCode>f_selectResultsUIMode(0);</OnClickCode>
+						<OnClickCode>f_selectResultsUIMode(c_resultsUIModeButtons.get(0));</OnClickCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<ZHeight>10</ZHeight>
 						<LineWidth>0.5</LineWidth>
 						<LineColor>-16744320</LineColor>
-						<LineColorCode>v_headerButtonDefaultColor</LineColorCode>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<Width>185</Width>
@@ -569,13 +568,12 @@
 						<PresentationFlag>true</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<OnClickCode>f_selectResultsUIMode(2);</OnClickCode>
+						<OnClickCode>f_selectResultsUIMode(c_resultsUIModeButtons.get(2));</OnClickCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<ZHeight>10</ZHeight>
 						<LineWidth>0.5</LineWidth>
 						<LineColor>-16744320</LineColor>
-						<LineColorCode>v_headerButtonDefaultColor</LineColorCode>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<Width>185</Width>
@@ -647,13 +645,12 @@
 						<PresentationFlag>true</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<OnClickCode>f_selectResultsUIMode(1);</OnClickCode>
+						<OnClickCode>f_selectResultsUIMode(c_resultsUIModeButtons.get(1));</OnClickCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<ZHeight>10</ZHeight>
 						<LineWidth>0.5</LineWidth>
 						<LineColor>-16744320</LineColor>
-						<LineColorCode>v_headerButtonDefaultColor</LineColorCode>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<Width>185</Width>
@@ -1640,8 +1637,8 @@ else{
 	<Group>
 		<Id>1776688304547</Id>
 		<Name><![CDATA[gr_chartBlocker]]></Name>
-		<X>2200</X>
-		<Y>320</Y>
+		<X>2180</X>
+		<Y>280</Y>
 		<Label>
 			<X>9.957</X>
 			<Y>0</Y>
@@ -1677,8 +1674,8 @@ else{
 				<LineColor>-10502977</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>458.013</Width>
-				<Height>749.104</Height>
+				<Width>550</Width>
+				<Height>720</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor>-10502977</FillColor>
 				<FillMaterial>null</FillMaterial>
@@ -1686,8 +1683,8 @@ else{
 			<Text>
 				<Id>1776688304551</Id>
 				<Name><![CDATA[txt_chartBlockerMessageDefault]]></Name>
-				<X>0</X>
-				<Y>-10</Y>
+				<X>40</X>
+				<Y>-30</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1712,8 +1709,8 @@ niet ondersteund door deze grafiek!]]></Text>
 			<Text>
 				<Id>1776688373400</Id>
 				<Name><![CDATA[t_chartBlockerMessage]]></Name>
-				<X>-160</X>
-				<Y>130</Y>
+				<X>-120</X>
+				<Y>110</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1740,8 +1737,8 @@ niet ondersteund door deze grafiek!]]></Text>
 			<Text>
 				<Id>1776690062865</Id>
 				<Name><![CDATA[txt_chartBlockerMessageDefault2]]></Name>
-				<X>0</X>
-				<Y>100</Y>
+				<X>40</X>
+				<Y>80</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1776,6 +1773,7 @@ niet ondersteund door deze grafiek!]]></Text>
 		<PublicFlag>false</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
+		<Lock>true</Lock>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>

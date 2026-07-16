@@ -22,7 +22,7 @@
 		<LineColorCode>v_lineColor</LineColorCode>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>460</Width>
+		<Width>550</Width>
 		<Height>50</Height>
 		<Rotation>0.0</Rotation>
 		<FillColor>-657931</FillColor>
@@ -31,7 +31,7 @@
 	<Text>
 		<Id>1772468475044</Id>
 		<Name><![CDATA[txt_CAPEXAndOPEX]]></Name>
-		<X>230</X>
+		<X>275</X>
 		<Y>10</Y>
 		<Label>
 			<X>0</X>
@@ -56,7 +56,7 @@
 	<Image>
 		<Id>1772468475051</Id>
 		<Name><![CDATA[i_chartCAPEXAndOPEX]]></Name>
-		<X>340</X>
+		<X>390</X>
 		<Y>10</Y>
 		<Label>
 			<X>0</X>
@@ -83,7 +83,7 @@
 	<Group>
 		<Id>1774274933037</Id>
 		<Name><![CDATA[gr_openIncludeAssetSelection]]></Name>
-		<X>230</X>
+		<X>275</X>
 		<Y>140</Y>
 		<Label>
 			<X>10</X>
@@ -203,7 +203,7 @@
 	</Text>
 	<Line>
 		<Id>1774279551846</Id>
-		<Name><![CDATA[line]]></Name>
+		<Name><![CDATA[line_total]]></Name>
 		<X>30</X>
 		<Y>571</Y>
 		<Label>
@@ -708,7 +708,7 @@
 	<Group>
 		<Id>1775484196004</Id>
 		<Name><![CDATA[gr_assetSelection]]></Name>
-		<X>240</X>
+		<X>280</X>
 		<Y>190</Y>
 		<Label>
 			<X>10</X>
@@ -790,8 +790,8 @@ f_setChartCAPEXAndOPEXValues();</ActionCode>
 	<Group>
 		<Id>1774273793456</Id>
 		<Name><![CDATA[gr_includeAssetSelection]]></Name>
-		<X>800</X>
-		<Y>230</Y>
+		<X>790</X>
+		<Y>210</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -800,7 +800,7 @@ f_setChartCAPEXAndOPEXValues();</ActionCode>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>220</XCode>
+		<XCode>265</XCode>
 		<YCode>260</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>

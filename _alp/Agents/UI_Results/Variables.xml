@@ -1564,7 +1564,29 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1780339956086</Id>
-		<Name><![CDATA[v_headerButtonDefaultColor]]></Name>
+		<Name><![CDATA[v_UIModeButtonDefaultStyling]]></Name>
+		<X>1137</X>
+		<Y>540</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[CustomButton.CustomButtonStateStyle]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new CustomButton.CustomButtonStateStyle(teal, white, teal, LINE_STYLE_SOLID, 0.5)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1780339985213</Id>
+		<Name><![CDATA[v_UIModeButtonSelectedStyling]]></Name>
 		<X>1137</X>
 		<Y>560</Y>
 		<Label>
@@ -1578,31 +1600,9 @@
               Constant="false"
               AccessType="public"
               StaticVariable="false">
-			<Type><![CDATA[Color]]></Type>
+			<Type><![CDATA[CustomButton.CustomButtonStateStyle]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[teal]]></Code>
-			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1780339985213</Id>
-		<Name><![CDATA[v_headerButtonSelectedColor]]></Name>
-		<X>1137</X>
-		<Y>610</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[Color]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[white]]></Code>
+				<Code><![CDATA[new CustomButton.CustomButtonStateStyle(white, black, teal, LINE_STYLE_SOLID, 0.5)]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -1654,7 +1654,7 @@
 		<Id>1782393843445</Id>
 		<Name><![CDATA[v_shadowColor]]></Name>
 		<X>1137</X>
-		<Y>650</Y>
+		<Y>681</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1674,29 +1674,7 @@
 	</Variable>
 	<Variable Class="PlainVariable">
 		<Id>1782414527584</Id>
-		<Name><![CDATA[v_headerButtonSelectedTextColor]]></Name>
-		<X>1137</X>
-		<Y>630</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true"
-              Constant="false"
-              AccessType="public"
-              StaticVariable="false">
-			<Type><![CDATA[Color]]></Type>
-			<InitialValue Class="CodeValue">
-				<Code><![CDATA[black]]></Code>
-			</InitialValue>
-		</Properties>
-	</Variable>
-	<Variable Class="PlainVariable">
-		<Id>1782414590774</Id>
-		<Name><![CDATA[v_headerButtonDefaultTextColor]]></Name>
+		<Name><![CDATA[v_UIModeButtonDisabledStyling]]></Name>
 		<X>1137</X>
 		<Y>580</Y>
 		<Label>
@@ -1710,9 +1688,75 @@
               Constant="false"
               AccessType="public"
               StaticVariable="false">
-			<Type><![CDATA[Color]]></Type>
+			<Type><![CDATA[CustomButton.CustomButtonStateStyle]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[white]]></Code>
+				<Code><![CDATA[new CustomButton.CustomButtonStateStyle(silver, white, silver, LINE_STYLE_SOLID, 0.5)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1784031195286</Id>
+		<Name><![CDATA[v_chartButtonDefaultStyling]]></Name>
+		<X>1137</X>
+		<Y>610</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[CustomButton.CustomButtonStateStyle]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new CustomButton.CustomButtonStateStyle(teal, white, null, LINE_STYLE_SOLID, 0.5)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1784031195442</Id>
+		<Name><![CDATA[v_chartButtonSelectedStyling]]></Name>
+		<X>1137</X>
+		<Y>630</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[CustomButton.CustomButtonStateStyle]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new CustomButton.CustomButtonStateStyle(white, black, null, LINE_STYLE_SOLID, 0.5)]]></Code>
+			</InitialValue>
+		</Properties>
+	</Variable>
+	<Variable Class="PlainVariable">
+		<Id>1784031195598</Id>
+		<Name><![CDATA[v_chartButtonDisabledStyling]]></Name>
+		<X>1137</X>
+		<Y>650</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>false</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>true</ShowLabel>
+		<Properties SaveInSnapshot="true"
+              Constant="false"
+              AccessType="public"
+              StaticVariable="false">
+			<Type><![CDATA[CustomButton.CustomButtonStateStyle]]></Type>
+			<InitialValue Class="CodeValue">
+				<Code><![CDATA[new CustomButton.CustomButtonStateStyle(silver, white, null, LINE_STYLE_SOLID, 0.5)]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>
@@ -1898,7 +1942,7 @@
 		<Id>1782394611151</Id>
 		<Name><![CDATA[map_chartButtonToCurrentChartType]]></Name>
 		<X>1137</X>
-		<Y>470</Y>
+		<Y>350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1923,7 +1967,7 @@
 		<Id>1782395706362</Id>
 		<Name><![CDATA[map_ResultsUIModeToChartTypes]]></Name>
 		<X>1137</X>
-		<Y>350</Y>
+		<Y>480</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1971,7 +2015,7 @@
 		<Id>1782408796302</Id>
 		<Name><![CDATA[map_ResultsUIModeToLoadedChartTypes]]></Name>
 		<X>1137</X>
-		<Y>430</Y>
+		<Y>310</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1996,7 +2040,7 @@
 		<Id>1782410381882</Id>
 		<Name><![CDATA[map_resultsUIModeButtonToResultsUIMode]]></Name>
 		<X>1137</X>
-		<Y>450</Y>
+		<Y>330</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2021,7 +2065,7 @@
 		<Id>1782410682882</Id>
 		<Name><![CDATA[map_chartTypeToName]]></Name>
 		<X>1137</X>
-		<Y>330</Y>
+		<Y>450</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2068,7 +2112,7 @@
 		<Id>1782411245555</Id>
 		<Name><![CDATA[map_resultsUIModeToName]]></Name>
 		<X>1137</X>
-		<Y>310</Y>
+		<Y>430</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2097,42 +2141,10 @@
 		</Properties>
 	</Variable>
 	<Variable Class="Parameter">
-		<Id>1782474904630</Id>
-		<Name><![CDATA[map_ResultsUIModeToSelectedImageIndex]]></Name>
-		<X>1137</X>
-		<Y>280</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>false</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>true</ShowLabel>
-		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-			<Type><![CDATA[Map<OL_ResultsUIMode, Integer>]]></Type>
-			<UnitType>NONE</UnitType>
-			<SdArray>false</SdArray>
-			<DefaultValue Class="CodeValue">
-				<Code><![CDATA[Map.of(
-	OL_ResultsUIMode.ENERGY, 1,
-	OL_ResultsUIMode.ECONOMIC, 3,
-	OL_ResultsUIMode.SUSTAINABILITY, 5
-)]]></Code>
-			</DefaultValue>
-			<ParameterEditor>
-				<Id>1782474904628</Id>
-				<EditorContolType>TEXT_BOX</EditorContolType>
-				<MinSliderValue>0</MinSliderValue>
-				<MaxSliderValue>100</MaxSliderValue>
-				<DelimeterType>NO_DELIMETER</DelimeterType>
-			</ParameterEditor>
-		</Properties>
-	</Variable>
-	<Variable Class="Parameter">
 		<Id>1782475092811</Id>
 		<Name><![CDATA[map_ResultsUIModeToDefaultImageIndex]]></Name>
 		<X>1137</X>
-		<Y>260</Y>
+		<Y>511</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2141,14 +2153,14 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>true</ShowLabel>
 		<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-			<Type><![CDATA[Map<OL_ResultsUIMode, Integer>]]></Type>
+			<Type><![CDATA[Map<OL_ResultsUIMode, CustomButton.CustomButtonImageSelection>]]></Type>
 			<UnitType>NONE</UnitType>
 			<SdArray>false</SdArray>
 			<DefaultValue Class="CodeValue">
 				<Code><![CDATA[Map.of(
-	OL_ResultsUIMode.ENERGY, 0,
-	OL_ResultsUIMode.ECONOMIC, 2,
-	OL_ResultsUIMode.SUSTAINABILITY, 4
+	OL_ResultsUIMode.ENERGY, new CustomButton.CustomButtonImageSelection(0,1,0,0),
+	OL_ResultsUIMode.ECONOMIC, new CustomButton.CustomButtonImageSelection(2,3,0,0),
+	OL_ResultsUIMode.SUSTAINABILITY, new CustomButton.CustomButtonImageSelection(4,5,0,0)
 )]]></Code>
 			</DefaultValue>
 			<ParameterEditor>
@@ -2232,7 +2244,7 @@ OL_AssetFlowCategories.ptProductionHeat_kW
 		<Id>1782411823236</Id>
 		<Name><![CDATA[c_chartButtons]]></Name>
 		<X>1137</X>
-		<Y>380</Y>
+		<Y>280</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2246,12 +2258,12 @@ OL_AssetFlowCategories.ptProductionHeat_kW
 			<ValueElementClass>String</ValueElementClass>
 			<CollectionInitializer Class="CodeValue">
 				<Code><![CDATA[{
-new CustomButton(button_chart1, txt_header_chartbutton1, null),
-new CustomButton(button_chart2, txt_header_chartbutton2, null),
-new CustomButton(button_chart3, txt_header_chartbutton3, null),
-new CustomButton(button_chart4, txt_header_chartbutton4, null),
-new CustomButton(button_chart5, txt_header_chartbutton5, null),
-new CustomButton(button_chart6, txt_header_chartbutton6, null)
+new CustomButton(button_chart1, txt_header_chartbutton1, new CustomButton.CustomButtonStyling(v_chartButtonDefaultStyling, v_chartButtonSelectedStyling, v_chartButtonDisabledStyling, v_chartButtonDisabledStyling)),
+new CustomButton(button_chart2, txt_header_chartbutton2, new CustomButton.CustomButtonStyling(v_chartButtonDefaultStyling, v_chartButtonSelectedStyling, v_chartButtonDisabledStyling, v_chartButtonDisabledStyling)),
+new CustomButton(button_chart3, txt_header_chartbutton3, new CustomButton.CustomButtonStyling(v_chartButtonDefaultStyling, v_chartButtonSelectedStyling, v_chartButtonDisabledStyling, v_chartButtonDisabledStyling)),
+new CustomButton(button_chart4, txt_header_chartbutton4, new CustomButton.CustomButtonStyling(v_chartButtonDefaultStyling, v_chartButtonSelectedStyling, v_chartButtonDisabledStyling, v_chartButtonDisabledStyling)),
+new CustomButton(button_chart5, txt_header_chartbutton5, new CustomButton.CustomButtonStyling(v_chartButtonDefaultStyling, v_chartButtonSelectedStyling, v_chartButtonDisabledStyling, v_chartButtonDisabledStyling)),
+new CustomButton(button_chart6, txt_header_chartbutton6, new CustomButton.CustomButtonStyling(v_chartButtonDefaultStyling, v_chartButtonSelectedStyling, v_chartButtonDisabledStyling, v_chartButtonDisabledStyling))
 }]]></Code>
 			</CollectionInitializer>
 		</Properties>
@@ -2260,7 +2272,7 @@ new CustomButton(button_chart6, txt_header_chartbutton6, null)
 		<Id>1782412152973</Id>
 		<Name><![CDATA[c_resultsUIModeButtons]]></Name>
 		<X>1137</X>
-		<Y>400</Y>
+		<Y>260</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -2274,9 +2286,9 @@ new CustomButton(button_chart6, txt_header_chartbutton6, null)
 			<ValueElementClass>String</ValueElementClass>
 			<CollectionInitializer Class="CodeValue">
 				<Code><![CDATA[{
-new CustomButton(button_resultsUIMode0, txt_resultsUIMode0, image_button_resultsUIMode0),
-new CustomButton(button_resultsUIMode1, txt_resultsUIMode1, image_button_resultsUIMode1),
-new CustomButton(button_resultsUIMode2, txt_resultsUIMode2, image_button_resultsUIMode2)
+new CustomButton(button_resultsUIMode0, txt_resultsUIMode0, image_button_resultsUIMode0, new CustomButton.CustomButtonStyling(v_UIModeButtonDefaultStyling, v_UIModeButtonSelectedStyling, v_UIModeButtonDisabledStyling, v_UIModeButtonDisabledStyling)),
+new CustomButton(button_resultsUIMode1, txt_resultsUIMode1, image_button_resultsUIMode1, new CustomButton.CustomButtonStyling(v_UIModeButtonDefaultStyling, v_UIModeButtonSelectedStyling, v_UIModeButtonDisabledStyling, v_UIModeButtonDisabledStyling)),
+new CustomButton(button_resultsUIMode2, txt_resultsUIMode2, image_button_resultsUIMode2, new CustomButton.CustomButtonStyling(v_UIModeButtonDefaultStyling, v_UIModeButtonSelectedStyling, v_UIModeButtonDisabledStyling, v_UIModeButtonDisabledStyling))
 }]]></Code>
 			</CollectionInitializer>
 		</Properties>
