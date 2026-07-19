@@ -84,7 +84,7 @@
               StaticVariable="false">
 			<Type><![CDATA[SVGGraphics2D]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[new SVGGraphics2D(400, 600)]]></Code>
+				<Code><![CDATA[new SVGGraphics2D(500, 560)]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>

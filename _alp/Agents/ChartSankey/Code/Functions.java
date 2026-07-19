@@ -1,7 +1,7 @@
 double f_setSankey()
 {/*ALCODESTART::1714746374796*/
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 10, true);
+uI_Results.f_setSelectedObjectDisplay(240, 10, true);
 
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
@@ -94,8 +94,8 @@ flowPlot.setNodeMargin(0.05);
 flowPlot.setDefaultNodeLabelFont(new Font("SansSerif", Font.BOLD, 18));
 //flowPlot.setDefaultNodeLabelPaint(darkBlue);
 flowPlot.setDataset(flowDataset);	
-int widthOfSVG = 400;
-int heightOfSVG = 600;
+int widthOfSVG = 500;
+int heightOfSVG = 560;
 
 flowChart.draw(svg2d,new Rectangle2D.Double(0, 0, widthOfSVG, heightOfSVG));
 svgImgJfree.setSVG(svg2d.getSVGElement());
