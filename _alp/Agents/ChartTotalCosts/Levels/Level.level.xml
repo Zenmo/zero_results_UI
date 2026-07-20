@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Presentation>
-	<Rectangle>
-		<Id>1772468484131</Id>
-		<Name><![CDATA[rect_headerKPI]]></Name>
-		<X>0</X>
-		<Y>0</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineWidthCode>v_lineWidth</LineWidthCode>
-		<LineColor>-1644806</LineColor>
-		<LineColorCode>v_lineColor</LineColorCode>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>550</Width>
-		<Height>50</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
 	<Text>
 		<Id>1772468484134</Id>
 		<Name><![CDATA[txt_totalCostsChart]]></Name>
-		<X>275</X>
-		<Y>10</Y>
+		<X>20</X>
+		<Y>18</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -45,19 +17,19 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Totale kosten]]></Text>
+		<Text><![CDATA[TOTALE KOSTEN]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>26</Size>
+			<Name><![CDATA[HolonBLOCK2]]></Name>
+			<Size>20</Size>
 			<Style>1</Style>
 		</Font>
-		<Alignment>CENTER</Alignment>
+		<Alignment>LEFT</Alignment>
 	</Text>
 	<Image>
 		<Id>1772468484137</Id>
 		<Name><![CDATA[i_chartTotalCosts]]></Name>
-		<X>373</X>
-		<Y>10</Y>
+		<X>190</X>
+		<Y>20</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -69,8 +41,8 @@
 		<OnClickCode>uI_Results.f_setInfoText(i_chartTotalCosts, uI_Results.v_infoText.chartTotalCosts, i_chartTotalCosts.getX(), i_chartTotalCosts.getY());</OnClickCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
-		<Width>30</Width>
-		<Height>30</Height>
+		<Width>14</Width>
+		<Height>14</Height>
 		<Rotation>0.0</Rotation>
 		<ImageFiles>
 			<ImageResourceReference>
@@ -83,8 +55,8 @@
 	<Text>
 		<Id>1772618534819</Id>
 		<Name><![CDATA[t_totalCosts]]></Name>
-		<X>500</X>
-		<Y>352</Y>
+		<X>530</X>
+		<Y>322</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -99,7 +71,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
@@ -109,7 +81,7 @@
 		<Id>1772618534821</Id>
 		<Name><![CDATA[txt_totalEnergyCosts]]></Name>
 		<X>50</X>
-		<Y>134</Y>
+		<Y>104</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -124,7 +96,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[Totale energiekosten:]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>16</Size>
 			<Style>1</Style>
 		</Font>
@@ -134,7 +106,7 @@
 		<Id>1772618534825</Id>
 		<Name><![CDATA[txt_CAPEXAndOPEXCosts]]></Name>
 		<X>50</X>
-		<Y>274</Y>
+		<Y>244</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -149,7 +121,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[CAPEX & OPEX]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>16</Size>
 			<Style>1</Style>
 		</Font>
@@ -158,8 +130,8 @@
 	<Text>
 		<Id>1772618534829</Id>
 		<Name><![CDATA[t_totalEnergyCosts]]></Name>
-		<X>500</X>
-		<Y>132</Y>
+		<X>530</X>
+		<Y>102</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -174,7 +146,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
@@ -184,7 +156,7 @@
 		<Id>1772618534831</Id>
 		<Name><![CDATA[line_total]]></Name>
 		<X>20</X>
-		<Y>330</Y>
+		<Y>300</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -204,15 +176,15 @@
 		<BeginArrowStyle>0</BeginArrowStyle>
 		<EndArrowSize>1</EndArrowSize>
 		<EndArrowStyle>0</EndArrowStyle>
-		<Dx>510</Dx>
+		<Dx>540</Dx>
 		<Dy>0</Dy>
 		<Dz>0</Dz>
 	</Line>
 	<Text>
 		<Id>1772618534833</Id>
 		<Name><![CDATA[t_CAPEXAndOPEXCosts]]></Name>
-		<X>500</X>
-		<Y>267</Y>
+		<X>530</X>
+		<Y>237</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -227,7 +199,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>18</Size>
 			<Style>0</Style>
 		</Font>
@@ -237,7 +209,7 @@
 		<Id>1772618534835</Id>
 		<Name><![CDATA[txt_totalConnectionCosts]]></Name>
 		<X>50</X>
-		<Y>204</Y>
+		<Y>174</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -252,7 +224,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[Totale netaansluitingskosten:]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>16</Size>
 			<Style>1</Style>
 		</Font>
@@ -261,7 +233,57 @@
 	<Text>
 		<Id>1772618534837</Id>
 		<Name><![CDATA[t_totalConnectionCosts]]></Name>
-		<X>500</X>
+		<X>530</X>
+		<Y>172</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
+		<Font>
+			<Name><![CDATA[HOLONline2]]></Name>
+			<Size>18</Size>
+			<Style>0</Style>
+		</Font>
+		<Alignment>RIGHT</Alignment>
+	</Text>
+	<Text>
+		<Id>1772618534839</Id>
+		<Name><![CDATA[txt_totalCosts]]></Name>
+		<X>50</X>
+		<Y>324</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[Totale kosten:]]></Text>
+		<Font>
+			<Name><![CDATA[HOLONline2]]></Name>
+			<Size>16</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Text>
+		<Id>1773835943371</Id>
+		<Name><![CDATA[t_previousTotalConnectionCosts]]></Name>
+		<X>530</X>
 		<Y>202</Y>
 		<Label>
 			<X>0</X>
@@ -277,57 +299,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>18</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>RIGHT</Alignment>
-	</Text>
-	<Text>
-		<Id>1772618534839</Id>
-		<Name><![CDATA[txt_totalCosts]]></Name>
-		<X>50</X>
-		<Y>354</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Totale kosten:]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>16</Size>
-			<Style>1</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1773835943371</Id>
-		<Name><![CDATA[t_previousTotalConnectionCosts]]></Name>
-		<X>500</X>
-		<Y>232</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>14</Size>
 			<Style>2</Style>
 		</Font>
@@ -336,8 +308,8 @@
 	<Text>
 		<Id>1773836009592</Id>
 		<Name><![CDATA[t_previousTotalEnergyCosts]]></Name>
-		<X>500</X>
-		<Y>162</Y>
+		<X>530</X>
+		<Y>132</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -352,7 +324,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>14</Size>
 			<Style>2</Style>
 		</Font>
@@ -361,8 +333,8 @@
 	<Text>
 		<Id>1773836028676</Id>
 		<Name><![CDATA[t_previousCAPEXAndOPEXCosts]]></Name>
-		<X>500</X>
-		<Y>297</Y>
+		<X>530</X>
+		<Y>267</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -377,7 +349,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>14</Size>
 			<Style>2</Style>
 		</Font>
@@ -386,8 +358,8 @@
 	<Text>
 		<Id>1773836047199</Id>
 		<Name><![CDATA[t_previousTotalCosts]]></Name>
-		<X>500</X>
-		<Y>382</Y>
+		<X>530</X>
+		<Y>352</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -402,7 +374,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[€ 1,210,563 / yr ]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>14</Size>
 			<Style>2</Style>
 		</Font>
@@ -411,8 +383,8 @@
 	<Group>
 		<Id>1776685383205</Id>
 		<Name><![CDATA[gr_chartTotalSubdivision]]></Name>
-		<X>275</X>
-		<Y>590</Y>
+		<X>290</X>
+		<Y>570</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -429,7 +401,7 @@
 				<Id>1776685383213</Id>
 				<Name><![CDATA[pieChart_totalSubdivision]]></Name>
 				<X>-160</X>
-				<Y>-140</Y>
+				<Y>-160</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -505,7 +477,7 @@
 				<Id>1776685383215</Id>
 				<Name><![CDATA[txt_totalSubdivision]]></Name>
 				<X>0</X>
-				<Y>-170</Y>
+				<Y>-180</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -520,12 +492,40 @@
 				<Color>-16777216</Color>
 				<Text><![CDATA[Totaal verdeling]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>22</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>16</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
 		</Presentation>
 	</Group>
+	<Line>
+		<Id>1784409210886</Id>
+		<Name><![CDATA[line]]></Name>
+		<X>0</X>
+		<Y>50</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0.5</LineWidth>
+		<LineColor>-4144960</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<Dx>580</Dx>
+		<Dy>0</Dy>
+		<Dz>0</Dz>
+	</Line>
 </Presentation>

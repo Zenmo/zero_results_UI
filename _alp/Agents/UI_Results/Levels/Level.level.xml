@@ -3,8 +3,8 @@
 	<Group>
 		<Id>1704296286211</Id>
 		<Name><![CDATA[gr_resultsUIHeader]]></Name>
-		<X>10</X>
-		<Y>-460</Y>
+		<X>12</X>
+		<Y>-457</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -14,16 +14,16 @@
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<XCode>0</XCode>
-		<YCode>-175</YCode>
+		<YCode>-170</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Presentation>
 			<Group>
-				<Id>1782393771501</Id>
+				<Id>1784297007172</Id>
 				<Name><![CDATA[gr_resultsUIHeader_background]]></Name>
-				<X>281</X>
-				<Y>88</Y>
+				<X>279</X>
+				<Y>85</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -36,63 +36,8 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Presentation>
-					<Rectangle>
-						<Id>1782393771503</Id>
-						<Name><![CDATA[rect_header_shadow1]]></Name>
-						<X>-281</X>
-						<Y>-84</Y>
-						<Label>
-							<X>10</X>
-							<Y>10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<ZHeight>10</ZHeight>
-						<LineWidth>0</LineWidth>
-						<LineColor/>
-						<LineMaterial>null</LineMaterial>
-						<LineStyle>SOLID</LineStyle>
-						<Width>76</Width>
-						<Height>84</Height>
-						<Rotation>0.0</Rotation>
-						<FillColor>-1052689</FillColor>
-						<FillColorCode>v_shadowColor</FillColorCode>
-						<FillMaterial>null</FillMaterial>
-					</Rectangle>
 					<RoundedRectangle>
-						<Id>1782393771505</Id>
-						<Name><![CDATA[rect_header_shadow2]]></Name>
-						<X>-281</X>
-						<Y>-43</Y>
-						<Label>
-							<X>10</X>
-							<Y>10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<ZHeight>10</ZHeight>
-						<LineWidth>1</LineWidth>
-						<LineColor/>
-						<LineMaterial>null</LineMaterial>
-						<LineStyle>SOLID</LineStyle>
-						<Width>554</Width>
-						<Height>131</Height>
-						<Rotation>0.0</Rotation>
-						<FillColor>-1052689</FillColor>
-						<FillColorCode>v_shadowColor</FillColorCode>
-						<FillMaterial>null</FillMaterial>
-						<ArcRadius>10</ArcRadius>
-					</RoundedRectangle>
-					<RoundedRectangle>
-						<Id>1782393771507</Id>
+						<Id>1784297007174</Id>
 						<Name><![CDATA[rect_header_background1]]></Name>
 						<X>-279</X>
 						<Y>-85</Y>
@@ -112,7 +57,7 @@
 						<LineColorCode>v_UIModeButtonDefaultStyling.lineColor()</LineColorCode>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>555</Width>
+						<Width>580</Width>
 						<Height>170</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-1</FillColor>
@@ -120,7 +65,7 @@
 						<ArcRadius>10</ArcRadius>
 					</RoundedRectangle>
 					<Rectangle>
-						<Id>1782393771509</Id>
+						<Id>1784297007176</Id>
 						<Name><![CDATA[rect_header_background2]]></Name>
 						<X>-278</X>
 						<Y>-55</Y>
@@ -139,14 +84,14 @@
 						<LineColor/>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>553</Width>
+						<Width>578</Width>
 						<Height>40</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-986896</FillColor>
 						<FillMaterial>null</FillMaterial>
 					</Rectangle>
 					<Rectangle>
-						<Id>1782485594679</Id>
+						<Id>1784297007178</Id>
 						<Name><![CDATA[rect_header_background3]]></Name>
 						<X>-279</X>
 						<Y>-85</Y>
@@ -166,7 +111,7 @@
 						<LineColorCode>v_UIModeButtonDefaultStyling.lineColor()</LineColorCode>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>555</Width>
+						<Width>580</Width>
 						<Height>30</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-1</FillColor>
@@ -175,10 +120,10 @@
 				</Presentation>
 			</Group>
 			<Group>
-				<Id>1782393353563</Id>
+				<Id>1784297007568</Id>
 				<Name><![CDATA[gr_chartSelectionButtons]]></Name>
-				<X>281</X>
-				<Y>53</Y>
+				<X>279</X>
+				<Y>50</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -192,7 +137,7 @@
 				<Rotation>0.0</Rotation>
 				<Presentation>
 					<RoundedRectangle>
-						<Id>1782393353565</Id>
+						<Id>1784297007570</Id>
 						<Name><![CDATA[button_chart1]]></Name>
 						<X>-269</X>
 						<Y>-10</Y>
@@ -220,7 +165,7 @@
 						<ArcRadius>10</ArcRadius>
 					</RoundedRectangle>
 					<Text>
-						<Id>1782393353567</Id>
+						<Id>1784297007572</Id>
 						<Name><![CDATA[txt_header_chartbutton1]]></Name>
 						<X>-227</X>
 						<Y>-4</Y>
@@ -245,7 +190,7 @@
 						<Alignment>CENTER</Alignment>
 					</Text>
 					<RoundedRectangle>
-						<Id>1782393353569</Id>
+						<Id>1784297007574</Id>
 						<Name><![CDATA[button_chart2]]></Name>
 						<X>-180</X>
 						<Y>-10</Y>
@@ -273,7 +218,7 @@
 						<ArcRadius>10</ArcRadius>
 					</RoundedRectangle>
 					<Text>
-						<Id>1782393353571</Id>
+						<Id>1784297007576</Id>
 						<Name><![CDATA[txt_header_chartbutton2]]></Name>
 						<X>-138</X>
 						<Y>-4</Y>
@@ -298,7 +243,7 @@
 						<Alignment>CENTER</Alignment>
 					</Text>
 					<RoundedRectangle>
-						<Id>1782393353573</Id>
+						<Id>1784297007578</Id>
 						<Name><![CDATA[button_chart3]]></Name>
 						<X>-90</X>
 						<Y>-10</Y>
@@ -326,7 +271,7 @@
 						<ArcRadius>10</ArcRadius>
 					</RoundedRectangle>
 					<Text>
-						<Id>1782393353575</Id>
+						<Id>1784297007580</Id>
 						<Name><![CDATA[txt_header_chartbutton3]]></Name>
 						<X>-48</X>
 						<Y>-4</Y>
@@ -351,7 +296,7 @@
 						<Alignment>CENTER</Alignment>
 					</Text>
 					<RoundedRectangle>
-						<Id>1782393353577</Id>
+						<Id>1784297007582</Id>
 						<Name><![CDATA[button_chart4]]></Name>
 						<X>1</X>
 						<Y>-10</Y>
@@ -379,7 +324,7 @@
 						<ArcRadius>10</ArcRadius>
 					</RoundedRectangle>
 					<Text>
-						<Id>1782393353579</Id>
+						<Id>1784297007584</Id>
 						<Name><![CDATA[txt_header_chartbutton4]]></Name>
 						<X>43</X>
 						<Y>-4</Y>
@@ -404,7 +349,7 @@
 						<Alignment>CENTER</Alignment>
 					</Text>
 					<RoundedRectangle>
-						<Id>1782393353583</Id>
+						<Id>1784297007586</Id>
 						<Name><![CDATA[button_chart5]]></Name>
 						<X>90</X>
 						<Y>-10</Y>
@@ -432,7 +377,7 @@
 						<ArcRadius>10</ArcRadius>
 					</RoundedRectangle>
 					<Text>
-						<Id>1782393353587</Id>
+						<Id>1784297007588</Id>
 						<Name><![CDATA[txt_header_chartbutton5]]></Name>
 						<X>132</X>
 						<Y>-4</Y>
@@ -457,7 +402,7 @@
 						<Alignment>CENTER</Alignment>
 					</Text>
 					<RoundedRectangle>
-						<Id>1782393353581</Id>
+						<Id>1784297007590</Id>
 						<Name><![CDATA[button_chart6]]></Name>
 						<X>180</X>
 						<Y>-10</Y>
@@ -485,7 +430,7 @@
 						<ArcRadius>10</ArcRadius>
 					</RoundedRectangle>
 					<Text>
-						<Id>1782393353585</Id>
+						<Id>1784297007592</Id>
 						<Name><![CDATA[txt_header_chartbutton6]]></Name>
 						<X>222</X>
 						<Y>-4</Y>
@@ -512,10 +457,10 @@
 				</Presentation>
 			</Group>
 			<Group>
-				<Id>1782393736316</Id>
+				<Id>1784297008703</Id>
 				<Name><![CDATA[gr_resultsUIModeSelectionButtons]]></Name>
-				<X>281</X>
-				<Y>18</Y>
+				<X>279</X>
+				<Y>15</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -529,7 +474,7 @@
 				<Rotation>0.0</Rotation>
 				<Presentation>
 					<Rectangle>
-						<Id>1782393736318</Id>
+						<Id>1784297008705</Id>
 						<Name><![CDATA[button_resultsUIMode0]]></Name>
 						<X>-279</X>
 						<Y>-15</Y>
@@ -549,16 +494,16 @@
 						<LineColor>-16744320</LineColor>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>185</Width>
+						<Width>193.33</Width>
 						<Height>30</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-16744320</FillColor>
 						<FillMaterial>null</FillMaterial>
 					</Rectangle>
 					<Rectangle>
-						<Id>1782393736320</Id>
+						<Id>1784297008707</Id>
 						<Name><![CDATA[button_resultsUIMode2]]></Name>
-						<X>91</X>
+						<X>107.66</X>
 						<Y>-15</Y>
 						<Label>
 							<X>10</X>
@@ -576,16 +521,16 @@
 						<LineColor>-16744320</LineColor>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>185</Width>
+						<Width>193.33</Width>
 						<Height>30</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-1</FillColor>
 						<FillMaterial>null</FillMaterial>
 					</Rectangle>
 					<Text>
-						<Id>1782393736324</Id>
+						<Id>1784297008709</Id>
 						<Name><![CDATA[txt_resultsUIMode0]]></Name>
-						<X>-175</X>
+						<X>-167</X>
 						<Y>-7</Y>
 						<Label>
 							<X>0</X>
@@ -608,10 +553,10 @@
 						<Alignment>CENTER</Alignment>
 					</Text>
 					<Text>
-						<Id>1782393736326</Id>
+						<Id>1784297008711</Id>
 						<Name><![CDATA[txt_resultsUIMode2]]></Name>
-						<X>183</X>
-						<Y>-6</Y>
+						<X>220</X>
+						<Y>-7</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -633,9 +578,9 @@
 						<Alignment>CENTER</Alignment>
 					</Text>
 					<Rectangle>
-						<Id>1782393736328</Id>
+						<Id>1784297008713</Id>
 						<Name><![CDATA[button_resultsUIMode1]]></Name>
-						<X>-94</X>
+						<X>-85.67</X>
 						<Y>-15</Y>
 						<Label>
 							<X>10</X>
@@ -653,17 +598,17 @@
 						<LineColor>-16744320</LineColor>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>185</Width>
+						<Width>193.33</Width>
 						<Height>30</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-1</FillColor>
 						<FillMaterial>null</FillMaterial>
 					</Rectangle>
 					<Text>
-						<Id>1782393736330</Id>
+						<Id>1784297008715</Id>
 						<Name><![CDATA[txt_resultsUIMode1]]></Name>
-						<X>7</X>
-						<Y>-6</Y>
+						<X>25</X>
+						<Y>-7</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -685,9 +630,9 @@
 						<Alignment>CENTER</Alignment>
 					</Text>
 					<Image>
-						<Id>1782393736334</Id>
+						<Id>1784297008717</Id>
 						<Name><![CDATA[image_button_resultsUIMode0]]></Name>
-						<X>-245</X>
+						<X>-230</X>
 						<Y>-10</Y>
 						<Label>
 							<X>0</X>
@@ -699,41 +644,41 @@
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
-						<Width>25</Width>
-						<Height>22.043</Height>
+						<Width>20</Width>
+						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_electricity_white.png</ClassName>
+								<ClassName>electricity-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_electricity.png</ClassName>
+								<ClassName>electricity-icon_black.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_economic_white.png</ClassName>
+								<ClassName>euro_coin-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_economic_black.png</ClassName>
+								<ClassName>euro_coin-icon_black.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_earth_white.png</ClassName>
+								<ClassName>sustainability-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_earth.png</ClassName>
+								<ClassName>sustainability-icon_black.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>
 					</Image>
 					<Image>
-						<Id>1782478160430</Id>
+						<Id>1784297008719</Id>
 						<Name><![CDATA[image_button_resultsUIMode1]]></Name>
-						<X>-80</X>
+						<X>-44</X>
 						<Y>-10</Y>
 						<Label>
 							<X>0</X>
@@ -745,41 +690,41 @@
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
-						<Width>25</Width>
-						<Height>22.043</Height>
+						<Width>20</Width>
+						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_electricity_white.png</ClassName>
+								<ClassName>electricity-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_electricity.png</ClassName>
+								<ClassName>electricity-icon_black.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_economic_white.png</ClassName>
+								<ClassName>euro_coin-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_economic_black.png</ClassName>
+								<ClassName>euro_coin-icon_black.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_earth_white.png</ClassName>
+								<ClassName>sustainability-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_earth.png</ClassName>
+								<ClassName>sustainability-icon_black.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>
 					</Image>
 					<Image>
-						<Id>1782478162469</Id>
+						<Id>1784297008721</Id>
 						<Name><![CDATA[image_button_resultsUIMode2]]></Name>
-						<X>95</X>
+						<X>135</X>
 						<Y>-10</Y>
 						<Label>
 							<X>0</X>
@@ -791,33 +736,33 @@
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
-						<Width>25</Width>
-						<Height>22.043</Height>
+						<Width>20</Width>
+						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<ImageFiles>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_electricity_white.png</ClassName>
+								<ClassName>electricity-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_electricity.png</ClassName>
+								<ClassName>electricity-icon_black.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_economic_white.png</ClassName>
+								<ClassName>euro_coin-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_economic_black.png</ClassName>
+								<ClassName>euro_coin-icon_black.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_earth_white.png</ClassName>
+								<ClassName>sustainability-icon_white.png</ClassName>
 							</ImageResourceReference>
 							<ImageResourceReference>
 								<PackageName>digital_twin_results</PackageName>
-								<ClassName>icon_earth.png</ClassName>
+								<ClassName>sustainability-icon_black.png</ClassName>
 							</ImageResourceReference>
 						</ImageFiles>
 						<OriginalSize>false</OriginalSize>
@@ -1529,8 +1474,8 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1727707192290</Id>
 		<Name><![CDATA[checkbox_KPISummary]]></Name>
-		<X>-95</X>
-		<Y>-30</Y>
+		<X>430</X>
+		<Y>-38</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -1566,8 +1511,8 @@ else{
 	<Group>
 		<Id>1742222787633</Id>
 		<Name><![CDATA[gr_selectedObjectDisplay]]></Name>
-		<X>280</X>
-		<Y>10</Y>
+		<X>0</X>
+		<Y>0</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1576,15 +1521,17 @@ else{
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>0</XCode>
+		<YCode>0</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Presentation>
 			<Rectangle>
-				<Id>1742210656094</Id>
+				<Id>1784284243936</Id>
 				<Name><![CDATA[rect_selectedObjectDisplayBar]]></Name>
-				<X>-225</X>
-				<Y>-10</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1600,17 +1547,17 @@ else{
 				<LineColor>10395331</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>450</Width>
+				<Width>560</Width>
 				<Height>50</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor>13684981</FillColor>
 				<FillMaterial>null</FillMaterial>
 			</Rectangle>
 			<Text>
-				<Id>1742210656098</Id>
+				<Id>1784284243975</Id>
 				<Name><![CDATA[t_selectedObjectDisplayText]]></Name>
-				<X>0</X>
-				<Y>10</Y>
+				<X>290</X>
+				<Y>60</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1619,6 +1566,7 @@ else{
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<VisibleCode>!checkbox_KPISummary.isSelected()</VisibleCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
@@ -1626,7 +1574,7 @@ else{
 				<Text><![CDATA[Je bekijkt nu: profielen van het volledige gebied]]></Text>
 				<TextCode>"Je bekijkt nu " + v_selectedChartText + " van: " + v_selectedObjectText</TextCode>
 				<Font>
-					<Name><![CDATA[Centaur]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
 					<Style>0</Style>
 				</Font>

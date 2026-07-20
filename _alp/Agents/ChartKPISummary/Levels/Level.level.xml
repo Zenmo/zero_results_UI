@@ -1,60 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Presentation>
-	<Oval>
-		<Id>1726827568300</Id>
-		<Name><![CDATA[ovalSelfsufficiency]]></Name>
-		<X>180</X>
-		<Y>650</Y>
-		<Label>
-			<X>0</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>4</LineWidth>
-		<LineColor>-9309071</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<RadiusX>45</RadiusX>
-		<RadiusY>40</RadiusY>
-		<Rotation>0.0</Rotation>
-		<FillColor>-5440596</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Oval>
-	<Oval>
-		<Id>1726827568315</Id>
-		<Name><![CDATA[ovalGridload]]></Name>
-		<X>396</X>
-		<Y>650</Y>
-		<Label>
-			<X>0</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>4</LineWidth>
-		<LineColor>-24454</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<RadiusX>45</RadiusX>
-		<RadiusY>40</RadiusY>
-		<Rotation>0.0</Rotation>
-		<FillColor>-74027</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Oval>
-	<Rectangle>
-		<Id>1726829026455</Id>
-		<Name><![CDATA[rect_headerKPI]]></Name>
+	<RoundedRectangle>
+		<Id>1784399949419</Id>
+		<Name><![CDATA[rect_backgroundKPISummary]]></Name>
 		<X>0</X>
 		<Y>0</Y>
 		<Label>
@@ -64,27 +12,26 @@
 		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineWidthCode>v_lineWidth</LineWidthCode>
-		<LineColor>-1644806</LineColor>
-		<LineColorCode>v_lineColor</LineColorCode>
+		<LineWidth>0.5</LineWidth>
+		<LineColor>-16744320</LineColor>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<Width>550</Width>
-		<Height>50</Height>
+		<Width>580</Width>
+		<Height>700</Height>
 		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
+		<FillColor>-1</FillColor>
 		<FillMaterial>null</FillMaterial>
-	</Rectangle>
+		<ArcRadius>10</ArcRadius>
+	</RoundedRectangle>
 	<Text>
 		<Id>1726825366299</Id>
 		<Name><![CDATA[txt_KPISummary]]></Name>
-		<X>275</X>
-		<Y>10</Y>
+		<X>20</X>
+		<Y>18</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -97,19 +44,19 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Color>-16777216</Color>
-		<Text><![CDATA[Samenvatting energiestromen]]></Text>
+		<Text><![CDATA[SAMENVATTING ENERGIESTROMEN]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>26</Size>
+			<Name><![CDATA[HolonBLOCK2]]></Name>
+			<Size>20</Size>
 			<Style>1</Style>
 		</Font>
-		<Alignment>CENTER</Alignment>
+		<Alignment>LEFT</Alignment>
 	</Text>
 	<Group>
 		<Id>1726828172186</Id>
 		<Name><![CDATA[gr_exitSummaryKPI]]></Name>
-		<X>530</X>
-		<Y>13</Y>
+		<X>540</X>
+		<Y>10</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -123,11 +70,11 @@
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Presentation>
-			<Rectangle>
-				<Id>1726828038651</Id>
+			<RoundedRectangle>
+				<Id>1784399702436</Id>
 				<Name><![CDATA[rect_exitKPI]]></Name>
-				<X>-6</X>
-				<Y>-13</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -135,26 +82,26 @@
 				<PublicFlag>true</PublicFlag>
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineWidthCode>v_lineWidth</LineWidthCode>
-				<LineColor>-12566464</LineColor>
+				<LineWidth>0</LineWidth>
+				<LineColor/>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>25</Width>
-				<Height>25</Height>
+				<Width>30</Width>
+				<Height>30</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-1</FillColor>
+				<FillColor>1693956562</FillColor>
 				<FillMaterial>null</FillMaterial>
-			</Rectangle>
+				<ArcRadius>8</ArcRadius>
+			</RoundedRectangle>
 			<Line>
 				<Id>1726828065504</Id>
 				<Name><![CDATA[line_exitKPI1]]></Name>
-				<X>-2</X>
-				<Y>-9</Y>
+				<X>10</X>
+				<Y>10</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -167,22 +114,22 @@
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
 				<LineWidth>2</LineWidth>
-				<LineColor>-8355712</LineColor>
+				<LineColor>-1834917</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
 				<BeginArrowSize>1</BeginArrowSize>
 				<BeginArrowStyle>0</BeginArrowStyle>
 				<EndArrowSize>1</EndArrowSize>
 				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>18</Dx>
-				<Dy>17</Dy>
+				<Dx>10</Dx>
+				<Dy>10</Dy>
 				<Dz>0</Dz>
 			</Line>
 			<Line>
 				<Id>1726828076521</Id>
 				<Name><![CDATA[line_exitKPI2]]></Name>
-				<X>15</X>
-				<Y>-9</Y>
+				<X>20</X>
+				<Y>10</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -195,15 +142,15 @@
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
 				<LineWidth>2</LineWidth>
-				<LineColor>-8355712</LineColor>
+				<LineColor>-1834917</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
 				<BeginArrowSize>1</BeginArrowSize>
 				<BeginArrowStyle>0</BeginArrowStyle>
 				<EndArrowSize>1</EndArrowSize>
 				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>-17</Dx>
-				<Dy>17</Dy>
+				<Dx>-10</Dx>
+				<Dy>10</Dy>
 				<Dz>0</Dz>
 			</Line>
 		</Presentation>
@@ -211,8 +158,8 @@
 	<Text>
 		<Id>1726830241670</Id>
 		<Name><![CDATA[t_totals]]></Name>
-		<X>275</X>
-		<Y>100</Y>
+		<X>290</X>
+		<Y>65</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -227,7 +174,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[Jaar totalen energie (MWh)]]></Text>
 		<Font>
-			<Name><![CDATA[Arial]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>20</Size>
 			<Style>0</Style>
 		</Font>
@@ -237,7 +184,7 @@
 		<Id>1726837161070</Id>
 		<Name><![CDATA[gr_totalsSeperate]]></Name>
 		<X>185</X>
-		<Y>400</Y>
+		<Y>360</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -251,10 +198,10 @@
 		<Rotation>0.0</Rotation>
 		<Presentation>
 			<Group>
-				<Id>1726828699095</Id>
+				<Id>1784402975737</Id>
 				<Name><![CDATA[gr_h2KPI]]></Name>
-				<X>100</X>
-				<Y>60</Y>
+				<X>-115</X>
+				<Y>30</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -268,10 +215,10 @@
 				<Rotation>0.0</Rotation>
 				<Presentation>
 					<Text>
-						<Id>1726821129365</Id>
+						<Id>1784402975739</Id>
 						<Name><![CDATA[txt_h2consumtption2]]></Name>
-						<X>-155</X>
-						<Y>-20</Y>
+						<X>60</X>
+						<Y>25</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -286,17 +233,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Aandeel waterstof]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>20</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726821129369</Id>
+						<Id>1784402975741</Id>
 						<Name><![CDATA[t_h2consumption_pct]]></Name>
-						<X>90</X>
-						<Y>-25</Y>
+						<X>395</X>
+						<Y>22</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -311,17 +258,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[10.0 %]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>20</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726821129371</Id>
+						<Id>1784402975743</Id>
 						<Name><![CDATA[t_previousH2Consumption_pct]]></Name>
-						<X>95</X>
-						<Y>0</Y>
+						<X>395</X>
+						<Y>45</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -336,17 +283,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[-]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
-							<Size>14</Size>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
+							<Size>10</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Group>
-						<Id>1726821250522</Id>
+						<Id>1784402975745</Id>
 						<Name><![CDATA[gr_H2image]]></Name>
-						<X>-194</X>
-						<Y>-10</Y>
+						<X>15</X>
+						<Y>15</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -359,40 +306,14 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Presentation>
-							<Oval>
-								<Id>1726821250524</Id>
-								<Name><![CDATA[ovalH2]]></Name>
-								<X>-1</X>
-								<Y>-1</Y>
+							<RoundedRectangle>
+								<Id>1784404255126</Id>
+								<Name><![CDATA[rect_backgroundGasIcon2]]></Name>
+								<X>0</X>
+								<Y>0</Y>
 								<Label>
-									<X>0</X>
-									<Y>0</Y>
-								</Label>
-								<PublicFlag>true</PublicFlag>
-								<PresentationFlag>true</PresentationFlag>
-								<ShowLabel>false</ShowLabel>
-								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-								<EmbeddedIcon>false</EmbeddedIcon>
-								<Z>0</Z>
-								<ZHeight>10</ZHeight>
-								<LineWidth>2</LineWidth>
-								<LineColor>-657931</LineColor>
-								<LineMaterial>null</LineMaterial>
-								<LineStyle>SOLID</LineStyle>
-								<RadiusX>20</RadiusX>
-								<RadiusY>40</RadiusY>
-								<Rotation>0.0</Rotation>
-								<FillColor>-7876885</FillColor>
-								<FillMaterial>null</FillMaterial>
-							</Oval>
-							<Text>
-								<Id>1726821250526</Id>
-								<Name><![CDATA[txt_h2]]></Name>
-								<X>-9</X>
-								<Y>-10</Y>
-								<Label>
-									<X>0</X>
-									<Y>-10</Y>
+									<X>10</X>
+									<Y>10</Y>
 								</Label>
 								<PublicFlag>true</PublicFlag>
 								<PresentationFlag>true</PresentationFlag>
@@ -400,23 +321,51 @@
 								<DrawMode>SHAPE_DRAW_2D</DrawMode>
 								<EmbeddedIcon>false</EmbeddedIcon>
 								<Z>0</Z>
+								<ZHeight>10</ZHeight>
+								<LineWidth>0</LineWidth>
+								<LineColor/>
+								<LineMaterial>null</LineMaterial>
+								<LineStyle>SOLID</LineStyle>
+								<Width>30</Width>
+								<Height>30</Height>
 								<Rotation>0.0</Rotation>
-								<Color>-16777216</Color>
-								<Text><![CDATA[H2]]></Text>
-								<Font>
-									<Name><![CDATA[SansSerif]]></Name>
-									<Size>14</Size>
-									<Style>1</Style>
-								</Font>
-								<Alignment>LEFT</Alignment>
-							</Text>
+								<FillColor>-7876870</FillColor>
+								<FillMaterial>null</FillMaterial>
+								<ArcRadius>8</ArcRadius>
+							</RoundedRectangle>
+							<Image>
+								<Id>1784404255181</Id>
+								<Name><![CDATA[im_gas2]]></Name>
+								<X>7.5</X>
+								<Y>7.5</Y>
+								<Label>
+									<X>0</X>
+									<Y>-10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>true</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<Width>15</Width>
+								<Height>15</Height>
+								<Rotation>0.0</Rotation>
+								<ImageFiles>
+									<ImageResourceReference>
+										<PackageName>digital_twin_results</PackageName>
+										<ClassName>icon_heat.png</ClassName>
+									</ImageResourceReference>
+								</ImageFiles>
+								<OriginalSize>false</OriginalSize>
+							</Image>
 						</Presentation>
 					</Group>
 					<Group>
-						<Id>1726825004466</Id>
+						<Id>1784402975751</Id>
 						<Name><![CDATA[arrows_h2]]></Name>
-						<X>71</X>
-						<Y>-11</Y>
+						<X>415</X>
+						<Y>32</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -430,7 +379,7 @@
 						<Rotation>0.0</Rotation>
 						<Presentation>
 							<Image>
-								<Id>1726825004468</Id>
+								<Id>1784402975753</Id>
 								<Name><![CDATA[arrow_down_red_h2]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -456,7 +405,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Image>
-								<Id>1726825004470</Id>
+								<Id>1784402975755</Id>
 								<Name><![CDATA[arrow_up_green_h2]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -482,7 +431,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Line>
-								<Id>1726840738226</Id>
+								<Id>1784402975757</Id>
 								<Name><![CDATA[line_h2]]></Name>
 								<X>-11</X>
 								<Y>-1</Y>
@@ -511,13 +460,40 @@
 							</Line>
 						</Presentation>
 					</Group>
+					<RoundedRectangle>
+						<Id>1784404663500</Id>
+						<Name><![CDATA[rect_backgroundH2KPI]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor>-7876870</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>440</Width>
+						<Height>60</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>847761146</FillColor>
+						<FillMaterial>null</FillMaterial>
+						<ArcRadius>10</ArcRadius>
+					</RoundedRectangle>
 				</Presentation>
 			</Group>
 			<Group>
-				<Id>1726828709010</Id>
+				<Id>1784402976239</Id>
 				<Name><![CDATA[gr_gasKPI]]></Name>
-				<X>100</X>
-				<Y>-60</Y>
+				<X>-115</X>
+				<Y>-110</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -531,10 +507,10 @@
 				<Rotation>0.0</Rotation>
 				<Presentation>
 					<Group>
-						<Id>1726820669756</Id>
+						<Id>1784402976241</Id>
 						<Name><![CDATA[gr_gasImage]]></Name>
-						<X>-195</X>
-						<Y>-11</Y>
+						<X>-65</X>
+						<Y>-305</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -547,37 +523,38 @@
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Presentation>
-							<Oval>
-								<Id>1726820669758</Id>
-								<Name><![CDATA[ovalGas]]></Name>
-								<X>0</X>
-								<Y>0</Y>
+							<RoundedRectangle>
+								<Id>1784403161594</Id>
+								<Name><![CDATA[rect_backgroundGasIcon]]></Name>
+								<X>80</X>
+								<Y>320</Y>
 								<Label>
-									<X>0</X>
-									<Y>0</Y>
+									<X>10</X>
+									<Y>10</Y>
 								</Label>
 								<PublicFlag>true</PublicFlag>
 								<PresentationFlag>true</PresentationFlag>
 								<ShowLabel>false</ShowLabel>
-								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<DrawMode>SHAPE_DRAW_2D</DrawMode>
 								<EmbeddedIcon>false</EmbeddedIcon>
 								<Z>0</Z>
 								<ZHeight>10</ZHeight>
-								<LineWidth>2</LineWidth>
-								<LineColor>-657931</LineColor>
+								<LineWidth>0</LineWidth>
+								<LineColor/>
 								<LineMaterial>null</LineMaterial>
 								<LineStyle>SOLID</LineStyle>
-								<RadiusX>20</RadiusX>
-								<RadiusY>40</RadiusY>
+								<Width>30</Width>
+								<Height>30</Height>
 								<Rotation>0.0</Rotation>
 								<FillColor>-2117492</FillColor>
 								<FillMaterial>null</FillMaterial>
-							</Oval>
+								<ArcRadius>8</ArcRadius>
+							</RoundedRectangle>
 							<Image>
-								<Id>1726820669760</Id>
-								<Name><![CDATA[image10]]></Name>
-								<X>-13</X>
-								<Y>-12</Y>
+								<Id>1784403161648</Id>
+								<Name><![CDATA[im_gas]]></Name>
+								<X>87.5</X>
+								<Y>327.5</Y>
 								<Label>
 									<X>0</X>
 									<Y>-10</Y>
@@ -588,13 +565,13 @@
 								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 								<EmbeddedIcon>false</EmbeddedIcon>
 								<Z>0</Z>
-								<Width>28</Width>
-								<Height>24</Height>
+								<Width>15</Width>
+								<Height>15</Height>
 								<Rotation>0.0</Rotation>
 								<ImageFiles>
 									<ImageResourceReference>
 										<PackageName>digital_twin_results</PackageName>
-										<ClassName>noun-fire-2429630.png</ClassName>
+										<ClassName>icon_heat.png</ClassName>
 									</ImageResourceReference>
 								</ImageFiles>
 								<OriginalSize>false</OriginalSize>
@@ -602,10 +579,10 @@
 						</Presentation>
 					</Group>
 					<Text>
-						<Id>1726820691528</Id>
+						<Id>1784402976247</Id>
 						<Name><![CDATA[t_gasconsumption_pct]]></Name>
-						<X>90</X>
-						<Y>-25</Y>
+						<X>395</X>
+						<Y>22</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -620,17 +597,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[10.0 %]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>20</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726820864648</Id>
+						<Id>1784402976249</Id>
 						<Name><![CDATA[txt_gasconsumtption]]></Name>
-						<X>-155</X>
-						<Y>-20</Y>
+						<X>60</X>
+						<Y>25</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -645,17 +622,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Aandeel gas:]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>20</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726821078211</Id>
+						<Id>1784402976251</Id>
 						<Name><![CDATA[t_previousGasConsumption_pct]]></Name>
-						<X>95</X>
-						<Y>0</Y>
+						<X>395</X>
+						<Y>45</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -670,17 +647,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[-]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
-							<Size>14</Size>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
+							<Size>10</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Group>
-						<Id>1726824997024</Id>
+						<Id>1784402976253</Id>
 						<Name><![CDATA[arrows_gas]]></Name>
-						<X>71</X>
-						<Y>-11</Y>
+						<X>415</X>
+						<Y>32</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -694,7 +671,7 @@
 						<Rotation>0.0</Rotation>
 						<Presentation>
 							<Image>
-								<Id>1726824997026</Id>
+								<Id>1784402976255</Id>
 								<Name><![CDATA[arrow_up_red_gas]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -720,7 +697,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Image>
-								<Id>1726824997028</Id>
+								<Id>1784402976257</Id>
 								<Name><![CDATA[arrow_down_green_gas]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -746,7 +723,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Line>
-								<Id>1726840717861</Id>
+								<Id>1784402976259</Id>
 								<Name><![CDATA[line_gas]]></Name>
 								<X>-11</X>
 								<Y>-1</Y>
@@ -775,13 +752,40 @@
 							</Line>
 						</Presentation>
 					</Group>
+					<RoundedRectangle>
+						<Id>1784402988381</Id>
+						<Name><![CDATA[rect_backgroundGasKPI]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor>-2117492</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>440</Width>
+						<Height>60</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>853520524</FillColor>
+						<FillMaterial>null</FillMaterial>
+						<ArcRadius>10</ArcRadius>
+					</RoundedRectangle>
 				</Presentation>
 			</Group>
 			<Group>
-				<Id>1726828720169</Id>
+				<Id>1784402979085</Id>
 				<Name><![CDATA[gr_electricityKPI]]></Name>
-				<X>100</X>
-				<Y>-120</Y>
+				<X>-115</X>
+				<Y>-180</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -794,11 +798,38 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Presentation>
+					<RoundedRectangle>
+						<Id>1784402979087</Id>
+						<Name><![CDATA[rect_backgroundElectricityKPI]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor>-212480</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>440</Width>
+						<Height>60</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>855425536</FillColor>
+						<FillMaterial>null</FillMaterial>
+						<ArcRadius>10</ArcRadius>
+					</RoundedRectangle>
 					<Text>
-						<Id>1726820525928</Id>
+						<Id>1784402979089</Id>
 						<Name><![CDATA[t_elecConsumption_pct]]></Name>
-						<X>90</X>
-						<Y>-25</Y>
+						<X>395</X>
+						<Y>22</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -813,88 +844,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[10.0 %]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>20</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
-					<Group>
-						<Id>1726820669719</Id>
-						<Name><![CDATA[gr_electricityImage]]></Name>
-						<X>-195</X>
-						<Y>-11</Y>
-						<Label>
-							<X>10</X>
-							<Y>0</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Rotation>0.0</Rotation>
-						<Presentation>
-							<Oval>
-								<Id>1726820669721</Id>
-								<Name><![CDATA[ovalElectricity]]></Name>
-								<X>0</X>
-								<Y>0</Y>
-								<Label>
-									<X>0</X>
-									<Y>0</Y>
-								</Label>
-								<PublicFlag>true</PublicFlag>
-								<PresentationFlag>true</PresentationFlag>
-								<ShowLabel>false</ShowLabel>
-								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-								<EmbeddedIcon>false</EmbeddedIcon>
-								<Z>0</Z>
-								<ZHeight>10</ZHeight>
-								<LineWidth>2</LineWidth>
-								<LineColor>-657931</LineColor>
-								<LineMaterial>null</LineMaterial>
-								<LineStyle>SOLID</LineStyle>
-								<RadiusX>20</RadiusX>
-								<RadiusY>40</RadiusY>
-								<Rotation>0.0</Rotation>
-								<FillColor>-1331</FillColor>
-								<FillMaterial>null</FillMaterial>
-							</Oval>
-							<Image>
-								<Id>1726820669723</Id>
-								<Name><![CDATA[image3]]></Name>
-								<X>-13</X>
-								<Y>-11</Y>
-								<Label>
-									<X>0</X>
-									<Y>-10</Y>
-								</Label>
-								<PublicFlag>true</PublicFlag>
-								<PresentationFlag>true</PresentationFlag>
-								<ShowLabel>false</ShowLabel>
-								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-								<EmbeddedIcon>false</EmbeddedIcon>
-								<Z>0</Z>
-								<Width>28</Width>
-								<Height>24</Height>
-								<Rotation>0.0</Rotation>
-								<ImageFiles>
-									<ImageResourceReference>
-										<PackageName>digital_twin_results</PackageName>
-										<ClassName>noun-electricity-3408805.png</ClassName>
-									</ImageResourceReference>
-								</ImageFiles>
-								<OriginalSize>false</OriginalSize>
-							</Image>
-						</Presentation>
-					</Group>
 					<Text>
-						<Id>1726820669775</Id>
+						<Id>1784402979091</Id>
 						<Name><![CDATA[txt_electricityconsumtption]]></Name>
-						<X>-155</X>
-						<Y>-20</Y>
+						<X>60</X>
+						<Y>25</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -909,17 +869,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Aandeel elektriciteit]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>20</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726820949515</Id>
+						<Id>1784402979093</Id>
 						<Name><![CDATA[t_previousElectricityConsumption_pct]]></Name>
-						<X>95</X>
-						<Y>0</Y>
+						<X>395</X>
+						<Y>45</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -934,17 +894,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[-]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
-							<Size>14</Size>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
+							<Size>10</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Group>
-						<Id>1726824976582</Id>
+						<Id>1784402979095</Id>
 						<Name><![CDATA[arrows_electricity]]></Name>
-						<X>71</X>
-						<Y>-11</Y>
+						<X>415</X>
+						<Y>32</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -958,7 +918,7 @@
 						<Rotation>0.0</Rotation>
 						<Presentation>
 							<Image>
-								<Id>1726824852925</Id>
+								<Id>1784402979097</Id>
 								<Name><![CDATA[arrow_down_red_electricity]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -984,7 +944,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Image>
-								<Id>1726824907243</Id>
+								<Id>1784402979099</Id>
 								<Name><![CDATA[arrow_up_green_electricity]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -1010,7 +970,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Line>
-								<Id>1726840705698</Id>
+								<Id>1784402979101</Id>
 								<Name><![CDATA[line_electricity]]></Name>
 								<X>-11</X>
 								<Y>-1</Y>
@@ -1039,13 +999,85 @@
 							</Line>
 						</Presentation>
 					</Group>
+					<Group>
+						<Id>1784402979103</Id>
+						<Name><![CDATA[gr_electricityImage]]></Name>
+						<X>15</X>
+						<Y>15</Y>
+						<Label>
+							<X>10</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Presentation>
+							<RoundedRectangle>
+								<Id>1784402979105</Id>
+								<Name><![CDATA[rect_backgroundElectricityIcon]]></Name>
+								<X>0</X>
+								<Y>0</Y>
+								<Label>
+									<X>10</X>
+									<Y>10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>true</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<ZHeight>10</ZHeight>
+								<LineWidth>0</LineWidth>
+								<LineColor/>
+								<LineMaterial>null</LineMaterial>
+								<LineStyle>SOLID</LineStyle>
+								<Width>30</Width>
+								<Height>30</Height>
+								<Rotation>0.0</Rotation>
+								<FillColor>-212480</FillColor>
+								<FillMaterial>null</FillMaterial>
+								<ArcRadius>8</ArcRadius>
+							</RoundedRectangle>
+							<Image>
+								<Id>1784402979107</Id>
+								<Name><![CDATA[im_electricity]]></Name>
+								<X>7.5</X>
+								<Y>7.5</Y>
+								<Label>
+									<X>0</X>
+									<Y>-10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>true</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<Width>15</Width>
+								<Height>15</Height>
+								<Rotation>0.0</Rotation>
+								<ImageFiles>
+									<ImageResourceReference>
+										<PackageName>digital_twin_results</PackageName>
+										<ClassName>electricity-icon_black.png</ClassName>
+									</ImageResourceReference>
+								</ImageFiles>
+								<OriginalSize>false</OriginalSize>
+							</Image>
+						</Presentation>
+					</Group>
 				</Presentation>
 			</Group>
 			<Group>
-				<Id>1726828731024</Id>
+				<Id>1784402979802</Id>
 				<Name><![CDATA[gr_FFKPI]]></Name>
-				<X>100</X>
-				<Y>0</Y>
+				<X>-115</X>
+				<Y>-40</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -1058,11 +1090,83 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Presentation>
+					<Group>
+						<Id>1784403709614</Id>
+						<Name><![CDATA[gr_FFImage]]></Name>
+						<X>15</X>
+						<Y>15</Y>
+						<Label>
+							<X>10</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Presentation>
+							<RoundedRectangle>
+								<Id>1784403793856</Id>
+								<Name><![CDATA[rect_backgroundGasIcon1]]></Name>
+								<X>0</X>
+								<Y>0</Y>
+								<Label>
+									<X>10</X>
+									<Y>10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>true</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<ZHeight>10</ZHeight>
+								<LineWidth>0</LineWidth>
+								<LineColor/>
+								<LineMaterial>null</LineMaterial>
+								<LineStyle>SOLID</LineStyle>
+								<Width>30</Width>
+								<Height>30</Height>
+								<Rotation>0.0</Rotation>
+								<FillColor>-8355712</FillColor>
+								<FillMaterial>null</FillMaterial>
+								<ArcRadius>8</ArcRadius>
+							</RoundedRectangle>
+							<Image>
+								<Id>1784403793910</Id>
+								<Name><![CDATA[im_gas1]]></Name>
+								<X>7.5</X>
+								<Y>7.5</Y>
+								<Label>
+									<X>0</X>
+									<Y>-10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>true</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<Width>15</Width>
+								<Height>15</Height>
+								<Rotation>0.0</Rotation>
+								<ImageFiles>
+									<ImageResourceReference>
+										<PackageName>digital_twin_results</PackageName>
+										<ClassName>icon_heat.png</ClassName>
+									</ImageResourceReference>
+								</ImageFiles>
+								<OriginalSize>false</OriginalSize>
+							</Image>
+						</Presentation>
+					</Group>
 					<Text>
-						<Id>1726824447349</Id>
+						<Id>1784402979804</Id>
 						<Name><![CDATA[t_FFconsumption_pct]]></Name>
-						<X>89</X>
-						<Y>-25</Y>
+						<X>395</X>
+						<Y>22</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1077,17 +1181,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[10.0 %]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>20</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726824447351</Id>
+						<Id>1784402979806</Id>
 						<Name><![CDATA[txt_FFconsumtption]]></Name>
-						<X>-156</X>
-						<Y>-20</Y>
+						<X>60</X>
+						<Y>25</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1102,17 +1206,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Aandeel brandstof:]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>20</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726824447353</Id>
+						<Id>1784402979808</Id>
 						<Name><![CDATA[t_previousFFConsumption_pct]]></Name>
-						<X>94</X>
-						<Y>0</Y>
+						<X>395</X>
+						<Y>45</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1127,88 +1231,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[-]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
-							<Size>14</Size>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
+							<Size>10</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Group>
-						<Id>1726824447355</Id>
-						<Name><![CDATA[gr_imageFF]]></Name>
-						<X>-194</X>
-						<Y>-10</Y>
-						<Label>
-							<X>10</X>
-							<Y>0</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Rotation>0.0</Rotation>
-						<Presentation>
-							<Oval>
-								<Id>1726824447357</Id>
-								<Name><![CDATA[ovalFF]]></Name>
-								<X>-1</X>
-								<Y>-1</Y>
-								<Label>
-									<X>0</X>
-									<Y>0</Y>
-								</Label>
-								<PublicFlag>true</PublicFlag>
-								<PresentationFlag>true</PresentationFlag>
-								<ShowLabel>false</ShowLabel>
-								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-								<EmbeddedIcon>false</EmbeddedIcon>
-								<Z>0</Z>
-								<ZHeight>10</ZHeight>
-								<LineWidth>2</LineWidth>
-								<LineColor>-657931</LineColor>
-								<LineMaterial>null</LineMaterial>
-								<LineStyle>SOLID</LineStyle>
-								<RadiusX>20</RadiusX>
-								<RadiusY>40</RadiusY>
-								<Rotation>0.0</Rotation>
-								<FillColor>-2302756</FillColor>
-								<FillMaterial>null</FillMaterial>
-							</Oval>
-						</Presentation>
-					</Group>
-					<Image>
-						<Id>1726824555172</Id>
-						<Name><![CDATA[image_FF]]></Name>
-						<X>-213</X>
-						<Y>-26</Y>
-						<Label>
-							<X>0</X>
-							<Y>-10</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Width>35</Width>
-						<Height>29</Height>
-						<Rotation>0.0</Rotation>
-						<ImageFiles>
-							<ImageResourceReference>
-								<PackageName>digital_twin_results</PackageName>
-								<ClassName>noun-fuel-removebg-preview.png</ClassName>
-							</ImageResourceReference>
-						</ImageFiles>
-						<OriginalSize>false</OriginalSize>
-					</Image>
-					<Group>
-						<Id>1726825008028</Id>
+						<Id>1784402979816</Id>
 						<Name><![CDATA[arrows_FF]]></Name>
-						<X>71</X>
-						<Y>-11</Y>
+						<X>415</X>
+						<Y>32</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -1222,7 +1255,7 @@
 						<Rotation>0.0</Rotation>
 						<Presentation>
 							<Image>
-								<Id>1726825008030</Id>
+								<Id>1784402979818</Id>
 								<Name><![CDATA[arrow_up_red_FF]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -1248,7 +1281,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Image>
-								<Id>1726825008032</Id>
+								<Id>1784402979820</Id>
 								<Name><![CDATA[arrow_down_green_FF]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -1274,7 +1307,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Line>
-								<Id>1726840727322</Id>
+								<Id>1784402979822</Id>
 								<Name><![CDATA[line_FF]]></Name>
 								<X>-11</X>
 								<Y>-1</Y>
@@ -1303,13 +1336,40 @@
 							</Line>
 						</Presentation>
 					</Group>
+					<RoundedRectangle>
+						<Id>1784404140267</Id>
+						<Name><![CDATA[rect_backgroundFFKPI]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor>-8355712</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>440</Width>
+						<Height>60</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>847282304</FillColor>
+						<FillMaterial>null</FillMaterial>
+						<ArcRadius>10</ArcRadius>
+					</RoundedRectangle>
 				</Presentation>
 			</Group>
 			<Group>
-				<Id>1726829361654</Id>
+				<Id>1784402981928</Id>
 				<Name><![CDATA[gr_productionKPI]]></Name>
-				<X>100</X>
-				<Y>120</Y>
+				<X>-115</X>
+				<Y>100</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -1323,10 +1383,10 @@
 				<Rotation>0.0</Rotation>
 				<Presentation>
 					<Text>
-						<Id>1726829361656</Id>
+						<Id>1784402981930</Id>
 						<Name><![CDATA[txt_production]]></Name>
-						<X>-155</X>
-						<Y>-20</Y>
+						<X>60</X>
+						<Y>25</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1341,17 +1401,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Totale opwek:]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>20</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726829361658</Id>
+						<Id>1784402981932</Id>
 						<Name><![CDATA[t_production_pct]]></Name>
-						<X>90</X>
-						<Y>-25</Y>
+						<X>395</X>
+						<Y>22</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1366,17 +1426,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[100.1 MWh]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>20</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Text>
-						<Id>1726829361660</Id>
+						<Id>1784402981934</Id>
 						<Name><![CDATA[t_previousProduction_pct]]></Name>
-						<X>95</X>
-						<Y>0</Y>
+						<X>395</X>
+						<Y>45</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -1391,62 +1451,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[-]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
-							<Size>14</Size>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
+							<Size>10</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>RIGHT</Alignment>
 					</Text>
 					<Group>
-						<Id>1726829361662</Id>
-						<Name><![CDATA[gr_productionImage]]></Name>
-						<X>-194</X>
-						<Y>-10</Y>
-						<Label>
-							<X>10</X>
-							<Y>0</Y>
-						</Label>
-						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
-						<ShowLabel>false</ShowLabel>
-						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-						<EmbeddedIcon>false</EmbeddedIcon>
-						<Z>0</Z>
-						<Rotation>0.0</Rotation>
-						<Presentation>
-							<Oval>
-								<Id>1726829361664</Id>
-								<Name><![CDATA[ovalproduction]]></Name>
-								<X>-1</X>
-								<Y>-1</Y>
-								<Label>
-									<X>0</X>
-									<Y>0</Y>
-								</Label>
-								<PublicFlag>true</PublicFlag>
-								<PresentationFlag>true</PresentationFlag>
-								<ShowLabel>false</ShowLabel>
-								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-								<EmbeddedIcon>false</EmbeddedIcon>
-								<Z>0</Z>
-								<ZHeight>10</ZHeight>
-								<LineWidth>2</LineWidth>
-								<LineColor>-657931</LineColor>
-								<LineMaterial>null</LineMaterial>
-								<LineStyle>SOLID</LineStyle>
-								<RadiusX>20</RadiusX>
-								<RadiusY>40</RadiusY>
-								<Rotation>0.0</Rotation>
-								<FillColor>-5900462</FillColor>
-								<FillMaterial>null</FillMaterial>
-							</Oval>
-						</Presentation>
-					</Group>
-					<Group>
-						<Id>1726829361668</Id>
+						<Id>1784402981940</Id>
 						<Name><![CDATA[arrows_production]]></Name>
-						<X>71</X>
-						<Y>-11</Y>
+						<X>415</X>
+						<Y>32</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -1460,7 +1475,7 @@
 						<Rotation>0.0</Rotation>
 						<Presentation>
 							<Image>
-								<Id>1726829361670</Id>
+								<Id>1784402981942</Id>
 								<Name><![CDATA[arrow_down_red_production]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -1486,7 +1501,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Image>
-								<Id>1726829361672</Id>
+								<Id>1784402981944</Id>
 								<Name><![CDATA[arrow_up_green_production]]></Name>
 								<X>-12</X>
 								<Y>-10</Y>
@@ -1512,7 +1527,7 @@
 								<OriginalSize>false</OriginalSize>
 							</Image>
 							<Line>
-								<Id>1726840751697</Id>
+								<Id>1784402981946</Id>
 								<Name><![CDATA[line_production]]></Name>
 								<X>-11</X>
 								<Y>-1</Y>
@@ -1541,16 +1556,189 @@
 							</Line>
 						</Presentation>
 					</Group>
+					<Group>
+						<Id>1784404820912</Id>
+						<Name><![CDATA[gr_productionImage]]></Name>
+						<X>15</X>
+						<Y>15</Y>
+						<Label>
+							<X>10</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Presentation>
+							<RoundedRectangle>
+								<Id>1784404820914</Id>
+								<Name><![CDATA[rect_backgroundGasIcon4]]></Name>
+								<X>0</X>
+								<Y>0</Y>
+								<Label>
+									<X>10</X>
+									<Y>10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>true</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<ZHeight>10</ZHeight>
+								<LineWidth>0</LineWidth>
+								<LineColor/>
+								<LineMaterial>null</LineMaterial>
+								<LineStyle>SOLID</LineStyle>
+								<Width>30</Width>
+								<Height>30</Height>
+								<Rotation>0.0</Rotation>
+								<FillColor>-6632142</FillColor>
+								<FillMaterial>null</FillMaterial>
+								<ArcRadius>8</ArcRadius>
+							</RoundedRectangle>
+							<Image>
+								<Id>1784404820916</Id>
+								<Name><![CDATA[im_gas4]]></Name>
+								<X>7.5</X>
+								<Y>7.5</Y>
+								<Label>
+									<X>0</X>
+									<Y>-10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>true</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<Width>15</Width>
+								<Height>15</Height>
+								<Rotation>0.0</Rotation>
+								<ImageFiles>
+									<ImageResourceReference>
+										<PackageName>digital_twin_results</PackageName>
+										<ClassName>icon_heat.png</ClassName>
+									</ImageResourceReference>
+								</ImageFiles>
+								<OriginalSize>false</OriginalSize>
+							</Image>
+						</Presentation>
+					</Group>
+					<RoundedRectangle>
+						<Id>1784405001662</Id>
+						<Name><![CDATA[rect_backgroundProductionKPI]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor>-5900462</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>440</Width>
+						<Height>60</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>849737554</FillColor>
+						<FillMaterial>null</FillMaterial>
+						<ArcRadius>10</ArcRadius>
+					</RoundedRectangle>
 				</Presentation>
 			</Group>
-			<Image>
-				<Id>1726829952701</Id>
-				<Name><![CDATA[image_production]]></Name>
-				<X>-110</X>
-				<Y>95</Y>
+		</Presentation>
+	</Group>
+	<Line>
+		<Id>1784400320863</Id>
+		<Name><![CDATA[line_KPISummary]]></Name>
+		<X>0</X>
+		<Y>50</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0.5</LineWidth>
+		<LineColor>-4144960</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<Dx>580</Dx>
+		<Dy>0</Dy>
+		<Dz>0</Dz>
+	</Line>
+	<Group>
+		<Id>1784400935855</Id>
+		<Name><![CDATA[gr_totalConsumption]]></Name>
+		<X>70</X>
+		<Y>100</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<RoundedRectangle>
+				<Id>1784400994243</Id>
+				<Name><![CDATA[rect_totalConsumption]]></Name>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
-					<X>0</X>
-					<Y>-10</Y>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>0</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>140</Width>
+				<Height>70</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-657931</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Group>
+				<Id>1784400991772</Id>
+				<Name><![CDATA[arrows_totalconsumption]]></Name>
+				<X>118</X>
+				<Y>41</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
 				<PresentationFlag>true</PresentationFlag>
@@ -1558,24 +1746,172 @@
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Width>30</Width>
-				<Height>26</Height>
 				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>noun-windmill.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
+				<Presentation>
+					<Image>
+						<Id>1784400991774</Id>
+						<Name><![CDATA[arrow_up_red_totalconsumption]]></Name>
+						<X>-12</X>
+						<Y>-10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>23</Width>
+						<Height>18</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>icon_arrow_up_red.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Image>
+						<Id>1784400991776</Id>
+						<Name><![CDATA[arrow_down_green_totalconsumption]]></Name>
+						<X>-12</X>
+						<Y>-10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>23</Width>
+						<Height>18</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>icon_arrow_down_green.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Line>
+						<Id>1784400991778</Id>
+						<Name><![CDATA[line_total]]></Name>
+						<X>-11</X>
+						<Y>-1</Y>
+						<Label>
+							<X>10</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>2</LineWidth>
+						<LineColor>-4144960</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<BeginArrowSize>1</BeginArrowSize>
+						<BeginArrowStyle>0</BeginArrowStyle>
+						<EndArrowSize>1</EndArrowSize>
+						<EndArrowStyle>0</EndArrowStyle>
+						<Dx>21</Dx>
+						<Dy>0</Dy>
+						<Dz>0</Dz>
+					</Line>
+				</Presentation>
+			</Group>
+			<Text>
+				<Id>1784400992021</Id>
+				<Name><![CDATA[t_totalconsumption_MWh]]></Name>
+				<X>70</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[100.1]]></Text>
+				<Font>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
+					<Size>24</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1784400992080</Id>
+				<Name><![CDATA[t_previousTotalconsumption_MWh]]></Name>
+				<X>70</X>
+				<Y>55</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[-]]></Text>
+				<Font>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1784400992143</Id>
+				<Name><![CDATA[txt_totalSubGroups]]></Name>
+				<X>70</X>
+				<Y>10</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[Verbruik]]></Text>
+				<Font>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
 		</Presentation>
 	</Group>
 	<Group>
-		<Id>1726839051175</Id>
-		<Name><![CDATA[arrows_totalconsumption]]></Name>
-		<X>92</X>
-		<Y>188</Y>
+		<Id>1784401345819</Id>
+		<Name><![CDATA[gr_totalImport]]></Name>
+		<X>220</X>
+		<Y>100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1583,98 +1919,219 @@
 		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Presentation>
-			<Image>
-				<Id>1726839051177</Id>
-				<Name><![CDATA[arrow_up_red_totalconsumption]]></Name>
-				<X>-12</X>
-				<Y>-10</Y>
+			<RoundedRectangle>
+				<Id>1784401365284</Id>
+				<Name><![CDATA[rect_totalImport]]></Name>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
-					<X>0</X>
-					<Y>-10</Y>
+					<X>10</X>
+					<Y>10</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
+				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Width>23</Width>
-				<Height>18</Height>
+				<ZHeight>10</ZHeight>
+				<LineWidth>0</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>140</Width>
+				<Height>70</Height>
 				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_up_red.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Image>
-				<Id>1726839051179</Id>
-				<Name><![CDATA[arrow_down_green_totalconsumption]]></Name>
-				<X>-12</X>
-				<Y>-10</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>23</Width>
-				<Height>18</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_down_green.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Line>
-				<Id>1726840677802</Id>
-				<Name><![CDATA[line_total]]></Name>
-				<X>-11</X>
-				<Y>-1</Y>
+				<FillColor>-657931</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Group>
+				<Id>1784401382955</Id>
+				<Name><![CDATA[arrows_import]]></Name>
+				<X>118</X>
+				<Y>41</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
+				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>2</LineWidth>
-				<LineColor>-4144960</LineColor>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>21</Dx>
-				<Dy>0</Dy>
-				<Dz>0</Dz>
-			</Line>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<Image>
+						<Id>1784401382957</Id>
+						<Name><![CDATA[arrow_up_red_import]]></Name>
+						<X>-12</X>
+						<Y>-10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>23</Width>
+						<Height>18</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>icon_arrow_up_red.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Image>
+						<Id>1784401382959</Id>
+						<Name><![CDATA[arrow_down_green_import]]></Name>
+						<X>-12</X>
+						<Y>-10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>23</Width>
+						<Height>18</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>icon_arrow_down_green.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Line>
+						<Id>1784401382961</Id>
+						<Name><![CDATA[line_import]]></Name>
+						<X>-11</X>
+						<Y>-1</Y>
+						<Label>
+							<X>10</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>2</LineWidth>
+						<LineColor>-4144960</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<BeginArrowSize>1</BeginArrowSize>
+						<BeginArrowStyle>0</BeginArrowStyle>
+						<EndArrowSize>1</EndArrowSize>
+						<EndArrowStyle>0</EndArrowStyle>
+						<Dx>21</Dx>
+						<Dy>0</Dy>
+						<Dz>0</Dz>
+					</Line>
+				</Presentation>
+			</Group>
+			<Text>
+				<Id>1784401383186</Id>
+				<Name><![CDATA[txt_totalSubGroups1]]></Name>
+				<X>70</X>
+				<Y>10</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[Import]]></Text>
+				<Font>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1784401383241</Id>
+				<Name><![CDATA[t_totalImport_MWh]]></Name>
+				<X>70</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[100.1]]></Text>
+				<Font>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
+					<Size>24</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1784401383296</Id>
+				<Name><![CDATA[t_previousTotalImport_MWh]]></Name>
+				<X>70</X>
+				<Y>55</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[-]]></Text>
+				<Font>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
 		</Presentation>
 	</Group>
 	<Group>
-		<Id>1726839084436</Id>
-		<Name><![CDATA[arrows_import]]></Name>
-		<X>245</X>
-		<Y>188</Y>
+		<Id>1784401526609</Id>
+		<Name><![CDATA[gr_totalExport]]></Name>
+		<X>370</X>
+		<Y>100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1682,870 +2139,738 @@
 		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Presentation>
-			<Image>
-				<Id>1726839084438</Id>
-				<Name><![CDATA[arrow_up_red_import]]></Name>
-				<X>-12</X>
-				<Y>-10</Y>
+			<RoundedRectangle>
+				<Id>1784401604173</Id>
+				<Name><![CDATA[rect_totalExport]]></Name>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
-					<X>0</X>
-					<Y>-10</Y>
+					<X>10</X>
+					<Y>10</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
+				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Width>23</Width>
-				<Height>18</Height>
+				<ZHeight>10</ZHeight>
+				<LineWidth>0</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>140</Width>
+				<Height>70</Height>
 				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_up_red.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Image>
-				<Id>1726839084440</Id>
-				<Name><![CDATA[arrow_down_green_import]]></Name>
-				<X>-12</X>
-				<Y>-10</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>23</Width>
-				<Height>18</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_down_green.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Line>
-				<Id>1726840656586</Id>
-				<Name><![CDATA[line_import]]></Name>
-				<X>-11</X>
-				<Y>-1</Y>
+				<FillColor>-657931</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>10</ArcRadius>
+			</RoundedRectangle>
+			<Group>
+				<Id>1784401604225</Id>
+				<Name><![CDATA[arrows_export]]></Name>
+				<X>118</X>
+				<Y>41</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
+				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>2</LineWidth>
-				<LineColor>-4144960</LineColor>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>21</Dx>
-				<Dy>0</Dy>
-				<Dz>0</Dz>
-			</Line>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<Image>
+						<Id>1784401604227</Id>
+						<Name><![CDATA[arrow_up_red_export]]></Name>
+						<X>-12</X>
+						<Y>-10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>23</Width>
+						<Height>18</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>icon_arrow_up_red.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Image>
+						<Id>1784401604229</Id>
+						<Name><![CDATA[arrow_down_green_export]]></Name>
+						<X>-12</X>
+						<Y>-10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Width>23</Width>
+						<Height>18</Height>
+						<Rotation>0.0</Rotation>
+						<ImageFiles>
+							<ImageResourceReference>
+								<PackageName>digital_twin_results</PackageName>
+								<ClassName>icon_arrow_down_green.png</ClassName>
+							</ImageResourceReference>
+						</ImageFiles>
+						<OriginalSize>false</OriginalSize>
+					</Image>
+					<Line>
+						<Id>1784401604231</Id>
+						<Name><![CDATA[line_export]]></Name>
+						<X>-11</X>
+						<Y>-1</Y>
+						<Label>
+							<X>10</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>false</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>2</LineWidth>
+						<LineColor>-4144960</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<BeginArrowSize>1</BeginArrowSize>
+						<BeginArrowStyle>0</BeginArrowStyle>
+						<EndArrowSize>1</EndArrowSize>
+						<EndArrowStyle>0</EndArrowStyle>
+						<Dx>21</Dx>
+						<Dy>0</Dy>
+						<Dz>0</Dz>
+					</Line>
+				</Presentation>
+			</Group>
+			<Text>
+				<Id>1784401604493</Id>
+				<Name><![CDATA[txt_totalSubGroups2]]></Name>
+				<X>70</X>
+				<Y>10</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[Export]]></Text>
+				<Font>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1784401604550</Id>
+				<Name><![CDATA[t_totalExport_MWh]]></Name>
+				<X>70</X>
+				<Y>30</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[100.1]]></Text>
+				<Font>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
+					<Size>24</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1784401604606</Id>
+				<Name><![CDATA[t_previousTotalExport_MWh]]></Name>
+				<X>70</X>
+				<Y>55</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16744320</Color>
+				<Text><![CDATA[-]]></Text>
+				<Font>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
 		</Presentation>
 	</Group>
 	<Group>
-		<Id>1726839116842</Id>
-		<Name><![CDATA[arrows_export]]></Name>
-		<X>392</X>
-		<Y>188</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Presentation>
-			<Image>
-				<Id>1726839116844</Id>
-				<Name><![CDATA[arrow_up_red_export]]></Name>
-				<X>-12</X>
-				<Y>-10</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>23</Width>
-				<Height>18</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_up_red.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Image>
-				<Id>1726839116846</Id>
-				<Name><![CDATA[arrow_down_green_export]]></Name>
-				<X>-12</X>
-				<Y>-10</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>23</Width>
-				<Height>18</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_down_green.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Line>
-				<Id>1726840565518</Id>
-				<Name><![CDATA[line_export]]></Name>
-				<X>-11</X>
-				<Y>-1</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>2</LineWidth>
-				<LineColor>-4144960</LineColor>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>21</Dx>
-				<Dy>0</Dy>
-				<Dz>0</Dz>
-			</Line>
-		</Presentation>
-	</Group>
-	<Line>
-		<Id>1727856926839</Id>
-		<Name><![CDATA[line2]]></Name>
-		<X>50</X>
-		<Y>230</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
-		<LineColor>-657931</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<Dx>450</Dx>
-		<Dy>0</Dy>
-		<Dz>0</Dz>
-	</Line>
-	<Line>
-		<Id>1727856991521</Id>
-		<Name><![CDATA[line1]]></Name>
-		<X>50</X>
-		<Y>550</Y>
-		<Label>
-			<X>10</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
-		<LineColor>-657931</LineColor>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<BeginArrowSize>1</BeginArrowSize>
-		<BeginArrowStyle>0</BeginArrowStyle>
-		<EndArrowSize>1</EndArrowSize>
-		<EndArrowStyle>0</EndArrowStyle>
-		<Dx>450</Dx>
-		<Dy>0</Dy>
-		<Dz>0</Dz>
-	</Line>
-	<Text>
-		<Id>1728289186016</Id>
-		<Name><![CDATA[txt_totalSubGroups1]]></Name>
-		<X>275</X>
-		<Y>150</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Import]]></Text>
-		<Font>
-			<Name><![CDATA[Calibri]]></Name>
-			<Size>24</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
-	<Text>
-		<Id>1728289194235</Id>
-		<Name><![CDATA[txt_totalSubGroups2]]></Name>
-		<X>422</X>
-		<Y>150</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Export]]></Text>
-		<Font>
-			<Name><![CDATA[Calibri]]></Name>
-			<Size>24</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
-	<Text>
-		<Id>1726836119936</Id>
-		<Name><![CDATA[t_totalImport_MWh]]></Name>
-		<X>265</X>
-		<Y>170</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[100.1]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>24</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1726836207371</Id>
-		<Name><![CDATA[t_previousTotalImport_MWh]]></Name>
-		<X>270</X>
-		<Y>195</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[-]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>14</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1726836615693</Id>
-		<Name><![CDATA[t_totalconsumption_MWh]]></Name>
-		<X>112</X>
-		<Y>170</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[100.1]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>24</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1726836620191</Id>
-		<Name><![CDATA[t_previousTotalconsumption_MWh]]></Name>
-		<X>117</X>
-		<Y>195</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[-]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>14</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1726836045104</Id>
-		<Name><![CDATA[txt_totalSubGroups]]></Name>
-		<X>132</X>
-		<Y>150</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Verbruik]]></Text>
-		<Font>
-			<Name><![CDATA[Calibri]]></Name>
-			<Size>24</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
-	<Text>
-		<Id>1726836045106</Id>
-		<Name><![CDATA[t_totalExport_MWh]]></Name>
-		<X>412</X>
-		<Y>170</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[100.1]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>24</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1726836045108</Id>
-		<Name><![CDATA[t_previousTotalExport_MWh]]></Name>
-		<X>417</X>
-		<Y>195</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[-]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>14</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Group>
-		<Id>1726834022249</Id>
-		<Name><![CDATA[arrows_gridload]]></Name>
-		<X>379</X>
-		<Y>668</Y>
-		<Label>
-			<X>6.923</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Presentation>
-			<Image>
-				<Id>1726834022251</Id>
-				<Name><![CDATA[arrow_up_red_gridload]]></Name>
-				<X>-8.308</X>
-				<Y>-6.842</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>15.923</Width>
-				<Height>12.316</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_up_red.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Image>
-				<Id>1726834022253</Id>
-				<Name><![CDATA[arrow_down_green_gridload]]></Name>
-				<X>-8.308</X>
-				<Y>-6.842</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>15.923</Width>
-				<Height>12.316</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_down_green.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Line>
-				<Id>1726840768488</Id>
-				<Name><![CDATA[line_gridload]]></Name>
-				<X>-7.615</X>
-				<Y>-0.684</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>2</LineWidth>
-				<LineColor>-4144960</LineColor>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>14</Dx>
-				<Dy>0</Dy>
-				<Dz>0</Dz>
-			</Line>
-		</Presentation>
-	</Group>
-	<Text>
-		<Id>1726838689417</Id>
-		<Name><![CDATA[t_previousKPIOverloadHours_pct]]></Name>
-		<X>395</X>
-		<Y>660</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[-]]></Text>
-		<Font>
-			<Name><![CDATA[Arial]]></Name>
-			<Size>12</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1726827568313</Id>
-		<Name><![CDATA[txt_gridload]]></Name>
-		<X>396</X>
-		<Y>570</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Overbelasting]]></Text>
-		<Font>
-			<Name><![CDATA[Arial]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
-	<Text>
-		<Id>1726827568317</Id>
-		<Name><![CDATA[txt_overload]]></Name>
-		<X>396</X>
-		<Y>707</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Uren overbelasting]]></Text>
-		<Font>
-			<Name><![CDATA[Arial]]></Name>
-			<Size>14</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
-	<Text>
-		<Id>1726827568319</Id>
-		<Name><![CDATA[t_KPIOverloadHours_pct]]></Name>
-		<X>396</X>
-		<Y>637</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[20.1%]]></Text>
-		<Font>
-			<Name><![CDATA[Arial]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
-	<Group>
-		<Id>1726833977855</Id>
-		<Name><![CDATA[arrows_selfsufficiency]]></Name>
-		<X>159</X>
-		<Y>668</Y>
-		<Label>
-			<X>6.959</X>
-			<Y>0</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Presentation>
-			<Image>
-				<Id>1726833977857</Id>
-				<Name><![CDATA[arrow_down_red_selfsufficiency]]></Name>
-				<X>-8.352</X>
-				<Y>-6.908</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>16.007</Width>
-				<Height>12.435</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_down_red.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Image>
-				<Id>1726833977859</Id>
-				<Name><![CDATA[arrow_up_green_selfsufficiency]]></Name>
-				<X>-8.352</X>
-				<Y>-6.908</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<Width>16.007</Width>
-				<Height>12.435</Height>
-				<Rotation>0.0</Rotation>
-				<ImageFiles>
-					<ImageResourceReference>
-						<PackageName>digital_twin_results</PackageName>
-						<ClassName>icon_arrow_up_green.png</ClassName>
-					</ImageResourceReference>
-				</ImageFiles>
-				<OriginalSize>false</OriginalSize>
-			</Image>
-			<Line>
-				<Id>1726840795578</Id>
-				<Name><![CDATA[line_selfsufficiency]]></Name>
-				<X>-7.656</X>
-				<Y>-0.69</Y>
-				<Label>
-					<X>10</X>
-					<Y>0</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>false</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>2</LineWidth>
-				<LineColor>-4144960</LineColor>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<BeginArrowSize>1</BeginArrowSize>
-				<BeginArrowStyle>0</BeginArrowStyle>
-				<EndArrowSize>1</EndArrowSize>
-				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>14</Dx>
-				<Dy>0</Dy>
-				<Dz>0</Dz>
-			</Line>
-		</Presentation>
-	</Group>
-	<Text>
-		<Id>1726838662434</Id>
-		<Name><![CDATA[t_previousKPIselfsufficiency_pct]]></Name>
-		<X>175</X>
-		<Y>660</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[-]]></Text>
-		<Font>
-			<Name><![CDATA[Arial]]></Name>
-			<Size>12</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
-	<Text>
-		<Id>1726827568298</Id>
-		<Name><![CDATA[txt_selfsufficiency]]></Name>
+		<Id>1784405581618</Id>
+		<Name><![CDATA[gr_selfSufficientKPI]]></Name>
 		<X>180</X>
-		<Y>570</Y>
+		<Y>630</Y>
 		<Label>
-			<X>0</X>
-			<Y>-10</Y>
+			<X>10</X>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[Zelfvoorzienendheid]]></Text>
-		<Font>
-			<Name><![CDATA[Arial]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
-	<Text>
-		<Id>1726827568302</Id>
-		<Name><![CDATA[txt_selfsufficiencyPercentage]]></Name>
-		<X>180</X>
-		<Y>707</Y>
+		<Presentation>
+			<Text>
+				<Id>1726827568298</Id>
+				<Name><![CDATA[txt_selfsufficiency]]></Name>
+				<X>0</X>
+				<Y>-90</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Zelfvoorzienendheid]]></Text>
+				<Font>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1726827568302</Id>
+				<Name><![CDATA[txt_selfsufficiencyPercentage]]></Name>
+				<X>0</X>
+				<Y>35</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Aandeel energieverbruik lokaal opgewekt]]></Text>
+				<Font>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Group>
+				<Id>1784405517769</Id>
+				<Name><![CDATA[gr_selfSufficientKPICircle]]></Name>
+				<X>0</X>
+				<Y>-20</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<Oval>
+						<Id>1726827568300</Id>
+						<Name><![CDATA[ovalSelfsufficiency]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>0</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>4</LineWidth>
+						<LineColor>-13447886</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<RadiusX>45</RadiusX>
+						<RadiusY>40</RadiusY>
+						<Rotation>0.0</Rotation>
+						<FillColor/>
+						<FillMaterial>null</FillMaterial>
+					</Oval>
+					<Group>
+						<Id>1726833977855</Id>
+						<Name><![CDATA[arrows_selfsufficiency]]></Name>
+						<X>0</X>
+						<Y>30</Y>
+						<Label>
+							<X>6.959</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Presentation>
+							<Image>
+								<Id>1726833977857</Id>
+								<Name><![CDATA[arrow_down_red_selfsufficiency]]></Name>
+								<X>-8</X>
+								<Y>-6</Y>
+								<Label>
+									<X>0</X>
+									<Y>-10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>false</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<Width>16.007</Width>
+								<Height>12.435</Height>
+								<Rotation>0.0</Rotation>
+								<ImageFiles>
+									<ImageResourceReference>
+										<PackageName>digital_twin_results</PackageName>
+										<ClassName>icon_arrow_down_red.png</ClassName>
+									</ImageResourceReference>
+								</ImageFiles>
+								<OriginalSize>false</OriginalSize>
+							</Image>
+							<Image>
+								<Id>1726833977859</Id>
+								<Name><![CDATA[arrow_up_green_selfsufficiency]]></Name>
+								<X>-8</X>
+								<Y>-6</Y>
+								<Label>
+									<X>0</X>
+									<Y>-10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>false</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<Width>16.007</Width>
+								<Height>12.435</Height>
+								<Rotation>0.0</Rotation>
+								<ImageFiles>
+									<ImageResourceReference>
+										<PackageName>digital_twin_results</PackageName>
+										<ClassName>icon_arrow_up_green.png</ClassName>
+									</ImageResourceReference>
+								</ImageFiles>
+								<OriginalSize>false</OriginalSize>
+							</Image>
+							<Line>
+								<Id>1726840795578</Id>
+								<Name><![CDATA[line_selfsufficiency]]></Name>
+								<X>-7</X>
+								<Y>0</Y>
+								<Label>
+									<X>10</X>
+									<Y>0</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>false</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<ZHeight>10</ZHeight>
+								<LineWidth>2</LineWidth>
+								<LineColor>-4144960</LineColor>
+								<LineMaterial>null</LineMaterial>
+								<LineStyle>SOLID</LineStyle>
+								<BeginArrowSize>1</BeginArrowSize>
+								<BeginArrowStyle>0</BeginArrowStyle>
+								<EndArrowSize>1</EndArrowSize>
+								<EndArrowStyle>0</EndArrowStyle>
+								<Dx>14</Dx>
+								<Dy>0</Dy>
+								<Dz>0</Dz>
+							</Line>
+						</Presentation>
+					</Group>
+					<Text>
+						<Id>1726838662434</Id>
+						<Name><![CDATA[t_previousKPIselfsufficiency_pct]]></Name>
+						<X>0</X>
+						<Y>15</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[-]]></Text>
+						<Font>
+							<Name><![CDATA[Arial]]></Name>
+							<Size>10</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+					<Text>
+						<Id>1726827568304</Id>
+						<Name><![CDATA[t_KPIselfsufficiency_pct]]></Name>
+						<X>0</X>
+						<Y>-8</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[20.1%]]></Text>
+						<Font>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
+							<Size>20</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+				</Presentation>
+			</Group>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1784405970627</Id>
+		<Name><![CDATA[gr_overloadKPI]]></Name>
+		<X>400</X>
+		<Y>630</Y>
 		<Label>
-			<X>0</X>
-			<Y>-10</Y>
+			<X>10</X>
+			<Y>0</Y>
 		</Label>
 		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[aandeel energieverbruik 
-lokaal opgewekt]]></Text>
-		<Font>
-			<Name><![CDATA[Arial]]></Name>
-			<Size>14</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
-	<Text>
-		<Id>1726827568304</Id>
-		<Name><![CDATA[t_KPIselfsufficiency_pct]]></Name>
-		<X>180</X>
-		<Y>637</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[20.1%]]></Text>
-		<Font>
-			<Name><![CDATA[Arial]]></Name>
-			<Size>20</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>CENTER</Alignment>
-	</Text>
+		<Presentation>
+			<Text>
+				<Id>1726827568313</Id>
+				<Name><![CDATA[txt_gridload]]></Name>
+				<X>0</X>
+				<Y>-90</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Overbelasting]]></Text>
+				<Font>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Text>
+				<Id>1726827568317</Id>
+				<Name><![CDATA[txt_overload]]></Name>
+				<X>0</X>
+				<Y>35</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-16777216</Color>
+				<Text><![CDATA[Uren overbelasting]]></Text>
+				<Font>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>10</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>CENTER</Alignment>
+			</Text>
+			<Group>
+				<Id>1784405945865</Id>
+				<Name><![CDATA[gr_overloadKPICircle]]></Name>
+				<X>0</X>
+				<Y>-20</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<Oval>
+						<Id>1726827568315</Id>
+						<Name><![CDATA[ovalGridload]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>0</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>4</LineWidth>
+						<LineColor>-40121</LineColor>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<RadiusX>45</RadiusX>
+						<RadiusY>40</RadiusY>
+						<Rotation>0.0</Rotation>
+						<FillColor/>
+						<FillMaterial>null</FillMaterial>
+					</Oval>
+					<Group>
+						<Id>1726834022249</Id>
+						<Name><![CDATA[arrows_gridload]]></Name>
+						<X>0</X>
+						<Y>30</Y>
+						<Label>
+							<X>6.923</X>
+							<Y>0</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Presentation>
+							<Image>
+								<Id>1726834022251</Id>
+								<Name><![CDATA[arrow_up_red_gridload]]></Name>
+								<X>-8.308</X>
+								<Y>-6.842</Y>
+								<Label>
+									<X>0</X>
+									<Y>-10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>false</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<Width>15.923</Width>
+								<Height>12.316</Height>
+								<Rotation>0.0</Rotation>
+								<ImageFiles>
+									<ImageResourceReference>
+										<PackageName>digital_twin_results</PackageName>
+										<ClassName>icon_arrow_up_red.png</ClassName>
+									</ImageResourceReference>
+								</ImageFiles>
+								<OriginalSize>false</OriginalSize>
+							</Image>
+							<Image>
+								<Id>1726834022253</Id>
+								<Name><![CDATA[arrow_down_green_gridload]]></Name>
+								<X>-8.308</X>
+								<Y>-6.842</Y>
+								<Label>
+									<X>0</X>
+									<Y>-10</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>false</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<Width>15.923</Width>
+								<Height>12.316</Height>
+								<Rotation>0.0</Rotation>
+								<ImageFiles>
+									<ImageResourceReference>
+										<PackageName>digital_twin_results</PackageName>
+										<ClassName>icon_arrow_down_green.png</ClassName>
+									</ImageResourceReference>
+								</ImageFiles>
+								<OriginalSize>false</OriginalSize>
+							</Image>
+							<Line>
+								<Id>1726840768488</Id>
+								<Name><![CDATA[line_gridload]]></Name>
+								<X>-7.615</X>
+								<Y>-0.684</Y>
+								<Label>
+									<X>10</X>
+									<Y>0</Y>
+								</Label>
+								<PublicFlag>true</PublicFlag>
+								<PresentationFlag>false</PresentationFlag>
+								<ShowLabel>false</ShowLabel>
+								<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+								<EmbeddedIcon>false</EmbeddedIcon>
+								<Z>0</Z>
+								<ZHeight>10</ZHeight>
+								<LineWidth>2</LineWidth>
+								<LineColor>-4144960</LineColor>
+								<LineMaterial>null</LineMaterial>
+								<LineStyle>SOLID</LineStyle>
+								<BeginArrowSize>1</BeginArrowSize>
+								<BeginArrowStyle>0</BeginArrowStyle>
+								<EndArrowSize>1</EndArrowSize>
+								<EndArrowStyle>0</EndArrowStyle>
+								<Dx>14</Dx>
+								<Dy>0</Dy>
+								<Dz>0</Dz>
+							</Line>
+						</Presentation>
+					</Group>
+					<Text>
+						<Id>1726838689417</Id>
+						<Name><![CDATA[t_previousKPIOverloadHours_pct]]></Name>
+						<X>0</X>
+						<Y>15</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[-]]></Text>
+						<Font>
+							<Name><![CDATA[Arial]]></Name>
+							<Size>12</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>LEFT</Alignment>
+					</Text>
+					<Text>
+						<Id>1726827568319</Id>
+						<Name><![CDATA[t_KPIOverloadHours_pct]]></Name>
+						<X>0</X>
+						<Y>-8</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-16777216</Color>
+						<Text><![CDATA[20.1%]]></Text>
+						<Font>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
+							<Size>20</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+				</Presentation>
+			</Group>
+		</Presentation>
+	</Group>
 </Presentation>
