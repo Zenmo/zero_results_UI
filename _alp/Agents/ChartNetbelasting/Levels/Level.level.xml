@@ -757,7 +757,7 @@ met batterij]]></Text>
 						<Font>
 							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>18</Size>
-							<Style>1</Style>
+							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
 					</Text>
@@ -914,7 +914,7 @@ zonder batterij]]></Text>
 						<Font>
 							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>18</Size>
-							<Style>1</Style>
+							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
 					</Text>
@@ -1277,7 +1277,7 @@ zonder batterij]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
@@ -1374,7 +1374,7 @@ zonder batterij]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
@@ -1496,7 +1496,7 @@ zonder batterij]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
@@ -1592,7 +1592,7 @@ afname capaciteit]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
@@ -1713,7 +1713,7 @@ teruglever capaciteit]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
