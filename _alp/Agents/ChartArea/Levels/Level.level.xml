@@ -10,7 +10,7 @@
 			<Y>10</Y>
 		</Label>
 		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
+		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
