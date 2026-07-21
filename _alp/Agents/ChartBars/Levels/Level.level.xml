@@ -75,6 +75,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>230</XCode>
+		<YCode>350</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -82,7 +84,7 @@
 			<StackChart>
 				<Id>1762958101361</Id>
 				<Name><![CDATA[pl_productionChartBalanceTotal]]></Name>
-				<X>-160</X>
+				<X>-150</X>
 				<Y>-90</Y>
 				<Label>
 					<X>0</X>
@@ -107,15 +109,15 @@
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>420</Width>
-				<Height>121.007</Height>
+				<Width>480</Width>
+				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>40</XOffset>
 					<YOffset>30</YOffset>
-					<Width>340</Width>
-					<Height>41.007000000000005</Height>
+					<Width>400</Width>
+					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -141,7 +143,7 @@
 			<StackChart>
 				<Id>1762958101365</Id>
 				<Name><![CDATA[pl_consumptionChartBalanceTotal]]></Name>
-				<X>-160</X>
+				<X>-150</X>
 				<Y>-240</Y>
 				<Label>
 					<X>0</X>
@@ -166,14 +168,14 @@
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>420</Width>
+				<Width>480</Width>
 				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>40</XOffset>
 					<YOffset>30</YOffset>
-					<Width>340</Width>
+					<Width>400</Width>
 					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -200,7 +202,7 @@
 			<Text>
 				<Id>1762958101367</Id>
 				<Name><![CDATA[t_productionTextYear]]></Name>
-				<X>-140</X>
+				<X>-130</X>
 				<Y>-50</Y>
 				<Label>
 					<X>0</X>
@@ -216,7 +218,7 @@
 				<Color>-16777216</Color>
 				<Text><![CDATA[Opwek]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -225,7 +227,7 @@
 			<Text>
 				<Id>1762958101369</Id>
 				<Name><![CDATA[t_consumptionTextYear]]></Name>
-				<X>-140</X>
+				<X>-130</X>
 				<Y>-200</Y>
 				<Label>
 					<X>0</X>
@@ -241,47 +243,96 @@
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gebruik]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
 			</Text>
-			<Control Type="Button">
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Id>1762958101371</Id>
+			<Group>
+				<Id>1784620335893</Id>
 				<Name><![CDATA[button_monthlyDetails]]></Name>
 				<X>180</X>
-				<Y>320</Y>
+				<Y>290</Y>
 				<Label>
-					<X>0</X>
-					<Y>-10</Y>
+					<X>10</X>
+					<Y>0</Y>
 				</Label>
 				<PublicFlag>true</PublicFlag>
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<BasicProperties Width="115" Height="30">
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<TextColor>-16777216</TextColor>
-					<VisibleCode>radio_energyType.getValue() == 0 &amp;&amp; (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE || uI_Results.f_getSelectedObjectData() instanceof EnergyModel || (uI_Results.f_getSelectedObjectData() instanceof GridConnection &amp;&amp; ((GridConnection)uI_Results.f_getSelectedObjectData()).v_hasQuarterHourlyValues))</VisibleCode>
-					<Enabled>true</Enabled>
-					<ActionCode>gr_Total.setVisible(false);
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<XCode>180</XCode>
+				<YCode>290</YCode>
+				<VisibleCode>radio_energyType.getValue() == 0 &amp;&amp; (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE || uI_Results.f_getSelectedObjectData() instanceof EnergyModel || (uI_Results.f_getSelectedObjectData() instanceof GridConnection &amp;&amp; ((GridConnection)uI_Results.f_getSelectedObjectData()).v_hasQuarterHourlyValues))</VisibleCode>
+				<OnClickCode>gr_Total.setVisible(false);
 f_setMonthlyCharts();
-gr_monthlyTotals.setVisible(true);</ActionCode>
-				</BasicProperties>
-				<ExtendedProperties>
-					<Font Name="Dialog" Size="11" Style="0"/>
-					<LabelText>bekijk per maand</LabelText>
-				</ExtendedProperties>
-			</Control>
+gr_monthlyTotals.setVisible(true);</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<RoundedRectangle>
+						<Id>1784620335895</Id>
+						<Name><![CDATA[rect_monthlyDetails]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor/>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>140</Width>
+						<Height>30</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>-16744320</FillColor>
+						<FillMaterial>null</FillMaterial>
+						<ArcRadius>7</ArcRadius>
+					</RoundedRectangle>
+					<Text>
+						<Id>1784620335897</Id>
+						<Name><![CDATA[text_monthlyDetails]]></Name>
+						<X>70</X>
+						<Y>10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-1</Color>
+						<Text><![CDATA[Bekijk per maand]]></Text>
+						<Font>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>12</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+				</Presentation>
+			</Group>
 		</Presentation>
 	</Group>
 	<Group>
 		<Id>1762958101373</Id>
 		<Name><![CDATA[gr_SummerWinter]]></Name>
-		<X>770</X>
-		<Y>380</Y>
+		<X>820</X>
+		<Y>350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -290,7 +341,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>275</XCode>
+		<XCode>290</XCode>
+		<YCode>350</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -298,7 +350,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 			<StackChart>
 				<Id>1762958101377</Id>
 				<Name><![CDATA[pl_productionChartSummer]]></Name>
-				<X>-160</X>
+				<X>-150</X>
 				<Y>-140</Y>
 				<Label>
 					<X>0</X>
@@ -323,15 +375,15 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>322.133</Width>
-				<Height>121.007</Height>
+				<Width>400</Width>
+				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>40</XOffset>
 					<YOffset>30</YOffset>
-					<Width>242.133</Width>
-					<Height>41.007000000000005</Height>
+					<Width>320</Width>
+					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -357,7 +409,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 			<StackChart>
 				<Id>1762958101381</Id>
 				<Name><![CDATA[pl_consumptionChartSummer]]></Name>
-				<X>-160</X>
+				<X>-150</X>
 				<Y>-280</Y>
 				<Label>
 					<X>0</X>
@@ -382,14 +434,14 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>323.04</Width>
+				<Width>400</Width>
 				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>40</XOffset>
 					<YOffset>30</YOffset>
-					<Width>243.04000000000002</Width>
+					<Width>320</Width>
 					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -432,7 +484,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Opwek]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -457,7 +509,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gebruik]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -482,7 +534,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Zomer week]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -491,7 +543,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 			<StackChart>
 				<Id>1762958101391</Id>
 				<Name><![CDATA[pl_productionChartWinter]]></Name>
-				<X>-160</X>
+				<X>-150</X>
 				<Y>180</Y>
 				<Label>
 					<X>0</X>
@@ -516,15 +568,15 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>324</Width>
-				<Height>121.007</Height>
+				<Width>400</Width>
+				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>40</XOffset>
 					<YOffset>30</YOffset>
-					<Width>244.00000000000003</Width>
-					<Height>41.007000000000005</Height>
+					<Width>320</Width>
+					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -550,7 +602,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 			<StackChart>
 				<Id>1762958101395</Id>
 				<Name><![CDATA[pl_consumptionChartWinter]]></Name>
-				<X>-160</X>
+				<X>-150</X>
 				<Y>30</Y>
 				<Label>
 					<X>0</X>
@@ -575,14 +627,14 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>323.04</Width>
+				<Width>400</Width>
 				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
-					<XOffset>50</XOffset>
+					<XOffset>40</XOffset>
 					<YOffset>30</YOffset>
-					<Width>243.04000000000002</Width>
+					<Width>320</Width>
 					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -625,7 +677,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Opwek]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -650,7 +702,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gebruik]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -675,7 +727,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Winter week]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -686,8 +738,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1762958101403</Id>
 		<Name><![CDATA[gr_DayNight]]></Name>
-		<X>1200</X>
-		<Y>380</Y>
+		<X>1330</X>
+		<Y>350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -696,7 +748,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>275</XCode>
+		<XCode>290</XCode>
+		<YCode>350</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -729,15 +782,15 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>322.133</Width>
-				<Height>121.007</Height>
+				<Width>400</Width>
+				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>242.133</Width>
-					<Height>41.007000000000005</Height>
+					<Width>320</Width>
+					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -788,14 +841,14 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>323.04</Width>
+				<Width>400</Width>
 				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>243.04000000000002</Width>
+					<Width>320</Width>
 					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -863,7 +916,7 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gebruik]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HP Simplified]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -923,15 +976,15 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>324</Width>
-				<Height>121.007</Height>
+				<Width>400</Width>
+				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>244.00000000000003</Width>
-					<Height>41.007000000000005</Height>
+					<Width>320</Width>
+					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -982,14 +1035,14 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>323.04</Width>
+				<Width>400</Width>
 				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>243.04000000000002</Width>
+					<Width>320</Width>
 					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -1093,8 +1146,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1762958101433</Id>
 		<Name><![CDATA[gr_WeekdayWeekend]]></Name>
-		<X>1610</X>
-		<Y>380</Y>
+		<X>1820</X>
+		<Y>350</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1103,7 +1156,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>275</XCode>
+		<XCode>290</XCode>
+		<YCode>350</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -1136,15 +1190,15 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>322.133</Width>
-				<Height>121.007</Height>
+				<Width>400</Width>
+				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>242.133</Width>
-					<Height>41.007000000000005</Height>
+					<Width>320.00000000000006</Width>
+					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -1195,14 +1249,14 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>323.04</Width>
+				<Width>400</Width>
 				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>243.04000000000002</Width>
+					<Width>319.99999999999994</Width>
 					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -1330,15 +1384,15 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>324</Width>
-				<Height>121.007</Height>
+				<Width>400</Width>
+				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>244.00000000000003</Width>
-					<Height>41.007000000000005</Height>
+					<Width>320</Width>
+					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -1389,14 +1443,14 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>323.04</Width>
+				<Width>400</Width>
 				<Height>120</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>243.04000000000002</Width>
+					<Width>319.99999999999994</Width>
 					<Height>40</Height>
 					<BackgroundColor/>
 					<BorderColor>-16777216</BorderColor>
@@ -1500,8 +1554,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 	<Group>
 		<Id>1762958101463</Id>
 		<Name><![CDATA[gr_monthlyTotals]]></Name>
-		<X>2040</X>
-		<Y>320</Y>
+		<X>2340</X>
+		<Y>280</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -1510,7 +1564,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>275</XCode>
+		<XCode>290</XCode>
+		<YCode>320</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -1518,8 +1573,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 			<BarChart>
 				<Id>1762958101467</Id>
 				<Name><![CDATA[bc_productionMonthlyTotals]]></Name>
-				<X>-210</X>
-				<Y>80</Y>
+				<X>-240</X>
+				<Y>50</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1543,15 +1598,15 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>430</Width>
-				<Height>200</Height>
+				<Width>480</Width>
+				<Height>220</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>360</Width>
-					<Height>140</Height>
+					<Width>410</Width>
+					<Height>160</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -1578,8 +1633,8 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 			<BarChart>
 				<Id>1762958101471</Id>
 				<Name><![CDATA[bc_consumptionMonthlyTotals]]></Name>
-				<X>-210</X>
-				<Y>-190</Y>
+				<X>-240</X>
+				<Y>-200</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1603,15 +1658,15 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					</RecurrenceCode>
 				</RecurrenceProperties>
 				<EmbeddedIcon>false</EmbeddedIcon>
-				<Width>430</Width>
-				<Height>200</Height>
+				<Width>480</Width>
+				<Height>220</Height>
 				<BackgroundColor/>
 				<BorderColor/>
 				<ChartArea>
 					<XOffset>50</XOffset>
 					<YOffset>30</YOffset>
-					<Width>360</Width>
-					<Height>140</Height>
+					<Width>410</Width>
+					<Height>160</Height>
 					<BackgroundColor>-1</BackgroundColor>
 					<BorderColor>-16777216</BorderColor>
 					<GridColor>-12566464</GridColor>
@@ -1635,37 +1690,11 @@ gr_monthlyTotals.setVisible(true);</ActionCode>
 					<RelativeWidth>0.8</RelativeWidth>
 				</Bars>
 			</BarChart>
-			<Control Type="Button">
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Id>1762958101473</Id>
-				<Name><![CDATA[button_yearTotals]]></Name>
-				<X>100</X>
-				<Y>380</Y>
-				<Label>
-					<X>0</X>
-					<Y>-10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<BasicProperties Width="115" Height="30">
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<TextColor>-16777216</TextColor>
-					<Enabled>true</Enabled>
-					<ActionCode>gr_monthlyTotals.setVisible(false);
-gr_Total.setVisible(true);</ActionCode>
-				</BasicProperties>
-				<ExtendedProperties>
-					<Font Name="Dialog" Size="11" Style="0"/>
-					<LabelText>bekijk jaartotalen</LabelText>
-				</ExtendedProperties>
-			</Control>
 			<Text>
 				<Id>1762958101475</Id>
 				<Name><![CDATA[t_monthlyProductionYLabel]]></Name>
-				<X>-195</X>
-				<Y>170</Y>
+				<X>-225</X>
+				<Y>160</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1680,7 +1709,7 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Export [MWh]]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -1689,8 +1718,8 @@ gr_Total.setVisible(true);</ActionCode>
 			<Text>
 				<Id>1762958101477</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel]]></Name>
-				<X>-153</X>
-				<Y>264</Y>
+				<X>-174</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1705,16 +1734,16 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[jan]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101479</Id>
 				<Name><![CDATA[t_monthlyConsumptionYLabel]]></Name>
-				<X>-195</X>
+				<X>-225</X>
 				<Y>-90</Y>
 				<Label>
 					<X>0</X>
@@ -1730,7 +1759,7 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Import [MWh]]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -1739,8 +1768,8 @@ gr_Total.setVisible(true);</ActionCode>
 			<Text>
 				<Id>1762958101481</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel1]]></Name>
-				<X>-123</X>
-				<Y>264</Y>
+				<X>-140</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1755,17 +1784,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[feb]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101483</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel2]]></Name>
-				<X>-93</X>
-				<Y>264</Y>
+				<X>-106</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1780,17 +1809,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[mrt]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101485</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel3]]></Name>
-				<X>-3</X>
-				<Y>264</Y>
+				<X>-4</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1805,17 +1834,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[jun]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101487</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel4]]></Name>
-				<X>-33</X>
-				<Y>264</Y>
+				<X>-38</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1830,17 +1859,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[mei]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101489</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel5]]></Name>
-				<X>-63</X>
-				<Y>264</Y>
+				<X>-72</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1855,17 +1884,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[apr]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101491</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel6]]></Name>
-				<X>177</X>
-				<Y>264</Y>
+				<X>200</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1880,17 +1909,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[dec]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101493</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel7]]></Name>
-				<X>57</X>
-				<Y>264</Y>
+				<X>64</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1905,17 +1934,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[aug]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101495</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel8]]></Name>
-				<X>27</X>
-				<Y>264</Y>
+				<X>30</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1930,17 +1959,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[jul]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101497</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel9]]></Name>
-				<X>117</X>
-				<Y>264</Y>
+				<X>132</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1955,17 +1984,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[okt]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101499</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel10]]></Name>
-				<X>147</X>
-				<Y>264</Y>
+				<X>166</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1980,17 +2009,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[nov]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101501</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel11]]></Name>
-				<X>87</X>
-				<Y>264</Y>
+				<X>98</X>
+				<Y>245</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2005,17 +2034,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[sep]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101503</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel12]]></Name>
-				<X>-153</X>
-				<Y>-6</Y>
+				<X>-174</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2030,17 +2059,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[jan]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101505</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel13]]></Name>
-				<X>-123</X>
-				<Y>-6</Y>
+				<X>-140</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2055,17 +2084,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[feb]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101507</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel14]]></Name>
-				<X>-93</X>
-				<Y>-6</Y>
+				<X>-106</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2080,17 +2109,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[mrt]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HP Simplified]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101509</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel15]]></Name>
-				<X>-3</X>
-				<Y>-6</Y>
+				<X>-4</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2105,17 +2134,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[jun]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101511</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel16]]></Name>
-				<X>-33</X>
-				<Y>-6</Y>
+				<X>-38</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2130,17 +2159,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[mei]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101513</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel17]]></Name>
-				<X>-63</X>
-				<Y>-6</Y>
+				<X>-72</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2155,17 +2184,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[apr]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101515</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel18]]></Name>
-				<X>177</X>
-				<Y>-6</Y>
+				<X>200</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2180,17 +2209,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[dec]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101517</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel19]]></Name>
-				<X>57</X>
-				<Y>-6</Y>
+				<X>64</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2205,17 +2234,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[aug]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101519</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel20]]></Name>
-				<X>27</X>
-				<Y>-6</Y>
+				<X>30</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2230,17 +2259,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[jul]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101521</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel21]]></Name>
-				<X>117</X>
-				<Y>-6</Y>
+				<X>132</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2255,17 +2284,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[okt]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101523</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel22]]></Name>
-				<X>147</X>
-				<Y>-6</Y>
+				<X>166</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2280,17 +2309,17 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[nov]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>CENTER</Alignment>
+				<Alignment>RIGHT</Alignment>
 			</Text>
 			<Text>
 				<Id>1762958101525</Id>
 				<Name><![CDATA[t_monthlyProductionXLabel23]]></Name>
-				<X>87</X>
-				<Y>-6</Y>
+				<X>98</X>
+				<Y>-5</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2305,47 +2334,169 @@ gr_Total.setVisible(true);</ActionCode>
 				<Color>-16777216</Color>
 				<Text><![CDATA[sep]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
+					<Style>0</Style>
+				</Font>
+				<Alignment>RIGHT</Alignment>
+			</Text>
+			<Group>
+				<Id>1784620721586</Id>
+				<Name><![CDATA[button_yearTotals]]></Name>
+				<X>140</X>
+				<Y>320</Y>
+				<Label>
+					<X>10</X>
+					<Y>0</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<OnClickCode>gr_monthlyTotals.setVisible(false);
+gr_Total.setVisible(true);</OnClickCode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Presentation>
+					<RoundedRectangle>
+						<Id>1784620721588</Id>
+						<Name><![CDATA[rect_electricityChart1]]></Name>
+						<X>0</X>
+						<Y>0</Y>
+						<Label>
+							<X>10</X>
+							<Y>10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<ZHeight>10</ZHeight>
+						<LineWidth>1</LineWidth>
+						<LineColor/>
+						<LineMaterial>null</LineMaterial>
+						<LineStyle>SOLID</LineStyle>
+						<Width>140</Width>
+						<Height>30</Height>
+						<Rotation>0.0</Rotation>
+						<FillColor>-16744320</FillColor>
+						<FillMaterial>null</FillMaterial>
+						<ArcRadius>7</ArcRadius>
+					</RoundedRectangle>
+					<Text>
+						<Id>1784620721590</Id>
+						<Name><![CDATA[text_electricityChart1]]></Name>
+						<X>70</X>
+						<Y>10</Y>
+						<Label>
+							<X>0</X>
+							<Y>-10</Y>
+						</Label>
+						<PublicFlag>true</PublicFlag>
+						<PresentationFlag>true</PresentationFlag>
+						<ShowLabel>false</ShowLabel>
+						<DrawMode>SHAPE_DRAW_2D</DrawMode>
+						<EmbeddedIcon>false</EmbeddedIcon>
+						<Z>0</Z>
+						<Rotation>0.0</Rotation>
+						<Color>-1</Color>
+						<Text><![CDATA[Bekijk jaartotalen]]></Text>
+						<Font>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>12</Size>
+							<Style>0</Style>
+						</Font>
+						<Alignment>CENTER</Alignment>
+					</Text>
+				</Presentation>
+			</Group>
+		</Presentation>
+	</Group>
+	<Group>
+		<Id>1784620533236</Id>
+		<Name><![CDATA[button_electricityChart]]></Name>
+		<X>30</X>
+		<Y>640</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<XCode>30</XCode>
+		<YCode>640</YCode>
+		<OnClickCode>// We were showing the electricity self consumption charts before and will switch to the assets charts
+if (v_showingElectricitySelfConsumption) {
+	txt_electricityChart.setText("Zelfconsumptie");
+}
+// We were showing the electricity asset charts before and will switch to the self consumption charts
+else {
+	txt_electricityChart.setText("Apparaten");
+}
+
+v_showingElectricitySelfConsumption = !v_showingElectricitySelfConsumption;
+f_setCharts();</OnClickCode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Presentation>
+			<RoundedRectangle>
+				<Id>1784620533238</Id>
+				<Name><![CDATA[rect_electricityChart]]></Name>
+				<X>0</X>
+				<Y>0</Y>
+				<Label>
+					<X>10</X>
+					<Y>10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<ZHeight>10</ZHeight>
+				<LineWidth>1</LineWidth>
+				<LineColor/>
+				<LineMaterial>null</LineMaterial>
+				<LineStyle>SOLID</LineStyle>
+				<Width>140</Width>
+				<Height>30</Height>
+				<Rotation>0.0</Rotation>
+				<FillColor>-16744320</FillColor>
+				<FillMaterial>null</FillMaterial>
+				<ArcRadius>7</ArcRadius>
+			</RoundedRectangle>
+			<Text>
+				<Id>1784620533240</Id>
+				<Name><![CDATA[txt_electricityChart]]></Name>
+				<X>70</X>
+				<Y>10</Y>
+				<Label>
+					<X>0</X>
+					<Y>-10</Y>
+				</Label>
+				<PublicFlag>true</PublicFlag>
+				<PresentationFlag>true</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D</DrawMode>
+				<EmbeddedIcon>false</EmbeddedIcon>
+				<Z>0</Z>
+				<Rotation>0.0</Rotation>
+				<Color>-1</Color>
+				<Text><![CDATA[Apparaten]]></Text>
+				<Font>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
 		</Presentation>
 	</Group>
-	<Control Type="Button">
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Id>1763643190106</Id>
-		<Name><![CDATA[button_electricityChart]]></Name>
-		<X>30</X>
-		<Y>670</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="110" Height="30">
-			<EmbeddedIcon>false</EmbeddedIcon>
-			<TextColor>-16777216</TextColor>
-			<Enabled>true</Enabled>
-			<ActionCode>// We were showing the electricity self consumption charts before and will switch to the assets charts
-if (v_showingElectricitySelfConsumption) {
-	button_electricityChart.setText("Zelfconsumptie");
-}
-// We were showing the electricity asset charts before and will switch to the self consumption charts
-else {
-	button_electricityChart.setText("Apparaten");
-}
-
-v_showingElectricitySelfConsumption = !v_showingElectricitySelfConsumption;
-f_setCharts();</ActionCode>
-		</BasicProperties>
-		<ExtendedProperties>
-			<Font Name="Dialog" Size="11" Style="0"/>
-			<LabelText>Apparaten</LabelText>
-		</ExtendedProperties>
-	</Control>
 </Presentation>

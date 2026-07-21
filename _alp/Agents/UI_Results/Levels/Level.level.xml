@@ -639,7 +639,7 @@
 							<Y>-10</Y>
 						</Label>
 						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
+						<PresentationFlag>false</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<EmbeddedIcon>false</EmbeddedIcon>
@@ -685,7 +685,7 @@
 							<Y>-10</Y>
 						</Label>
 						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
+						<PresentationFlag>false</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<EmbeddedIcon>false</EmbeddedIcon>
@@ -731,7 +731,7 @@
 							<Y>-10</Y>
 						</Label>
 						<PublicFlag>true</PublicFlag>
-						<PresentationFlag>true</PresentationFlag>
+						<PresentationFlag>false</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 						<EmbeddedIcon>false</EmbeddedIcon>

@@ -2159,8 +2159,8 @@
 			<DefaultValue Class="CodeValue">
 				<Code><![CDATA[Map.of(
 	OL_ResultsUIMode.ENERGY, new CustomButton.CustomButtonImageSelection(0,1,0,0),
-	OL_ResultsUIMode.ECONOMIC, new CustomButton.CustomButtonImageSelection(2,3,0,0),
-	OL_ResultsUIMode.SUSTAINABILITY, new CustomButton.CustomButtonImageSelection(4,5,0,0)
+	OL_ResultsUIMode.ECONOMIC, new CustomButton.CustomButtonImageSelection(2,3,2,2),
+	OL_ResultsUIMode.SUSTAINABILITY, new CustomButton.CustomButtonImageSelection(4,5,4,4)
 )]]></Code>
 			</DefaultValue>
 			<ParameterEditor>

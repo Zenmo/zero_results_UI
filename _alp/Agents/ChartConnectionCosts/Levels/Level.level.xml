@@ -2067,7 +2067,7 @@
 			<Text>
 				<Id>1773836906880</Id>
 				<Name><![CDATA[t_previousPhysicalConnectionCosts]]></Name>
-				<X>220</X>
+				<X>219.5</X>
 				<Y>-105</Y>
 				<Label>
 					<X>0</X>
@@ -2084,7 +2084,7 @@
 				<Text><![CDATA[€ 210.56]]></Text>
 				<Font>
 					<Name><![CDATA[HOLONline2]]></Name>
-					<Size>10</Size>
+					<Size>12</Size>
 					<Style>2</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
@@ -2092,7 +2092,7 @@
 			<Text>
 				<Id>1773836938793</Id>
 				<Name><![CDATA[t_previousDefaultContractCosts]]></Name>
-				<X>220</X>
+				<X>219.5</X>
 				<Y>-55</Y>
 				<Label>
 					<X>0</X>
@@ -2109,7 +2109,7 @@
 				<Text><![CDATA[€ 210.56]]></Text>
 				<Font>
 					<Name><![CDATA[HOLONline2]]></Name>
-					<Size>10</Size>
+					<Size>12</Size>
 					<Style>2</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
@@ -2117,7 +2117,7 @@
 			<Text>
 				<Id>1773836956223</Id>
 				<Name><![CDATA[t_previousEnergyTransportCosts]]></Name>
-				<X>220</X>
+				<X>219.5</X>
 				<Y>-5</Y>
 				<Label>
 					<X>0</X>
@@ -2134,7 +2134,7 @@
 				<Text><![CDATA[€ 210.56]]></Text>
 				<Font>
 					<Name><![CDATA[HOLONline2]]></Name>
-					<Size>10</Size>
+					<Size>12</Size>
 					<Style>2</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
@@ -2142,7 +2142,7 @@
 			<Text>
 				<Id>1773836977624</Id>
 				<Name><![CDATA[t_previousPeakConsumptionCosts]]></Name>
-				<X>220</X>
+				<X>219.5</X>
 				<Y>45</Y>
 				<Label>
 					<X>0</X>
@@ -2159,7 +2159,7 @@
 				<Text><![CDATA[€ 210.56]]></Text>
 				<Font>
 					<Name><![CDATA[HOLONline2]]></Name>
-					<Size>10</Size>
+					<Size>12</Size>
 					<Style>2</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
@@ -2167,7 +2167,7 @@
 			<Text>
 				<Id>1773836998115</Id>
 				<Name><![CDATA[t_previousTotalConnectionCosts]]></Name>
-				<X>220</X>
+				<X>219.5</X>
 				<Y>115</Y>
 				<Label>
 					<X>0</X>
@@ -2184,7 +2184,7 @@
 				<Text><![CDATA[€ 210.56]]></Text>
 				<Font>
 					<Name><![CDATA[HOLONline2]]></Name>
-					<Size>10</Size>
+					<Size>12</Size>
 					<Style>2</Style>
 				</Font>
 				<Alignment>RIGHT</Alignment>
