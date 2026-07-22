@@ -1622,16 +1622,16 @@ else{
 				<LineColor>-10502977</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>550</Width>
+				<Width>580</Width>
 				<Height>720</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-10502977</FillColor>
+				<FillColor>-16744320</FillColor>
 				<FillMaterial>null</FillMaterial>
 			</Rectangle>
 			<Text>
 				<Id>1776688304551</Id>
 				<Name><![CDATA[txt_chartBlockerMessageDefault]]></Name>
-				<X>40</X>
+				<X>60</X>
 				<Y>-30</Y>
 				<Label>
 					<X>0</X>
@@ -1644,11 +1644,11 @@ else{
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-16777216</Color>
+				<Color>-1</Color>
 				<Text><![CDATA[LET OP: Het geselecteerde object wordt 
 niet ondersteund door deze grafiek!]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
 					<Style>1</Style>
 				</Font>
@@ -1657,7 +1657,7 @@ niet ondersteund door deze grafiek!]]></Text>
 			<Text>
 				<Id>1776688373400</Id>
 				<Name><![CDATA[t_chartBlockerMessage]]></Name>
-				<X>-120</X>
+				<X>-100</X>
 				<Y>110</Y>
 				<Label>
 					<X>0</X>
@@ -1670,13 +1670,13 @@ niet ondersteund door deze grafiek!]]></Text>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-16777216</Color>
+				<Color>-1</Color>
 				<Text><![CDATA[- één aansluiting
 - het hele gebied
 - een groep van aansluitingen
 - één trafo]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
 					<Style>2</Style>
 				</Font>
@@ -1685,7 +1685,7 @@ niet ondersteund door deze grafiek!]]></Text>
 			<Text>
 				<Id>1776690062865</Id>
 				<Name><![CDATA[txt_chartBlockerMessageDefault2]]></Name>
-				<X>40</X>
+				<X>60</X>
 				<Y>80</Y>
 				<Label>
 					<X>0</X>
@@ -1698,10 +1698,10 @@ niet ondersteund door deze grafiek!]]></Text>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-16777216</Color>
+				<Color>-1</Color>
 				<Text><![CDATA[Om deze grafiek te gebruiken selecteer:]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
 					<Style>0</Style>
 				</Font>
