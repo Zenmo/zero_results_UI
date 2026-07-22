@@ -446,6 +446,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>0</XCode>
+		<YCode>130</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -454,7 +456,7 @@
 				<Id>1714746143885</Id>
 				<Name><![CDATA[plot_jaar]]></Name>
 				<X>50</X>
-				<Y>-20</Y>
+				<Y>-40</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -516,7 +518,7 @@
 				<Id>1714746143882</Id>
 				<Name><![CDATA[t_netLoadDurationCurveTitle]]></Name>
 				<X>100</X>
-				<Y>-10</Y>
+				<Y>-30</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -541,7 +543,7 @@
 				<Id>1714746143887</Id>
 				<Name><![CDATA[t_netLoadDurationCurve_xlabel]]></Name>
 				<X>490</X>
-				<Y>190</Y>
+				<Y>170</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -566,7 +568,7 @@
 				<Id>1714746143889</Id>
 				<Name><![CDATA[t_netLoadDurationCurve_ylabel]]></Name>
 				<X>50</X>
-				<Y>87</Y>
+				<Y>67</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -591,7 +593,7 @@
 				<Id>1746102751753</Id>
 				<Name><![CDATA[i_netLoadDurationCurve]]></Name>
 				<X>250</X>
-				<Y>-10</Y>
+				<Y>-30</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -617,8 +619,8 @@
 			<Group>
 				<Id>1746446837781</Id>
 				<Name><![CDATA[gr_flexGrowthPotential]]></Name>
-				<X>1200</X>
-				<Y>210</Y>
+				<X>100</X>
+				<Y>230</Y>
 				<Label>
 					<X>8.031</X>
 					<Y>0</Y>
@@ -627,8 +629,8 @@
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<XCode>15</XCode>
-				<YCode>290</YCode>
+				<XCode>100</XCode>
+				<YCode>230</YCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
@@ -757,7 +759,7 @@ met batterij]]></Text>
 						<Font>
 							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>18</Size>
-							<Style>1</Style>
+							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
 					</Text>
@@ -914,7 +916,7 @@ zonder batterij]]></Text>
 						<Font>
 							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>18</Size>
-							<Style>1</Style>
+							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
 					</Text>
@@ -976,8 +978,8 @@ zonder batterij]]></Text>
 			<Group>
 				<Id>1751372196431</Id>
 				<Name><![CDATA[gr_concurrencyKPI]]></Name>
-				<X>1240</X>
-				<Y>30</Y>
+				<X>420</X>
+				<Y>250</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -986,8 +988,8 @@ zonder batterij]]></Text>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<XCode>235</XCode>
-				<YCode>310</YCode>
+				<XCode>420</XCode>
+				<YCode>250</YCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
@@ -1184,6 +1186,8 @@ zonder batterij]]></Text>
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<XCode>180</XCode>
+				<YCode>370</YCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
@@ -1191,8 +1195,8 @@ zonder batterij]]></Text>
 					<Group>
 						<Id>1746446582101</Id>
 						<Name><![CDATA[gr_absoluteDeliveryInfo]]></Name>
-						<X>-5</X>
-						<Y>-70</Y>
+						<X>130</X>
+						<Y>-60</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -1248,10 +1252,10 @@ zonder batterij]]></Text>
 								<Z>0</Z>
 								<Rotation>0.0</Rotation>
 								<Color>-16777216</Color>
-								<Text><![CDATA[MAX. AFNAME]]></Text>
+								<Text><![CDATA[Max. afname]]></Text>
 								<Font>
-									<Name><![CDATA[HolonBLOCK2]]></Name>
-									<Size>14</Size>
+									<Name><![CDATA[HOLONline2]]></Name>
+									<Size>16</Size>
 									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
@@ -1277,15 +1281,15 @@ zonder batterij]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
 							<Image>
 								<Id>1746449881642</Id>
 								<Name><![CDATA[i_maxDelivery]]></Name>
-								<X>91</X>
-								<Y>1</Y>
+								<X>85</X>
+								<Y>3</Y>
 								<Label>
 									<X>0</X>
 									<Y>-10</Y>
@@ -1297,8 +1301,8 @@ zonder batterij]]></Text>
 								<OnClickCode>uI_Results.f_setInfoText(i_maxDelivery, uI_Results.v_infoText.peakDelivery, i_maxDelivery.getX() + gr_absoluteDeliveryInfo.getX() + gr_year.getX(), i_maxDelivery.getY() + gr_absoluteDeliveryInfo.getY() + gr_year.getY());</OnClickCode>
 								<EmbeddedIcon>false</EmbeddedIcon>
 								<Z>0</Z>
-								<Width>20</Width>
-								<Height>20</Height>
+								<Width>14</Width>
+								<Height>14</Height>
 								<Rotation>0.0</Rotation>
 								<ImageFiles>
 									<ImageResourceReference>
@@ -1313,8 +1317,8 @@ zonder batterij]]></Text>
 					<Group>
 						<Id>1746446582103</Id>
 						<Name><![CDATA[gr_absoluteFeedinInfo]]></Name>
-						<X>125</X>
-						<Y>-70</Y>
+						<X>260</X>
+						<Y>-60</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -1374,7 +1378,7 @@ zonder batterij]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
@@ -1395,10 +1399,10 @@ zonder batterij]]></Text>
 								<Z>0</Z>
 								<Rotation>0.0</Rotation>
 								<Color>-16777216</Color>
-								<Text><![CDATA[MAX LEVERING]]></Text>
+								<Text><![CDATA[Max levering]]></Text>
 								<Font>
-									<Name><![CDATA[HolonBLOCK2]]></Name>
-									<Size>14</Size>
+									<Name><![CDATA[HOLONline2]]></Name>
+									<Size>16</Size>
 									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
@@ -1406,8 +1410,8 @@ zonder batterij]]></Text>
 							<Image>
 								<Id>1746449944721</Id>
 								<Name><![CDATA[i_maxFeedin]]></Name>
-								<X>131</X>
-								<Y>1</Y>
+								<X>111</X>
+								<Y>5</Y>
 								<Label>
 									<X>0</X>
 									<Y>-10</Y>
@@ -1419,8 +1423,8 @@ zonder batterij]]></Text>
 								<OnClickCode>uI_Results.f_setInfoText(i_maxFeedin, uI_Results.v_infoText.peakFeedin, i_maxFeedin.getX() + gr_absoluteFeedinInfo.getX() + gr_year.getX(), i_maxFeedin.getY() + gr_absoluteFeedinInfo.getY() + gr_year.getY());</OnClickCode>
 								<EmbeddedIcon>false</EmbeddedIcon>
 								<Z>0</Z>
-								<Width>20</Width>
-								<Height>20</Height>
+								<Width>14</Width>
+								<Height>14</Height>
 								<Rotation>0.0</Rotation>
 								<ImageFiles>
 									<ImageResourceReference>
@@ -1435,8 +1439,8 @@ zonder batterij]]></Text>
 					<Group>
 						<Id>1746446647199</Id>
 						<Name><![CDATA[gr_relativeDeliveryInfo]]></Name>
-						<X>-25</X>
-						<Y>50</Y>
+						<X>110</X>
+						<Y>60</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -1496,7 +1500,7 @@ zonder batterij]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
@@ -1531,8 +1535,8 @@ afname capaciteit]]></Text>
 					<Group>
 						<Id>1746446659773</Id>
 						<Name><![CDATA[gr_relativeFeedinInfo]]></Name>
-						<X>125</X>
-						<Y>50</Y>
+						<X>260</X>
+						<Y>60</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -1592,7 +1596,7 @@ afname capaciteit]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
@@ -1627,8 +1631,8 @@ teruglever capaciteit]]></Text>
 					<Group>
 						<Id>1746692569633</Id>
 						<Name><![CDATA[gr_growthPotential]]></Name>
-						<X>-140</X>
-						<Y>-70</Y>
+						<X>-70</X>
+						<Y>-30</Y>
 						<Label>
 							<X>7.953</X>
 							<Y>0</Y>
@@ -1637,6 +1641,8 @@ teruglever capaciteit]]></Text>
 						<PresentationFlag>true</PresentationFlag>
 						<ShowLabel>false</ShowLabel>
 						<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+						<XCode>-70</XCode>
+						<YCode>-30</YCode>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
@@ -1684,10 +1690,10 @@ teruglever capaciteit]]></Text>
 								<Z>0</Z>
 								<Rotation>0.0</Rotation>
 								<Color>-16777216</Color>
-								<Text><![CDATA[GROEIRUIMTE]]></Text>
+								<Text><![CDATA[Groeiruimte]]></Text>
 								<Font>
-									<Name><![CDATA[HolonBLOCK2]]></Name>
-									<Size>14</Size>
+									<Name><![CDATA[HOLONline2]]></Name>
+									<Size>16</Size>
 									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
@@ -1713,15 +1719,15 @@ teruglever capaciteit]]></Text>
 								<Font>
 									<Name><![CDATA[HolonBLOCK2]]></Name>
 									<Size>18</Size>
-									<Style>1</Style>
+									<Style>0</Style>
 								</Font>
 								<Alignment>CENTER</Alignment>
 							</Text>
 							<Image>
 								<Id>1746692569641</Id>
 								<Name><![CDATA[i_negativeGrowth]]></Name>
-								<X>86</X>
-								<Y>0</Y>
+								<X>80</X>
+								<Y>3</Y>
 								<Label>
 									<X>0</X>
 									<Y>-10</Y>
@@ -1733,8 +1739,8 @@ teruglever capaciteit]]></Text>
 								<OnClickCode>uI_Results.f_setInfoText(i_negativeGrowth, uI_Results.v_infoText.negativeGrowthPotential, i_negativeGrowth.getX() + gr_growthPotential.getX() + gr_year.getX(), i_negativeGrowth.getY() + gr_growthPotential.getY() + gr_year.getY());</OnClickCode>
 								<EmbeddedIcon>false</EmbeddedIcon>
 								<Z>0</Z>
-								<Width>20</Width>
-								<Height>20</Height>
+								<Width>14</Width>
+								<Height>14</Height>
 								<Rotation>0.0</Rotation>
 								<ImageFiles>
 									<ImageResourceReference>
@@ -1800,7 +1806,7 @@ else {
 	</Control>
 	<RoundedRectangle>
 		<Id>1780986476310</Id>
-		<Name><![CDATA[roundRectangle2]]></Name>
+		<Name><![CDATA[rect_heatmapbutton]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
 		<X>300</X>
 		<Y>-50</Y>
@@ -1877,7 +1883,8 @@ else{
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>285</XCode>
+		<XCode>300</XCode>
+		<YCode>330</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -10378,7 +10385,7 @@ button_2.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-1</Color>
-				<Text><![CDATA[netcapaciteit]]></Text>
+				<Text><![CDATA[Netcapaciteit]]></Text>
 				<Font>
 					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
@@ -10446,4 +10453,57 @@ button_3.setFillColor(v_chartButtonSelectedColor);</OnClickCode>
 			</Text>
 		</Presentation>
 	</Group>
+	<Line>
+		<Id>1784650020312</Id>
+		<Name><![CDATA[line_batteries]]></Name>
+		<X>0</X>
+		<Y>50</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0.5</LineWidth>
+		<LineColor>-4144960</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<Dx>580</Dx>
+		<Dy>0</Dy>
+		<Dz>0</Dz>
+	</Line>
+	<Text>
+		<Id>1784650039586</Id>
+		<Name><![CDATA[txt_netbelasting]]></Name>
+		<X>20</X>
+		<Y>18</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[NETBELASTING]]></Text>
+		<Font>
+			<Name><![CDATA[HolonBLOCK2]]></Name>
+			<Size>20</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
 </Presentation>

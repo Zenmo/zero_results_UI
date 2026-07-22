@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Presentation>
-	<Rectangle>
-		<Id>1714743454046</Id>
+	<RoundedRectangle>
+		<Id>1784729478149</Id>
 		<Name><![CDATA[chartArea]]></Name>
 		<X>0</X>
 		<Y>0</Y>
@@ -10,13 +10,13 @@
 			<Y>10</Y>
 		</Label>
 		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>false</PresentationFlag>
+		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<ZHeight>10</ZHeight>
-		<LineWidth>2</LineWidth>
+		<LineWidth>0.5</LineWidth>
 		<LineWidthCode>v_lineWidth</LineWidthCode>
 		<LineColor>-65536</LineColor>
 		<LineColorCode>v_lineColor</LineColorCode>
@@ -28,7 +28,8 @@
 		<FillColor/>
 		<FillColorCode>v_backgroundColor</FillColorCode>
 		<FillMaterial>null</FillMaterial>
-	</Rectangle>
+		<ArcRadius>10</ArcRadius>
+	</RoundedRectangle>
 	<Rectangle>
 		<Id>1725374727702</Id>
 		<Name><![CDATA[rect_backgroundStyling]]></Name>

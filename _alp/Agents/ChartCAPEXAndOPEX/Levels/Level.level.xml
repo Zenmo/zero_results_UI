@@ -127,7 +127,7 @@
 		<Id>1774279482488</Id>
 		<Name><![CDATA[txt_CAPEXTotal]]></Name>
 		<X>60</X>
-		<Y>294</Y>
+		<Y>280</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -152,7 +152,7 @@
 		<Id>1774279520448</Id>
 		<Name><![CDATA[txt_OPEXTotal]]></Name>
 		<X>60</X>
-		<Y>424</Y>
+		<Y>400</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -176,8 +176,8 @@
 	<Line>
 		<Id>1774279551846</Id>
 		<Name><![CDATA[line_total]]></Name>
-		<X>50</X>
-		<Y>550</Y>
+		<X>40</X>
+		<Y>520</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -197,7 +197,7 @@
 		<BeginArrowStyle>0</BeginArrowStyle>
 		<EndArrowSize>1</EndArrowSize>
 		<EndArrowStyle>0</EndArrowStyle>
-		<Dx>480</Dx>
+		<Dx>500</Dx>
 		<Dy>0</Dy>
 		<Dz>0</Dz>
 	</Line>
@@ -205,7 +205,7 @@
 		<Id>1774279565069</Id>
 		<Name><![CDATA[txt_CAPEXAndOPEXTotal]]></Name>
 		<X>60</X>
-		<Y>574</Y>
+		<Y>540</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -230,7 +230,7 @@
 		<Id>1774279577198</Id>
 		<Name><![CDATA[txt_CAPEXAndOPEXPerYear]]></Name>
 		<X>60</X>
-		<Y>644</Y>
+		<Y>600</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -245,7 +245,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[CAPEX & OPEX per jaar:]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>16</Size>
 			<Style>1</Style>
 		</Font>
@@ -255,7 +255,7 @@
 		<Id>1774279624285</Id>
 		<Name><![CDATA[txt_estimatedLifeTime]]></Name>
 		<X>60</X>
-		<Y>224</Y>
+		<Y>220</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -281,7 +281,7 @@
 		<Id>1774279703212</Id>
 		<Name><![CDATA[txt_OPEXPerYear]]></Name>
 		<X>60</X>
-		<Y>484</Y>
+		<Y>460</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -306,7 +306,7 @@
 		<Id>1774279727414</Id>
 		<Name><![CDATA[txt_CAPEXPerYear]]></Name>
 		<X>60</X>
-		<Y>354</Y>
+		<Y>340</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -331,7 +331,7 @@
 		<Id>1774279745383</Id>
 		<Name><![CDATA[t_estimatedLifeTime]]></Name>
 		<X>520</X>
-		<Y>221</Y>
+		<Y>220</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -356,7 +356,7 @@
 		<Id>1774279770694</Id>
 		<Name><![CDATA[t_CAPEXTotal]]></Name>
 		<X>520</X>
-		<Y>291</Y>
+		<Y>280</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -381,7 +381,7 @@
 		<Id>1774279770696</Id>
 		<Name><![CDATA[t_OPEXTotal]]></Name>
 		<X>520</X>
-		<Y>421</Y>
+		<Y>400</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -406,7 +406,7 @@
 		<Id>1774279770698</Id>
 		<Name><![CDATA[t_CAPEXAndOPEXTotal]]></Name>
 		<X>520</X>
-		<Y>571</Y>
+		<Y>540</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -431,7 +431,7 @@
 		<Id>1774279770700</Id>
 		<Name><![CDATA[t_CAPEXAndOPEXPerYear]]></Name>
 		<X>520</X>
-		<Y>641</Y>
+		<Y>600</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -456,7 +456,7 @@
 		<Id>1774279770702</Id>
 		<Name><![CDATA[t_OPEXPerYear]]></Name>
 		<X>520</X>
-		<Y>481</Y>
+		<Y>460</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -481,7 +481,7 @@
 		<Id>1774279770704</Id>
 		<Name><![CDATA[t_CAPEXPerYear]]></Name>
 		<X>520</X>
-		<Y>351</Y>
+		<Y>340</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -506,7 +506,7 @@
 		<Id>1774349289328</Id>
 		<Name><![CDATA[t_previousEstimatedLifeTime]]></Name>
 		<X>519.5</X>
-		<Y>250.5</Y>
+		<Y>245</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -522,7 +522,7 @@
 		<Text><![CDATA[20.5 jaar]]></Text>
 		<Font>
 			<Name><![CDATA[HOLONline2]]></Name>
-			<Size>14</Size>
+			<Size>12</Size>
 			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -531,7 +531,7 @@
 		<Id>1774349289330</Id>
 		<Name><![CDATA[t_previousCAPEXTotal]]></Name>
 		<X>519.5</X>
-		<Y>320.5</Y>
+		<Y>305</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -547,7 +547,7 @@
 		<Text><![CDATA[€ 3,200,000]]></Text>
 		<Font>
 			<Name><![CDATA[HOLONline2]]></Name>
-			<Size>14</Size>
+			<Size>12</Size>
 			<Style>2</Style>
 		</Font>
 		<Alignment>RIGHT</Alignment>
@@ -556,7 +556,7 @@
 		<Id>1774349289332</Id>
 		<Name><![CDATA[t_previousOPEXTotal]]></Name>
 		<X>519.5</X>
-		<Y>450.5</Y>
+		<Y>425</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -581,7 +581,7 @@
 		<Id>1774349289334</Id>
 		<Name><![CDATA[t_previousCAPEXAndOPEXTotal]]></Name>
 		<X>519.5</X>
-		<Y>600.5</Y>
+		<Y>565</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -606,7 +606,7 @@
 		<Id>1774349289336</Id>
 		<Name><![CDATA[t_previousCAPEXAndOPEXPerYear]]></Name>
 		<X>519.5</X>
-		<Y>670.5</Y>
+		<Y>625</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -631,7 +631,7 @@
 		<Id>1774349289338</Id>
 		<Name><![CDATA[t_previousOPEXPerYear]]></Name>
 		<X>519.5</X>
-		<Y>510.5</Y>
+		<Y>485</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -656,7 +656,7 @@
 		<Id>1774349289340</Id>
 		<Name><![CDATA[t_previousCAPEXPerYear]]></Name>
 		<X>519.5</X>
-		<Y>380.5</Y>
+		<Y>365</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -772,7 +772,7 @@ f_setChartCAPEXAndOPEXValues();</ActionCode>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>280</XCode>
+		<XCode>290</XCode>
 		<YCode>260</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
@@ -781,7 +781,7 @@ f_setChartCAPEXAndOPEXValues();</ActionCode>
 			<Rectangle>
 				<Id>1774273147199</Id>
 				<Name><![CDATA[rect_includeAssetSelection]]></Name>
-				<X>-200</X>
+				<X>-210</X>
 				<Y>-140</Y>
 				<Label>
 					<X>10</X>
@@ -808,7 +808,7 @@ f_setChartCAPEXAndOPEXValues();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273189896</Id>
 				<Name><![CDATA[cb_includeAssetBattery]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>-40</Y>
 				<Label>
 					<X>0</X>
@@ -841,7 +841,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 			<Text>
 				<Id>1774273234807</Id>
 				<Name><![CDATA[txt_includeAssetSelection]]></Name>
-				<X>10</X>
+				<X>0</X>
 				<Y>-120</Y>
 				<Label>
 					<X>0</X>
@@ -867,7 +867,7 @@ worden in de totaal berekening?]]></Text>
 			<Text>
 				<Id>1774273298292</Id>
 				<Name><![CDATA[txt_includeAssetSelectionExplainer]]></Name>
-				<X>10</X>
+				<X>0</X>
 				<Y>-70</Y>
 				<Label>
 					<X>0</X>
@@ -893,7 +893,7 @@ worden in de totaal berekening?]]></Text>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273353293</Id>
 				<Name><![CDATA[cb_includeAssetECar]]></Name>
-				<X>40</X>
+				<X>30</X>
 				<Y>20</Y>
 				<Label>
 					<X>0</X>
@@ -927,7 +927,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273354856</Id>
 				<Name><![CDATA[cb_includeAssetEVan]]></Name>
-				<X>40</X>
+				<X>30</X>
 				<Y>40</Y>
 				<Label>
 					<X>0</X>
@@ -961,7 +961,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273355972</Id>
 				<Name><![CDATA[cb_includeAssetETruck]]></Name>
-				<X>40</X>
+				<X>30</X>
 				<Y>60</Y>
 				<Label>
 					<X>0</X>
@@ -995,7 +995,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273356806</Id>
 				<Name><![CDATA[cb_includeAssetHeatpump]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>0</Y>
 				<Label>
 					<X>0</X>
@@ -1029,7 +1029,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273357454</Id>
 				<Name><![CDATA[cb_includeAssetGasburner]]></Name>
-				<X>40</X>
+				<X>30</X>
 				<Y>0</Y>
 				<Label>
 					<X>0</X>
@@ -1063,7 +1063,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273358199</Id>
 				<Name><![CDATA[cb_includeAssetElectrolyser]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>60</Y>
 				<Label>
 					<X>0</X>
@@ -1097,7 +1097,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273358959</Id>
 				<Name><![CDATA[cb_includeAssetDieselGenerator]]></Name>
-				<X>40</X>
+				<X>30</X>
 				<Y>-40</Y>
 				<Label>
 					<X>0</X>
@@ -1131,7 +1131,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273359721</Id>
 				<Name><![CDATA[cb_includeAssetGasGenerator]]></Name>
-				<X>40</X>
+				<X>30</X>
 				<Y>-20</Y>
 				<Label>
 					<X>0</X>
@@ -1165,7 +1165,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273528010</Id>
 				<Name><![CDATA[cb_includeAssetPV]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>-20</Y>
 				<Label>
 					<X>0</X>
@@ -1199,7 +1199,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273544465</Id>
 				<Name><![CDATA[cb_includeAssetWindTurbine]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>40</Y>
 				<Label>
 					<X>0</X>
@@ -1233,7 +1233,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273592097</Id>
 				<Name><![CDATA[cb_includeAssetH2Truck]]></Name>
-				<X>40</X>
+				<X>30</X>
 				<Y>80</Y>
 				<Label>
 					<X>0</X>
@@ -1267,7 +1267,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1774273949963</Id>
 				<Name><![CDATA[cb_includeAssetPT]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>20</Y>
 				<Label>
 					<X>0</X>
@@ -1300,7 +1300,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 			<Group>
 				<Id>1774277682326</Id>
 				<Name><![CDATA[gr_closeIncludeAssetSelectionGroup]]></Name>
-				<X>180</X>
+				<X>170</X>
 				<Y>-130</Y>
 				<Label>
 					<X>10</X>
@@ -1404,7 +1404,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1778522835780</Id>
 				<Name><![CDATA[cb_includeAssetHydrogenFuelCell]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>100</Y>
 				<Label>
 					<X>0</X>
@@ -1438,7 +1438,7 @@ f_setChartCAPEXAndOPEX();</ActionCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1778522836981</Id>
 				<Name><![CDATA[cb_includeAssetHydrogenStorage]]></Name>
-				<X>-140</X>
+				<X>-150</X>
 				<Y>80</Y>
 				<Label>
 					<X>0</X>
