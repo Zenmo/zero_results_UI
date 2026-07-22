@@ -6,12 +6,6 @@ plot_dagnacht.removeAll();
 plot_seizoen.removeAll();
 gr_flexGrowthPotential.setVisible(false);
 gr_growthPotential.setVisible(false);
-
-gr_absoluteDeliveryInfo.setPos(175, 300);
-gr_relativeDeliveryInfo.setPos(155, 420);
-gr_absoluteFeedinInfo.setPos(305, 300);
-gr_relativeFeedinInfo.setPos(305, 420);
-
 gr_concurrencyKPI.setVisible(false);
 /*ALCODEEND*/}
 
@@ -576,12 +570,6 @@ t_concurrencyValue.setText(concurrencyValue_kW + " kW max per aansluiting");
 
 //Set position and visiblity
 gr_concurrencyKPI.setVisible(true);
-
-gr_absoluteDeliveryInfo.setPos(105, 370);
-gr_relativeDeliveryInfo.setPos(85, 490);
-gr_absoluteFeedinInfo.setPos(235, 370);
-gr_relativeFeedinInfo.setPos(235, 490);
-
 /*ALCODEEND*/}
 
 double f_makeHeatmapTrafo()

@@ -122,7 +122,7 @@
 			<Group>
 				<Id>1784297007568</Id>
 				<Name><![CDATA[gr_chartSelectionButtons]]></Name>
-				<X>279</X>
+				<X>277.5</X>
 				<Y>50</Y>
 				<Label>
 					<X>10</X>
@@ -139,7 +139,7 @@
 					<RoundedRectangle>
 						<Id>1784297007570</Id>
 						<Name><![CDATA[button_chart1]]></Name>
-						<X>-269</X>
+						<X>-270</X>
 						<Y>-10</Y>
 						<Label>
 							<X>10</X>
@@ -157,7 +157,7 @@
 						<LineColor>-1</LineColor>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>85</Width>
+						<Width>90</Width>
 						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-1</FillColor>
@@ -167,7 +167,7 @@
 					<Text>
 						<Id>1784297007572</Id>
 						<Name><![CDATA[txt_header_chartbutton1]]></Name>
-						<X>-227</X>
+						<X>-225</X>
 						<Y>-4</Y>
 						<Label>
 							<X>0</X>
@@ -192,7 +192,7 @@
 					<RoundedRectangle>
 						<Id>1784297007574</Id>
 						<Name><![CDATA[button_chart2]]></Name>
-						<X>-180</X>
+						<X>-175</X>
 						<Y>-10</Y>
 						<Label>
 							<X>10</X>
@@ -210,7 +210,7 @@
 						<LineColor/>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>85</Width>
+						<Width>90</Width>
 						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-16744320</FillColor>
@@ -220,7 +220,7 @@
 					<Text>
 						<Id>1784297007576</Id>
 						<Name><![CDATA[txt_header_chartbutton2]]></Name>
-						<X>-138</X>
+						<X>-130</X>
 						<Y>-4</Y>
 						<Label>
 							<X>0</X>
@@ -245,7 +245,7 @@
 					<RoundedRectangle>
 						<Id>1784297007578</Id>
 						<Name><![CDATA[button_chart3]]></Name>
-						<X>-90</X>
+						<X>-80</X>
 						<Y>-10</Y>
 						<Label>
 							<X>10</X>
@@ -263,7 +263,7 @@
 						<LineColor/>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>85</Width>
+						<Width>90</Width>
 						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-16744320</FillColor>
@@ -273,7 +273,7 @@
 					<Text>
 						<Id>1784297007580</Id>
 						<Name><![CDATA[txt_header_chartbutton3]]></Name>
-						<X>-48</X>
+						<X>-35</X>
 						<Y>-4</Y>
 						<Label>
 							<X>0</X>
@@ -298,7 +298,7 @@
 					<RoundedRectangle>
 						<Id>1784297007582</Id>
 						<Name><![CDATA[button_chart4]]></Name>
-						<X>1</X>
+						<X>15</X>
 						<Y>-10</Y>
 						<Label>
 							<X>10</X>
@@ -316,7 +316,7 @@
 						<LineColor/>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>85</Width>
+						<Width>90</Width>
 						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-16744320</FillColor>
@@ -326,7 +326,7 @@
 					<Text>
 						<Id>1784297007584</Id>
 						<Name><![CDATA[txt_header_chartbutton4]]></Name>
-						<X>43</X>
+						<X>60</X>
 						<Y>-4</Y>
 						<Label>
 							<X>0</X>
@@ -351,7 +351,7 @@
 					<RoundedRectangle>
 						<Id>1784297007586</Id>
 						<Name><![CDATA[button_chart5]]></Name>
-						<X>90</X>
+						<X>110</X>
 						<Y>-10</Y>
 						<Label>
 							<X>10</X>
@@ -369,7 +369,7 @@
 						<LineColor/>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>85</Width>
+						<Width>90</Width>
 						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-16744320</FillColor>
@@ -379,7 +379,7 @@
 					<Text>
 						<Id>1784297007588</Id>
 						<Name><![CDATA[txt_header_chartbutton5]]></Name>
-						<X>132</X>
+						<X>155</X>
 						<Y>-4</Y>
 						<Label>
 							<X>0</X>
@@ -404,7 +404,7 @@
 					<RoundedRectangle>
 						<Id>1784297007590</Id>
 						<Name><![CDATA[button_chart6]]></Name>
-						<X>180</X>
+						<X>205</X>
 						<Y>-10</Y>
 						<Label>
 							<X>10</X>
@@ -422,7 +422,7 @@
 						<LineColor/>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
-						<Width>85</Width>
+						<Width>90</Width>
 						<Height>20</Height>
 						<Rotation>0.0</Rotation>
 						<FillColor>-16744320</FillColor>
@@ -432,7 +432,7 @@
 					<Text>
 						<Id>1784297007592</Id>
 						<Name><![CDATA[txt_header_chartbutton6]]></Name>
-						<X>222</X>
+						<X>250</X>
 						<Y>-4</Y>
 						<Label>
 							<X>0</X>
