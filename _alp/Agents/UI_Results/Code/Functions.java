@@ -36,6 +36,9 @@ switch (v_selectedChartType) {
 		gr_chartGTO_presentation.setVisible(true);
 		chartGTO.f_setChartGTO();
 		break;
+	case KPISUMMARY:
+		gr_chartKPISummary_presentation.setVisible(true);
+		chartKPISummary.f_setKPISummaryChart();
 	case CO2:
 		gr_chartCO2_presentation.setVisible(true);
 		chartCO2.f_setChartCO2();
@@ -56,11 +59,6 @@ switch (v_selectedChartType) {
 		gr_chartTotalCosts_presentation.setVisible(true);
 		chartTotalCosts.f_setChartTotalCosts();
 		break;
-}
-
-if(b_showKPISummary){
-	gr_chartKPISummary_presentation.setVisible(true);
-	chartKPISummary.f_setKPISummaryChart();
 }
 /*ALCODEEND*/}
 
@@ -162,10 +160,6 @@ chartBalans.f_setCharts();
 chartNetbelasting.f_setCharts();
 chartSankey.f_setSankey();
 chartGespreksleidraadBedrijven.f_setGespreksleidraadBedrijvenCharts();
-
-if(b_showKPISummary){
-	chartKPISummary.f_setKPISummaryChart();
-}
 /*ALCODEEND*/}
 
 double f_styleAllCharts(Color backgroundColor,Color lineColor,Double lineWidth,LineStyle lineStyle)
@@ -181,6 +175,12 @@ chartGespreksleidraadBedrijven.f_styleBackground(backgroundColor, lineColor, lin
 chartBatteries.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartEnergyCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGTO.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartConnectionCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartCAPEXAndOPEX.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartTotalCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartBars.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartCO2.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+
 /*ALCODEEND*/}
 
 double f_setChartSummary_Presentation(Integer location_x,Integer location_y,boolean visible)
@@ -534,24 +534,6 @@ if (v_selectedObjectText.length() > maxStringLength){
 }
 
 //t_selectedObjectDisplayText.setText("Je bekijkt nu gegevens van: " + selectedObjectText);
-/*ALCODEEND*/}
-
-double f_setCB_KPISummary_Presentation(Integer location_x,Integer location_y,boolean visible)
-{/*ALCODESTART::1742218383411*/
-//Set the location and visibility of the checkbox for the KPI summary chart
-
-//Set x axis
-if(location_x != null){
-	checkbox_KPISummary.setX(location_x);
-}
-
-//Set y axis
-if(location_y != null){
-	checkbox_KPISummary.setY(location_y);
-}
-
-//Set visibility
-checkbox_KPISummary.setVisible(visible);
 /*ALCODEEND*/}
 
 double f_setSelectedObjectDisplay(Integer location_x,Integer location_y,boolean setVisible)
@@ -1021,11 +1003,6 @@ if(selectedButton.isEnabled()){
 		if(customButton != selectedButton){
 			customButton.setSelected(false, false);
 		}
-	}
-	
-	//Always disable kpi summary after clicking other chart
-	if(b_showKPISummary){
-		checkbox_KPISummary.setSelected(false, true);
 	}
 	
 	//Show correct chart

@@ -530,7 +530,7 @@
 					<Text>
 						<Id>1784297008709</Id>
 						<Name><![CDATA[txt_resultsUIMode0]]></Name>
-						<X>-167</X>
+						<X>-169</X>
 						<Y>-7</Y>
 						<Label>
 							<X>0</X>
@@ -555,7 +555,7 @@
 					<Text>
 						<Id>1784297008711</Id>
 						<Name><![CDATA[txt_resultsUIMode2]]></Name>
-						<X>220</X>
+						<X>217.66</X>
 						<Y>-7</Y>
 						<Label>
 							<X>0</X>
@@ -607,7 +607,7 @@
 					<Text>
 						<Id>1784297008715</Id>
 						<Name><![CDATA[txt_resultsUIMode1]]></Name>
-						<X>25</X>
+						<X>24.33</X>
 						<Y>-7</Y>
 						<Label>
 							<X>0</X>
@@ -632,7 +632,7 @@
 					<Image>
 						<Id>1784297008717</Id>
 						<Name><![CDATA[image_button_resultsUIMode0]]></Name>
-						<X>-230</X>
+						<X>-259</X>
 						<Y>-10</Y>
 						<Label>
 							<X>0</X>
@@ -678,7 +678,7 @@
 					<Image>
 						<Id>1784297008719</Id>
 						<Name><![CDATA[image_button_resultsUIMode1]]></Name>
-						<X>-44</X>
+						<X>-65.67</X>
 						<Y>-10</Y>
 						<Label>
 							<X>0</X>
@@ -724,7 +724,7 @@
 					<Image>
 						<Id>1784297008721</Id>
 						<Name><![CDATA[image_button_resultsUIMode2]]></Name>
-						<X>135</X>
+						<X>127.66</X>
 						<Y>-10</Y>
 						<Label>
 							<X>0</X>
@@ -1470,44 +1470,6 @@
 			</Group>
 		</Presentation>
 	</Group>
-	<Control Type="CheckBox">
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Id>1727707192290</Id>
-		<Name><![CDATA[checkbox_KPISummary]]></Name>
-		<X>430</X>
-		<Y>-38</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="145" Height="30">
-			<EmbeddedIcon>false</EmbeddedIcon>
-			<TextColor>-16777216</TextColor>
-			<Enabled>true</Enabled>
-			<ActionCode>if(b_isCompanyUIResultsUI){
-	f_setAllCharts();
-	if(checkbox_KPISummary.isSelected()){
-		gr_chartKPISummary_presentation.setVisible(true);
-	}
-	else{
-		gr_chartKPISummary_presentation.setVisible(false);
-	}
-}
-else{
-	f_showCorrectChart();
-}</ActionCode>
-		</BasicProperties>
-		<ExtendedProperties>
-			<Font Name="Dialog" Size="11" Style="0"/>
-			<LabelText>Toon jaarcijfers energie</LabelText>
-			<LinkTo>true</LinkTo>
-			<Link>b_showKPISummary</Link>
-		</ExtendedProperties>
-	</Control>
 	<Group>
 		<Id>1742222787633</Id>
 		<Name><![CDATA[gr_selectedObjectDisplay]]></Name>
@@ -1566,13 +1528,12 @@ else{
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D</DrawMode>
-				<VisibleCode>!checkbox_KPISummary.isSelected()</VisibleCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16754600</Color>
-				<Text><![CDATA[Je bekijkt nu: profielen van het volledige gebied]]></Text>
-				<TextCode>"Je bekijkt nu " + v_selectedChartText + " van: " + v_selectedObjectText</TextCode>
+				<Text><![CDATA[Je bekijkt nu naar resultaten van: het volledige gebied]]></Text>
+				<TextCode>"Je bekijkt nu naar resultaten van: " + v_selectedObjectText</TextCode>
 				<Font>
 					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
