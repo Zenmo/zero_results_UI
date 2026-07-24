@@ -1532,8 +1532,8 @@
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16754600</Color>
-				<Text><![CDATA[Je bekijkt nu: profielen van het volledige gebied]]></Text>
-				<TextCode>"Je bekijkt nu " + v_selectedChartText + " van: " + v_selectedObjectText</TextCode>
+				<Text><![CDATA[Je bekijkt nu naar resultaten van: het volledige gebied]]></Text>
+				<TextCode>"Je bekijkt nu naar resultaten van: " + v_selectedObjectText</TextCode>
 				<Font>
 					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
