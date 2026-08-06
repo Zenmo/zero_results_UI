@@ -35,13 +35,14 @@ gr_year.setVisible(true);
 double startTime_h = 0;
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
-	List<Color> colorSpectrum = new ArrayList<>();
 	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject).f_getAllChildMemberGridConnections();
-	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
-	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
-		energyDemandChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h, 24.0), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
-		energySupplyChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h, 24.0), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+		if(!memberGridConnections.get(k).p_gridConnectionID.startsWith("PV")){
+			energyDemandChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h, 24.0), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+		}
+		else if(memberGridConnections.get(k).v_liveAssetsMetaData.totalInstalledPVPower_kW > 0){
+			energySupplyChartYear.addDataSet(memberGridConnections.get(k).getRapidRunData().am_dailyAverageProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(startTime_h, 24.0), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+		}
 	}
 }
 else{	
@@ -97,13 +98,15 @@ double f_addElectricityFlows_Live(I_EnergyData dataObject)
 gr_week.setVisible(true);
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
-	List<Color> colorSpectrum = new ArrayList<>();
 	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject).f_getAllChildMemberGridConnections();
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
-	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
-		energyDemandChart.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveDemand_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
-		energySupplyChart.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveSupply_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+		if(!memberGridConnections.get(k).p_gridConnectionID.startsWith("PV")){
+			energyDemandChart.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveDemand_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+		}
+		else if(memberGridConnections.get(k).v_liveAssetsMetaData.totalInstalledPVPower_kW > 0){
+			energySupplyChart.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveSupply_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+		}
 	}
 }
 else{
@@ -130,7 +133,7 @@ activeProductionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeConsumptionEnergyCarriers.remove( OL_EnergyCarriers.ELECTRICITY );
 activeProductionEnergyCarriers.remove( OL_EnergyCarriers.HEAT );
 
-if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
+if (false){//dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double dataSetStartTime_h = uI_Results.energyModel.p_timeParameters.getRunStartTime_h(); //
 	double peakTime_h;
 	double peak_kW;
@@ -209,7 +212,7 @@ double f_addElectricityFlows_Week(I_EnergyData dataObject,boolean isSummerWeek)
 gr_week.setVisible(true);
 double dataSetWeekStartTime_h;
 
-if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
+if (false){//dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	double dataSetStartTime_h = uI_Results.energyModel.p_timeParameters.getRunStartTime_h(); //
 	double peakTime_h;
 	double peak_kW;
@@ -260,17 +263,24 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 		dataSetWeekStartTime_h +=8760;
 	}
 	if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
-		List<Color> colorSpectrum = new ArrayList<>();
+
 		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject).f_getAllChildMemberGridConnections();
 		
 		for (int k = 0; k < memberGridConnections.size(); k++) {
-		    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
 		    if (isSummerWeek){
-				energyDemandChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_summerWeekConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
-				energySupplyChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_summerWeekProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+				if(!memberGridConnections.get(k).p_gridConnectionID.startsWith("PV")){
+					energyDemandChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_summerWeekConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+				}
+				else if(memberGridConnections.get(k).v_liveAssetsMetaData.totalInstalledPVPower_kW > 0){
+					energySupplyChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_summerWeekProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+				}
 			} else {
-				energyDemandChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_winterWeekConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
-				energySupplyChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_winterWeekProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+				if(!memberGridConnections.get(k).p_gridConnectionID.startsWith("PV")){
+					energyDemandChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_winterWeekConsumptionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+				}
+				else if(memberGridConnections.get(k).v_liveAssetsMetaData.totalInstalledPVPower_kW > 0){
+					energySupplyChart.addDataSet(memberGridConnections.get(k).getRapidRunData().am_winterWeekProductionAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(dataSetWeekStartTime_h), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+				}
 			}
 		}
 	}
@@ -341,7 +351,7 @@ if (v_periodRadioButton.getValue() == 0) {
 
 I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
 
-if (dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
+if (false){//dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 		v_periodRadioButton = rb_periodPeaksExcludingYear;
 	} else {
@@ -622,7 +632,7 @@ if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
 	if (b_subdivideEnergyCoopFlows) {
 		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject).f_getAllChildMemberGridConnections();
 		for (GridConnection GC : memberGridConnections) {
-			plot_netload_week.addDataSet(GC.getLiveData().data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+			plot_netload_week.addDataSet(GC.getLiveData().data_liveElectricityBalance_kW, GC.p_gridConnectionID, colorSpectrum.get(memberGridConnections.indexOf(GC)), true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 		}
 	}
 }
@@ -668,7 +678,7 @@ if(dataObject.getRapidRunData().connectionMetaData.getContractedFeedinCapacityKn
 double startTime_h = uI_Results.energyModel.p_timeParameters.getStartOfSummerWeek_h() - uI_Results.energyModel.p_timeParameters.getRunStartTime_h();
 
 
-if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { // 
+if (false){//dataObject.getRapidRunData().getStoreTotalAssetFlows()) { // 
 	double dataSetStartTime_h = uI_Results.energyModel.p_timeParameters.getRunStartTime_h(); //
 	double peakTime_h;
 	double peak_kW;
@@ -739,7 +749,7 @@ if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
 	if (b_subdivideEnergyCoopFlows) {
 		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject).f_getAllChildMemberGridConnections();
 		for (GridConnection GC : memberGridConnections) {
-			plot_netload_week.addDataSet(GC.v_rapidRunData.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_timeParameters.getStartOfSummerWeek_h()), GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+			plot_netload_week.addDataSet(GC.v_rapidRunData.am_summerWeekBalanceAccumulators_kW.get(OL_EnergyCarriers.ELECTRICITY).getDataSet(uI_Results.energyModel.p_timeParameters.getStartOfSummerWeek_h()), GC.p_gridConnectionID, colorSpectrum.get(memberGridConnections.indexOf(GC)), true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 		}
 	}
 }
@@ -792,13 +802,15 @@ gr_day.setVisible(true);
 
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
-	List<Color> colorSpectrum = new ArrayList<>();
 	List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject).f_getAllChildMemberGridConnections();
 	
 	for (int k = 0; k < memberGridConnections.size(); k++) {
-	    colorSpectrum.add(UtilitiesColor.spectrumColor(k, memberGridConnections.size()).darker());
-		energyDemandChartDay.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveDemand_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
-		energySupplyChartDay.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveSupply_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+		if(!memberGridConnections.get(k).p_gridConnectionID.startsWith("PV")){
+			energyDemandChartDay.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveDemand_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));
+		}
+		else if(memberGridConnections.get(k).v_liveAssetsMetaData.totalInstalledPVPower_kW > 0){
+			energySupplyChartDay.addDataSet(memberGridConnections.get(k).getLiveData().dsm_liveSupply_kW.get(OL_EnergyCarriers.ELECTRICITY), memberGridConnections.get(k).p_ownerID, colorSpectrum.get(k));	
+		}
 	}
 }
 else{
@@ -873,7 +885,7 @@ if (dataObject.getScope() == OL_ResultScope.ENERGYCOOP ) {
 	if (b_subdivideEnergyCoopFlows) {
 		List<GridConnection> memberGridConnections = ((EnergyCoop)dataObject).f_getAllChildMemberGridConnections();
 		for (GridConnection GC : memberGridConnections) {
-			plot_netload_day.addDataSet(GC.getLiveData().data_liveElectricityBalance_kW, GC.p_gridConnectionID, blue, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
+			plot_netload_day.addDataSet(GC.getLiveData().data_liveElectricityBalance_kW, GC.p_gridConnectionID, colorSpectrum.get(memberGridConnections.indexOf(GC)), true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1.5, Chart.PointStyle.POINT_NONE);
 		}
 	}
 }

@@ -512,7 +512,7 @@ else{
 				v_selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
 			}
 			else{
-				v_selectedObjectText = "een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
+				v_selectedObjectText = "Feedmill"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
 			}
 		} else {
 			v_selectedObjectText = "klanten van energiecoöperatie"; // Geen aansluitingen in deze selectie
