@@ -2061,20 +2061,20 @@
 	Map.entry(OL_ChartTypes.PROFILES, "Profielen"),
 	Map.entry(OL_ChartTypes.BAR_TOTALS, "Totalen"),
 	Map.entry(OL_ChartTypes.LOAD_DURATION_CURVES, "Netbelasting"),
-	Map.entry(OL_ChartTypes.SANKEY, "Energie stromen"),
-	Map.entry(OL_ChartTypes.GESPREKSLEIDRAAD_BEDRIJVEN, "Leidraad bedrijven"),
+	Map.entry(OL_ChartTypes.SANKEY, "Energiestromen"),
+	Map.entry(OL_ChartTypes.GESPREKSLEIDRAAD_BEDRIJVEN, "Leidraad bedr."),
 	Map.entry(OL_ChartTypes.GESPREKSLEIDRAAD, "Leidraad"),
 	Map.entry(OL_ChartTypes.BATTERY, "Opslag"),
 	Map.entry(OL_ChartTypes.GTO, "GTO"),
 	
 	//Economic
-	Map.entry(OL_ChartTypes.ENERGY_COSTS, "Energie kosten"),
+	Map.entry(OL_ChartTypes.ENERGY_COSTS, "Energiekosten"),
 	Map.entry(OL_ChartTypes.CONNECTION_COSTS, "Aansluiting"),//s kosten"),
 	Map.entry(OL_ChartTypes.CAPEX_AND_OPEX, "CAPEX"),// & Onderhoud"),
 	Map.entry(OL_ChartTypes.TOTAL_COSTS, "Totaal"),
 	
 	//Sustainability
-	Map.entry(OL_ChartTypes.CO2, "CO2 Uitstoot")
+	Map.entry(OL_ChartTypes.CO2, "CO2 uitstoot")
 )]]></Code>
 			</DefaultValue>
 			<ParameterEditor>
