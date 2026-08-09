@@ -1967,7 +1967,8 @@
 		OL_ChartTypes.GESPREKSLEIDRAAD_BEDRIJVEN,
 		OL_ChartTypes.GESPREKSLEIDRAAD,
 		OL_ChartTypes.BATTERY,
-		OL_ChartTypes.GTO
+		OL_ChartTypes.GTO,
+		OL_ChartTypes.KPISUMMARY
 	),
 	OL_ResultsUIMode.ECONOMIC, List.of(
 		OL_ChartTypes.ENERGY_COSTS,
@@ -2066,6 +2067,7 @@
 	Map.entry(OL_ChartTypes.GESPREKSLEIDRAAD, "Leidraad"),
 	Map.entry(OL_ChartTypes.BATTERY, "Opslag"),
 	Map.entry(OL_ChartTypes.GTO, "GTO"),
+	Map.entry(OL_ChartTypes.KPISUMMARY, "Samenvatting"),
 	
 	//Economic
 	Map.entry(OL_ChartTypes.ENERGY_COSTS, "Energiekosten"),
