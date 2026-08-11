@@ -358,12 +358,13 @@ if (false){//dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().
 		v_periodRadioButton = rb_periodPeaksIncludingYear;
 	}
 } else {
-	if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-		v_periodRadioButton = rb_periodExcludingYear;
-	} else {
-		v_periodRadioButton = rb_periodIncludingYear;
-	}
+	v_periodRadioButton = yearSupported ? rb_periodIncludingYear : rb_periodExcludingYear;
 }
+
+if (!yearSupported && v_periodRadioButton.getValue() >= 3) {
+	v_periodRadioButton.setValue(0);
+}
+
 v_periodRadioButton.setVisible(true);
 int radioValue = v_periodRadioButton.getValue();
 
@@ -389,7 +390,8 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 			}
 			break;
 		
-		case 2: uI_Results.v_selectedChartText = "de laagste afname";// Summer
+		case 2: // Summer
+			uI_Results.v_selectedChartText = "de laagste afname";
 			gr_hoogsteMomentInfo.setVisible(true);
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Week(uI_Results.v_gridNode,true);
@@ -399,9 +401,9 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 			}
 			break;
 		
-		case 1: // Winte
-			gr_hoogsteMomentInfo.setVisible(true);
+		case 1: // Winter
 			uI_Results.v_selectedChartText = "de hoogste afname";
+			gr_hoogsteMomentInfo.setVisible(true);
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Week(uI_Results.v_gridNode, false);
 			}
@@ -485,11 +487,7 @@ else { // Stack Chart
 		case 3: // Year
 			uI_Results.v_selectedChartText = "de jaarprofielen";
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-				// This graph does not exist, defaulting back to the live plot
-				throw new RuntimeException("The Year Graph does not exist for GridNodes.");				
-				//radio_period.setValue(0);
-				//radio_period_peaks.setValue(0);
-				//f_setCharts();
+				throw new RuntimeException("The Year Graph does not exist for GridNodes.");
 			} else {
 				f_addElectricityFlows_Year(dataObject);
 				if( radio_energyType.getValue() == 1){
