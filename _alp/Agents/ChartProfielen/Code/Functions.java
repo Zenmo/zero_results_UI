@@ -350,7 +350,7 @@ if (v_periodRadioButton.getValue() == 0) {
 }
 
 I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
-
+boolean yearSupported = true;
 if (false){//dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 		v_periodRadioButton = rb_periodPeaksExcludingYear;
