@@ -1030,6 +1030,7 @@
 			<Group>
 				<Id>1784282028066</Id>
 				<Name><![CDATA[button_seeHeatmap]]></Name>
+				<ExcludeFromBuild>true</ExcludeFromBuild>
 				<X>360</X>
 				<Y>920</Y>
 				<Label>

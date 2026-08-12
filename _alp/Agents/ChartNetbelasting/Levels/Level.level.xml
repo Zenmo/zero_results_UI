@@ -1800,7 +1800,6 @@ else {
 			<Orientation>HORIZONTAL</Orientation>
 			<Button>Jaar overzicht</Button>
 			<Button>Per seizoen</Button>
-			<Button>Heatmap</Button>
 			<LinkTo>false</LinkTo>
 		</ExtendedProperties>
 	</Control>

@@ -654,7 +654,7 @@ Color f_heatmapColorTrafo(double value_kW,double trafoCapacity_kW)
 int r, g, b;
     if (value_kW >= 0) {
         // Positief: wit -> geel -> oranje -> rood -> donkerrood
-         traceln("Positieve waarde: " + value_kW + ", trafo cap: " + trafoCapacity_kW);
+         //traceln("Positieve waarde: " + value_kW + ", trafo cap: " + trafoCapacity_kW);
         double t = Math.min(value_kW / trafoCapacity_kW, 1.2); // cap iets boven 1 voor donkerrood
         if (t < 0.5) {
             // wit -> geel
@@ -679,7 +679,7 @@ int r, g, b;
         }
     } else {
         // Negatief: wit -> groen -> blauw -> donkerblauw
-        traceln("Negatieve waarde: " + value_kW + ", trafo cap: " + trafoCapacity_kW);
+        //traceln("Negatieve waarde: " + value_kW + ", trafo cap: " + trafoCapacity_kW);
         double t = Math.min(Math.abs(value_kW) / trafoCapacity_kW, 1.2);
         if (t < 0.5) {
             // wit -> groen
