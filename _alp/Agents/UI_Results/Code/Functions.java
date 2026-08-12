@@ -1,21 +1,6 @@
 double f_showCorrectChart()
 {/*ALCODESTART::1714902615653*/
-gr_chartProfielen_presentation.setVisible(false);
-gr_chartBalans_presentation.setVisible(false);
-gr_chartNetbelasting_presentation.setVisible(false);
-gr_chartSankey_presentation.setVisible(false);
-gr_chartSummary_presentation.setVisible(false);
-gr_chartGespreksLeidraad_presentation.setVisible(false);
-gr_chartKPISummary_presentation.setVisible(false);
-gr_chartBatteries_presentation.setVisible(false);
-gr_chartGTO_presentation.setVisible(false);
-gr_chartBars_presentation.setVisible(false);
-gr_chartCO2_presentation.setVisible(false);
-gr_chartEnergyCosts_presentation.setVisible(false);
-gr_chartConnectionCosts_presentation.setVisible(false);
-gr_chartCAPEXAndOPEX_presentation.setVisible(false);
-gr_chartTotalCosts_presentation.setVisible(false);
-gr_chartBlocker.setVisible(false);
+f_resetChartVisibility();
 
 switch (v_selectedChartType) {
 	case PROFILES:
@@ -51,6 +36,9 @@ switch (v_selectedChartType) {
 		gr_chartGTO_presentation.setVisible(true);
 		chartGTO.f_setChartGTO();
 		break;
+	case KPISUMMARY:
+		gr_chartKPISummary_presentation.setVisible(true);
+		chartKPISummary.f_setKPISummaryChart();
 	case CO2:
 		gr_chartCO2_presentation.setVisible(true);
 		chartCO2.f_setChartCO2();
@@ -71,11 +59,6 @@ switch (v_selectedChartType) {
 		gr_chartTotalCosts_presentation.setVisible(true);
 		chartTotalCosts.f_setChartTotalCosts();
 		break;
-}
-
-if(b_showKPISummary){
-	gr_chartKPISummary_presentation.setVisible(true);
-	chartKPISummary.f_setKPISummaryChart();
 }
 /*ALCODEEND*/}
 
@@ -177,10 +160,6 @@ chartBalans.f_setCharts();
 chartNetbelasting.f_setCharts();
 chartSankey.f_setSankey();
 chartGespreksleidraadBedrijven.f_setGespreksleidraadBedrijvenCharts();
-
-if(b_showKPISummary){
-	chartKPISummary.f_setKPISummaryChart();
-}
 /*ALCODEEND*/}
 
 double f_styleAllCharts(Color backgroundColor,Color lineColor,Double lineWidth,LineStyle lineStyle)
@@ -196,15 +175,11 @@ chartGespreksleidraadBedrijven.f_styleBackground(backgroundColor, lineColor, lin
 chartBatteries.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartEnergyCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 chartGTO.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
-/*ALCODEEND*/}
-
-double f_styleResultsUIHeader(Color backgroundColor,Color lineColor,double lineWidth,LineStyle lineStyle)
-{/*ALCODESTART::1725375062400*/
-//Function to style all chart (backgrounds)
-rect_resultsMenuLarge.setFillColor(backgroundColor);
-rect_resultsMenuLarge.setLineColor(lineColor);
-rect_resultsMenuLarge.setLineWidth(lineWidth);
-rect_resultsMenuLarge.setLineStyle(lineStyle);
+chartConnectionCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartCAPEXAndOPEX.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartTotalCosts.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartBars.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
+chartCO2.f_styleBackground(backgroundColor, lineColor, lineWidth, lineStyle);
 
 /*ALCODEEND*/}
 
@@ -355,16 +330,17 @@ double f_setChartsBatteries()
 chartBatteries.f_setChartsBatteries();
 /*ALCODEEND*/}
 
-double f_initializeResultsUI(List<OL_ChartTypes> selectedChartTypes_Energy,List<OL_ChartTypes> selectedChartTypes_Economic)
+double f_initializeResultsUI(List<OL_ChartTypes> selectedChartTypes_Energy,List<OL_ChartTypes> selectedChartTypes_Economic,List<OL_ChartTypes> selectedCharts_Sustainability,boolean enablePublicVersion)
 {/*ALCODESTART::1739364390433*/
 f_updateResultsUI(energyModel);
 
-//Set the selected radiobutton setup
-f_initializeResultsUIMainRB(selectedChartTypes_Energy, selectedChartTypes_Economic);
+//Set the selected button setup
+f_initializeResultsUIHeaderButtons(selectedChartTypes_Energy, selectedChartTypes_Economic, selectedCharts_Sustainability);
 
-//Initialize profiles graph (starting chart)
-chartProfielen.f_setCharts();
-
+//Enable public version if requested
+if(enablePublicVersion){
+	f_enablePublicVersion(true);
+}
 /*ALCODEEND*/}
 
 double f_updateUIresultsGridNode(GridNode GN)
@@ -453,14 +429,11 @@ area.v_dataNetbelastingDuurkrommeWeekend_kW = GN.data_weekendNetbelastingDuurkro
 
 double f_enableNonLivePlotRadioButtons(boolean active)
 {/*ALCODESTART::1739884154258*/
-if(rb_resultsUIMode != null){
-	rb_resultsUIMode.setEnabled(active);
+for(CustomButton resultsUIModeButton : c_resultsUIModeButtons){
+	resultsUIModeButton.setEnabled(active);
 }
-if(rb_chartType_Energy != null){
-	rb_chartType_Energy.setEnabled(active);
-}
-if(rb_chartType_Economic != null){
-	rb_chartType_Economic.setEnabled(active);
+for(CustomButton chartButton : c_chartButtons){
+	chartButton.setEnabled(active);
 }
 chartProfielen.rb_periodIncludingYear.setEnabled(active);
 chartProfielen.rb_periodExcludingYear.setEnabled(active);
@@ -490,10 +463,8 @@ f_showCorrectChart();
 
 double f_setSelectedObjectText(String customSelectedObjectText)
 {/*ALCODESTART::1742210371105*/
-String selectedObjectText = "";
-
 if(customSelectedObjectText != null){
-	selectedObjectText = customSelectedObjectText;
+	v_selectedObjectText = customSelectedObjectText;
 }
 else{
 	if(v_selectedObjectScope == OL_ResultScope.GRIDCONNECTION){
@@ -508,14 +479,14 @@ else{
 		}
 		
 		if(connectionDisplayName.contains("verblijfsobject.") || connectionDisplayName.contains("pand.")){
-			selectedObjectText = "Een generieke aansluiting";
+			v_selectedObjectText = "een generieke aansluiting";
 		}
 		else{
-			selectedObjectText = connectionDisplayName;
+			v_selectedObjectText = connectionDisplayName;
 		}
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.GRIDNODE){
-		selectedObjectText = "Trafo-station : " + v_gridNode.p_gridNodeID;
+		v_selectedObjectText = "transformatorstation : " + v_gridNode.p_gridNodeID;
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYCOOP){
 		List<GridConnection> memberGCList = findAll(((EnergyCoop)v_selectedObjectInterface).f_getAllChildMemberGridConnections(), GC -> !(GC instanceof GCGridBattery && GC.f_getBatteryManagement() instanceof J_BatteryManagementPeakShaving && ((J_BatteryManagementPeakShaving)GC.f_getBatteryManagement()).getTargetType() == OL_ResultScope.ENERGYCOOP));
@@ -538,49 +509,31 @@ else{
 			}
 
 			if(allGCInOneBuilding){
-				selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
+				v_selectedObjectText = memberGCList.size() + " aansluitingen in één pand";
 			}
 			else{
-				selectedObjectText = "Een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
+				v_selectedObjectText = "een selectie van aansluitingen"; // Een selectie van aansluitinge in meerdere panden (door middel van bijv filter).
 			}
 		} else {
-			selectedObjectText = "klanten van energiecoöperatie"; // Geen aansluitingen in deze selectie
+			v_selectedObjectText = "klanten van energiecoöperatie"; // Geen aansluitingen in deze selectie
 		}
 	
 	}
 	else if(v_selectedObjectScope == OL_ResultScope.ENERGYMODEL){
-			selectedObjectText = "Het gehele model";
+			v_selectedObjectText = "het hele model";
 		if(((EnergyModel)v_selectedObjectInterface).p_regionName != null){
-			selectedObjectText = ((EnergyModel)v_selectedObjectInterface).p_regionName;
+			v_selectedObjectText = ((EnergyModel)v_selectedObjectInterface).p_regionName;
 		}
 	}
 }
 
 //Limit visible length
 int maxStringLength = 40;
-if (selectedObjectText.length() > maxStringLength){
-     selectedObjectText = selectedObjectText.substring(0, maxStringLength);
+if (v_selectedObjectText.length() > maxStringLength){
+     v_selectedObjectText = v_selectedObjectText.substring(0, maxStringLength);
 }
 
-t_selectedObjectDisplayText.setText("Data van: " + selectedObjectText);
-/*ALCODEEND*/}
-
-double f_setCB_KPISummary_Presentation(Integer location_x,Integer location_y,boolean visible)
-{/*ALCODESTART::1742218383411*/
-//Set the location and visibility of the checkbox for the KPI summary chart
-
-//Set x axis
-if(location_x != null){
-	checkbox_KPISummary.setX(location_x);
-}
-
-//Set y axis
-if(location_y != null){
-	checkbox_KPISummary.setY(location_y);
-}
-
-//Set visibility
-checkbox_KPISummary.setVisible(visible);
+//t_selectedObjectDisplayText.setText("Je bekijkt nu gegevens van: " + selectedObjectText);
 /*ALCODEEND*/}
 
 double f_setSelectedObjectDisplay(Integer location_x,Integer location_y,boolean setVisible)
@@ -731,222 +684,106 @@ if(location_y != null){
 gr_chartBars_presentation.setVisible(visible);
 /*ALCODEEND*/}
 
-double f_initializeChartSelectionRB_Energy(List<OL_ChartTypes> selectedCharts_Energy)
+double f_initializeChartSelection_Energy(List<OL_ChartTypes> selectedCharts_Energy)
 {/*ALCODESTART::1772200290396*/
+List<OL_ChartTypes> loadedChartTypes_Energy = new ArrayList<>();
+
 //Set active map overlay types if they are set in the project settings
 if(selectedCharts_Energy != null && selectedCharts_Energy.size() > 0){
-	c_loadedChartTypes_Energy = new ArrayList<OL_ChartTypes>(selectedCharts_Energy);
-	if(c_loadedChartTypes_Energy.contains(OL_ChartTypes.PROFILES)){
-		c_loadedChartTypes_Energy.remove(OL_ChartTypes.PROFILES);
+	loadedChartTypes_Energy.addAll(selectedCharts_Energy);
+	
+	// Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
+	if(loadedChartTypes_Energy.contains(OL_ChartTypes.PROFILES)){
+		loadedChartTypes_Energy.remove(OL_ChartTypes.PROFILES);
 	}
-	c_loadedChartTypes_Energy.add(0, OL_ChartTypes.PROFILES); // Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
+	loadedChartTypes_Energy.add(0, OL_ChartTypes.PROFILES); 
+	//Never allow more than 6 chart types (for now) (does not fit in header) -> If more than 6, remove final option(s)
+	while(loadedChartTypes_Energy.size()>6){
+		traceln("More than 6 Energy charts have been selected, this is not possible. ChartType: " + loadedChartTypes_Energy.get(6) + " has been removed.");
+		loadedChartTypes_Energy.remove(loadedChartTypes_Energy.get(6));
+	}
+	
+	//Perform check if chart type is in correct resultsUI Mode
+	for(OL_ChartTypes selectedChart : loadedChartTypes_Energy){
+		if(!map_ResultsUIModeToChartTypes.get(OL_ResultsUIMode.ENERGY).contains(selectedChart)){
+			throw new RuntimeException("Selected chart for Energy charts found that is not an Energy Chart");
+		}
+	}
 }
 else{//No chart types loaded but profiles is required.
-	c_loadedChartTypes_Energy = new ArrayList<OL_ChartTypes>();
-	c_loadedChartTypes_Energy.add(OL_ChartTypes.PROFILES); // Force profiles to always be present and to be the first one (for now!). Needed to not break 'enable live plots only'.
+	loadedChartTypes_Energy.add(OL_ChartTypes.PROFILES); // Force profiles to always be present (for now!). Needed to not break 'enable live plots only'.
 }
 
-//Never allow more than 6 chart types (for now) (does not fit in rb location) -> If more than 6, remove final option(s)
-while(c_loadedChartTypes_Energy.size()>6){
-	c_loadedChartTypes_Energy.remove(c_loadedChartTypes_Energy.get(6));
-}
+//Store selected charts in the ResultsUIModeToLoadedChartTypes map
+map_ResultsUIModeToLoadedChartTypes.put(OL_ResultsUIMode.ENERGY, loadedChartTypes_Energy);
 
-//Adjust the visualisation of the radiobuttons
-Presentable presentable = gr_mainRadioButtons.getPresentable();
-boolean ispublic = true;
-double x = 300;
-double y = -147 + (6 - c_loadedChartTypes_Energy.size()) * 11;
-double width = 130;
-double height = 0;//Not needed, automatically adjust by adding options
-Color textColor = Color.BLACK;
-boolean enabled = true;
-Font font = new Font("Dialog", Font.PLAIN, 11);
-boolean vertical = true;
-
-
-//Set words for the radiobutton options
-List<String> RadioButtonOptions_list = new ArrayList<String>();
-for(OL_ChartTypes chartType : c_loadedChartTypes_Energy){
-	switch(chartType){
-		case PROFILES:
-			RadioButtonOptions_list.add("Profielen");
-			break;
-		case BAR_TOTALS:
-			RadioButtonOptions_list.add("Opwek/Verbruik diagram");
-			break;
-		case LOAD_DURATION_CURVES:
-			RadioButtonOptions_list.add("Netbelasting");
-			break;
-		case SANKEY:
-			RadioButtonOptions_list.add("Energiestromen");
-			break;
-		case GESPREKSLEIDRAAD_BEDRIJVEN:
-			RadioButtonOptions_list.add("Gespreksleidraad Bedrijven");
-			break;
-		case GESPREKSLEIDRAAD:
-			RadioButtonOptions_list.add("Gespreksleidraad");
-			break;
-		case BATTERY:
-			RadioButtonOptions_list.add("Batterij");
-			break;
-		case GTO:
-			RadioButtonOptions_list.add("GTO");
-			break;
-		case CO2:
-			RadioButtonOptions_list.add("CO2 uitstoot");
-			break;
-		default:
-			throw new RuntimeException("chartType '" + chartType + "' is not supported for the Energy options.");
-	}
-} 
-
-String[] RadioButtonOptions = RadioButtonOptions_list.toArray(String[]::new);
-
-//Create the radiobutton and set the correct action.
-rb_chartType_Energy = new ShapeRadioButtonGroup(presentable, ispublic, x ,y, width, height, textColor, enabled, font, vertical, RadioButtonOptions){
-	@Override
-	public void action() {
-		f_setChart_Energy();
-	}
-};
-
-presentation.add(rb_chartType_Energy);
 /*ALCODEEND*/}
 
-double f_setChart_Energy()
-{/*ALCODESTART::1772200290406*/
-//Get chart type, based on loaded order of the radio buttons
-v_selectedChartType = c_loadedChartTypes_Energy.get(rb_chartType_Energy.getValue());
-
-if(b_showKPISummary){
-	checkbox_KPISummary.setSelected(false, true);
-}
-
-f_showCorrectChart();
-/*ALCODEEND*/}
-
-double f_initializeChartSelectionRB_Economic(List<OL_ChartTypes> selectedCharts_Economic)
+double f_initializeChartSelection_Economic(List<OL_ChartTypes> selectedCharts_Economic)
 {/*ALCODESTART::1772200450868*/
-//Set active map overlay types if they are set in the project settings
 if(selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
-	c_loadedChartTypes_Economic = new ArrayList<OL_ChartTypes>(selectedCharts_Economic);
-}
-else{//No chart types loaded in: return.
-	return;
-}
-
-
-//Adjust the visualisation of the radiobuttons
-Presentable presentable = gr_mainRadioButtons.getPresentable();
-boolean ispublic = true;
-double x = 300;
-double y = -147 + (6 - c_loadedChartTypes_Economic.size()) * 11;
-double width = 130;
-double height = 0;//Not needed, automatically adjust by adding options
-Color textColor = Color.BLACK;
-boolean enabled = true;
-Font font = new Font("Dialog", Font.PLAIN, 11);
-boolean vertical = true;
-
-
-//Set words for the radiobutton options
-List<String> RadioButtonOptions_list = new ArrayList<String>();
-for(OL_ChartTypes chartType : c_loadedChartTypes_Economic){
-	switch(chartType){
-		case ENERGY_COSTS:
-			RadioButtonOptions_list.add("Energie kosten");
-			break;
-		case CONNECTION_COSTS:
-			RadioButtonOptions_list.add("Aansluitings kosten");
-			break;
-		case CAPEX_AND_OPEX:
-			RadioButtonOptions_list.add("CAPEX & OPEX");
-			break;
-		case TOTAL_COSTS:
-			RadioButtonOptions_list.add("Totale kosten");
-			break;
-		default:
-			throw new RuntimeException("chartType '" + chartType + "' is not supported for the Economic options.");
+	List<OL_ChartTypes> loadedChartTypes_Economic = new ArrayList<>(selectedCharts_Economic);
+	
+	//Perform check if chart type is in correct resultsUI Mode
+	for(OL_ChartTypes selectedChart : loadedChartTypes_Economic){
+		if(!map_ResultsUIModeToChartTypes.get(OL_ResultsUIMode.ECONOMIC).contains(selectedChart)){
+			throw new RuntimeException("Selected chart for Economic charts found that is not an Economic Chart");
+		}
 	}
-} 
-
-String[] RadioButtonOptions = RadioButtonOptions_list.toArray(String[]::new);
-
-//Create the radiobutton and set the correct action.
-rb_chartType_Economic = new ShapeRadioButtonGroup(presentable, ispublic, x ,y, width, height, textColor, enabled, font, vertical, RadioButtonOptions){
-	@Override
-	public void action() {
-		f_setChart_Economic();
+	
+	//Never allow more than 6 chart types (for now) (does not fit in header) -> If more than 6, remove final option(s)
+	while(loadedChartTypes_Economic.size()>6){
+		traceln("More than 6 Economic charts have been selected, this is not possible. ChartType: " + loadedChartTypes_Economic.get(6) + " has been removed.");
+		loadedChartTypes_Economic.remove(loadedChartTypes_Economic.get(6));
 	}
-};
-
-presentation.add(rb_chartType_Economic);
+	
+	//Store selected charts in the ResultsUIModeToLoadedChartTypes map
+	map_ResultsUIModeToLoadedChartTypes.put(OL_ResultsUIMode.ECONOMIC, loadedChartTypes_Economic);
+}
 /*ALCODEEND*/}
 
-double f_initializeResultsUIMainRB(List<OL_ChartTypes> selectedCharts_Energy,List<OL_ChartTypes> selectedCharts_Economic)
+double f_initializeResultsUIHeaderButtons(List<OL_ChartTypes> selectedCharts_Energy,List<OL_ChartTypes> selectedCharts_Economic,List<OL_ChartTypes> selectedCharts_Sustainability)
 {/*ALCODESTART::1772200556889*/
-//Set words for the radiobutton options
-List<String> RadioButtonOptions_list = new ArrayList<String>();
+map_ResultsUIModeToLoadedChartTypes = new HashMap<>();
+map_resultsUIModeButtonToResultsUIMode = new HashMap<>();
+c_resultsUIModeButtons.forEach(button -> button.setVisible(false));
+//c_chartButtons.forEach(button -> button.setVisible(false));
+int currentResultsUIModeButtonIndex = 0;
+CustomButton currentResultsUIModeButton;
 
-//Add energy rb option and create the energy charts rb
-RadioButtonOptions_list.add("Energie");
-f_initializeChartSelectionRB_Energy(selectedCharts_Energy);
+//Initialize Energy Charts (Is mandatory, and has a fall back!)
+f_initializeChartSelection_Energy(selectedCharts_Energy);
+currentResultsUIModeButton = c_resultsUIModeButtons.get(currentResultsUIModeButtonIndex);
+map_resultsUIModeButtonToResultsUIMode.put(currentResultsUIModeButton, OL_ResultsUIMode.ENERGY);
+currentResultsUIModeButton.setText(map_resultsUIModeToName.get(OL_ResultsUIMode.ENERGY));
+currentResultsUIModeButton.reConfigureImageIndexes(map_ResultsUIModeToDefaultImageIndex.get(OL_ResultsUIMode.ENERGY));
+currentResultsUIModeButton.setVisible(true);
+currentResultsUIModeButtonIndex++;
 
-//Add economic rb option and create the economic charts rb if selected.
+//Initialize Economic charts if selected
 if(selectedCharts_Economic != null && selectedCharts_Economic.size() > 0){
-	f_initializeChartSelectionRB_Economic(selectedCharts_Economic);
-	RadioButtonOptions_list.add("Financieel");
-	rb_chartType_Economic.setVisible(false);
-}
-else{ //No economic charts: no subdivisions: only energy rb/charts. -> No rb for mode switch needed.
-	return;
-}
-
-//Adjust the visualisation of the radiobuttons
-Presentable presentable = gr_resultsUIHeader.getPresentable();
-boolean ispublic = true;
-double x = 50;
-double y =  -120;
-double width = 130;
-double height = 10;
-Color textColor = Color.BLACK;
-boolean enabled = true;
-Font font = new Font("Dialog", Font.PLAIN, 12);
-boolean vertical = false;
-
-//Convert radio button option list to string[]
-String[] RadioButtonOptions = RadioButtonOptions_list.toArray(String[]::new);
-
-//Create the radiobutton and set the correct action.
-rb_resultsUIMode = new ShapeRadioButtonGroup(presentable, ispublic, x ,y, width, height, textColor, enabled, font, vertical, RadioButtonOptions){
-	@Override
-	public void action() {
-		if(rb_resultsUIMode.getValue() == 0){
-			rb_chartType_Economic.setVisible(false);
-			rb_chartType_Energy.setVisible(true);
-			rb_chartType_Energy.setValue(rb_chartType_Energy.getValue(), true);
-		}
-		else{
-			rb_chartType_Energy.setVisible(false);
-			rb_chartType_Economic.setVisible(true);
-			rb_chartType_Economic.setValue(rb_chartType_Economic.getValue(), true);		
-		}
-	}
-};
-
-presentation.add(rb_resultsUIMode);
-/*ALCODEEND*/}
-
-double f_setChart_Economic()
-{/*ALCODESTART::1772203048742*/
-//Get chart type, based on loaded order of the radio buttons
-v_selectedChartType = c_loadedChartTypes_Economic.get(rb_chartType_Economic.getValue());
-
-if(b_showKPISummary){
-	checkbox_KPISummary.setSelected(false, true);
+	f_initializeChartSelection_Economic(selectedCharts_Economic);
+	currentResultsUIModeButton = c_resultsUIModeButtons.get(currentResultsUIModeButtonIndex);
+	map_resultsUIModeButtonToResultsUIMode.put(currentResultsUIModeButton, OL_ResultsUIMode.ECONOMIC);
+	currentResultsUIModeButton.setText(map_resultsUIModeToName.get(OL_ResultsUIMode.ECONOMIC));
+	currentResultsUIModeButton.reConfigureImageIndexes(map_ResultsUIModeToDefaultImageIndex.get(OL_ResultsUIMode.ECONOMIC));
+	currentResultsUIModeButton.setVisible(true);
+	currentResultsUIModeButtonIndex++;
 }
 
-f_showCorrectChart();
+//Initialize Sustainability charts if selected
+if(selectedCharts_Sustainability != null && selectedCharts_Sustainability.size() > 0){
+	f_initializeChartSelection_Sustainability(selectedCharts_Sustainability);
+	currentResultsUIModeButton = c_resultsUIModeButtons.get(currentResultsUIModeButtonIndex);
+	map_resultsUIModeButtonToResultsUIMode.put(currentResultsUIModeButton, OL_ResultsUIMode.SUSTAINABILITY);
+	currentResultsUIModeButton.setText(map_resultsUIModeToName.get(OL_ResultsUIMode.SUSTAINABILITY));
+	currentResultsUIModeButton.reConfigureImageIndexes(map_ResultsUIModeToDefaultImageIndex.get(OL_ResultsUIMode.SUSTAINABILITY));
+	currentResultsUIModeButton.setVisible(true);
+	currentResultsUIModeButtonIndex++;
+}
+
+//Start model on Energy mode
+f_selectResultsUIMode(c_resultsUIModeButtons.get(0));
 /*ALCODEEND*/}
 
 double f_setChartCO2_presentation(Integer location_x,Integer location_y,boolean visible)
@@ -1091,8 +928,129 @@ for(OL_ResultScope supportedScope : supportedResultScopes){
 t_chartBlockerMessage.setText(warningScreenMessage);
 /*ALCODEEND*/}
 
+double f_resetChartVisibility()
+{/*ALCODESTART::1780332589329*/
+gr_chartProfielen_presentation.setVisible(false);
+gr_chartBalans_presentation.setVisible(false);
+gr_chartNetbelasting_presentation.setVisible(false);
+gr_chartSankey_presentation.setVisible(false);
+gr_chartSummary_presentation.setVisible(false);
+gr_chartGespreksLeidraad_presentation.setVisible(false);
+gr_chartKPISummary_presentation.setVisible(false);
+gr_chartBatteries_presentation.setVisible(false);
+gr_chartGTO_presentation.setVisible(false);
+gr_chartBars_presentation.setVisible(false);
+gr_chartCO2_presentation.setVisible(false);
+gr_chartEnergyCosts_presentation.setVisible(false);
+gr_chartConnectionCosts_presentation.setVisible(false);
+gr_chartCAPEXAndOPEX_presentation.setVisible(false);
+gr_chartTotalCosts_presentation.setVisible(false);
+gr_chartBlocker.setVisible(false);
+/*ALCODEEND*/}
+
 double f_enablePublicVersion(boolean enable)
 {/*ALCODESTART::1780405232709*/
 chartProfielen.f_enableExportFunctionality(!enable);
+/*ALCODEEND*/}
+
+double f_selectResultsUIMode(CustomButton selectedButton)
+{/*ALCODESTART::1782394255448*/
+if(selectedButton.isEnabled()){
+	//Find selected resultsUIMode
+	OL_ResultsUIMode selectedResultsUIMode = map_resultsUIModeButtonToResultsUIMode.get(selectedButton);
+	
+	
+	//Select button
+	selectedButton.setSelected(true, false);
+			
+	//Deselect other mode buttons
+	for(CustomButton customButton : c_resultsUIModeButtons){
+		if(customButton != selectedButton && customButton.isVisible()){
+			customButton.setSelected(false, false);
+		}
+	}
+	
+	//Reconfigure the chart Buttons to the selected resultsUIMode
+	c_chartButtons.forEach(customButton -> customButton.setVisible(false));
+	map_chartButtonToCurrentChartType = new HashMap<>();
+	int currentButtonIndex = 0;
+	for(OL_ChartTypes loadedChartType : map_ResultsUIModeToLoadedChartTypes.get(selectedResultsUIMode)){
+		map_chartButtonToCurrentChartType.put(c_chartButtons.get(currentButtonIndex), loadedChartType);
+		c_chartButtons.get(currentButtonIndex).setVisible(true);
+		c_chartButtons.get(currentButtonIndex).setText(map_chartTypeToName.get(loadedChartType));
+		currentButtonIndex++;
+	}
+	
+	//Select the first button
+	f_selectChart(0);
+}
+/*ALCODEEND*/}
+
+double f_selectChart(int selectedChartButtonIndex)
+{/*ALCODESTART::1782394276337*/
+//Get selected button
+CustomButton selectedButton = c_chartButtons.get(selectedChartButtonIndex);
+
+if(selectedButton.isEnabled()){
+	//Find selected chart type
+	v_selectedChartType = map_chartButtonToCurrentChartType.get(selectedButton);
+	
+	//Select button
+	selectedButton.setSelected(true, false);
+	
+	//Deselect other chart buttons
+	for(CustomButton customButton : c_chartButtons){
+		if(customButton != selectedButton){
+			customButton.setSelected(false, false);
+		}
+	}
+	
+	//Show correct chart
+	f_showCorrectChart();
+}
+/*ALCODEEND*/}
+
+double f_initializeChartSelection_Sustainability(List<OL_ChartTypes> selectedCharts_Sustainability)
+{/*ALCODESTART::1782401710519*/
+if(selectedCharts_Sustainability != null && selectedCharts_Sustainability.size() > 0){
+	List<OL_ChartTypes> loadedChartTypes_Sustainability = new ArrayList<>(selectedCharts_Sustainability);
+	
+	//Perform check if chart type is in correct resultsUI Mode
+	for(OL_ChartTypes selectedChart : loadedChartTypes_Sustainability){
+		if(!map_ResultsUIModeToChartTypes.get(OL_ResultsUIMode.SUSTAINABILITY).contains(selectedChart)){
+			throw new RuntimeException("Selected chart for Sustainability charts found that is not a Sustainability Chart");
+		}
+	}
+	
+	//Never allow more than 6 chart types (for now) (does not fit in header) -> If more than 6, remove final option(s)
+	while(loadedChartTypes_Sustainability.size()>6){
+		traceln("More than 6 Sustainability charts have been selected, this is not possible. ChartType: " + loadedChartTypes_Sustainability.get(6) + " has been removed.");
+		loadedChartTypes_Sustainability.remove(loadedChartTypes_Sustainability.get(6));
+	}
+	
+	//Store selected charts in the ResultsUIModeToLoadedChartTypes map
+	map_ResultsUIModeToLoadedChartTypes.put(OL_ResultsUIMode.SUSTAINABILITY, loadedChartTypes_Sustainability);
+}
+/*ALCODEEND*/}
+
+double f_enableLivePlotsOnly()
+{/*ALCODESTART::1782402066582*/
+if (f_getSelectedObjectData() != null) {
+	if(getGr_resultsUIHeader().isVisible()){
+		for(CustomButton resultsUIModeButton : c_resultsUIModeButtons){
+			if(map_resultsUIModeButtonToResultsUIMode.get(resultsUIModeButton) == OL_ResultsUIMode.ENERGY){
+				f_selectResultsUIMode(resultsUIModeButton); // Also selects the profile chart!
+			}
+		}
+	}
+	chartProfielen.getPeriodRadioButton().setValue(0, true);
+	f_enableNonLivePlotRadioButtons(false);
+}
+for (ShapeRadioButtonGroup rb : chartProfielen.getAllPeriodRadioButtons()) {
+	rb.setValue(0, false);
+}
+chartProfielen.getPeriodRadioButton().setValue(0, true);
+
+f_enableNonLivePlotRadioButtons(false);
 /*ALCODEEND*/}
 

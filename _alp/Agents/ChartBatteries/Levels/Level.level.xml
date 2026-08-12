@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Presentation>
-	<Rectangle>
-		<Id>1714856115495</Id>
-		<Name><![CDATA[rect_radiobuttons]]></Name>
-		<X>0</X>
-		<Y>0</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineWidthCode>v_lineWidth</LineWidthCode>
-		<LineColor>-1644806</LineColor>
-		<LineColorCode>v_lineColor</LineColorCode>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>460</Width>
-		<Height>50</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
 	<Control Type="RadioButtons">
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Id>1715175655981</Id>
 		<Name><![CDATA[radio_period]]></Name>
-		<X>50</X>
-		<Y>4</Y>
+		<X>93</X>
+		<Y>50</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -42,7 +14,7 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<BasicProperties Width="360" Height="40">
+		<BasicProperties Width="395" Height="40">
 			<EmbeddedIcon>false</EmbeddedIcon>
 			<TextColor>-16777216</TextColor>
 			<Enabled>true</Enabled>
@@ -62,8 +34,8 @@
 	<Group>
 		<Id>1737475376971</Id>
 		<Name><![CDATA[gr_year]]></Name>
-		<X>770</X>
-		<Y>380</Y>
+		<X>600</X>
+		<Y>100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -72,8 +44,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>250</XCode>
-		<YCode>390</YCode>
+		<XCode>20</XCode>
+		<YCode>100</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -82,7 +54,7 @@
 				<Id>1714834211049</Id>
 				<Name><![CDATA[group_year_SOC]]></Name>
 				<X>0</X>
-				<Y>-140</Y>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -98,8 +70,8 @@
 					<TimeStackChart>
 						<Id>1714746021761</Id>
 						<Name><![CDATA[SOCChart_year]]></Name>
-						<X>-250</X>
-						<Y>-150</Y>
+						<X>-1</X>
+						<Y>-1</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -123,15 +95,15 @@
 							</RecurrenceCode>
 						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
-						<Width>460</Width>
-						<Height>210</Height>
+						<Width>570</Width>
+						<Height>240</Height>
 						<BackgroundColor/>
 						<BorderColor/>
 						<ChartArea>
 							<XOffset>50</XOffset>
 							<YOffset>30</YOffset>
-							<Width>380</Width>
-							<Height>120</Height>
+							<Width>490</Width>
+							<Height>150</Height>
 							<BackgroundColor>-1</BackgroundColor>
 							<BorderColor>-16777216</BorderColor>
 							<GridColor>-12566464</GridColor>
@@ -158,8 +130,8 @@
 					<Text>
 						<Id>1714746021753</Id>
 						<Name><![CDATA[txt_batterySOCYear]]></Name>
-						<X>-20</X>
-						<Y>-150</Y>
+						<X>60</X>
+						<Y>10</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -174,17 +146,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[State of charge van de batterij(en)]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>18</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>16</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>CENTER</Alignment>
+						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
 						<Id>1716386068349</Id>
 						<Name><![CDATA[txt_yearProfile_ylabel]]></Name>
-						<X>-235</X>
-						<Y>-80</Y>
+						<X>10</X>
+						<Y>105</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -199,19 +171,19 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[SOC [-]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>12</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 				</Presentation>
 			</Group>
 			<Group>
 				<Id>1721120959534</Id>
 				<Name><![CDATA[group_netload_year]]></Name>
-				<X>-20</X>
-				<Y>40</Y>
+				<X>0</X>
+				<Y>220</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -227,8 +199,8 @@
 					<TimePlot>
 						<Id>1721120959537</Id>
 						<Name><![CDATA[plot_netload_year]]></Name>
-						<X>-230</X>
-						<Y>-110</Y>
+						<X>-1</X>
+						<Y>-1</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -252,15 +224,15 @@
 							</RecurrenceCode>
 						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
-						<Width>460</Width>
-						<Height>260</Height>
+						<Width>570</Width>
+						<Height>240</Height>
 						<BackgroundColor/>
 						<BorderColor/>
 						<ChartArea>
 							<XOffset>50</XOffset>
 							<YOffset>30</YOffset>
-							<Width>380</Width>
-							<Height>170</Height>
+							<Width>490</Width>
+							<Height>150</Height>
 							<BackgroundColor>-1</BackgroundColor>
 							<BorderColor>-16777216</BorderColor>
 							<GridColor>-12566464</GridColor>
@@ -291,8 +263,8 @@
 					<Text>
 						<Id>1721120959539</Id>
 						<Name><![CDATA[txt_netload_year]]></Name>
-						<X>0</X>
-						<Y>-110</Y>
+						<X>118</X>
+						<Y>8</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -307,8 +279,8 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Netto Belasting net]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>18</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>16</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
@@ -316,8 +288,8 @@
 					<Text>
 						<Id>1721120959541</Id>
 						<Name><![CDATA[txt_netload_ylabel_year]]></Name>
-						<X>-200</X>
-						<Y>-35</Y>
+						<X>10</X>
+						<Y>105</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -332,11 +304,11 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Vermogen [kW]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>12</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 				</Presentation>
 			</Group>
@@ -345,8 +317,8 @@
 	<Group>
 		<Id>1737475397428</Id>
 		<Name><![CDATA[gr_week]]></Name>
-		<X>240</X>
-		<Y>420</Y>
+		<X>20</X>
+		<Y>100</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -355,6 +327,8 @@
 		<PresentationFlag>true</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<XCode>20</XCode>
+		<YCode>100</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -362,8 +336,8 @@
 			<Group>
 				<Id>1714856822338</Id>
 				<Name><![CDATA[group_week_SOC]]></Name>
-				<X>-10</X>
-				<Y>-70</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -379,8 +353,8 @@
 					<TimeStackChart>
 						<Id>1714746021751</Id>
 						<Name><![CDATA[SOCChart_week]]></Name>
-						<X>-230</X>
-						<Y>-250</Y>
+						<X>0</X>
+						<Y>0</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -404,15 +378,15 @@
 							</RecurrenceCode>
 						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
-						<Width>460</Width>
-						<Height>210</Height>
+						<Width>570</Width>
+						<Height>240</Height>
 						<BackgroundColor/>
 						<BorderColor/>
 						<ChartArea>
 							<XOffset>50</XOffset>
 							<YOffset>30</YOffset>
-							<Width>380</Width>
-							<Height>120</Height>
+							<Width>490</Width>
+							<Height>150</Height>
 							<BackgroundColor>-1</BackgroundColor>
 							<BorderColor>-16777216</BorderColor>
 							<GridColor>-12566464</GridColor>
@@ -439,8 +413,8 @@
 					<Text>
 						<Id>1714909332395</Id>
 						<Name><![CDATA[txt_batterySOCLive]]></Name>
-						<X>0</X>
-						<Y>-250</Y>
+						<X>60</X>
+						<Y>10</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -455,17 +429,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[State of charge van de batterij(en)]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>18</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>16</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>CENTER</Alignment>
+						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
 						<Id>1716385961785</Id>
 						<Name><![CDATA[txt_weekProfile_ylabel]]></Name>
-						<X>-215</X>
-						<Y>-180</Y>
+						<X>10</X>
+						<Y>105</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -480,11 +454,11 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[SOC [-]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>12</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 				</Presentation>
 			</Group>
@@ -492,7 +466,7 @@
 				<Id>1721118028730</Id>
 				<Name><![CDATA[group_netload_week]]></Name>
 				<X>0</X>
-				<Y>10</Y>
+				<Y>220</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -508,8 +482,8 @@
 					<TimePlot>
 						<Id>1721118028733</Id>
 						<Name><![CDATA[plot_netload_week]]></Name>
-						<X>-230</X>
-						<Y>-110</Y>
+						<X>0</X>
+						<Y>0</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -533,15 +507,15 @@
 							</RecurrenceCode>
 						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
-						<Width>460</Width>
-						<Height>260</Height>
+						<Width>570</Width>
+						<Height>240</Height>
 						<BackgroundColor/>
 						<BorderColor/>
 						<ChartArea>
-							<XOffset>40</XOffset>
+							<XOffset>50</XOffset>
 							<YOffset>30</YOffset>
-							<Width>380</Width>
-							<Height>170</Height>
+							<Width>490</Width>
+							<Height>150</Height>
 							<BackgroundColor>-1</BackgroundColor>
 							<BorderColor>-16777216</BorderColor>
 							<GridColor>-12566464</GridColor>
@@ -572,8 +546,8 @@
 					<Text>
 						<Id>1721118028735</Id>
 						<Name><![CDATA[txt_netload_week]]></Name>
-						<X>0</X>
-						<Y>-110</Y>
+						<X>50</X>
+						<Y>10</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -588,17 +562,17 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Netto Belasting net]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>18</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>16</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>CENTER</Alignment>
+						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
 						<Id>1721118028737</Id>
 						<Name><![CDATA[txt_netload_ylabel_week]]></Name>
-						<X>-215</X>
-						<Y>-35</Y>
+						<X>10</X>
+						<Y>115</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -613,11 +587,11 @@
 						<Color>-16777216</Color>
 						<Text><![CDATA[Vermogen [kW]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>12</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 				</Presentation>
 			</Group>
@@ -626,8 +600,8 @@
 	<Oval>
 		<Id>1743416806393</Id>
 		<Name><![CDATA[oval_totalBatteryCapacity]]></Name>
-		<X>130</X>
-		<Y>693</Y>
+		<X>170</X>
+		<Y>620</Y>
 		<Label>
 			<X>0</X>
 			<Y>0</Y>
@@ -639,21 +613,21 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineColor/>
+		<LineWidth>4</LineWidth>
+		<LineColor>-14774017</LineColor>
 		<LineMaterial>null</LineMaterial>
 		<LineStyle>SOLID</LineStyle>
-		<RadiusX>45</RadiusX>
+		<RadiusX>40</RadiusX>
 		<RadiusY>40</RadiusY>
 		<Rotation>0.0</Rotation>
-		<FillColor>-10185235</FillColor>
+		<FillColor/>
 		<FillMaterial>null</FillMaterial>
 	</Oval>
 	<Text>
 		<Id>1743416806402</Id>
 		<Name><![CDATA[t_totalBatteryCapacity]]></Name>
-		<X>130</X>
-		<Y>677</Y>
+		<X>170</X>
+		<Y>612</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -665,11 +639,11 @@
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
-		<Color>-1</Color>
+		<Color>-16777216</Color>
 		<Text><![CDATA[100]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>22</Size>
+			<Name><![CDATA[HolonBLOCK2]]></Name>
+			<Size>18</Size>
 			<Style>1</Style>
 		</Font>
 		<Alignment>CENTER</Alignment>
@@ -677,8 +651,8 @@
 	<Text>
 		<Id>1743416806416</Id>
 		<Name><![CDATA[t_batteryCapacityLabel]]></Name>
-		<X>130</X>
-		<Y>620</Y>
+		<X>170</X>
+		<Y>540</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -693,9 +667,9 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[Batterij capaciteit [MWh]]]></Text>
 		<Font>
-			<Name><![CDATA[Calibri]]></Name>
-			<Size>20</Size>
-			<Style>1</Style>
+			<Name><![CDATA[HOLONline2]]></Name>
+			<Size>16</Size>
+			<Style>0</Style>
 		</Font>
 		<Alignment>CENTER</Alignment>
 	</Text>
@@ -719,8 +693,8 @@
 			<Oval>
 				<Id>1743416938356</Id>
 				<Name><![CDATA[oval_batteryCycles]]></Name>
-				<X>5</X>
-				<Y>12</Y>
+				<X>60</X>
+				<Y>-60</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -732,21 +706,21 @@
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
+				<LineWidth>4</LineWidth>
+				<LineColor>-14774017</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<RadiusX>45</RadiusX>
+				<RadiusX>40</RadiusX>
 				<RadiusY>40</RadiusY>
 				<Rotation>0.0</Rotation>
-				<FillColor>-10185235</FillColor>
+				<FillColor/>
 				<FillMaterial>null</FillMaterial>
 			</Oval>
 			<Text>
 				<Id>1743416938365</Id>
 				<Name><![CDATA[t_batteryCycles]]></Name>
-				<X>5</X>
-				<Y>-5</Y>
+				<X>60</X>
+				<Y>-68</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -758,11 +732,11 @@
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-1</Color>
+				<Color>-16777216</Color>
 				<Text><![CDATA[100]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>22</Size>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
+					<Size>18</Size>
 					<Style>1</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -770,8 +744,8 @@
 			<Text>
 				<Id>1743416938374</Id>
 				<Name><![CDATA[txt_batteryCycles]]></Name>
-				<X>0</X>
-				<Y>-60</Y>
+				<X>60</X>
+				<Y>-140</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -786,9 +760,9 @@
 				<Color>-16777216</Color>
 				<Text><![CDATA[Aantal batterij cycli]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
-					<Size>20</Size>
-					<Style>1</Style>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>16</Size>
+					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
@@ -797,8 +771,8 @@
 	<Group>
 		<Id>1756460336968</Id>
 		<Name><![CDATA[gr_batteryLifetime]]></Name>
-		<X>630</X>
-		<Y>680</Y>
+		<X>680</X>
+		<Y>600</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -815,7 +789,7 @@
 				<Id>1756460336970</Id>
 				<Name><![CDATA[oval_batteryLifetime]]></Name>
 				<X>0</X>
-				<Y>12</Y>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>0</Y>
@@ -827,21 +801,21 @@
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineColor/>
+				<LineWidth>4</LineWidth>
+				<LineColor>-14774017</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<RadiusX>45</RadiusX>
+				<RadiusX>40</RadiusX>
 				<RadiusY>40</RadiusY>
 				<Rotation>0.0</Rotation>
-				<FillColor>-10185235</FillColor>
+				<FillColor/>
 				<FillMaterial>null</FillMaterial>
 			</Oval>
 			<Text>
 				<Id>1756460336972</Id>
 				<Name><![CDATA[t_batteryLifetime]]></Name>
 				<X>0</X>
-				<Y>-5</Y>
+				<Y>12</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -853,11 +827,11 @@
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-1</Color>
+				<Color>-16777216</Color>
 				<Text><![CDATA[100]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
-					<Size>22</Size>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
+					<Size>18</Size>
 					<Style>1</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -881,12 +855,65 @@
 				<Color>-16777216</Color>
 				<Text><![CDATA[Levensduur [jaar]]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
-					<Size>20</Size>
-					<Style>1</Style>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>16</Size>
+					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
 		</Presentation>
 	</Group>
+	<Text>
+		<Id>1784648102346</Id>
+		<Name><![CDATA[txt_batteries]]></Name>
+		<X>20</X>
+		<Y>18</Y>
+		<Label>
+			<X>0</X>
+			<Y>-10</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<Rotation>0.0</Rotation>
+		<Color>-16777216</Color>
+		<Text><![CDATA[BATTERIJEN]]></Text>
+		<Font>
+			<Name><![CDATA[HolonBLOCK2]]></Name>
+			<Size>20</Size>
+			<Style>1</Style>
+		</Font>
+		<Alignment>LEFT</Alignment>
+	</Text>
+	<Line>
+		<Id>1784648150725</Id>
+		<Name><![CDATA[line_batteries]]></Name>
+		<X>0</X>
+		<Y>50</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0.5</LineWidth>
+		<LineColor>-4144960</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<Dx>580</Dx>
+		<Dy>0</Dy>
+		<Dz>0</Dz>
+	</Line>
 </Presentation>

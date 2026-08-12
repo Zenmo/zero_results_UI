@@ -55,7 +55,12 @@ else{
 			}
 		}
 	}
+	// Heatmap maken
+	f_initHeatmap();
+	f_makeHeatmapConsumption(dataObject.getRapidRunData().am_assetFlowsAccumulators_kW);
 }
+
+
 /*ALCODEEND*/}
 
 double f_addOtherEnergyCarriers_Live(I_EnergyData dataObject)
@@ -90,8 +95,6 @@ for (OL_EnergyCarriers EC_production : activeProductionEnergyCarriers) {
 double f_addElectricityFlows_Live(I_EnergyData dataObject)
 {/*ALCODESTART::1714746057328*/
 gr_week.setVisible(true);
-v_weekLabel.setX(220);
-v_weekLabel.setText("");
 
 if (uI_Results.v_selectedObjectScope == OL_ResultScope.ENERGYCOOP && b_subdivideEnergyCoopFlows) {
 	List<Color> colorSpectrum = new ArrayList<>();
@@ -224,18 +227,18 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
 	String dateTimeString = f_getDateTimeFromHour(peakTime_h);
     if (isSummerWeek) {
 	    if (peak_kW > 0) {
-			v_weekLabel.setText("Hoogste invoeding op: " + dateTimeString);
+			v_weeklabel.setText("Hoogste invoeding op: " + dateTimeString);
 		} else {
-			v_weekLabel.setText("Laagste afname op: " + dateTimeString);
+			v_weeklabel.setText("Laagste afname op: " + dateTimeString);
 		}
 	} else {
 		if (peak_kW > 0) {
-			v_weekLabel.setText("Hoogste afname op: " + dateTimeString);
+			v_weeklabel.setText("Hoogste afname op: " + dateTimeString);
 		} else {
-			v_weekLabel.setText("Laagste invoeding op: " + dateTimeString);
+			v_weeklabel.setText("Laagste invoeding op: " + dateTimeString);
 		}
 	}
-	v_weekLabel.setX(80);
+	//v_weeklabel.setX(80);
 	double peakWeekStart_h = dataObject.getRapidRunData().getPeakWeekStart_h(peakTime_h);
 	//for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().am_assetFlowsAccumulators_kW.keySet()) {
 	for (OL_AssetFlowCategories AC : dataObject.getRapidRunData().assetsMetaData.activeAssetFlows) {
@@ -320,7 +323,8 @@ rb_periodIncludingYear.setVisible(false);
 rb_periodExcludingYear.setVisible(false);
 rb_periodPeaksIncludingYear.setVisible(false);
 rb_periodPeaksExcludingYear.setVisible(false);
-v_weekLabel.setText("");
+v_weeklabel.setText("");
+gr_hoogsteMomentInfo.setVisible(false);
 
 /*ALCODEEND*/}
 
@@ -329,7 +333,7 @@ double f_setCharts()
 f_resetCharts();
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 115, true);
+uI_Results.f_setSelectedObjectDisplay(null, 115, true);
 
 if (v_periodRadioButton.getValue() == 0) {
 	radio_periodLive.setVisible(true);
@@ -337,25 +341,24 @@ if (v_periodRadioButton.getValue() == 0) {
 
 I_EnergyData dataObject = uI_Results.f_getSelectedObjectData();
 
+boolean yearSupported = radio_energyType.getValue() != 2 && uI_Results.v_selectedObjectScope != OL_ResultScope.GRIDNODE;
 if (dataObject.getRapidRunData()!=null && dataObject.getRapidRunData().getStoreTotalAssetFlows()) {
-	if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-		v_periodRadioButton = rb_periodPeaksExcludingYear;
-	} else {
-		v_periodRadioButton = rb_periodPeaksIncludingYear;
-	}
+	v_periodRadioButton = yearSupported ? rb_periodPeaksIncludingYear : rb_periodPeaksExcludingYear;
 } else {
-	if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-		v_periodRadioButton = rb_periodExcludingYear;
-	} else {
-		v_periodRadioButton = rb_periodIncludingYear;
-	}
+	v_periodRadioButton = yearSupported ? rb_periodIncludingYear : rb_periodExcludingYear;
 }
+
+if (!yearSupported && v_periodRadioButton.getValue() >= 3) {
+	v_periodRadioButton.setValue(0);
+}
+
 v_periodRadioButton.setVisible(true);
 int radioValue = v_periodRadioButton.getValue();
 
 if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 	switch (radioValue) {
 		case 0: // Live
+			uI_Results.v_selectedChartText = "de live profielen";
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				if (radio_periodLive.getValue() == 0) {
 					f_addElectricityFlowsTrafo_Live(uI_Results.v_gridNode);
@@ -375,6 +378,8 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 			break;
 		
 		case 2: // Summer
+			uI_Results.v_selectedChartText = "de laagste afname";
+			gr_hoogsteMomentInfo.setVisible(true);
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Week(uI_Results.v_gridNode,true);
 			}
@@ -384,6 +389,8 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 			break;
 		
 		case 1: // Winter
+			uI_Results.v_selectedChartText = "de hoogste afname";
+			gr_hoogsteMomentInfo.setVisible(true);
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Week(uI_Results.v_gridNode, false);
 			}
@@ -410,6 +417,7 @@ if (radio_energyType.getValue() == 2) { // Line Plot (Net Load)
 else { // Stack Chart
 	switch (radioValue) {
 		case 0: // Live
+			uI_Results.v_selectedChartText = "de live profielen";
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				if (radio_periodLive.getValue() == 0) {
 					f_addElectricityFlowsTrafo_Live(uI_Results.v_gridNode);
@@ -437,6 +445,8 @@ else { // Stack Chart
 			break;
 		
 		case 2: // Summer
+			gr_hoogsteMomentInfo.setVisible(true);
+			uI_Results.v_selectedChartText = "de laagste afname";
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Week(uI_Results.v_gridNode, true);
 			}
@@ -449,6 +459,8 @@ else { // Stack Chart
 			break;
 			
 		case 1: // Winter
+			gr_hoogsteMomentInfo.setVisible(true);
+			uI_Results.v_selectedChartText = "de hoogste afname";
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
 				f_addElectricityFlowsTrafo_Week(uI_Results.v_gridNode, false);
 			} else {
@@ -460,12 +472,9 @@ else { // Stack Chart
 			break;
 			
 		case 3: // Year
+			uI_Results.v_selectedChartText = "de jaarprofielen";
 			if (uI_Results.v_selectedObjectScope == OL_ResultScope.GRIDNODE) {
-				// This graph does not exist, defaulting back to the live plot
-				throw new RuntimeException("The Year Graph does not exist for GridNodes.");				
-				//radio_period.setValue(0);
-				//radio_period_peaks.setValue(0);
-				//f_setCharts();
+				throw new RuntimeException("The Year Graph does not exist for GridNodes.");
 			} else {
 				f_addElectricityFlows_Year(dataObject);
 				if( radio_energyType.getValue() == 1){
@@ -670,18 +679,18 @@ if (dataObject.getRapidRunData().getStoreTotalAssetFlows()) { //
 	String dateTimeString = f_getDateTimeFromHour(peakTime_h);
     if (isSummerWeek) {
 	    if (peak_kW > 0) {
-			v_weekLabel.setText("Hoogste invoeding op: " + dateTimeString);
+			v_weeklabel.setText("Hoogste invoeding op: " + dateTimeString);
 		} else {
-			v_weekLabel.setText("Laagste afname op: " + dateTimeString);
+			v_weeklabel.setText("Laagste afname op: " + dateTimeString);
 		}
 	} else {
 		if (peak_kW > 0) {
-			v_weekLabel.setText("Hoogste afname op: " + dateTimeString);
+			v_weeklabel.setText("Hoogste afname op: " + dateTimeString);
 		} else {
-			v_weekLabel.setText("Laagste invoeding op: " + dateTimeString);
+			v_weeklabel.setText("Laagste invoeding op: " + dateTimeString);
 		}
 	}
-	v_weekLabel.setX(80);
+	//v_weekLabel.setX(80);
 	if (isSummerWeek) {
 		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekDeliveryCapacity_kW.getDataSet(peakWeekStart_h-uI_Results.energyModel.p_timeParameters.getRunStartTime_h()), deliveryCapacityLabel, deliveryCapacityColor, true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);
 		plot_netload_week.addDataSet(dataObject.getRapidRunData().acc_summerWeekFeedinCapacity_kW.getDataSet(peakWeekStart_h-uI_Results.energyModel.p_timeParameters.getRunStartTime_h()), feedinCapacityLabel, feedinCapacityColor,true, false, Chart.InterpolationType.INTERPOLATION_LINEAR, 1, Chart.PointStyle.POINT_NONE);	
@@ -1254,5 +1263,183 @@ double f_enableExportFunctionality(boolean enable)
 b_exportFunctionalityEnabled = enable;
 gr_exportMenuButton.setVisible(enable);
 gr_exportMenuButtonDisabled.setVisible(!enable);
+/*ALCODEEND*/}
+
+double f_makeHeatmapConsumption(J_AccumulatorMap<OL_AssetFlowCategories> dataset)
+{/*ALCODESTART::1780507177462*/
+double[][] heatmap = new double[12][24];
+    int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    for (var EC : dataset.keySet()) {
+        ZeroAccumulator acc = dataset.get(EC);
+        double res_h = acc.getSignalResolution_h();
+        double[] ts = acc.getTimeSeries_kW();
+        int sampleIndex = 0;
+        for (int m = 0; m < 12; m++) {
+            int samplesInMonth = (int) Math.round(daysInMonth[m] * 24.0 / res_h);
+            for (int s = 0; s < samplesInMonth; s++) {
+                int hour = (int) ((s * res_h) % 24);
+                heatmap[m][hour] += ts[sampleIndex] * res_h;
+                sampleIndex++;
+            }
+        }
+    }
+    // Min/max over hele heatmap
+    double minVal = Double.MAX_VALUE;
+    double maxVal = -Double.MAX_VALUE;
+    for (int m = 0; m < 12; m++)
+        for (int h = 0; h < 24; h++) {
+            if (heatmap[m][h] < minVal) minVal = heatmap[m][h];
+            if (heatmap[m][h] > maxVal) maxVal = heatmap[m][h];
+        }
+    // Tiles inkleuren via de array
+    for (int m = 0; m < 12; m++)
+        for (int h = 0; h < 24; h++) {
+            double norm = (maxVal > minVal)
+                ? (heatmap[m][h] - minVal) / (maxVal - minVal)
+                : 0.0;
+            v_heatmapTiles[m][h].setFillColor(f_heatmapColorConsumption(norm));
+        }
+/*ALCODEEND*/}
+
+Color f_heatmapColorConsumption(double t)
+{/*ALCODESTART::1780507703608*/
+int r, g, b;
+    if (t < 0.5) {
+        // wit -> geel
+        r = 255;
+        g = 255;
+        b = (int)(255 * (1 - 2 * t));
+    } else if (t < 0.75) {
+        // geel -> rood
+        r = 255;
+        g = (int)(255 * (1 - 2 * (t - 0.5)));
+        b = 0;
+    } else {
+        // rood -> donkerrood
+        r = (int)(255 * (1 - (t - 0.75) / 0.25 * 0.5));
+        g = 0;
+        b = 0;
+    }
+    return new Color(r, g, b);
+/*ALCODEEND*/}
+
+double f_initHeatmap()
+{/*ALCODESTART::1780508128250*/
+v_heatmapTiles = new ShapeRectangle[][] {
+      {jan0,  jan1,  jan2,  jan3,  jan4,  jan5,  jan6,  jan7,  jan8,  jan9,  jan10, jan11, jan12, jan13, jan14, jan15, jan16, jan17, jan18, jan19, jan20, jan21, jan22, jan23},
+        {feb0,  feb1,  feb2,  feb3,  feb4,  feb5,  feb6,  feb7,  feb8,  feb9,  feb10, feb11, feb12, feb13, feb14, feb15, feb16, feb17, feb18, feb19, feb20, feb21, feb22, feb23},
+        {mar0,  mar1,  mar2,  mar3,  mar4,  mar5,  mar6,  mar7,  mar8,  mar9,  mar10, mar11, mar12, mar13, mar14, mar15, mar16, mar17, mar18, mar19, mar20, mar21, mar22, mar23},
+        {apr0,  apr1,  apr2,  apr3,  apr4,  apr5,  apr6,  apr7,  apr8,  apr9,  apr10, apr11, apr12, apr13, apr14, apr15, apr16, apr17, apr18, apr19, apr20, apr21, apr22, apr23},
+        {may0,  may1,  may2,  may3,  may4,  may5,  may6,  may7,  may8,  may9,  may10, may11, may12, may13, may14, may15, may16, may17, may18, may19, may20, may21, may22, may23},
+        {jun0,  jun1,  jun2,  jun3,  jun4,  jun5,  jun6,  jun7,  jun8,  jun9,  jun10, jun11, jun12, jun13, jun14, jun15, jun16, jun17, jun18, jun19, jun20, jun21, jun22, jun23},
+        {jul0,  jul1,  jul2,  jul3,  jul4,  jul5,  jul6,  jul7,  jul8,  jul9,  jul10, jul11, jul12, jul13, jul14, jul15, jul16, jul17, jul18, jul19, jul20, jul21, jul22, jul23},
+        {aug0,  aug1,  aug2,  aug3,  aug4,  aug5,  aug6,  aug7,  aug8,  aug9,  aug10, aug11, aug12, aug13, aug14, aug15, aug16, aug17, aug18, aug19, aug20, aug21, aug22, aug23},
+        {sep0,  sep1,  sep2,  sep3,  sep4,  sep5,  sep6,  sep7,  sep8,  sep9,  sep10, sep11, sep12, sep13, sep14, sep15, sep16, sep17, sep18, sep19, sep20, sep21, sep22, sep23},
+        {okt0,  okt1,  okt2,  okt3,  okt4,  okt5,  okt6,  okt7,  okt8,  okt9,  okt10, okt11, okt12, okt13, okt14, okt15, okt16, okt17, okt18, okt19, okt20, okt21, okt22, okt23},
+        {nov0,  nov1,  nov2,  nov3,  nov4,  nov5,  nov6,  nov7,  nov8,  nov9,  nov10, nov11, nov12, nov13, nov14, nov15, nov16, nov17, nov18, nov19, nov20, nov21, nov22, nov23},
+        {dec0,  dec1,  dec2,  dec3,  dec4,  dec5,  dec6,  dec7,  dec8,  dec9,  dec10, dec11, dec12, dec13, dec14, dec15, dec16, dec17, dec18, dec19, dec20, dec21, dec22, dec23}
+    };
+/*ALCODEEND*/}
+
+double f_makeHeatmapTrafo(J_AccumulatorMap<OL_AssetFlowCategories> dataset,double trafoCapacity_kW)
+{/*ALCODESTART::1780985637977*/
+double[][] peakMap = new double[12][24]; // max kW per (maand, uur)
+    // Initialiseer op 0 (niet op MIN_VALUE) want we willen 0 als baseline
+    
+    int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    for (var EC : dataset.keySet()) {
+        ZeroAccumulator acc = dataset.get(EC);
+        double res_h = acc.getSignalResolution_h();
+        double[] ts = acc.getTimeSeries_kW();
+        int sampleIndex = 0;
+        for (int m = 0; m < 12; m++) {
+            int samplesInMonth = (int) Math.round(daysInMonth[m] * 24.0 / res_h);
+            for (int s = 0; s < samplesInMonth; s++) {
+                int hour = (int) ((s * res_h) % 24);
+                double val = ts[sampleIndex];
+                if (Math.abs(val) > Math.abs(peakMap[m][hour])) {
+                    peakMap[m][hour] = val; // bewaar de piek (pos of neg)
+                }
+                sampleIndex++;
+            }
+        }
+    }
+    // Tiles inkleuren
+    if (v_heatmapTiles == null || v_heatmapTiles.length != 12) {
+        v_heatmapTiles = new ShapeRectangle[][] {
+            {jan0,  jan1,  jan2,  jan3,  jan4,  jan5,  jan6,  jan7,  jan8,  jan9,  jan10, jan11, jan12, jan13, jan14, jan15, jan16, jan17, jan18, jan19, jan20, jan21, jan22, jan23},
+            {feb0,  feb1,  feb2,  feb3,  feb4,  feb5,  feb6,  feb7,  feb8,  feb9,  feb10, feb11, feb12, feb13, feb14, feb15, feb16, feb17, feb18, feb19, feb20, feb21, feb22, feb23},
+            {mar0,  mar1,  mar2,  mar3,  mar4,  mar5,  mar6,  mar7,  mar8,  mar9,  mar10, mar11, mar12, mar13, mar14, mar15, mar16, mar17, mar18, mar19, mar20, mar21, mar22, mar23},
+            {apr0,  apr1,  apr2,  apr3,  apr4,  apr5,  apr6,  apr7,  apr8,  apr9,  apr10, apr11, apr12, apr13, apr14, apr15, apr16, apr17, apr18, apr19, apr20, apr21, apr22, apr23},
+            {may0,  may1,  may2,  may3,  may4,  may5,  may6,  may7,  may8,  may9,  may10, may11, may12, may13, may14, may15, may16, may17, may18, may22, may22, may22, may22, may23},
+            {jun0,  jun1,  jun2,  jun3,  jun4,  jun5,  jun6,  jun7,  jun8,  jun9,  jun10, jun11, jun12, jun13, jun14, jun15, jun16, jun17, jun18, jun19, jun20, jun21, jun22, jun23},
+            {jul0,  jul1,  jul2,  jul3,  jul4,  jul5,  jul6,  jul7,  jul8,  jul9,  jul10, jul11, jul12, jul13, jul14, jul15, jul16, jul17, jul18, jul19, jul20, jul21, jul22, jul23},
+            {aug0,  aug1,  aug2,  aug3,  aug4,  aug5,  aug6,  aug7,  aug8,  aug9,  aug10, aug11, aug12, aug13, aug14, aug15, aug16, aug17, aug18, aug19, aug20, aug21, aug22, aug23},
+            {sep0,  sep1,  sep2,  sep3,  sep4,  sep5,  sep6,  sep7,  sep8,  sep9,  sep10, sep11, sep12, sep13, sep14, sep15, sep16, sep17, sep18, sep19, sep20, sep21, sep22, sep23},
+            {okt0,  okt1,  okt2,  okt3,  okt4,  okt5,  okt6,  okt7,  okt8,  okt9,  okt10, okt11, okt12, okt13, okt14, okt15, okt16, okt17, okt18, okt19, okt20, okt21, okt22, okt23},
+            {nov0,  nov1,  nov2,  nov3,  nov4,  nov5,  nov6,  nov7,  nov8,  nov9,  nov10, nov11, nov12, nov13, nov14, nov15, nov16, nov17, nov18, nov19, nov20, nov21, nov22, nov23},
+            {dec0,  dec1,  dec2,  dec3,  dec4,  dec5,  dec6,  dec7,  dec8,  dec9,  dec10, dec11, dec12, dec13, dec14, dec15, dec16, dec17, dec18, dec19, dec20, dec21, dec22, dec23}
+        };
+    }
+    for (int m = 0; m < 12; m++) {
+        for (int h = 0; h < 24; h++) {
+            v_heatmapTiles[m][h].setFillColor(f_heatmapColorTrafo(peakMap[m][h], trafoCapacity_kW));
+        }
+    }
+/*ALCODEEND*/}
+
+Color f_heatmapColorTrafo(double t,double trafoCapacity_kW)
+{/*ALCODESTART::1780985688055*/
+int r, g, b;
+    if (value_kW >= 0) {
+        // Positief: wit -> geel -> oranje -> rood -> donkerrood
+        double t = Math.min(value_kW / trafoCapacity_kW, 1.2); // cap iets boven 1 voor donkerrood
+        if (t < 0.5) {
+            // wit -> geel
+            r = 255;
+            g = 255;
+            b = (int)(255 * (1 - t / 0.5));
+        } else if (t < 0.9) {
+            // geel -> oranje
+            r = 255;
+            g = (int)(255 * (1 - (t - 0.5) / 0.4 * 0.5)); // 255 -> 128
+            b = 0;
+        } else if (t < 1.0) {
+            // oranje -> rood
+            r = 255;
+            g = (int)(128 * (1 - (t - 0.9) / 0.1));
+            b = 0;
+        } else {
+            // rood -> donkerrood
+            r = (int)(255 * (1 - Math.min((t - 1.0) / 0.2, 1.0) * 0.5));
+            g = 0;
+            b = 0;
+        }
+    } else {
+        // Negatief: wit -> groen -> blauw -> donkerblauw
+        double t = Math.min(Math.abs(value_kW) / trafoCapacity_kW, 1.2);
+        if (t < 0.5) {
+            // wit -> groen
+            r = (int)(255 * (1 - t / 0.5));
+            g = 255;
+            b = (int)(255 * (1 - t / 0.5));
+        } else if (t < 0.9) {
+            // groen -> blauw
+            r = 0;
+            g = (int)(255 * (1 - (t - 0.5) / 0.4));
+            b = (int)(255 * (t - 0.5) / 0.4);
+        } else if (t < 1.0) {
+            // blauw -> donkerblauw
+            r = 0;
+            g = 0;
+            b = 255;
+        } else {
+            // donkerblauw
+            r = 0;
+            g = 0;
+            b = (int)(255 * (1 - Math.min((t - 1.0) / 0.2, 1.0) * 0.5));
+        }
+    }
+    return new Color(r, g, b);
 /*ALCODEEND*/}
 

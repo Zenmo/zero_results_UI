@@ -87,7 +87,7 @@ f_resetCharts();
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 60, true);
+uI_Results.f_setSelectedObjectDisplay(null, 60, true);
 
 //Set battery capacity
 f_addBatteryCapacity(data);

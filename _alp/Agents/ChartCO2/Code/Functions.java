@@ -140,7 +140,7 @@ double f_setChartCO2()
 I_EnergyData data = uI_Results.f_getSelectedObjectData();
 
 //Set selected object display
-uI_Results.f_setSelectedObjectDisplay(230, 60, true);
+uI_Results.f_setSelectedObjectDisplay(null, 60, true);
 
 //Initialize the EnergyCarrier selection ComboBox
 f_initializeECSelectionComboBox(data);

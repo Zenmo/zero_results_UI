@@ -40,7 +40,7 @@
               StaticVariable="false">
 			<Type><![CDATA[Color]]></Type>
 			<InitialValue Class="CodeValue">
-				<Code><![CDATA[lavender]]></Code>
+				<Code><![CDATA[null]]></Code>
 			</InitialValue>
 		</Properties>
 	</Variable>

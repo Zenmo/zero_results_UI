@@ -26,39 +26,11 @@
 		</Font>
 		<Alignment>LEFT</Alignment>
 	</Text>
-	<Rectangle>
-		<Id>1727091528000</Id>
-		<Name><![CDATA[rect_rbGSLD]]></Name>
-		<X>0</X>
-		<Y>0</Y>
-		<Label>
-			<X>10</X>
-			<Y>10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<ZHeight>10</ZHeight>
-		<LineWidth>1</LineWidth>
-		<LineWidthCode>v_lineWidth</LineWidthCode>
-		<LineColor>-1644806</LineColor>
-		<LineColorCode>v_lineColor</LineColorCode>
-		<LineMaterial>null</LineMaterial>
-		<LineStyle>SOLID</LineStyle>
-		<Width>460</Width>
-		<Height>140</Height>
-		<Rotation>0.0</Rotation>
-		<FillColor>-657931</FillColor>
-		<FillMaterial>null</FillMaterial>
-	</Rectangle>
 	<Text>
 		<Id>1730385072661</Id>
 		<Name><![CDATA[text18]]></Name>
 		<X>2240</X>
-		<Y>1216</Y>
+		<Y>1218</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -73,7 +45,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[Warmtepompen]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>12</Size>
 			<Style>0</Style>
 		</Font>
@@ -83,8 +55,8 @@
 		<Id>1730385072671</Id>
 		<Name><![CDATA[txt_GSL2]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>560</X>
-		<Y>60</Y>
+		<X>850</X>
+		<Y>50</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -103,13 +75,13 @@
 			<Size>36</Size>
 			<Style>1</Style>
 		</Font>
-		<Alignment>LEFT</Alignment>
+		<Alignment>CENTER</Alignment>
 	</Text>
 	<Text>
 		<Id>1730385072683</Id>
 		<Name><![CDATA[txt_GSL5]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>2030</X>
+		<X>2440</X>
 		<Y>60</Y>
 		<Label>
 			<X>0</X>
@@ -135,7 +107,7 @@
 		<Id>1730385072685</Id>
 		<Name><![CDATA[text19]]></Name>
 		<X>2240</X>
-		<Y>1195</Y>
+		<Y>1197</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -150,7 +122,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[Zelfconsumptie gebied [MWh]]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>12</Size>
 			<Style>0</Style>
 		</Font>
@@ -241,8 +213,8 @@
 		<Id>1730385072725</Id>
 		<Name><![CDATA[txt_GSL4]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1540</X>
-		<Y>60</Y>
+		<X>2040</X>
+		<Y>50</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -261,13 +233,13 @@
 			<Size>36</Size>
 			<Style>1</Style>
 		</Font>
-		<Alignment>LEFT</Alignment>
+		<Alignment>CENTER</Alignment>
 	</Text>
 	<Text>
 		<Id>1730385072727</Id>
 		<Name><![CDATA[text20]]></Name>
 		<X>2240</X>
-		<Y>1236</Y>
+		<Y>1238</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -282,7 +254,7 @@
 		<Color>-16777216</Color>
 		<Text><![CDATA[Gas ketels]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>12</Size>
 			<Style>0</Style>
 		</Font>
@@ -292,7 +264,7 @@
 		<Id>1730392680596</Id>
 		<Name><![CDATA[gr_gespreksleidraad1]]></Name>
 		<X>260</X>
-		<Y>450</Y>
+		<Y>430</Y>
 		<Label>
 			<X>9.957</X>
 			<Y>0</Y>
@@ -325,8 +297,8 @@
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>610</Height>
+				<Width>580</Width>
+				<Height>580</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -335,7 +307,7 @@
 			<Text>
 				<Id>1730392680600</Id>
 				<Name><![CDATA[tx_topBarplotText3]]></Name>
-				<X>-40</X>
+				<X>30</X>
 				<Y>-280</Y>
 				<Label>
 					<X>0</X>
@@ -352,7 +324,7 @@
 				<Text><![CDATA[Hoeveel energie opwek 
 en verbruik heb ik?]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>28</Size>
 					<Style>0</Style>
 				</Font>
@@ -361,7 +333,7 @@ en verbruik heb ik?]]></Text>
 			<Group>
 				<Id>1730392680602</Id>
 				<Name><![CDATA[gr_onbalansBarplot4]]></Name>
-				<X>120</X>
+				<X>180</X>
 				<Y>-120</Y>
 				<Label>
 					<X>10.122</X>
@@ -394,7 +366,7 @@ en verbruik heb ik?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Opwek]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>20</Size>
 							<Style>0</Style>
 						</Font>
@@ -403,7 +375,7 @@ en verbruik heb ik?]]></Text>
 					<Text>
 						<Id>1730392680606</Id>
 						<Name><![CDATA[t_gebruikTextGespreksleidraad1]]></Name>
-						<X>-45</X>
+						<X>-20</X>
 						<Y>-20</Y>
 						<Label>
 							<X>0</X>
@@ -419,7 +391,7 @@ en verbruik heb ik?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Gebruik]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>20</Size>
 							<Style>0</Style>
 						</Font>
@@ -445,7 +417,7 @@ en verbruik heb ik?]]></Text>
 						<Text><![CDATA[Hoe wordt de opwek gebruikt en waar komt het gebruik 
 vandaan per jaar en naar energiedrager]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
@@ -456,7 +428,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<StackChart>
 				<Id>1730392680611</Id>
 				<Name><![CDATA[pl_productionChartGespreksleidraad1]]></Name>
-				<X>-230</X>
+				<X>-180</X>
 				<Y>-100</Y>
 				<Label>
 					<X>0</X>
@@ -515,7 +487,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<StackChart>
 				<Id>1730392680614</Id>
 				<Name><![CDATA[pl_consumptionChartGespreksleidraad1]]></Name>
-				<X>-5</X>
+				<X>75</X>
 				<Y>-100</Y>
 				<Label>
 					<X>0</X>
@@ -574,7 +546,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Oval>
 				<Id>1730392680616</Id>
 				<Name><![CDATA[oval26]]></Name>
-				<X>-215</X>
+				<X>-165</X>
 				<Y>130</Y>
 				<Label>
 					<X>0</X>
@@ -601,8 +573,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680618</Id>
 				<Name><![CDATA[t_gespreksleidraadLegend9]]></Name>
-				<X>-200</X>
-				<Y>123</Y>
+				<X>-150</X>
+				<Y>126</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -617,7 +589,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Lokaal gebruikt]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -626,7 +598,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Oval>
 				<Id>1730392680620</Id>
 				<Name><![CDATA[oval27]]></Name>
-				<X>-215</X>
+				<X>-165</X>
 				<Y>150</Y>
 				<Label>
 					<X>0</X>
@@ -653,8 +625,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680622</Id>
 				<Name><![CDATA[t_gespreksleidraadLegend10]]></Name>
-				<X>-200</X>
-				<Y>142.5</Y>
+				<X>-150</X>
+				<Y>146</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -669,7 +641,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Uitvoer elektriciteit]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -678,7 +650,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Oval>
 				<Id>1730392680624</Id>
 				<Name><![CDATA[oval28]]></Name>
-				<X>10</X>
+				<X>80</X>
 				<Y>130</Y>
 				<Label>
 					<X>0</X>
@@ -705,8 +677,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680626</Id>
 				<Name><![CDATA[t_gespreksleidraadLegend11]]></Name>
-				<X>25</X>
-				<Y>123</Y>
+				<X>95</X>
+				<Y>126</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -721,7 +693,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Lokaal opgewekt]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -730,7 +702,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Oval>
 				<Id>1730392680628</Id>
 				<Name><![CDATA[oval29]]></Name>
-				<X>10</X>
+				<X>80</X>
 				<Y>150</Y>
 				<Label>
 					<X>0</X>
@@ -757,8 +729,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680630</Id>
 				<Name><![CDATA[t_gespreksleidraadLegend12]]></Name>
-				<X>25</X>
-				<Y>142.5</Y>
+				<X>95</X>
+				<Y>146</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -773,7 +745,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Invoer elektriciteit]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -782,8 +754,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680632</Id>
 				<Name><![CDATA[t_gespreksleidraadLegend13]]></Name>
-				<X>25</X>
-				<Y>162.5</Y>
+				<X>95</X>
+				<Y>166</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -798,7 +770,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Invoer aardgas]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -807,7 +779,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Oval>
 				<Id>1730392680634</Id>
 				<Name><![CDATA[oval30]]></Name>
-				<X>10</X>
+				<X>80</X>
 				<Y>210</Y>
 				<Label>
 					<X>0</X>
@@ -834,8 +806,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680636</Id>
 				<Name><![CDATA[t_gespreksleidraadLegend14]]></Name>
-				<X>26</X>
-				<Y>203</Y>
+				<X>95</X>
+				<Y>206</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -850,7 +822,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Energie voor warmtenet]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -859,7 +831,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Oval>
 				<Id>1730392680638</Id>
 				<Name><![CDATA[oval31]]></Name>
-				<X>10</X>
+				<X>80</X>
 				<Y>170</Y>
 				<Label>
 					<X>0</X>
@@ -886,7 +858,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Oval>
 				<Id>1730392680640</Id>
 				<Name><![CDATA[oval32]]></Name>
-				<X>10</X>
+				<X>80</X>
 				<Y>190</Y>
 				<Label>
 					<X>0</X>
@@ -913,8 +885,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680642</Id>
 				<Name><![CDATA[t_gespreksleidraadLegend15]]></Name>
-				<X>25</X>
-				<Y>182.5</Y>
+				<X>95</X>
+				<Y>186</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -929,7 +901,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Invoer benzine/diesel]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -939,8 +911,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Id>1730392680644</Id>
 				<Name><![CDATA[t_gespreksleidraadLegend16]]></Name>
 				<ExcludeFromBuild>true</ExcludeFromBuild>
-				<X>-200</X>
-				<Y>162.5</Y>
+				<X>-150</X>
+				<Y>166</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -955,7 +927,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Warmte voor warmtenet]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -965,7 +937,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Id>1730392680646</Id>
 				<Name><![CDATA[oval33]]></Name>
 				<ExcludeFromBuild>true</ExcludeFromBuild>
-				<X>-215</X>
+				<X>-165</X>
 				<Y>170</Y>
 				<Label>
 					<X>0</X>
@@ -992,7 +964,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680648</Id>
 				<Name><![CDATA[t_exportPerNeighborhood5]]></Name>
-				<X>-220</X>
+				<X>-170</X>
 				<Y>-70</Y>
 				<Label>
 					<X>0</X>
@@ -1008,7 +980,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[[GWh]]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1017,7 +989,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Text>
 				<Id>1730392680650</Id>
 				<Name><![CDATA[t_exportPerNeighborhood6]]></Name>
-				<X>5</X>
+				<X>75</X>
 				<Y>-70</Y>
 				<Label>
 					<X>0</X>
@@ -1033,7 +1005,7 @@ vandaan per jaar en naar energiedrager]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[[GWh]]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1042,8 +1014,8 @@ vandaan per jaar en naar energiedrager]]></Text>
 			<Image>
 				<Id>1730392680652</Id>
 				<Name><![CDATA[i_gespreksleidraad1]]></Name>
-				<X>170</X>
-				<Y>-280</Y>
+				<X>286</X>
+				<Y>-290</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1061,8 +1033,8 @@ if(gr_infoButtonText.isVisible()){
 f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Width>20</Width>
-				<Height>20</Height>
+				<Width>14</Width>
+				<Height>14</Height>
 				<Rotation>0.0</Rotation>
 				<ImageFiles>
 					<ImageResourceReference>
@@ -1077,8 +1049,8 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 	<Group>
 		<Id>1730385072787</Id>
 		<Name><![CDATA[gr_gespreksleidraad2]]></Name>
-		<X>750</X>
-		<Y>460</Y>
+		<X>840</X>
+		<Y>410</Y>
 		<Label>
 			<X>9.957</X>
 			<Y>0</Y>
@@ -1095,7 +1067,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<Id>1730385072789</Id>
 				<Name><![CDATA[rect_GSL2]]></Name>
 				<X>-260</X>
-				<Y>-320</Y>
+				<Y>-290</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1111,8 +1083,8 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>610</Height>
+				<Width>580</Width>
+				<Height>580</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -1121,7 +1093,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385072791</Id>
 				<Name><![CDATA[tx_topBarplotText8]]></Name>
-				<X>-30</X>
+				<X>20</X>
 				<Y>20</Y>
 				<Label>
 					<X>0</X>
@@ -1137,8 +1109,8 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Kan ik meer opwekken?]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>28</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>22</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -1146,7 +1118,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<StackChart>
 				<Id>1730385072794</Id>
 				<Name><![CDATA[sc_windSupplyStack]]></Name>
-				<X>-190</X>
+				<X>-150</X>
 				<Y>40</Y>
 				<Label>
 					<X>0</X>
@@ -1205,7 +1177,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385072796</Id>
 				<Name><![CDATA[txt_GSLD2_wind]]></Name>
-				<X>-100</X>
+				<X>-60</X>
 				<Y>200</Y>
 				<Label>
 					<X>0</X>
@@ -1221,7 +1193,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Wind]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>18</Size>
 					<Style>0</Style>
 				</Font>
@@ -1230,7 +1202,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385072798</Id>
 				<Name><![CDATA[txt_gsld2_solar]]></Name>
-				<X>35</X>
+				<X>75</X>
 				<Y>200</Y>
 				<Label>
 					<X>0</X>
@@ -1246,7 +1218,7 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Zon]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>18</Size>
 					<Style>0</Style>
 				</Font>
@@ -1255,8 +1227,8 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385072800</Id>
 				<Name><![CDATA[tx_topBarplotText9]]></Name>
-				<X>-30</X>
-				<Y>-300</Y>
+				<X>40</X>
+				<Y>-277</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1271,8 +1243,8 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Kan mijn gebruik duurzamer?]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>28</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>22</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -1280,8 +1252,8 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385072802</Id>
 				<Name><![CDATA[text4]]></Name>
-				<X>40</X>
-				<Y>-110</Y>
+				<X>110</X>
+				<Y>-87</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1297,17 +1269,17 @@ f_setChartDescriptionText(i_gespreksleidraad1.getName(), setVisible);</OnClickCo
 				<Text><![CDATA[Transport 
 en vervoer]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>18</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
 				<Id>1730385072804</Id>
 				<Name><![CDATA[text5]]></Name>
-				<X>-60</X>
-				<Y>-110</Y>
+				<X>10</X>
+				<Y>-87</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1322,17 +1294,17 @@ en vervoer]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Warmte]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>18</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
 				<Id>1730385072806</Id>
 				<Name><![CDATA[text6]]></Name>
-				<X>-180</X>
-				<Y>-110</Y>
+				<X>-90</X>
+				<Y>-87</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1347,16 +1319,16 @@ en vervoer]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Elektriciteit]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>18</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<StackChart>
 				<Id>1730385072809</Id>
 				<Name><![CDATA[sc_PVSupplyStack]]></Name>
-				<X>-45</X>
+				<X>-5</X>
 				<Y>40</Y>
 				<Label>
 					<X>0</X>
@@ -1415,8 +1387,8 @@ en vervoer]]></Text>
 			<StackChart>
 				<Id>1730385072812</Id>
 				<Name><![CDATA[sc_electricityDemandStack]]></Name>
-				<X>-230</X>
-				<Y>-270</Y>
+				<X>-160</X>
+				<Y>-247</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1474,8 +1446,8 @@ en vervoer]]></Text>
 			<StackChart>
 				<Id>1730385072815</Id>
 				<Name><![CDATA[sc_heatDemandStack]]></Name>
-				<X>-130</X>
-				<Y>-270</Y>
+				<X>-60</X>
+				<Y>-247</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1533,8 +1505,8 @@ en vervoer]]></Text>
 			<StackChart>
 				<Id>1730385072818</Id>
 				<Name><![CDATA[sc_transportDemandStack]]></Name>
-				<X>-30</X>
-				<Y>-270</Y>
+				<X>40</X>
+				<Y>-247</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1592,8 +1564,8 @@ en vervoer]]></Text>
 			<Rectangle>
 				<Id>1730385072820</Id>
 				<Name><![CDATA[rectangle13]]></Name>
-				<X>-210</X>
-				<Y>-61</Y>
+				<X>-170</X>
+				<Y>-50</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1619,8 +1591,8 @@ en vervoer]]></Text>
 			<Text>
 				<Id>1730385072822</Id>
 				<Name><![CDATA[text2]]></Name>
-				<X>-190</X>
-				<Y>-65</Y>
+				<X>-150</X>
+				<Y>-52</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1635,7 +1607,7 @@ en vervoer]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Lokale opwek]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1644,8 +1616,8 @@ en vervoer]]></Text>
 			<Rectangle>
 				<Id>1730385072824</Id>
 				<Name><![CDATA[rectangle1]]></Name>
-				<X>-210</X>
-				<Y>-40</Y>
+				<X>-170</X>
+				<Y>-30</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1671,8 +1643,8 @@ en vervoer]]></Text>
 			<Text>
 				<Id>1730385072826</Id>
 				<Name><![CDATA[text7]]></Name>
-				<X>-190</X>
-				<Y>-44</Y>
+				<X>-150</X>
+				<Y>-32</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1687,7 +1659,7 @@ en vervoer]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Invoer]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1696,8 +1668,8 @@ en vervoer]]></Text>
 			<Text>
 				<Id>1730385072828</Id>
 				<Name><![CDATA[text8]]></Name>
-				<X>-75</X>
-				<Y>-44</Y>
+				<X>-35</X>
+				<Y>-37</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1713,7 +1685,7 @@ en vervoer]]></Text>
 				<Text><![CDATA[Elek. voor 
 warmtepompen]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1722,8 +1694,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072830</Id>
 				<Name><![CDATA[text9]]></Name>
-				<X>-75</X>
-				<Y>-65</Y>
+				<X>-35</X>
+				<Y>-52</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1738,7 +1710,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Warmtenet]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1747,8 +1719,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072832</Id>
 				<Name><![CDATA[rectangle2]]></Name>
-				<X>-95</X>
-				<Y>-40</Y>
+				<X>-55</X>
+				<Y>-30</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1774,8 +1746,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072834</Id>
 				<Name><![CDATA[rectangle3]]></Name>
-				<X>-95</X>
-				<Y>-61</Y>
+				<X>-55</X>
+				<Y>-50</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1801,8 +1773,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072836</Id>
 				<Name><![CDATA[text10]]></Name>
-				<X>-75</X>
-				<Y>-9</Y>
+				<X>-35</X>
+				<Y>-12</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1817,7 +1789,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gas ketels]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1826,8 +1798,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072838</Id>
 				<Name><![CDATA[rectangle4]]></Name>
-				<X>-95</X>
-				<Y>-5</Y>
+				<X>-55</X>
+				<Y>-10</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1853,8 +1825,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072840</Id>
 				<Name><![CDATA[text11]]></Name>
-				<X>50</X>
-				<Y>-24</Y>
+				<X>90</X>
+				<Y>-12</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1869,7 +1841,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Fossiele brandstof]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1878,8 +1850,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072842</Id>
 				<Name><![CDATA[rectangle5]]></Name>
-				<X>30</X>
-				<Y>-40</Y>
+				<X>70</X>
+				<Y>-30</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1905,8 +1877,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072844</Id>
 				<Name><![CDATA[text12]]></Name>
-				<X>50</X>
-				<Y>-65</Y>
+				<X>90</X>
+				<Y>-52</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -1921,7 +1893,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Elektriciteit]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -1930,8 +1902,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072846</Id>
 				<Name><![CDATA[rectangle6]]></Name>
-				<X>30</X>
-				<Y>-61</Y>
+				<X>70</X>
+				<Y>-50</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1957,8 +1929,8 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072848</Id>
 				<Name><![CDATA[rectangle7]]></Name>
-				<X>30</X>
-				<Y>-20</Y>
+				<X>70</X>
+				<Y>-10</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -1984,8 +1956,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072850</Id>
 				<Name><![CDATA[text13]]></Name>
-				<X>50</X>
-				<Y>-44</Y>
+				<X>90</X>
+				<Y>-32</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2000,7 +1972,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Waterstof]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -2009,7 +1981,7 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072852</Id>
 				<Name><![CDATA[rectangle8]]></Name>
-				<X>-130</X>
+				<X>-90</X>
 				<Y>225</Y>
 				<Label>
 					<X>10</X>
@@ -2036,8 +2008,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072854</Id>
 				<Name><![CDATA[text16]]></Name>
-				<X>-110</X>
-				<Y>221</Y>
+				<X>-70</X>
+				<Y>223</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2052,7 +2024,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Opwek wind]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -2061,7 +2033,7 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072856</Id>
 				<Name><![CDATA[rectangle9]]></Name>
-				<X>5</X>
+				<X>45</X>
 				<Y>265</Y>
 				<Label>
 					<X>10</X>
@@ -2088,8 +2060,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072858</Id>
 				<Name><![CDATA[text17]]></Name>
-				<X>25</X>
-				<Y>260</Y>
+				<X>65</X>
+				<Y>263</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2104,7 +2076,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Rest potentieel zon op dak]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -2113,8 +2085,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072860</Id>
 				<Name><![CDATA[t_energyDemand_ylabel2]]></Name>
-				<X>-250</X>
-				<Y>-260</Y>
+				<X>-210</X>
+				<Y>-230</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2129,7 +2101,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[[GWh]]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -2138,7 +2110,7 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072862</Id>
 				<Name><![CDATA[t_energyDemand_ylabel3]]></Name>
-				<X>-210</X>
+				<X>-170</X>
 				<Y>70</Y>
 				<Label>
 					<X>0</X>
@@ -2154,7 +2126,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[[GWh]]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -2163,7 +2135,7 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072864</Id>
 				<Name><![CDATA[rectangle14]]></Name>
-				<X>5</X>
+				<X>45</X>
 				<Y>225</Y>
 				<Label>
 					<X>10</X>
@@ -2190,8 +2162,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072866</Id>
 				<Name><![CDATA[text24]]></Name>
-				<X>25</X>
-				<Y>221</Y>
+				<X>65</X>
+				<Y>224</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2206,7 +2178,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Opwek zon]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -2215,7 +2187,7 @@ warmtepompen]]></Text>
 			<Rectangle>
 				<Id>1730385072868</Id>
 				<Name><![CDATA[rectangle15]]></Name>
-				<X>5</X>
+				<X>45</X>
 				<Y>245</Y>
 				<Label>
 					<X>10</X>
@@ -2242,8 +2214,8 @@ warmtepompen]]></Text>
 			<Text>
 				<Id>1730385072870</Id>
 				<Name><![CDATA[text25]]></Name>
-				<X>25</X>
-				<Y>240</Y>
+				<X>65</X>
+				<Y>243</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2258,7 +2230,7 @@ warmtepompen]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gecurtailde energie]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -2267,8 +2239,8 @@ warmtepompen]]></Text>
 			<Image>
 				<Id>1730385072872</Id>
 				<Name><![CDATA[i_gespreksleidraad2]]></Name>
-				<X>170</X>
-				<Y>-300</Y>
+				<X>286</X>
+				<Y>-270</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2285,8 +2257,8 @@ if(gr_infoButtonText.isVisible()){
 f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Width>20</Width>
-				<Height>20</Height>
+				<Width>14</Width>
+				<Height>14</Height>
 				<Rotation>0.0</Rotation>
 				<ImageFiles>
 					<ImageResourceReference>
@@ -2299,7 +2271,7 @@ f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCo
 			<Rectangle>
 				<Id>1733406888609</Id>
 				<Name><![CDATA[rectangle18]]></Name>
-				<X>-130</X>
+				<X>-90</X>
 				<Y>265</Y>
 				<Label>
 					<X>10</X>
@@ -2326,8 +2298,8 @@ f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1733406888611</Id>
 				<Name><![CDATA[text26]]></Name>
-				<X>-110</X>
-				<Y>260</Y>
+				<X>-70</X>
+				<Y>263</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -2342,7 +2314,7 @@ f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Rest Potentieel]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -2353,8 +2325,8 @@ f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCo
 	<Group>
 		<Id>1730392538584</Id>
 		<Name><![CDATA[gr_gespreksleidraad3]]></Name>
-		<X>1240</X>
-		<Y>450</Y>
+		<X>1160</X>
+		<Y>120</Y>
 		<Label>
 			<X>9.957</X>
 			<Y>0</Y>
@@ -2370,8 +2342,8 @@ f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCo
 			<Group>
 				<Id>1730392538588</Id>
 				<Name><![CDATA[gr_opwekZelfgebruik]]></Name>
-				<X>-30</X>
-				<Y>-20</Y>
+				<X>290</X>
+				<Y>290</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -2404,8 +2376,8 @@ f_setChartDescriptionText(i_gespreksleidraad2.getName(), setVisible);</OnClickCo
 						<Text><![CDATA[Kan ik meer elektriciteitsopwek 
 lokaal zelf gebruiken?]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>28</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>22</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
@@ -2559,7 +2531,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Id>1730392538600</Id>
 						<Name><![CDATA[t_selfConsumptionPerNeighborhood2]]></Name>
 						<X>-160</X>
-						<Y>143</Y>
+						<Y>147</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -2574,7 +2546,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Zelfconsumptie [GWh]]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -2611,7 +2583,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Id>1730392538604</Id>
 						<Name><![CDATA[t_exportPerNeighborhood1]]></Name>
 						<X>-160</X>
-						<Y>162.5</Y>
+						<Y>167</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -2626,7 +2598,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Uitvoer [GWh]]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -2663,7 +2635,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Id>1730392538608</Id>
 						<Name><![CDATA[t_selfConsumptionPerRegion2]]></Name>
 						<X>65</X>
-						<Y>143</Y>
+						<Y>147</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -2678,7 +2650,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Zelfconsumptie [GWh]]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -2715,7 +2687,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Id>1730392538612</Id>
 						<Name><![CDATA[t_exportPerRegion1]]></Name>
 						<X>65</X>
-						<Y>162.5</Y>
+						<Y>167</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -2730,7 +2702,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Uitvoer [GWh]]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -2756,7 +2728,7 @@ lokaal zelf gebruiken?]]></Text>
 						<Text><![CDATA[Gebruik eigen elektriciteits-
 opwek binnen regio]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
@@ -2782,7 +2754,7 @@ opwek binnen regio]]></Text>
 						<Text><![CDATA[Gebruik eigen elektriciteits-
 opwek per buurt]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
@@ -2793,8 +2765,8 @@ opwek per buurt]]></Text>
 			<Group>
 				<Id>1730392538618</Id>
 				<Name><![CDATA[gr_gebruikEigenOpwek]]></Name>
-				<X>-30</X>
-				<Y>550</Y>
+				<X>290</X>
+				<Y>860</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -2803,7 +2775,8 @@ opwek per buurt]]></Text>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<YCode>-20</YCode>
+				<XCode>290</XCode>
+				<YCode>290</YCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
@@ -2811,7 +2784,7 @@ opwek per buurt]]></Text>
 					<Text>
 						<Id>1730392538620</Id>
 						<Name><![CDATA[tx_topBarplotText28]]></Name>
-						<X>0</X>
+						<X>5</X>
 						<Y>-190</Y>
 						<Label>
 							<X>0</X>
@@ -2828,8 +2801,8 @@ opwek per buurt]]></Text>
 						<Text><![CDATA[Kan ik meer elektriciteitsgebruik 
 lokaal zelf opwekken?]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>28</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>22</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
@@ -2837,7 +2810,7 @@ lokaal zelf opwekken?]]></Text>
 					<StackChart>
 						<Id>1730392538623</Id>
 						<Name><![CDATA[pl_selfSufficiencyChartIndividual1]]></Name>
-						<X>-200</X>
+						<X>-195</X>
 						<Y>-50</Y>
 						<Label>
 							<X>0</X>
@@ -2896,7 +2869,7 @@ lokaal zelf opwekken?]]></Text>
 					<StackChart>
 						<Id>1730392538626</Id>
 						<Name><![CDATA[pl_selfSufficiencyChartCollective1]]></Name>
-						<X>25</X>
+						<X>30</X>
 						<Y>-50</Y>
 						<Label>
 							<X>0</X>
@@ -2955,7 +2928,7 @@ lokaal zelf opwekken?]]></Text>
 					<Oval>
 						<Id>1730392538628</Id>
 						<Name><![CDATA[oval22]]></Name>
-						<X>-185</X>
+						<X>-180</X>
 						<Y>150</Y>
 						<Label>
 							<X>0</X>
@@ -2982,8 +2955,8 @@ lokaal zelf opwekken?]]></Text>
 					<Text>
 						<Id>1730392538630</Id>
 						<Name><![CDATA[t_selfConsumptionPerNeighborhood3]]></Name>
-						<X>-170</X>
-						<Y>143</Y>
+						<X>-165</X>
+						<Y>147</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -2998,7 +2971,7 @@ lokaal zelf opwekken?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Zelfconsumptie [GWh]]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -3007,7 +2980,7 @@ lokaal zelf opwekken?]]></Text>
 					<Oval>
 						<Id>1730392538632</Id>
 						<Name><![CDATA[oval23]]></Name>
-						<X>-185</X>
+						<X>-180</X>
 						<Y>170</Y>
 						<Label>
 							<X>0</X>
@@ -3034,8 +3007,8 @@ lokaal zelf opwekken?]]></Text>
 					<Text>
 						<Id>1730392538634</Id>
 						<Name><![CDATA[t_importPerNeighborhood1]]></Name>
-						<X>-170</X>
-						<Y>162.5</Y>
+						<X>-165</X>
+						<Y>167</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -3050,7 +3023,7 @@ lokaal zelf opwekken?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Invoer [GWh]]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -3059,7 +3032,7 @@ lokaal zelf opwekken?]]></Text>
 					<Oval>
 						<Id>1730392538636</Id>
 						<Name><![CDATA[oval24]]></Name>
-						<X>40</X>
+						<X>45</X>
 						<Y>150</Y>
 						<Label>
 							<X>0</X>
@@ -3086,8 +3059,8 @@ lokaal zelf opwekken?]]></Text>
 					<Text>
 						<Id>1730392538638</Id>
 						<Name><![CDATA[t_selfConsumptionPerRegion3]]></Name>
-						<X>55</X>
-						<Y>143</Y>
+						<X>60</X>
+						<Y>147</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -3102,7 +3075,7 @@ lokaal zelf opwekken?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Zelfconsumptie [GWh]]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -3111,7 +3084,7 @@ lokaal zelf opwekken?]]></Text>
 					<Oval>
 						<Id>1730392538640</Id>
 						<Name><![CDATA[oval25]]></Name>
-						<X>40</X>
+						<X>45</X>
 						<Y>170</Y>
 						<Label>
 							<X>0</X>
@@ -3138,8 +3111,8 @@ lokaal zelf opwekken?]]></Text>
 					<Text>
 						<Id>1730392538642</Id>
 						<Name><![CDATA[t_importPerRegion1]]></Name>
-						<X>55</X>
-						<Y>162.5</Y>
+						<X>60</X>
+						<Y>167</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -3154,7 +3127,7 @@ lokaal zelf opwekken?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Invoer [GWh]]]></Text>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -3163,7 +3136,7 @@ lokaal zelf opwekken?]]></Text>
 					<Text>
 						<Id>1730392538644</Id>
 						<Name><![CDATA[text1131]]></Name>
-						<X>20</X>
+						<X>25</X>
 						<Y>-80</Y>
 						<Label>
 							<X>0</X>
@@ -3180,7 +3153,7 @@ lokaal zelf opwekken?]]></Text>
 						<Text><![CDATA[Bron elektriciteits-
 vraag binnen regio]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
@@ -3189,7 +3162,7 @@ vraag binnen regio]]></Text>
 					<Text>
 						<Id>1730392538646</Id>
 						<Name><![CDATA[text1132]]></Name>
-						<X>-205</X>
+						<X>-200</X>
 						<Y>-80</Y>
 						<Label>
 							<X>0</X>
@@ -3206,7 +3179,7 @@ vraag binnen regio]]></Text>
 						<Text><![CDATA[Bron elektriciteits-
 vraag per buurt]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>14</Size>
 							<Style>0</Style>
 						</Font>
@@ -3218,8 +3191,8 @@ vraag per buurt]]></Text>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1730392538648</Id>
 				<Name><![CDATA[rb_gespreksleidraad3]]></Name>
-				<X>-230</X>
-				<Y>-290</Y>
+				<X>30</X>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3228,7 +3201,7 @@ vraag per buurt]]></Text>
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<BasicProperties Width="370" Height="60">
+				<BasicProperties Width="370" Height="40">
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<TextColor>-16777216</TextColor>
 					<Enabled>true</Enabled>
@@ -3242,7 +3215,7 @@ else{
 }</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
-					<Font Name="Arial" Size="12" Style="0"/>
+					<Font Name="HOLONline2" Size="12" Style="0"/>
 					<Orientation>VERTICAL</Orientation>
 					<Button>Kan ik meer opwek lokaal zelf gebruiken?</Button>
 					<Button>Kan ik meer gebruik lokaal zelf opwekken?</Button>
@@ -3252,8 +3225,8 @@ else{
 			<Image>
 				<Id>1730392538650</Id>
 				<Name><![CDATA[i_gespreksleidraad3]]></Name>
-				<X>170</X>
-				<Y>-290</Y>
+				<X>546</X>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3270,8 +3243,8 @@ if(gr_infoButtonText.isVisible()){
 f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Width>20</Width>
-				<Height>20</Height>
+				<Width>14</Width>
+				<Height>14</Height>
 				<Rotation>0.0</Rotation>
 				<ImageFiles>
 					<ImageResourceReference>
@@ -3284,8 +3257,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 			<Rectangle>
 				<Id>1730386104790</Id>
 				<Name><![CDATA[rect_GSL3]]></Name>
-				<X>-260</X>
-				<Y>-310</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -3301,8 +3274,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>610</Height>
+				<Width>580</Width>
+				<Height>580</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -3313,8 +3286,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 	<Group>
 		<Id>1730385072950</Id>
 		<Name><![CDATA[gr_gespreksleidraad5]]></Name>
-		<X>2190</X>
-		<Y>420</Y>
+		<X>2320</X>
+		<Y>120</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3330,8 +3303,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385072954</Id>
 				<Name><![CDATA[tx_topBarplotText13]]></Name>
-				<X>0</X>
-				<Y>-260</Y>
+				<X>290</X>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3347,7 +3320,7 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<Text><![CDATA[Kan ik opwek en verbruik over de
 seizoenen balanceren?]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>28</Size>
 					<Style>0</Style>
 				</Font>
@@ -3356,8 +3329,8 @@ seizoenen balanceren?]]></Text>
 			<TimeStackChart>
 				<Id>1730385072957</Id>
 				<Name><![CDATA[energySupplyChartYearGespreksleidraad5]]></Name>
-				<X>-220</X>
-				<Y>-80</Y>
+				<X>60</X>
+				<Y>200</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3416,8 +3389,8 @@ seizoenen balanceren?]]></Text>
 			<Text>
 				<Id>1730385072959</Id>
 				<Name><![CDATA[t_duurkromme_xlabel3]]></Name>
-				<X>-20</X>
-				<Y>90</Y>
+				<X>300</X>
+				<Y>390</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3432,17 +3405,17 @@ seizoenen balanceren?]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Maand]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
 				<Id>1730385072963</Id>
 				<Name><![CDATA[tx_gespreksleidraad5]]></Name>
-				<X>-225</X>
-				<Y>-170</Y>
+				<X>290</X>
+				<Y>155</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3457,18 +3430,18 @@ seizoenen balanceren?]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Invoer en opwek van energie per bron in gemiddeld dag vermogen [kW]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Control Type="RadioButtons">
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1730385072965</Id>
 				<Name><![CDATA[rb_gespreksleidraad5]]></Name>
-				<X>-200</X>
-				<Y>-140</Y>
+				<X>210</X>
+				<Y>90</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3477,14 +3450,14 @@ seizoenen balanceren?]]></Text>
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<BasicProperties Width="150" Height="50">
+				<BasicProperties Width="140" Height="50">
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<TextColor>-16777216</TextColor>
 					<Enabled>true</Enabled>
 					<ActionCode>f_setChartsGespreksleidraad5(uI_Results.f_getSelectedObjectData());</ActionCode>
 				</BasicProperties>
 				<ExtendedProperties>
-					<Font Name="Dialog" Size="11" Style="0"/>
+					<Font Name="HOLONline2" Size="11" Style="0"/>
 					<Orientation>HORIZONTAL</Orientation>
 					<Button>Elektriciteit</Button>
 					<Button>Energie</Button>
@@ -3494,8 +3467,8 @@ seizoenen balanceren?]]></Text>
 			<Image>
 				<Id>1730385072967</Id>
 				<Name><![CDATA[i_gespreksleidraad5]]></Name>
-				<X>200</X>
-				<Y>-230</Y>
+				<X>545</X>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3512,8 +3485,8 @@ if(gr_infoButtonText.isVisible()){
 f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Width>20</Width>
-				<Height>20</Height>
+				<Width>14</Width>
+				<Height>14</Height>
 				<Rotation>0.0</Rotation>
 				<ImageFiles>
 					<ImageResourceReference>
@@ -3526,8 +3499,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Rectangle>
 				<Id>1730386643867</Id>
 				<Name><![CDATA[rect_GSL5]]></Name>
-				<X>-230</X>
-				<Y>-280</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -3543,8 +3516,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>610</Height>
+				<Width>580</Width>
+				<Height>580</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -3553,8 +3526,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<TimePlot>
 				<Id>1731688257122</Id>
 				<Name><![CDATA[energyDemandChartYearGespreksleidraad5]]></Name>
-				<X>-230</X>
-				<Y>-80</Y>
+				<X>50</X>
+				<Y>200</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3617,8 +3590,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1731688262241</Id>
 				<Name><![CDATA[t_duurkromme_ylabel2]]></Name>
-				<X>-210</X>
-				<Y>-90</Y>
+				<X>70</X>
+				<Y>290</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3633,19 +3606,19 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gemiddeld vermogen per dag [kW]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 		</Presentation>
 	</Group>
 	<Group>
 		<Id>1730385073110</Id>
 		<Name><![CDATA[gr_gespreksleidraad6]]></Name>
-		<X>2690</X>
-		<Y>400</Y>
+		<X>2900</X>
+		<Y>120</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -3661,8 +3634,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Rectangle>
 				<Id>1730385073112</Id>
 				<Name><![CDATA[rect_GSL6]]></Name>
-				<X>-230</X>
-				<Y>-260</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -3678,8 +3651,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>610</Height>
+				<Width>580</Width>
+				<Height>580</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -3688,8 +3661,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073114</Id>
 				<Name><![CDATA[tx_topBarplotText38]]></Name>
-				<X>0</X>
-				<Y>-250</Y>
+				<X>290</X>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3704,7 +3677,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Kunnen wij pieken vermijden?]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>28</Size>
 					<Style>0</Style>
 				</Font>
@@ -3713,8 +3686,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073116</Id>
 				<Name><![CDATA[tx_topBarplotText39]]></Name>
-				<X>-210</X>
-				<Y>-150</Y>
+				<X>20</X>
+				<Y>110</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3729,7 +3702,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Aantal pieken]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -3738,8 +3711,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073118</Id>
 				<Name><![CDATA[tx_topBarplotText40]]></Name>
-				<X>-210</X>
-				<Y>-125</Y>
+				<X>20</X>
+				<Y>130</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3754,7 +3727,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gemiddelde duur [h]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -3763,8 +3736,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073120</Id>
 				<Name><![CDATA[tx_topBarplotText41]]></Name>
-				<X>10</X>
-				<Y>-190</Y>
+				<X>340</X>
+				<Y>80</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3779,17 +3752,17 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Afname]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>16</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>18</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
 				<Id>1730385073122</Id>
 				<Name><![CDATA[tx_topBarplotText42]]></Name>
-				<X>120</X>
-				<Y>-190</Y>
+				<X>500</X>
+				<Y>80</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3804,17 +3777,17 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Teruglevering]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>16</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>18</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
 				<Id>1730385073124</Id>
 				<Name><![CDATA[tx_topBarplotText43]]></Name>
-				<X>-210</X>
-				<Y>-100</Y>
+				<X>20</X>
+				<Y>150</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3829,7 +3802,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gemiddelde energievraag [MWh]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -3838,8 +3811,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073126</Id>
 				<Name><![CDATA[tx_topBarplotText44]]></Name>
-				<X>-210</X>
-				<Y>-50</Y>
+				<X>20</X>
+				<Y>190</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3854,7 +3827,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Maximale duur [h]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -3863,8 +3836,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073128</Id>
 				<Name><![CDATA[tx_topBarplotText45]]></Name>
-				<X>-210</X>
-				<Y>-25</Y>
+				<X>20</X>
+				<Y>210</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3879,7 +3852,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Maximale energievraag [MWh]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -3888,8 +3861,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073130</Id>
 				<Name><![CDATA[tx_topBarplotText46]]></Name>
-				<X>-210</X>
-				<Y>-75</Y>
+				<X>20</X>
+				<Y>170</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3904,7 +3877,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Gemiddelde piek overbelasting [MW]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -3913,8 +3886,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073132</Id>
 				<Name><![CDATA[tx_topBarplotText47]]></Name>
-				<X>-210</X>
-				<Y>0</Y>
+				<X>20</X>
+				<Y>230</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3929,7 +3902,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Maximale piek overbelasting [MW]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -3938,8 +3911,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Line>
 				<Id>1730385073134</Id>
 				<Name><![CDATA[line19]]></Name>
-				<X>-210</X>
-				<Y>-160</Y>
+				<X>0</X>
+				<Y>100</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -3959,15 +3932,15 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<BeginArrowStyle>0</BeginArrowStyle>
 				<EndArrowSize>1</EndArrowSize>
 				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>415</Dx>
+				<Dx>580</Dx>
 				<Dy>0</Dy>
 				<Dz>0</Dz>
 			</Line>
 			<Text>
 				<Id>1730385073136</Id>
 				<Name><![CDATA[tx_topBarplotText48]]></Name>
-				<X>-210</X>
-				<Y>-190</Y>
+				<X>130</X>
+				<Y>80</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -3982,17 +3955,17 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Overbelasting]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>18</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Line>
 				<Id>1730385073138</Id>
 				<Name><![CDATA[line20]]></Name>
-				<X>-210</X>
-				<Y>30</Y>
+				<X>0</X>
+				<Y>250</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -4012,15 +3985,15 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<BeginArrowStyle>0</BeginArrowStyle>
 				<EndArrowSize>1</EndArrowSize>
 				<EndArrowStyle>0</EndArrowStyle>
-				<Dx>415</Dx>
+				<Dx>580</Dx>
 				<Dy>0</Dy>
 				<Dz>0</Dz>
 			</Line>
 			<Line>
 				<Id>1730385073140</Id>
 				<Name><![CDATA[line21]]></Name>
-				<X>0</X>
-				<Y>-150</Y>
+				<X>260</X>
+				<Y>100</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -4041,14 +4014,14 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<EndArrowSize>1</EndArrowSize>
 				<EndArrowStyle>0</EndArrowStyle>
 				<Dx>0</Dx>
-				<Dy>170</Dy>
+				<Dy>150</Dy>
 				<Dz>0</Dz>
 			</Line>
 			<Line>
 				<Id>1730385073142</Id>
 				<Name><![CDATA[line22]]></Name>
-				<X>110</X>
-				<Y>-150</Y>
+				<X>420</X>
+				<Y>100</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -4069,14 +4042,14 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<EndArrowSize>1</EndArrowSize>
 				<EndArrowStyle>0</EndArrowStyle>
 				<Dx>0</Dx>
-				<Dy>170</Dy>
+				<Dy>150</Dy>
 				<Dz>0</Dz>
 			</Line>
 			<Text>
 				<Id>1730385073144</Id>
 				<Name><![CDATA[tx_numberOfPeaksDemand]]></Name>
-				<X>80</X>
-				<Y>-150</Y>
+				<X>350</X>
+				<Y>110</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4091,7 +4064,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[100]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4100,8 +4073,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073146</Id>
 				<Name><![CDATA[tx_averageTimePeakDemand]]></Name>
-				<X>80</X>
-				<Y>-125</Y>
+				<X>350</X>
+				<Y>130</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4116,7 +4089,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[6]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4125,8 +4098,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073148</Id>
 				<Name><![CDATA[tx_averageEnergyPeakDemand]]></Name>
-				<X>80</X>
-				<Y>-100</Y>
+				<X>350</X>
+				<Y>150</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4141,7 +4114,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[30]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4150,8 +4123,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073150</Id>
 				<Name><![CDATA[tx_maxTimePeakDemand]]></Name>
-				<X>80</X>
-				<Y>-50</Y>
+				<X>350</X>
+				<Y>190</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4166,7 +4139,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[12]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4175,8 +4148,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073152</Id>
 				<Name><![CDATA[tx_maxEnergyPeakDemand]]></Name>
-				<X>80</X>
-				<Y>-25</Y>
+				<X>350</X>
+				<Y>210</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4191,7 +4164,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[35]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4200,8 +4173,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073154</Id>
 				<Name><![CDATA[tx_averagePowerPeakDemand]]></Name>
-				<X>80</X>
-				<Y>-75</Y>
+				<X>350</X>
+				<Y>170</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4216,7 +4189,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[20]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4225,8 +4198,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073156</Id>
 				<Name><![CDATA[tx_maxPowerPeakDemand]]></Name>
-				<X>80</X>
-				<Y>0</Y>
+				<X>350</X>
+				<Y>230</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4241,7 +4214,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[40]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4250,8 +4223,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073158</Id>
 				<Name><![CDATA[tx_maxEnergyPeakSupply]]></Name>
-				<X>185</X>
-				<Y>-24.5</Y>
+				<X>510</X>
+				<Y>210</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4266,7 +4239,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[35]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4275,8 +4248,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073160</Id>
 				<Name><![CDATA[tx_averageTimePeakSupply]]></Name>
-				<X>185</X>
-				<Y>-124.5</Y>
+				<X>510</X>
+				<Y>130</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4291,7 +4264,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[6]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4300,8 +4273,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073162</Id>
 				<Name><![CDATA[tx_numberOfPeaksSupply]]></Name>
-				<X>185</X>
-				<Y>-149.5</Y>
+				<X>510</X>
+				<Y>110</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4316,7 +4289,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[100]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4325,8 +4298,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073164</Id>
 				<Name><![CDATA[tx_maxTimePeakSupply]]></Name>
-				<X>185</X>
-				<Y>-49.5</Y>
+				<X>510</X>
+				<Y>190</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4341,7 +4314,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[12]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4350,8 +4323,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073166</Id>
 				<Name><![CDATA[tx_averageEnergyPeakSupply]]></Name>
-				<X>185</X>
-				<Y>-99.5</Y>
+				<X>510</X>
+				<Y>150</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4366,7 +4339,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[30]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4375,8 +4348,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073168</Id>
 				<Name><![CDATA[tx_maxPowerPeakSupply]]></Name>
-				<X>185</X>
-				<Y>0.5</Y>
+				<X>510</X>
+				<Y>230</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4391,7 +4364,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[40]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4400,8 +4373,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073170</Id>
 				<Name><![CDATA[tx_averagePowerPeakSupply]]></Name>
-				<X>185</X>
-				<Y>-74.5</Y>
+				<X>510</X>
+				<Y>170</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4416,7 +4389,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[20]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -4425,8 +4398,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073172</Id>
 				<Name><![CDATA[text22]]></Name>
-				<X>-200</X>
-				<Y>50</Y>
+				<X>120</X>
+				<Y>300</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4441,8 +4414,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Color>-16777216</Color>
 				<Text><![CDATA[Verduurzamingsperspectief:]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>20</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>24</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>LEFT</Alignment>
@@ -4450,8 +4423,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1730385073174</Id>
 				<Name><![CDATA[text23]]></Name>
-				<X>-190</X>
-				<Y>90</Y>
+				<X>130</X>
+				<Y>330</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4464,7 +4437,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[1. Stem vraag en aanbod op elkaar af
+				<Text><![CDATA[1.  Stem vraag en aanbod op elkaar af
 2. Zijn er enkele pieken per jaar voor teruglevering? 
     Kijk naar curtailment
 3. Zijn er enkele pieken per jaar voor afname? 
@@ -4479,7 +4452,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 7. Zijn er pieken bij individuele bedrijven?
     Bekijk de potentie van groepscontracten]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
@@ -4508,7 +4481,7 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<ActionCode>f_selectGespreksleidraadCharts();</ActionCode>
 		</BasicProperties>
 		<ExtendedProperties>
-			<Font Name="Arial" Size="11" Style="0"/>
+			<Font Name="HOLONline2" Size="11" Style="0"/>
 			<Orientation>VERTICAL</Orientation>
 			<Button>1. Hoeveel energie wordt er opgewekt en verbruikt?</Button>
 			<Button>2. Meer lokaal opwekken?</Button>
@@ -4522,8 +4495,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 		<Id>1730385873567</Id>
 		<Name><![CDATA[txt_GSL3]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>1040</X>
-		<Y>60</Y>
+		<X>1450</X>
+		<Y>50</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -4542,13 +4515,13 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 			<Size>36</Size>
 			<Style>1</Style>
 		</Font>
-		<Alignment>LEFT</Alignment>
+		<Alignment>CENTER</Alignment>
 	</Text>
 	<Text>
 		<Id>1730392818290</Id>
 		<Name><![CDATA[txt_GSL6]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>2520</X>
+		<X>3040</X>
 		<Y>60</Y>
 		<Label>
 			<X>0</X>
@@ -4573,8 +4546,8 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 	<Group>
 		<Id>1731341174689</Id>
 		<Name><![CDATA[gr_gespreksleidraad4]]></Name>
-		<X>1700</X>
-		<Y>320</Y>
+		<X>1740</X>
+		<Y>120</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -4587,40 +4560,12 @@ f_setChartDescriptionText(i_gespreksleidraad5.getName(), setVisible);</OnClickCo
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
 		<Presentation>
-			<Rectangle>
-				<Id>1731341104150</Id>
-				<Name><![CDATA[rect_rb]]></Name>
-				<X>-230</X>
-				<Y>-180</Y>
-				<Label>
-					<X>10</X>
-					<Y>10</Y>
-				</Label>
-				<PublicFlag>true</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>false</ShowLabel>
-				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<EmbeddedIcon>false</EmbeddedIcon>
-				<Z>0</Z>
-				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineWidthCode>v_lineWidth</LineWidthCode>
-				<LineColor>-1644806</LineColor>
-				<LineColorCode>v_lineColor</LineColorCode>
-				<LineMaterial>null</LineMaterial>
-				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>40</Height>
-				<Rotation>0.0</Rotation>
-				<FillColor>-657931</FillColor>
-				<FillMaterial>null</FillMaterial>
-			</Rectangle>
 			<Control Type="RadioButtons">
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Id>1731341104163</Id>
 				<Name><![CDATA[rb_gespreksleidraad4]]></Name>
-				<X>-80</X>
-				<Y>-180</Y>
+				<X>210</X>
+				<Y>0</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -4654,8 +4599,8 @@ else {
 			<Rectangle>
 				<Id>1731341242822</Id>
 				<Name><![CDATA[rect_GSL4]]></Name>
-				<X>-230</X>
-				<Y>-180</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -4671,8 +4616,8 @@ else {
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>610</Height>
+				<Width>580</Width>
+				<Height>580</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -4681,8 +4626,8 @@ else {
 			<Group>
 				<Id>1731498885295</Id>
 				<Name><![CDATA[gr_gespreksleidraad4_A]]></Name>
-				<X>0</X>
-				<Y>0</Y>
+				<X>90</X>
+				<Y>140</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -4691,6 +4636,8 @@ else {
 				<PresentationFlag>true</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<XCode>90</XCode>
+				<YCode>140</YCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
@@ -4698,8 +4645,8 @@ else {
 					<Text>
 						<Id>1731498885328</Id>
 						<Name><![CDATA[tx_topBarplotText11]]></Name>
-						<X>0</X>
-						<Y>-120</Y>
+						<X>200</X>
+						<Y>-60</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4712,11 +4659,10 @@ else {
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Kan ik netcapaciteit
-beter benutten?]]></Text>
+						<Text><![CDATA[Kan ik netcapaciteit beter benutten?]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>28</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>22</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
@@ -4724,8 +4670,8 @@ beter benutten?]]></Text>
 					<Group>
 						<Id>1731581271726</Id>
 						<Name><![CDATA[group_jaar]]></Name>
-						<X>-10</X>
-						<Y>90</Y>
+						<X>190</X>
+						<Y>120</Y>
 						<Label>
 							<X>10</X>
 							<Y>0</Y>
@@ -4741,7 +4687,7 @@ beter benutten?]]></Text>
 					<Oval>
 						<Id>1731581365668</Id>
 						<Name><![CDATA[ovalNetbelasting4]]></Name>
-						<X>30</X>
+						<X>250</X>
 						<Y>340</Y>
 						<Label>
 							<X>0</X>
@@ -4754,20 +4700,20 @@ beter benutten?]]></Text>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<ZHeight>10</ZHeight>
-						<LineWidth>1</LineWidth>
-						<LineColor/>
+						<LineWidth>4</LineWidth>
+						<LineColor>-744352</LineColor>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<RadiusX>30</RadiusX>
 						<RadiusY>40</RadiusY>
 						<Rotation>0.0</Rotation>
-						<FillColor>-2180985</FillColor>
+						<FillColor/>
 						<FillMaterial>null</FillMaterial>
 					</Oval>
 					<Oval>
 						<Id>1731581365670</Id>
 						<Name><![CDATA[ovalNetbelasting3]]></Name>
-						<X>150</X>
+						<X>380</X>
 						<Y>340</Y>
 						<Label>
 							<X>0</X>
@@ -4780,21 +4726,21 @@ beter benutten?]]></Text>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<ZHeight>10</ZHeight>
-						<LineWidth>1</LineWidth>
-						<LineColor/>
+						<LineWidth>4</LineWidth>
+						<LineColor>-13447886</LineColor>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<RadiusX>30</RadiusX>
 						<RadiusY>40</RadiusY>
 						<Rotation>0.0</Rotation>
-						<FillColor>-12799119</FillColor>
+						<FillColor/>
 						<FillMaterial>null</FillMaterial>
 					</Oval>
 					<Text>
 						<Id>1731581365672</Id>
 						<Name><![CDATA[tx_topBarplotText2]]></Name>
-						<X>0</X>
-						<Y>-50</Y>
+						<X>10</X>
+						<Y>10</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4809,17 +4755,17 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Belastingduurkromme]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>18</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>16</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>CENTER</Alignment>
+						<Alignment>LEFT</Alignment>
 					</Text>
 					<Plot>
 						<Id>1731581365675</Id>
 						<Name><![CDATA[plot_jaar]]></Name>
-						<X>-200</X>
-						<Y>-30</Y>
+						<X>-50</X>
+						<Y>0</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4843,14 +4789,14 @@ beter benutten?]]></Text>
 							</RecurrenceCode>
 						</RecurrenceProperties>
 						<EmbeddedIcon>false</EmbeddedIcon>
-						<Width>420</Width>
+						<Width>530</Width>
 						<Height>270</Height>
 						<BackgroundColor/>
 						<BorderColor/>
 						<ChartArea>
 							<XOffset>50</XOffset>
 							<YOffset>30</YOffset>
-							<Width>340</Width>
+							<Width>450</Width>
 							<Height>160.714</Height>
 							<BackgroundColor/>
 							<BorderColor>-16777216</BorderColor>
@@ -4880,8 +4826,8 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731581365677</Id>
 						<Name><![CDATA[t_duurkromme_xlabel]]></Name>
-						<X>-5</X>
-						<Y>185</Y>
+						<X>230</X>
+						<Y>230</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4896,17 +4842,17 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Duur [u]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 					<Text>
 						<Id>1731581365679</Id>
 						<Name><![CDATA[t_duurkromme_ylabel]]></Name>
-						<X>-205</X>
-						<Y>25</Y>
+						<X>-40</X>
+						<Y>110</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4921,16 +4867,16 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Vermogen [kW]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 					<Text>
 						<Id>1731581365681</Id>
 						<Name><![CDATA[tx_topBarplotText52]]></Name>
-						<X>30</X>
+						<X>250</X>
 						<Y>290</Y>
 						<Label>
 							<X>0</X>
@@ -4944,10 +4890,10 @@ beter benutten?]]></Text>
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Max afname]]></Text>
+						<Text><![CDATA[Max. afname]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>14</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
@@ -4955,8 +4901,8 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731581365683</Id>
 						<Name><![CDATA[tx_maxDemand]]></Name>
-						<X>28</X>
-						<Y>330</Y>
+						<X>250</X>
+						<Y>333</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4968,10 +4914,10 @@ beter benutten?]]></Text>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
-						<Color>-1</Color>
+						<Color>-16777216</Color>
 						<Text><![CDATA[xx MW]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>14</Size>
 							<Style>1</Style>
 						</Font>
@@ -4980,8 +4926,8 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731581365685</Id>
 						<Name><![CDATA[tx_maxSupply]]></Name>
-						<X>149</X>
-						<Y>330</Y>
+						<X>380</X>
+						<Y>333</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -4993,10 +4939,10 @@ beter benutten?]]></Text>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
-						<Color>-1</Color>
+						<Color>-16777216</Color>
 						<Text><![CDATA[xx MW]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>14</Size>
 							<Style>1</Style>
 						</Font>
@@ -5005,7 +4951,7 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731581365687</Id>
 						<Name><![CDATA[tx_topBarplotText55]]></Name>
-						<X>145</X>
+						<X>380</X>
 						<Y>290</Y>
 						<Label>
 							<X>0</X>
@@ -5019,10 +4965,10 @@ beter benutten?]]></Text>
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
 						<Color>-16777216</Color>
-						<Text><![CDATA[Max teruglevering]]></Text>
+						<Text><![CDATA[Max. teruglevering]]></Text>
 						<Font>
-							<Name><![CDATA[Arial]]></Name>
-							<Size>14</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
@@ -5030,8 +4976,8 @@ beter benutten?]]></Text>
 					<Oval>
 						<Id>1731581365689</Id>
 						<Name><![CDATA[ovalNetbelasting1]]></Name>
-						<X>-135</X>
-						<Y>342</Y>
+						<X>60</X>
+						<Y>340</Y>
 						<Label>
 							<X>0</X>
 							<Y>0</Y>
@@ -5043,21 +4989,21 @@ beter benutten?]]></Text>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<ZHeight>10</ZHeight>
-						<LineWidth>1</LineWidth>
-						<LineColor/>
+						<LineWidth>4</LineWidth>
+						<LineColor>-14774017</LineColor>
 						<LineMaterial>null</LineMaterial>
 						<LineStyle>SOLID</LineStyle>
 						<RadiusX>45</RadiusX>
 						<RadiusY>40</RadiusY>
 						<Rotation>0.0</Rotation>
-						<FillColor>-10185235</FillColor>
+						<FillColor/>
 						<FillMaterial>null</FillMaterial>
 					</Oval>
 					<Text>
 						<Id>1731581365691</Id>
 						<Name><![CDATA[t_KPIBenuttingsgraad]]></Name>
-						<X>-135</X>
-						<Y>325</Y>
+						<X>60</X>
+						<Y>332</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5069,11 +5015,11 @@ beter benutten?]]></Text>
 						<EmbeddedIcon>false</EmbeddedIcon>
 						<Z>0</Z>
 						<Rotation>0.0</Rotation>
-						<Color>-1</Color>
+						<Color>-16777216</Color>
 						<Text><![CDATA[20%]]></Text>
 						<TextCode>//roundToInt(energyModel.v_avgNetLoad_fr*100) + "%"</TextCode>
 						<Font>
-							<Name><![CDATA[SansSerif]]></Name>
+							<Name><![CDATA[HolonBLOCK2]]></Name>
 							<Size>22</Size>
 							<Style>1</Style>
 						</Font>
@@ -5082,8 +5028,8 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731581365693</Id>
 						<Name><![CDATA[text1123]]></Name>
-						<X>-130</X>
-						<Y>397</Y>
+						<X>60</X>
+						<Y>400</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5099,7 +5045,7 @@ beter benutten?]]></Text>
 						<Text><![CDATA[Gemiddelde benutting]]></Text>
 						<Font>
 							<Name><![CDATA[SansSerif]]></Name>
-							<Size>14</Size>
+							<Size>10</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
@@ -5107,7 +5053,7 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731581365695</Id>
 						<Name><![CDATA[text593]]></Name>
-						<X>-140</X>
+						<X>60</X>
 						<Y>270</Y>
 						<Label>
 							<X>0</X>
@@ -5123,8 +5069,8 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Benuttingsgraad]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
-							<Size>20</Size>
+							<Name><![CDATA[HOLONline2]]></Name>
+							<Size>16</Size>
 							<Style>0</Style>
 						</Font>
 						<Alignment>CENTER</Alignment>
@@ -5134,8 +5080,8 @@ beter benutten?]]></Text>
 			<Group>
 				<Id>1731498920876</Id>
 				<Name><![CDATA[gr_gespreksleidraad4_B]]></Name>
-				<X>0</X>
-				<Y>800</Y>
+				<X>290</X>
+				<Y>980</Y>
 				<Label>
 					<X>10</X>
 					<Y>0</Y>
@@ -5144,7 +5090,8 @@ beter benutten?]]></Text>
 				<PresentationFlag>false</PresentationFlag>
 				<ShowLabel>false</ShowLabel>
 				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-				<YCode>160</YCode>
+				<XCode>290</XCode>
+				<YCode>290</YCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
@@ -5153,7 +5100,7 @@ beter benutten?]]></Text>
 						<Id>1731498920878</Id>
 						<Name><![CDATA[t_duurkromme_ylabel6]]></Name>
 						<X>-200</X>
-						<Y>85</Y>
+						<Y>130</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5168,11 +5115,11 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Vermogen [kW]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 					<Text>
 						<Id>1731498920880</Id>
@@ -5193,7 +5140,7 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Duur [u]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -5203,7 +5150,7 @@ beter benutten?]]></Text>
 						<Id>1731498920882</Id>
 						<Name><![CDATA[t_duurkromme_ylabel7]]></Name>
 						<X>-200</X>
-						<Y>-85</Y>
+						<Y>-50</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5218,17 +5165,17 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Vermogen [kW]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 					<Text>
 						<Id>1731498920884</Id>
 						<Name><![CDATA[tx_topBarplotText5]]></Name>
-						<X>-10</X>
-						<Y>-290</Y>
+						<X>-155</X>
+						<Y>-285</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5244,17 +5191,17 @@ beter benutten?]]></Text>
 						<Text><![CDATA[Belastingduurkromme zomer/winter week
 ]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>CENTER</Alignment>
+						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
 						<Id>1731498920886</Id>
 						<Name><![CDATA[t_duurkromme_ylabel1]]></Name>
 						<X>-200</X>
-						<Y>-255</Y>
+						<Y>-220</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5269,11 +5216,11 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Vermogen [kW]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>LEFT</Alignment>
+						<Alignment>CENTER</Alignment>
 					</Text>
 					<Text>
 						<Id>1731498920888</Id>
@@ -5294,7 +5241,7 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Duur [u]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -5365,8 +5312,8 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731498920893</Id>
 						<Name><![CDATA[tx_topBarplotText6]]></Name>
-						<X>10</X>
-						<Y>-120</Y>
+						<X>-155</X>
+						<Y>-115</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5381,11 +5328,11 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Belastingduurkromme dag/nacht]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>CENTER</Alignment>
+						<Alignment>LEFT</Alignment>
 					</Text>
 					<Plot>
 						<Id>1731498920896</Id>
@@ -5452,8 +5399,8 @@ beter benutten?]]></Text>
 					<Text>
 						<Id>1731498920898</Id>
 						<Name><![CDATA[tx_topBarplotText14]]></Name>
-						<X>10</X>
-						<Y>50</Y>
+						<X>-155</X>
+						<Y>65</Y>
 						<Label>
 							<X>0</X>
 							<Y>-10</Y>
@@ -5468,11 +5415,11 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Belastingduurkromme week/weekend]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
-						<Alignment>CENTER</Alignment>
+						<Alignment>LEFT</Alignment>
 					</Text>
 					<Text>
 						<Id>1731498920900</Id>
@@ -5493,7 +5440,7 @@ beter benutten?]]></Text>
 						<Color>-16777216</Color>
 						<Text><![CDATA[Duur [u]]]></Text>
 						<Font>
-							<Name><![CDATA[Calibri]]></Name>
+							<Name><![CDATA[HOLONline2]]></Name>
 							<Size>12</Size>
 							<Style>0</Style>
 						</Font>
@@ -5654,7 +5601,7 @@ uur]]></Text>
 				<Text><![CDATA[Hoog naar
 middenspanningsnet]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -5690,7 +5637,7 @@ middenspanningsnet]]></Text>
 				<Id>1730397858737</Id>
 				<Name><![CDATA[tx_topBarplotText26]]></Name>
 				<X>130</X>
-				<Y>-5</Y>
+				<Y>0</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -5706,7 +5653,7 @@ middenspanningsnet]]></Text>
 				<Text><![CDATA[Overbelasting 
 [aantal trafo's]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -5761,7 +5708,7 @@ middenspanningsnet]]></Text>
 capaciteit 
 afname]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -5812,7 +5759,7 @@ afname]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Regionaal:]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>22</Size>
 					<Style>0</Style>
 				</Font>
@@ -5822,7 +5769,7 @@ afname]]></Text>
 				<Id>1730397858747</Id>
 				<Name><![CDATA[tx_topBarplotText25]]></Name>
 				<X>-15</X>
-				<Y>-5</Y>
+				<Y>0</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -5838,7 +5785,7 @@ afname]]></Text>
 				<Text><![CDATA[Overbelasting 
 [totaal aantal uur]]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -5891,7 +5838,7 @@ afname]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[12 MVA]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -5916,7 +5863,7 @@ afname]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Lokaal]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>22</Size>
 					<Style>0</Style>
 				</Font>
@@ -5943,7 +5890,7 @@ afname]]></Text>
 capaciteit 
 afname]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -5969,7 +5916,7 @@ afname]]></Text>
 				<Text><![CDATA[Midden en
 laagspanningsnet]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -5979,7 +5926,7 @@ laagspanningsnet]]></Text>
 				<Id>1730397858761</Id>
 				<Name><![CDATA[t_KPIselfsufficiency_pct3]]></Name>
 				<X>-15</X>
-				<Y>-85</Y>
+				<Y>-82</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -5995,7 +5942,7 @@ laagspanningsnet]]></Text>
 				<Text><![CDATA[Capaciteit
 beschikbaar]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -6089,7 +6036,7 @@ beschikbaar]]></Text>
 				<Id>1730397858769</Id>
 				<Name><![CDATA[t_KPIselfsufficiency_pct5]]></Name>
 				<X>130</X>
-				<Y>55</Y>
+				<Y>60</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6104,7 +6051,7 @@ beschikbaar]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[6]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -6185,7 +6132,7 @@ beschikbaar]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[21 MVA]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -6231,7 +6178,7 @@ beschikbaar]]></Text>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
 				<Width>410</Width>
-				<Height>290</Height>
+				<Height>260</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor>-1</FillColor>
 				<FillMaterial>null</FillMaterial>
@@ -6255,7 +6202,7 @@ beschikbaar]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Netcapaciteit in de twin]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
 					<Style>1</Style>
 				</Font>
@@ -6397,7 +6344,7 @@ aannames zijn indicatief, gebaseerd op data en kengetallen.
 Controleer je plannen daarom altijd bij de netbeheerder.
 ]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>12</Size>
 					<Style>0</Style>
 				</Font>
@@ -6409,7 +6356,7 @@ Controleer je plannen daarom altijd bij de netbeheerder.
 		<Id>1732199795811</Id>
 		<Name><![CDATA[txt_GSL3v2]]></Name>
 		<ExcludeFromBuild>true</ExcludeFromBuild>
-		<X>3020</X>
+		<X>3580</X>
 		<Y>60</Y>
 		<Label>
 			<X>0</X>
@@ -6434,8 +6381,8 @@ Controleer je plannen daarom altijd bij de netbeheerder.
 	<Group>
 		<Id>1732199795816</Id>
 		<Name><![CDATA[gr_gespreksleidraad3v2]]></Name>
-		<X>3220</X>
-		<Y>450</Y>
+		<X>3480</X>
+		<Y>120</Y>
 		<Label>
 			<X>9.957</X>
 			<Y>0</Y>
@@ -6451,8 +6398,8 @@ Controleer je plannen daarom altijd bij de netbeheerder.
 			<Image>
 				<Id>1732199795880</Id>
 				<Name><![CDATA[i_gespreksleidraad3v2]]></Name>
-				<X>170</X>
-				<Y>-290</Y>
+				<X>545</X>
+				<Y>25</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6469,8 +6416,8 @@ if(gr_infoButtonText.isVisible()){
 f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCode>
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
-				<Width>20</Width>
-				<Height>20</Height>
+				<Width>14</Width>
+				<Height>14</Height>
 				<Rotation>0.0</Rotation>
 				<ImageFiles>
 					<ImageResourceReference>
@@ -6483,8 +6430,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 			<Rectangle>
 				<Id>1732199795882</Id>
 				<Name><![CDATA[rect_GSL3v2]]></Name>
-				<X>-260</X>
-				<Y>-310</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -6500,8 +6447,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<LineColor>-8355712</LineColor>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>610</Height>
+				<Width>580</Width>
+				<Height>580</Height>
 				<Rotation>0.0</Rotation>
 				<FillColor/>
 				<FillColorCode>lavender</FillColorCode>
@@ -6510,8 +6457,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1732207723767</Id>
 				<Name><![CDATA[t_totalConsumptionYear]]></Name>
-				<X>80</X>
-				<Y>-110</Y>
+				<X>400</X>
+				<Y>180</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6524,20 +6471,20 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Totale Verbruik: 
-0.00 [MWh]]]></Text>
+				<Text><![CDATA[TOTALE VERBRUIK: 
+0.00 MWh]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
 					<Size>14</Size>
-					<Style>1</Style>
+					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
 				<Id>1732207723770</Id>
 				<Name><![CDATA[t_totalProductionYear]]></Name>
-				<X>-150</X>
-				<Y>-110</Y>
+				<X>170</X>
+				<Y>180</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6550,12 +6497,12 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Totale Opwek: 
-0.00 [MWh]]]></Text>
+				<Text><![CDATA[TOTALE OPWEK: 
+0.00 MWh]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HolonBLOCK2]]></Name>
 					<Size>14</Size>
-					<Style>1</Style>
+					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
 			</Text>
@@ -6563,8 +6510,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<Id>1732207723774</Id>
 				<Name><![CDATA[pl_productionChart3v2]]></Name>
 				<ExcludeFromBuild>true</ExcludeFromBuild>
-				<X>-220</X>
-				<Y>370</Y>
+				<X>60</X>
+				<Y>680</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6623,8 +6570,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<Id>1732207723778</Id>
 				<Name><![CDATA[pl_consumptionChart3v2]]></Name>
 				<ExcludeFromBuild>true</ExcludeFromBuild>
-				<X>-40</X>
-				<Y>370</Y>
+				<X>240</X>
+				<Y>680</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6682,8 +6629,8 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 			<Text>
 				<Id>1732207723782</Id>
 				<Name><![CDATA[txt_gebruikEigenElecOpwekBuurt3v2]]></Name>
-				<X>-220</X>
-				<Y>-200</Y>
+				<X>170</X>
+				<Y>150</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6696,20 +6643,19 @@ f_setChartDescriptionText(i_gespreksleidraad3.getName(), setVisible);</OnClickCo
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Gebruik eigen elektriciteits-
-opwek]]></Text>
+				<Text><![CDATA[Gebruik eigen elektriciteitsopwek]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<Text>
 				<Id>1732207723785</Id>
 				<Name><![CDATA[tx_topBarplotTexttxt_gebruikEigenElecOpwekBuurt3v2]]></Name>
-				<X>-25</X>
-				<Y>-300</Y>
+				<X>290</X>
+				<Y>20</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6725,8 +6671,8 @@ opwek]]></Text>
 				<Text><![CDATA[Kan ik meer elektriciteitsopwek 
 lokaal zelf gebruiken?]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
-					<Size>28</Size>
+					<Name><![CDATA[HOLONline2]]></Name>
+					<Size>26</Size>
 					<Style>0</Style>
 				</Font>
 				<Alignment>CENTER</Alignment>
@@ -6734,8 +6680,8 @@ lokaal zelf gebruiken?]]></Text>
 			<Text>
 				<Id>1732207723790</Id>
 				<Name><![CDATA[txt_gebruikEigenElecGebruikRegio3v2]]></Name>
-				<X>30</X>
-				<Y>-200</Y>
+				<X>400</X>
+				<Y>150</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6748,20 +6694,19 @@ lokaal zelf gebruiken?]]></Text>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
 				<Color>-16777216</Color>
-				<Text><![CDATA[Bron elektriciteits-
-vraag]]></Text>
+				<Text><![CDATA[Bron elektriciteitsvraag]]></Text>
 				<Font>
-					<Name><![CDATA[Arial]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>14</Size>
 					<Style>0</Style>
 				</Font>
-				<Alignment>LEFT</Alignment>
+				<Alignment>CENTER</Alignment>
 			</Text>
 			<PieChart>
 				<Id>1732212073086</Id>
 				<Name><![CDATA[pl_consumptionChart3v2_pieLegenda]]></Name>
-				<X>-20</X>
-				<Y>-50</Y>
+				<X>305</X>
+				<Y>240</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6824,8 +6769,8 @@ vraag]]></Text>
 			<PieChart>
 				<Id>1732212075085</Id>
 				<Name><![CDATA[pl_productionChart3v2_pieLegenda]]></Name>
-				<X>-250</X>
-				<Y>-50</Y>
+				<X>75</X>
+				<Y>240</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6888,8 +6833,8 @@ vraag]]></Text>
 			<Rectangle>
 				<Id>1732212150707</Id>
 				<Name><![CDATA[rect_legendaPieChartBlock]]></Name>
-				<X>-255</X>
-				<Y>-50</Y>
+				<X>70</X>
+				<Y>240</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -6915,8 +6860,8 @@ vraag]]></Text>
 			<PieChart>
 				<Id>1732209323906</Id>
 				<Name><![CDATA[pl_productionChart3v2_pie]]></Name>
-				<X>-250</X>
-				<Y>-50</Y>
+				<X>75</X>
+				<Y>240</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -6979,8 +6924,8 @@ vraag]]></Text>
 			<PieChart>
 				<Id>1732209325128</Id>
 				<Name><![CDATA[pl_consumptionChart3v2_pie]]></Name>
-				<X>-20</X>
-				<Y>-50</Y>
+				<X>305</X>
+				<Y>240</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -7043,8 +6988,8 @@ vraag]]></Text>
 			<Rectangle>
 				<Id>1732278807548</Id>
 				<Name><![CDATA[rect_hoverBlockingPieChart]]></Name>
-				<X>-250</X>
-				<Y>-60</Y>
+				<X>75</X>
+				<Y>230</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -7072,8 +7017,8 @@ vraag]]></Text>
 	<Group>
 		<Id>1730392070894</Id>
 		<Name><![CDATA[gr_infoButtonText]]></Name>
-		<X>4400</X>
-		<Y>460</Y>
+		<X>4960</X>
+		<Y>410</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -7234,7 +7179,7 @@ vraag]]></Text>
 				<Color>-16777216</Color>
 				<Text><![CDATA[Beschrijving]]></Text>
 				<Font>
-					<Name><![CDATA[Calibri]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
 					<Style>1</Style>
 				</Font>
@@ -7269,7 +7214,7 @@ niet mogelijk is kan een warmtenet toch uit-
 komst bieden.
 ]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>16</Size>
 					<Style>0</Style>
 				</Font>
@@ -7277,36 +7222,11 @@ komst bieden.
 			</Text>
 		</Presentation>
 	</Group>
-	<Text>
-		<Id>1737030561110</Id>
-		<Name><![CDATA[text]]></Name>
-		<X>640</X>
-		<Y>705</Y>
-		<Label>
-			<X>0</X>
-			<Y>-10</Y>
-		</Label>
-		<PublicFlag>true</PublicFlag>
-		<PresentationFlag>true</PresentationFlag>
-		<ShowLabel>false</ShowLabel>
-		<DrawMode>SHAPE_DRAW_2D</DrawMode>
-		<EmbeddedIcon>false</EmbeddedIcon>
-		<Z>0</Z>
-		<Rotation>0.0</Rotation>
-		<Color>-16777216</Color>
-		<Text><![CDATA[text]]></Text>
-		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
-			<Size>10</Size>
-			<Style>0</Style>
-		</Font>
-		<Alignment>LEFT</Alignment>
-	</Text>
 	<Group>
 		<Id>1741345541703</Id>
 		<Name><![CDATA[gr_warningScreen]]></Name>
-		<X>3700</X>
-		<Y>420</Y>
+		<X>4140</X>
+		<Y>0</Y>
 		<Label>
 			<X>10</X>
 			<Y>0</Y>
@@ -7314,10 +7234,9 @@ komst bieden.
 		<PublicFlag>true</PublicFlag>
 		<PresentationFlag>false</PresentationFlag>
 		<ShowLabel>false</ShowLabel>
-		<Lock>true</Lock>
 		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-		<XCode>230</XCode>
-		<YCode>410</YCode>
+		<XCode>0</XCode>
+		<YCode>0</YCode>
 		<EmbeddedIcon>false</EmbeddedIcon>
 		<Z>0</Z>
 		<Rotation>0.0</Rotation>
@@ -7325,8 +7244,8 @@ komst bieden.
 			<Rectangle>
 				<Id>1741345541705</Id>
 				<Name><![CDATA[rect_warningScreenGespreksleidraadBedrijven]]></Name>
-				<X>-230</X>
-				<Y>-270</Y>
+				<X>0</X>
+				<Y>0</Y>
 				<Label>
 					<X>10</X>
 					<Y>10</Y>
@@ -7339,23 +7258,21 @@ komst bieden.
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<ZHeight>10</ZHeight>
-				<LineWidth>1</LineWidth>
-				<LineWidthCode>v_lineWidth</LineWidthCode>
-				<LineColor>-1644806</LineColor>
-				<LineColorCode>v_lineColor</LineColorCode>
+				<LineWidth>0</LineWidth>
+				<LineColor/>
 				<LineMaterial>null</LineMaterial>
 				<LineStyle>SOLID</LineStyle>
-				<Width>460</Width>
-				<Height>600</Height>
+				<Width>580</Width>
+				<Height>700</Height>
 				<Rotation>0.0</Rotation>
-				<FillColor>-1644806</FillColor>
+				<FillColor>-16744320</FillColor>
 				<FillMaterial>null</FillMaterial>
 			</Rectangle>
 			<Text>
 				<Id>1741345541707</Id>
 				<Name><![CDATA[txt_WarningScreenMessage]]></Name>
-				<X>10</X>
-				<Y>-110</Y>
+				<X>290</X>
+				<Y>290</Y>
 				<Label>
 					<X>0</X>
 					<Y>-10</Y>
@@ -7367,7 +7284,7 @@ komst bieden.
 				<EmbeddedIcon>false</EmbeddedIcon>
 				<Z>0</Z>
 				<Rotation>0.0</Rotation>
-				<Color>-16777216</Color>
+				<Color>-1</Color>
 				<Text><![CDATA[LET OP: Het geselecteerde object wordt 
 niet ondersteund door deze grafiek!
 
@@ -7375,7 +7292,7 @@ Selecteer het gehele gebied
 of maak een selectie van aansluitingen 
 om deze grafieken te gebruiken.]]></Text>
 				<Font>
-					<Name><![CDATA[SansSerif]]></Name>
+					<Name><![CDATA[HOLONline2]]></Name>
 					<Size>20</Size>
 					<Style>0</Style>
 				</Font>
@@ -7386,8 +7303,8 @@ om deze grafieken te gebruiken.]]></Text>
 	<Text>
 		<Id>1743078422612</Id>
 		<Name><![CDATA[txt_displayedDataOf]]></Name>
-		<X>340</X>
-		<Y>90</Y>
+		<X>440</X>
+		<Y>50</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -7402,7 +7319,7 @@ om deze grafieken te gebruiken.]]></Text>
 		<Color>-16777216</Color>
 		<Text><![CDATA[Data van:]]></Text>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>12</Size>
 			<Style>0</Style>
 		</Font>
@@ -7411,8 +7328,8 @@ om deze grafieken te gebruiken.]]></Text>
 	<Text>
 		<Id>1743078483745</Id>
 		<Name><![CDATA[t_selectedObjectDisplayTextGSLD]]></Name>
-		<X>340</X>
-		<Y>110</Y>
+		<X>440</X>
+		<Y>70</Y>
 		<Label>
 			<X>0</X>
 			<Y>-10</Y>
@@ -7428,10 +7345,38 @@ om deze grafieken te gebruiken.]]></Text>
 		<Text><![CDATA[Een selectie van aansluitingen]]></Text>
 		<TextCode>uI_Results.t_selectedObjectDisplayText.getText().replace("Data van: ", "")</TextCode>
 		<Font>
-			<Name><![CDATA[SansSerif]]></Name>
+			<Name><![CDATA[HOLONline2]]></Name>
 			<Size>14</Size>
 			<Style>1</Style>
 		</Font>
 		<Alignment>CENTER</Alignment>
 	</Text>
+	<Line>
+		<Id>1784640697998</Id>
+		<Name><![CDATA[line_GSLD]]></Name>
+		<X>0</X>
+		<Y>120</Y>
+		<Label>
+			<X>10</X>
+			<Y>0</Y>
+		</Label>
+		<PublicFlag>true</PublicFlag>
+		<PresentationFlag>true</PresentationFlag>
+		<ShowLabel>false</ShowLabel>
+		<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+		<EmbeddedIcon>false</EmbeddedIcon>
+		<Z>0</Z>
+		<ZHeight>10</ZHeight>
+		<LineWidth>0.5</LineWidth>
+		<LineColor>-4144960</LineColor>
+		<LineMaterial>null</LineMaterial>
+		<LineStyle>SOLID</LineStyle>
+		<BeginArrowSize>1</BeginArrowSize>
+		<BeginArrowStyle>0</BeginArrowStyle>
+		<EndArrowSize>1</EndArrowSize>
+		<EndArrowStyle>0</EndArrowStyle>
+		<Dx>580</Dx>
+		<Dy>0</Dy>
+		<Dz>0</Dz>
+	</Line>
 </Presentation>
